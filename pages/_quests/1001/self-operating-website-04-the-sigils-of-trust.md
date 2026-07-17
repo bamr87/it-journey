@@ -300,7 +300,4 @@ The robot is now bound — it can act, but never escalate, and you hold the word
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Campaign hub:** [[Epic Quest: The Self-Operating Website]]
-**Previous:** [[The War Machine]]
-**Next:** [[The Content Forge]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Campaign hub:** [[Epic Quest: The Self-Operating Website]] **Previous:** [[The War Machine]] **Next:** [[The Content Forge]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

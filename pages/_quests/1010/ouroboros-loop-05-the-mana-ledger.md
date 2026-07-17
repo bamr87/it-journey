@@ -268,6 +268,4 @@ graph LR
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph.*
 
-**Campaign hub:** [[Epic Quest: The Ouroboros Loop]]
-**Previous:** [[The Sealed Evidence]] · **Next:** [[The Fixer's Oath]]
-**Level home:** [[Level 1010 - Monitoring & Observability]]
+**Campaign hub:** [[Epic Quest: The Ouroboros Loop]] **Previous:** [[The Sealed Evidence]] · **Next:** [[The Fixer's Oath]] **Level home:** [[Level 1010 - Monitoring & Observability]]

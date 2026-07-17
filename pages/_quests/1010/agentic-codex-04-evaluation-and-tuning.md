@@ -539,9 +539,4 @@ You can now grade an agent, diagnose its failures, and reforge its mind. The nex
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Campaign hub:** [[Epic Quest: The Agentic Codex]]
-**Previous:** [[Memory, State & Execution]]
-**Next:** [[Multi-Agent Coordination]]
-**Domain 4 quests:** [[The Oracle's Rubric: Agent Success Signals]] · [[The Necromancer's Inquest: Agent Failure Root Cause Analysis]] · [[Reforging the Agent's Mind: Tuning Behavior by Instruction]]
-**Reference:** [[Evaluating and Tuning Agents with GitHub Signals]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Campaign hub:** [[Epic Quest: The Agentic Codex]] **Previous:** [[Memory, State & Execution]] **Next:** [[Multi-Agent Coordination]] **Domain 4 quests:** [[The Oracle's Rubric: Agent Success Signals]] · [[The Necromancer's Inquest: Agent Failure Root Cause Analysis]] · [[Reforging the Agent's Mind: Tuning Behavior by Instruction]] **Reference:** [[Evaluating and Tuning Agents with GitHub Signals]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

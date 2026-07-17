@@ -398,8 +398,4 @@ Skipping a one-on-one quietly tells someone they don't matter. Protect the slot 
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1111: Leadership & Innovation]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Technical Leadership: Leading Without Authority and Setting Tech Vision]]
-**Unlocks:** [[Building Technical Communities: Growing Developer Ecosystems]] · [[Career Advancement Strategies: Growing from Engineer to Leader]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1111: Leadership & Innovation]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Technical Leadership: Leading Without Authority and Setting Tech Vision]] **Unlocks:** [[Building Technical Communities: Growing Developer Ecosystems]] · [[Career Advancement Strategies: Growing from Engineer to Leader]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

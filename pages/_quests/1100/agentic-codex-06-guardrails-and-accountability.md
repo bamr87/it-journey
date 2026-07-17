@@ -498,10 +498,4 @@ The Warden stands her post; the gate holds. Every clause of the Pact is sworn �
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Campaign hub:** [[Epic Quest: The Agentic Codex]]
-**Previous:** [[Chapter 5 — Multi-Agent Coordination]]
-**This chapter:** [[The Warden Pact: Guardrails & Accountability]]
-**Next:** [[Trial of the Agentic Codex: The Grand Capstone]]
-**Domain quests:** [[The Autonomy Scales: Mapping Agent Autonomy Levels]] · [[The Warden's Pact: Guardrails and Human-in-the-Loop Patterns]]
-**Reference:** [[Agent Guardrails and Responsible Autonomy]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Campaign hub:** [[Epic Quest: The Agentic Codex]] **Previous:** [[Chapter 5 — Multi-Agent Coordination]] **This chapter:** [[The Warden Pact: Guardrails & Accountability]] **Next:** [[Trial of the Agentic Codex: The Grand Capstone]] **Domain quests:** [[The Autonomy Scales: Mapping Agent Autonomy Levels]] · [[The Warden's Pact: Guardrails and Human-in-the-Loop Patterns]] **Reference:** [[Agent Guardrails and Responsible Autonomy]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

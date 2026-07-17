@@ -420,8 +420,4 @@ print(ner("Hugging Face is based in New York and Paris."))
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1101 - Machine Learning & AI]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Required:** [[Deep Learning Frameworks: PyTorch vs TensorFlow Comparison & Implementation]]
-**Unlocks:** [[MLOps Engineering: CI/CD Pipelines for Machine Learning Production]] · [[AI Ethics and Responsible AI: Bias Detection, Fairness & Governance]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1101 - Machine Learning & AI]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Required:** [[Deep Learning Frameworks: PyTorch vs TensorFlow Comparison & Implementation]] **Unlocks:** [[MLOps Engineering: CI/CD Pipelines for Machine Learning Production]] · [[AI Ethics and Responsible AI: Bias Detection, Fairness & Governance]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

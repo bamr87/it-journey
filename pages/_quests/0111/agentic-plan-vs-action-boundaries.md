@@ -160,9 +160,7 @@ modifies files, creates branches, or opens pull requests, you MUST:
 Output a JSON plan in this exact schema before writing any code:
 
 ```json
-{
-  "task_summary": "One sentence describing the task",
-  "steps": [
+{ "task_summary": "One sentence describing the task", "steps": [
     {
       "step_number": 1,
       "action": "human-readable action",
@@ -170,11 +168,9 @@ Output a JSON plan in this exact schema before writing any code:
       "reversible": true,
       "rationale": "Why this step is necessary"
     }
-  ],
-  "estimated_prs": 1,
+], "estimated_prs": 1,
   "risk_level": "low|medium|high",
-  "requires_human_approval": true
-}
+"requires_human_approval": true }
 ```markdown
 
 ### Step 2 — Wait for Explicit Approval
@@ -206,12 +202,7 @@ If you discover you need additional steps, STOP and re-plan.
 A parseable plan is a testable plan. Save the schema to `work/gh-600/schemas/agent-plan.json`.
 
 ```json
-{
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "AgentPlan",
-  "type": "object",
-  "required": ["task_summary", "steps", "risk_level", "requires_human_approval"],
-  "properties": {
+{ "$schema": "http://json-schema.org/draft-07/schema#", "title": "AgentPlan", "type": "object", "required": ["task_summary", "steps", "risk_level", "requires_human_approval"], "properties": {
     "task_summary": { "type": "string", "minLength": 10, "maxLength": 200 },
     "steps": {
       "type": "array",
@@ -230,22 +221,14 @@ A parseable plan is a testable plan. Save the schema to `work/gh-600/schemas/age
     },
     "risk_level": { "type": "string", "enum": ["low", "medium", "high"] },
     "requires_human_approval": { "type": "boolean" }
-  }
-}
+} }
 ```text
 
 Validate a plan with:
 
 ```bash
 # macOS / Linux
-pip install jsonschema
-python3 -c "
-import json, jsonschema
-schema = json.load(open('work/gh-600/schemas/agent-plan.json'))
-plan   = json.load(open('work/gh-600/sample-plan.json'))
-jsonschema.validate(plan, schema)
-print('✅ Plan is valid')
-"
+pip install jsonschema python3 -c " import json, jsonschema schema = json.load(open('work/gh-600/schemas/agent-plan.json')) plan   = json.load(open('work/gh-600/sample-plan.json')) jsonschema.validate(plan, schema) print('✅ Plan is valid') "
 ```bash
 
 ---
@@ -261,18 +244,14 @@ print('✅ Plan is valid')
 
 name: Agent Plan Gate
 
-on:
-  push:
+on: push:
     branches-ignore: [main]
     paths:
       - "agent-plan.json"
 
-permissions:
-  contents: read
-  pull-requests: write
+permissions: contents: read pull-requests: write
 
-jobs:
-  validate-plan:
+jobs: validate-plan:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

@@ -3,10 +3,7 @@
 > Status: design (the extension is built in a **separate repo**; this document is
 > the spec + the stable contract this repo emits).
 
-The goal is a local VS Code extension that works as a **CMS with embedded Claude
-Code agents** — like the Front Matter CMS extension, but with content health,
-the daily-loop worklist, and one-click agentic editing/curation built in. It is
-the capstone (layer 4) on top of the foundation already in this repo:
+The goal is a local VS Code extension that works as a **CMS with embedded Claude Code agents** — like the Front Matter CMS extension, but with content health, the daily-loop worklist, and one-click agentic editing/curation built in. It is the capstone (layer 4) on top of the foundation already in this repo:
 
 ```
 layer 1  Content model + index   →  scripts/cms/cms.py  →  .cms/
@@ -15,9 +12,7 @@ layer 3  Daily agent loop         →  .claude/skills/cms-curator + CI workflow
 layer 4  VS Code extension        →  THIS DOC (separate repo)  ← reuses 1–3
 ```
 
-The extension does **not** re-implement scanning, schema, or loop logic. It reads
-what this repo produces and drives the same skill. That keeps one source of truth
-across CLI, CI, and editor.
+The extension does **not** re-implement scanning, schema, or loop logic. It reads what this repo produces and drives the same skill. That keeps one source of truth across CLI, CI, and editor.
 
 ---
 
@@ -35,8 +30,7 @@ The extension depends only on these stable paths in the workspace root:
 | `.cms/reports/<date>.md` | today's analysis | Markdown |
 | `frontmatter.json` | existing Front Matter content types/taxonomy | JSON |
 
-Regenerate everything with `python3 scripts/cms/cms.py index` (the extension shells
-out to this on open and on a watcher; it is fast, pure-Python + pyyaml).
+Regenerate everything with `python3 scripts/cms/cms.py index` (the extension shells out to this on open and on a watcher; it is fast, pure-Python + pyyaml).
 
 ### `content-index.json` record (TypeScript)
 
@@ -77,19 +71,13 @@ interface CmsIssue {
 }
 ```
 
-`content-schema.json` carries `collections[].{path, fm_content_type, required,
-recommended, fields}` (fields verbatim from `frontmatter.json`), plus
-`constraints`, `read_only`, `generated`. The extension uses it to render schema-
-aware editors and to validate before save — identical rules to CLI and CI.
+`content-schema.json` carries `collections[].{path, fm_content_type, required, recommended, fields}` (fields verbatim from `frontmatter.json`), plus `constraints`, `read_only`, `generated`. The extension uses it to render schema- aware editors and to validate before save — identical rules to CLI and CI.
 
 ---
 
 ## 2. Architecture
 
-VS Code extensions run their logic in a **Node extension host**, so the
-[Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/typescript)
-(`@anthropic-ai/claude-agent-sdk`, `query()`) runs in-process. No separate
-server.
+VS Code extensions run their logic in a **Node extension host**, so the [Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/typescript) (`@anthropic-ai/claude-agent-sdk`, `query()`) runs in-process. No separate server.
 
 ```
 ┌──────────────────────── VS Code window ───────────────────────────┐
@@ -113,23 +101,16 @@ server.
 ### Embedding Claude Code
 
 - Drive `query({ prompt, options })` from the extension host. Options:
-  `permissionMode: 'default'`, an explicit `allowedTools` allowlist,
-  `maxTurns`/`maxBudgetUsd` caps, `cwd` = workspace, `model: 'claude-opus-4-8'`,
-  `systemPrompt: { type: 'preset', preset: 'claude_code', append: <cms context> }`.
+`permissionMode: 'default'`, an explicit `allowedTools` allowlist, `maxTurns`/`maxBudgetUsd` caps, `cwd` = workspace, `model: 'claude-opus-4-8'`, `systemPrompt: { type: 'preset', preset: 'claude_code', append: <cms context> }`.
 - Route **every** tool call through the `canUseTool` callback → render a
-  diff/approve card in the webview; nothing writes to disk without the user's
-  click (this is the editor-side analog of the loop's PR review).
+diff/approve card in the webview; nothing writes to disk without the user's click (this is the editor-side analog of the loop's PR review).
 - Reuse the **`cms-curator` skill** verbatim so editor behavior == CI behavior.
 - Use **structured output** (`outputFormat: { type: 'json_schema' }`) for
-  proposals (`{ file, action, rationale, frontmatter_changes }`) so the panel can
-  show a clean review list and validate against `content-schema.json` first.
+proposals (`{ file, action, rationale, frontmatter_changes }`) so the panel can show a clean review list and validate against `content-schema.json` first.
 - Stream `SDKMessage`s to the webview via `postMessage`; wire a Stop button to
   `query.interrupt()` / an `AbortController`.
 - Pin a recent `@anthropic-ai/claude-agent-sdk` (one new enough to expose
-  `outputFormat: { type: 'json_schema' }` and the canonical `query()` API; verify
-  against the current npm release before locking a version). Do **not** use the
-  deprecated unstable V2 session API (`unstable_v2_*`); use `query()` with
-  `options.resume` for multi-turn.
+`outputFormat: { type: 'json_schema' }` and the canonical `query()` API; verify against the current npm release before locking a version). Do **not** use the deprecated unstable V2 session API (`unstable_v2_*`); use `query()` with `options.resume` for multi-turn.
 
 > Auth: reuse the user's existing Claude Code login (OAuth) or `ANTHROPIC_API_KEY`,
 > mirroring `CLAUDE_CODE_OAUTH_TOKEN` used in CI.
@@ -175,18 +156,14 @@ The extension **complements**, not replaces, `eliostruyf.vscode-front-matter`:
 - It does not touch Front Matter's git posture (`git.enabled: false`) — commits/
   PRs go through git/`gh` + the existing CI gates, same as the loop.
 - Users keep Front Matter for manual authoring; the new extension adds the health
-  view, the worklist, and the agent. (Long-term, a fork that grafts Claude Code
-  into Front Matter's panels via its extensibility SDK —
-  `registerPanelView`/`registerCustomField` — is an option, but the standalone
-  reader above ships faster and carries no upstream maintenance burden.)
+view, the worklist, and the agent. (Long-term, a fork that grafts Claude Code into Front Matter's panels via its extensibility SDK — `registerPanelView`/`registerCustomField` — is an option, but the standalone reader above ships faster and carries no upstream maintenance burden.)
 
 ---
 
 ## 5. Build phases (separate repo)
 
 1. **MVP — read-only viewer.** Activity-bar container, TreeView + Contents grid
-   from `content-index.json`, status bar health, `refreshIndex` (shell out to
-   `cms.py`). No AI yet. Proves the contract.
+from `content-index.json`, status bar health, `refreshIndex` (shell out to `cms.py`). No AI yet. Proves the contract.
 2. **Worklist + mechanical.** Worklist panel; `runMechanicalLane` (shell to
    `make content-normalize-apply`) with a diff preview. Still no model calls.
 3. **Agent panel.** Embed `query()`, `canUseTool` approve/deny, run `cms-curator`
@@ -212,7 +189,4 @@ it-journey-cms-extension/
   README.md
 ```
 
-The only coupling to IT-Journey is the **contract in §1** — point the extension at
-any workspace that emits `.cms/` and it works, so the same extension can later
-manage `zer0-mistakes` and `bashconsultants` (which already share the frontmatter
-schema).
+The only coupling to IT-Journey is the **contract in §1** — point the extension at any workspace that emits `.cms/` and it works, so the same extension can later manage `zer0-mistakes` and `bashconsultants` (which already share the frontmatter schema).

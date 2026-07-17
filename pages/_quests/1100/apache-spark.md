@@ -466,8 +466,4 @@ Cache only what you reuse; caching everything wastes memory and can slow you dow
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1100 - Data Engineering]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Requires:** [[ETL Pipeline Design: Build Scalable Data Pipelines with Python]]
-**Unlocks:** [[Stream Processing: Real-Time Data with Apache Kafka & Flink]] · [[Data Quality Engineering: Testing, Validation & Monitoring Frameworks]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1100 - Data Engineering]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Requires:** [[ETL Pipeline Design: Build Scalable Data Pipelines with Python]] **Unlocks:** [[Stream Processing: Real-Time Data with Apache Kafka & Flink]] · [[Data Quality Engineering: Testing, Validation & Monitoring Frameworks]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

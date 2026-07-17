@@ -276,9 +276,7 @@ class RequirementProcessor:
 
 **Step 3: Test your intake pipeline**
 
-First save the `RequirementProcessor` class above into `intake_agent.py` and add a
-`__main__` entry point that reads the request from stdin, so the module is runnable
-from the command line:
+First save the `RequirementProcessor` class above into `intake_agent.py` and add a `__main__` entry point that reads the request from stdin, so the module is runnable from the command line:
 
 ```python
 # intake_agent.py (append below the RequirementProcessor class)
@@ -594,7 +592,5 @@ Your newfound AI orchestration powers open several exciting paths:
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1011 - Feature Development]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1011 - Feature Development]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

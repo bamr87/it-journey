@@ -99,7 +99,5 @@ All content follows IT-Journey's core principles:
 
 ---
 
-**Last Updated:** 2025-01-13
-**Maintained by:** IT-Journey Community
-**Repository:** [github.com/bamr87/it-journey](https://github.com/bamr87/it-journey)
+**Last Updated:** 2025-01-13 **Maintained by:** IT-Journey Community **Repository:** [github.com/bamr87/it-journey](https://github.com/bamr87/it-journey)
 

@@ -480,9 +480,6 @@ Now an author who moves countries is updated in exactly one row. No anomalies, n
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0110 - Database Mastery]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Unlocks:** [[SQL Mastery: Query Language Proficiency for Data Professionals]] · [[Data Modeling: Schema Design and Database Relationships]] · [[Database Security: Access Control and Data Encryption]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0110 - Database Mastery]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Unlocks:** [[SQL Mastery: Query Language Proficiency for Data Professionals]] · [[Data Modeling: Schema Design and Database Relationships]] · [[Database Security: Access Control and Data Encryption]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 </content>
 </invoke>

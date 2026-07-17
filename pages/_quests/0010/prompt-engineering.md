@@ -378,8 +378,7 @@ Output: Return only the classification label (POSITIVE/NEGATIVE/NEUTRAL)."
 - Specified exact output format (prevents verbosity)
 - Removed ambiguity ("classify" → specific labels)
 
-**Kaizen Exercise**:
-Take this vague zero-shot prompt:
+**Kaizen Exercise**: Take this vague zero-shot prompt:
 ```javascript
 "Write a function to sort a list."
 ```
@@ -509,8 +508,7 @@ Step 5: What's the fix? [Add input validation]
 Solution: [AI provides corrected code with empty list check]"
 ```
 
-**CoT PDCA Application**:
-When using CoT, apply Kaizen to the reasoning steps themselves:
+**CoT PDCA Application**: When using CoT, apply Kaizen to the reasoning steps themselves:
 - **Plan**: Do the steps cover every part of the problem?
 - **Do**: Run the CoT prompt
 - **Check**: Did the AI follow all steps? Did it skip any?
@@ -1371,7 +1369,5 @@ Confirm your mastery by demonstrating:
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

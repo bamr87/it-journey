@@ -1,19 +1,13 @@
 # CLAUDE.md — Claude Code guide for IT-Journey
 
-IT-Journey is a **Jekyll** site (GitHub Pages, custom domain `it-journey.dev`): a
-gamified, open-source platform for learning IT and software development through
-**quests** (zer0 → her0). ~280 Markdown content files live under `pages/` across 5
-collections — **quests** (~204, the center of gravity), `docs` (~27), a slim
-`notes` set (~16), `quickstart` (~15), and `about` (~19), plus a few loose
-`pages/` files. The remote theme is `bamr87/zer0-mistakes`.
+IT-Journey is a **Jekyll** site (GitHub Pages, custom domain `it-journey.dev`): a gamified, open-source platform for learning IT and software development through **quests** (zer0 → her0). ~280 Markdown content files live under `pages/` across 5 collections — **quests** (~204, the center of gravity), `docs` (~27), a slim `notes` set (~16), `quickstart` (~15), and `about` (~19), plus a few loose `pages/` files. The remote theme is `bamr87/zer0-mistakes`.
 
 > **Recent overhaul:** the `_posts`/`_drafts` blog, `_notebooks`, and `_hobbies`
 > collections were removed. General blog content moved to **lifehacker.dev**
 > (`github.com/bamr87/lifehacker.dev`); the OverTheWire `wargames` docs (+
 > `scripts/docs-aggregator/`) were extracted to **`github.com/bamr87/wargames`**.
 
-This repo already has a deep instruction set written for Copilot/Cursor. **Read
-the right file for the task** instead of guessing — they are authoritative.
+This repo already has a deep instruction set written for Copilot/Cursor. **Read the right file for the task** instead of guessing — they are authoritative.
 
 ## Read-by-task-type (do this before editing)
 
@@ -28,31 +22,18 @@ the right file for the task** instead of guessing — they are authoritative.
 
 ## The AI-augmented CMS (this repo's content layer)
 
-The `.cms/` directory + `scripts/cms/cms.py` are the **content management
-system**: a full-coverage index of every content file with health scores,
-issues, and a daily worklist that splits work into **mechanical** (auto-fixable)
-and **substantive** (needs authoring) lanes.
+The `.cms/` directory + `scripts/cms/cms.py` are the **content management system**: a full-coverage index of every content file with health scores, issues, and a daily worklist that splits work into **mechanical** (auto-fixable) and **substantive** (needs authoring) lanes.
 
 ```bash
 make cms-status     # health dashboard by collection
 make cms-all        # rebuild .cms/index + .cms/reports/<date>.md + .cms/worklists/<date>.md
 ```
 
-To run an incremental content-improvement pass, **invoke the `cms-curator`
-skill** — it is the single source of loop behavior, used by both `/loop`
-locally and the daily CI workflow (`.github/workflows/cms-daily-loop.yml`).
-The future VS Code CMS extension (separate repo) reads `.cms/` too; see
-`docs/cms/EXTENSION_DESIGN.md` for the contract.
+To run an incremental content-improvement pass, **invoke the `cms-curator` skill** — it is the single source of loop behavior, used by both `/loop` locally and the daily CI workflow (`.github/workflows/cms-daily-loop.yml`). The future VS Code CMS extension (separate repo) reads `.cms/` too; see `docs/cms/EXTENSION_DESIGN.md` for the contract.
 
 ## The AI content fleet (Claude-Code-OAuth, on-brand, continuous)
 
-The substantive (Lane B) half of the CMS is executed by a **fleet of Claude Code
-agents** modeled on lifehacker.dev. All AI goes through one runner
-(`scripts/ai/run.sh` + `_data/ai.yml` + the `.github/actions/claude-run` step),
-authenticated by a `CLAUDE_CODE_OAUTH_TOKEN` secret. Roles are in
-`.claude/agents/*.md`; the `content-curator` skill composes the existing
-`cms-curator` + `brand-voice` skills. See **`scripts/ai/README.md`** for the full
-map and setup.
+The substantive (Lane B) half of the CMS is executed by a **fleet of Claude Code agents** modeled on lifehacker.dev. All AI goes through one runner (`scripts/ai/run.sh` + `_data/ai.yml` + the `.github/actions/claude-run` step), authenticated by a `CLAUDE_CODE_OAUTH_TOKEN` secret. Roles are in `.claude/agents/*.md`; the `content-curator` skill composes the existing `cms-curator` + `brand-voice` skills. See **`scripts/ai/README.md`** for the full map and setup.
 
 - `content-factory.yml` (daily) — `content-curator` improves one page per
   collection from the `.cms` worklist → one `auto:content` PR each.
@@ -62,52 +43,16 @@ map and setup.
 - `content-auto-merge.yml` — smuggle-guard (`classify_changes.py`, content-only) +
   checks-green → squash-merge.
 - `quest-forge.yml` (issue labeled `epic-quest` / `/forge-quest` comment) — the
-  `quest-forge` agent collects an epic-quest **proposal issue** deterministically
-  (`scripts/quest/forge_issue.py`) and authors a full `epic_quest` hub +
-  `bonus_quest` chapters in `pages/_quests/codex/` → one `auto:quest` PR. Closes the
-  loop with lifehacker.dev (its quest-forge hook files the proposal; this consumes it).
+`quest-forge` agent collects an epic-quest **proposal issue** deterministically (`scripts/quest/forge_issue.py`) and authors a full `epic_quest` hub + `bonus_quest` chapters in `pages/_quests/codex/` → one `auto:quest` PR. Closes the loop with lifehacker.dev (its quest-forge hook files the proposal; this consumes it).
 - `quest-idea-intake.yml` (issue labeled `quest-idea` / `/refine` comment) — the
-  **Quest Idea Forge** lane. The portal page (`pages/quest-ideas.md`, permalink
-  `/quests/ideas/`) shapes a visitor's quest idea client-side (registry-driven
-  autocomplete, duplicate radar, readiness meter that gates the submit button) and
-  files it through the `quest-idea.yml` issue form; the `idea-refiner` agent then
-  reviews it — deterministic floor first (`scripts/quest/idea_intake.py`: rubric
-  score, spam flags, duplicate radar; the model can only lower its verdict) → one
-  review comment + one `idea:ready`/`idea:needs-detail`/`idea:declined` label.
-  Never closes, never escalates; a human promotes a ready idea into quest-forge
-  by adding `epic-quest`.
+**Quest Idea Forge** lane. The portal page (`pages/quest-ideas.md`, permalink `/quests/ideas/`) shapes a visitor's quest idea client-side (registry-driven autocomplete, duplicate radar, readiness meter that gates the submit button) and files it through the `quest-idea.yml` issue form; the `idea-refiner` agent then reviews it — deterministic floor first (`scripts/quest/idea_intake.py`: rubric score, spam flags, duplicate radar; the model can only lower its verdict) → one review comment + one `idea:ready`/`idea:needs-detail`/`idea:declined` label. Never closes, never escalates; a human promotes a ready idea into quest-forge by adding `epic-quest`.
 - `quest-walkthrough.yml` (dispatch-only; the daily sweep is quest-perfection) —
-  walks one linked (character, level) quest slice **end-to-end in the runner
-  sandbox as a learner**: a deterministic workflow step runs the
-  `test/quest-validator/agentic_validate.py` execute engine and **seals** the
-  evidence (the engine can't run inside an agent — Claude Code scrubs auth env
-  vars from Bash-tool subprocesses, so its child `claude` processes would
-  auth-abort); the `quest-walker` agent then writes the session report, and a
-  report PR opens under `test/quest-validator/walkthroughs/`. Also uploads
-  session screenshots (rendered quest pages + a terminal render of the recorded
-  transcript, via `scripts/quest/walkthrough_screenshots.mjs`) as run artifacts.
-  Read-only over content; never merges.
+walks one linked (character, level) quest slice **end-to-end in the runner sandbox as a learner**: a deterministic workflow step runs the `test/quest-validator/agentic_validate.py` execute engine and **seals** the evidence (the engine can't run inside an agent — Claude Code scrubs auth env vars from Bash-tool subprocesses, so its child `claude` processes would auth-abort); the `quest-walker` agent then writes the session report, and a report PR opens under `test/quest-validator/walkthroughs/`. Also uploads session screenshots (rendered quest pages + a terminal render of the recorded transcript, via `scripts/quest/walkthrough_screenshots.mjs`) as run artifacts. Read-only over content; never merges.
 - `quest-perfection.yml` (daily) — the **autonomous quest-perfection loop**. For
-  every character path it walks the highest-priority not-yet-perfect (character,
-  level) slice (same sealed, workflow-minted evidence pattern as above), opens
-  **ONE consolidated** walkthroughs+ledger report PR per run, then `quest-fix.yml`
-  opens a **separate** content-only fix PR per granted slice that repairs only that
-  walkthrough's *verified* issues (kept solely on a deterministic signal — tier-1
-  score + brand lint + sandbox commands — never the model's own grade) →
-  auto-merges when green → repeats "until perfect". Each slice walks a **rotating
-  window** of `caps.max_quests_per_slice` quests (`.quests/budget.yml`, default 5)
-  via `walkthrough_plan.py --window` — a level holds 20–30 quests and walking them
-  all in one run exhausts the OAuth token's rate limit; the ledger accumulates
-  per-quest coverage across runs and only certifies `perfect` once the whole level
-  is swept + passing. A committed ledger + generated dashboard in `.quests/` are
-  the source of truth; staged kill switches `QUEST_PERFECTION_ENABLED`
-  (orchestrator) and `QUEST_FIX_ENABLED` (write lane).
+every character path it walks the highest-priority not-yet-perfect (character, level) slice (same sealed, workflow-minted evidence pattern as above), opens **ONE consolidated** walkthroughs+ledger report PR per run, then `quest-fix.yml` opens a **separate** content-only fix PR per granted slice that repairs only that walkthrough's *verified* issues (kept solely on a deterministic signal — tier-1 score + brand lint + sandbox commands — never the model's own grade) → auto-merges when green → repeats "until perfect". Each slice walks a **rotating window** of `caps.max_quests_per_slice` quests (`.quests/budget.yml`, default 5) via `walkthrough_plan.py --window` — a level holds 20–30 quests and walking them all in one run exhausts the OAuth token's rate limit; the ledger accumulates per-quest coverage across runs and only certifies `perfect` once the whole level is swept + passing. A committed ledger + generated dashboard in `.quests/` are the source of truth; staged kill switches `QUEST_PERFECTION_ENABLED` (orchestrator) and `QUEST_FIX_ENABLED` (write lane).
 - `agent-audit.yml` (weekly) — `agent-auditor` keeps the fleet accurate/least-privilege.
 
-**OFF by default.** Each workflow gates on a `*_ENABLED` repo variable **and** the
-auth secret, so nothing runs until you add `CLAUDE_CODE_OAUTH_TOKEN` and flip the
-variables. The old heuristic `ai-content-review.yml` (per-collection advisory
-issue spam) was **replaced** by this fleet + the deterministic brand gate.
+**OFF by default.** Each workflow gates on a `*_ENABLED` repo variable **and** the auth secret, so nothing runs until you add `CLAUDE_CODE_OAUTH_TOKEN` and flip the variables. The old heuristic `ai-content-review.yml` (per-collection advisory issue spam) was **replaced** by this fleet + the deterministic brand gate.
 
 ## Essential commands
 
@@ -120,40 +65,27 @@ make quest-audit      # quest content + dependency network validation
 make quest-data       # regenerate _data/quests/* after quest frontmatter edits
 ```
 
-Host Ruby cannot build this site (the `jekyll-theme-zer0` gem ≥1.21 needs Ruby
-≥3.2); use the Docker path documented in the `run-it-journey` skill.
+Host Ruby cannot build this site (the `jekyll-theme-zer0` gem ≥1.21 needs Ruby ≥3.2); use the Docker path documented in the `run-it-journey` skill.
 
 ## Non-negotiable conventions
 
 - **Frontmatter is CI-enforced.** Required: `title, description, date, author,
-  categories, tags`. `title` ≤ 60 chars; `description` 120–160; dates ISO-8601
-  with ms (`YYYY-MM-DDTHH:MM:SS.000Z`); `tags`/`categories` are YAML lists. The
-  PR will fail `frontmatter-validation` otherwise.
+categories, tags`. `title` ≤ 60 chars; `description` 120–160; dates ISO-8601 with ms (`YYYY-MM-DDTHH:MM:SS.000Z`); `tags`/`categories` are YAML lists. The PR will fail `frontmatter-validation` otherwise.
 - **Never commit to `main`.** Branch with the repo's prefixes
-  (`feature/ fix/ docs/ chore/ content/`) or `automated/cms-daily-<date>` for the
-  loop. Conventional Commits.
+(`feature/ fix/ docs/ chore/ content/`) or `automated/cms-daily-<date>` for the loop. Conventional Commits.
 - **Quests are registry-governed.** `_data/quests/*.yml` is generated from
-  `scripts/quest/quest_registry.py`; never hand-edit it. After changing quest
-  frontmatter run `make quest-data` or `quest-validation` CI fails on stale data.
+`scripts/quest/quest_registry.py`; never hand-edit it. After changing quest frontmatter run `make quest-data` or `quest-validation` CI fails on stale data.
 - **Vendored content is read-only.** Any upstream content carrying
   `source_repo`/`source_url` frontmatter is synced, never rewritten.
 - **Validate before you push.** `make build-ci` + `make content-audit` (+ `make
   quest-audit` if quests changed) must pass.
 - **UI/UX changes ship with before/after screenshots.** Any change that alters
-  rendered layout, styling, or interaction (CSS/SCSS, templates/includes, nav,
-  JS that affects the DOM) must include **before** and **after** screenshots in
-  the PR — at minimum a **mobile** viewport (≈390px), plus desktop when the
-  change affects it. Capture them by driving the running site (see the
-  `run-it-journey` skill); a labeled side-by-side comparison is preferred.
-  Commit the images under `TODO/screenshots/` (build-excluded) and embed them in
-  the PR body. State what to look for, and call out that no other viewport
-  regressed.
+rendered layout, styling, or interaction (CSS/SCSS, templates/includes, nav, JS that affects the DOM) must include **before** and **after** screenshots in the PR — at minimum a **mobile** viewport (≈390px), plus desktop when the change affects it. Capture them by driving the running site (see the `run-it-journey` skill); a labeled side-by-side comparison is preferred. Commit the images under `TODO/screenshots/` (build-excluded) and embed them in the PR body. State what to look for, and call out that no other viewport regressed.
 
 ## Repo map (quick)
 
 - `pages/_<collection>/` — all site content (quests, docs, notes, quickstart,
-  about; loose `pages/` files). The brand/voice system governs only `quests` and
-  `docs` (`_data/brand/sections/` holds just `quest.md` + `docs.md`).
+about; loose `pages/` files). The brand/voice system governs only `quests` and `docs` (`_data/brand/sections/` holds just `quest.md` + `docs.md`).
 - `_data/` — site data (quests/*, navigation/*, statistics). Much is generated.
 - `scripts/` — Python/Ruby/Bash tooling (cms, quest, validation, generation, …).
 - `.cms/` — CMS index, schema, reports, worklists (Jekyll-ignored).

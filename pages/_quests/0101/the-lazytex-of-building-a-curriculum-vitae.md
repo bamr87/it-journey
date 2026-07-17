@@ -60,24 +60,13 @@ mermaid: true
 ---
 ## 🧙‍♂️ Epic Introduction
 
-In the vast digital matrix where data flows like rivers of light, the guild calls you to forge your
-most enduring artifact: your Curriculum Vitae. This quest is a binary incantation at Level 0101
-(5)—a tool‑mastery adventure to craft a polished, ATS‑friendly CV using VS Code and LaTeX. Your
-primary artifact, the template `cv.tex`, awaits in your vault (e.g., `cv/cv.tex`). You will
-customize its runes (sections), compile it into a pristine PDF, and emerge with a battle‑ready
-professional codex.
+In the vast digital matrix where data flows like rivers of light, the guild calls you to forge your most enduring artifact: your Curriculum Vitae. This quest is a binary incantation at Level 0101 (5)—a tool‑mastery adventure to craft a polished, ATS‑friendly CV using VS Code and LaTeX. Your primary artifact, the template `cv.tex`, awaits in your vault (e.g., `cv/cv.tex`). You will customize its runes (sections), compile it into a pristine PDF, and emerge with a battle‑ready professional codex.
 
-You’ll master LaTeX Workshop in VS Code, install the proper TeX distribution for your realm,
-customize sections like Education, Professional Experience, Projects, and Skills, and verify
-clickable links and fonts. When the final spell completes, your CV will compile cleanly—ready to
-present to any council of hiring sages.
+You’ll master LaTeX Workshop in VS Code, install the proper TeX distribution for your realm, customize sections like Education, Professional Experience, Projects, and Skills, and verify clickable links and fonts. When the final spell completes, your CV will compile cleanly—ready to present to any council of hiring sages.
 
 ### 🌟 The Legend Behind This Quest
 
-Across realms, masters encode their journeys in machine‑readable scrolls that pass ATS trials.
-LaTeX transforms chaos into elegant structure and precise typography. With VS Code as your
-processing crystal, you’ll weave algorithmic layout spells into an artifact that compiles
-flawlessly on any platform.
+Across realms, masters encode their journeys in machine‑readable scrolls that pass ATS trials. LaTeX transforms chaos into elegant structure and precise typography. With VS Code as your processing crystal, you’ll weave algorithmic layout spells into an artifact that compiles flawlessly on any platform.
 
 ---
 
@@ -156,8 +145,7 @@ sudo apt-get install -y texlive-full
 
 ### 📱 Universal Web Path (Optional)
 
-If local toolchains are restricted, you can test in Overleaf, then return to VS Code to finalize.
-This quest focuses on local VS Code mastery.
+If local toolchains are restricted, you can test in Overleaf, then return to VS Code to finalize. This quest focuses on local VS Code mastery.
 
 ---
 
@@ -171,12 +159,9 @@ This quest focuses on local VS Code mastery.
 
 ### 🔧 Implementation: Verify the Forge
 
-Don't have `cv.tex` yet? Create it first from the self‑contained starter in
-[Chapter 2](#-chapter-2-summon-the-template-create-cvtex), then return here.
+Don't have `cv.tex` yet? Create it first from the self‑contained starter in [Chapter 2](#-chapter-2-summon-the-template-create-cvtex), then return here.
 
-Open VS Code → open the `cv/` folder → open `cv.tex`. Use the TeX sidebar (TeX icon) and run
-“Build LaTeX project”. If the build fails with missing packages, install them via your TeX package
-manager (`tlmgr` on macOS BasicTeX/TeX Live, MiKTeX on Windows).
+Open VS Code → open the `cv/` folder → open `cv.tex`. Use the TeX sidebar (TeX icon) and run “Build LaTeX project”. If the build fails with missing packages, install them via your TeX package manager (`tlmgr` on macOS BasicTeX/TeX Live, MiKTeX on Windows).
 
 Tip: LaTeX Workshop usually runs `latexmk -pdf`. You can also compile in a terminal:
 
@@ -188,10 +173,7 @@ latexmk -pdf cv.tex
 
 ## 🧙‍♂️ Chapter 2: Summon the Template (Create cv.tex)
 
-Your core artifact is `cv.tex`. Create it now: make a `cv/` folder, then save the
-starter below as `cv/cv.tex`. It is self‑contained—it uses only base TeX Live packages
-and defines the custom commands (`\resumeSubheading`, `\resumeItem`, and the list helpers)
-that you will use in Chapter 3, so it compiles cleanly with a stock LaTeX install.
+Your core artifact is `cv.tex`. Create it now: make a `cv/` folder, then save the starter below as `cv/cv.tex`. It is self‑contained—it uses only base TeX Live packages and defines the custom commands (`\resumeSubheading`, `\resumeItem`, and the list helpers) that you will use in Chapter 3, so it compiles cleanly with a stock LaTeX install.
 
 {% raw %}
 ```latex
@@ -259,8 +241,7 @@ cd cv
 latexmk -pdf cv.tex
 ```
 
-This produces `cv.pdf`. With the artifact in place, return to Chapter 1's build step—the
-VS Code "Build LaTeX project" button runs the same `latexmk -pdf` recipe on this file.
+This produces `cv.pdf`. With the artifact in place, return to Chapter 1's build step—the VS Code "Build LaTeX project" button runs the same `latexmk -pdf` recipe on this file.
 
 > **Optional upgrades:** once the base template compiles, you can add richer packages such
 > as `fontawesome5` (icons), `CormorantGaramond` (typeface), `multicol`, or a headshot via
@@ -285,8 +266,7 @@ Fill each school with `\resumeSubheading{Institution}{Dates}{Degree}{Location}` 
 
 ### Professional Experience
 
-For each role, use `\resumeSubheading{Company}{Dates}{Title}{Location}` and add quantified bullets
-with `\resumeItem{...}`. Keep 3–5 bullets per role.
+For each role, use `\resumeSubheading{Company}{Dates}{Title}{Location}` and add quantified bullets with `\resumeItem{...}`. Keep 3–5 bullets per role.
 
 ### Projects / Skills / Strengths
 
@@ -302,8 +282,7 @@ Example snippet (structure only):
   \resumeItemListEnd
 ```
 
-ATS Tip: Keep graphics minimal, keep text selectable, and ensure links use `\href{}`. The
-template already activates Unicode mapping.
+ATS Tip: Keep graphics minimal, keep text selectable, and ensure links use `\href{}`. The template already activates Unicode mapping.
 
 ---
 
@@ -495,7 +474,5 @@ Before you depart, ensure you can:
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0101 - Advanced Docker & DevOps]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0101 - Advanced Docker & DevOps]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

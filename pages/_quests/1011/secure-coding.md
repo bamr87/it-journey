@@ -476,8 +476,4 @@ bandit -r ./src --severity-level medium
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1011 - Security & Compliance]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Security Fundamentals: CIA Triad and Defense in Depth Strategies]]
-**Unlocks:** [[Threat Modeling: STRIDE Framework and Attack Trees Analysis]] · [[Penetration Testing: Tools and Ethical Hacking Methodologies]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1011 - Security & Compliance]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Security Fundamentals: CIA Triad and Defense in Depth Strategies]] **Unlocks:** [[Threat Modeling: STRIDE Framework and Attack Trees Analysis]] · [[Penetration Testing: Tools and Ethical Hacking Methodologies]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

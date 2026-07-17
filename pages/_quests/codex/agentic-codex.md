@@ -384,8 +384,4 @@ The conceptual companion to the chapters lives in the **GH-600 reference notes**
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study hub:** [[The Agentic Codex: GH-600 Study Hub]]
-**Chapters:** [[Initiation Rites: Agents in the SDLC]] · [[Forging the Arsenal: Tool Use & Environment]] · [[Vaults of Recollection: Memory & State]] · [[The Oracle Rubric: Evaluation & Tuning]] · [[The Council of Many: Multi-Agent Systems]] · [[The Warden Pact: Guardrails & Accountability]]
-**Capstone:** [[Trial of the Agentic Codex: The Grand Capstone]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]] **Study hub:** [[The Agentic Codex: GH-600 Study Hub]] **Chapters:** [[Initiation Rites: Agents in the SDLC]] · [[Forging the Arsenal: Tool Use & Environment]] · [[Vaults of Recollection: Memory & State]] · [[The Oracle Rubric: Evaluation & Tuning]] · [[The Council of Many: Multi-Agent Systems]] · [[The Warden Pact: Guardrails & Accountability]] **Capstone:** [[Trial of the Agentic Codex: The Grand Capstone]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

@@ -479,9 +479,4 @@ The agent now holds its weapons and stands inside the realm's walls — but it h
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Campaign hub:** [[Epic Quest: The Agentic Codex]]
-**Previous:** [[Agents in the SDLC]]
-**Next:** [[Memory, State & Execution]]
-**Domain 2 quests:** [[Forging the Agent's Arsenal: Tool Selection & Permissions]] · [[The MCP Conclave: Mastering Model Context Protocol Servers]] · [[Bind the Agent to the Realm: Dev Environment Integration]] · [[The Shield of Retries: Safe Execution and Error Handling]]
-**Reference doc:** [[MCP Servers and Agent Tooling in Practice]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Campaign hub:** [[Epic Quest: The Agentic Codex]] **Previous:** [[Agents in the SDLC]] **Next:** [[Memory, State & Execution]] **Domain 2 quests:** [[Forging the Agent's Arsenal: Tool Selection & Permissions]] · [[The MCP Conclave: Mastering Model Context Protocol Servers]] · [[Bind the Agent to the Realm: Dev Environment Integration]] · [[The Shield of Retries: Safe Execution and Error Handling]] **Reference doc:** [[MCP Servers and Agent Tooling in Practice]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

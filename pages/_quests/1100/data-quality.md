@@ -474,8 +474,4 @@ The same idea applies to null rates, value distributions, and freshness - watch 
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1100 - Data Engineering]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Requires:** [[ETL Pipeline Design: Build Scalable Data Pipelines with Python]]
-**Related:** [[Apache Spark Mastery: Big Data Processing with PySpark & Scala]] · [[Stream Processing: Real-Time Data with Apache Kafka & Flink]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1100 - Data Engineering]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Requires:** [[ETL Pipeline Design: Build Scalable Data Pipelines with Python]] **Related:** [[Apache Spark Mastery: Big Data Processing with PySpark & Scala]] · [[Stream Processing: Real-Time Data with Apache Kafka & Flink]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

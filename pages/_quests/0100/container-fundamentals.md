@@ -591,7 +591,4 @@ This is your on-ramp to the next quest, where Compose wires *several* containers
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0100 - Frontend & Containers]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Unlocks:** [[Docker Compose Orchestration: Build Multi-Container Applications]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0100 - Frontend & Containers]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Unlocks:** [[Docker Compose Orchestration: Build Multi-Container Applications]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

@@ -425,8 +425,4 @@ The cardinal rule: **a deploy you cannot undo is not a deploy, it's a gamble.** 
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0101 - CI/CD & DevOps]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Requires:** [[CI/CD Fundamentals: Continuous Integration and Continuous Deployment Essentials]] · [[Testing Integration: Automated Quality Assurance in CI/CD Pipelines]]
-**Unlocks:** [[Environment Management: Dev, Staging, and Production Configuration]] · [[Secrets Management: Secure Configuration and Credential Handling]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0101 - CI/CD & DevOps]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Requires:** [[CI/CD Fundamentals: Continuous Integration and Continuous Deployment Essentials]] · [[Testing Integration: Automated Quality Assurance in CI/CD Pipelines]] **Unlocks:** [[Environment Management: Dev, Staging, and Production Configuration]] · [[Secrets Management: Secure Configuration and Credential Handling]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

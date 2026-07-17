@@ -242,6 +242,4 @@ graph LR
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph.*
 
-**Campaign hub:** [[Epic Quest: The Ouroboros Loop]]
-**Previous:** [[Summon the Golem]] · **Next:** [[The Mana Ledger]]
-**Level home:** [[Level 1011 - Security & Compliance]]
+**Campaign hub:** [[Epic Quest: The Ouroboros Loop]] **Previous:** [[Summon the Golem]] · **Next:** [[The Mana Ledger]] **Level home:** [[Level 1011 - Security & Compliance]]

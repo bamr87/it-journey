@@ -135,8 +135,7 @@ This 🟡 Medium quest expects:
 
 ### ☁️ Cloud Realms Path
 
-*[Cloud platform instructions for AWS, Azure, GCP when applicable]*
-*[Container-based approaches using Docker/Podman]*
+*[Cloud platform instructions for AWS, Azure, GCP when applicable]* *[Container-based approaches using Docker/Podman]*
 
 ```bash
 # Cloud platform commands and configurations
@@ -169,8 +168,7 @@ Follow these step-by-step instructions to build your foundation:
 3. **First Implementation** - Create your first working example using hands-on techniques
 4. **Validation** - Verify your setup and understanding through practical exercises
 
-Create a file named `Dockerfile` (no extension) with the minimal, runnable image below.
-Every Dockerfile needs at least a `FROM` base image and an instruction to run:
+Create a file named `Dockerfile` (no extension) with the minimal, runnable image below. Every Dockerfile needs at least a `FROM` base image and an instruction to run:
 
 ```dockerfile
 # Dockerfile — a minimal, runnable image
@@ -315,7 +313,5 @@ Your newfound docker powers open several paths:
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0101 - Advanced Docker & DevOps]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0101 - Advanced Docker & DevOps]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

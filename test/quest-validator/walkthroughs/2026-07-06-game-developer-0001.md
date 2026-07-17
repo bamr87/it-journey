@@ -19,54 +19,28 @@ session:
 
 ## 🎯 Session Summary
 
-I walked a **5-quest window** (window 3 of 6) of the **Game Developer → Level 0001
-(Web Fundamentals, Apprentice 🌱)** slice as a learner would, in plan order, backed
-by the workflow's sealed execute-engine evidence (`walk-evidence.json`). The window
-is **26 quests deep in total**; this run covers 5 of them, so the level is not yet
-fully swept.
+I walked a **5-quest window** (window 3 of 6) of the **Game Developer → Level 0001 (Web Fundamentals, Apprentice 🌱)** slice as a learner would, in plan order, backed by the workflow's sealed execute-engine evidence (`walk-evidence.json`). The window is **26 quests deep in total**; this run covers 5 of them, so the level is not yet fully swept.
 
-**Headline verdict: FAIL.** The window's flagship main quest — *Forging the Stats
-Portal* — cannot be completed by following its steps verbatim: the execute engine
-verified **three chained, reproducible bugs** in the centerpiece Ruby generator
-(missing `require 'time'`, wrong site-root path depth, and `YAML.safe_load` rejecting
-standard Jekyll dates) that keep `total_posts` at 0 and make the documented "Expected
-Output" unreachable. A second main quest — *Forge Your Character* — **could not be
-scored at all** (the engine hit its 40-turn ceiling and aborted), which is a coverage
-gap, not a clean pass. The Contributor-arc side quests (*Avatar Forge* passed 88,
-*Badge Collector* warned 64) are structurally sound; *Terminal Mastery* warned (60)
-on real but non-blocking file-continuity and grep-case bugs. A maintainer should
-treat *Stating the Stats* as the priority fix and re-run the walkthrough for *Forge
-Your Character* to close the evidence gap.
+**Headline verdict: FAIL.** The window's flagship main quest — *Forging the Stats Portal* — cannot be completed by following its steps verbatim: the execute engine verified **three chained, reproducible bugs** in the centerpiece Ruby generator (missing `require 'time'`, wrong site-root path depth, and `YAML.safe_load` rejecting standard Jekyll dates) that keep `total_posts` at 0 and make the documented "Expected Output" unreachable. A second main quest — *Forge Your Character* — **could not be scored at all** (the engine hit its 40-turn ceiling and aborted), which is a coverage gap, not a clean pass. The Contributor-arc side quests (*Avatar Forge* passed 88, *Badge Collector* warned 64) are structurally sound; *Terminal Mastery* warned (60) on real but non-blocking file-continuity and grep-case bugs. A maintainer should treat *Stating the Stats* as the priority fix and re-run the walkthrough for *Forge Your Character* to close the evidence gap.
 
 ## 🗺️ The Journey
 
 Plan order (dependency-sorted window), with the sealed engine verdict per quest:
 
 1. ❌ **Forging the Stats Portal: Data Analytics Quest** — `48` · main_quest ·
-   Well-built Bootstrap/Liquid page, but the centerpiece Ruby script fails as written
-   with three chained bugs; a learner can't reach the stated output without debugging
-   Ruby/Psych internals the quest never mentions.
+Well-built Bootstrap/Liquid page, but the centerpiece Ruby script fails as written with three chained bugs; a learner can't reach the stated output without debugging Ruby/Psych internals the quest never mentions.
 2. ⚠️ **Terminal Mastery: Conquering the Command-Line Realm** — `60` · main_quest ·
-   Most commands genuinely work; the flagship `grep "terminal"` returns nothing
-   (case mismatch), several Chapter 3 `cp`/`mv` targets are never created, and the
-   stated Process-Management objective is essentially uncovered.
+Most commands genuinely work; the flagship `grep "terminal"` returns nothing (case mismatch), several Chapter 3 `cp`/`mv` targets are never created, and the stated Process-Management objective is essentially uncovered.
 3. ❌/⚠️ **Forge Your Character: Crafting Your Contributor Identity** — *no score* ·
-   main_quest · **Engine aborted (max 40 turns reached, `claude exited 1`)** — this is
-   a harness/coverage failure, **not** a verified content verdict. Reasoned-only below.
+main_quest · **Engine aborted (max 40 turns reached, `claude exited 1`)** — this is a harness/coverage failure, **not** a verified content verdict. Reasoned-only below.
 4. ✅ **Avatar Forge: Crafting Your Digital Portrait** — `88` · side_quest ·
-   Short, safe, technically correct; YAML edits and `mkdir`/`cp` work as described.
-   Only gap: an unexplained "fallback" validation criterion.
+Short, safe, technically correct; YAML edits and `mkdir`/`cp` work as described. Only gap: an unexplained "fallback" validation criterion.
 5. ⚠️ **Badge Collector: Showcasing Your Achievements** — `64` · side_quest ·
-   Internally consistent badge catalog and safe commands, but its two runnable
-   snippets couldn't be verified in the isolated sandbox (no IT-Journey repo /
-   Makefile / Bundler, no network), plus an undefined `YOUR_USERNAME` and no sample
-   badges YAML.
+Internally consistent badge catalog and safe commands, but its two runnable snippets couldn't be verified in the isolated sandbox (no IT-Journey repo / Makefile / Bundler, no network), plus an undefined `YOUR_USERNAME` and no sample badges YAML.
 
 ## 🔬 Evidence
 
-All command results below come from the workflow-sealed **execute-mode** engine
-(`walk-evidence.json`), which sandboxes each quest in a disposable temp dir and runs
-its safe snippets for real. Snippet coverage is quoted as `ran/runnable`.
+All command results below come from the workflow-sealed **execute-mode** engine (`walk-evidence.json`), which sandboxes each quest in a disposable temp dir and runs its safe snippets for real. Snippet coverage is quoted as `ran/runnable`.
 
 ### 1. Forging the Stats Portal — `48` ❌ (ran 8 snippets, 4 passed / 4 failed; 5 runnable, 6 reasoned)
 - **`commands_work` = 1/5 (verified `failed`):**
@@ -85,8 +59,7 @@ its safe snippets for real. Snippet coverage is quoted as `ran/runnable`.
     the algorithm is sound, the printed code is not runnable.
   - The "Expected Output" (`Total posts: 76`) is **unreachable** by following the steps.
 - **`content_accuracy` = 2 (reasoned/verified):** the three bugs are factual API/path
-  errors; the "sort filter" Knowledge Check references a filter that appears nowhere
-  in the shown template; the `nil:NilClass` troubleshooting block is mis-fenced as
+errors; the "sort filter" Knowledge Check references a filter that appears nowhere in the shown template; the `nil:NilClass` troubleshooting block is mis-fenced as
   ```` ```yaml ````.
 - **What *works* (verified):** the Chapter 3 `pages/stats.md` Liquid/Bootstrap
   template renders without Liquid errors against realistic sample data (checked with

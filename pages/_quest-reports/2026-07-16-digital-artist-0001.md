@@ -37,48 +37,28 @@ source_report: test/quest-validator/walkthroughs/2026-07-16-digital-artist-0001.
 
 ## 🎯 Session Summary
 
-Walked a **5-quest window** (window 1 of 6; the full Level 0001 slice is 26 quests)
-of the **Digital Artist (UI/UX)** path at level **0001 — Web Fundamentals** as a
-learner, using the sealed execute-mode evidence the workflow pre-computed. The three
-quests the engine scored are **technically solid**: every locally-runnable command in
-GitHub Pages Basics (82), Jekyll Fundamentals (88), and Git Workflow Mastery (80) was
-actually executed in a disposable Jekyll sandbox and behaved as documented — no broken
-commands, no unsafe steps. Average score across the scored quests is **83.3%**.
+Walked a **5-quest window** (window 1 of 6; the full Level 0001 slice is 26 quests) of the **Digital Artist (UI/UX)** path at level **0001 — Web Fundamentals** as a learner, using the sealed execute-mode evidence the workflow pre-computed. The three quests the engine scored are **technically solid**: every locally-runnable command in GitHub Pages Basics (82), Jekyll Fundamentals (88), and Git Workflow Mastery (80) was actually executed in a disposable Jekyll sandbox and behaved as documented — no broken commands, no unsafe steps. Average score across the scored quests is **83.3%**.
 
-The headline verdict is **WARN, not PASS**, for one honest reason: **2 of the 5
-planned quests have no execute evidence at all** — `yaml-configuration` and
-`liquid-templating` both hit the engine's `max_turns` limit (40) and returned no
-verdict (`overall: 0.0`, `verdict: "fail"`). That is a **harness/engine exhaustion**,
-**not** an observed content defect — I did not witness those quests fail, so I refuse
-to report them as passing *or* as genuinely failing. They are reasoned about
-statically below and flagged as **uncovered**. A maintainer should treat this slice as
-60% machine-verified.
+The headline verdict is **WARN, not PASS**, for one honest reason: **2 of the 5 planned quests have no execute evidence at all** — `yaml-configuration` and `liquid-templating` both hit the engine's `max_turns` limit (40) and returned no verdict (`overall: 0.0`, `verdict: "fail"`). That is a **harness/engine exhaustion**, **not** an observed content defect — I did not witness those quests fail, so I refuse to report them as passing *or* as genuinely failing. They are reasoned about statically below and flagged as **uncovered**. A maintainer should treat this slice as 60% machine-verified.
 
 ## 🗺️ The Journey
 
-Plan order (as `walk-plan.json` selected — note this window is **not** dependency-sorted;
-see Chain Continuity):
+Plan order (as `walk-plan.json` selected — note this window is **not** dependency-sorted; see Chain Continuity):
 
 1. ✅ **GitHub Pages Basics: Host Your Jekyll Site for Free** — **82** · every baseurl /
-   `relative_url` / `JEKYLL_ENV=production` / `gh api :owner` path ran clean; docked for
-   a stated-but-undelivered "GitHub Actions Build" objective and no plugin-safelist warning.
+`relative_url` / `JEKYLL_ENV=production` / `gh api :owner` path ran clean; docked for a stated-but-undelivered "GitHub Actions Build" objective and no plugin-safelist warning.
 2. ✅ **Jekyll Fundamentals: Build Static Sites with Ruby** — **88** · strongest quest;
-   install → `jekyll new` → serve → collections → build all verified live; the one real
-   failure is `remote_theme` silently no-op'ing without the unmentioned `jekyll-remote-theme` plugin.
+install → `jekyll new` → serve → collections → build all verified live; the one real failure is `remote_theme` silently no-op'ing without the unmentioned `jekyll-remote-theme` plugin.
 3. ❌ **YAML Configuration: Site Settings Mastery** — **no verdict** · engine hit
    `max_turns` (40); **no commands recorded**. Reasoned-only below — treat as **uncovered**.
 4. ✅ **Git Workflow Mastery: Branches, Merging & Team Collaboration** — **80** · branch/commit/push,
-   true merge-commit vs rebase, and a hand-built conflict all reproduced exactly; docked for
-   no `gh auth login` step and `git revert` named-but-never-shown.
+true merge-commit vs rebase, and a hand-built conflict all reproduced exactly; docked for no `gh auth login` step and `git revert` named-but-never-shown.
 5. ❌ **Liquid Templating: Dynamic Content for Jekyll Sites** — **no verdict** · engine hit
-   `max_turns` (40) after a sandbox permission denial on a background `jekyll serve --livereload`;
-   **no commands recorded**. Reasoned-only below — treat as **uncovered**.
+`max_turns` (40) after a sandbox permission denial on a background `jekyll serve --livereload`; **no commands recorded**. Reasoned-only below — treat as **uncovered**.
 
 ## 🔬 Evidence
 
-All command outcomes below come verbatim from the sealed `walk-evidence.json`
-(execute mode, real sandbox). I ran no engine myself; I read the quest sources and the
-sealed evidence.
+All command outcomes below come verbatim from the sealed `walk-evidence.json` (execute mode, real sandbox). I ran no engine myself; I read the quest sources and the sealed evidence.
 
 ### 1. GitHub Pages Basics — 82 / pass · ran 9/7 runnable snippets (9 passed, 0 failed, 1 skipped, 3 reasoned)
 - `git init && git add . && git commit -m "Initial site"` on a real `jekyll new` scaffold → **passed** (7 files committed, exit 0).
@@ -112,8 +92,7 @@ sealed evidence.
 
 ## 🐞 Issues Found
 
-Every item below is either engine-observed (cites a recorded command result) or, where
-marked **reasoned**, a static read of the quest source with the quoted line — never invented.
+Every item below is either engine-observed (cites a recorded command result) or, where marked **reasoned**, a static read of the quest source with the quoted line — never invented.
 
 **High**
 - **[GitHub Pages Basics] · Chapter 1 / secondary objective** — *observed (content_accuracy/completeness)*: the objective "**GitHub Actions Build** — Understand how Pages can build Jekyll automatically" (line 114) is listed but **no chapter ever explains the Settings → Pages → Source: GitHub Actions path**; only "Deploy from a branch" is covered. Fix: add a short GitHub Actions section or drop the objective/mastery indicator.
@@ -142,47 +121,22 @@ marked **reasoned**, a static read of the quest source with the quoted line — 
 Reasoning about the window as one journey a Digital-Artist learner would actually take:
 
 - **Window order ≠ learning order.** The plan walks **GitHub Pages Basics first**, but
-  its own frontmatter lists `required_quests: /quests/0001/jekyll-fundamentals/` and its
-  prose opens *"You forged a Jekyll site in the workshop…"* — you cannot host a site you
-  haven't built. The dependency spine is **jekyll-fundamentals → {yaml-configuration,
-  liquid-templating, github-pages-basics} → git-workflow-mastery**. This is expected for a
-  date-rotated **window** (offset 5 of a 26-quest level, not a topological cut), but a
-  learner following this window's *listed* order verbatim would start in the wrong place.
-  Not a content bug — an ordering caveat for anyone reading the window as a syllabus.
+its own frontmatter lists `required_quests: /quests/0001/jekyll-fundamentals/` and its prose opens *"You forged a Jekyll site in the workshop…"* — you cannot host a site you haven't built. The dependency spine is **jekyll-fundamentals → {yaml-configuration, liquid-templating, github-pages-basics} → git-workflow-mastery**. This is expected for a date-rotated **window** (offset 5 of a 26-quest level, not a topological cut), but a learner following this window's *listed* order verbatim would start in the wrong place. Not a content bug — an ordering caveat for anyone reading the window as a syllabus.
 - **Shared "my-castle" scaffold holds the chain together.** Every quest assumes the same
-  `my-castle` Jekyll site from Jekyll Fundamentals (verified: the engine reused one scaffold
-  across quests). Naming and setup are consistent — good continuity once the learner has done
-  Jekyll Fundamentals first.
+`my-castle` Jekyll site from Jekyll Fundamentals (verified: the engine reused one scaffold across quests). Naming and setup are consistent — good continuity once the learner has done Jekyll Fundamentals first.
 - **Cross-quest `remote_theme` inconsistency.** Jekyll Fundamentals Ch4 introduces
-  `remote_theme: "bamr87/zer0-mistakes"` **without** mentioning the `jekyll-remote-theme`
-  plugin (verified: silent no-op). The very plugin that fixes it only appears later, in
-  **YAML Configuration** Ch4's plugin list. A learner hitting the silent failure in quest 2
-  gets no pointer forward; the two quests should cross-reference. Evidence: the one FAILED
-  command in the whole session.
+`remote_theme: "bamr87/zer0-mistakes"` **without** mentioning the `jekyll-remote-theme` plugin (verified: silent no-op). The very plugin that fixes it only appears later, in **YAML Configuration** Ch4's plugin list. A learner hitting the silent failure in quest 2 gets no pointer forward; the two quests should cross-reference. Evidence: the one FAILED command in the whole session.
 - **Unstated GitHub-account/auth prerequisite spans two quests.** Both GitHub Pages Basics
-  and Git Workflow Mastery assume an authenticated GitHub session and an existing `origin`
-  remote, yet neither walks `gh auth login` or remote creation (both defer implicitly to
-  `/quests/0000/git-basics/`, which is *recommended* but **outside this window**). Evidence:
-  `gh auth status` → "not logged in"; `gh pr` and publish steps were the exact commands the
-  engine could not complete. A learner who jumped straight into level 0001 gets stuck at the
-  "last mile" of both quests.
+and Git Workflow Mastery assume an authenticated GitHub session and an existing `origin` remote, yet neither walks `gh auth login` or remote creation (both defer implicitly to `/quests/0000/git-basics/`, which is *recommended* but **outside this window**). Evidence: `gh auth status` → "not logged in"; `gh pr` and publish steps were the exact commands the engine could not complete. A learner who jumped straight into level 0001 gets stuck at the "last mile" of both quests.
 - **Concepts reinforce well where they overlap.** `baseurl`/`relative_url`,
-  `JEKYLL_ENV=production`, and `_config.yml,_config_dev.yml` layering recur across
-  Jekyll Fundamentals, YAML Configuration, and GitHub Pages Basics with consistent syntax —
-  good spaced repetition for the tier.
+`JEKYLL_ENV=production`, and `_config.yml,_config_dev.yml` layering recur across Jekyll Fundamentals, YAML Configuration, and GitHub Pages Basics with consistent syntax — good spaced repetition for the tier.
 - **Chain coverage is only 60% machine-verified.** Two of the five links (YAML, Liquid) have
-  no execute evidence, so I cannot certify that quest 2→3 or 4→5 hand-offs actually work end
-  to end this session. The dependency *declarations* are coherent; the *executed* proof is
-  partial.
+no execute evidence, so I cannot certify that quest 2→3 or 4→5 hand-offs actually work end to end this session. The dependency *declarations* are coherent; the *executed* proof is partial.
 
 ## 🧠 Reasoning & Method
 
 - **What I ran vs. reasoned:** I ran **no** engine myself. The evidence is the sealed
-  `walk-evidence.json` / `walk-evidence.md` the workflow pre-computed in a deterministic
-  execute-mode step (the engine's child `claude` processes can't authenticate from an
-  agent's Bash tool). I consumed those files **as-is**, then read all five quest sources in
-  plan order and reasoned about the linked journey. Every "passed"/"failed" above is quoted
-  from the sealed evidence; everything I judged from source alone is marked **reasoned**.
+`walk-evidence.json` / `walk-evidence.md` the workflow pre-computed in a deterministic execute-mode step (the engine's child `claude` processes can't authenticate from an agent's Bash tool). I consumed those files **as-is**, then read all five quest sources in plan order and reasoned about the linked journey. Every "passed"/"failed" above is quoted from the sealed evidence; everything I judged from source alone is marked **reasoned**.
 - **Mode:** `execute` (disposable sandbox), as recorded in the evidence. Not review-only,
   not `--mock`.
 - **Coverage limits (stated plainly):**
@@ -199,8 +153,6 @@ Reasoning about the window as one journey a Digital-Artist learner would actuall
     were correctly skipped — not counted against the quests.
   - Windows/macOS platform blocks were skipped on the Linux sandbox (reasoned, not tested).
 - **Confidence:** **High** for the three scored quests — their commands were genuinely
-  executed and the recommendations align with the quest rubric's dimensions. **Low** for
-  YAML Configuration and Liquid Templating — no evidence gathered; treat my notes there as
-  hypotheses to verify, not findings.
+executed and the recommendations align with the quest rubric's dimensions. **Low** for YAML Configuration and Liquid Templating — no evidence gathered; treat my notes there as hypotheses to verify, not findings.
 - **Scope discipline:** one slice, one report. No quest content was edited; no other
   character/level was touched. The caller handles git.

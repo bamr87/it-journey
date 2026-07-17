@@ -298,8 +298,7 @@ Before proceeding, ensure you can:
 
 ### 🗺️ Creating Your Value Stream Map
 
-**Step 1: Choose a Process to Map**
-Select one workflow to visualize (e.g., "Feature request → Production deployment")
+**Step 1: Choose a Process to Map** Select one workflow to visualize (e.g., "Feature request → Production deployment")
 
 **Step 2: Map Current State**
 ```mermaid
@@ -320,14 +319,12 @@ graph LR
 - **Waste Time**: Waiting, handoffs, rework (12 days)
 - **Efficiency**: 4/16 = 25%
 
-**Step 4: Design Future State**
-Apply Kaizen improvements to eliminate the biggest wastes:
+**Step 4: Design Future State** Apply Kaizen improvements to eliminate the biggest wastes:
 - Automate code quality checks → reduce review time
 - Implement feature flags → reduce QA bottleneck
 - Set up CI/CD → automate deployment
 
-**Step 5: Implement Incrementally**
-Don't try to fix everything at once! Use PDCA cycles:
+**Step 5: Implement Incrementally** Don't try to fix everything at once! Use PDCA cycles:
 1. Week 1-2: Automate linting
 2. Week 3-4: Add automated tests
 3. Week 5-6: Set up continuous deployment
@@ -367,8 +364,7 @@ Before proceeding, ensure you can:
 ### 🏗️ Building a Kaizen Culture
 
 #### **Principle 1: Everyone is an Improver**
-Traditional hierarchy says: "Managers improve processes, workers execute."
-Kaizen teaches: "Those closest to the work know best how to improve it."
+Traditional hierarchy says: "Managers improve processes, workers execute." Kaizen teaches: "Those closest to the work know best how to improve it."
 
 **Practical Application**:
 ```markdown
@@ -425,8 +421,7 @@ Bestow the **Amulet of Blamelessness** upon your fellowship:
 
 #### **Principle 3: Kaizen Events - Focused Improvement Sprints**
 
-**What is a Kaizen Event?**
-A dedicated 2-5 day sprint where a cross-functional team tackles a specific improvement opportunity.
+**What is a Kaizen Event?** A dedicated 2-5 day sprint where a cross-functional team tackles a specific improvement opportunity.
 
 **Example Kaizen Event**: "Reduce Deployment Time by 50%"
 
@@ -604,8 +599,7 @@ Kaizen Improvements:
 
 ### 🤖 Progressive Automation - The Kaizen Way
 
-**Anti-Pattern**: "Let's automate everything at once!"
-**Kaizen Pattern**: "What's the smallest automation that provides value?"
+**Anti-Pattern**: "Let's automate everything at once!" **Kaizen Pattern**: "What's the smallest automation that provides value?"
 
 #### **Automation Ladder** (Climb one step at a time)
 
@@ -995,9 +989,7 @@ Congratulations, Code Alchemist! Upon completing this epic journey, you have ear
 - Blameless post-mortem templates
 
 ### 📈 Your Journey Progress
-**Previous Skills**: Understanding of software development processes
-**Current Mastery**: Ability to continuously improve any process, team, or system
-**Next Adventures**: Lean Software Development, Six Sigma for Tech, Organizational Change Management
+**Previous Skills**: Understanding of software development processes **Current Mastery**: Ability to continuously improve any process, team, or system **Next Adventures**: Lean Software Development, Six Sigma for Tech, Organizational Change Management
 
 ## 🔮 Your Next Epic Adventures
 
@@ -1266,7 +1258,5 @@ A successful improvement will:
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 001 - Journeyman Challenges]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 001 - Journeyman Challenges]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

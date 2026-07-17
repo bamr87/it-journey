@@ -419,7 +419,4 @@ Delegate the outcome, not the steps. Set the guardrails ("must ship by Friday, m
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1111: Leadership & Innovation]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Unlocks:** [[Mentorship Programs: Developing and Growing Engineering Talent]] · [[Architecture Reviews: Leading Technical Design Discussions]] · [[Career Advancement Strategies: Growing from Engineer to Leader]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1111: Leadership & Innovation]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Unlocks:** [[Mentorship Programs: Developing and Growing Engineering Talent]] · [[Architecture Reviews: Leading Technical Design Discussions]] · [[Career Advancement Strategies: Growing from Engineer to Leader]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

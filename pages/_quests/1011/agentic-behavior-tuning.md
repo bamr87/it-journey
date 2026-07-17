@@ -249,11 +249,5 @@ test -f docs/agent-instructions/CHANGELOG.md \
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1011 - Feature Development]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
-**Prerequisites:** [[The Necromancer's Inquest: Agent Failure Root Cause Analysis]]
-**Unlocks:** [[The Council of Many: Multi-Agent Orchestration Patterns]]
-**Sequel quests:** [[The Council of Many: Multi-Agent Orchestration Patterns]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1011 - Feature Development]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] **Prerequisites:** [[The Necromancer's Inquest: Agent Failure Root Cause Analysis]] **Unlocks:** [[The Council of Many: Multi-Agent Orchestration Patterns]] **Sequel quests:** [[The Council of Many: Multi-Agent Orchestration Patterns]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

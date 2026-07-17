@@ -474,8 +474,4 @@ A runbook turns a panicked guess into a checklist. After the incident, a blamele
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1010 - Monitoring & Observability]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Requires:** [[Monitoring Fundamentals: Metrics, Logs, and Traces for Observability]]
-**Unlocks:** [[Security Fundamentals: CIA Triad and Defense in Depth Strategies]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1010 - Monitoring & Observability]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Requires:** [[Monitoring Fundamentals: Metrics, Logs, and Traces for Observability]] **Unlocks:** [[Security Fundamentals: CIA Triad and Defense in Depth Strategies]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

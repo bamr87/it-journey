@@ -425,8 +425,4 @@ Then connect it back to the vision and the reversibility rule from earlier quest
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1111: Leadership & Innovation]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Career Advancement: IC vs Management Tracks, Leveling, and Negotiation]]
-**Related quests:** [[Technical Leadership: Leading Without Authority and Setting Tech Vision]] · [[Tech Speaking and Writing: RFCs, Design Docs, and Talks That Persuade]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1111: Leadership & Innovation]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Career Advancement: IC vs Management Tracks, Leveling, and Negotiation]] **Related quests:** [[Technical Leadership: Leading Without Authority and Setting Tech Vision]] · [[Tech Speaking and Writing: RFCs, Design Docs, and Talks That Persuade]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

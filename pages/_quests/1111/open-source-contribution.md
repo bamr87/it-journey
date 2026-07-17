@@ -405,8 +405,4 @@ The big distinction: **permissive** licenses (MIT, Apache) let anyone do almost 
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1111: Leadership & Innovation]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Tech Speaking and Writing: RFCs, Design Docs, and Talks That Persuade]]
-**Unlocks:** [[Building Technical Communities: Growing Developer Ecosystems]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1111: Leadership & Innovation]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Tech Speaking and Writing: RFCs, Design Docs, and Talks That Persuade]] **Unlocks:** [[Building Technical Communities: Growing Developer Ecosystems]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

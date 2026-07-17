@@ -504,7 +504,4 @@ Three ideas you just used:
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0001 - Web Fundamentals]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Unlocks:** [[Jekyll Plugins]] · [[Analytics Integration]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0001 - Web Fundamentals]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Unlocks:** [[Jekyll Plugins]] · [[Analytics Integration]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

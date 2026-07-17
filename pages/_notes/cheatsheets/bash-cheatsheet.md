@@ -40,8 +40,7 @@ redirect_from:
 - [Terminal and Bash Learning Path](/docs/terminal/) - Follow the full path from command basics to Bash scripting.
 - [Complete BASH Reference](/docs/bash-complete-reference/) - Use when you need deeper detail than a cheatsheet can hold.
 
-Getting started
-{: .cols-3 }
+Getting started {: .cols-3 }
 
 ---------------
 

@@ -438,8 +438,7 @@ With your character fully defined, you're ready to:
 
 *Your character is built, your quest log is ready, and your adventure awaits! Remember: every expert was once a beginner, but the difference between those who succeed and those who don't is the clarity of vision and consistency of action. You now have both.*
 
-**Ready to begin your specialization training? Your character awaits their first real challenge!** ⚔️✨
-A wise approach indeed! Building your character in the IT realm means equipping yourself with the right tools and environment. Let's shape your initial loadout:
+**Ready to begin your specialization training? Your character awaits their first real challenge!** ⚔️✨ A wise approach indeed! Building your character in the IT realm means equipping yourself with the right tools and environment. Let's shape your initial loadout:
 
 ### 1. **Choosing Your Operating System**
 
@@ -505,11 +504,5 @@ By preparing your environment and tools, you're setting the stage for a successf
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0000 - Foundation & Init World]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Hello n00b: Your First Steps into the IT Journey]]
-**Recommended:** [[Begin your IT Journey]]
-**Unlocks:** [[Character Selection]] · [[OS Selection]]
-**Sequel quests:** [[Character Selection]] · [[OS Selection]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0000 - Foundation & Init World]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Hello n00b: Your First Steps into the IT Journey]] **Recommended:** [[Begin your IT Journey]] **Unlocks:** [[Character Selection]] · [[OS Selection]] **Sequel quests:** [[Character Selection]] · [[OS Selection]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

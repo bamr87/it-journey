@@ -303,11 +303,5 @@ python3 scripts/validate_quest.py --quest q17
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1100 - Data & Templates]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
-**Prerequisites:** [[When Familiars Fall: Multi-Agent Failure Recovery]]
-**Unlocks:** [[The Autonomy Scales: Mapping Agent Autonomy Levels]]
-**Sequel quests:** [[The Autonomy Scales: Mapping Agent Autonomy Levels]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1100 - Data & Templates]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] **Prerequisites:** [[When Familiars Fall: Multi-Agent Failure Recovery]] **Unlocks:** [[The Autonomy Scales: Mapping Agent Autonomy Levels]] **Sequel quests:** [[The Autonomy Scales: Mapping Agent Autonomy Levels]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

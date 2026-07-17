@@ -38,11 +38,7 @@
 
 ## Words to cut
 
-Empty hype (flagged by the engine; see [`glossary.yml`](glossary.yml) →
-`discouraged`): **comprehensive, powerful, seamless, cutting-edge, revolutionary,
-game-changing, effortless.** Trim a long description by removing words, never with
-an ellipsis. Canonical spellings (GitHub, JavaScript, CI/CD, VS Code, Node.js,
-Docker Compose) live in `glossary.yml` and are enforced.
+Empty hype (flagged by the engine; see [`glossary.yml`](glossary.yml) → `discouraged`): **comprehensive, powerful, seamless, cutting-edge, revolutionary, game-changing, effortless.** Trim a long description by removing words, never with an ellipsis. Canonical spellings (GitHub, JavaScript, CI/CD, VS Code, Node.js, Docker Compose) live in `glossary.yml` and are enforced.
 
 ## Safety
 

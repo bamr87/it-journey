@@ -219,11 +219,5 @@ python3 scripts/validate_quest.py --quest q4
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1000 (8) - Cloud Computing Fundamentals]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
-**Prerequisites:** [[The All-Seeing Eye: Observability & Control for Autonomous Agents]]
-**Unlocks:** [[The MCP Conclave: Mastering Model Context Protocol Servers]]
-**Sequel quests:** [[The MCP Conclave: Mastering Model Context Protocol Servers]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1000 (8) - Cloud Computing Fundamentals]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] **Prerequisites:** [[The All-Seeing Eye: Observability & Control for Autonomous Agents]] **Unlocks:** [[The MCP Conclave: Mastering Model Context Protocol Servers]] **Sequel quests:** [[The MCP Conclave: Mastering Model Context Protocol Servers]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

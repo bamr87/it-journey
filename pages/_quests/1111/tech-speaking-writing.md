@@ -422,8 +422,4 @@ The most common talk failure is *too much content*. Cut ruthlessly: a talk that 
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1111: Leadership & Innovation]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Technical Leadership: Leading Without Authority and Setting Tech Vision]]
-**Unlocks:** [[Open Source Contribution: Leading and Maintaining Projects]] · [[Building Technical Communities: Growing Developer Ecosystems]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1111: Leadership & Innovation]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Technical Leadership: Leading Without Authority and Setting Tech Vision]] **Unlocks:** [[Open Source Contribution: Leading and Maintaining Projects]] · [[Building Technical Communities: Growing Developer Ecosystems]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

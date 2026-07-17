@@ -456,34 +456,26 @@ git push origin main
 ## 🎮 Implementation Challenges
 
 ### 🟢 Novice Challenge: Basic Portal
-**Goal**: Deploy a simple single-page website
-**Time**: 30 minutes
-**Success Criteria**:
+**Goal**: Deploy a simple single-page website **Time**: 30 minutes **Success Criteria**:
 - [ ] GitHub Pages enabled and accessible
 - [ ] Basic HTML structure with title and content
 - [ ] Proper meta tags for SEO
 
 ### 🟡 Apprentice Challenge: Styled Realm
-**Goal**: Add CSS styling and multiple sections
-**Time**: 1 hour
-**Success Criteria**:
+**Goal**: Add CSS styling and multiple sections **Time**: 1 hour **Success Criteria**:
 - [ ] Custom CSS with responsive design
 - [ ] Multiple content sections (About, Projects, Contact)
 - [ ] Professional appearance and navigation
 
 ### 🔴 Expert Challenge: Jekyll Mastery
-**Goal**: Implement full Jekyll site with themes
-**Time**: 2 hours
-**Success Criteria**:
+**Goal**: Implement full Jekyll site with themes **Time**: 2 hours **Success Criteria**:
 - [ ] Jekyll site with custom theme
 - [ ] Multiple pages with navigation
 - [ ] Blog functionality with posts
 - [ ] SEO optimization and performance
 
 ### ⚔️ Master Challenge: Custom Domain & CI/CD
-**Goal**: Add custom domain and automated deployment
-**Time**: 3 hours
-**Success Criteria**:
+**Goal**: Add custom domain and automated deployment **Time**: 3 hours **Success Criteria**:
 - [ ] Custom domain configured
 - [ ] GitHub Actions for automated deployment
 - [ ] HTTPS enabled with custom domain
@@ -730,7 +722,5 @@ GitHub Pages represents the evolution of web hosting from complex server managem
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 001 - Journeyman Challenges]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 001 - Journeyman Challenges]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

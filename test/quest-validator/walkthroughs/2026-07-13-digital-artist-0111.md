@@ -18,24 +18,9 @@ session:
 
 ## 🎯 Session Summary
 
-Walking the first window (5 of 10 quests) of the **Digital Artist ⚔️ Adventurer**
-level 0111 "API Development" slice, played end-to-end in the runner sandbox by the
-agentic execute engine and then reasoned about as a linked learner journey. The
-window is not one line but **two interleaved quest lines**: the *API Design Mastery /
-Gatekeeper's Road* thread (`api-fundamentals` → `rest-principles`) and the *Agentic
-Codex / gh-600* thread (`agentic-codex-01-agents-in-the-sdlc`,
-`agentic-sdlc-integration` → `agentic-plan-vs-action-boundaries`).
+Walking the first window (5 of 10 quests) of the **Digital Artist ⚔️ Adventurer** level 0111 "API Development" slice, played end-to-end in the runner sandbox by the agentic execute engine and then reasoned about as a linked learner journey. The window is not one line but **two interleaved quest lines**: the *API Design Mastery / Gatekeeper's Road* thread (`api-fundamentals` → `rest-principles`) and the *Agentic Codex / gh-600* thread (`agentic-codex-01-agents-in-the-sdlc`, `agentic-sdlc-integration` → `agentic-plan-vs-action-boundaries`).
 
-The verdict is **fail for the slice as a learning path**, despite a healthy 71.4%
-average. The two API-thread quests plus the first agentic quest are strong (86–91,
-every runnable snippet passed in the sandbox). But the entire two-quest gh-600
-sub-chain (`agentic-sdlc-integration` 52 ❌, `agentic-plan-vs-action-boundaries`
-37 ❌) is **broken for a real beginner**: both send the learner into a `work/gh-600/`
-scaffold directory that no quest ever creates, both invoke a `scripts/validate_quest.py`
-self-check that does not exist in the repo, and the final quest additionally renders
-as garbled markup because its closing code fences carry language tags. A maintainer
-should treat the API thread as ship-ready and the gh-600 thread as blocked pending
-the fixes in §5.
+The verdict is **fail for the slice as a learning path**, despite a healthy 71.4% average. The two API-thread quests plus the first agentic quest are strong (86–91, every runnable snippet passed in the sandbox). But the entire two-quest gh-600 sub-chain (`agentic-sdlc-integration` 52 ❌, `agentic-plan-vs-action-boundaries` 37 ❌) is **broken for a real beginner**: both send the learner into a `work/gh-600/` scaffold directory that no quest ever creates, both invoke a `scripts/validate_quest.py` self-check that does not exist in the repo, and the final quest additionally renders as garbled markup because its closing code fences carry language tags. A maintainer should treat the API thread as ship-ready and the gh-600 thread as blocked pending the fixes in §5.
 
 ## 🗺️ The Journey
 
@@ -49,11 +34,7 @@ the fixes in §5.
 
 ## 🔬 Evidence
 
-All outcomes below are from commands the execute engine **actually ran** in the
-disposable sandbox (`--mode execute`), quoted from `walk-evidence.json`. Where the
-sandbox's own network/permission layer blocked a step, the engine used the quest's
-own Docker path as a workaround and I mark equivalent behavior; steps only judged
-statically are labelled `reasoned`.
+All outcomes below are from commands the execute engine **actually ran** in the disposable sandbox (`--mode execute`), quoted from `walk-evidence.json`. Where the sandbox's own network/permission layer blocked a step, the engine used the quest's own Docker path as a workaround and I mark equivalent behavior; steps only judged statically are labelled `reasoned`.
 
 ### 1. API Fundamentals — 91 ✅ · ran 11/10 runnable snippets (11 passed, 0 failed, 5 skipped, 3 reasoned)
 - `GET jsonplaceholder.typicode.com/posts/1` → **200** with exact fields `userId,id,title,body` (verified in `curlimages/curl` container + urllib) — **passed**.
@@ -118,18 +99,10 @@ statically are labelled `reasoned`.
 
 ## 🔗 Chain Continuity
 
-**This window is two independent quest lines interleaved, not one path.** The
-planner's dependency sort produced the order `api-fundamentals` → `agentic-codex-01`
-→ `rest-principles` → `agentic-sdlc-integration` → `agentic-plan-vs-action-boundaries`,
-but frontmatter shows two distinct threads a learner experiences separately:
+**This window is two independent quest lines interleaved, not one path.** The planner's dependency sort produced the order `api-fundamentals` → `agentic-codex-01` → `rest-principles` → `agentic-sdlc-integration` → `agentic-plan-vs-action-boundaries`, but frontmatter shows two distinct threads a learner experiences separately:
 
 - **API thread** (*The Gatekeeper's Road / API Design Mastery*): `api-fundamentals`
-  (no deps) → `rest-principles` (`required_quests: [api-fundamentals]`). Continuity
-  is **clean**: quest 1 teaches HTTP methods/status/JSON and quest 3 legitimately
-  builds on it (resources, statelessness, RMM). A learner finishing quest 1 is
-  genuinely ready for quest 3. Only soft gap: quest 3's status-code challenge leans
-  on knowledge quest 1 covers but quest 3 doesn't re-teach — acceptable given the
-  hard dependency.
+(no deps) → `rest-principles` (`required_quests: [api-fundamentals]`). Continuity is **clean**: quest 1 teaches HTTP methods/status/JSON and quest 3 legitimately builds on it (resources, statelessness, RMM). A learner finishing quest 1 is genuinely ready for quest 3. Only soft gap: quest 3's status-code challenge leans on knowledge quest 1 covers but quest 3 doesn't re-teach — acceptable given the hard dependency.
 
 - **Agentic gh-600 thread** (*The Agentic Codex*): here continuity **breaks**.
   1. **Duplicate/divergent openers.** Quest 2 ("Initiation Rites: Agents in the SDLC",
@@ -154,41 +127,22 @@ but frontmatter shows two distinct threads a learner experiences separately:
      so even the conceptual reading experience degrades. The learner who somehow
      pushed past quest 4 lands on a page that renders garbled.
 
-**Net:** the API half of this window is a sound, ship-ready mini-path; the agentic
-half does not hold together as a learnable chain until the `work/gh-600` scaffold is
-created (or the instructions switched to `mkdir -p`), the `validate_quest.py` script
-is provided or removed, and quest 5's fences are repaired.
+**Net:** the API half of this window is a sound, ship-ready mini-path; the agentic half does not hold together as a learnable chain until the `work/gh-600` scaffold is created (or the instructions switched to `mkdir -p`), the `validate_quest.py` script is provided or removed, and quest 5's fences are repaired.
 
 ## 🧠 Reasoning & Method
 
 - **Mode:** `execute` (sealed evidence). I consumed `walk-plan.json` +
-  `walk-evidence.json` / `walk-evidence.md` **as-is** — the workflow pre-computed the
-  agentic execute engine deterministically because the engine's child `claude`
-  processes cannot authenticate from an agent's Bash tool. I did **not** re-run,
-  edit, regenerate, or hand-write any evidence, and I made **no** changes to quest
-  content. My only write is this report.
+`walk-evidence.json` / `walk-evidence.md` **as-is** — the workflow pre-computed the agentic execute engine deterministically because the engine's child `claude` processes cannot authenticate from an agent's Bash tool. I did **not** re-run, edit, regenerate, or hand-write any evidence, and I made **no** changes to quest content. My only write is this report.
 - **What was actually run vs. reasoned:** every `passed`/`failed` above is a command
-  the engine executed in the disposable sandbox (curl/Docker/Python/Node/jq, script
-  execution, YAML/JSON parsing, an actual Markdown render for quest 5's fences, fresh
-  `git clone` + `find` for quest 4's missing directory). Items labelled `reasoned`
-  (HTTP/2 mismatch, install commands on other OSes, the GH-600 cert stat, quest 5's
-  workflow runtime bug) were judged statically because the sandbox lacked network,
-  `sudo`, `brew`/`winget`, or a live GitHub/Copilot session — these are honest
-  coverage limits, not quest defects, and I've marked them as such.
+the engine executed in the disposable sandbox (curl/Docker/Python/Node/jq, script execution, YAML/JSON parsing, an actual Markdown render for quest 5's fences, fresh `git clone` + `find` for quest 4's missing directory). Items labelled `reasoned` (HTTP/2 mismatch, install commands on other OSes, the GH-600 cert stat, quest 5's workflow runtime bug) were judged statically because the sandbox lacked network, `sudo`, `brew`/`winget`, or a live GitHub/Copilot session — these are honest coverage limits, not quest defects, and I've marked them as such.
 - **Snippet coverage (ran/runnable):** q1 11/10, q2 7/5, q3 4/6, q4 7/3, q5 5/1.
-  Skips in q2/q3 are legitimately un-runnable (real GitHub mutations, `sudo`, foreign
-  package managers) rather than avoided work.
+Skips in q2/q3 are legitimately un-runnable (real GitHub mutations, `sudo`, foreign package managers) rather than avoided work.
 - **Chain reasoning:** I read all five quest sources in plan order and cross-checked
-  their `quest_dependencies` frontmatter to derive the two-thread structure and the
-  phantom `work/gh-600` prerequisite in §"Chain Continuity" — that linked-journey
-  analysis is my value-add on top of the engine's per-quest-in-isolation scores.
+their `quest_dependencies` frontmatter to derive the two-thread structure and the phantom `work/gh-600` prerequisite in §"Chain Continuity" — that linked-journey analysis is my value-add on top of the engine's per-quest-in-isolation scores.
 - **Scope:** exactly window 1 of 2 (quests 1–5 of the level's 10). I did not walk the
-  second window; the ledger accumulates that coverage on a later run. No level or
-  character substitution.
+second window; the ledger accumulates that coverage on a later run. No level or character substitution.
 - **Confidence:** **high** on the two failing verdicts (blocking bugs reproduced by
-  real commands and confirmed against the live published source) and on the three
-  passing verdicts (every runnable snippet passed). **Medium** on the `reasoned`
-  accuracy nits, which warrant an author source-check but weren't executable here.
+real commands and confirmed against the live published source) and on the three passing verdicts (every runnable snippet passed). **Medium** on the `reasoned` accuracy nits, which warrant an author source-check but weren't executable here.
 
 ### Machine evidence (verbatim excerpt)
 

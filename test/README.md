@@ -162,8 +162,7 @@ The v3.0 tool at `scripts/validation/link-checker.py` is designed for extensibil
 
 **Custom Engines**: Add new link checking engines beyond lychee/curl
 **Enhanced AI Analysis**: Extend OpenAI/Anthropic prompts and analysis categories  
-**Additional Outputs**: Create new report formats and destinations
-**Integration Points**: Connect with external monitoring systems
+**Additional Outputs**: Create new report formats and destinations **Integration Points**: Connect with external monitoring systems
 
 ### Local Development
 
@@ -236,10 +235,7 @@ See [`.lychee.toml`](../.lychee.toml) for complete configuration.
 
 ### Common Issues
 
-**No Links Found**: Check `.lychee.toml` exclude patterns and path settings
-**AI Analysis Fails**: Verify OPENAI_API_KEY or ANTHROPIC_API_KEY is set
-**Timeout Errors**: Increase timeout in `.lychee.toml`
-**Lychee Not Found**: Install via `brew install lychee` or `cargo install lychee`
+**No Links Found**: Check `.lychee.toml` exclude patterns and path settings **AI Analysis Fails**: Verify OPENAI_API_KEY or ANTHROPIC_API_KEY is set **Timeout Errors**: Increase timeout in `.lychee.toml` **Lychee Not Found**: Install via `brew install lychee` or `cargo install lychee`
 
 ### Debug Mode
 

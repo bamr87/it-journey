@@ -26,9 +26,7 @@ Default to `intermediate` and `all platforms` if user says "default".
 
 ### 0. Load brand voice
 
-Invoke the `brand-voice` skill first. Docs resolve to the `docs` section guide
-(`_data/brand/sections/docs.md`) by default; load it + the central store and write
-the outline in that voice. Carry the resolved slug into `section_guide` below.
+Invoke the `brand-voice` skill first. Docs resolve to the `docs` section guide (`_data/brand/sections/docs.md`) by default; load it + the central store and write the outline in that voice. Carry the resolved slug into `section_guide` below.
 
 ### 1. Generate Front Matter
 

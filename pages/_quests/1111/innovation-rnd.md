@@ -405,8 +405,4 @@ The hardest leadership act here is **killing a project well**: thanking the team
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1111: Leadership & Innovation]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Building Technical Communities: Events, Governance, and Inclusion]]
-**Unlocks:** [[Architecture Reviews: Running Reviews, ADRs, and Trade-off Facilitation]] · [[Career Advancement Strategies: Growing from Engineer to Leader]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1111: Leadership & Innovation]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Building Technical Communities: Events, Governance, and Inclusion]] **Unlocks:** [[Architecture Reviews: Running Reviews, ADRs, and Trade-off Facilitation]] · [[Career Advancement Strategies: Growing from Engineer to Leader]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

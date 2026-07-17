@@ -409,9 +409,5 @@ The result is exactly the four tables from Chapter 2. Normalization is not acade
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0110 - Database Mastery]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Database Fundamentals: The Relational Model and ACID]]
-**Unlocks:** [[SQL Mastery: Query Language Proficiency for Data Professionals]] · [[Query Optimization: Performance Tuning for Fast Database Queries]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0110 - Database Mastery]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Database Fundamentals: The Relational Model and ACID]] **Unlocks:** [[SQL Mastery: Query Language Proficiency for Data Professionals]] · [[Query Optimization: Performance Tuning for Fast Database Queries]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 </content>

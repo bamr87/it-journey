@@ -4,9 +4,7 @@
 
 This script was automatically generated from `zer0.md` on Fri Aug  1 21:13:46 MDT 2025.
 
-**Source**: `/Users/bamr87/github/it-journey/zer0.md`
-**Generated Script**: `/Users/bamr87/github/it-journey/scripts/generation/zer0-to-hero-generated.sh`
-**Generator**: `./generate-zer0-script.sh`
+**Source**: `/Users/bamr87/github/it-journey/zer0.md` **Generated Script**: `/Users/bamr87/github/it-journey/scripts/generation/zer0-to-hero-generated.sh` **Generator**: `./generate-zer0-script.sh`
 
 ## What It Does
 

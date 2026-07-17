@@ -472,8 +472,4 @@ processors:
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1010 - Monitoring & Observability]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Requires:** [[Monitoring Fundamentals: Metrics, Logs, and Traces for Observability]]
-**Unlocks:** [[Alerting Systems: Alertmanager, Routing, and On-Call]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1010 - Monitoring & Observability]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Requires:** [[Monitoring Fundamentals: Metrics, Logs, and Traces for Observability]] **Unlocks:** [[Alerting Systems: Alertmanager, Routing, and On-Call]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

@@ -1288,8 +1288,7 @@ The IT-Journey stack is well-suited for its purpose and should continue evolving
 3. **Community feature additions** without major architectural changes
 4. **AI capability enhancements** as GPT models improve
 
-**Do NOT**: Attempt major stack rewrites or framework migrations
-**Do INSTEAD**: Focus on content quality, community building, and automation refinement
+**Do NOT**: Attempt major stack rewrites or framework migrations **Do INSTEAD**: Focus on content quality, community building, and automation refinement
 
 ---
 
@@ -1324,7 +1323,5 @@ The IT-Journey stack is well-suited for its purpose and should continue evolving
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 001 - Journeyman Challenges]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 001 - Journeyman Challenges]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

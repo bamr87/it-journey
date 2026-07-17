@@ -204,15 +204,11 @@ Golden Ratio
 \phi = \frac{1+\sqrt{5}}{2}
 ```
 
-\begin{equation}
-\phi = \frac{1+\sqrt{5}}{2}
-\end{equation}
+\begin{equation} \phi = \frac{1+\sqrt{5}}{2} \end{equation}
 
 $$ \phi = \frac{1+\sqrt{5}}{2} $$ is the golden ratio
 
-\begin{align}
-\phi = \frac{1+\sqrt{5}}{2}
-\end{align}
+\begin{align} \phi = \frac{1+\sqrt{5}}{2} \end{align}
 
 ## Auto Name Code Snippet
 
@@ -264,9 +260,7 @@ p, img
 
 ### Examples
 
-![this is a caption](../assets/images/nubi-son.png)
-![Nubi in a sink](../assets/images/nubi-sink.png)
-![Nubi yawning](../assets/images/nubi-yawn.png){: .img-thumbnail }
+![this is a caption](../assets/images/nubi-son.png) ![Nubi in a sink](../assets/images/nubi-sink.png) ![Nubi yawning](../assets/images/nubi-yawn.png){: .img-thumbnail }
 
 
 > this is a block quote

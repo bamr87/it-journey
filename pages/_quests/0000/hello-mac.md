@@ -208,11 +208,5 @@ You should see valid versions for each command.
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0000 - Foundation & Init World]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Recommended:** [[Hello n00b: Your First Steps into the IT Journey]] · [[OS Selection]]
-**Unlocks:** [[VS Code Mastery Quest: Forge Your Ultimate Development Weapon]] · [[Terminal Fundamentals: Command Line Navigation Quest]]
-**Sequel quests:** [[VS Code Mastery Quest: Forge Your Ultimate Development Weapon]]
-**Parallel quests:** [[Hello Windows: Mastering the Windows Development Environment]] · [[Linux Fundamentals]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0000 - Foundation & Init World]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Recommended:** [[Hello n00b: Your First Steps into the IT Journey]] · [[OS Selection]] **Unlocks:** [[VS Code Mastery Quest: Forge Your Ultimate Development Weapon]] · [[Terminal Fundamentals: Command Line Navigation Quest]] **Sequel quests:** [[VS Code Mastery Quest: Forge Your Ultimate Development Weapon]] **Parallel quests:** [[Hello Windows: Mastering the Windows Development Environment]] · [[Linux Fundamentals]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

@@ -25,11 +25,7 @@ Enforced by `.github/workflows/frontmatter-validation.yml`:
 
 Count `title` and `description` characters; state counts in a YAML comment. Fix and recount if out of bounds.
 
-**Optional brand keys (posts only):** `section_guide` — a slug from
-`_data/brand/sections/_registry.yml` (e.g. `devops`, `devops-news-muse`). Usually
-inferred from the post's folder, so include it only to override (e.g. a muse).
-`voice_profile` overrides the guide's profile; normally omit. Neither is
-CI-validated. See [`brand.instructions.md`](../instructions/brand.instructions.md).
+**Optional brand keys (posts only):** `section_guide` — a slug from `_data/brand/sections/_registry.yml` (e.g. `devops`, `devops-news-muse`). Usually inferred from the post's folder, so include it only to override (e.g. a muse). `voice_profile` overrides the guide's profile; normally omit. Neither is CI-validated. See [`brand.instructions.md`](../instructions/brand.instructions.md).
 
 ## Hard Constraints — Quests (`pages/_quests/**/*.md`)
 

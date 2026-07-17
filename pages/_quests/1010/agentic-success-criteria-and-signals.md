@@ -268,11 +268,5 @@ python3 scripts/validate_quest.py --quest q11
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1010 - Automation & Testing]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] · [[Evaluation Signals Table]]
-**Prerequisites:** [[Crossing the Tool Planes: State Continuity Across Tools]]
-**Unlocks:** [[The Necromancer's Inquest: Agent Failure Root Cause Analysis]]
-**Sequel quests:** [[The Necromancer's Inquest: Agent Failure Root Cause Analysis]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1010 - Automation & Testing]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] · [[Evaluation Signals Table]] **Prerequisites:** [[Crossing the Tool Planes: State Continuity Across Tools]] **Unlocks:** [[The Necromancer's Inquest: Agent Failure Root Cause Analysis]] **Sequel quests:** [[The Necromancer's Inquest: Agent Failure Root Cause Analysis]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

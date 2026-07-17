@@ -247,11 +247,5 @@ Remember, becoming a master system builder is a journey of continuous learning a
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0000 - Foundation & Init World]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Recommended:** [[Hello n00b: Your First Steps into the IT Journey]]
-**Unlocks:** [[Character Building: Forge Your IT Identity and Development Environment]] · [[Character Selection]]
-**Sequel quests:** [[Character Building: Forge Your IT Identity and Development Environment]]
-**Parallel quests:** [[IT Fundamentals]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0000 - Foundation & Init World]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Recommended:** [[Hello n00b: Your First Steps into the IT Journey]] **Unlocks:** [[Character Building: Forge Your IT Identity and Development Environment]] · [[Character Selection]] **Sequel quests:** [[Character Building: Forge Your IT Identity and Development Environment]] **Parallel quests:** [[IT Fundamentals]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

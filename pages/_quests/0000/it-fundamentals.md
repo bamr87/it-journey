@@ -349,11 +349,5 @@ These exercises are your first steps. As you complete each one, you'll build a s
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0000 - Foundation & Init World]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Recommended:** [[Hello n00b: Your First Steps into the IT Journey]]
-**Unlocks:** [[OS Selection]]
-**Sequel quests:** [[OS Selection]]
-**Parallel quests:** [[Begin your IT Journey]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0000 - Foundation & Init World]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Recommended:** [[Hello n00b: Your First Steps into the IT Journey]] **Unlocks:** [[OS Selection]] **Sequel quests:** [[OS Selection]] **Parallel quests:** [[Begin your IT Journey]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

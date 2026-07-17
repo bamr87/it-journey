@@ -23,25 +23,9 @@ session:
 
 ## 🎯 Session Summary
 
-I walked the **closing window of the Data Scientist "Database Mastery" (0110)
-Adventurer** level as a learner: quests **6–8 of 8** — *Backup and Recovery*,
-*Query Optimization*, and *Connection Pooling* — in dependency order. Evidence is
-the workflow-sealed **execute-mode** run of the agentic engine, which provisioned
-a live PostgreSQL 16 sandbox and ran each quest's safe commands for real; I then
-re-read all three quests in plan order and reasoned about the linked journey.
+I walked the **closing window of the Data Scientist "Database Mastery" (0110) Adventurer** level as a learner: quests **6–8 of 8** — *Backup and Recovery*, *Query Optimization*, and *Connection Pooling* — in dependency order. Evidence is the workflow-sealed **execute-mode** run of the agentic engine, which provisioned a live PostgreSQL 16 sandbox and ran each quest's safe commands for real; I then re-read all three quests in plan order and reasoned about the linked journey.
 
-The conceptual teaching across the slice is genuinely strong and mostly
-**verified true by running it** (pg_dump/pg_restore round-trips, a full
-end-to-end PITR rewind, the index speedup, the composite-index column-order rule,
-and the idle-in-transaction leak fingerprint all reproduced exactly). But the
-session verdict is **fail**, driven by one hard-failing capstone quest and a
-**systemic bug in every Docker path**: the containerized "quickest" route — the
-one a beginner is most likely to pick — is broken or divergent in all three
-quests. *Connection Pooling* (45%, the level's capstone) is the worst: its
-recommended pgbouncer container never starts and its Chapter 3 config file won't
-parse, so a learner hits three separate failures before reaching a working
-pooler. *Backup and Recovery* (75%) and *Query Optimization* (70%) each carry one
-high-severity, sandbox-reproduced defect on top of accurate cores.
+The conceptual teaching across the slice is genuinely strong and mostly **verified true by running it** (pg_dump/pg_restore round-trips, a full end-to-end PITR rewind, the index speedup, the composite-index column-order rule, and the idle-in-transaction leak fingerprint all reproduced exactly). But the session verdict is **fail**, driven by one hard-failing capstone quest and a **systemic bug in every Docker path**: the containerized "quickest" route — the one a beginner is most likely to pick — is broken or divergent in all three quests. *Connection Pooling* (45%, the level's capstone) is the worst: its recommended pgbouncer container never starts and its Chapter 3 config file won't parse, so a learner hits three separate failures before reaching a working pooler. *Backup and Recovery* (75%) and *Query Optimization* (70%) each carry one high-severity, sandbox-reproduced defect on top of accurate cores.
 
 ## 🗺️ The Journey
 
@@ -55,9 +39,7 @@ high-severity, sandbox-reproduced defect on top of accurate cores.
 
 ## 🔬 Evidence
 
-All statuses below come from commands the engine actually ran in the PostgreSQL 16
-sandbox (`passed`/`failed`), or are `reasoned` where a step was OS-specific,
-sudo-gated, or illustrative pseudocode. Nothing here is asserted without a source.
+All statuses below come from commands the engine actually ran in the PostgreSQL 16 sandbox (`passed`/`failed`), or are `reasoned` where a step was OS-specific, sudo-gated, or illustrative pseudocode. Nothing here is asserted without a source.
 
 ### Quest 6 — Backup and Recovery — ran **6/7** runnable snippets (1 ✗)
 
@@ -99,8 +81,7 @@ sudo-gated, or illustrative pseudocode. Nothing here is asserted without a sourc
 
 ## 🐞 Issues Found
 
-Not a clean slice — **four high-severity, sandbox-reproduced defects** across the
-three quests, plus a repeating Docker-path pattern. Ordered by severity.
+Not a clean slice — **four high-severity, sandbox-reproduced defects** across the three quests, plus a repeating Docker-path pattern. Ordered by severity.
 
 ### High
 
@@ -128,58 +109,22 @@ three quests, plus a repeating Docker-path pattern. Ordered by severity.
 
 ## 🔗 Chain Continuity
 
-**Window context.** This is **window 2 of 2** of the level (quests 6–8 of 8). The
-`required_quests` for all three — `database-fundamentals` and `sql-mastery` — live
-in window 1 and were **not** walked here; I reasoned about this slice assuming a
-learner arrives having completed them. Within the window the dependency order is
-correct: both *Backup and Recovery* and *Query Optimization* declare
-`unlocks_quests: /quests/0110/connection-pooling/`, and *Connection Pooling* is the
-capstone (`unlocks_quests: []`, "you have completed the Level 0110 quest line →
-Level 0111"). The planner placed the capstone last — right.
+**Window context.** This is **window 2 of 2** of the level (quests 6–8 of 8). The `required_quests` for all three — `database-fundamentals` and `sql-mastery` — live in window 1 and were **not** walked here; I reasoned about this slice assuming a learner arrives having completed them. Within the window the dependency order is correct: both *Backup and Recovery* and *Query Optimization* declare `unlocks_quests: /quests/0110/connection-pooling/`, and *Connection Pooling* is the capstone (`unlocks_quests: []`, "you have completed the Level 0110 quest line → Level 0111"). The planner placed the capstone last — right.
 
-**State isolation is clean, but repetitive.** Each quest re-provisions its own
-database (`restoration_vault`, `speed_sanctum`, `gatekeeper`) and does **not** rely
-on the prior quest's running state, so there is no hidden cross-quest prerequisite
-gap inside the window. A learner can drop into any of the three cold.
+**State isolation is clean, but repetitive.** Each quest re-provisions its own database (`restoration_vault`, `speed_sanctum`, `gatekeeper`) and does **not** rely on the prior quest's running state, so there is no hidden cross-quest prerequisite gap inside the window. A learner can drop into any of the three cold.
 
-**A systemic Docker-path bug spans the slice (the strongest linked-journey
-finding).** All three quests present the Docker/Cloud route as the "quickest" way,
-and in all three it is the broken or divergent one: *Query Optimization*'s Docker
-path never creates/selects `speed_sanctum` (#4), *Connection Pooling*'s Docker path
-never creates `gatekeeper` (#5) **and** its pgbouncer container won't start (#1).
-The macOS/Linux paths each run the matching `createdb`; only the Docker path drops
-it. A beginner who commits to Docker for the level — a very common choice — is
-consistently punished, quest after quest. This is one fix pattern (make each Docker
-path mirror its `createdb`/DB-selection to the other platforms) that would lift the
-whole slice.
+**A systemic Docker-path bug spans the slice (the strongest linked-journey finding).** All three quests present the Docker/Cloud route as the "quickest" way, and in all three it is the broken or divergent one: *Query Optimization*'s Docker path never creates/selects `speed_sanctum` (#4), *Connection Pooling*'s Docker path never creates `gatekeeper` (#5) **and** its pgbouncer container won't start (#1). The macOS/Linux paths each run the matching `createdb`; only the Docker path drops it. A beginner who commits to Docker for the level — a very common choice — is consistently punished, quest after quest. This is one fix pattern (make each Docker path mirror its `createdb`/DB-selection to the other platforms) that would lift the whole slice.
 
-**Cross-quest Docker port collision (`reasoned`, not tested — engine isolated each
-quest).** All three Docker paths map `-p 5432:5432` with distinct container names
-(`restoration`, `speed-sanctum`, `gatekeeper-db`). A learner who walks the window in
-one sitting without tearing down the previous container will hit
-`port is already allocated` on the next quest's `docker run`. Worth a one-line
-"stop the previous container first" note.
+**Cross-quest Docker port collision (`reasoned`, not tested — engine isolated each quest).** All three Docker paths map `-p 5432:5432` with distinct container names (`restoration`, `speed-sanctum`, `gatekeeper-db`). A learner who walks the window in one sitting without tearing down the previous container will hit `port is already allocated` on the next quest's `docker run`. Worth a one-line "stop the previous container first" note.
 
-**Thematic continuity is a genuine strength.** *Query Optimization* closes with
-"fewer, faster queries need fewer connections" and *Connection Pooling* opens by
-measuring the round-trip cost the prior quest introduced — the two dovetail well,
-and *Backup and Recovery* → *Connection Pooling* ("keep a recovered database
-serving traffic efficiently") is coherent. The problem is never the narrative; it
-is that the capstone's hands-on artifacts fail, so a learner who followed the story
-faithfully cannot actually stand up the pooler the level is meant to end on.
+**Thematic continuity is a genuine strength.** *Query Optimization* closes with "fewer, faster queries need fewer connections" and *Connection Pooling* opens by measuring the round-trip cost the prior quest introduced — the two dovetail well, and *Backup and Recovery* → *Connection Pooling* ("keep a recovered database serving traffic efficiently") is coherent. The problem is never the narrative; it is that the capstone's hands-on artifacts fail, so a learner who followed the story faithfully cannot actually stand up the pooler the level is meant to end on.
 
 ## 🧠 Reasoning & Method
 
 - **Mode:** `execute`. I consumed the workflow-sealed `walk-evidence.json` /
-  `walk-evidence.md` (the engine's child `claude` processes can't authenticate from
-  my Bash tool, so per the skill I did **not** re-run the engine). I re-read all
-  three quest sources in plan order to produce the chain-continuity analysis.
+`walk-evidence.md` (the engine's child `claude` processes can't authenticate from my Bash tool, so per the skill I did **not** re-run the engine). I re-read all three quest sources in plan order to produce the chain-continuity analysis.
 - **What was tested vs reasoned:** Every `passed`/`failed` above is a command the
-  engine ran in a live PostgreSQL 16 sandbox — including the four high-severity
-  failures, which were each reproduced (FATAL logs / container exit codes quoted
-  verbatim). Items marked `reasoned` are OS-specific install paths (sudo denied,
-  no macOS/Windows in a Linux sandbox), illustrative pseudocode, or arithmetic
-  (HikariCP formula) — I did not manufacture output for any of them.
+engine ran in a live PostgreSQL 16 sandbox — including the four high-severity failures, which were each reproduced (FATAL logs / container exit codes quoted verbatim). Items marked `reasoned` are OS-specific install paths (sudo denied, no macOS/Windows in a Linux sandbox), illustrative pseudocode, or arithmetic (HikariCP formula) — I did not manufacture output for any of them.
 - **Coverage / limits:**
   - Snippets actually run: Backup **6/7** runnable, Query Optimization **5/9**
     (3 install paths skipped as OS-specific), Connection Pooling **8/6** (the 8
@@ -193,11 +138,7 @@ faithfully cannot actually stand up the pooler the level is meant to end on.
     engine scores each quest in isolation and did not run the three containers
     concurrently.
 - **Confidence:** High on the four high-severity defects (sandbox-reproduced with
-  quoted failure output) and on the Docker-path pattern. Medium on the reasoned
-  cross-quest and install-path observations. The **fail** session verdict is driven
-  by the capstone quest failing (45%) with two broken safety-critical artifacts on
-  the level's terminating quest, compounded by the systemic Docker-path defect.
+quoted failure output) and on the Docker-path pattern. Medium on the reasoned cross-quest and install-path observations. The **fail** session verdict is driven by the capstone quest failing (45%) with two broken safety-critical artifacts on the level's terminating quest, compounded by the systemic Docker-path defect.
 - **Cost:** ~$2.53 across the three-quest execute run.
 
-*One slice, one report. No quest content was edited; fixes above are for a
-follow-up content pass (content-curator / a human), not this session.*
+*One slice, one report. No quest content was edited; fixes above are for a follow-up content pass (content-curator / a human), not this session.*

@@ -18,12 +18,9 @@ repository: https://github.com/bamr87/it-journey
 
 ## 0. WHY
 
-Build **IT-Journey** — an open-source educational platform that democratizes IT education 
-through gamified quests, practical tutorials, and AI-enhanced learning experiences, 
-transforming complete beginners into skilled IT professionals.
+Build **IT-Journey** — an open-source educational platform that democratizes IT education through gamified quests, practical tutorials, and AI-enhanced learning experiences, transforming complete beginners into skilled IT professionals.
 
-**KFI:** 100% of learners who complete a quest path can demonstrate measurable skill 
-improvement through hands-on projects in their portfolio.
+**KFI:** 100% of learners who complete a quest path can demonstrate measurable skill improvement through hands-on projects in their portfolio.
 
 ## 1. MVP (Minimum Viable Promise)
 

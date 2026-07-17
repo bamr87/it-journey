@@ -22,68 +22,10 @@ draft: false
 ---
 
 <style>
-.itj-about-hero {
-  margin: 0.5rem 0 2.5rem;
-  padding: 3rem 1.5rem;
-  border: 1px solid var(--zer0-color-border, rgba(168,85,247,0.35));
-  border-radius: 1rem;
-  text-align: center;
-  background:
+.itj-about-hero { margin: 0.5rem 0 2.5rem; padding: 3rem 1.5rem; border: 1px solid var(--zer0-color-border, rgba(168,85,247,0.35)); border-radius: 1rem; text-align: center; background:
     radial-gradient(1200px 400px at 50% -20%, rgba(168,85,247,0.22), transparent 70%),
     linear-gradient(180deg, rgba(34,211,238,0.06), transparent 60%);
-}
-.itj-about-hero .kicker {
-  margin: 0 0 0.85rem;
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--zer0-color-accent, #22d3ee);
-}
-.itj-about-hero h2 {
-  margin: 0 auto 1rem;
-  max-width: 18ch;
-  border: 0;
-  font-family: 'Cinzel', Georgia, serif;
-  font-weight: 700;
-  line-height: 1.15;
-  font-size: clamp(1.7rem, 4.2vw, 2.9rem);
-}
-.itj-about-hero p {
-  margin: 0 auto;
-  max-width: 60ch;
-  font-size: 1.08rem;
-  opacity: 0.92;
-}
-.itj-about-hero .zh {
-  color: var(--zer0-color-primary, #a855f7);
-  font-weight: 700;
-}
-.itj-pillars {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 0.9rem;
-  margin: 1.75rem 0 2.25rem;
-}
-.itj-pillar {
-  padding: 1.1rem 1.2rem;
-  border: 1px solid var(--zer0-color-border, rgba(148,163,184,0.25));
-  border-radius: 0.85rem;
-  background: var(--zer0-color-surface, rgba(148,163,184,0.06));
-}
-.itj-pillar .code {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  color: var(--zer0-color-accent, #22d3ee);
-}
-.itj-pillar h4 {
-  margin: 0.3rem 0 0.4rem;
-  font-family: 'Space Grotesk', system-ui, sans-serif;
-  font-size: 1.02rem;
-}
-.itj-pillar p { margin: 0; font-size: 0.92rem; opacity: 0.86; }
-.itj-pillar.approach { border-style: dashed; }
+} .itj-about-hero .kicker { margin: 0 0 0.85rem; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.75rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--zer0-color-accent, #22d3ee); } .itj-about-hero h2 { margin: 0 auto 1rem; max-width: 18ch; border: 0; font-family: 'Cinzel', Georgia, serif; font-weight: 700; line-height: 1.15; font-size: clamp(1.7rem, 4.2vw, 2.9rem); } .itj-about-hero p { margin: 0 auto; max-width: 60ch; font-size: 1.08rem; opacity: 0.92; } .itj-about-hero .zh { color: var(--zer0-color-primary, #a855f7); font-weight: 700; } .itj-pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.9rem; margin: 1.75rem 0 2.25rem; } .itj-pillar { padding: 1.1rem 1.2rem; border: 1px solid var(--zer0-color-border, rgba(148,163,184,0.25)); border-radius: 0.85rem; background: var(--zer0-color-surface, rgba(148,163,184,0.06)); } .itj-pillar .code { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--zer0-color-accent, #22d3ee); } .itj-pillar h4 { margin: 0.3rem 0 0.4rem; font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.02rem; } .itj-pillar p { margin: 0; font-size: 0.92rem; opacity: 0.86; } .itj-pillar.approach { border-style: dashed; }
 </style>
 
 <div class="itj-about-hero">
