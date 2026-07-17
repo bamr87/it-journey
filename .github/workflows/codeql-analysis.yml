@@ -14,9 +14,22 @@ name: "CodeQL"
 on:
   push:
     branches: [ main ]
+    # Most traffic here is bot content PRs (markdown/data/image-only diffs) that
+    # contain nothing CodeQL can scan — skip the 3-language matrix for those.
+    # The weekly cron below still runs a FULL scan regardless of paths.
+    paths-ignore:
+      - 'pages/**'
+      - '**/*.md'
+      - '_data/**'
+      - 'assets/images/**'
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ main ]
+    paths-ignore:
+      - 'pages/**'
+      - '**/*.md'
+      - '_data/**'
+      - 'assets/images/**'
   schedule:
     - cron: '31 14 * * 4'
 

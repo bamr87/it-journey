@@ -110,6 +110,9 @@ jobs:
     name: 🏗️ Jekyll Build Test
     runs-on: ubuntu-latest
     if: github.event.inputs.test_jekyll != 'false'
+    # Bound the job: bundle install (cached) + a build already capped at 300s.
+    # Without this, a wedged bundle/network step rides the 6h runner default.
+    timeout-minutes: 15
 
     steps:
     - name: 🏰 Checkout Repository
@@ -246,6 +249,8 @@ jobs:
     name: 🐳 Docker Build Test
     runs-on: ubuntu-latest
     needs: detect-changes
+    # Docker build is capped at 600s below; bound the whole job too.
+    timeout-minutes: 20
     # Only build the image on manual runs or when Docker/dependency inputs change.
     if: |
       github.event.inputs.test_docker != 'false' &&
@@ -326,6 +331,9 @@ jobs:
       github.event_name == 'workflow_dispatch' ||
       (github.event_name == 'push' && needs.detect-changes.outputs.deps == 'true')
     runs-on: ${{ matrix.os }}
+    # Windows bundle installs are the slow leg; bound each matrix job so a
+    # wedged install can't hold a costly runner for the 6h default.
+    timeout-minutes: 20
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]

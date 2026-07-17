@@ -13,7 +13,8 @@ actually is, and you open one tightening PR only when they don't.
 
 1. **Inventory the fleet.** List `.claude/agents/*.md`, `.claude/skills/*/SKILL.md`,
    and the AI workflows (`.github/workflows/content-*.yml`, `agent-audit.yml`,
-   `issue-autopilot.yml`, `issue-pr-auto-merge.yml`) plus the runner
+   `issue-autopilot.yml`; `auto:issue` PRs merge via the label-routed
+   `content-auto-merge.yml`) plus the runner
    (`scripts/ai/run.sh`, `.github/actions/claude-run`, `_data/ai.yml`) and the
    deterministic engines they drive (`scripts/cms/cms.py` → `.cms/`,
    `scripts/issues/triage.py` + `dispatch.py` → `.issues/`).
