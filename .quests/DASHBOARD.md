@@ -1,26 +1,26 @@
 # Quest Perfection — ledger dashboard
 
-_Generated 2026-07-16T13:53:37+00:00. Source of truth: `.quests/ledger.json` (committed, generated)._
+_Generated 2026-07-17T14:18:49+00:00. Source of truth: `.quests/ledger.json` (committed, generated)._
 
-**0/27** slices perfect · **27** walked · **0** stuck (needs human) · **384** open issue(s) outstanding
+**0/27** slices perfect · **27** walked · **0** stuck (needs human) · **436** open issue(s) outstanding
 
 ## Slices (worst-first)
 
 | Slice | Theme | Verdict | Avg | Cov | Open | Perfect | Stuck | Last run | Report |
 | --- | --- | :-: | --: | :-: | --: | :-: | :-: | --- | --- |
-| `data-scientist/0011` | AI-Assisted Development | ❌ fail | 59.7 | 3/3 | 17 |  |  | 2026-07-06 | [run](https://github.com/bamr87/it-journey/actions/runs/28791022929) |
-| `developer/0001` | Web Fundamentals | ❌ fail | 59.7 | 3/26 | 18 |  |  | 2026-07-06 | [run](https://github.com/bamr87/it-journey/actions/runs/28791022929) |
+| `developer/0001` | Web Fundamentals | ❌ fail | 53.9 | 7/26 | 40 |  |  | 2026-07-17 | [run](https://github.com/bamr87/it-journey/actions/runs/29577137232) |
 | `data-scientist/1100` | Data Engineering | ❌ fail | 62.3 | 10/15 | 50 |  |  | 2026-07-16 | [run](https://github.com/bamr87/it-journey/actions/runs/29494904212) |
+| `digital-artist/0001` | Web Fundamentals | ❌ fail | 62.5 | 16/26 | 67 |  |  | 2026-07-17 | [run](https://github.com/bamr87/it-journey/actions/runs/29577137232) |
+| `data-scientist/0011` | AI-Assisted Development | ❌ fail | 65.8 | 4/4 | 18 |  |  | 2026-07-17 | [run](https://github.com/bamr87/it-journey/actions/runs/29577137232) |
+| `game-developer/0111` | API Development | ❌ fail | 66.2 | 5/10 | 16 |  |  | 2026-07-17 | [run](https://github.com/bamr87/it-journey/actions/runs/29577137232) |
 | `data-scientist/0110` | Database Mastery | ❌ fail | 66.3 | 3/8 | 16 |  |  | 2026-07-12 | [run](https://github.com/bamr87/it-journey/actions/runs/29190829265) |
-| `system-engineer/1001` | Kubernetes Orchestration | ❌ fail | 66.4 | 5/9 | 17 |  |  | 2026-07-13 | [run](https://github.com/bamr87/it-journey/actions/runs/29248386306) |
-| `digital-artist/0001` | Web Fundamentals | ❌ fail | 67.5 | 11/26 | 39 |  |  | 2026-07-16 | [run](https://github.com/bamr87/it-journey/actions/runs/29494904212) |
-| `game-developer/0111` | API Development | ❌ fail | 68.0 | 5/10 | 12 |  |  | 2026-07-13 | [run](https://github.com/bamr87/it-journey/actions/runs/29248386306) |
 | `game-developer/0001` | Web Fundamentals | ❌ fail | 68.4 | 14/26 | 51 |  |  | 2026-07-16 | [run](https://github.com/bamr87/it-journey/actions/runs/29494904212) |
-| `security-specialist/1011` | Security & Compliance | ❌ fail | 69.2 | 10/12 | 37 |  |  | 2026-07-16 | [run](https://github.com/bamr87/it-journey/actions/runs/29494904212) |
 | `digital-artist/0111` | API Development | ❌ fail | 71.4 | 5/10 | 12 |  |  | 2026-07-13 | [run](https://github.com/bamr87/it-journey/actions/runs/29248386306) |
+| `security-specialist/1011` | Security & Compliance | ❌ fail | 71.7 | 11/12 | 37 |  |  | 2026-07-17 | [run](https://github.com/bamr87/it-journey/actions/runs/29577137232) |
 | `system-engineer/0101` | CI/CD & DevOps | ❌ fail | 72.2 | 10/13 | 15 |  |  | 2026-07-16 | [run](https://github.com/bamr87/it-journey/actions/runs/29494904212) |
 | `security-specialist/1110` | Architecture & Design Patterns | ❌ fail | 73.2 | 5/10 | 10 |  |  | 2026-07-14 | [run](https://github.com/bamr87/it-journey/actions/runs/29329246935) |
 | `developer/1110` | Architecture & Design Patterns | ❌ fail | 75.4 | 5/10 | 15 |  |  | 2026-07-15 | [run](https://github.com/bamr87/it-journey/actions/runs/29412020762) |
+| `system-engineer/1001` | Kubernetes Orchestration | ❌ fail | 75.4 | 5/9 | 14 |  |  | 2026-07-17 | [run](https://github.com/bamr87/it-journey/actions/runs/29577137232) |
 | `developer/0111` | API Development | ❌ fail | 77.4 | 5/10 | 9 |  |  | 2026-07-14 | [run](https://github.com/bamr87/it-journey/actions/runs/29329246935) |
 | `system-engineer/0010` | Terminal Mastery | ⚠️ warn | — | — | 0 |  |  | 2026-07-04 | [run](https://github.com/bamr87/it-journey/actions/runs/28703664065) |
 | `security-specialist/0010` | Terminal Mastery | ⚠️ warn | 62.0 | 1/16 | 4 |  |  | 2026-07-06 | [run](https://github.com/bamr87/it-journey/actions/runs/28791022929) |
