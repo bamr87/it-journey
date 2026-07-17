@@ -272,20 +272,6 @@ Repository > Security > Code scanning alerts
 - Automated refactoring
 - Configuration changes
 
-### Feature Request
-
-**File:** `.github/workflows/new-feature-request.yml`
-
-**Purpose:** Streamlined feature request creation.
-
-**Trigger:** Manual dispatch with inputs
-
-**Inputs:**
-- Feature title
-- Feature description
-- Priority level
-- Category
-
 ## Workflow Best Practices
 
 ### Secret Management

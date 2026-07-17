@@ -22,7 +22,12 @@ name: 🚀 Sync gh-pages from main
 
 on:
   schedule:
-    - cron: '20 */6 * * *'   # every 6 hours (00:20, 06:20, 12:20, 18:20 UTC) — tunable
+    # 2×/day: 14:20 UTC catches the daytime bot-merge window (bot merges cluster
+    # ~08:50–14:03 UTC), 02:20 UTC catches evening dependabot merges. The old
+    # 6-hourly cadence no-oped ~58% of the time ("gh-pages already up to date");
+    # the workflow still self-gates on ahead+green, and workflow_dispatch covers
+    # publish-now needs. Tunable.
+    - cron: '20 2,14 * * *'
   workflow_dispatch:
 
 permissions:

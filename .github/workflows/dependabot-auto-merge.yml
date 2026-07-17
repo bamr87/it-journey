@@ -6,6 +6,16 @@ name: 🤖 Dependabot auto-merge
 # ------
 #   • any Dependabot bump  -> wait for CI, then squash-merge automatically.
 #   • a check FAILS        -> stop, label `ci-failed`, leave the PR open for you.
+#   • bump touches .github/workflows/** -> merge with the elevated PAT
+#     (AUTO_PR_GITHUB_TOKEN || PAT_TOKEN); the default GITHUB_TOKEN cannot merge
+#     workflow-file changes ("refusing to allow a GitHub App to create or update
+#     workflow … without `workflows` permission"). If no PAT is configured, skip
+#     the wait entirely and label `manual-merge-required` instead of burning
+#     25 minutes on a merge that is guaranteed to fail.
+#   • merge loses a stale-branch race (a sibling PR merged first) -> comment
+#     `@dependabot rebase`; the rebase push re-triggers this workflow
+#     (synchronize) and the fresh run merges. This is also why `synchronize`
+#     must stay in `types:`.
 #
 # So the only PRs you ever look at are the ones that actually break something.
 #
@@ -40,10 +50,40 @@ jobs:
       - name: Wait for checks (excluding self), then merge
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Merging a PR that edits .github/workflows/** requires a token with
+          # the `workflow` scope — the default GITHUB_TOKEN is rejected by
+          # design (mergePullRequest: "refusing to allow a GitHub App to create
+          # or update workflow … without `workflows` permission"). Reuse the
+          # repo's existing elevated token, same fallback chain as the quest-*
+          # and content-factory workflows; GITHUB_TOKEN stays as last resort so
+          # plain bumps still merge if the PAT ever disappears.
+          MERGE_TOKEN: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+          HAS_PAT: ${{ secrets.AUTO_PR_GITHUB_TOKEN != '' || secrets.PAT_TOKEN != '' }}
           PR_URL: ${{ github.event.pull_request.html_url }}
           RUN_ID: ${{ github.run_id }}
         run: |
           set -euo pipefail
+
+          touches_workflows=false
+          if gh pr view "$PR_URL" --json files --jq '.files[].path' | grep -q '^\.github/workflows/'; then
+            touches_workflows=true
+          fi
+
+          # A workflow-file bump can only be merged by a token carrying the
+          # `workflow` scope. With no PAT configured the merge is guaranteed to
+          # fail, so don't pay for the check-wait at all: label it for a human
+          # and exit green — skipping is the correct outcome, not a failure.
+          if [ "$touches_workflows" = true ] && [ "$HAS_PAT" != "true" ]; then
+            if gh pr view "$PR_URL" --json labels --jq '.labels[].name' | grep -qx 'manual-merge-required'; then
+              echo "Workflow-file bump already labeled for manual merge — nothing to do."
+              exit 0
+            fi
+            gh pr edit "$PR_URL" --add-label "manual-merge-required" || true
+            gh pr comment "$PR_URL" --body "🤖 **Auto-merge skipped** — this Dependabot PR modifies \`.github/workflows/**\`, and the default \`GITHUB_TOKEN\` cannot merge workflow-file changes (no \`workflow\` scope). Please review and merge manually. Adding a workflow-scoped PAT as \`AUTO_PR_GITHUB_TOKEN\` (or \`PAT_TOKEN\`) would let these bumps auto-merge." || true
+            echo "::warning::Workflow-file bump with no PAT configured — labeled manual-merge-required and skipped the check-wait."
+            exit 0
+          fi
+
           # `gh pr checks --watch` waits for EVERY check on the PR to finish —
           # including THIS auto-merge job's own check, which stays "pending" for as
           # long as it is doing the watching. That is a self-deadlock: the watch
@@ -72,5 +112,35 @@ jobs:
             fi
             break                                     # no fails, none pending → green
           done
-          gh pr merge "$PR_URL" --squash --delete-branch
-          echo "All checks green — merged ✅"
+          # Merge with the elevated token (required for workflow-file bumps).
+          # Don't die blind on failure — recover from the two known cases.
+          merge_err=$(mktemp)
+          if GH_TOKEN="$MERGE_TOKEN" gh pr merge "$PR_URL" --squash --delete-branch 2>"$merge_err"; then
+            echo "All checks green — merged ✅"
+            exit 0
+          fi
+          cat "$merge_err" >&2
+
+          # Stale-branch race: a sibling Dependabot PR merged first and this
+          # head is now behind/dirty. Ask Dependabot to rebase; the rebase push
+          # fires `synchronize`, which re-runs this workflow, and the fresh run
+          # merges. Comment with MERGE_TOKEN so the command comes from a user
+          # with write access (Dependabot ignores commands from anyone else).
+          if grep -Eqi 'not mergeable|base branch was modified|cannot be cleanly created|out of date|behind|merge conflict' "$merge_err"; then
+            echo "Merge lost a stale-branch race — asking Dependabot to rebase and retry."
+            GH_TOKEN="$MERGE_TOKEN" gh pr comment "$PR_URL" --body "@dependabot rebase" || true
+            echo "::notice::Branch was stale; requested @dependabot rebase — the rebase push re-runs this workflow."
+            exit 0
+          fi
+
+          # Workflow-scope rejection at merge time: the PAT is missing the
+          # `workflow` scope, or has expired and we fell back to GITHUB_TOKEN.
+          if grep -Eqi 'refusing to allow.*workflow' "$merge_err"; then
+            gh pr edit "$PR_URL" --add-label "manual-merge-required" || true
+            gh pr comment "$PR_URL" --body "🤖 **Auto-merge failed** — merging this workflow-file bump needs a token with the \`workflow\` scope. Check that \`AUTO_PR_GITHUB_TOKEN\`/\`PAT_TOKEN\` exists, has not expired, and includes the \`workflow\` scope. Please merge manually in the meantime." || true
+            echo "::error::Merge token lacks the workflow scope — labeled manual-merge-required."
+            exit 1
+          fi
+
+          echo "::error::Merge failed for an unexpected reason (see stderr above)."
+          exit 1

@@ -202,8 +202,8 @@ Agents operating on this repository MUST NEVER perform any of the following,
 - Rewrite vendored content (any file carrying `source_repo`/`source_url`
   frontmatter) — it is synced from upstream, read-only here.
 - Merge its own pull request outside the deterministic auto-merge lanes
-  (content-auto-merge / issue-pr-auto-merge), or weaken any gate those lanes
-  depend on.
+  (the label-routed policies in content-auto-merge.yml), or weaken any gate
+  those lanes depend on.
 - Delete issues, pull requests, tags, releases, or the repository itself;
   change repository visibility or collaborators.
 
