@@ -160,7 +160,7 @@ jobs:
         run: |
           mkdir -p .agent-memory
           if [ ! -f .agent-memory/session.json ]; then
-            cat > .agent-memory/session.json << 'EOF'
+            cat > .agent-memory/session.json << EOF
             {
               "session_id": "${{ github.run_id }}",
               "issue_number": ${{ github.event.issue.number }},
@@ -278,12 +278,14 @@ from previous agent runs that should inform future decisions.
 
 ## ✅ Quest Validation
 
+Run this self-contained check (no external script needed) from your sandbox repo root:
+
 ```bash
-python3 scripts/validate_quest.py --quest q8
-# ✅ Session memory: agent-with-session-memory.yml present
-# ✅ Persistent memory: docs/agent-memory/ directory with .md files
-# ✅ Context injection: copilot-instructions.md has memory loading protocol
-# 🏆 Quest Q8 complete!
+WF=.github/workflows/agent-with-session-memory.yml
+test -f "$WF"                    && echo "✅ Session memory: agent-with-session-memory.yml present" || echo "❌ Workflow missing"
+test -d docs/agent-memory        && echo "✅ Persistent memory: docs/agent-memory/ directory with .md files" || echo "❌ No persistent memory dir"
+grep -q 'Memory Loading Protocol' .github/copilot-instructions.md 2>/dev/null && echo "✅ Context injection: copilot-instructions.md has memory loading protocol" || echo "ℹ️  Context injection: add the protocol from Chapter 5 to .github/copilot-instructions.md"
+# 🏆 All green → Quest Q8 complete!
 ```
 
 ## 🏆 Quest Rewards

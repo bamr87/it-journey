@@ -239,7 +239,28 @@ here, STOP and report what you need.
 
 ### Chapter 4 — Validating Environment Parity
 
-> **Exercise 6.3:** Run this parity check script to confirm the environment is correctly configured.
+> **Exercise 6.3:** First create the agent instruction file the check requires, then run the parity check to confirm the environment is correctly configured.
+
+The check below verifies `.github/copilot-instructions.md` — the repo-scoped guide GitHub Copilot loads automatically. Create it before running the check, or the check will always report a failure:
+
+```bash
+mkdir -p .github
+cat > .github/copilot-instructions.md << 'EOF'
+# Copilot Instructions
+
+Read `AGENTS.md` before taking any action, and operate only within the
+allowed/forbidden operation lists it defines. Prefer small, reviewable
+changes and never touch restricted areas.
+EOF
+```
+
+The check also requires `GITHUB_TOKEN` to be set — export a real token first (see Chapter 5) so the token check passes:
+
+```bash
+export GITHUB_TOKEN=your_real_token   # a valid PAT, not a placeholder
+```
+
+Now run the parity check script:
 
 ```bash
 #!/usr/bin/env bash
