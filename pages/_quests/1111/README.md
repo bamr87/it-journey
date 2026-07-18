@@ -5,6 +5,7 @@ description: 'Master technical leadership, open source contribution, mentorship,
 preview: images/previews/level-1111-leadership-innovation.png
 permalink: /quests/1111/
 layout: quest-collection
+local_graph: false
 level: '1111'
 categories:
 - quests

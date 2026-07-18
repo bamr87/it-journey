@@ -4,6 +4,7 @@ description: 'Journeyman-tier quests covering web fundamentals, GitHub Pages and
 preview: images/previews/level-001-journeyman-challenges.png
 permalink: /quests/0001/
 layout: quest-collection
+local_graph: false
 level: '0001'
 categories:
 - quests

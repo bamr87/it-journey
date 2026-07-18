@@ -4,6 +4,7 @@ description: 'Push beyond Docker basics with advanced containerization, CI/CD pi
 preview: images/previews/level-0101-advanced-docker-devops.png
 permalink: /quests/0101/
 layout: quest-collection
+local_graph: false
 level: '0101'
 categories:
 - quests

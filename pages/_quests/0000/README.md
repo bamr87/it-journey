@@ -4,6 +4,7 @@ description: Your starting point in the IT-Journey. Character creation, OS selec
 preview: images/previews/level-0000-foundation-init-world.png
 permalink: /quests/0000/
 layout: quest-collection
+local_graph: false
 level: '0000'
 categories:
 - quests

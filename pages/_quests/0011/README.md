@@ -4,6 +4,7 @@ description: 'Master AI-powered development tools: GitHub Copilot pair programmi
 preview: images/previews/level-0011-development-tools-ai-integration.png
 permalink: /quests/0011/
 layout: quest-collection
+local_graph: false
 level: '0011'
 categories:
 - quests
