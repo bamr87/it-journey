@@ -450,7 +450,4 @@ annotations:
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1010 - Monitoring & Observability]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Unlocks:** [[Prometheus & Grafana: Metrics Collection and Visualization]] · [[ELK Stack: Elasticsearch, Logstash, and Kibana for Log Analysis]] · [[Distributed Tracing: OpenTelemetry and Jaeger]] · [[Alerting Systems: Alertmanager, Routing, and On-Call]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1010 - Monitoring & Observability]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Unlocks:** [[Prometheus & Grafana: Metrics Collection and Visualization]] · [[ELK Stack: Elasticsearch, Logstash, and Kibana for Log Analysis]] · [[Distributed Tracing: OpenTelemetry and Jaeger]] · [[Alerting Systems: Alertmanager, Routing, and On-Call]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

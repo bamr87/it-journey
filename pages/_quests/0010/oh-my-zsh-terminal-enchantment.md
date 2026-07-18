@@ -1422,13 +1422,5 @@ graph LR
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Terminal Fundamentals: Command Line Navigation Quest]]
-**Recommended:** [[Nerd Font Enchantment: Terminal Icon Mastery]]
-**Unlocks:** [[Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest]]
-**Sequel quests:** [[Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest]]
-**Parallel quests:** [[Advanced Markdown: Tables, Footnotes & Extended Syntax]]
-**Related quests:** [[Nerd Font Enchantment: Terminal Icon Mastery]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Terminal Fundamentals: Command Line Navigation Quest]] **Recommended:** [[Nerd Font Enchantment: Terminal Icon Mastery]] **Unlocks:** [[Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest]] **Sequel quests:** [[Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest]] **Parallel quests:** [[Advanced Markdown: Tables, Footnotes & Extended Syntax]] **Related quests:** [[Nerd Font Enchantment: Terminal Icon Mastery]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

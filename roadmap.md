@@ -31,8 +31,7 @@ date: 2024-04-25T10:40:43.000Z
 
 ---
 
-Go [Home]({{ page.backlink }})
-{: .btn .btn-purple .border}
+Go [Home]({{ page.backlink }}) {: .btn .btn-purple .border}
 
 > *"Every expert was once a beginner who refused to give up after their first segmentation fault."*
 
@@ -125,8 +124,7 @@ Where learning becomes an adventure through Posts and Quests - 46+ gamified lear
 
 #### 🗺️ Quest System by Level
 
-**🌱 Level 0000 - Foundation Quests (Init World)**
-*Your origin story and character creation*
+**🌱 Level 0000 - Foundation Quests (Init World)** *Your origin story and character creation*
 
 | Quest | Focus | Difficulty | Platform |
 |-------|-------|------------|----------|
@@ -148,8 +146,7 @@ Where learning becomes an adventure through Posts and Quests - 46+ gamified lear
 - [Hello Linux](/quests/0000/hello-linux/) - 🐧 Linux configuration
 - [Hello Cloud](/quests/0000/hello-cloud/) - ☁️ Cloud platform basics
 
-**🟢 Level 0001 - Apprentice Trials**
-*Build your first projects and master the web*
+**🟢 Level 0001 - Apprentice Trials** *Build your first projects and master the web*
 
 | Quest | Technology | Time | Type |
 |-------|-----------|------|------|
@@ -160,8 +157,7 @@ Where learning becomes an adventure through Posts and Quests - 46+ gamified lear
 | [YAML Configuration](/quests/0001/yaml-configuration/) | Data Formats | 30-45 min | ⚔️ Side |
 | [Terminal Illness](/quests/0001/terminal-illness/) | Advanced Terminal | 60-90 min | ⚔️ Side |
 
-**🟡 Level 0010 - Journeyman Challenges**
-*Master scripting and advanced tooling*
+**🟡 Level 0010 - Journeyman Challenges** *Master scripting and advanced tooling*
 
 | Quest | Focus | Deliverable | Level |
 |-------|-------|-------------|-------|
@@ -172,8 +168,7 @@ Where learning becomes an adventure through Posts and Quests - 46+ gamified lear
 | [JavaScript Fundamentals](/quests/0010/javascript-fundamentals/) | Frontend Dev | Interactive Sites | 🟡 Medium |
 | [CSS Styling Basics](/quests/0010/css-styling-basics/) | Design | Styled Pages | 🟢 Easy |
 
-**🔴 Level 0011+ - Master Tier**
-*Advanced configurations and optimizations*
+**🔴 Level 0011+ - Master Tier** *Advanced configurations and optimizations*
 
 | Quest | Specialization | Time | Prerequisites |
 |-------|---------------|------|---------------|
@@ -202,8 +197,7 @@ Where learning becomes an adventure through Posts and Quests - 46+ gamified lear
 - [Prompt Crystal Mastery](/quests/0011/prompt-crystal-mastery-vscode-copilot-quest/) - VS Code Copilot
 - [AI Development Posts](/posts/tags/ai/) - Real-world AI applications
 
-**📜 Chronicles & Learning Posts**
-*Battle-tested wisdom from the community*
+**📜 Chronicles & Learning Posts** *Battle-tested wisdom from the community*
 
 **By Category:**
 - [AI & Machine Learning](/posts/tags/ai/) - 15+ posts on AI development

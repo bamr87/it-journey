@@ -415,8 +415,4 @@ Throughout, **backward compatibility** within a version is sacred: once `v1` is 
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0111 - API Development]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[REST Principles: Constraints, Resources, and Richardson Maturity]]
-**Unlocks:** [[API Documentation: OpenAPI, Swagger, and Contract-First]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0111 - API Development]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[REST Principles: Constraints, Resources, and Richardson Maturity]] **Unlocks:** [[API Documentation: OpenAPI, Swagger, and Contract-First]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

@@ -1,7 +1,6 @@
 # Terminal Enchantment: Answer Key & Expected Outputs
 
-**Quest**: Oh-My-Zsh Terminal Enchantment
-**Purpose**: Reference answers for all challenges and expected validation outputs
+**Quest**: Oh-My-Zsh Terminal Enchantment **Purpose**: Reference answers for all challenges and expected validation outputs
 
 > **Spoiler Warning**: This file contains solutions. Attempt the quest yourself first!
 

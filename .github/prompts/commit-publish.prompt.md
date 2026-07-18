@@ -80,8 +80,7 @@ git commit -m "<type>(<scope>): <imperative subject>
 Closes #<n>"
 ```
 
-Types: `feat fix docs refactor chore ci`.
-Common scopes: `quest post docs scripts workflows config`.
+Types: `feat fix docs refactor chore ci`. Common scopes: `quest post docs scripts workflows config`.
 
 ### 7. Open PR to `main`
 

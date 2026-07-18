@@ -448,8 +448,4 @@ A 2 × 3 grid is six jobs; the `exclude:` above drops one, leaving **five parall
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0101 - CI/CD & DevOps]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[CI/CD Fundamentals: Continuous Integration and Continuous Deployment Essentials]]
-**Unlocks:** [[Testing Integration: Automated Quality Assurance in CI/CD Pipelines]] · [[Secrets Management: Secure Configuration and Credential Handling]] · [[Workflow Optimization: Caching Strategies and Pipeline Parallelization]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0101 - CI/CD & DevOps]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[CI/CD Fundamentals: Continuous Integration and Continuous Deployment Essentials]] **Unlocks:** [[Testing Integration: Automated Quality Assurance in CI/CD Pipelines]] · [[Secrets Management: Secure Configuration and Credential Handling]] · [[Workflow Optimization: Caching Strategies and Pipeline Parallelization]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

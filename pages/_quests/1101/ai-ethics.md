@@ -428,8 +428,4 @@ MODEL CARD — Loan Default Classifier v2.1
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1101 - Machine Learning & AI]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Required:** [[Machine Learning Fundamentals: Supervised & Unsupervised Learning with Scikit-Learn]]
-**Recommended:** [[MLOps Engineering: CI/CD Pipelines for Machine Learning Production]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1101 - Machine Learning & AI]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Required:** [[Machine Learning Fundamentals: Supervised & Unsupervised Learning with Scikit-Learn]] **Recommended:** [[MLOps Engineering: CI/CD Pipelines for Machine Learning Production]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

@@ -396,9 +396,5 @@ SELECT pgp_sym_decrypt(payload, 'encryption-key') FROM secrets WHERE label = 'ap
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0110 - Database Mastery]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Database Fundamentals: The Relational Model and ACID]]
-**Unlocks:** [[Backup and Recovery: Data Protection Strategies for Databases]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0110 - Database Mastery]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Database Fundamentals: The Relational Model and ACID]] **Unlocks:** [[Backup and Recovery: Data Protection Strategies for Databases]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 </content>

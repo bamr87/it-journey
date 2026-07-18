@@ -1,17 +1,10 @@
 # Agent Evaluation & Tuning (GH-600 Domain 4, implemented)
 
-How this repository grades its agents with **machine-verifiable signals**,
-diagnoses failures instead of re-running them, and tunes instructions like
-code. This directory is the Domain 4 convention the fleet operates under;
-the campaign that teaches it is
-[Chapter IV — The Oracle Rubric](https://it-journey.dev/quests/1010/agentic-codex-04-evaluation-and-tuning/),
-and the full domain→artifact map is
-[GH-600 in the Wild](https://it-journey.dev/notes/gh-600/implemented-in-it-journey/).
+How this repository grades its agents with **machine-verifiable signals**, diagnoses failures instead of re-running them, and tunes instructions like code. This directory is the Domain 4 convention the fleet operates under; the campaign that teaches it is [Chapter IV — The Oracle Rubric](https://it-journey.dev/quests/1010/agentic-codex-04-evaluation-and-tuning/), and the full domain→artifact map is [GH-600 in the Wild](https://it-journey.dev/notes/gh-600/implemented-in-it-journey/).
 
 ## The rubric: machine-verifiable gates (no vibes)
 
-Every agent-produced change is graded by deterministic signals — never by the
-model's own opinion of its work:
+Every agent-produced change is graded by deterministic signals — never by the model's own opinion of its work:
 
 | Signal | Source | Gate |
 |---|---|---|
@@ -22,14 +15,11 @@ model's own opinion of its work:
 | Generated data freshness | `make quest-data` diff check | `quest-fix` M2 safety rail hard-fails on stale data |
 | Fix actually helped | tier-1 score + brand lint + sandbox commands, before vs after | quest-fix **deterministic keep/revert gate** |
 
-The keep/revert gate is the purest Domain 4 artifact in the repo: the
-quest-fixer's edit is kept **only** if the deterministic signal improved —
-the model never grades its own work.
+The keep/revert gate is the purest Domain 4 artifact in the repo: the quest-fixer's edit is kept **only** if the deterministic signal improved — the model never grades its own work.
 
 ## Failure handling: RCA before re-run
 
-Re-running a failed agent without understanding it manufactures intermittent
-failures that never get fixed. When a fleet run fails:
+Re-running a failed agent without understanding it manufactures intermittent failures that never get fixed. When a fleet run fails:
 
 1. Pull the forensic trail: `gh run download <RUN_ID> --dir ./forensics/run-<RUN_ID>`
 2. Classify the failure by **layer** (reasoning / tool misuse / permissions /
@@ -39,9 +29,4 @@ failures that never get fixed. When a fleet run fails:
 
 ## Tuning: instructions are code
 
-Changes to agent behavior land in `.claude/agents/*.md`, `.claude/skills/`,
-`AGENTS.md`, or `.github/copilot-instructions.md` — versioned, reviewed, and
-logged in [`instructions-changelog.md`](instructions-changelog.md) with the
-reason and the measured (or pending) outcome. One variable at a time;
-baseline before, measure after. The weekly `agent-audit.yml` fleet audit is
-the standing review that keeps instructions, registry, and reality aligned.
+Changes to agent behavior land in `.claude/agents/*.md`, `.claude/skills/`, `AGENTS.md`, or `.github/copilot-instructions.md` — versioned, reviewed, and logged in [`instructions-changelog.md`](instructions-changelog.md) with the reason and the measured (or pending) outcome. One variable at a time; baseline before, measure after. The weekly `agent-audit.yml` fleet audit is the standing review that keeps instructions, registry, and reality aligned.

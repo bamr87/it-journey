@@ -441,8 +441,4 @@ The council convenes, traces its own work, and survives a fallen familiar. But a
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Campaign hub:** [[Epic Quest: The Agentic Codex]]
-**Previous:** [[Evaluation and Tuning: Reforging the Agent's Mind]]
-**Next:** [[Guardrails and Accountability: The Warden's Pact]]
-**Domain quests:** [[The Council of Many: Multi-Agent Orchestration Patterns]] · [[The Scribe's Codex: Observability in Multi-Agent Systems]] · [[When Familiars Fall: Multi-Agent Failure Recovery]] · [[The Agent Pantheon: Multi-Agent Lifecycle Management]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Campaign hub:** [[Epic Quest: The Agentic Codex]] **Previous:** [[Evaluation and Tuning: Reforging the Agent's Mind]] **Next:** [[Guardrails and Accountability: The Warden's Pact]] **Domain quests:** [[The Council of Many: Multi-Agent Orchestration Patterns]] · [[The Scribe's Codex: Observability in Multi-Agent Systems]] · [[When Familiars Fall: Multi-Agent Failure Recovery]] · [[The Agent Pantheon: Multi-Agent Lifecycle Management]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

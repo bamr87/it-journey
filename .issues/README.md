@@ -1,10 +1,6 @@
 # IT-Journey Issue Autopilot — the `.issues/` data layer
 
-This directory is the **content layer for the open-issue queue**, the issue-side
-analogue of `.cms/`. A deterministic engine reads every open GitHub issue,
-classifies each into a **disposition**, groups related issues into **PR-sized
-batches**, and emits a dated, bounded worklist. AI agents then act on that plan —
-they never re-decide the policy encoded here.
+This directory is the **content layer for the open-issue queue**, the issue-side analogue of `.cms/`. A deterministic engine reads every open GitHub issue, classifies each into a **disposition**, groups related issues into **PR-sized batches**, and emits a dated, bounded worklist. AI agents then act on that plan — they never re-decide the policy encoded here.
 
 ```
 .issues/config.yml          # disposition rules + label namespace + safety globs (hand-edited)
@@ -19,18 +15,13 @@ they never re-decide the policy encoded here.
 ## The loop (mirrors `cms-daily-loop`)
 
 1. **Engine** — `scripts/issues/triage.py plan` fetches open issues via `gh`,
-   classifies each per `config.yml` (first matching rule wins), groups them into
-   batches, and writes `plan.json` + the dated worklist/report. **Read/plan only —
-   it never comments, labels, closes, or opens PRs.**
+classifies each per `config.yml` (first matching rule wins), groups them into batches, and writes `plan.json` + the dated worklist/report. **Read/plan only — it never comments, labels, closes, or opens PRs.**
 2. **Controller** — `scripts/issues/dispatch.py` observes how many `auto:issue`
-   PRs are already open and decides, against `budget.yml`, which resolve batches
-   become PRs *this* run (backpressure clamps throughput to human review speed).
+PRs are already open and decides, against `budget.yml`, which resolve batches become PRs *this* run (backpressure clamps throughput to human review speed).
 3. **Agents** — the `issue-triager` acts on the triage batches (comment, label,
-   close bot-noise) and the `issue-resolver` turns one resolve batch into one
-   `auto:issue` PR. Both run the `issue-triage` skill.
+close bot-noise) and the `issue-resolver` turns one resolve batch into one `auto:issue` PR. Both run the `issue-triage` skill.
 4. **Workflow** — `issue-autopilot.yml` schedules the loop; the `auto:issue`
-   policy in `content-auto-merge.yml` merges green content-only `auto:issue`
-   PRs (which closes the linked issues).
+policy in `content-auto-merge.yml` merges green content-only `auto:issue` PRs (which closes the linked issues).
 
 ## Dispositions (what can happen to an issue)
 
@@ -43,10 +34,7 @@ they never re-decide the policy encoded here.
 | `bug` | actionable code/bug | `autopilot:triaged`; resolver attempts, else escalates to a human |
 | `needs-human` | everything else (the default) | `needs-human` + a short read; left for a person |
 
-**Hard guardrail (in code, not config):** a **human-authored** issue can never get
-a close disposition — the engine downgrades it to `needs-human`. Only
-bot/automation issues are ever auto-closeable, and only when
-`ISSUE_AUTOCLOSE_ENABLED` is set.
+**Hard guardrail (in code, not config):** a **human-authored** issue can never get a close disposition — the engine downgrades it to `needs-human`. Only bot/automation issues are ever auto-closeable, and only when `ISSUE_AUTOCLOSE_ENABLED` is set.
 
 ## Run it locally
 
@@ -60,15 +48,9 @@ All three need only Python 3.12 + PyYAML and an authenticated `gh`.
 
 ## Turn it on (everything is OFF by default)
 
-See `scripts/ai/README.md` for the full fleet setup. In short: add the
-`CLAUDE_CODE_OAUTH_TOKEN` secret, then opt in with repo variables —
-`ISSUE_AUTOPILOT_ENABLED` (triage), then `ISSUE_RESOLVE_ENABLED` (open PRs),
-then `ISSUE_AUTOCLOSE_ENABLED` (close bot-noise) and `ISSUE_AUTOMERGE_ENABLED`
-(hands-off merge) once you trust the output. Add `needs-human` to any PR or issue
-to force manual handling.
+See `scripts/ai/README.md` for the full fleet setup. In short: add the `CLAUDE_CODE_OAUTH_TOKEN` secret, then opt in with repo variables — `ISSUE_AUTOPILOT_ENABLED` (triage), then `ISSUE_RESOLVE_ENABLED` (open PRs), then `ISSUE_AUTOCLOSE_ENABLED` (close bot-noise) and `ISSUE_AUTOMERGE_ENABLED` (hands-off merge) once you trust the output. Add `needs-human` to any PR or issue to force manual handling.
 
-**One-time: create the label namespace** (the agents `--add-label` these, which
-errors if they don't exist):
+**One-time: create the label namespace** (the agents `--add-label` these, which errors if they don't exist):
 
 ```bash
 R=bamr87/it-journey

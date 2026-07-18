@@ -9,8 +9,7 @@ branch: "chore/posts-mass-cleanup"
 
 # Posts Mass-Cleanup Tracker
 
-Branch: `chore/posts-mass-cleanup`. Plan saved in `/memories/session/plan.md`.
-All scratch reports live under `work/posts-cleanup/` (gitignored).
+Branch: `chore/posts-mass-cleanup`. Plan saved in `/memories/session/plan.md`. All scratch reports live under `work/posts-cleanup/` (gitignored).
 
 ## Phase 0 — Baseline (✅ done)
 

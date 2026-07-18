@@ -1,7 +1,6 @@
 # Terminal Enchantment: Setup Guide & Reference
 
-**Quest**: Terminal Enchantment — Boss Battle (Phase 4 Documentation)
-**Purpose**: Comprehensive onboarding document for team terminal setup
+**Quest**: Terminal Enchantment — Boss Battle (Phase 4 Documentation) **Purpose**: Comprehensive onboarding document for team terminal setup
 
 ---
 
@@ -67,19 +66,16 @@ mkcd new-project    # Creates and enters new-project/
 ## Troubleshooting
 
 ### 1. Icons show as boxes or question marks
-**Cause**: Nerd Font not configured in terminal
-**Fix**: Set terminal font to "MesloLGM Nerd Font Mono" in:
+**Cause**: Nerd Font not configured in terminal **Fix**: Set terminal font to "MesloLGM Nerd Font Mono" in:
 - VSCode: Settings → `terminal.integrated.fontFamily`
 - iTerm2: Profiles → Text → Font
 - Terminal.app: Preferences → Profiles → Font
 
 ### 2. `command not found: omz` after installation
-**Cause**: Shell session wasn't reloaded
-**Fix**: Run `source ~/.zshrc` or open a new terminal window
+**Cause**: Shell session wasn't reloaded **Fix**: Run `source ~/.zshrc` or open a new terminal window
 
 ### 3. Plugins not loading
-**Cause**: Plugin name typo or missing external plugin
-**Fix**:
+**Cause**: Plugin name typo or missing external plugin **Fix**:
 ```bash
 # Check plugin list
 grep -A15 'plugins=(' ~/.zshrc
@@ -89,16 +85,14 @@ ls ~/.oh-my-zsh/custom/plugins/
 ```
 
 ### 4. Slow shell startup
-**Cause**: Too many plugins or slow plugin
-**Fix**: Profile startup time:
+**Cause**: Too many plugins or slow plugin **Fix**: Profile startup time:
 ```bash
 time zsh -ic exit    # Should be < 500ms
 ```
 Remove unused plugins from the `plugins=()` list.
 
 ### 5. Theme not rendering correctly in VSCode
-**Cause**: VSCode using default font instead of Nerd Font
-**Fix**: Verify settings:
+**Cause**: VSCode using default font instead of Nerd Font **Fix**: Verify settings:
 ```json
 {
     "terminal.integrated.fontFamily": "MesloLGM Nerd Font Mono",

@@ -3,6 +3,7 @@
 
 require 'yaml'
 require 'date'
+require 'posthog'
 
 # Script to generate dynamic content statistics for IT-Journey posts
 # This script analyzes all posts in the _posts directory and generates
@@ -35,14 +36,16 @@ class ContentStatisticsGenerator
 
   def generate
     puts "📊 Generating content statistics for IT-Journey..."
-    
+
     analyze_posts
     calculate_derived_stats
     save_statistics
-    
+
     puts "✅ Statistics generated successfully!"
     puts "📁 Output saved to: #{OUTPUT_FILE}"
     display_summary
+
+    track_generation_event
   end
 
   private
@@ -261,6 +264,35 @@ class ContentStatisticsGenerator
     
     # Default fallback
     increment_content_type('Article') if @stats['content_types'].empty?
+  end
+
+  def track_generation_event
+    token = ENV['POSTHOG_PROJECT_TOKEN']
+    return unless token
+
+    posthog = PostHog::Client.new(
+      api_key: token,
+      host: ENV.fetch('POSTHOG_HOST', 'https://us.i.posthog.com'),
+      on_error: proc { |_status, _msg| nil }
+    )
+    begin
+      posthog.capture(
+        distinct_id: 'it-journey-ci',
+        event: 'statistics_generated',
+        properties: {
+          total_posts: @stats['total_posts'],
+          published_posts: @stats['published'],
+          draft_posts: @stats['drafts'],
+          category_count: @stats['category_count'],
+          tag_count: @stats['tag_count'],
+          author_count: @stats['author_count'],
+          focus_area_count: @stats['focus_areas'].size,
+          content_type_count: @stats['content_types'].size
+        }
+      )
+    ensure
+      posthog.shutdown
+    end
   end
 
   def increment_content_type(type)

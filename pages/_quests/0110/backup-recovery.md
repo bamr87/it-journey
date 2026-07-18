@@ -394,9 +394,5 @@ The drill answers three questions a real outage will ask: Does the backup restor
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0110 - Database Mastery]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Database Fundamentals: The Relational Model and ACID]]
-**Unlocks:** [[Connection Pooling: Efficient Database Resource Management]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0110 - Database Mastery]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Database Fundamentals: The Relational Model and ACID]] **Unlocks:** [[Connection Pooling: Efficient Database Resource Management]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 </content>

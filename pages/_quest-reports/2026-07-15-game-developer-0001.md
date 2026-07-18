@@ -37,22 +37,9 @@ source_report: test/quest-validator/walkthroughs/2026-07-15-game-developer-0001.
 
 ## 🎯 Session Summary
 
-I walked the first window of the **Game Developer → Level 0001 (Web Fundamentals,
-🌱 Apprentice)** slice as a learner: **5 linked quests** (4 main, 1 side) out of the
-level's 26 total, selected deterministically by `walk-plan.json` (window 1 of 6). Each
-quest was scored in isolation by the sealed agentic **execute** engine
-(`walk-evidence.json`), which actually ran the safe snippets in a disposable sandbox; I
-then read all five sources in plan order and reasoned about the journey as one path.
+I walked the first window of the **Game Developer → Level 0001 (Web Fundamentals, 🌱 Apprentice)** slice as a learner: **5 linked quests** (4 main, 1 side) out of the level's 26 total, selected deterministically by `walk-plan.json` (window 1 of 6). Each quest was scored in isolation by the sealed agentic **execute** engine (`walk-evidence.json`), which actually ran the safe snippets in a disposable sandbox; I then read all five sources in plan order and reasoned about the journey as one path.
 
-**Headline verdict: FAIL for the slice as a beginner journey.** Two quests are strong
-and genuinely teachable (**CSS Styling Basics 93**, **Advanced Markdown 86**), one is
-solid with polish gaps (**Bootstrap 79**), but **two are broken for a from-scratch
-learner**: the **Git Init Testing** quest (15) instructs every command against a
-`scripts/git_init.sh` that the quest never provides — *zero* of its runnable snippets
-can succeed — and the **Barodybroject Stack Analysis** side quest (29) is a stale,
-mislabeled prose report masquerading as a hands-on quest. Average score **60.4%**. The
-two failing quests are what a real Apprentice would hit and get stuck on, so the slice
-does not currently hold together end-to-end.
+**Headline verdict: FAIL for the slice as a beginner journey.** Two quests are strong and genuinely teachable (**CSS Styling Basics 93**, **Advanced Markdown 86**), one is solid with polish gaps (**Bootstrap 79**), but **two are broken for a from-scratch learner**: the **Git Init Testing** quest (15) instructs every command against a `scripts/git_init.sh` that the quest never provides — *zero* of its runnable snippets can succeed — and the **Barodybroject Stack Analysis** side quest (29) is a stale, mislabeled prose report masquerading as a hands-on quest. Average score **60.4%**. The two failing quests are what a real Apprentice would hit and get stuck on, so the slice does not currently hold together end-to-end.
 
 ## 🗺️ The Journey
 
@@ -66,8 +53,7 @@ Plan order (as selected by `walk-plan.json`, dependency-sorted):
 
 ## 🔬 Evidence
 
-All statuses below come from the sealed `walk-evidence.json` (execute mode, `mock:false`).
-"ran N/M" = snippets executed / runnable snippets available.
+All statuses below come from the sealed `walk-evidence.json` (execute mode, `mock:false`). "ran N/M" = snippets executed / runnable snippets available.
 
 ### 1. Advanced Markdown — ✅ 86 (ran 11/4 runnable; 9 passed, 2 failed, 1 skipped, 1 reasoned)
 - `passed` — Table alignment (`| :--- | :--: | ---: |`) rendered through the real `kramdown` gem: produced correct left/center/right `text-align` on `<th>/<td>`.
@@ -131,60 +117,27 @@ All statuses below come from the sealed `walk-evidence.json` (execute mode, `moc
 Reading the five in plan order as one Apprentice journey:
 
 - **Prerequisite honesty is mostly good.** Advanced Markdown and CSS Styling Basics both
-  declare empty `required_quests` and only assume basic file editing — accurate; a
-  beginner can start cold. Bootstrap correctly lists CSS Styling Basics as a
-  *recommended* prerequisite, and the two link to each other bidirectionally, so the
-  CSS → Bootstrap hop is the strongest link in the slice: a learner finishing CSS
-  understands the box model and custom properties that Bootstrap's `--bs-*` variables
-  and grid build on.
+declare empty `required_quests` and only assume basic file editing — accurate; a beginner can start cold. Bootstrap correctly lists CSS Styling Basics as a *recommended* prerequisite, and the two link to each other bidirectionally, so the CSS → Bootstrap hop is the strongest link in the slice: a learner finishing CSS understands the box model and custom properties that Bootstrap's `--bs-*` variables and grid build on.
 - **The side quest is an orphan and a tonal break.** Barodybroject sits at position 2 in
-  the walk but shares no dependency edges with its neighbors (`unlocks_quests: []`,
-  no required/recommended). For a Game Developer learning Web Fundamentals, dropping
-  from "how Markdown tables render" into a 1,100-line Django/Azure stack audit is a
-  jarring detour that assumes Python, Docker, and Django knowledge the level never
-  taught. As a *quest* it also can't be completed (migrate breaks, code blocks
-  mislabeled). It reads as reference prose that was auto-wrapped in quest frontmatter.
+the walk but shares no dependency edges with its neighbors (`unlocks_quests: []`, no required/recommended). For a Game Developer learning Web Fundamentals, dropping from "how Markdown tables render" into a 1,100-line Django/Azure stack audit is a jarring detour that assumes Python, Docker, and Django knowledge the level never taught. As a *quest* it also can't be completed (migrate breaks, code blocks mislabeled). It reads as reference prose that was auto-wrapped in quest frontmatter.
 - **The Git Init quest breaks the chain hard.** It is positioned as a main quest but
-  depends on an artifact (`scripts/git_init.sh`) that neither the quest nor any earlier
-  quest in the slice provides — a silent prerequisite the path never satisfies. A
-  learner who completed the first four quests arrives here with a browser and a text
-  editor and immediately hits `No such file or directory` on step 1. Nothing in the
-  Markdown/CSS/Bootstrap chain prepares them for shell scripting, bats, or shellcheck
-  either, so even a fixed script would be a steep, unscaffolded jump.
+depends on an artifact (`scripts/git_init.sh`) that neither the quest nor any earlier quest in the slice provides — a silent prerequisite the path never satisfies. A learner who completed the first four quests arrives here with a browser and a text editor and immediately hits `No such file or directory` on step 1. Nothing in the Markdown/CSS/Bootstrap chain prepares them for shell scripting, bats, or shellcheck either, so even a fixed script would be a steep, unscaffolded jump.
 - **Cross-character framing.** The quests' "Character Class Recommendations" name
-  Software Developer / System Engineer / Frontend Specialist but never Game Developer,
-  even though this level is on the game-developer path. Not a blocker, but a Game
-  Developer learner gets no tailored next-step signpost.
+Software Developer / System Engineer / Frontend Specialist but never Game Developer, even though this level is on the game-developer path. Not a blocker, but a Game Developer learner gets no tailored next-step signpost.
 
-Net: the **CSS ⇄ Bootstrap ⇄ (Advanced Markdown)** core is a coherent, well-built
-mini-path for this tier; the **side quest and the git-init quest are the two weak links**
-that make the slice fail as a continuous journey.
+Net: the **CSS ⇄ Bootstrap ⇄ (Advanced Markdown)** core is a coherent, well-built mini-path for this tier; the **side quest and the git-init quest are the two weak links** that make the slice fail as a continuous journey.
 
 ## 🧠 Reasoning & Method
 
 - **What I ran vs. reasoned.** I did **not** run the engine — per the workflow contract,
-  `walk-evidence.json`/`.md` were pre-computed and sealed by a deterministic CI step
-  (the engine's child `claude` processes can't authenticate from my Bash tool). I
-  consumed them **as-is**. Every `passed`/`failed`/`skipped`/`reasoned` in §Evidence is
-  the engine's sandbox result, quoted, not my own. My own contribution is the linked-
-  journey reasoning (§Chain Continuity) from reading all five sources in plan order.
+`walk-evidence.json`/`.md` were pre-computed and sealed by a deterministic CI step (the engine's child `claude` processes can't authenticate from my Bash tool). I consumed them **as-is**. Every `passed`/`failed`/`skipped`/`reasoned` in §Evidence is the engine's sandbox result, quoted, not my own. My own contribution is the linked- journey reasoning (§Chain Continuity) from reading all five sources in plan order.
 - **One reasoned corroboration:** I checked the host repo and confirmed
-  `scripts/git_init.sh` is absent there too — labeled `reasoned`, consistent with the
-  sandbox's `No such file or directory`.
+`scripts/git_init.sh` is absent there too — labeled `reasoned`, consistent with the sandbox's `No such file or directory`.
 - **Mode & sandbox:** execute mode (`mock:false`), disposable per-quest temp dirs; real
-  engines used (kramdown, liquid, PyYAML, headless Chromium/Puppeteer, compiled
-  Bootstrap 5.3.3 CSS, Dart Sass, pip/pip-audit). Engine cost $4.8079, 5/5 quests scored,
-  0 errored.
+engines used (kramdown, liquid, PyYAML, headless Chromium/Puppeteer, compiled Bootstrap 5.3.3 CSS, Dart Sass, pip/pip-audit). Engine cost $4.8079, 5/5 quests scored, 0 errored.
 - **Coverage & limits:** This is **window 1 of 6** — only **5 of the 26** quests in
-  Game-Developer/0001 were walked; the remaining 21 are out of scope for this run and
-  will be swept by later windows. Windows-PowerShell setup blocks are inherently
-  `reasoned`, not `tested`, on a Linux sandbox (backslash paths). Network-dependent
-  steps ran only where a quest explicitly and safely needed them (the Barodybroject
-  `git clone`/`pip install`). No content was edited; this is a read-only report.
+Game-Developer/0001 were walked; the remaining 21 are out of scope for this run and will be swept by later windows. Windows-PowerShell setup blocks are inherently `reasoned`, not `tested`, on a Linux sandbox (backslash paths). Network-dependent steps ran only where a quest explicitly and safely needed them (the Barodybroject `git clone`/`pip install`). No content was edited; this is a read-only report.
 - **Confidence:** High on the two failing verdicts (Git Init and Barodybroject fail
-  deterministically on real commands, not judgment calls) and on the two passes (broad
-  snippet coverage, real rendering engines). Medium on the completeness/polish issues,
-  which are the engine's static findings I reviewed against the sources and agree with.
+deterministically on real commands, not judgment calls) and on the two passes (broad snippet coverage, real rendering engines). Medium on the completeness/polish issues, which are the engine's static findings I reviewed against the sources and agree with.
 
-_Machine evidence summary (verbatim from `walk-evidence.md`): **5 quests · ✅ 2 pass ·
-⚠️ 1 warn · ❌ 2 fail · avg 60.4% · ~$4.8079**._
+_Machine evidence summary (verbatim from `walk-evidence.md`): **5 quests · ✅ 2 pass · ⚠️ 1 warn · ❌ 2 fail · avg 60.4% · ~$4.8079**._

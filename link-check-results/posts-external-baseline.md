@@ -1,12 +1,8 @@
 # Posts External Link Status — Phase 4 Baseline (auto-generated)
 
-This document records known broken or flaky **external** links in `pages/_posts/`
-after the Phase 4 link-repair pass. **Internal links: 282/282 OK** when validated
-against the built `_site/` (run `lychee --offline --base "$PWD/_site"`).
+This document records known broken or flaky **external** links in `pages/_posts/` after the Phase 4 link-repair pass. **Internal links: 282/282 OK** when validated against the built `_site/` (run `lychee --offline --base "$PWD/_site"`).
 
-External link rot is an ongoing maintenance burden — these entries are
-acknowledged and tracked, not necessarily considered actionable in the cleanup
-PR.
+External link rot is an ongoing maintenance burden — these entries are acknowledged and tracked, not necessarily considered actionable in the cleanup PR.
 
 ## Validation command
 
@@ -44,14 +40,10 @@ lychee --no-progress --format json --base "$PWD/_site" \
 ## Recommended follow-ups (post-merge, not blocking)
 
 1. **`creative-experimental/2025-07-03-music-resources-free-sheet-music.md`**:
-   12 of 19 broken links live in this single "list of resources" post that is
-   heavily decayed. Recommended action: prepend an editor's note linking to a
-   Wayback Machine snapshot, OR mark the post as archived/historical, OR
-   replace each URL with its `https://web.archive.org/web/*/<url>` mirror.
+12 of 19 broken links live in this single "list of resources" post that is heavily decayed. Recommended action: prepend an editor's note linking to a Wayback Machine snapshot, OR mark the post as archived/historical, OR replace each URL with its `https://web.archive.org/web/*/<url>` mirror.
 
 2. **Azure timeouts**: Consider switching to canonical short URLs
-   (`https://azure.microsoft.com/en-us/products/devops/`) which sometimes
-   respond faster under automated probes.
+(`https://azure.microsoft.com/en-us/products/devops/`) which sometimes respond faster under automated probes.
 
 3. **Other dead links**: One-by-one review against current vendor docs
    (jekyllrb.com URLs change with releases; YouTube videos disappear).

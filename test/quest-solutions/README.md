@@ -1,8 +1,6 @@
 # Quest Solutions Framework
 
-**Purpose**: Centralized validation, answer keys, and reference materials for all IT-Journey quest completions.
-**Location**: `test/quest-solutions/`
-**CI Workflow**: `.github/workflows/validate-solutions.yml`
+**Purpose**: Centralized validation, answer keys, and reference materials for all IT-Journey quest completions. **Location**: `test/quest-solutions/` **CI Workflow**: `.github/workflows/validate-solutions.yml`
 
 ---
 

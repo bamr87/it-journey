@@ -474,8 +474,4 @@ The "elbow method" - plotting inertia against k - helps choose how many clusters
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1101 - Machine Learning & AI]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Recommended:** [[Python for Data Science: NumPy, Pandas & Matplotlib Complete Guide]]
-**Unlocks:** [[Neural Networks Deep Dive: Build CNNs, RNNs & Transformers from Scratch]] · [[MLOps Engineering: CI/CD Pipelines for Machine Learning Production]] · [[AI Ethics and Responsible AI: Bias Detection, Fairness & Governance]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1101 - Machine Learning & AI]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Recommended:** [[Python for Data Science: NumPy, Pandas & Matplotlib Complete Guide]] **Unlocks:** [[Neural Networks Deep Dive: Build CNNs, RNNs & Transformers from Scratch]] · [[MLOps Engineering: CI/CD Pipelines for Machine Learning Production]] · [[AI Ethics and Responsible AI: Bias Detection, Fairness & Governance]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

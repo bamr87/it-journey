@@ -131,11 +131,7 @@ These break CI or the docs index:
 
 ## Voice & brand
 
-Docs use the `reference` voice profile — terse, scannable, answer-first, low emoji.
-Voice/tone and the discouraged-terms list live in the brand store; see
-[`_data/brand/sections/docs.md`](../../_data/brand/sections/docs.md) and
-[`brand.instructions.md`](brand.instructions.md). The CMS engine flags brand drift
-advisorily (`make cms-all`); vendored read-only docs (carrying `source_repo` / `source_url`) are exempt.
+Docs use the `reference` voice profile — terse, scannable, answer-first, low emoji. Voice/tone and the discouraged-terms list live in the brand store; see [`_data/brand/sections/docs.md`](../../_data/brand/sections/docs.md) and [`brand.instructions.md`](brand.instructions.md). The CMS engine flags brand drift advisorily (`make cms-all`); vendored read-only docs (carrying `source_repo` / `source_url`) are exempt.
 
 ---
 

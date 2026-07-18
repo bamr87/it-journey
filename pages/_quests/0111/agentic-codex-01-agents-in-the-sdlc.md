@@ -489,8 +489,4 @@ The familiars now know their bounds, wait at the gate, and leave footprints. Nex
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Campaign hub:** [[Epic Quest: The Agentic Codex]]
-**Previous:** none — first chapter of the Codex
-**Next:** [[Tool Use & Environment]]
-**Domain 1 quests:** [[Initiation Rites: Embedding Agents in the SDLC]] · [[The Three Sigils: Plan, Reason, Act]] · [[The All-Seeing Eye: Observability for AI Agents]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Campaign hub:** [[Epic Quest: The Agentic Codex]] **Previous:** none — first chapter of the Codex **Next:** [[Tool Use & Environment]] **Domain 1 quests:** [[Initiation Rites: Embedding Agents in the SDLC]] · [[The Three Sigils: Plan, Reason, Act]] · [[The All-Seeing Eye: Observability for AI Agents]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

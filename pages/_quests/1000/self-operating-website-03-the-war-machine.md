@@ -112,10 +112,7 @@ The **OODA loop** gives us four named stages. *Observe* loads the world (the wor
 
 We rank with **RICE**: `score = (Reach × Impact × Confidence) / Effort`. Reach is how many pages or users a fix touches, Impact is how much it moves the needle, Confidence is how sure we are, and Effort is the cost. Dividing by effort means a cheap, broad, high-confidence win beats a heroic gamble every time.
 
-Save these pure functions as `scripts/decide_core.py` — `decide.py` below imports them
-with `from decide_core import Task, decide`, so the file must sit next to `decide.py` in
-`scripts/` (or be on your `PYTHONPATH`), otherwise you get `ModuleNotFoundError: No module
-named 'decide_core'`.
+Save these pure functions as `scripts/decide_core.py` — `decide.py` below imports them with `from decide_core import Task, decide`, so the file must sit next to `decide.py` in `scripts/` (or be on your `PYTHONPATH`), otherwise you get `ModuleNotFoundError: No module named 'decide_core'`.
 
 ```python
 # scripts/decide_core.py — the pure OODA/RICE decision functions, imported by decide.py.
@@ -408,7 +405,4 @@ The machine now picks its battles and claims them safely — but who *signs off*
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Campaign hub:** [[Epic Quest: The Self-Operating Website]]
-**Previous:** [[The Proving Grounds]]
-**Next:** [[The Sigils of Trust]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Campaign hub:** [[Epic Quest: The Self-Operating Website]] **Previous:** [[The Proving Grounds]] **Next:** [[The Sigils of Trust]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

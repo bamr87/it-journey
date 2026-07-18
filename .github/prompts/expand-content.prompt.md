@@ -9,17 +9,11 @@ lastmod: 2026-05-18T12:00:00.000Z
 
 Expand the outline into full content with technical depth and practical examples.
 
-**Outline**: {{ inputs.outline }}
-**Target Audience**: {{ inputs.target_audience }}
-**Section guide**: {{ inputs.section_guide }} (optional — defaults to the post's folder)
+**Outline**: {{ inputs.outline }} **Target Audience**: {{ inputs.target_audience }} **Section guide**: {{ inputs.section_guide }} (optional — defaults to the post's folder)
 
 ## Brand context
 
-Load the `brand-voice` skill for the resolved section (the `section_guide` input,
-or the post's `pages/_posts/<category>/` folder). Expand in that voice profile:
-honor the formality/emoji band, avoid the discouraged terms, use canonical
-spellings, and keep the section's required structure (e.g. a **Verify** step for
-devops/system-administration).
+Load the `brand-voice` skill for the resolved section (the `section_guide` input, or the post's `pages/_posts/<category>/` folder). Expand in that voice profile: honor the formality/emoji band, avoid the discouraged terms, use canonical spellings, and keep the section's required structure (e.g. a **Verify** step for devops/system-administration).
 
 ## Requirements
 

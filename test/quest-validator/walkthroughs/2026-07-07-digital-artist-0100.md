@@ -18,22 +18,9 @@ session:
 
 ## 🎯 Session Summary
 
-I walked the first window (5 of 8 quests) of the **Digital Artist → Level 0100
-"Frontend & Containers" (Adventurer ⚔️)** slice as a learner, driving the sealed
-agentic **execute** engine evidence (`walk-evidence.json`) and reading every quest
-source in plan order. The slice splits cleanly into two personalities: a genuinely
-strong, dependency-linked **Docker Mastery** pair (container-fundamentals →
-docker-compose-orchestration) whose core teaching is verified end-to-end, and a
-weaker, unlinked **Frontend Forests** pair (frontend-docker, frontend) — both still
-`draft: true`, both carrying auto-seeded placeholder objectives, overlapping heavily
-in topic, and neither wired into the level's dependency graph. The side quest
-(jekyll-component-refactoring) is pedagogically sound with small fixable snags.
+I walked the first window (5 of 8 quests) of the **Digital Artist → Level 0100 "Frontend & Containers" (Adventurer ⚔️)** slice as a learner, driving the sealed agentic **execute** engine evidence (`walk-evidence.json`) and reading every quest source in plan order. The slice splits cleanly into two personalities: a genuinely strong, dependency-linked **Docker Mastery** pair (container-fundamentals → docker-compose-orchestration) whose core teaching is verified end-to-end, and a weaker, unlinked **Frontend Forests** pair (frontend-docker, frontend) — both still `draft: true`, both carrying auto-seeded placeholder objectives, overlapping heavily in topic, and neither wired into the level's dependency graph. The side quest (jekyll-component-refactoring) is pedagogically sound with small fixable snags.
 
-**Headline verdict: ⚠️ warn.** Average 61.0%, 4 warn + **1 fail**
-(`frontend-docker`, 33%, which breaks at nearly every executable step). The Docker
-sub-chain is close to ship-ready with two chapter-3 fixes each; the Frontend Forests
-quests need real editorial work — concrete Bootstrap snippets, honest prerequisites,
-and de-duplication — before a beginner could follow them successfully.
+**Headline verdict: ⚠️ warn.** Average 61.0%, 4 warn + **1 fail** (`frontend-docker`, 33%, which breaks at nearly every executable step). The Docker sub-chain is close to ship-ready with two chapter-3 fixes each; the Frontend Forests quests need real editorial work — concrete Bootstrap snippets, honest prerequisites, and de-duplication — before a beginner could follow them successfully.
 
 ## 🗺️ The Journey
 
@@ -47,9 +34,7 @@ and de-duplication — before a beginner could follow them successfully.
 
 ## 🔬 Evidence
 
-All outcomes below come from commands the execute engine actually ran in its
-disposable per-quest sandbox (Linux, Docker + Compose v2.38.2 available; no
-network/registry/GitHub push). Statically-judged steps are labeled `reasoned`.
+All outcomes below come from commands the execute engine actually ran in its disposable per-quest sandbox (Linux, Docker + Compose v2.38.2 available; no network/registry/GitHub push). Statically-judged steps are labeled `reasoned`.
 
 ### 1. container-fundamentals — 77% ⚠️ (snippets: ran 26, passed 24, failed 2, skipped 4)
 Per-dimension: commands_work 4 · content_accuracy 3 · completeness 4 · clarity 4 · structure 4 · safety 5.
@@ -125,68 +110,27 @@ Per-dimension: commands_work 3 · content_accuracy 4 · completeness 3 · clarit
 **The slice is two disconnected halves, only one of which is a real chain.**
 
 - **Docker Mastery pair (quests 1→2): genuinely linked and continuous.**
-  `container-fundamentals` (`required_quests: []`, `unlocks: docker-compose-orchestration`)
-  → `docker-compose-orchestration` (`required_quests: [container-fundamentals]`). Both
-  share `quest_series: Docker Mastery`, `quest_line: The Adventurer's Forge`,
-  `quest_arc: Containers of the Container Coast`. Quest 1 teaches images/build/run/cache;
-  quest 2 correctly assumes that and builds to multi-service orchestration. The one
-  continuity snag: quest 2's Ch.3 silently assumes the learner still has Ch.1's
-  `app.py`/Dockerfile in place — a fresh start there is confusing (flagged low).
+`container-fundamentals` (`required_quests: []`, `unlocks: docker-compose-orchestration`) → `docker-compose-orchestration` (`required_quests: [container-fundamentals]`). Both share `quest_series: Docker Mastery`, `quest_line: The Adventurer's Forge`, `quest_arc: Containers of the Container Coast`. Quest 1 teaches images/build/run/cache; quest 2 correctly assumes that and builds to multi-service orchestration. The one continuity snag: quest 2's Ch.3 silently assumes the learner still has Ch.1's `app.py`/Dockerfile in place — a fresh start there is confusing (flagged low).
 
 - **Frontend Forests pair (quests 3, 4): unlinked, duplicative, and still drafts.**
-  Both `frontend-docker` and `frontend` are `draft: true`, both belong to a generic
-  "Level 0100 Quest Line" (not Docker Mastery), both carry **empty** `quest_dependencies`
-  and the identical auto-seeded placeholder objectives, and they **overlap heavily**
-  (both "Frontend Forests / Jekyll + Bootstrap 5"). Nothing routes a learner from the
-  Docker sub-chain into them, and nothing distinguishes which to take. This is the
-  slice's biggest structural gap: two half-finished treatments of the same lesson,
-  neither wired into the graph. A Digital Artist finishing quests 1–2 has no signposted
-  next step within this window.
+Both `frontend-docker` and `frontend` are `draft: true`, both belong to a generic "Level 0100 Quest Line" (not Docker Mastery), both carry **empty** `quest_dependencies` and the identical auto-seeded placeholder objectives, and they **overlap heavily** (both "Frontend Forests / Jekyll + Bootstrap 5"). Nothing routes a learner from the Docker sub-chain into them, and nothing distinguishes which to take. This is the slice's biggest structural gap: two half-finished treatments of the same lesson, neither wired into the graph. A Digital Artist finishing quests 1–2 has no signposted next step within this window.
 
 - **Side quest (quest 5): self-contained, softly bridged.** `jekyll-component-refactoring`
-  is a `side_quest` that `recommends` `frontend-docker`. It stands on its own well
-  (builds end-to-end), but it inherits the frontend pair's weakness by recommending the
-  slice's lowest-scoring, failing quest as a lead-in.
+is a `side_quest` that `recommends` `frontend-docker`. It stands on its own well (builds end-to-end), but it inherits the frontend pair's weakness by recommending the slice's lowest-scoring, failing quest as a lead-in.
 
-**Prerequisite reality for a real beginner of this class:** Both frontend quests
-assume a working local Ruby/Jekyll toolchain and existing theme layout files that a
-fresh `jekyll new` does not provide — the exact wall the execute engine hit. A Digital
-Artist who came through the Docker sub-chain expecting a container-first path is then
-told (in `frontend`) to `gem install jekyll` on the host, contradicting the
-container-no-Ruby-install promise of `frontend-docker`. The two Bootstrap quests need
-either a merge or a clear "containerized vs. host" split before the chain reads as one
-journey.
+**Prerequisite reality for a real beginner of this class:** Both frontend quests assume a working local Ruby/Jekyll toolchain and existing theme layout files that a fresh `jekyll new` does not provide — the exact wall the execute engine hit. A Digital Artist who came through the Docker sub-chain expecting a container-first path is then told (in `frontend`) to `gem install jekyll` on the host, contradicting the container-no-Ruby-install promise of `frontend-docker`. The two Bootstrap quests need either a merge or a clear "containerized vs. host" split before the chain reads as one journey.
 
 ## 🧠 Reasoning & Method
 
 - **Mode:** `execute` (sealed). The `quest-walkthrough` workflow pre-ran the agentic
-  execute engine deterministically and sealed `walk-evidence.json` / `walk-evidence.md`;
-  per the skill's step 2, I consumed them **as-is** and did **not** re-run the engine
-  (its child `claude` processes can't authenticate from my Bash tool). I did not edit
-  `walk-plan.json` or `walk-evidence.*`.
+execute engine deterministically and sealed `walk-evidence.json` / `walk-evidence.md`; per the skill's step 2, I consumed them **as-is** and did **not** re-run the engine (its child `claude` processes can't authenticate from my Bash tool). I did not edit `walk-plan.json` or `walk-evidence.*`.
 - **What I ran vs. reasoned:** Every `passed`/`failed` above is a command the engine
-  actually executed in its disposable per-quest sandbox (evidenced in
-  `walk-evidence.json`'s `commands`/`snippets`). Items labeled `reasoned`/`skipped`
-  were judged statically — OS-specific installers (macOS/Windows), registry pushes,
-  and GitHub remote pushes were **not** run (no creds/other-OS/network), and I flagged
-  them as such rather than claiming outcomes. My own contribution was reading all five
-  quest sources in plan order and reasoning about the **linked journey** (chain
-  continuity above); I cite source line numbers (e.g. frontend.md 158–160,
-  frontend-docker.md 149/155/170) where I quote the quest itself.
+actually executed in its disposable per-quest sandbox (evidenced in `walk-evidence.json`'s `commands`/`snippets`). Items labeled `reasoned`/`skipped` were judged statically — OS-specific installers (macOS/Windows), registry pushes, and GitHub remote pushes were **not** run (no creds/other-OS/network), and I flagged them as such rather than claiming outcomes. My own contribution was reading all five quest sources in plan order and reasoning about the **linked journey** (chain continuity above); I cite source line numbers (e.g. frontend.md 158–160, frontend-docker.md 149/155/170) where I quote the quest itself.
 - **Coverage / limits:** This is **window 1 of 2** — 5 of the level's 8 quests
-  (`windowed: true`, `offset 0`). The remaining 3 quests of level 0100 are **out of
-  scope** for this run and untested here. Sandbox was network-restricted (no registry
-  login, no `git push`, outbound curl-to-localhost blocked — the engine worked around
-  the last via `docker exec … wget`, which is a sandbox constraint, not a quest defect).
-  Two quests (`frontend-docker`, `frontend`) are `draft: true`, so their low scores are
-  work-in-progress, not shipped-quest failures.
+(`windowed: true`, `offset 0`). The remaining 3 quests of level 0100 are **out of scope** for this run and untested here. Sandbox was network-restricted (no registry login, no `git push`, outbound curl-to-localhost blocked — the engine worked around the last via `docker exec … wget`, which is a sandbox constraint, not a quest defect). Two quests (`frontend-docker`, `frontend`) are `draft: true`, so their low scores are work-in-progress, not shipped-quest failures.
 - **Confidence:** High for the Docker pair and the side quest (high runnable-snippet
-  coverage: 26/11 and 11/3 recorded, real builds succeeded). Medium for `frontend`
-  (0 fenced-runnable snippets by the engine's count; verified via the engine's
-  reconstructed commands) and for the `reasoned` Bootstrap-markup findings in
-  `frontend-docker` (static judgment against BS5 docs, not a browser render).
+coverage: 26/11 and 11/3 recorded, real builds succeeded). Medium for `frontend` (0 fenced-runnable snippets by the engine's count; verified via the engine's reconstructed commands) and for the `reasoned` Bootstrap-markup findings in `frontend-docker` (static judgment against BS5 docs, not a browser render).
 
 ---
 
-_Machine evidence summary (verbatim from `walk-evidence.md`): 5 quests · ✅ 0 pass ·
-⚠️ 4 warn · ❌ 1 fail · avg **61.0%** · ~$4.3938._
+_Machine evidence summary (verbatim from `walk-evidence.md`): 5 quests · ✅ 0 pass · ⚠️ 4 warn · ❌ 1 fail · avg **61.0%** · ~$4.3938._

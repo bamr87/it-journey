@@ -1,10 +1,5 @@
 <!--
-@file scripts/core/README.md
-@description Documentation for core utility scripts
-@author IT-Journey Team <team@it-journey.org>
-@created 2025-07-07
-@lastModified 2025-07-07
-@version 1.0.0
+@file scripts/core/README.md @description Documentation for core utility scripts @author IT-Journey Team <team@it-journey.org> @created 2025-07-07 @lastModified 2025-07-07 @version 1.0.0
 
 @relatedIssues 
   - Script consolidation: Document core utilities
@@ -19,9 +14,7 @@
 @changelog
   - 2025-07-07: Initial creation - ITJ
 
-@usage Reference documentation for core scripts
-@notes Core utilities that provide foundational functionality
--->
+@usage Reference documentation for core scripts @notes Core utilities that provide foundational functionality -->
 
 # Core Utility Scripts
 

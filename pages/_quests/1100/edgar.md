@@ -67,23 +67,13 @@ mermaid: true
 ---
 🌟 Welcome, Brave Data Sorcerer! 🌟
 
-In the fog-shrouded realms of Financea, where gold flows like enchanted rivers and secrets are hoarded in
-towering vaults, stands the impregnable Data Castle ruled by the tyrannical King EDGAR. This ancient monarch,
-Sovereign of Electronic Data Gathering, Analysis, and Retrieval, guards the sacred scrolls of corporate
-filings—balance sheets that shimmer like dragon scales, income statements pulsing with the lifeblood of profits,
-and trends that whisper prophecies of market booms and busts.
+In the fog-shrouded realms of Financea, where gold flows like enchanted rivers and secrets are hoarded in towering vaults, stands the impregnable Data Castle ruled by the tyrannical King EDGAR. This ancient monarch, Sovereign of Electronic Data Gathering, Analysis, and Retrieval, guards the sacred scrolls of corporate filings—balance sheets that shimmer like dragon scales, income statements pulsing with the lifeblood of profits, and trends that whisper prophecies of market booms and busts.
 
-But lo! King EDGAR hoards this knowledge for the elite wizards of Wall Street, leaving humble investors, analysts,
-and scholars to grovel in ignorance. You must embark on the Mystical Quest to Conquer King EDGAR! Rally a legion
-of AI Soldiers—ethereal beings forged from code and logic—to breach the castle walls, extract the forbidden
-financial lore, and distribute it to the masses. APIs are your spells, rate limits your traps, and JSON responses
-the glittering treasures you seek.
+But lo! King EDGAR hoards this knowledge for the elite wizards of Wall Street, leaving humble investors, analysts, and scholars to grovel in ignorance. You must embark on the Mystical Quest to Conquer King EDGAR! Rally a legion of AI Soldiers—ethereal beings forged from code and logic—to breach the castle walls, extract the forbidden financial lore, and distribute it to the masses. APIs are your spells, rate limits your traps, and JSON responses the glittering treasures you seek.
 
 ### 🌟 The Legend Behind This Quest
 
-Democratizing financial data empowers research, education, and fairness. EDGAR exposes public, no-key endpoints at
-`https://data.sec.gov` that—when used respectfully—unlock filings, concepts, and cross-company frames suitable for
-analysis, dashboards, and learning.
+Democratizing financial data empowers research, education, and fairness. EDGAR exposes public, no-key endpoints at `https://data.sec.gov` that—when used respectfully—unlock filings, concepts, and cross-company frames suitable for analysis, dashboards, and learning.
 
 ## 🎯 Quest Objectives
 
@@ -163,8 +153,7 @@ Use a codespace or any notebook runtime; install `requests` and `pandas`. Contai
 
 ## Level 000: The Awakening – Forge Your AI Legion
 
-Narrative: In the misty village of Queryton, the Oracle whispers of `https://data.sec.gov`. No key needed—but
-beware the Rate Limit Goblins (target ≤10 req/s) and the 429 curse.
+Narrative: In the misty village of Queryton, the Oracle whispers of `https://data.sec.gov`. No key needed—but beware the Rate Limit Goblins (target ≤10 req/s) and the 429 curse.
 
 Challenge – Summon the Soldiers:
 
@@ -207,8 +196,7 @@ data = get_submissions('320193')  # Apple without leading zeros
 print(data['name'], len(data['filings']['recent']['form']))
 ```
 
-Pitfall: Malformed CIKs (pad to 10 digits) → 400 errors. Nightly bulk zip for scale:
-`https://www.sec.gov/Archives/edgar/daily-index/bulkdata/submissions.zip`.
+Pitfall: Malformed CIKs (pad to 10 digits) → 400 errors. Nightly bulk zip for scale: `https://www.sec.gov/Archives/edgar/daily-index/bulkdata/submissions.zip`.
 
 Badge Unlock: Scout Supreme – Extracted first filing date.
 
@@ -410,14 +398,11 @@ graph TD
 
 ---
 
-🎉 Congratulations, Hero! You’ve humbled King EDGAR—not by theft, but by wisdom. Use these powers ethically,
-comply with SEC edicts, and share knowledge widely. Onward—may your APIs never 429! ⚔️📜✨
+🎉 Congratulations, Hero! You’ve humbled King EDGAR—not by theft, but by wisdom. Use these powers ethically, comply with SEC edicts, and share knowledge widely. Onward—may your APIs never 429! ⚔️📜✨
 
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1100 - Data & Templates]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1100 - Data & Templates]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

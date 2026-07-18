@@ -287,14 +287,16 @@ Every failed agent run should produce a machine-readable error report:
 
 ## ✅ Quest Validation
 
+Run this self-contained check (no external script needed) from your sandbox repo root:
+
 ```bash
-python3 scripts/validate_quest.py --quest q7
-# ✅ Workflow: agent-with-retries.yml present
-# ✅ Retry config: exponential backoff implemented
-# ✅ Timeout: job-level and step-level timeouts set
-# ✅ Escalation: PR comment + label on failure
-# ✅ Error report schema: present
-# 🏆 Quest Q7 complete!
+WF=.github/workflows/agent-with-retries.yml
+test -f "$WF"                 && echo "✅ Workflow: agent-with-retries.yml present" || echo "❌ Workflow missing"
+grep -q 'RETRY_MAX'      "$WF" && echo "✅ Retry config: exponential backoff implemented" || echo "❌ No retry config"
+grep -q 'timeout-minutes' "$WF" && echo "✅ Timeout: job-level and step-level timeouts set" || echo "❌ No timeouts"
+grep -q 'createComment'  "$WF" && echo "✅ Escalation: PR comment + label on failure" || echo "❌ No escalation"
+grep -q 'error_report_version' work/gh-600/scripts/*.json 2>/dev/null && echo "✅ Error report schema: present" || echo "ℹ️  Error report schema: sample only (see Chapter 5)"
+# 🏆 All green → Quest Q7 complete!
 ```
 
 ## 🏆 Quest Rewards
@@ -310,11 +312,5 @@ python3 scripts/validate_quest.py --quest q7
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
-**Prerequisites:** [[Bind the Agent to the Realm: Dev Environment Integration]]
-**Unlocks:** [[Vaults of Recollection: Agent Memory Strategies]]
-**Sequel quests:** [[Vaults of Recollection: Agent Memory Strategies]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] **Prerequisites:** [[Bind the Agent to the Realm: Dev Environment Integration]] **Unlocks:** [[Vaults of Recollection: Agent Memory Strategies]] **Sequel quests:** [[Vaults of Recollection: Agent Memory Strategies]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

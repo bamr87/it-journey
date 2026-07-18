@@ -474,8 +474,4 @@ Before marking this quest as complete, ensure you've:
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Kubernetes Fundamentals: Container Orchestration Essentials]] · [[Kubernetes Pods and Workloads: Deployments and StatefulSets]]
-**Sequel quests:** [[Monitoring Fundamentals: Master Metrics, Logs & Traces for Observability]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Kubernetes Fundamentals: Container Orchestration Essentials]] · [[Kubernetes Pods and Workloads: Deployments and StatefulSets]] **Sequel quests:** [[Monitoring Fundamentals: Master Metrics, Logs & Traces for Observability]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

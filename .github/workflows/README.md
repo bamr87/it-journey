@@ -1,8 +1,6 @@
 # GitHub Actions Workflows
 
-This directory holds every CI/CD and automation workflow for IT-Journey. This
-README is the **inventory + map**; each workflow file has a header comment with
-its own rationale.
+This directory holds every CI/CD and automation workflow for IT-Journey. This README is the **inventory + map**; each workflow file has a header comment with its own rationale.
 
 > Keep this file in sync when you add, remove, or repurpose a workflow.
 
@@ -13,13 +11,11 @@ its own rationale.
 - **Pinned actions.** Third-party actions are pinned to a full commit SHA;
   [Dependabot](../dependabot.yml) keeps them current.
 - **Concurrency.** Each workflow declares a `concurrency:` group. Fast PR checks
-  cancel in-progress runs; mutating/long jobs (auto-merge, CMS loop, contributor
-  refresh) use `cancel-in-progress: false`.
+cancel in-progress runs; mutating/long jobs (auto-merge, CMS loop, contributor refresh) use `cancel-in-progress: false`.
 - **Untrusted input.** `github.event.*` values are passed through `env:`, never
   interpolated directly into `run:`.
 - **AI is opt-in.** Every Claude-powered workflow gates on a `*_ENABLED` repo
-  variable **and** the `CLAUDE_CODE_OAUTH_TOKEN`/`ANTHROPIC_API_KEY` secret, so
-  nothing AI runs until both are present (see `scripts/ai/README.md`).
+variable **and** the `CLAUDE_CODE_OAUTH_TOKEN`/`ANTHROPIC_API_KEY` secret, so nothing AI runs until both are present (see `scripts/ai/README.md`).
 
 ## Inventory
 
@@ -35,8 +31,7 @@ its own rationale.
 
 ### Content quality & AI fleet (opt-in)
 
-These implement the AI-augmented CMS described in the root `CLAUDE.md` and
-`scripts/ai/README.md`.
+These implement the AI-augmented CMS described in the root `CLAUDE.md` and `scripts/ai/README.md`.
 
 | Workflow | Triggers | What it does |
 |---|---|---|
@@ -73,8 +68,7 @@ These implement the AI-augmented CMS described in the root `CLAUDE.md` and
 
 ## Required vs advisory checks
 
-Mark these as **required status checks** in branch protection for `main`
-(Settings → Branches / Rulesets). They block merge:
+Mark these as **required status checks** in branch protection for `main` (Settings → Branches / Rulesets). They block merge:
 
 | Required check | Workflow (job) |
 |---|---|
@@ -84,39 +78,28 @@ Mark these as **required status checks** in branch protection for `main`
 | Content brand lint | `content-quality.yml` |
 | CodeQL | `codeql-analysis.yml` — **caveat:** now path-filtered to code diffs, so only mark it required if content-only PRs are exempted (a required check that never starts blocks the merge) |
 
-**Advisory** (run but non-blocking): `link-checker.yml` (PR incremental),
-`content-review.yml`, `agentic-quest-review.yml`, and the scheduled
-`dependency-checker.yml` security scan.
+**Advisory** (run but non-blocking): `link-checker.yml` (PR incremental), `content-review.yml`, `agentic-quest-review.yml`, and the scheduled `dependency-checker.yml` security scan.
 
 Also enable **"Require review from Code Owners"** (see [CODEOWNERS](../CODEOWNERS)).
 
 ## Deployment
 
-The production site (`it-journey.dev`) is served by **GitHub Pages** in legacy
-**"Deploy from a branch"** mode: Pages builds Jekyll from the **`gh-pages`**
-branch (source, not `_site`) and publishes it. That Pages build (shown as
-**"pages build and deployment"**) is the only thing that should ever run when
-`gh-pages` changes.
+The production site (`it-journey.dev`) is served by **GitHub Pages** in legacy **"Deploy from a branch"** mode: Pages builds Jekyll from the **`gh-pages`** branch (source, not `_site`) and publishes it. That Pages build (shown as **"pages build and deployment"**) is the only thing that should ever run when `gh-pages` changes.
 
-`sync-gh-pages.yml` keeps `gh-pages` in sync automatically, replacing the old
-manual "Merge main into gh-pages" PRs:
+`sync-gh-pages.yml` keeps `gh-pages` in sync automatically, replacing the old manual "Merge main into gh-pages" PRs:
 
 | Workflow | Triggers | What it does |
 |---|---|---|
 | `sync-gh-pages.yml` | 2×/day (02:20, 14:20 UTC); dispatch | **Routine deploy sync.** If `main` is ahead of `gh-pages` **and** main's latest commit is fully green (all check-runs + commit statuses passed), it opens a PR from `main` into `gh-pages` and merges it (merge commit). Pages then builds `gh-pages`. Reads main's already-finished CI — **no reruns, no waiting**. Does nothing if gh-pages is up to date or main is pending/red. |
 
-`gh-pages` is a pure mirror of `main` (kept in lockstep by this workflow), so
-the PR is always a clean, conflict-free merge. If the branches ever diverge,
-re-run the one-time reconciliation: merge `main` into `gh-pages` with `-X theirs`
-(main authoritative) so their trees match again.
+`gh-pages` is a pure mirror of `main` (kept in lockstep by this workflow), so the PR is always a clean, conflict-free merge. If the branches ever diverge, re-run the one-time reconciliation: merge `main` into `gh-pages` with `-X theirs` (main authoritative) so their trees match again.
 
 Guarantees behind "only the Pages build runs on a `gh-pages` update":
 
 1. Every push-triggered workflow is scoped to `main`/`master` (this is why
    `validate-solutions.yml` — previously branchless — is now branch-guarded).
 2. The merge is performed with `GITHUB_TOKEN`, whose pushes do not start new
-   Actions runs; the legacy Pages build is a Pages-service job, not an Actions
-   workflow, so it still fires on the branch update.
+Actions runs; the legacy Pages build is a Pages-service job, not an Actions workflow, so it still fires on the branch update.
 
 Operational notes:
 
@@ -125,13 +108,7 @@ Operational notes:
 - Trigger it on demand from the Actions tab (`workflow_dispatch`) to publish
   immediately instead of waiting for the next scheduled tick (02:20/14:20 UTC).
 - **Prefer the default `GITHUB_TOKEN`** (used automatically): its pushes create
-  no Actions runs at all, so the `gh-pages` update stays Pages-build-only. An
-  optional `GH_PAGES_DEPLOY_TOKEN` secret (a PAT with `contents:write`) is used
-  if present — only set it if the legacy Pages build ever fails to fire from a
-  `GITHUB_TOKEN` push. A PAT push, unlike `GITHUB_TOKEN`, makes GitHub
-  re-evaluate the workflow files now mirrored on `gh-pages`, which can log a
-  harmless startup-failure for reusable-workflow files (e.g. `quest-perfection`);
-  branch-scoping still keeps the real CI workflows from running.
+no Actions runs at all, so the `gh-pages` update stays Pages-build-only. An optional `GH_PAGES_DEPLOY_TOKEN` secret (a PAT with `contents:write`) is used if present — only set it if the legacy Pages build ever fails to fire from a `GITHUB_TOKEN` push. A PAT push, unlike `GITHUB_TOKEN`, makes GitHub re-evaluate the workflow files now mirrored on `gh-pages`, which can log a harmless startup-failure for reusable-workflow files (e.g. `quest-perfection`); branch-scoping still keeps the real CI workflows from running.
 - If you migrate to "Deploy from GitHub Actions", replace this workflow with an
   `actions/deploy-pages` workflow and update this section.
 

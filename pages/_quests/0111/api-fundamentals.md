@@ -456,7 +456,4 @@ curl -s https://jsonplaceholder.typicode.com/posts/1 | jq '.title'
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0111 - API Development]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Unlocks:** [[REST Principles: Constraints, Resources, and Richardson Maturity]] · [[API Authentication: Keys, Tokens, OAuth2, and JWT]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0111 - API Development]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Unlocks:** [[REST Principles: Constraints, Resources, and Richardson Maturity]] · [[API Authentication: Keys, Tokens, OAuth2, and JWT]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

@@ -25,50 +25,29 @@ session: >-
 - **Quests walked:** 5 (window 1 of 3; the full level holds 13 quests — this is a
   rotating window, not the whole level)
 - **Mode:** `execute` — quest commands were run for real in a disposable sandbox by
-  the agentic engine; I consumed the **workflow-sealed** `walk-evidence.json` /
-  `walk-evidence.md` as-is (I did not and cannot re-run the engine from the agent).
+the agentic engine; I consumed the **workflow-sealed** `walk-evidence.json` / `walk-evidence.md` as-is (I did not and cannot re-run the engine from the agent).
 - **Headline verdict:** ⚠️ **WARN** — 3 pass / 0 warn / 2 fail, average **60.8%**.
 
-The three CI/CD-native quests in this slice — **CI/CD Fundamentals** (88),
-**GitHub Actions Basics** (80), and **The Warden's Gate** (83) — form a genuinely
-strong, correctly-ordered spine for a System Engineer: concepts → workflow syntax →
-production-grade kill-switch/permissions discipline. Their flaws are consistent and
-narrow (they teach a git/push rhythm but never show `git remote add origin` or an
-initial commit, so the "make it green in the Actions tab" challenges can't be
-completed from the document alone). The two failing quests are **not** part of that
-spine and drag the average down: **Docker Containerization Mastery** (12) is a
-verbatim unfilled scaffold — every code block is a placeholder and the one
-Docker-tagged block fails to build — and **Forging the La(zy)TeX CV** (41) promises a
-`cv.tex` it never provides and writes every LaTeX example with an invalid doubled
-backslash. A maintainer should treat Docker and LaTeX-CV as blocking content bugs and
-the spine's missing-git-remote gap as a shared, easily-fixed medium.
+The three CI/CD-native quests in this slice — **CI/CD Fundamentals** (88), **GitHub Actions Basics** (80), and **The Warden's Gate** (83) — form a genuinely strong, correctly-ordered spine for a System Engineer: concepts → workflow syntax → production-grade kill-switch/permissions discipline. Their flaws are consistent and narrow (they teach a git/push rhythm but never show `git remote add origin` or an initial commit, so the "make it green in the Actions tab" challenges can't be completed from the document alone). The two failing quests are **not** part of that spine and drag the average down: **Docker Containerization Mastery** (12) is a verbatim unfilled scaffold — every code block is a placeholder and the one Docker-tagged block fails to build — and **Forging the La(zy)TeX CV** (41) promises a `cv.tex` it never provides and writes every LaTeX example with an invalid doubled backslash. A maintainer should treat Docker and LaTeX-CV as blocking content bugs and the spine's missing-git-remote gap as a shared, easily-fixed medium.
 
 ## 🗺️ The Journey
 
 Walked in `walk-plan.json` order (dependency-sorted):
 
 1. ✅ **CI/CD Fundamentals: The Build-Test-Deploy Pipeline** — **88** · the
-   package.json build/test/lint artifact runs exactly as documented; only the
-   Chapter 3 git rhythm has a real gotcha (no initial commit, no remote).
+package.json build/test/lint artifact runs exactly as documented; only the Chapter 3 git rhythm has a real gotcha (no initial commit, no remote).
 2. ❌ **Docker Containerization Mastery: Level 0101 (5) Quest** — **12** · an
-   unfilled template; 6/6 code blocks are placeholders and the `docker` block fails
-   to build. Teaches nothing about Docker despite the title.
+unfilled template; 6/6 code blocks are placeholders and the `docker` block fails to build. Teaches nothing about Docker despite the title.
 3. ✅ **GitHub Actions Basics: Workflow Automation for Modern DevOps** — **80** ·
-   every YAML snippet valid, matrix math (2×3−1=5) and cron verified; gap is it never
-   shows the git add/commit/push to actually trigger a run.
+every YAML snippet valid, matrix math (2×3−1=5) and cron verified; gap is it never shows the git add/commit/push to actually trigger a run.
 4. ❌ **Forging the La(zy)TeX CV: Binary Level 0101 (5) Quest** — **41** · the core
-   `cv.tex` artifact is never provided/linked, `latexmk -pdf cv.tex` fails, and every
-   LaTeX example uses an invalid `\\` doubled backslash.
+`cv.tex` artifact is never provided/linked, `latexmk -pdf cv.tex` fails, and every LaTeX example uses an invalid `\\` doubled backslash.
 5. ✅ **The Warden's Gate: Kill Switches and Stage Gates** — **83** · the gate-job
-   kill-switch shell logic ran correctly armed/disarmed; caller-permission /
-   `startup_failure` teaching is accurate. Live `gh` bits unverifiable without auth
-   (inherent to the topic).
+kill-switch shell logic ran correctly armed/disarmed; caller-permission / `startup_failure` teaching is accurate. Live `gh` bits unverifiable without auth (inherent to the topic).
 
 ## 🔬 Evidence
 
-All command outcomes below are from the sealed `walk-evidence.json` (execute mode,
-`mock: false`); I quote the engine's recorded findings, trimmed. Snippet coverage is
-`ran/total`.
+All command outcomes below are from the sealed `walk-evidence.json` (execute mode, `mock: false`); I quote the engine's recorded findings, trimmed. Snippet coverage is `ran/total`.
 
 ### 1. CI/CD Fundamentals — score 88 · snippets 4/5 run (1 failed)
 - **`passed`** — Linux setup `mkdir cicd-quest && cd cicd-quest && git init && npm init -y` ran cleanly.
@@ -108,120 +87,51 @@ All command outcomes below are from the sealed `walk-evidence.json` (execute mod
 **High**
 
 - **high** · *Docker Containerization Mastery* · whole document (code blocks lines
-  55-92, 113-122; objectives; resources) · **Observed:** every one of the 6 code
-  blocks is placeholder comments/bracketed TODOs; the `docker` block fails to build
-  (`file with no instructions`) when run; none of the four stated validation criteria
-  (build/run containers, Docker Compose, security/optimization, cloud deploy) is
-  taught anywhere — content_accuracy, completeness, commands_work all scored 0.
-  **Fix:** author the actual tutorial: a minimal working Dockerfile + real
-  `docker build`/`docker run` in Chapter 1, a `docker-compose.yml` with 2+ services,
-  a security/optimization section (non-root `USER`, multi-stage, `.dockerignore`),
-  one concrete cloud-deploy walkthrough, and real resource URLs. Until then this
-  quest teaches nothing and should arguably be `draft: true`.
+55-92, 113-122; objectives; resources) · **Observed:** every one of the 6 code blocks is placeholder comments/bracketed TODOs; the `docker` block fails to build (`file with no instructions`) when run; none of the four stated validation criteria (build/run containers, Docker Compose, security/optimization, cloud deploy) is taught anywhere — content_accuracy, completeness, commands_work all scored 0. **Fix:** author the actual tutorial: a minimal working Dockerfile + real `docker build`/`docker run` in Chapter 1, a `docker-compose.yml` with 2+ services, a security/optimization section (non-root `USER`, multi-stage, `.dockerignore`), one concrete cloud-deploy walkthrough, and real resource URLs. Until then this quest teaches nothing and should arguably be `draft: true`.
 - **high** · *Forging the La(zy)TeX CV* · Chapter 2 "Summon the Template (Link to
-  cv.tex)" · **Observed:** the chapter title promises a link to `cv.tex` but no file
-  or fetch command exists; `latexmk -pdf cv.tex` fails because the artifact is absent,
-  so Chapter 1's "compile without errors" is impossible from the document alone.
-  **Fix:** embed the full `cv.tex` in the quest or give an explicit fetch command
-  (e.g. a `curl`/`git clone` URL to the repo path holding `cv/cv.tex`), plus a minimal
-  bootstrap `.tex` fallback.
+cv.tex)" · **Observed:** the chapter title promises a link to `cv.tex` but no file or fetch command exists; `latexmk -pdf cv.tex` fails because the artifact is absent, so Chapter 1's "compile without errors" is impossible from the document alone. **Fix:** embed the full `cv.tex` in the quest or give an explicit fetch command (e.g. a `curl`/`git clone` URL to the repo path holding `cv/cv.tex`), plus a minimal bootstrap `.tex` fallback.
 - **high** · *Forging the La(zy)TeX CV* · every LaTeX code/prose span (Chapters 2-4,
-  lines ~192-193, 223-227, 230) · **Observed:** doubled backslashes throughout
-  (`\\resumeSubheading`, `\\resumeItem`, `\\resumeItemListStart/End`, `\\href`,
-  `\\includegraphics`, `\\linewidth`, `\\pdfgentounicode=1`); in LaTeX `\\` is a
-  line-break, so copy-pasting produces broken output. **Fix:** replace every `\\`
-  with a single `\` in LaTeX contexts. (Note: this is a genuine content defect, not a
-  Markdown-escaping artifact — the engine confirmed the doubling exists literally
-  inside the fenced ```tex block via `grep -n` on the raw file.)
+lines ~192-193, 223-227, 230) · **Observed:** doubled backslashes throughout (`\\resumeSubheading`, `\\resumeItem`, `\\resumeItemListStart/End`, `\\href`, `\\includegraphics`, `\\linewidth`, `\\pdfgentounicode=1`); in LaTeX `\\` is a line-break, so copy-pasting produces broken output. **Fix:** replace every `\\` with a single `\` in LaTeX contexts. (Note: this is a genuine content defect, not a Markdown-escaping artifact — the engine confirmed the doubling exists literally inside the fenced ```tex block via `grep -n` on the raw file.)
 
 **Medium**
 
 - **medium** · *CI/CD Fundamentals* · Chapter 3 git rhythm (lines 338-346) &
-  Intermediate Challenge · **Observed:** `git commit -am` silently no-ops on a new
-  untracked file, and `git push -u origin add-greeting` fails because no
-  `git remote add origin` is ever shown, yet the Intermediate Challenge requires a
-  green run "visible in the Actions tab." **Fix:** add `git add .` (or an initial
-  commit right after `npm init -y` in the setup paths) before `git commit`, and a
-  `git remote add origin <url>` / "create a GitHub repo" step before `git push`.
+Intermediate Challenge · **Observed:** `git commit -am` silently no-ops on a new untracked file, and `git push -u origin add-greeting` fails because no `git remote add origin` is ever shown, yet the Intermediate Challenge requires a green run "visible in the Actions tab." **Fix:** add `git add .` (or an initial commit right after `npm init -y` in the setup paths) before `git commit`, and a `git remote add origin <url>` / "create a GitHub repo" step before `git push`.
 - **medium** · *GitHub Actions Basics* · Novice/Intermediate Challenges & Cloud
-  Realms path (lines 194-198, 360-378) · **Observed:** learners are told to "commit
-  and trigger" and to run `gh run list`, but the git add/commit/push steps are never
-  shown and `gh run list` fails without auth outside a Codespace. **Fix:** add the
-  explicit commit/push sequence, and note that `gh` needs `gh auth login` (or a
-  Codespace) before `gh run list` works.
+Realms path (lines 194-198, 360-378) · **Observed:** learners are told to "commit and trigger" and to run `gh run list`, but the git add/commit/push steps are never shown and `gh run list` fails without auth outside a Codespace. **Fix:** add the explicit commit/push sequence, and note that `gh` needs `gh auth login` (or a Codespace) before `gh run list` works.
 - **medium** · *Forging the La(zy)TeX CV* · macOS BasicTeX note (line 133) ·
-  **Observed:** `tlmgr install … CormorantGaramond` — package name unverified against
-  CTAN (`cormorantgaramond` is the CTAN id). **Fix:** confirm the exact tlmgr package
-  name before publishing to avoid a failed install.
+**Observed:** `tlmgr install … CormorantGaramond` — package name unverified against CTAN (`cormorantgaramond` is the CTAN id). **Fix:** confirm the exact tlmgr package name before publishing to avoid a failed install.
 
 **Low**
 
 - **low** · *The Warden's Gate* · "Reproduce It" bash block (lines 136-139) ·
-  **Observed:** chaining `gh workflow run X && gh run watch` can race ahead of GitHub
-  registering the new run (known `gh` gotcha); no fallback is mentioned. **Fix:** note
-  a short retry/`--exit-status` fallback if `gh run watch` reports no in-progress run.
+**Observed:** chaining `gh workflow run X && gh run watch` can race ahead of GitHub registering the new run (known `gh` gotcha); no fallback is mentioned. **Fix:** note a short retry/`--exit-status` fallback if `gh run watch` reports no in-progress run.
 - **low** · *Cross-quest* · Knowledge-Graph "Level hub" wiki-links · **Observed:**
-  Docker and LaTeX-CV both link `[[Level 0101 - Advanced Docker & DevOps]]`, while
-  CI/CD Fundamentals, GitHub Actions, and Warden's Gate link
-  `[[Level 0101 - CI/CD & DevOps]]`. Two names for one level hub will split the graph.
-  **Fix:** standardize on the level's canonical theme name (`CI/CD & DevOps`).
+Docker and LaTeX-CV both link `[[Level 0101 - Advanced Docker & DevOps]]`, while CI/CD Fundamentals, GitHub Actions, and Warden's Gate link `[[Level 0101 - CI/CD & DevOps]]`. Two names for one level hub will split the graph. **Fix:** standardize on the level's canonical theme name (`CI/CD & DevOps`).
 
-No fabricated issues: every item above cites a run command outcome or an exact quoted
-line from the quest source.
+No fabricated issues: every item above cites a run command outcome or an exact quoted line from the quest source.
 
 ## 🔗 Chain Continuity
 
 Reasoning about the five as one journey a System Engineer would actually take:
 
 - **A strong, correctly-ordered spine exists.** `cicd-fundamentals` declares
-  `unlocks_quests: /quests/0101/github-actions-basics/`, and `github-actions-basics`
-  declares `required_quests: /quests/0101/cicd-fundamentals/` — the dependency edge is
-  reciprocal and honest. A learner finishing Fundamentals (CI/CD mental model,
-  build-test-deploy stages, the `on: [push, pull_request]` workflow, secrets) is
-  genuinely ready for GitHub Actions Basics (workflow/job/step hierarchy, triggers,
-  matrix). The Warden's Gate then builds on Actions fluency to teach production-grade
-  gate jobs, least-privilege permissions, and `startup_failure` forensics — the exact
-  operational discipline a System Engineer needs. This trio is the real curriculum.
+`unlocks_quests: /quests/0101/github-actions-basics/`, and `github-actions-basics` declares `required_quests: /quests/0101/cicd-fundamentals/` — the dependency edge is reciprocal and honest. A learner finishing Fundamentals (CI/CD mental model, build-test-deploy stages, the `on: [push, pull_request]` workflow, secrets) is genuinely ready for GitHub Actions Basics (workflow/job/step hierarchy, triggers, matrix). The Warden's Gate then builds on Actions fluency to teach production-grade gate jobs, least-privilege permissions, and `startup_failure` forensics — the exact operational discipline a System Engineer needs. This trio is the real curriculum.
 - **A shared, fixable prerequisite gap spans the spine.** Both Fundamentals and
-  GitHub Actions Basics assume the learner can push to a remote and see a green
-  Actions run, but *neither* shows `git remote add origin` or the initial commit. A
-  real beginner following either quest verbatim on a fresh repo hits the exact failure
-  the sandbox reproduced (`git commit -am` no-op, then `push` to a missing origin).
-  The chain never provides this step, so the hands-on "make it green" challenges stall
-  at the same wall in two consecutive quests — worth fixing once, consistently.
+GitHub Actions Basics assume the learner can push to a remote and see a green Actions run, but *neither* shows `git remote add origin` or the initial commit. A real beginner following either quest verbatim on a fresh repo hits the exact failure the sandbox reproduced (`git commit -am` no-op, then `push` to a missing origin). The chain never provides this step, so the hands-on "make it green" challenges stall at the same wall in two consecutive quests — worth fixing once, consistently.
 - **The Warden's Gate points *out* of this slice for its prerequisite.** It lists
-  `recommended_quests: /quests/0000/ouroboros-loop-01-the-first-turn/` (Level 0000)
-  and its body assumes "your `potion-book` repo with a green First Turn run." That
-  prerequisite is **not** satisfied by any quest in this window — a System Engineer
-  arriving from the CI/CD spine has a Node pipeline repo, not a First-Turn loop repo.
-  The quest is self-contained enough to *read* and its patterns verified in isolation,
-  but the hands-on Mastery Challenge assumes a repo the slice never built.
+`recommended_quests: /quests/0000/ouroboros-loop-01-the-first-turn/` (Level 0000) and its body assumes "your `potion-book` repo with a green First Turn run." That prerequisite is **not** satisfied by any quest in this window — a System Engineer arriving from the CI/CD spine has a Node pipeline repo, not a First-Turn loop repo. The quest is self-contained enough to *read* and its patterns verified in isolation, but the hands-on Mastery Challenge assumes a repo the slice never built.
 - **The two failing quests are off-spine and don't participate in the chain.** Neither
-  Docker Mastery nor the LaTeX CV is referenced by any `unlocks_quests`/
-  `required_quests` edge among the five; they're independent Level-0101 entries that
-  happen to share the level. Docker's own frontmatter even points at Level 0001/0010
-  prerequisites and Level 0110 follow-ups that live outside this theme. So their
-  failures don't *break* the CI/CD learning path — but a learner browsing the
-  `/quests/0101/` hub will encounter a completely empty Docker "quest" and a LaTeX CV
-  quest whose first command fails, which damages trust in the level as a whole.
+Docker Mastery nor the LaTeX CV is referenced by any `unlocks_quests`/ `required_quests` edge among the five; they're independent Level-0101 entries that happen to share the level. Docker's own frontmatter even points at Level 0001/0010 prerequisites and Level 0110 follow-ups that live outside this theme. So their failures don't *break* the CI/CD learning path — but a learner browsing the `/quests/0101/` hub will encounter a completely empty Docker "quest" and a LaTeX CV quest whose first command fails, which damages trust in the level as a whole.
 - **Naming drift in the graph.** The level-hub wiki-link disagreement (`CI/CD &
-  DevOps` vs `Advanced Docker & DevOps`) is a small but real continuity defect: the
-  Obsidian graph would render two separate hub nodes for one level.
+DevOps` vs `Advanced Docker & DevOps`) is a small but real continuity defect: the Obsidian graph would render two separate hub nodes for one level.
 
-Net: as a *System Engineer CI/CD path*, the slice's spine is coherent and
-recommendable once the git-remote gap is closed; as a *Level 0101 hub*, it currently
-exposes two quests (Docker, LaTeX-CV) that fail on first contact.
+Net: as a *System Engineer CI/CD path*, the slice's spine is coherent and recommendable once the git-remote gap is closed; as a *Level 0101 hub*, it currently exposes two quests (Docker, LaTeX-CV) that fail on first contact.
 
 ## 🧠 Reasoning & Method
 
 - **What I ran vs. reasoned.** I ran **nothing** against the quests myself — the
-  agentic execute engine had already been run deterministically by the workflow and
-  its results sealed into `walk-evidence.json` / `walk-evidence.md` before this
-  session (the engine's child `claude` processes can't authenticate from the agent's
-  Bash tool). I consumed that evidence verbatim and did **not** edit, regenerate, or
-  hand-write it. Every `passed`/`failed`/`skipped`/`reasoned` above is the engine's
-  recorded outcome; the linked-journey analysis in **Chain Continuity** is my own
-  reasoning over the five quest sources, which I read in full in plan order.
+agentic execute engine had already been run deterministically by the workflow and its results sealed into `walk-evidence.json` / `walk-evidence.md` before this session (the engine's child `claude` processes can't authenticate from the agent's Bash tool). I consumed that evidence verbatim and did **not** edit, regenerate, or hand-write it. Every `passed`/`failed`/`skipped`/`reasoned` above is the engine's recorded outcome; the linked-journey analysis in **Chain Continuity** is my own reasoning over the five quest sources, which I read in full in plan order.
 - **Mode & sandbox.** `execute` mode, disposable sandbox, per-quest isolation
   (`mock: false`). Total engine cost ~$2.71, 5/5 quests scored, 0 errored.
 - **Coverage limits (honest).**
@@ -237,14 +147,10 @@ exposes two quests (Docker, LaTeX-CV) that fail on first contact.
   - The GitHub Actions YAML deploy/CI workflows and the Warden's Gate YAML were
     validated as parse-correct, not executed by a runner (no `act`).
 - **Confidence.** High on the two failures (Docker = template, LaTeX-CV = missing
-  artifact + `\\` defect — both reproduced by real sandbox commands) and on the
-  git-remote gap (reproduced verbatim). Medium on the "green Actions tab" completion
-  claims, which are reasoned rather than executed because they need live GitHub auth.
+artifact + `\\` defect — both reproduced by real sandbox commands) and on the git-remote gap (reproduced verbatim). Medium on the "green Actions tab" completion claims, which are reasoned rather than executed because they need live GitHub auth.
 - **Scope discipline.** One slice, one report. I made no content edits, opened no PR,
-  and did not expand to other windows/levels/characters. Fixable bugs are captured in
-  **Issues Found** for a content pass to act on.
+and did not expand to other windows/levels/characters. Fixable bugs are captured in **Issues Found** for a content pass to act on.
 
 ---
 
-*Machine evidence summary (verbatim from `walk-evidence.md`): "**5** quests
-evaluated · ✅ 3 pass · ⚠️ 0 warn · ❌ 2 fail · avg **60.8%** · ~$2.7137".*
+*Machine evidence summary (verbatim from `walk-evidence.md`): "**5** quests evaluated · ✅ 3 pass · ⚠️ 0 warn · ❌ 2 fail · avg **60.8%** · ~$2.7137".*

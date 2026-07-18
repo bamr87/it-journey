@@ -21,14 +21,7 @@ redirect_from:
 - /notes/cheetsheets/powershell/
 - /notes/cheetsheets/2022-10-07-powershell/
 ---
-Windows PowerShell is the successor of the windows cmd language, which itself has its roots in the ms-dos Bat language. All recent versions of Windows offer PowerShell (PS).
-PS may be seen as Microsoft's answer to the shells common in Unix/Linux (such as csh, bash, *etc.*). Its name reflects what sets it apart from those shells: an object pipeline and direct access to the .NET framework.
-In these notes some important PS commands are listed and PowerShell's most notable feature, the object pipeline, is discussed. 
-From the outset it is important to note that, in contrast to Linux/Unix, *Windows PowerShell is completely case-insensitive.*
-The monospace text snippets below are valid PS and may be copied, pasted, and executed in a PowerShell- or a PowerShell_ISE-session. This is why the notes form a "Cheatsheet".
-As is common for cheatsheets, there is hardly any explanation, the examples speak for themselves. 
-It must be stressed here that many of the basic PS commands are not at all orthogonal, so that many variant pipelines can lead to the same effect. 
-Often an example is one out of a multitude of possibilities accomplishing the same task.
+Windows PowerShell is the successor of the windows cmd language, which itself has its roots in the ms-dos Bat language. All recent versions of Windows offer PowerShell (PS). PS may be seen as Microsoft's answer to the shells common in Unix/Linux (such as csh, bash, *etc.*). Its name reflects what sets it apart from those shells: an object pipeline and direct access to the .NET framework. In these notes some important PS commands are listed and PowerShell's most notable feature, the object pipeline, is discussed. From the outset it is important to note that, in contrast to Linux/Unix, *Windows PowerShell is completely case-insensitive.* The monospace text snippets below are valid PS and may be copied, pasted, and executed in a PowerShell- or a PowerShell_ISE-session. This is why the notes form a "Cheatsheet". As is common for cheatsheets, there is hardly any explanation, the examples speak for themselves. It must be stressed here that many of the basic PS commands are not at all orthogonal, so that many variant pipelines can lead to the same effect. Often an example is one out of a multitude of possibilities accomplishing the same task.
 
 ## Contents
 - [## Unrelated to PS](#-unrelated-to-ps)
@@ -183,8 +176,7 @@ Get-ChildItem  -name       # Equivalent to (Get-ChildItem).name
 
 A PSDrive is a collection of entities that are grouped such that they may be accessed as a filesystem drive. The grouping is performed by a "PSprovider". By default a PS session has access to about a dozen PSdrives among which `c:, env:, alias:, HKLM:`.  Here `c:` is the usual Windows c-drive; `env:` is the space of Windows environmental variables; `alias:` is the collection of cmdlet aliases; `HKLM` is a hive in the Registry.
 
-Standard one enters a PS session in the home folder (home directory) of the user. To switch a PS session to another PSdrive or folder and get the children of the new location, proceed as follows:
-Switch to env:
+Standard one enters a PS session in the home folder (home directory) of the user. To switch a PS session to another PSdrive or folder and get the children of the new location, proceed as follows: Switch to env:
 
 ```powershell
 Set-Location env:                 # Prompt character becomes `Env:\>`
@@ -712,9 +704,7 @@ The cmdlet `rename-item` can take piped input for the old name and recognizes 
 ```
 gives the required change of the file extension.
 
-To change multiple names at once, one may use the `-replace` operator. Its syntax is:
-    ` string -replace regexp, new_name`
-In `string` every substring that matches the regular expression `regexp` is replaced by `new_name`. For example,
+To change multiple names at once, one may use the `-replace` operator. Its syntax is: ` string -replace regexp, new_name` In `string` every substring that matches the regular expression `regexp` is replaced by `new_name`. For example,
 
 ```
      'report.txt' -replace '\.txt$', '.doc'  # -> 'report.doc'
@@ -823,8 +813,7 @@ The last statement (`$assoc`) gives:
 15Strings
 =========
 
-**Strings** are as in PHP.
-'Singly' quoted strings: no expansion of variables or escape character (backtick). "Doubly" quoted: expansion of variables. Expressions under `$` are evaluated. For example,
+**Strings** are as in PHP. 'Singly' quoted strings: no expansion of variables or escape character (backtick). "Doubly" quoted: expansion of variables. Expressions under `$` are evaluated. For example,
 ```
       $five  = 5
       '3*$five'  -> 3*$five
@@ -832,15 +821,13 @@ The last statement (`$assoc`) gives:
       "$(3*5)" -> 15
 
 ```
-Backtick escapes under double quotes. For example, escaping the dollar symbol: `"`$(3*5)"` gives `$(3*5)`. Backticks are unchanged under single quotes: `'`$(3*5)'` gives `'`$(3*5)'`.
-**Notes:**
+Backtick escapes under double quotes. For example, escaping the dollar symbol: `"`$(3*5)"` gives `$(3*5)`. Backticks are unchanged under single quotes: `'`$(3*5)'` gives `'`$(3*5)'`. **Notes:**
 
 1.  `"`n"` gives the newline character.
 2.  The string `"John Doe"` can be appended to a file simply by `"John Doe" >> out.txt`. The file `out.txt` will be in UTF-16.
 3.  The cmdlet `add-content` (alias `ac`) writes to file by default in ANSI (Windows-1252), and allows specification of other encodings.
 
-**Here-strings**
-`@' ... '@` (no expansion) and `@" ... "@` (with expansion). Note that the openings `@'` and `@"` must start in column 1 and be on a single line. The same holds for the endings `'@` and `"@`.
+**Here-strings** `@' ... '@` (no expansion) and `@" ... "@` (with expansion). Note that the openings `@'` and `@"` must start in column 1 and be on a single line. The same holds for the endings `'@` and `"@`.
 
 Example, assume `$a -eq "Big Brother"`:
 ```
@@ -988,8 +975,7 @@ which returns the Windows environmental variable `path` with its entries stack
 17Comparison
 ============
 
-Comparison operators are among others: `-eq, -ne, -gt, -ge, -lt, -le, -like, -notlike, -match, -notmatch,` and `-cmatch`. Although the operator `-replace` does not perform a comparison, it is usually included in this group.
-Examples:
+Comparison operators are among others: `-eq, -ne, -gt, -ge, -lt, -le, -like, -notlike, -match, -notmatch,` and `-cmatch`. Although the operator `-replace` does not perform a comparison, it is usually included in this group. Examples:
 ```
     'peanutbutter' -like 'nut'         # false
     'peanutbutter' -like '*nut*'       # true   (* is wildcard)
@@ -1043,8 +1029,7 @@ PowerShell has built-in classes, one is `[console]` with methods (among others
     [console]::readkey()          # Return name of key + modifier(not under ISE)
 
 ```
-Another built-in class is `[math]`. See [msdn](https://msdn.microsoft.com/en-us/library/system.math_methods(v=vs.110).aspx).
-Examples:
+Another built-in class is `[math]`. See [msdn](https://msdn.microsoft.com/en-us/library/system.math_methods(v=vs.110).aspx). Examples:
 ```
     [math]::pi                    # 3.14159265358979
     [math]::cos([math]::pi)       # -1
@@ -1098,8 +1083,7 @@ For instance, suppress error message about inaccessible subdirectories as follow
 
 ```
 
-As in many languages errors may be trapped. Enter `Get-Help about_trap` to see how. The very same info as web page is here: [About trap](https://docs.microsoft.com/en-us/PowerShell/module/microsoft.PowerShell.core/about/about_trap?view=PowerShell-5.1).
-Example of trapping:
+As in many languages errors may be trapped. Enter `Get-Help about_trap` to see how. The very same info as web page is here: [About trap](https://docs.microsoft.com/en-us/PowerShell/module/microsoft.PowerShell.core/about/about_trap?view=PowerShell-5.1). Example of trapping:
 
 ```
     Trap [System.Exception] {
@@ -1132,8 +1116,7 @@ The global object `$error` is a stack containing the consecutive non-trapped e
 22Functions
 ===========
 
-A *PS function* is written in the PowerShell script language and is not compiled but interpreted. Often functions are written by end-users. In contrast, a cmdlet is written in a .net programming language such as `C#` ("C sharp") and is an intrinsic part of PS. A function name, just like a cmdlet name, is preferably of the form "verb-noun" where "verb" is any of the existing verbs.
-To get the unique verbs of all (including user) functions sorted in alphabetical order:
+A *PS function* is written in the PowerShell script language and is not compiled but interpreted. Often functions are written by end-users. In contrast, a cmdlet is written in a .net programming language such as `C#` ("C sharp") and is an intrinsic part of PS. A function name, just like a cmdlet name, is preferably of the form "verb-noun" where "verb" is any of the existing verbs. To get the unique verbs of all (including user) functions sorted in alphabetical order:
 ```
    gcm -commandtype function |select  verb -unique |sort verb|ft
 
@@ -1214,8 +1197,7 @@ Because the return array may be redirected to a file and not all console output 
    Write-Vars > foo.out # 'B', 'D' to console; 'A', 'E', 'C' to foo.out
 
 ```
-One could expect that the statement `Write-Vars` would write first the immediate values of `$b` and `$d` followed by the values of the return array, but this is not the case.
-More examples:
+One could expect that the statement `Write-Vars` would write first the immediate values of `$b` and `$d` followed by the values of the return array, but this is not the case. More examples:
 ```
    function list-txt{ls *.txt}
    $a = list-txt  # No console output, output of ls returned.
@@ -1387,8 +1369,7 @@ Now follows a list of examples that may be useful in inspecting/traversing the R
    ls   -rec -depth 1 -ea 4 | measure -line   # gives   804 lines
 
 ```
-while both commands---issued from `c:\`---give the very same number of lines (542). It is difficult to see this dependence on context as anything but a bug. It is, therefore, advisable to never use `ls *` together with the flags `-rec -depth`.
-**End note**
+while both commands---issued from `c:\`---give the very same number of lines (542). It is difficult to see this dependence on context as anything but a bug. It is, therefore, advisable to never use `ls *` together with the flags `-rec -depth`. **End note**
 
 The following command lists names of subkeys and subsubkeys of the present key together with an array containing the names of their value entries:
 ```
@@ -1560,8 +1541,7 @@ The names of members (methods and properties) of an object can be obtained by pi
 
 A PSDrive is a collection of entities that are grouped such that they may be accessed as a filesystem drive. The grouping is performed by a "PSprovider". By default a PS session has access to about a dozen PSdrives among which `c:, env:, alias:, HKLM:`.  Here `c:` is the usual Windows c-drive; `env:` is the space of Windows environmental variables; `alias:` is the collection of cmdlet aliases; `HKLM` is a hive in the Registry.
 
-Standard one enters a PS session in the home folder (home directory) of the user. To switch a PS session to another PSdrive or folder and get the children of the new location, proceed as follows:
-Switch to env:
+Standard one enters a PS session in the home folder (home directory) of the user. To switch a PS session to another PSdrive or folder and get the children of the new location, proceed as follows: Switch to env:
 
 ```
     Set-Location env:                 # Prompt character becomes `Env:\>`
@@ -2091,9 +2071,7 @@ The cmdlet `rename-item` can take piped input for the old name and recognizes 
 ```
 gives the required change of the file extension.
 
-To change multiple names at once, one may use the `-replace` operator. Its syntax is:
-    ` string -replace regexp, new_name`
-In `string` every substring that matches the regular expression `regexp` is replaced by `new_name`. For example,
+To change multiple names at once, one may use the `-replace` operator. Its syntax is: ` string -replace regexp, new_name` In `string` every substring that matches the regular expression `regexp` is replaced by `new_name`. For example,
 
 ```
      'report.txt' -replace '\.txt$', '.doc'  # -> 'report.doc'
@@ -2202,8 +2180,7 @@ The last statement (`$assoc`) gives:
 15Strings
 =========
 
-**Strings** are as in PHP.
-'Singly' quoted strings: no expansion of variables or escape character (backtick). "Doubly" quoted: expansion of variables. Expressions under `$` are evaluated. For example,
+**Strings** are as in PHP. 'Singly' quoted strings: no expansion of variables or escape character (backtick). "Doubly" quoted: expansion of variables. Expressions under `$` are evaluated. For example,
 ```
       $five  = 5
       '3*$five'  -> 3*$five
@@ -2211,15 +2188,13 @@ The last statement (`$assoc`) gives:
       "$(3*5)" -> 15
 
 ```
-Backtick escapes under double quotes. For example, escaping the dollar symbol: `"`$(3*5)"` gives `$(3*5)`. Backticks are unchanged under single quotes: `'`$(3*5)'` gives `'`$(3*5)'`.
-**Notes:**
+Backtick escapes under double quotes. For example, escaping the dollar symbol: `"`$(3*5)"` gives `$(3*5)`. Backticks are unchanged under single quotes: `'`$(3*5)'` gives `'`$(3*5)'`. **Notes:**
 
 1.  `"`n"` gives the newline character.
 2.  The string `"John Doe"` can be appended to a file simply by `"John Doe" >> out.txt`. The file `out.txt` will be in UTF-16.
 3.  The cmdlet `add-content` (alias `ac`) writes to file by default in ANSI (Windows-1252), and allows specification of other encodings.
 
-**Here-strings**
-`@' ... '@` (no expansion) and `@" ... "@` (with expansion). Note that the openings `@'` and `@"` must start in column 1 and be on a single line. The same holds for the endings `'@` and `"@`.
+**Here-strings** `@' ... '@` (no expansion) and `@" ... "@` (with expansion). Note that the openings `@'` and `@"` must start in column 1 and be on a single line. The same holds for the endings `'@` and `"@`.
 
 Example, assume `$a -eq "Big Brother"`:
 ```
@@ -2367,8 +2342,7 @@ which returns the Windows environmental variable `path` with its entries stack
 17Comparison
 ============
 
-Comparison operators are among others: `-eq, -ne, -gt, -ge, -lt, -le, -like, -notlike, -match, -notmatch,` and `-cmatch`. Although the operator `-replace` does not perform a comparison, it is usually included in this group.
-Examples:
+Comparison operators are among others: `-eq, -ne, -gt, -ge, -lt, -le, -like, -notlike, -match, -notmatch,` and `-cmatch`. Although the operator `-replace` does not perform a comparison, it is usually included in this group. Examples:
 ```
     'peanutbutter' -like 'nut'         # false
     'peanutbutter' -like '*nut*'       # true   (* is wildcard)
@@ -2422,8 +2396,7 @@ PowerShell has built-in classes, one is `[console]` with methods (among others
     [console]::readkey()          # Return name of key + modifier(not under ISE)
 
 ```
-Another built-in class is `[math]`. See [msdn](https://msdn.microsoft.com/en-us/library/system.math_methods(v=vs.110).aspx).
-Examples:
+Another built-in class is `[math]`. See [msdn](https://msdn.microsoft.com/en-us/library/system.math_methods(v=vs.110).aspx). Examples:
 ```
     [math]::pi                    # 3.14159265358979
     [math]::cos([math]::pi)       # -1
@@ -2477,8 +2450,7 @@ For instance, suppress error message about inaccessible subdirectories as follow
 
 ```
 
-As in many languages errors may be trapped. Enter `Get-Help about_trap` to see how. The very same info as web page is here: [About trap](https://docs.microsoft.com/en-us/PowerShell/module/microsoft.PowerShell.core/about/about_trap?view=PowerShell-5.1).
-Example of trapping:
+As in many languages errors may be trapped. Enter `Get-Help about_trap` to see how. The very same info as web page is here: [About trap](https://docs.microsoft.com/en-us/PowerShell/module/microsoft.PowerShell.core/about/about_trap?view=PowerShell-5.1). Example of trapping:
 
 ```
     Trap [System.Exception] {
@@ -2511,8 +2483,7 @@ The global object `$error` is a stack containing the consecutive non-trapped e
 22Functions
 ===========
 
-A *PS function* is written in the PowerShell script language and is not compiled but interpreted. Often functions are written by end-users. In contrast, a cmdlet is written in a .net programming language such as `C#` ("C sharp") and is an intrinsic part of PS. A function name, just like a cmdlet name, is preferably of the form "verb-noun" where "verb" is any of the existing verbs.
-To get the unique verbs of all (including user) functions sorted in alphabetical order:
+A *PS function* is written in the PowerShell script language and is not compiled but interpreted. Often functions are written by end-users. In contrast, a cmdlet is written in a .net programming language such as `C#` ("C sharp") and is an intrinsic part of PS. A function name, just like a cmdlet name, is preferably of the form "verb-noun" where "verb" is any of the existing verbs. To get the unique verbs of all (including user) functions sorted in alphabetical order:
 ```
    gcm -commandtype function |select  verb -unique |sort verb|ft
 
@@ -2593,8 +2564,7 @@ Because the return array may be redirected to a file and not all console output 
    Write-Vars > foo.out # 'B', 'D' to console; 'A', 'E', 'C' to foo.out
 
 ```
-One could expect that the statement `Write-Vars` would write first the immediate values of `$b` and `$d` followed by the values of the return array, but this is not the case.
-More examples:
+One could expect that the statement `Write-Vars` would write first the immediate values of `$b` and `$d` followed by the values of the return array, but this is not the case. More examples:
 ```
    function list-txt{ls *.txt}
    $a = list-txt  # No console output, output of ls returned.
@@ -2766,8 +2736,7 @@ Now follows a list of examples that may be useful in inspecting/traversing the R
    ls   -rec -depth 1 -ea 4 | measure -line   # gives   804 lines
 
 ```
-while both commands---issued from `c:\`---give the very same number of lines (542). It is difficult to see this dependence on context as anything but a bug. It is, therefore, advisable to never use `ls *` together with the flags `-rec -depth`.
-**End note**
+while both commands---issued from `c:\`---give the very same number of lines (542). It is difficult to see this dependence on context as anything but a bug. It is, therefore, advisable to never use `ls *` together with the flags `-rec -depth`. **End note**
 
 The following command lists names of subkeys and subsubkeys of the present key together with an array containing the names of their value entries:
 ```

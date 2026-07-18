@@ -463,9 +463,5 @@ COMMIT;   -- both inserts land together; ROLLBACK would undo both
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0110 - Database Mastery]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Database Fundamentals: The Relational Model and ACID]]
-**Unlocks:** [[Query Optimization: Performance Tuning for Fast Database Queries]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0110 - Database Mastery]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Database Fundamentals: The Relational Model and ACID]] **Unlocks:** [[Query Optimization: Performance Tuning for Fast Database Queries]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 </content>

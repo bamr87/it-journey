@@ -111,6 +111,33 @@ author:
 
 google_analytics         : 'G-ZBDKNMC168'
 
+# PostHog product analytics (client-side). Rendered by the theme's
+# _includes/analytics/posthog.html, which loads ONLY in production
+# (jekyll.environment == "production") and respects Do Not Track.
+# api_key is a public project key (phc_…), safe to commit — like google_analytics above.
+posthog:
+  enabled                : true
+  api_key                : 'phc_m67mGNKMoTphbLFXDN3Kxrv6RZaCQz2wiFwZ9CGeLVg7'
+  api_host               : 'https://us.i.posthog.com'
+  person_profiles        : 'identified_only'  # 'always' | 'identified_only' | 'never'
+  autocapture            : true
+  capture_pageview       : true
+  capture_pageleave      : true
+  session_recording      : false   # keep off unless we intend to record sessions
+  disable_cookie         : false
+  respect_dnt            : true     # honor the visitor's Do Not Track setting
+  secure_cookie          : true
+  persistence            : 'localStorage+cookie'
+  custom_events:
+    track_downloads      : true
+    track_external_links : true
+    track_search         : true
+    track_scroll_depth   : true
+  privacy:
+    mask_all_text        : false
+    mask_all_inputs      : true
+    ip_anonymization     : false
+
 ## Site verification #############################################################
 
 google_site_verification : null

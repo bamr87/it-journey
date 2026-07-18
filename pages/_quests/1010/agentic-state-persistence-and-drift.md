@@ -305,11 +305,5 @@ python3 scripts/validate_quest.py --quest q9
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1010 - Automation & Testing]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
-**Prerequisites:** [[Vaults of Recollection: Agent Memory Strategies]]
-**Unlocks:** [[Crossing the Tool Planes: State Continuity Across Tools]]
-**Sequel quests:** [[Crossing the Tool Planes: State Continuity Across Tools]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1010 - Automation & Testing]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] **Prerequisites:** [[Vaults of Recollection: Agent Memory Strategies]] **Unlocks:** [[Crossing the Tool Planes: State Continuity Across Tools]] **Sequel quests:** [[Crossing the Tool Planes: State Continuity Across Tools]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

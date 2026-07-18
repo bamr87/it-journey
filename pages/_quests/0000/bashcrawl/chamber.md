@@ -134,8 +134,7 @@ echo $vault_code     # 11
 
 ### Step 3 — Compute your specific answer
 
-Substitute the values from YOUR runes for the two example numbers below
-(the `3` and `4` are placeholders — swap in the door and exit counts you found):
+Substitute the values from YOUR runes for the two example numbers below (the `3` and `4` are placeholders — swap in the door and exit counts you found):
 
 ```bash
 # Template — replace 3 and 4 with the counts from YOUR runes:
@@ -221,10 +220,5 @@ Continue your terminal adventure with these resources:
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0000 - Foundation & Init World]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Bashcrawl Armoury: File Permissions and Script Execution]]
-**Unlocks:** [[Bashcrawl Rift: Pipes, Redirection, and the Final Boss]]
-**Sequel quests:** [[Bashcrawl Rift: Pipes, Redirection, and the Final Boss]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0000 - Foundation & Init World]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Bashcrawl Armoury: File Permissions and Script Execution]] **Unlocks:** [[Bashcrawl Rift: Pipes, Redirection, and the Final Boss]] **Sequel quests:** [[Bashcrawl Rift: Pipes, Redirection, and the Final Boss]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

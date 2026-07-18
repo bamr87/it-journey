@@ -277,11 +277,5 @@ python3 scripts/validate_quest.py --quest q18
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1100 - Data & Templates]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] · [[Autonomy Levels Matrix]]
-**Prerequisites:** [[The Agent Pantheon: Multi-Agent Lifecycle Management]]
-**Unlocks:** [[The Warden's Pact: Guardrails and Human-in-the-Loop Patterns]]
-**Sequel quests:** [[The Warden's Pact: Guardrails and Human-in-the-Loop Patterns]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1100 - Data & Templates]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] · [[Autonomy Levels Matrix]] **Prerequisites:** [[The Agent Pantheon: Multi-Agent Lifecycle Management]] **Unlocks:** [[The Warden's Pact: Guardrails and Human-in-the-Loop Patterns]] **Sequel quests:** [[The Warden's Pact: Guardrails and Human-in-the-Loop Patterns]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

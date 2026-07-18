@@ -181,8 +181,7 @@ Actions > Frontmatter Validation > Run workflow
 - 4-5: Fair content
 - 1-3: Poor content
 
-**Cost Considerations:**
-This workflow uses the OpenAI API and incurs costs. Monitor usage in the OpenAI dashboard.
+**Cost Considerations:** This workflow uses the OpenAI API and incurs costs. Monitor usage in the OpenAI dashboard.
 
 ### Organize Posts Weekly
 
@@ -310,8 +309,7 @@ Workflow run > Artifacts section > Download
 Failed workflow run > Re-run jobs
 ```
 
-**Enable Debug Logging:**
-Add repository secrets:
+**Enable Debug Logging:** Add repository secrets:
 ```
 ACTIONS_STEP_DEBUG = true
 ACTIONS_RUNNER_DEBUG = true
@@ -319,20 +317,17 @@ ACTIONS_RUNNER_DEBUG = true
 
 ### Performance Optimization
 
-**Caching:**
-Workflows use caching for:
+**Caching:** Workflows use caching for:
 - Ruby gems
 - Python packages
 - Node modules
 
-**Timeout Settings:**
-Most workflows have 45-minute timeout:
+**Timeout Settings:** Most workflows have 45-minute timeout:
 ```yaml
 timeout-minutes: 45
 ```
 
-**Concurrency Control:**
-Some workflows limit concurrent runs:
+**Concurrency Control:** Some workflows limit concurrent runs:
 ```yaml
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -376,26 +371,22 @@ Retention:
 
 ### Common Issues
 
-**Issue:** Workflow doesn't trigger
-**Solution:**
+**Issue:** Workflow doesn't trigger **Solution:**
 - Check trigger conditions in workflow file
 - Verify branch names match
 - Ensure workflow file is in `main` branch
 
-**Issue:** Secrets not accessible
-**Solution:**
+**Issue:** Secrets not accessible **Solution:**
 - Verify secret name matches exactly
 - Check secret is set at repository level (not environment)
 - Ensure workflow has correct permissions
 
-**Issue:** Build fails on specific step
-**Solution:**
+**Issue:** Build fails on specific step **Solution:**
 - Check step logs for error messages
 - Test commands locally
 - Verify dependencies are installed
 
-**Issue:** Workflow times out
-**Solution:**
+**Issue:** Workflow times out **Solution:**
 - Increase `timeout-minutes` value
 - Optimize long-running steps
 - Consider splitting into multiple jobs

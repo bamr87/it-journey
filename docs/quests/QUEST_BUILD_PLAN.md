@@ -173,22 +173,7 @@ Total quest files: 147
 
 Based on home.md and README.md analysis. Counts below are directional; use each level README for the latest list.
 
-**Level 0000**: 3 additional quests needed
-**Level 0001**: 5 additional quests needed
-**Level 0010**: 4 additional quests needed
-**Level 0011**: 5 additional quests needed
-**Level 0100**: 5 additional quests needed
-**Level 0101**: 6 additional quests needed
-**Level 0110**: 8 quests needed (entire level)
-**Level 0111**: 8 quests needed (entire level)
-**Level 1000**: 8 quests needed (entire level)
-**Level 1001**: 8 quests needed (entire level)
-**Level 1010**: 7 additional quests needed
-**Level 1011**: 7 additional quests needed
-**Level 1100**: 5 additional quests needed
-**Level 1101**: 8 quests needed (entire level)
-**Level 1110**: 7 additional quests needed
-**Level 1111**: 8+ quests needed (entire level)
+**Level 0000**: 3 additional quests needed **Level 0001**: 5 additional quests needed **Level 0010**: 4 additional quests needed **Level 0011**: 5 additional quests needed **Level 0100**: 5 additional quests needed **Level 0101**: 6 additional quests needed **Level 0110**: 8 quests needed (entire level) **Level 0111**: 8 quests needed (entire level) **Level 1000**: 8 quests needed (entire level) **Level 1001**: 8 quests needed (entire level) **Level 1010**: 7 additional quests needed **Level 1011**: 7 additional quests needed **Level 1100**: 5 additional quests needed **Level 1101**: 8 quests needed (entire level) **Level 1110**: 7 additional quests needed **Level 1111**: 8+ quests needed (entire level)
 
 **Total Missing**: ~97 placeholder quests
 
@@ -637,10 +622,7 @@ Each level directory needs a comprehensive README.md:
 
 ```markdown
 ---
-title: Level [BINARY] ([DECIMAL]) - [Level Name]
-description: [Level theme and focus]
-permalink: /quests/[LEVEL]/
-categories:
+title: Level [BINARY] ([DECIMAL]) - [Level Name] description: [Level theme and focus] permalink: /quests/[LEVEL]/ categories:
   - Quests
   - Level-[LEVEL]
 tags:
@@ -723,9 +705,7 @@ Create `scripts/quest/generate-placeholder-quest.sh`:
 #!/usr/bin/env bash
 # Generate a placeholder quest file with proper structure
 
-LEVEL=$1
-QUEST_SLUG=$2
-QUEST_TITLE=$3
+LEVEL=$1 QUEST_SLUG=$2 QUEST_TITLE=$3
 
 # Validate inputs
 # Generate quest file from template

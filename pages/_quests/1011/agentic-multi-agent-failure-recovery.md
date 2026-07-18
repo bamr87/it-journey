@@ -303,8 +303,7 @@ if __name__ == "__main__":
 
 ## ✅ Quest Validation
 
-Validate your work with these standalone checks — run each from your quest
-workspace (no extra tooling required):
+Validate your work with these standalone checks — run each from your quest workspace (no extra tooling required):
 
 ```bash
 # ✅ Recovery workflow present
@@ -335,11 +334,5 @@ Manual completion checklist:
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1011 - Feature Development]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
-**Prerequisites:** [[The Scribe's Codex: Observability in Multi-Agent Systems]]
-**Unlocks:** [[The Agent Pantheon: Multi-Agent Lifecycle Management]]
-**Sequel quests:** [[The Agent Pantheon: Multi-Agent Lifecycle Management]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1011 - Feature Development]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] **Prerequisites:** [[The Scribe's Codex: Observability in Multi-Agent Systems]] **Unlocks:** [[The Agent Pantheon: Multi-Agent Lifecycle Management]] **Sequel quests:** [[The Agent Pantheon: Multi-Agent Lifecycle Management]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

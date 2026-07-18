@@ -8,21 +8,16 @@ date: 2026-01-14T22:23:32.000Z
 
 # Quest Framework & Tooling
 
-Everything about the quest taxonomy and schema is defined exactly once, in
-[`quest_registry.py`](quest_registry.py). Every data file, validator, template,
-and generator derives from it, so the framework cannot drift.
+Everything about the quest taxonomy and schema is defined exactly once, in [`quest_registry.py`](quest_registry.py). Every data file, validator, template, and generator derives from it, so the framework cannot drift.
 
 ## Single source of truth
 
 `quest_registry.py` owns:
 
 - **Taxonomy** — 4 tiers (Apprentice 🌱 / Adventurer ⚔️ / Warrior 🔥 / Master ⚡;
-  there is **no** "Legend" tier — level 1111 is Master), the 16 binary levels
-  (`0000`–`1111`), their themes, XP ranges, and Bootstrap icons.
+there is **no** "Legend" tier — level 1111 is Master), the 16 binary levels (`0000`–`1111`), their themes, XP ranges, and Bootstrap icons.
 - **Controlled vocabularies** — `QUEST_TYPES` (`main_quest`, `side_quest`,
-  `epic_quest`, `bonus_quest`), `FM_CONTENT_TYPES` (`quest`, `documentation`,
-  `template`, `codex`), `DIFFICULTIES` (🟢 Easy / 🟡 Medium / 🔴 Hard / ⚔️ Epic),
-  `SKILL_FOCUS`, `LEARNING_STYLE`.
+`epic_quest`, `bonus_quest`), `FM_CONTENT_TYPES` (`quest`, `documentation`, `template`, `codex`), `DIFFICULTIES` (🟢 Easy / 🟡 Medium / 🔴 Hard / ⚔️ Epic), `SKILL_FOCUS`, `LEARNING_STYLE`.
 - **Frontmatter schema** — `REQUIRED_FIELDS`, `OPTIONAL_FIELDS`, and the nested
   contracts for `prerequisites`, `rewards`, `quest_dependencies`.
 - **Collection rules** — `SKIP_SUBDIRS`, `SKIP_STEMS`, `is_quest()`, `is_draft()`.
@@ -34,8 +29,7 @@ and generator derives from it, so the framework cannot drift.
 
 - `quest_type` (a playable quest's kind) is one of `QUEST_TYPES`.
 - `fmContentType` decides whether a page **is** a quest. Only `fmContentType: quest`
-  enters quest collections, scoring, and the dependency graph. Support pages use
-  `documentation` / `template` / `codex` and are excluded.
+enters quest collections, scoring, and the dependency graph. Support pages use `documentation` / `template` / `codex` and are excluded.
 
 ## Canonical permalinks
 
@@ -46,17 +40,13 @@ and generator derives from it, so the framework cannot drift.
 | documentation | `/quests/docs/{slug}/` |
 | template | `/quests/templates/{slug}/` |
 
-The filename slug must equal the permalink slug. Side quests are **flattened**
-(no `/side-quests/` segment).
+The filename slug must equal the permalink slug. Side quests are **flattened** (no `/side-quests/` segment).
 
 ## Quest lifecycle
 
 `placeholder → draft → published`
 
-A quest containing placeholder scaffolding (`[technology]` tokens or the
-"🔮 Placeholder" footer) **fails validation** unless it declares `draft: true`.
-Drafts are allowed through CI; remove `draft` only when the quest is real and
-passes the validator at ≥ 70%.
+A quest containing placeholder scaffolding (`[technology]` tokens or the "🔮 Placeholder" footer) **fails validation** unless it declares `draft: true`. Drafts are allowed through CI; remove `draft` only when the quest is real and passes the validator at ≥ 70%.
 
 ## Generated data (never hand-edit)
 
@@ -90,11 +80,7 @@ All four are regenerated from the registry + quest files by `make quest-data`:
 | `generate-placeholder-quest.sh` | scaffold a new placeholder quest |
 | `docker-entrypoint.sh` | runs `quest_audit.py` inside the `quest-audit` Docker service |
 
-Quest **content quality** is validated by
-[`test/quest-validator/quest_validator.py`](../../test/quest-validator/quest_validator.py),
-which imports its schema from the registry. An **optional Claude Code tier-2**
-(`test/quest-validator/agentic_validate.py`) reads/plays quests for a deeper
-quality verdict; it's advisory and opt-in (see that directory's README).
+Quest **content quality** is validated by [`test/quest-validator/quest_validator.py`](../../test/quest-validator/quest_validator.py), which imports its schema from the registry. An **optional Claude Code tier-2** (`test/quest-validator/agentic_validate.py`) reads/plays quests for a deeper quality verdict; it's advisory and opt-in (see that directory's README).
 
 ## Runbook
 
@@ -111,19 +97,9 @@ make quest-execute QUEST=pages/_quests/0001/terminal-mastery.md  # Claude RUNS t
 
 ### Running a quest's code snippets (execute mode)
 
-`make quest-execute` has a Claude Code agent **walk a quest and actually run its
-runnable code snippets** (`bash`/`python`/`node`/…) in a disposable Docker
-container, then report which worked. The container is the isolation boundary —
-the agent's commands never touch the host. `quest_lib.extract_code_blocks()`
-deterministically inventories the runnable snippets, and the report shows
-`ran N/M` coverage with per-snippet `passed`/`failed`/`skipped`/`reasoned`
-status. It is **opt-in and advisory** (it costs money and needs
-`CLAUDE_CODE_OAUTH_TOKEN`); without a token it falls back to a no-cost mock.
-Pass `SAMPLE=N` instead of `QUEST=` to run a spread across levels, or
-`make quest-execute-host` to run on the host sandbox (no container — riskier).
+`make quest-execute` has a Claude Code agent **walk a quest and actually run its runnable code snippets** (`bash`/`python`/`node`/…) in a disposable Docker container, then report which worked. The container is the isolation boundary — the agent's commands never touch the host. `quest_lib.extract_code_blocks()` deterministically inventories the runnable snippets, and the report shows `ran N/M` coverage with per-snippet `passed`/`failed`/`skipped`/`reasoned` status. It is **opt-in and advisory** (it costs money and needs `CLAUDE_CODE_OAUTH_TOKEN`); without a token it falls back to a no-cost mock. Pass `SAMPLE=N` instead of `QUEST=` to run a spread across levels, or `make quest-execute-host` to run on the host sandbox (no container — riskier).
 
-`make quest-audit` only **validates** (it never writes files); if its freshness
-layer reports stale data, run `make quest-data` to regenerate, then commit.
+`make quest-audit` only **validates** (it never writes files); if its freshness layer reports stale data, run `make quest-data` to regenerate, then commit.
 
 Scaffold a new quest, then fill and validate it:
 
@@ -143,5 +119,4 @@ python3 test/quest-validator/quest_validator.py pages/_quests/0110/sql-sorcery.m
 - **non-stale data** — regenerates all derived data and fails if the committed
   copies differ (so a registry change must ship with regenerated data).
 
-These should be marked **required** in branch protection (see
-[`.github/workflows/README.md`](../../.github/workflows/README.md)).
+These should be marked **required** in branch protection (see [`.github/workflows/README.md`](../../.github/workflows/README.md)).

@@ -31,9 +31,7 @@ draft: false
 ---
 # 📑 Cheatsheets
 
-Fast, scannable reference cards for the tools you reach for every day. These are
-the **reference** companions to the [quests](/quests/) — keep them open in a tab
-while you work.
+Fast, scannable reference cards for the tools you reach for every day. These are the **reference** companions to the [quests](/quests/) — keep them open in a tab while you work.
 
 ## Command line
 

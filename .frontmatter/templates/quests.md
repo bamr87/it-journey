@@ -85,11 +85,9 @@ You'll know you've truly mastered this quest when you can:
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-{{#if fm.prerequisites}}
-{{#each fm.prerequisites}}
+{{#if fm.prerequisites}} {{#each fm.prerequisites}}
 - [ ] {{this}}
-{{/each}}
-{{else}}
+{{/each}} {{else}}
 - [ ] Basic understanding of {{fm.skill_focus}} concepts
 - [ ] Familiarity with command-line interface
 - [ ] Completion of foundational {{fm.primary_technology}} setup
@@ -137,8 +135,7 @@ This {{fm.difficulty}} quest expects:
 
 ### ☁️ Cloud Realms Path
 
-*[Cloud platform instructions for AWS, Azure, GCP when applicable]*
-*[Container-based approaches using Docker/Podman]*
+*[Cloud platform instructions for AWS, Azure, GCP when applicable]* *[Container-based approaches using Docker/Podman]*
 
 ```bash
 # Cloud platform commands and configurations

@@ -438,8 +438,4 @@ Pair circuit breakers with **timeouts** (never wait forever) and **bounded retri
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1110 - Architecture & Design Patterns]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Software Design Patterns: Gang of Four and Modern Patterns]] · [[Domain-Driven Design: Modeling the Business in Code]]
-**Unlocks:** [[API Gateway Patterns: The Single Front Door]] · [[Event-Driven Design: Pub/Sub, Event Sourcing, and CQRS]] · [[Scaling Strategies: Horizontal Growth, Caching, and CAP]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1110 - Architecture & Design Patterns]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Software Design Patterns: Gang of Four and Modern Patterns]] · [[Domain-Driven Design: Modeling the Business in Code]] **Unlocks:** [[API Gateway Patterns: The Single Front Door]] · [[Event-Driven Design: Pub/Sub, Event Sourcing, and CQRS]] · [[Scaling Strategies: Horizontal Growth, Caching, and CAP]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

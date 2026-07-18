@@ -321,7 +321,4 @@ graph LR
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Campaign hub:** [[Epic Quest: The Self-Operating Website]]
-**Previous:** [[The Named Familiars]]
-**Next:** [[The Chronicle]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Campaign hub:** [[Epic Quest: The Self-Operating Website]] **Previous:** [[The Named Familiars]] **Next:** [[The Chronicle]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

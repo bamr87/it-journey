@@ -444,8 +444,4 @@ PyTorch shows you the loop; Keras hides it. PyTorch is favored in research for t
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1101 - Machine Learning & AI]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Required:** [[Neural Networks Deep Dive: Build CNNs, RNNs & Transformers from Scratch]]
-**Unlocks:** [[Computer Vision Mastery: Image Classification, Object Detection & Segmentation]] · [[Natural Language Processing: Text Analysis, Transformers & LLMs with Python]] · [[MLOps Engineering: CI/CD Pipelines for Machine Learning Production]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1101 - Machine Learning & AI]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Required:** [[Neural Networks Deep Dive: Build CNNs, RNNs & Transformers from Scratch]] **Unlocks:** [[Computer Vision Mastery: Image Classification, Object Detection & Segmentation]] · [[Natural Language Processing: Text Analysis, Transformers & LLMs with Python]] · [[MLOps Engineering: CI/CD Pipelines for Machine Learning Production]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
