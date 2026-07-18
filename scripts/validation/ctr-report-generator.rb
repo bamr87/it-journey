@@ -30,6 +30,7 @@ require 'optparse'
 require 'date'
 require 'pathname'
 require 'fileutils'
+require 'posthog'
 
 # ANSI color codes
 module Colors
@@ -487,6 +488,17 @@ class CTRReportGenerator
   end
 end
 
+def initialize_posthog
+  token = ENV['POSTHOG_PROJECT_TOKEN']
+  return nil unless token
+
+  PostHog::Client.new(
+    api_key: token,
+    host: ENV.fetch('POSTHOG_HOST', 'https://us.i.posthog.com'),
+    on_error: proc { |status, msg| print_warning("PostHog error: #{status} - #{msg}") }
+  )
+end
+
 # Main execution
 if __FILE__ == $PROGRAM_NAME
   options = {
@@ -545,50 +557,86 @@ if __FILE__ == $PROGRAM_NAME
   command ||= :baseline
 
   generator = CTRReportGenerator.new(verbose: options[:verbose])
+  posthog = initialize_posthog
 
-  case command
-  when :baseline
-    report = generator.generate_baseline_report
-    puts report
-    generator.save_report(report, "baseline-report-#{Date.today}.md") if options[:output]
+  begin
+    case command
+    when :baseline
+      report = generator.generate_baseline_report
+      puts report
+      generator.save_report(report, "baseline-report-#{Date.today}.md") if options[:output]
+      posthog&.capture(
+        distinct_id: 'it-journey-ci',
+        event: 'ctr_report_generated',
+        properties: { report_type: 'baseline', saved_to_file: options[:output] != nil }
+      )
 
-  when :weekly
-    report = generator.generate_weekly_template
-    puts report
-    if options[:output]
-      generator.save_report(report, options[:output])
-    else
-      generator.save_report(report, "weekly-review-#{Date.today}.md")
-    end
-
-  when :opportunities
-    report = generator.generate_opportunities_report
-    puts report
-    generator.save_report(report, "opportunities-#{Date.today}.md") if options[:output]
-
-  when :parse
-    if input_file
-      data = generator.parse_gsc_csv(input_file)
-      if data
-        puts "\n## Parsed Data Summary"
-        puts "Pages: #{data[:pages].size}"
-        puts "Queries: #{data[:queries].size}"
-        puts "Total Impressions: #{data[:overall][:impressions]}"
-        puts "Total Clicks: #{data[:overall][:clicks]}"
-        puts "Average CTR: #{data[:overall][:ctr]}%"
+    when :weekly
+      report = generator.generate_weekly_template
+      puts report
+      if options[:output]
+        generator.save_report(report, options[:output])
+      else
+        generator.save_report(report, "weekly-review-#{Date.today}.md")
       end
-    else
-      print_error('Please provide a CSV file with --parse FILE')
-      exit 1
-    end
+      posthog&.capture(
+        distinct_id: 'it-journey-ci',
+        event: 'ctr_report_generated',
+        properties: { report_type: 'weekly', saved_to_file: true }
+      )
 
-  when :json
-    metrics = generator.generate_metrics_json
-    output = JSON.pretty_generate(metrics)
-    puts output
-    if options[:output]
-      File.write(options[:output], output)
-      print_success("JSON exported to: #{options[:output]}")
+    when :opportunities
+      report = generator.generate_opportunities_report
+      puts report
+      generator.save_report(report, "opportunities-#{Date.today}.md") if options[:output]
+      posthog&.capture(
+        distinct_id: 'it-journey-ci',
+        event: 'ctr_report_generated',
+        properties: { report_type: 'opportunities', saved_to_file: options[:output] != nil }
+      )
+
+    when :parse
+      if input_file
+        data = generator.parse_gsc_csv(input_file)
+        if data
+          puts "\n## Parsed Data Summary"
+          puts "Pages: #{data[:pages].size}"
+          puts "Queries: #{data[:queries].size}"
+          puts "Total Impressions: #{data[:overall][:impressions]}"
+          puts "Total Clicks: #{data[:overall][:clicks]}"
+          puts "Average CTR: #{data[:overall][:ctr]}%"
+          posthog&.capture(
+            distinct_id: 'it-journey-ci',
+            event: 'gsc_csv_parsed',
+            properties: {
+              pages_parsed: data[:pages].size,
+              queries_parsed: data[:queries].size,
+              total_impressions: data[:overall][:impressions],
+              total_clicks: data[:overall][:clicks],
+              average_ctr: data[:overall][:ctr]
+            }
+          )
+        end
+      else
+        print_error('Please provide a CSV file with --parse FILE')
+        exit 1
+      end
+
+    when :json
+      metrics = generator.generate_metrics_json
+      output = JSON.pretty_generate(metrics)
+      puts output
+      if options[:output]
+        File.write(options[:output], output)
+        print_success("JSON exported to: #{options[:output]}")
+      end
+      posthog&.capture(
+        distinct_id: 'it-journey-ci',
+        event: 'ctr_report_generated',
+        properties: { report_type: 'json', saved_to_file: options[:output] != nil }
+      )
     end
+  ensure
+    posthog&.shutdown
   end
 end
