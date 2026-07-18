@@ -31,6 +31,14 @@ jobs:
           python-version: "3.x"
       - name: Check one paragraph per line
         run: |
+          # Excludes: SCHEMA.md / CHANGELOG.md are generated; pages/_quest-reports/
+          # and test/quest-validator/walkthroughs/ are machine-authored session
+          # reports emitted by the quest-perfection loop (author "Quest Perfection
+          # Loop") — they regularly carry soft-wrapped prose and are not
+          # hand-authored, so the one-paragraph-per-line rule does not apply. See
+          # .github/workflows/quest-perfection.yml + scripts/quest/build_reports_site.py.
           python3 tools/unwrap-prose.py --check \
             --exclude '(^|/)SCHEMA\.md$' --exclude '(^|/)CHANGELOG\.md$' \
+            --exclude '(^|/)pages/_quest-reports/' \
+            --exclude '(^|/)test/quest-validator/walkthroughs/' \
           || { echo "::error::Wrapped markdown prose found. Run: python3 tools/unwrap-prose.py --write"; exit 1; }
