@@ -18,23 +18,9 @@ session:
 
 ## 🎯 Session Summary
 
-Walked a **5-quest window (2 of 6)** of the **Digital Artist → Level 0001 "Web
-Fundamentals" (🌱 Apprentice)** path, in the dependency-sorted order the planner
-selected, as a UI/UX-leaning beginner would. Evidence is the workflow-sealed
-execute-mode engine run (`walk-evidence.json`); I read all five quest sources and
-reasoned about them as one linked journey.
+Walked a **5-quest window (2 of 6)** of the **Digital Artist → Level 0001 "Web Fundamentals" (🌱 Apprentice)** path, in the dependency-sorted order the planner selected, as a UI/UX-leaning beginner would. Evidence is the workflow-sealed execute-mode engine run (`walk-evidence.json`); I read all five quest sources and reasoned about them as one linked journey.
 
-**Headline verdict: FAIL.** No quest passed — 2 warn (68%), 3 fail (48/16/58),
-average **51.6%**. The strongest quest, *The GitHub Pages Portal*, actually deploys
-a working Jekyll/GitHub Pages site end-to-end in the sandbox and is the true spine
-of this slice. But the window also contains two "quests" that are not tutorials at
-all (*Personal Site*, 16%; *Stack Attack Analysis*, 48% — both carry the tell-tale
-"objectives auto-seeded during framework alignment" placeholder note), and two
-otherwise-solid main quests (*The Summoning*, *SEO Optimization*) each ship with **one
-reproducible build-breaking defect** a beginner hits on their very first build. A
-maintainer should treat *Personal Site* and *Stack Attack Analysis* as needing a
-rewrite/retype, and land the two single-line/single-config fixes in the two main
-quests.
+**Headline verdict: FAIL.** No quest passed — 2 warn (68%), 3 fail (48/16/58), average **51.6%**. The strongest quest, *The GitHub Pages Portal*, actually deploys a working Jekyll/GitHub Pages site end-to-end in the sandbox and is the true spine of this slice. But the window also contains two "quests" that are not tutorials at all (*Personal Site*, 16%; *Stack Attack Analysis*, 48% — both carry the tell-tale "objectives auto-seeded during framework alignment" placeholder note), and two otherwise-solid main quests (*The Summoning*, *SEO Optimization*) each ship with **one reproducible build-breaking defect** a beginner hits on their very first build. A maintainer should treat *Personal Site* and *Stack Attack Analysis* as needing a rewrite/retype, and land the two single-line/single-config fixes in the two main quests.
 
 ## 🗺️ The Journey
 
@@ -48,8 +34,7 @@ quests.
 
 ## 🔬 Evidence
 
-All statuses below come from the sealed execute-mode engine run (`--mode execute`,
-sandboxed per quest). "ran N/M" = engine's recorded/available snippet accounting.
+All statuses below come from the sealed execute-mode engine run (`--mode execute`, sandboxed per quest). "ran N/M" = engine's recorded/available snippet accounting.
 
 ### 1. The GitHub Pages Portal — ⚠️ 68 (ran 14 snippets, 14 passed / 0 failed / 1 skipped / 2 reasoned)
 Dimensions: commands_work **4**, content_accuracy 3, completeness **2**, clarity 4, structure 3, safety 4.
@@ -86,8 +71,7 @@ Dimensions: commands_work 3, content_accuracy 3, completeness **4**, clarity 3, 
 
 ## 🐞 Issues Found
 
-Every item below is backed by a sandbox command result or a quoted quest line.
-Severity reflects learner impact (blocks progress > misleads > polish).
+Every item below is backed by a sandbox command result or a quoted quest line. Severity reflects learner impact (blocks progress > misleads > polish).
 
 1. **HIGH · Personal Site · whole document ·** Zero fenced code blocks, zero runnable steps, zero verification — `grep` confirmed 0 code fences; engine scored commands_work/completeness/clarity all 0. It's the author's personal reference table, not a tutorial. **Fix:** rewrite as a real step-by-step (create `<username>.github.io` repo → add `index.html` → push → enable Pages → verify live URL) and replace the auto-seeded placeholder objectives (line 63).
 2. **HIGH · Personal Site · §1 table ·** Factual errors: row 12 calls `jekyllrb.com` a "Comments service" (line 86, it's a static-site generator); row 6 reuses row 2's GitHub Pages URL for a "Cloudflare" domain (lines 76/80); `travis-ci.org` (77) and `*.netlify.com` (78) are outdated; unresolved `{{ site.github_user }}` Liquid renders as literal `{}`. **Fix:** correct descriptions, de-duplicate the domain row, update to `*.netlify.app`/GitHub Actions, and substitute concrete example values or `<your-username>`.
@@ -109,58 +93,23 @@ Severity reflects learner impact (blocks progress > misleads > polish).
 Reading the five in plan order as one Digital-Artist journey:
 
 - **The window is not a clean linear path — it's one strong spine plus satellites.**
-  Quest 1 (*GitHub Pages Portal*) is the real backbone: it takes a beginner from
-  nothing to a live Jekyll/GitHub Pages site, and it's the only quest that
-  self-contains the full install→build→deploy loop. Everything else in the window
-  assumes that spine but doesn't declare it — every quest here has empty
-  `quest_dependencies.required_quests`, so the chain's ordering is implicit, not
-  enforced.
+Quest 1 (*GitHub Pages Portal*) is the real backbone: it takes a beginner from nothing to a live Jekyll/GitHub Pages site, and it's the only quest that self-contains the full install→build→deploy loop. Everything else in the window assumes that spine but doesn't declare it — every quest here has empty `quest_dependencies.required_quests`, so the chain's ordering is implicit, not enforced.
 - **Two satellites break the learning flow.** After the momentum of quest 1, a
-  learner hits quest 2 (*Stack Attack Analysis*, an architecture report) and quest 3
-  (*Personal Site*, a reference table) — neither has runnable steps, and both openly
-  admit "objectives auto-seeded during framework alignment." For a UI/UX beginner
-  expecting to *build* something, these read as dead ends and erode trust in the path.
+learner hits quest 2 (*Stack Attack Analysis*, an architecture report) and quest 3 (*Personal Site*, a reference table) — neither has runnable steps, and both openly admit "objectives auto-seeded during framework alignment." For a UI/UX beginner expecting to *build* something, these read as dead ends and erode trust in the path.
 - **Prerequisite gap at quest 4.** *The Summoning* states it needs "a live
-  zer0-mistakes Jekyll site — complete the prequel epic first" (line 96) and a
-  "Claude Code OAuth token" (line 101). Nothing earlier in *this* window provides a
-  zer0-mistakes/remote-theme site — quest 1 builds a **default** `jekyll new` site,
-  not a `bamr87/zer0-mistakes` one. So the summoning's remote-theme + `include_cached`
-  build (the exact thing that fails) lands on a learner who was never walked through
-  a remote-theme build. This is a genuine continuity gap, compounded by issue #5.
+zer0-mistakes Jekyll site — complete the prequel epic first" (line 96) and a "Claude Code OAuth token" (line 101). Nothing earlier in *this* window provides a zer0-mistakes/remote-theme site — quest 1 builds a **default** `jekyll new` site, not a `bamr87/zer0-mistakes` one. So the summoning's remote-theme + `include_cached` build (the exact thing that fails) lands on a learner who was never walked through a remote-theme build. This is a genuine continuity gap, compounded by issue #5.
 - **Quest 5 (*SEO Optimization*) chains best.** It explicitly assumes "an existing
-  Jekyll site" — satisfied by quest 1 — and its concepts build naturally on a deployed
-  site. Its only real snag (the quickstart missing the plugins-list edit, issue #6) is
-  self-contained, not a cross-quest dependency.
+Jekyll site" — satisfied by quest 1 — and its concepts build naturally on a deployed site. Its only real snag (the quickstart missing the plugins-list edit, issue #6) is self-contained, not a cross-quest dependency.
 - **Net:** as a *character path*, a Digital Artist would get real value from quests
-  1 → 5 → 4-once-fixed, but quests 2 and 3 don't yet function as quests and quest 4
-  assumes setup this window never provides. The slice holds together thematically
-  (Web Fundamentals) but not yet as an executable, ordered learning chain.
+1 → 5 → 4-once-fixed, but quests 2 and 3 don't yet function as quests and quest 4 assumes setup this window never provides. The slice holds together thematically (Web Fundamentals) but not yet as an executable, ordered learning chain.
 
 ## 🧠 Reasoning & Method
 
 - **Mode: execute.** Evidence is the workflow-sealed `walk-evidence.json` /
-  `walk-evidence.md` — the agentic execute engine ran each quest's safe snippets in a
-  disposable per-quest sandbox (5 quests, avg 51.6%, ~$4.99, sessions 36-40 turns).
-  Per the skill, I consumed it **as-is**; I did not re-run, regenerate, or edit the
-  engine (its child `claude` processes can't authenticate from my Bash tool), and I
-  did not touch `walk-plan.json` or `walk-evidence.*`.
+`walk-evidence.md` — the agentic execute engine ran each quest's safe snippets in a disposable per-quest sandbox (5 quests, avg 51.6%, ~$4.99, sessions 36-40 turns). Per the skill, I consumed it **as-is**; I did not re-run, regenerate, or edit the engine (its child `claude` processes can't authenticate from my Bash tool), and I did not touch `walk-plan.json` or `walk-evidence.*`.
 - **What I ran vs. reasoned:** all `passed`/`failed`/`skipped` statuses are the
-  engine's actual sandbox results (I quoted its recorded commands and outputs). I
-  additionally **read all five quest sources in plan order** and cross-checked the
-  engine's findings against the source — items I verified only by reading (e.g. the
-  Personal Site table errors at lines 76-88, the Summoning prerequisite at line 96,
-  the SEO quickstart at lines 149-198, the `JEKYLL_ENV` claim at line 400) are the
-  learner-continuity layer and are labeled by line rather than presented as new
-  command runs. I invented no output, score, or issue.
+engine's actual sandbox results (I quoted its recorded commands and outputs). I additionally **read all five quest sources in plan order** and cross-checked the engine's findings against the source — items I verified only by reading (e.g. the Personal Site table errors at lines 76-88, the Summoning prerequisite at line 96, the SEO quickstart at lines 149-198, the `JEKYLL_ENV` claim at line 400) are the learner-continuity layer and are labeled by line rather than presented as new command runs. I invented no output, score, or issue.
 - **Coverage & limits:** this is **window 2 of 6** — 5 of the level's **26** quests.
-  Verdicts apply only to these five; the rest of Digital-Artist/0001 is not certified
-  by this run. Engine snippet accounting was capped where noted (e.g. SEO ran 10 with
-  4 skipped — image-optimization `sips`/`brew`/`imageoptim` and the PowerShell Windows
-  path were not executed in this Linux sandbox). Network-dependent steps (`git clone`
-  of placeholder repos, `git push`) could not truly deploy and are correctly recorded
-  as `reasoned`/expected-fail, not `passed`.
+Verdicts apply only to these five; the rest of Digital-Artist/0001 is not certified by this run. Engine snippet accounting was capped where noted (e.g. SEO ran 10 with 4 skipped — image-optimization `sips`/`brew`/`imageoptim` and the PowerShell Windows path were not executed in this Linux sandbox). Network-dependent steps (`git clone` of placeholder repos, `git push`) could not truly deploy and are correctly recorded as `reasoned`/expected-fail, not `passed`.
 - **Confidence: high** on the five per-quest verdicts (backed by real sandbox
-  builds, including a full Jekyll build/serve for quest 1 and the confirmed
-  `include_cached` failure for quest 4) and on the two "not-a-tutorial" findings
-  (quests 2-3). **Medium** on the chain-continuity conclusions, which are reasoned
-  from reading rather than executed cross-quest.
+builds, including a full Jekyll build/serve for quest 1 and the confirmed `include_cached` failure for quest 4) and on the two "not-a-tutorial" findings (quests 2-3). **Medium** on the chain-continuity conclusions, which are reasoned from reading rather than executed cross-quest.

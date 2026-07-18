@@ -1,7 +1,6 @@
 # PostHog Ruby Example Project
 
-Repository: https://github.com/PostHog/context-mill
-Path: example-apps/ruby
+Repository: https://github.com/PostHog/context-mill Path: example-apps/ruby
 
 ---
 

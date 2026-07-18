@@ -1,25 +1,17 @@
 # PostHog Analytics for IT-Journey Scripts
 
-IT-Journey's Ruby SEO/content scripts optionally emit structured PostHog events
-on each run, so script activity and content health can be tracked over time. The
-integration uses the instance-based `PostHog::Client` API (from the
-`posthog-ruby` gem) and always calls `shutdown` in an `ensure` block so buffered
-events are flushed before the process exits.
+IT-Journey's Ruby SEO/content scripts optionally emit structured PostHog events on each run, so script activity and content health can be tracked over time. The integration uses the instance-based `PostHog::Client` API (from the `posthog-ruby` gem) and always calls `shutdown` in an `ensure` block so buffered events are flushed before the process exits.
 
 ## Opt-in by design
 
-Every script reads its configuration from the environment at runtime — **no
-tokens are hardcoded**:
+Every script reads its configuration from the environment at runtime — **no tokens are hardcoded**:
 
 | Variable | Purpose | Default |
 |----------|---------|---------|
 | `POSTHOG_PROJECT_TOKEN` | PostHog project API key (starts with `phc_`). | _unset_ |
 | `POSTHOG_HOST` | Ingestion host for your region. | `https://us.i.posthog.com` |
 
-When `POSTHOG_PROJECT_TOKEN` is **unset**, the scripts skip analytics entirely —
-no client is created, no network call is made, and behavior/exit codes are
-identical to before. This means CI without the secret runs unchanged; set the
-token (locally in `.env`, in CI as a secret) only where you want capture.
+When `POSTHOG_PROJECT_TOKEN` is **unset**, the scripts skip analytics entirely — no client is created, no network call is made, and behavior/exit codes are identical to before. This means CI without the secret runs unchanged; set the token (locally in `.env`, in CI as a secret) only where you want capture.
 
 See [`.env.example`](../../.env.example) for the variable stubs.
 
@@ -51,15 +43,12 @@ All events are captured with the `distinct_id` `it-journey-ci`.
 
 ## Verification
 
-The integration was verified end-to-end by pointing `POSTHOG_HOST` at a local
-mock ingestion server and running each script:
+The integration was verified end-to-end by pointing `POSTHOG_HOST` at a local mock ingestion server and running each script:
 
 - All five events fire with correct, well-typed properties.
 - With `POSTHOG_PROJECT_TOKEN` unset, no events are sent, no network call is
   attempted, and exit codes are unchanged.
 - The event capture is placed **before** each script's `exit`, so events are not
-  lost when a script exits non-zero (e.g. content-freshness exiting `1` on
-  critical content).
+lost when a script exits non-zero (e.g. content-freshness exiting `1` on critical content).
 
-For further PostHog work in this repo, see the agent skill under
-[`.claude/skills/integration-ruby/`](../../.claude/skills/integration-ruby/).
+For further PostHog work in this repo, see the agent skill under [`.claude/skills/integration-ruby/`](../../.claude/skills/integration-ruby/).
