@@ -23,6 +23,7 @@ require 'json'
 require 'optparse'
 require 'pathname'
 require 'time'
+require 'posthog'
 
 # ANSI color codes
 module Colors
@@ -591,6 +592,17 @@ class FrontmatterValidator
   end
 end
 
+def initialize_posthog
+  token = ENV['POSTHOG_PROJECT_TOKEN']
+  return nil unless token
+
+  PostHog::Client.new(
+    api_key: token,
+    host: ENV.fetch('POSTHOG_HOST', 'https://us.i.posthog.com'),
+    on_error: proc { |status, msg| print_warning("PostHog error: #{status} - #{msg}") }
+  )
+end
+
 # Main execution
 if __FILE__ == $PROGRAM_NAME
   options = {
@@ -668,6 +680,26 @@ if __FILE__ == $PROGRAM_NAME
 
   # Save JSON report if requested
   validator.save_json_report(report, options[:output]) if options[:output]
+
+  posthog = initialize_posthog
+  begin
+    posthog&.capture(
+      distinct_id: 'it-journey-ci',
+      event: 'frontmatter_validation_completed',
+      properties: {
+        total_files: report.total_files,
+        valid_files: report.valid_files,
+        invalid_files: report.invalid_files,
+        total_errors: report.total_errors,
+        total_warnings: report.total_warnings,
+        average_seo_score: report.average_seo_score,
+        content_type_filter: options[:type],
+        errors_only_mode: options[:errors_only]
+      }
+    )
+  ensure
+    posthog&.shutdown
+  end
 
   # Exit with error code if issues found
   exit(report.invalid_files.positive? ? 1 : 0)

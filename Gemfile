@@ -31,6 +31,9 @@ end
 gem "ffi"
 gem 'webrick'
 
+# PostHog analytics
+gem 'posthog-ruby'
+
 # TODO: build a bootstrap plugin for jekyll
 
 #  bootstrap https://getbootstrap.com/docs/5.1/getting-started/introduction/

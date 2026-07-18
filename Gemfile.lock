@@ -260,6 +260,8 @@ GEM
       sawyer (~> 0.9)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
+    posthog-ruby (3.19.0)
+      concurrent-ruby (~> 1)
     prism (1.9.0)
     public_suffix (5.1.1)
     racc (1.8.1)
@@ -302,6 +304,7 @@ DEPENDENCIES
   ffi
   github-pages
   jekyll-include-cache
+  posthog-ruby
   webrick
 
 BUNDLED WITH

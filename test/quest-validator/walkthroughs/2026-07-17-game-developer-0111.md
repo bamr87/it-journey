@@ -19,24 +19,9 @@ session:
 
 ## 🎯 Session Summary
 
-I walked the first window (5 of 10 quests) of the **Game Developer → Level 0111
-(API Development, Adventurer ⚔️)** slice as a learner, consuming the workflow-sealed
-execute-mode evidence and reading every quest source in plan order to reason about
-the linked journey. The headline verdict is **fail**: the engine averaged **66.2%**
-with **2 pass, 1 warn, 2 fail**, and the two failing quests are broken in ways a real
-beginner would hit within the first five minutes of the hands-on work.
+I walked the first window (5 of 10 quests) of the **Game Developer → Level 0111 (API Development, Adventurer ⚔️)** slice as a learner, consuming the workflow-sealed execute-mode evidence and reading every quest source in plan order to reason about the linked journey. The headline verdict is **fail**: the engine averaged **66.2%** with **2 pass, 1 warn, 2 fail**, and the two failing quests are broken in ways a real beginner would hit within the first five minutes of the hands-on work.
 
-The slice is really **two unrelated learning tracks braided together** by the
-dependency-sorter: a polished *API Design Mastery* pair (API Fundamentals → REST
-Principles) and a *GH-600 Agentic Codex* trio. Within the agentic trio, the well-built
-hub quest (`agentic-codex-01`, 95%) teaches plan-then-act cleanly with a self-contained
-lab, while the two sibling quests that drill the *same* Domain 1 sub-skills
-(`agentic-sdlc-integration` 44%, `agentic-plan-vs-action-boundaries` 38%) both send the
-learner into a `work/gh-600/` scaffold and a `scripts/validate_quest.py` self-check that
-**do not exist in the repo** — I verified both absences directly. The maintainer-actionable
-takeaway: the API pair is solid, and the agentic content already has a working reference
-(the codex hub) whose lab pattern should replace the broken scaffold assumptions in its two
-siblings.
+The slice is really **two unrelated learning tracks braided together** by the dependency-sorter: a polished *API Design Mastery* pair (API Fundamentals → REST Principles) and a *GH-600 Agentic Codex* trio. Within the agentic trio, the well-built hub quest (`agentic-codex-01`, 95%) teaches plan-then-act cleanly with a self-contained lab, while the two sibling quests that drill the *same* Domain 1 sub-skills (`agentic-sdlc-integration` 44%, `agentic-plan-vs-action-boundaries` 38%) both send the learner into a `work/gh-600/` scaffold and a `scripts/validate_quest.py` self-check that **do not exist in the repo** — I verified both absences directly. The maintainer-actionable takeaway: the API pair is solid, and the agentic content already has a working reference (the codex hub) whose lab pattern should replace the broken scaffold assumptions in its two siblings.
 
 ## 🗺️ The Journey
 
@@ -50,9 +35,7 @@ Plan order (dependency-sorted; `walk-plan.json`):
 
 ## 🔬 Evidence
 
-All results below are from the workflow's sealed `walk-evidence.json` (execute mode,
-`mock: false`), corroborated where noted by my own read-only repo checks. I did **not**
-re-run the engine.
+All results below are from the workflow's sealed `walk-evidence.json` (execute mode, `mock: false`), corroborated where noted by my own read-only repo checks. I did **not** re-run the engine.
 
 ### 1. API Fundamentals — 74 (⚠️ warn) · ran 8/10 runnable snippets (7✓ 1✗), 3 reasoned
 - `docker run --rm curlimages/curl:latest .../posts/1` → **passed**, returned the exact documented JSON object.

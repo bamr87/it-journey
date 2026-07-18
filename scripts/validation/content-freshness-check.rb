@@ -29,6 +29,7 @@ require 'optparse'
 require 'date'
 require 'pathname'
 require 'time'
+require 'posthog'
 
 # ANSI color codes
 module Colors
@@ -501,6 +502,17 @@ class ContentFreshnessChecker
   end
 end
 
+def initialize_posthog
+  token = ENV['POSTHOG_PROJECT_TOKEN']
+  return nil unless token
+
+  PostHog::Client.new(
+    api_key: token,
+    host: ENV.fetch('POSTHOG_HOST', 'https://us.i.posthog.com'),
+    on_error: proc { |status, msg| print_warning("PostHog error: #{status} - #{msg}") }
+  )
+end
+
 # Main execution
 if __FILE__ == $PROGRAM_NAME
   options = {
@@ -608,5 +620,34 @@ if __FILE__ == $PROGRAM_NAME
 
   # Exit with code based on critical content
   critical_count = report.by_status[FreshnessStatus::CRITICAL]
+
+  posthog = initialize_posthog
+  begin
+    if posthog
+      healthy = (report.by_status[FreshnessStatus::FRESH] || 0) + (report.by_status[FreshnessStatus::AGING] || 0)
+      health_score = report.files_with_lastmod.positive? ? (healthy.to_f / report.files_with_lastmod * 100).round(1) : 0
+
+      posthog.capture(
+        distinct_id: 'it-journey-ci',
+        event: 'content_scan_completed',
+        properties: {
+          total_files: report.total_files,
+          files_with_lastmod: report.files_with_lastmod,
+          files_without_lastmod: report.files_without_lastmod,
+          fresh_count: report.by_status[FreshnessStatus::FRESH] || 0,
+          aging_count: report.by_status[FreshnessStatus::AGING] || 0,
+          stale_count: report.by_status[FreshnessStatus::STALE] || 0,
+          critical_count: critical_count || 0,
+          average_age_days: report.average_age,
+          health_score: health_score,
+          output_format: options[:format],
+          filter_applied: !options[:filter_status].nil?
+        }
+      )
+    end
+  ensure
+    posthog&.shutdown
+  end
+
   exit(critical_count.positive? ? 1 : 0)
 end
