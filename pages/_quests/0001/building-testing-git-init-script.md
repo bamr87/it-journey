@@ -63,12 +63,14 @@ Why this matters:
 - Headless behavior must be non-destructive and reliable; interactive commands can't be used in CI loops.
 - Creating files via programmatic scaffolding must be done with a clear contract and test coverage.
 
-## Objectives
+## 🎯 Quest Objectives
 
-- Verify script syntax with `bash -n` and lint with `shellcheck`.
-- Add Bats tests to confirm `--headless` operations do not push.
-- Ensure easy to run `--no-push` for local tests.
-- Add CI step instructions for running tests.
+By the end of this quest, you will be able to:
+
+- [ ] Verify script syntax with `bash -n` and lint with `shellcheck`.
+- [ ] Add Bats tests to confirm `--headless` operations do not push.
+- [ ] Ensure it is easy to run `--no-push` for local tests.
+- [ ] Add CI step instructions for running tests.
 
 ## Tests and Tools
 
@@ -92,7 +94,7 @@ teardown() {
 }
 
 @test "headless mode creates a repo and does not push" {
-  run bash /path/to/scripts/git_init.sh --headless -n sample-test --no-push
+  run bash "$BATS_TEST_DIRNAME/../../scripts/git_init.sh" --headless -n sample-test --no-push
   [ "$status" -eq 0 ]
   [ -d "$HOME/github/sample-test/.git" ]
 }
@@ -100,13 +102,24 @@ teardown() {
 
 ### ShellCheck linting
 
-Install with `brew install shellcheck` on macOS and run `shellcheck scripts/git_init.sh`.
+Install with `brew install shellcheck` on macOS, or `sudo apt-get install -y shellcheck` on Linux (Ubuntu / GitHub Actions runners), then run `shellcheck scripts/git_init.sh`.
 
 ### Syntax check
 
 Use `bash -n scripts/git_init.sh` to detect syntax issues early.
 
 ## Try it locally
+
+> **Get the script first.** Every command below expects `scripts/git_init.sh` to
+> exist in your working directory. It ships in the IT-Journey repository — clone it
+> (or download the single file) before running anything else:
+>
+> ```bash
+> git clone https://github.com/bamr87/it-journey.git
+> cd it-journey
+> # the initializer lives at scripts/git_init.sh
+> chmod +x scripts/git_init.sh
+> ```
 
 1. Syntax check
 
@@ -123,25 +136,22 @@ bash scripts/git_init.sh --headless -n test-quest-sample --no-push --gitignore p
 3. Run Bats tests
 
 ```bash
-# install bats-core
-
-## 🎯 Quest Objectives
-
-By the end of this quest, you will be able to:
-
-- [ ] Understand the core concepts introduced in this quest
-- [ ] Complete the hands-on exercises and verify the results
-- [ ] Apply what you learned to a follow-up scenario of your own design
-
-> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
+# install bats-core (macOS)
 brew install bats-core
+# install bats-core (Linux / Ubuntu, e.g. GitHub Actions runners)
+sudo apt-get update && sudo apt-get install -y bats
+
 bats tests/bats
 ```
 
 4. Run ShellCheck
 
 ```bash
+# macOS
 brew install shellcheck
+# Linux / Ubuntu (e.g. GitHub Actions runners)
+sudo apt-get install -y shellcheck
+
 shellcheck scripts/git_init.sh
 ```
 
