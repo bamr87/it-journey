@@ -111,42 +111,69 @@ This 🟡 Medium quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-```bash
-# macOS-specific commands and setup
-```
+Install Docker Desktop with Homebrew, then start it and confirm the CLI is working:
 
-*[Detailed instructions including Homebrew installations, Terminal usage, and macOS-specific tools]*
+```bash
+# Install Docker Desktop via Homebrew Cask
+brew install --cask docker
+
+# Launch Docker Desktop (starts the background engine)
+open -a Docker
+
+# Verify the install once the whale icon is running
+docker --version
+docker run --rm hello-world
+```
 
 ### 🪟 Windows Empire Path
 
-```powershell
-# PowerShell and Windows-specific commands
-```
+Install Docker Desktop with Chocolatey (WSL 2 backend is enabled by default):
 
-*[Windows-specific instructions including Chocolatey, WSL options, and Windows tools]*
+```powershell
+# Install Docker Desktop via Chocolatey
+choco install docker-desktop -y
+
+# After Docker Desktop finishes starting, verify from PowerShell
+docker --version
+docker run --rm hello-world
+```
 
 ### 🐧 Linux Territory Path
 
-```bash
-# Linux distribution-specific commands
-```
+Use Docker's official convenience script, then add your user to the `docker` group so you
+can run the CLI without `sudo`:
 
-*[Linux instructions with alternatives for different distributions]*
+```bash
+# Install Docker Engine (works on most distributions)
+curl -fsSL https://get.docker.com | sh
+
+# Allow the current user to run docker without sudo (log out/in to apply)
+sudo usermod -aG docker "$USER"
+
+# Verify
+docker --version
+docker run --rm hello-world
+```
 
 ### ☁️ Cloud Realms Path
 
-*[Cloud platform instructions for AWS, Azure, GCP when applicable]* *[Container-based approaches using Docker/Podman]*
+No local install needed — use a cloud shell or dev environment that ships Docker preinstalled:
 
 ```bash
-# Cloud platform commands and configurations
+# GitHub Codespaces / cloud dev containers already include Docker — just verify:
+docker --version
+docker run --rm hello-world
 ```
 
 ### 📱 Universal Web Path
 
-*[Browser-based or platform-agnostic approaches when available]*
+Prefer a browser? Use [Play with Docker](https://labs.play-with-docker.com/) — a free,
+throwaway Docker playground that runs entirely in your browser:
 
-```javascript
-// Cross-platform web technologies
+```text
+1. Open https://labs.play-with-docker.com/ and sign in with a Docker Hub account.
+2. Click "ADD NEW INSTANCE" to get a terminal with Docker preinstalled.
+3. Run: docker run --rm hello-world
 ```
 
 ## 🧙‍♂️ Chapter 1: Docker Foundation - Setting Up Your Digital Workshop
@@ -204,6 +231,91 @@ Hello from your first Docker container!
 - [ ] **Setup Complete**: docker environment is ready for development
 - [ ] **First Success**: Successfully executed your first docker implementation
 - [ ] **Understanding Gained**: Can explain key concepts to another person
+
+## 🧙‍♂️ Chapter 2: Compose, Secure, and Ship Your Containers
+
+*Chapter 1 built a single image. Real devops work runs several services together, hardens
+them, and ships them to a registry. This chapter delivers the Docker Compose, security, and
+deployment skills promised in the Quest Objectives.*
+
+### 🧩 Multi-Container Apps with Docker Compose
+
+Create a file named `docker-compose.yml` beside your `Dockerfile`. This example runs a small
+web app alongside a Redis cache — two services wired together by Compose:
+
+```yaml
+# docker-compose.yml — a two-service app defined declaratively
+services:
+  web:
+    build: .            # build the image from the local Dockerfile
+    ports:
+      - "8080:8080"     # map host port 8080 to the container
+    depends_on:
+      - cache
+  cache:
+    image: redis:7-alpine
+```
+
+Start the whole stack (and stop it) with a single command each:
+
+```bash
+# Build images if needed and start all services in the background
+docker compose up -d
+
+# See the running services
+docker compose ps
+
+# Tear everything down when finished
+docker compose down
+```
+
+### 🛡️ Security Best Practices: Non-Root + Multi-Stage Builds
+
+Running containers as `root` and shipping build tooling in the final image are common
+vulnerabilities. A multi-stage build keeps the runtime image small, and a dedicated
+non-root `USER` limits blast radius:
+
+```dockerfile
+# Stage 1: build with the full toolchain
+FROM node:20-alpine AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
+
+# Stage 2: minimal runtime image, run as an unprivileged user
+FROM node:20-alpine
+WORKDIR /app
+COPY --from=build /app/dist ./dist
+COPY --from=build /app/node_modules ./node_modules
+# Create and switch to a non-root user
+RUN addgroup -S app && adduser -S app -G app
+USER app
+CMD ["node", "dist/server.js"]
+```
+
+Scan the resulting image for known vulnerabilities before you ship it:
+
+```bash
+# Scan with Trivy (or `docker scout cves <image>` on newer Docker Desktop)
+trivy image my-first-image
+```
+
+### ☁️ Deploy: Push to a Container Registry
+
+Deployment starts by publishing your image to a registry so a cloud service can pull it.
+Push to Docker Hub (swap `YOUR_USERNAME` for your account):
+
+```bash
+# Log in, tag the image for your registry namespace, then push
+docker login
+docker tag my-first-image YOUR_USERNAME/my-first-image:latest
+docker push YOUR_USERNAME/my-first-image:latest
+```
+
+Any cloud runtime that pulls container images (AWS ECS, Azure Container Apps, Google Cloud
+Run, Fly.io) can now deploy `YOUR_USERNAME/my-first-image:latest` directly from the registry.
 
 ## 🎮 Docker Mastery Challenges
 
