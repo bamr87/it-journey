@@ -4,6 +4,7 @@ description: 'Containerize frontend workflows with Docker: build images, run rep
 preview: images/previews/level-0100-frontend-development-docker.png
 permalink: /quests/0100/
 layout: quest-collection
+local_graph: false
 level: '0100'
 categories:
 - quests

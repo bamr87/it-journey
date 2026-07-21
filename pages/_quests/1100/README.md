@@ -4,6 +4,7 @@ description: 'Work with real-world data sources like SEC EDGAR, consume financia
 preview: images/previews/level-1100-data-templates.png
 permalink: /quests/1100/
 layout: quest-collection
+local_graph: false
 level: '1100'
 categories:
 - quests

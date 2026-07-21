@@ -4,6 +4,7 @@ description: 'Develop complex features from concept to completion with structure
 preview: images/previews/level-1011-feature-development.png
 permalink: /quests/1011/
 layout: quest-collection
+local_graph: false
 level: '1011'
 categories:
 - quests

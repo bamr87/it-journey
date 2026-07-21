@@ -4,6 +4,7 @@ description: 'Master quality assurance through advanced error handling, edge-cas
 preview: images/previews/level-1110-quality-assurance.png
 permalink: /quests/1110/
 layout: quest-collection
+local_graph: false
 level: '1110'
 categories:
 - quests

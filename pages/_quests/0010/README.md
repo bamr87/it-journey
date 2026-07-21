@@ -4,6 +4,7 @@ description: 'Customize your shell with Oh My Zsh, Nerd Fonts, and themes, then 
 preview: images/previews/level-0010-terminal-enhancement-shell-mastery.png
 permalink: /quests/0010/
 layout: quest-collection
+local_graph: false
 level: '0010'
 categories:
 - quests
