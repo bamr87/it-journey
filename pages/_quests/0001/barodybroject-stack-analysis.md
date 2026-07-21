@@ -71,17 +71,23 @@ mermaid: true
 
 By the end of this quest, you will be able to:
 
-- [ ] Understand the core concepts introduced in this quest
-- [ ] Complete the hands-on exercises and verify the results
-- [ ] Apply what you learned to a follow-up scenario of your own design
-
-> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
+- [ ] Identify each layer of a Django + Azure stack (frontend, backend, data, infrastructure)
+- [ ] Evaluate dependency risk for a Python project using `pip-audit`
+- [ ] Assess whether a claimed stack analysis still matches the live repository
+- [ ] Read a technology stack table and map each entry to its configuration location
 
 > **Repository**: [https://github.com/bamr87/barodybroject](https://github.com/bamr87/barodybroject)  
 > **Analysis Date**: November 2, 2025  
 > **Primary Language**: Python  
 > **Project Type**: Web Application - AI-Powered Parody News Generator  
 > **Analyzed By**: Stack Attack Protocol v1.0
+
+> ⚠️ **Point-in-time snapshot.** This analysis reflects the repository as of the
+> Analysis Date above and *will drift* as the project evolves. Version numbers
+> (e.g. the Django version), file layout, and dependency claims below may no
+> longer match `main` — the live repo has since moved to a newer Django release
+> and split `settings.py`/`views.py` into packages. Always re-verify against the
+> current repository before relying on any specific figure here.
 
 ## 📊 Executive Summary
 
@@ -214,7 +220,7 @@ src/parodynews/templates/
 - **AWS Secrets Manager**: Production secret management with boto3
 
 **Backend Structure**:
-```python
+```text
 src/barodybroject/
 ├── settings.py           # 1,101 lines of enterprise-grade configuration
 ├── urls.py              # URL routing with namespace support
@@ -285,6 +291,7 @@ else:
     # Development: PostgreSQL (Docker) or SQLite fallback
     if DB_CHOICE == "postgres":
         # Docker PostgreSQL configuration
+        ...
     else:
         # SQLite fallback for simple development
         DATABASES = {
@@ -437,7 +444,7 @@ src/pages/
 ### Python Dependencies
 
 **Core Framework** (requirements.txt):
-```python
+```text
 # Web Framework
 Django==4.2.20                      # Mature, stable LTS version
 djangorestframework                 # REST API toolkit
@@ -478,7 +485,7 @@ dkimpy                              # DKIM signing
 ```
 
 **Development Dependencies** (pyproject.toml):
-```python
+```toml
 [project.optional-dependencies]
 dev = [
     # Testing
@@ -661,6 +668,9 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r src/requirements.txt
 cd src
+# The project defaults to PostgreSQL (DB_CHOICE=postgres). For a quick local run
+# with no database server, use SQLite instead so `migrate` works out of the box:
+export DB_CHOICE=sqlite
 python manage.py migrate
 python manage.py runserver
 
@@ -726,7 +736,7 @@ python manage.py createsuperuser
 
 **Code Quality**:
 1. 🔄 **Split Large Views**: Break views.py (2,400+ lines) into smaller modules
-   ```python
+   ```text
    src/parodynews/
    ├── views/
    │   ├── __init__.py
