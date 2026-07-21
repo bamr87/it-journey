@@ -113,6 +113,8 @@ RUN_DATE=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 
 echo "=== Agent Behaviour Baseline Measurement ==="
 
+RECORDED=0
+
 # For each test task, record:
 # - Did the agent open a PR? (success signal 1)
 # - Did all tests pass? (success signal 2)
@@ -136,9 +138,16 @@ for TASK_NUM in 1 2 3; do
     cat >> "$RESULTS_FILE" << EOF
 {"date":"$RUN_DATE","task":$TASK_NUM,"run_id":"$RUN_ID","pr_opened":$([ "$PR_OPENED" -gt 0 ] && echo true || echo false),"tests_passed":$([ "$TESTS_PASSED" = "success" ] && echo true || echo false)}
 EOF
+    RECORDED=$((RECORDED + 1))
 done
 
-echo "✅ Baseline recorded in $RESULTS_FILE"
+if [ "$RECORDED" -eq 0 ]; then
+    echo "❌ No tasks were recorded — no agent-task.yml runs exist yet, so $RESULTS_FILE was not created."
+    echo "   Trigger at least one agent run for tasks 1–3, then re-run this script."
+    exit 1
+fi
+
+echo "✅ Baseline recorded ($RECORDED task(s)) in $RESULTS_FILE"
 ```
 
 ---

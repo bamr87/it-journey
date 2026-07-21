@@ -138,6 +138,13 @@ jobs:
           path: "trace-analysis-${% raw %}{{ env.CORRELATION_ID }}{% endraw %}.jsonl"
 ```
 
+> **`traced_subtask.py` is a thin wrapper you author around `trace_writer.py`.**
+> The workflow above calls `work/gh-600/scripts/traced_subtask.py`, which is not a
+> separate tool — it runs your sub-task and emits trace entries using the
+> `trace_writer.py` module defined in Chapter 2. If you'd rather keep the example
+> fully self-contained, call `trace_writer.py` directly instead. Either way the
+> script must exist under `work/gh-600/scripts/` before the workflow runs.
+
 ---
 
 ### Chapter 2 — Structured Trace Entry Format

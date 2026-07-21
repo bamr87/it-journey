@@ -107,7 +107,7 @@ graph LR
 
 > **Exercise 14.1:** Create an orchestrator workflow that fans out to parallel sub-agents.
 
-
+{% raw %}
 ```yaml
 # .github/workflows/orchestrator-fan-out.yml
 name: Multi-Agent Orchestrator (Fan-Out)
@@ -121,7 +121,7 @@ jobs:
     if: contains(github.event.label.name, 'multi-agent-task')
     runs-on: ubuntu-latest
     outputs:
-      subtasks: ${% raw %}{{ steps.plan.outputs.subtasks }}{% endraw %}
+      subtasks: ${{ steps.plan.outputs.subtasks }}
     steps:
       - uses: actions/checkout@v4
 
@@ -130,7 +130,7 @@ jobs:
         run: |
           # Orchestrator determines how to split the task
           python3 work/gh-600/scripts/partition_task.py \
-            --issue "${% raw %}{{ github.event.issue.number }}{% endraw %}" \
+            --issue "${{ github.event.issue.number }}" \
             --max-subtasks 4 \
             --output partition.json
           
@@ -143,26 +143,26 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        subtask: ${% raw %}{{ fromJSON(needs.orchestrate.outputs.subtasks) }}{% endraw %}
+        subtask: ${{ fromJSON(needs.orchestrate.outputs.subtasks) }}
       max-parallel: 4
     steps:
       - uses: actions/checkout@v4
 
       - name: Execute sub-task
         run: |
-          echo "=== Sub-Agent executing: ${% raw %}{{ matrix.subtask.id }}{% endraw %} ==="
-          echo "Task: ${% raw %}{{ matrix.subtask.description }}{% endraw %}"
+          echo "=== Sub-Agent executing: ${{ matrix.subtask.id }} ==="
+          echo "Task: ${{ matrix.subtask.description }}"
           
           python3 work/gh-600/scripts/run_subtask.py \
-            --subtask-id "${% raw %}{{ matrix.subtask.id }}{% endraw %}" \
-            --description "${% raw %}{{ matrix.subtask.description }}{% endraw %}" \
-            --output "subtask-${% raw %}{{ matrix.subtask.id }}{% endraw %}-result.json"
+            --subtask-id "${{ matrix.subtask.id }}" \
+            --description "${{ matrix.subtask.description }}" \
+            --output "subtask-${{ matrix.subtask.id }}-result.json"
 
       - name: Upload sub-task result
         uses: actions/upload-artifact@v4
         with:
-          name: subtask-result-${% raw %}{{ matrix.subtask.id }}{% endraw %}
-          path: "subtask-${% raw %}{{ matrix.subtask.id }}{% endraw %}-result.json"
+          name: subtask-result-${{ matrix.subtask.id }}
+          path: "subtask-${{ matrix.subtask.id }}-result.json"
 
   aggregate:
     needs: sub-agents
@@ -181,7 +181,7 @@ jobs:
         run: |
           python3 work/gh-600/scripts/aggregate_results.py \
             --results-dir ./subtask-results/ \
-            --issue "${% raw %}{{ github.event.issue.number }}{% endraw %}" \
+            --issue "${{ github.event.issue.number }}" \
             --output final-report.json
 
       - name: Post aggregated report
@@ -196,7 +196,16 @@ jobs:
               body: `## Multi-Agent Task Complete\n\n${report.summary}\n\n${report.details}`
             });
 ```
+{% endraw %}
 
+> **Helper scripts are learner-authored placeholders.** This workflow invokes
+> `work/gh-600/scripts/partition_task.py`, `run_subtask.py`, and
+> `aggregate_results.py`. These are **not provided by the quest** — they are stubs
+> you author for your own task domain. Until you create them the workflow will fail
+> on first run with `No such file or directory`. Start with a minimal
+> `partition_task.py` that reads the issue and writes a `partition.json` containing a
+> `subtasks` array, then flesh out `run_subtask.py` and `aggregate_results.py` the
+> same way.
 
 ---
 
@@ -204,6 +213,7 @@ jobs:
 
 > **Exercise 14.2:** Create a sequential chain where research feeds into implementation.
 
+{% raw %}
 ```yaml
 # .github/workflows/orchestrator-chain.yml
 name: Multi-Agent Chain (Research → Plan → Implement)
@@ -219,7 +229,7 @@ jobs:
   research-agent:
     runs-on: ubuntu-latest
     outputs:
-      findings: ${% raw %}{{ steps.research.outputs.findings }}{% endraw %}
+      findings: ${{ steps.research.outputs.findings }}
     steps:
       - uses: actions/checkout@v4
       - name: Research phase
@@ -235,14 +245,14 @@ jobs:
     needs: research-agent
     runs-on: ubuntu-latest
     outputs:
-      plan: ${% raw %}{{ steps.plan.outputs.plan }}{% endraw %}
+      plan: ${{ steps.plan.outputs.plan }}
     steps:
       - uses: actions/checkout@v4
       - name: Planning phase
         id: plan
         run: |
           # Plan agent uses research findings to create implementation plan
-          FINDINGS='${% raw %}{{ needs.research-agent.outputs.findings }}{% endraw %}'
+          FINDINGS='${{ needs.research-agent.outputs.findings }}'
           echo "Planning agent working from research: $FINDINGS"
           PLAN=$(echo '{"steps": [{"action": "modify", "file": "src/api.js"}]}')
           echo "plan=$PLAN" >> "$GITHUB_OUTPUT"
@@ -254,10 +264,11 @@ jobs:
       - uses: actions/checkout@v4
       - name: Implementation phase
         run: |
-          PLAN='${% raw %}{{ needs.planning-agent.outputs.plan }}{% endraw %}'
+          PLAN='${{ needs.planning-agent.outputs.plan }}'
           echo "Implementation agent executing plan: $PLAN"
           # Agent modifies the specified files
 ```
+{% endraw %}
 
 ---
 
