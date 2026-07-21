@@ -4,6 +4,7 @@ description: 'Ascend to the cloud and master AWS core services, IaaS, PaaS, and 
 preview: images/previews/level-1000-cloud-computing.png
 permalink: /quests/1000/
 layout: quest-collection
+local_graph: false
 level: '1000'
 categories:
 - Quests

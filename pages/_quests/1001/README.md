@@ -4,6 +4,7 @@ description: 'Command Kubernetes to orchestrate containers at scale: master pods
 preview: images/previews/level-1001-kubernetes.png
 permalink: /quests/1001/
 layout: quest-collection
+local_graph: false
 level: '1001'
 categories:
 - Quests

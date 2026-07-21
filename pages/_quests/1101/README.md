@@ -5,6 +5,7 @@ description: 'Master machine learning, neural networks, deep learning, NLP, and 
 preview: images/previews/level-1101-machine-learning-ai.png
 permalink: /quests/1101/
 layout: quest-collection
+local_graph: false
 level: '1101'
 categories:
 - quests

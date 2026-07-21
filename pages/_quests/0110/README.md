@@ -4,6 +4,7 @@ description: 'Master data storage and retrieval through SQL sorcery and NoSQL ad
 preview: images/previews/level-0110-database-mastery.png
 permalink: /quests/0110/
 layout: quest-collection
+local_graph: false
 level: '0110'
 categories:
 - Quests

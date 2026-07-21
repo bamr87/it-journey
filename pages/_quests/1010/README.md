@@ -4,6 +4,7 @@ description: 'Build automated test pipelines, link validators, and CI/CD workflo
 preview: images/previews/level-1010-automation-testing.png
 permalink: /quests/1010/
 layout: quest-collection
+local_graph: false
 level: '1010'
 categories:
 - quests

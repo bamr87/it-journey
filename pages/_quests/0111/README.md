@@ -4,6 +4,7 @@ description: 'Master the Journeyman craft of building production-grade APIs: RES
 preview: images/previews/level-0111-api-development.png
 permalink: /quests/0111/
 layout: quest-collection
+local_graph: false
 level: '0111'
 categories:
 - Quests

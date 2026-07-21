@@ -75,6 +75,25 @@ Supports filtering by level (pass level parameter to filter to specific level).
     {% endif %}
   </section>
 
+  {%- comment -%}
+  Quest Network — the Obsidian-style dependency graph for this level.
+  Reuses the same include the individual quest pages render, filtered to
+  page.level, so a level index shows a graph WITH links (quests + their
+  required/recommended/unlocks edges) instead of the theme's empty per-page
+  "Local graph" widget (which is suppressed via `local_graph: false` in each
+  level README's frontmatter). Data: assets/data/quest-network.json.
+  {%- endcomment -%}
+  {% if page.level %}
+  <section class="quest-collection-network" aria-labelledby="quest-network-heading">
+    <h2 id="quest-network-heading" class="quest-section-heading">🕸️ Quest Network</h2>
+    <p class="quest-collection-network__intro">
+      How this level's quests connect. Follow the arrows from prerequisites to
+      the quests they unlock — click any node to jump straight to that quest.
+    </p>
+    {% include content/quest-graph-obsidian.html level=page.level current=page.permalink %}
+  </section>
+  {% endif %}
+
   {%- comment -%} Page Content {%- endcomment -%}
   {% if content != "" %}
   <section class="quest-collection-content">
@@ -104,6 +123,22 @@ Supports filtering by level (pass level parameter to filter to specific level).
 .quest-collection-header .lead {
   font-size: 1.25rem;
   color: var(--text-muted, #6c757d);
+}
+
+/* Quest Network (Obsidian-style dependency graph) */
+.quest-collection-network {
+  margin-bottom: 3rem;
+}
+
+.quest-collection-network .quest-section-heading {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.quest-collection-network__intro {
+  color: var(--text-muted, #6c757d);
+  margin-bottom: 1rem;
+  max-width: 70ch;
 }
 
 /* Quest Tier Sections */
