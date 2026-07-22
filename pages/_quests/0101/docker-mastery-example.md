@@ -140,8 +140,7 @@ docker run --rm hello-world
 
 ### 🐧 Linux Territory Path
 
-Use Docker's official convenience script, then add your user to the `docker` group so you
-can run the CLI without `sudo`:
+Use Docker's official convenience script, then add your user to the `docker` group so you can run the CLI without `sudo`:
 
 ```bash
 # Install Docker Engine (works on most distributions)
@@ -167,8 +166,7 @@ docker run --rm hello-world
 
 ### 📱 Universal Web Path
 
-Prefer a browser? Use [Play with Docker](https://labs.play-with-docker.com/) — a free,
-throwaway Docker playground that runs entirely in your browser:
+Prefer a browser? Use [Play with Docker](https://labs.play-with-docker.com/) — a free, throwaway Docker playground that runs entirely in your browser:
 
 ```text
 1. Open https://labs.play-with-docker.com/ and sign in with a Docker Hub account.
@@ -234,14 +232,11 @@ Hello from your first Docker container!
 
 ## 🧙‍♂️ Chapter 2: Compose, Secure, and Ship Your Containers
 
-*Chapter 1 built a single image. Real devops work runs several services together, hardens
-them, and ships them to a registry. This chapter delivers the Docker Compose, security, and
-deployment skills promised in the Quest Objectives.*
+*Chapter 1 built a single image. Real devops work runs several services together, hardens them, and ships them to a registry. This chapter delivers the Docker Compose, security, and deployment skills promised in the Quest Objectives.*
 
 ### 🧩 Multi-Container Apps with Docker Compose
 
-Create a file named `docker-compose.yml` beside your `Dockerfile`. This example runs a small
-web app alongside a Redis cache — two services wired together by Compose:
+Create a file named `docker-compose.yml` beside your `Dockerfile`. This example runs a small web app alongside a Redis cache — two services wired together by Compose:
 
 ```yaml
 # docker-compose.yml — a two-service app defined declaratively
@@ -271,9 +266,7 @@ docker compose down
 
 ### 🛡️ Security Best Practices: Non-Root + Multi-Stage Builds
 
-Running containers as `root` and shipping build tooling in the final image are common
-vulnerabilities. A multi-stage build keeps the runtime image small, and a dedicated
-non-root `USER` limits blast radius:
+Running containers as `root` and shipping build tooling in the final image are common vulnerabilities. A multi-stage build keeps the runtime image small, and a dedicated non-root `USER` limits blast radius:
 
 ```dockerfile
 # Stage 1: build with the full toolchain
@@ -304,8 +297,7 @@ trivy image my-first-image
 
 ### ☁️ Deploy: Push to a Container Registry
 
-Deployment starts by publishing your image to a registry so a cloud service can pull it.
-Push to Docker Hub (swap `YOUR_USERNAME` for your account):
+Deployment starts by publishing your image to a registry so a cloud service can pull it. Push to Docker Hub (swap `YOUR_USERNAME` for your account):
 
 ```bash
 # Log in, tag the image for your registry namespace, then push
@@ -314,8 +306,7 @@ docker tag my-first-image YOUR_USERNAME/my-first-image:latest
 docker push YOUR_USERNAME/my-first-image:latest
 ```
 
-Any cloud runtime that pulls container images (AWS ECS, Azure Container Apps, Google Cloud
-Run, Fly.io) can now deploy `YOUR_USERNAME/my-first-image:latest` directly from the registry.
+Any cloud runtime that pulls container images (AWS ECS, Azure Container Apps, Google Cloud Run, Fly.io) can now deploy `YOUR_USERNAME/my-first-image:latest` directly from the registry.
 
 ## 🎮 Docker Mastery Challenges
 

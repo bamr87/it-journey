@@ -119,10 +119,7 @@ which latexmk && latexmk --version
 Notes:
 
 - If you prefer a smaller footprint: `brew install --cask basictex` then
-  `sudo tlmgr update --self && sudo tlmgr install latexmk enumitem titlesec fontawesome5 CormorantGaramond`.
-  BasicTeX ships only a minimal package set, so `enumitem` and `titlesec` (used by the
-  Chapter 2 template) must be installed explicitly or the build fails with a
-  `File \`enumitem.sty' not found` error.
+`sudo tlmgr update --self && sudo tlmgr install latexmk enumitem titlesec fontawesome5 CormorantGaramond`. BasicTeX ships only a minimal package set, so `enumitem` and `titlesec` (used by the Chapter 2 template) must be installed explicitly or the build fails with a `File \`enumitem.sty' not found` error.
 
 ### 🪟 Windows Empire Path
 
