@@ -127,7 +127,7 @@ You'll know you've truly mastered this quest when you can:
 brew install node python3 docker docker-compose git
 
 # Install AI development tools
-brew install --cask github-copilot-cli
+brew install copilot-cli
 pip3 install langchain anthropic openai
 
 # Set up MCP development environment
@@ -217,11 +217,13 @@ const aiPipeline = {
 
 **Step 1: Set up your AI orchestration environment**
 
-```python
+```bash
 # Install the AI orchestration framework
 # (the Model Context Protocol package on PyPI is `mcp`, not `mcp-client`)
 pip install langchain anthropic openai mcp
+```
 
+```python
 # Create your first AI agent for requirement processing
 import os
 from anthropic import Anthropic
