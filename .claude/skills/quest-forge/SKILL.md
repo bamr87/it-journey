@@ -76,9 +76,12 @@ The **hub** additionally carries the quest-metadata table, the chapter index tab
 ## 6. Verify (do not skip)
 
 ```bash
+make prose-oneline-apply   # unwrap soft-wrapped prose (the 'oneline' gate)
 make quest-data    # regenerate levels/tiers/order/network/navigation from the registry
 make quest-audit   # content ≥70%, network integrity, freshness (must pass)
 ```
+
+**One paragraph per line.** Author body prose as a single unwrapped line per paragraph — never soft-wrap at ~80 cols. The `markdown-oneline` CI gate fails any PR with wrapped prose; `make prose-oneline-apply` joins it back (leaving code/tables/Liquid/front-matter untouched) — run it after authoring and stage the result.
 
 Fix every error before opening. `make quest-audit` SCORES every `main_quest` chapter (each must clear 70%) and network-/freshness-validates the whole campaign. The `epic_quest` hub lives in `codex/`, which tier-1 scoring skips — author it to the full quest structure anyway. If the audit reports stale data, you forgot `make quest-data`; run it and re-audit.
 

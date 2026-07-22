@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# =============================================================================
+# pre-commit — enforce the house "one paragraph per line" prose rule locally.
+# -----------------------------------------------------------------------------
+# Runs tools/unwrap-prose.py --write on the STAGED markdown, then re-stages any
+# file it changed, so soft-wrapped prose is fixed before it is ever committed —
+# no matter who (human or agent) or what created it. This is the local twin of
+# the `markdown-oneline` CI gate; committing clean means CI never fails on it.
+#
+# Install once (wires .git/hooks -> this directory for the whole team):
+#   make hooks-install         # or: git config core.hooksPath tools/hooks
+#
+# Bypass for a single commit (discouraged): git commit --no-verify
+#
+# Vendored/kit-distributed alongside tools/unwrap-prose.py — keep the EXCLUDES in
+# lockstep with .github/workflows/markdown-oneline.yml and the Makefile.
+# =============================================================================
+set -euo pipefail
+
+repo_root="$(git rev-parse --show-toplevel)"
+unwrap="$repo_root/tools/unwrap-prose.py"
+[ -f "$unwrap" ] || exit 0   # nothing to enforce with — no-op
+
+# Staged, still-present markdown (Added/Copied/Modified/Renamed).
+mapfile -t staged < <(
+  git diff --cached --name-only --diff-filter=ACMR -- '*.md' '*.markdown' \
+    | grep -vE '(^|/)(SCHEMA|CHANGELOG)\.md$|(^|/)pages/_quest-reports/|(^|/)test/quest-validator/walkthroughs/' \
+    || true
+)
+[ "${#staged[@]}" -gt 0 ] || exit 0
+
+# List what would change, fix it in place, then re-stage exactly those files so
+# the fix is part of THIS commit (not left dangling in the working tree).
+mapfile -t changed < <(python3 "$unwrap" --check "${staged[@]}" 2>/dev/null || true)
+if [ "${#changed[@]}" -gt 0 ]; then
+  python3 "$unwrap" --write "${changed[@]}" >/dev/null
+  git add -- "${changed[@]}"
+  echo "pre-commit: unwrapped soft-wrapped prose in ${#changed[@]} file(s) and re-staged (one paragraph per line)."
+fi

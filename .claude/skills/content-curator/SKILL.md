@@ -50,10 +50,13 @@ ISO-8601 dates, YAML-list tags/categories). Reuse `make content-normalize-apply`
 ## 5. Verify (delegate to cms-curator §validate)
 
 ```bash
+make prose-oneline-apply               # unwrap soft-wrapped prose (the 'oneline' gate)
 make content-audit                     # frontmatter + network
 # quests only:
 make quest-data && make quest-audit
 ```
+
+**One paragraph per line.** Write body prose as a single unwrapped line per paragraph — never soft-wrap at ~80 cols. The `markdown-oneline` CI gate fails any PR with wrapped prose, so run `make prose-oneline-apply` after you edit (it only joins prose; code/tables/Liquid/front-matter are left untouched) and stage the result.
 
 Do not open a PR that fails. Fix or shrink scope until green.
 

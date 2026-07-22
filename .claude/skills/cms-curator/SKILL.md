@@ -109,6 +109,7 @@ Group Lane B commits **by collection** (one commit per collection touched), e.g.
 Before handing off, run the **same gates CI runs** and fix anything red:
 
 ```bash
+make prose-oneline-apply # unwrap soft-wrapped prose to one paragraph per line
 # regenerate derived data first so the build validates the final tree
 # (only if you changed quest frontmatter):
 make quest-data
@@ -118,6 +119,8 @@ make content-validate    # frontmatter validator (no new errors)
 # if quests changed:
 make quest-audit         # validate + network + build
 ```
+
+**One paragraph per line.** IT-Journey markdown keeps each prose paragraph on a single unwrapped line; the `markdown-oneline` CI gate fails any PR with soft-wrapped prose. Write unwrapped, and run `make prose-oneline-apply` before handoff — it only joins prose, leaving code/tables/Liquid/front-matter byte-for-byte identical.
 
 If a gate fails, fix it before finishing. Never leave a red tree for the caller.
 

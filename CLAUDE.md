@@ -61,6 +61,7 @@ make serve            # local dev server (Docker via run-it-journey, port 4002)
 make build-ci         # CI-parity Jekyll build — run before any PR
 make content-audit    # frontmatter + quest + network validation
 make content-normalize-apply   # deterministic frontmatter fixes (mechanical lane)
+make prose-oneline-apply       # unwrap soft-wrapped prose → one paragraph per line
 make quest-audit      # quest content + dependency network validation
 make quest-data       # regenerate _data/quests/* after quest frontmatter edits
 ```
@@ -71,6 +72,8 @@ Host Ruby cannot build this site (the `jekyll-theme-zer0` gem ≥1.21 needs Ruby
 
 - **Frontmatter is CI-enforced.** Required: `title, description, date, author,
 categories, tags`. `title` ≤ 60 chars; `description` 120–160; dates ISO-8601 with ms (`YYYY-MM-DDTHH:MM:SS.000Z`); `tags`/`categories` are YAML lists. The PR will fail `frontmatter-validation` otherwise.
+- **One paragraph per line is CI-enforced.** Markdown body prose stays unwrapped —
+one paragraph per line, never soft-wrapped at ~80 cols. The `markdown-oneline` check (`tools/unwrap-prose.py`) fails the PR otherwise. LLMs soft-wrap by habit, so run `make prose-oneline-apply` after authoring (it joins only prose; code, tables, Liquid, and front matter are untouched). The AI content workflows apply this deterministically before opening a PR.
 - **Never commit to `main`.** Branch with the repo's prefixes
 (`feature/ fix/ docs/ chore/ content/`) or `automated/cms-daily-<date>` for the loop. Conventional Commits.
 - **Quests are registry-governed.** `_data/quests/*.yml` is generated from

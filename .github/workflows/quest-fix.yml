@@ -31,6 +31,11 @@
 #        to github.token, so the fix PR's required checks actually fire.
 #   M6 — read .quests/ledger.json; skip/abort if the slice is stuck/needs_human.
 #   M7 — the skill aborts on review-mode/truncated/not-executed evidence.
+#   M8 — after the fixer edits, DETERMINISTICALLY unwrap soft-wrapped prose to
+#        the house "one paragraph per line" rule (tools/unwrap-prose.py) so the
+#        `oneline` gate (markdown-oneline.yml) can never fail the fix PR. LLMs
+#        soft-wrap prose by habit; we normalize in the workflow, not trust the
+#        agent — same discipline as M2's `make quest-data`.
 #
 # OFF by default behind QUEST_FIX_ENABLED (a repo variable) + Claude auth.
 # Setup: add a CLAUDE_CODE_OAUTH_TOKEN secret (`claude setup-token`), a PAT
@@ -344,6 +349,26 @@ jobs:
             fi
             cp -f "$RUNNER_TEMP/sealed/$f" "$f"
           done
+
+      # M8 oneline — normalize the fixer's prose to the house "one paragraph per
+      # line" rule BEFORE anything else reads the tree, so the tier-1 score (M1)
+      # and the committed content are the final, normalized text. LLMs soft-wrap
+      # prose at ~80 cols by habit; tools/unwrap-prose.py is the Liquid-safe
+      # surgical unwrapper (leaves code/tables/Liquid/front-matter untouched).
+      # Scoped to the quests the fixer actually changed — all under pages/_quests,
+      # so no exclude list is needed. Without this the `oneline` gate
+      # (markdown-oneline.yml) fails every fix PR that added wrapped prose.
+      - name: Normalize prose to one-paragraph-per-line (M8)
+        if: steps.breaker.outputs.skip != 'true'
+        run: |
+          set -euo pipefail
+          mapfile -t md < <(git diff --name-only -- pages/_quests | grep -E '\.md$' || true)
+          if [ "${#md[@]}" -gt 0 ]; then
+            python3 tools/unwrap-prose.py --write "${md[@]}"
+            echo "normalized ${#md[@]} changed quest file(s) to one paragraph per line."
+          else
+            echo "no changed quest markdown to normalize."
+          fi
 
       # M2 freshness — any frontmatter the fixer touched must propagate to the
       # generated quest data. Regenerate, stage, and FAIL if a diff remains that

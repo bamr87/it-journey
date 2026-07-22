@@ -347,6 +347,12 @@ echo ".env" >> .gitignore
 
 # Scan a repository for accidentally committed secrets before pushing
 pip install detect-secrets
+
+# detect-secrets scans files tracked by git (via `git ls-files`). Outside a git
+# repo it silently scans nothing and produces a clean-looking baseline, so make
+# sure your files are in git first.
+git init -q
+git add .
 detect-secrets scan > .secrets.baseline
 ```
 
