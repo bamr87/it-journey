@@ -119,7 +119,7 @@ which latexmk && latexmk --version
 Notes:
 
 - If you prefer a smaller footprint: `brew install --cask basictex` then
-  `sudo tlmgr update --self && sudo tlmgr install latexmk fontawesome5 CormorantGaramond`.
+`sudo tlmgr update --self && sudo tlmgr install latexmk enumitem titlesec fontawesome5 CormorantGaramond`. BasicTeX ships only a minimal package set, so `enumitem` and `titlesec` (used by the Chapter 2 template) must be installed explicitly or the build fails with a `File \`enumitem.sty' not found` error.
 
 ### 🪟 Windows Empire Path
 
@@ -173,7 +173,7 @@ latexmk -pdf cv.tex
 
 ## 🧙‍♂️ Chapter 2: Summon the Template (Create cv.tex)
 
-Your core artifact is `cv.tex`. Create it now: make a `cv/` folder, then save the starter below as `cv/cv.tex`. It is self‑contained—it uses only base TeX Live packages and defines the custom commands (`\resumeSubheading`, `\resumeItem`, and the list helpers) that you will use in Chapter 3, so it compiles cleanly with a stock LaTeX install.
+Your core artifact is `cv.tex`. Create it now: make a `cv/` folder, then save the starter below as `cv/cv.tex`. It is self‑contained—it defines the custom commands (`\resumeSubheading`, `\resumeItem`, and the list helpers) that you will use in Chapter 3. It relies on the `enumitem` and `titlesec` packages, which are included in a full TeX Live/MacTeX install; on a minimal BasicTeX install you must add them first (see the BasicTeX note above) or the build fails with a `File \`enumitem.sty' not found` error.
 
 {% raw %}
 ```latex

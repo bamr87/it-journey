@@ -197,6 +197,8 @@ mkdir -p .github/workflows
 gh run list   # see your workflow runs without leaving the terminal
 ```
 
+> **Heads up:** `gh run list` only works from inside an authenticated repo context (a Codespace, or after `gh auth login` locally). Run it elsewhere and it exits with `gh: To use GitHub CLI ... set the GH_TOKEN environment variable.` — that's an auth issue, not a broken command.
+
 > The runner that executes your workflow IS the cloud realm - GitHub spins up an `ubuntu-latest`, `windows-latest`, or `macos-latest` VM per job and destroys it when finished.
 
 </details>
