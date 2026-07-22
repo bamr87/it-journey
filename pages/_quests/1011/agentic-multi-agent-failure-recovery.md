@@ -216,6 +216,18 @@ import os
 from pathlib import Path
 
 
+# The five compensation strategy types from Chapter 1's failure classification.
+# Documenting them here keeps the coordinator's recovery vocabulary explicit so
+# every failure class maps to a concrete strategy.
+COMPENSATION_STRATEGIES = {
+    "transient": "retry_with_backoff",      # retry the task with exponential backoff
+    "idempotent": "retry_from_checkpoint",  # resume from the last saved checkpoint
+    "non_idempotent": "rollback_fallback",  # roll back, then fall back to re-delegation
+    "permanent": "escalate_to_human",       # escalate to a human reviewer
+    "cascade": "compensate_and_continue",   # compensate and continue with partial results
+}
+
+
 def assess_and_recover(
     results_dir: str,
     task_id: str,
@@ -279,6 +291,9 @@ def assess_and_recover(
     if github_output:
         with open(github_output, "a") as gh_out:
             gh_out.write(f"needs_redelegation={str(needs_redelegation).lower()}\n")
+            # Emit the failed agents so the workflow's re-delegate step can read
+            # `steps.assess.outputs.failed_tasks` (passed to --failed-tasks).
+            gh_out.write(f"failed_tasks={','.join(failed_agents)}\n")
     
     return recovery_plan
 
@@ -310,8 +325,8 @@ Validate your work with these standalone checks — run each from your quest wor
 test -f orchestrator-with-recovery.yml && echo "orchestrator-with-recovery.yml present"
 # ✅ Recovery coordinator present
 test -f recovery_coordinator.py && echo "recovery_coordinator.py present"
-# ✅ Compensation strategies documented (expect a count of 5)
-grep -c -iE "retry|fallback|escalat|compensat|checkpoint" recovery_coordinator.py
+# ✅ All five compensation strategy types documented (expect a count of 5)
+grep -oiE "retry|fallback|escalat|compensat|checkpoint" recovery_coordinator.py | tr '[:upper:]' '[:lower:]' | sort -u | wc -l
 ```
 
 Manual completion checklist:
