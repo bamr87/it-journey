@@ -10,7 +10,7 @@
         quest-walkthrough quest-walkthrough-plan quest-walkthrough-plan-selftest quest-walkthrough-screenshots \
         quest-ledger-update quest-ledger-dashboard quest-ledger-selftest quest-perfection-plan quest-fix \
         content-validate content-normalize content-normalize-apply content-audit \
-        prose-oneline prose-oneline-apply \
+        prose-oneline prose-oneline-apply hooks-install \
         mermaid-check mermaid-fix \
         cms-index cms-analyze cms-plan cms-status cms-all \
         issue-triage issue-status issue-plan \
@@ -66,6 +66,7 @@ help:
 	@echo "  make content-audit             - Full content audit (frontmatter + quests + network)"
 	@echo "  make prose-oneline             - Check one-paragraph-per-line (the 'oneline' gate)"
 	@echo "  make prose-oneline-apply       - Unwrap soft-wrapped markdown prose in place"
+	@echo "  make hooks-install             - Wire git to tools/hooks (pre-commit oneline enforcement)"
 	@echo ""
 	@echo "🧭 AI-Augmented CMS"
 	@echo "  make cms-status         - Terminal content dashboard (health by collection)"
@@ -408,6 +409,13 @@ prose-oneline:
 prose-oneline-apply:
 	@echo "📏 Unwrapping soft-wrapped markdown prose to one paragraph per line ..."
 	@python3 tools/unwrap-prose.py --write $(PROSE_ONELINE_EXCLUDES) $(PATHS)
+
+# Point git at tools/hooks/ so the one-paragraph-per-line pre-commit hook runs
+# for everyone who clones (catches wrapped prose at commit time, any author).
+# Run once per clone. Bypass a single commit with `git commit --no-verify`.
+hooks-install:
+	@git config core.hooksPath tools/hooks
+	@echo "✅ git hooks installed (core.hooksPath=tools/hooks). Pre-commit now enforces one-paragraph-per-line."
 
 mermaid-check:
 	@echo "🧜 Checking Mermaid front-matter flags across pages/ ..."
