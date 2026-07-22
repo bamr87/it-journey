@@ -10,6 +10,7 @@
         quest-walkthrough quest-walkthrough-plan quest-walkthrough-plan-selftest quest-walkthrough-screenshots \
         quest-ledger-update quest-ledger-dashboard quest-ledger-selftest quest-perfection-plan quest-fix \
         content-validate content-normalize content-normalize-apply content-audit \
+        prose-oneline prose-oneline-apply \
         mermaid-check mermaid-fix \
         cms-index cms-analyze cms-plan cms-status cms-all \
         issue-triage issue-status issue-plan \
@@ -63,6 +64,8 @@ help:
 	@echo "  make content-normalize         - Dry-run frontmatter normalizer across pages/"
 	@echo "  make content-normalize-apply   - Apply frontmatter normalization across pages/"
 	@echo "  make content-audit             - Full content audit (frontmatter + quests + network)"
+	@echo "  make prose-oneline             - Check one-paragraph-per-line (the 'oneline' gate)"
+	@echo "  make prose-oneline-apply       - Unwrap soft-wrapped markdown prose in place"
 	@echo ""
 	@echo "🧭 AI-Augmented CMS"
 	@echo "  make cms-status         - Terminal content dashboard (health by collection)"
@@ -386,6 +389,25 @@ content-normalize-apply:
 	@echo "🔧 Applying normalize across pages/ ..."
 	@python3 scripts/content/normalize-frontmatter.py pages/ --apply --quiet \
 		--report TODO/seo/data/normalize-apply.json
+
+# One-paragraph-per-line prose normalization (the "oneline" house rule).
+# Single local + CI entry point for tools/unwrap-prose.py, the Liquid-safe
+# surgical unwrapper. The EXCLUDES here MUST stay in lockstep with the check in
+# .github/workflows/markdown-oneline.yml (generated SCHEMA/CHANGELOG + the
+# machine-authored quest reports/walkthroughs are not hand-authored prose).
+# AI content agents run `make prose-oneline-apply` before opening a PR so the
+# `oneline` CI gate can never fail on their soft-wrapped prose.
+PROSE_ONELINE_EXCLUDES := --exclude '(^|/)SCHEMA\.md$$' --exclude '(^|/)CHANGELOG\.md$$' \
+	--exclude '(^|/)pages/_quest-reports/' \
+	--exclude '(^|/)test/quest-validator/walkthroughs/'
+
+prose-oneline:
+	@echo "📏 Checking one-paragraph-per-line (soft-wrapped prose) across tracked markdown ..."
+	@python3 tools/unwrap-prose.py --check $(PROSE_ONELINE_EXCLUDES) $(PATHS)
+
+prose-oneline-apply:
+	@echo "📏 Unwrapping soft-wrapped markdown prose to one paragraph per line ..."
+	@python3 tools/unwrap-prose.py --write $(PROSE_ONELINE_EXCLUDES) $(PATHS)
 
 mermaid-check:
 	@echo "🧜 Checking Mermaid front-matter flags across pages/ ..."

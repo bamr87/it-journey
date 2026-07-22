@@ -101,6 +101,7 @@ Observed from Makefile, scripts, Gemfile, and workflows:
  - **Full quest audit before PR**: `make quest-audit` — the unified validator `scripts/quest/quest_audit.py`: tier-1 content scoring + dependency-network integrity + generated-data freshness, in one consolidated report and exit code. Run the identical audit in Docker (CI-parity, no host Python) with `make docker-validate`. If the freshness layer flags stale data, run `make quest-data` and commit. Use `make quest-audit-strict` to escalate warnings to errors. CI blocks merges on validator errors and any score below 70%.
  - Regenerate sidebar nav: `make quest-nav` (rewrites `_data/navigation/quests.yml` from the quest collection).
  - Regenerate level metadata: `make quest-levels-data` (writes `_data/quests/levels.yml` from `scripts/quest/quest_registry.py`).
+ - **One-paragraph-per-line prose before PR**: `make prose-oneline` (check) / `make prose-oneline-apply` (fix in place) — the local + CI entry point for `tools/unwrap-prose.py`, matching the `markdown-oneline` gate. Scope to specific files with `make prose-oneline-apply PATHS="pages/_quests/0101/foo.md"`.
 
 - **Git and CI/CD** (from .github/workflows/):
   - Workflows include azure-jekyll-deploy.yml for deployment, link-checker.yml for validation.
@@ -176,6 +177,7 @@ Observed from Makefile, scripts, Gemfile, and workflows:
 
 ## Important Gotchas and Non-Obvious Patterns
 
+- **One paragraph per line (the `oneline` gate)**: Markdown body prose is kept **one paragraph per line** — never soft-wrap a paragraph across multiple ~80-col lines. The `markdown-oneline` CI check (`.github/workflows/markdown-oneline.yml` → `tools/unwrap-prose.py --check`) fails any PR with wrapped prose. LLMs soft-wrap by habit, so **run `make prose-oneline-apply` after authoring** (it is the Liquid-safe surgical unwrapper — joins only prose, leaving code, tables, Liquid `{% %}`, HTML, and front matter byte-for-byte identical) and stage the result. The AI content workflows enforce this deterministically before opening a PR; `quest-fix.yml` does it as step **M8**. Machine-authored session reports (`pages/_quest-reports/`, `test/quest-validator/walkthroughs/`) and generated `SCHEMA.md`/`CHANGELOG.md` are excluded.
 - **README-First/Last Principle** (from copilot-instructions.md): Always read/update README.md before/after changes in any directory.
 - **Front Matter Standards**: Required fields like title, description, learning_objectives; use YAML lists for arrays.
 - **Quest Permalink Convention**: Use `/quests/XXXX/slug/` for main quests, `/quests/XXXX/side-quests/slug/` for side quests, and `/quests/codex/<slug>/` for `bonus_quest`/`epic_quest` types — never the old `level-XXXX-slug`, flat `side-quest-slug`, or `gh-600` format. The validator enforces this; see `.github/instructions/quest.instructions.md` §3.

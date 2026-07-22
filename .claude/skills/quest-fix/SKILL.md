@@ -95,6 +95,8 @@ Capture the tier-1 **before** and **after** numbers for every kept edit straight
 
 Apply at most a **small per-slice cap** of kept edits (a handful — keep the PR small and reviewable; the loop runs daily and a slice can be improved again tomorrow). Once you reach the cap, or you have worked every queued verified issue, **stop editing**. Leave the edited `pages/_quests/**` in the working tree. (If any kept edit touched quest **frontmatter**, the workflow regenerates `_data/quests/**` via `make quest-data` and gates on a clean diff — M2; that is the workflow's job, not yours, and you write no git regardless.)
 
+**Write body prose as one paragraph per line** — never soft-wrap at ~80 cols. IT-Journey enforces a `markdown-oneline` CI gate; the workflow deterministically unwraps any prose you wrapped before opening the PR (M8), but writing unwrapped from the start keeps the diff minimal and the M1 score computed on your true text.
+
 ## 6. Write a concise PR-body fragment
 
 Emit one short markdown fragment the workflow drops into the fix PR body. For the slice (`<character>/<level.code>`), list **each kept edit**: which **verified issue** it addressed (the failed command or the recommendation, by `area`/`suggestion`), the quest path, and the **tier-1 before → after** numbers **straight from the validator JSON** (e.g. `score_pct 72 → 81`). Then briefly list issues you **left** (and why: reverted by the M1 gate, vendored-skipped, or out of scope). Example shape:
