@@ -73,12 +73,35 @@ run_claude_code() {
   claude "${args[@]}"
 }
 
+# After the agent edits files, DETERMINISTICALLY unwrap any markdown it changed
+# to the house "one paragraph per line" rule (the `oneline` CI gate) — LLMs
+# soft-wrap prose by habit, and this is the shared chokepoint every AI call flows
+# through, so normalizing here keeps wrapped prose out of every workflow's PR
+# without a per-workflow step. Best-effort: never fails the run, skips the
+# machine-authored/generated files the gate excludes. Catches uncommitted edits;
+# an agent that commits inside its own run is covered by the Claude Code
+# PostToolUse hook instead (see docs/prose-oneline-universal.md). Idempotent with
+# quest-fix's M8 step. Upstream to bamr87/bamr87 + lifehacker.dev so siblings share it.
+normalize_changed_markdown() {
+  command -v git >/dev/null 2>&1 || return 0
+  [ -f "$REPO/tools/unwrap-prose.py" ] || return 0
+  local files
+  files="$(cd "$REPO" && { git diff --name-only --diff-filter=ACMR -- '*.md' '*.markdown'
+                           git diff --cached --name-only --diff-filter=ACMR -- '*.md' '*.markdown'; } 2>/dev/null \
+           | sort -u \
+           | grep -vE '(^|/)(SCHEMA|CHANGELOG)\.md$|(^|/)pages/_quest-reports/|(^|/)test/quest-validator/walkthroughs/' \
+           || true)"
+  [ -n "$files" ] || return 0
+  # shellcheck disable=SC2086
+  (cd "$REPO" && printf '%s\n' "$files" | xargs -r python3 tools/unwrap-prose.py --write) >&2 || true
+}
+
 # --- Primary: Claude Code ----------------------------------------------------
 if [ "${ITJ_AI_FORCE_API:-0}" != "1" ] && command -v claude >/dev/null 2>&1; then
   if [ -n "$out" ]; then
-    if run_claude_code > "$out"; then exit 0; fi
+    if run_claude_code > "$out"; then normalize_changed_markdown; exit 0; fi
   else
-    if run_claude_code; then exit 0; fi
+    if run_claude_code; then normalize_changed_markdown; exit 0; fi
   fi
   echo "[ai] Claude Code unavailable/failed — falling back to the Claude API." >&2
 fi
