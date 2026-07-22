@@ -286,9 +286,11 @@ Kubernetes runs an internal DNS service (CoreDNS). Every Service is resolvable a
 From a Pod in the same namespace, the short name `web` is enough. Prove it:
 
 ```bash
-# Launch a throwaway Pod and resolve the Service by name
+# Launch a throwaway Pod and resolve the Service by name.
+# Use ';' (not '&&'): busybox nslookup exits non-zero after probing the standard
+# search domains even when the short name resolves, which would skip the wget.
 kubectl run netcheck --rm -it --image=busybox:1.36 --restart=Never -- \
-  sh -c "nslookup web && wget -qO- http://web"
+  sh -c "nslookup web; wget -qO- http://web"
 
 # Full FQDN works across namespaces:
 kubectl run netcheck --rm -it --image=busybox:1.36 --restart=Never -- \
@@ -342,9 +344,35 @@ spec:
 kubectl apply -f web-ingress.yaml
 kubectl get ingress web-ingress
 
-# Test it (kind maps the controller to localhost). Send the Host header:
+# Test it. Send the Host header:
 curl -H "Host: app.local" http://localhost/
 ```
+
+> **kind users - map the host ports first.** A default `kind create cluster` maps only
+> the API server to your host, so nothing listens on `localhost:80` and the curl above
+> fails with *connection refused*. Create (or recreate) the cluster with `extraPortMappings`
+> and the `ingress-ready` node label **before** installing the ingress-nginx controller, per
+> [kind's ingress guide](https://kind.sigs.k8s.io/docs/user/ingress/):
+>
+> ```bash
+> kind create cluster --config - <<'EOF'
+> kind: Cluster
+> apiVersion: kind.x-k8s.io/v1alpha4
+> nodes:
+>   - role: control-plane
+>     kubeadmConfigPatches:
+>       - |
+>         kind: InitConfiguration
+>         nodeRegistration:
+>           kubeletExtraArgs:
+>             node-labels: "ingress-ready=true"
+>     extraPortMappings:
+>       - containerPort: 80
+>         hostPort: 80
+>       - containerPort: 443
+>         hostPort: 443
+> EOF
+> ```
 
 One Ingress can route `app.local/` to the web Service and `app.local/api` to an API Service - many backends behind one gate.
 

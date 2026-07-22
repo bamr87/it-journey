@@ -241,11 +241,16 @@ spec:
 ```
 
 ```bash
-# Apply it, then delete a Pod and watch the ReplicaSet replace it instantly
+# Apply it, then delete the matching Pods and watch the ReplicaSet recreate them instantly
 kubectl apply -f web-rs.yaml
 kubectl get pods -l app=web
-kubectl delete pod -l app=web --wait=false
-kubectl get pods -l app=web --watch   # a fresh Pod appears - this is self-healing
+kubectl delete pod -l app=web --wait=false   # this deletes ALL Pods carrying app=web
+kubectl get pods -l app=web --watch   # fresh Pods appear - this is self-healing
+
+# Clean up the ReplicaSet before Chapter 2. Its `app: web` selector would otherwise
+# collide with the Deployment you build next, doubling the Pod count under `-l app=web`
+# and throwing off the replica checkpoints.
+kubectl delete -f web-rs.yaml
 ```
 
 ### 🔍 Knowledge Check: Pods and ReplicaSets
@@ -374,6 +379,9 @@ spec:
       containers:
         - name: postgres
           image: postgres:16
+          env:
+            - name: POSTGRES_PASSWORD   # required, or the Pod CrashLoopBackOffs on first boot
+              value: changeme           # demo only - move this to a Secret in the next quest
           ports:
             - containerPort: 5432
           volumeMounts:
