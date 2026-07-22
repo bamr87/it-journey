@@ -62,7 +62,7 @@ url                      : &url 'https://it-journey.dev' # the base hostname & p
 public_folder            : "assets"
 port                     : 4002 # Jekyll Serve Dev port
 dg_port                  : 4001 # TODO: Doppelganger site. Use this if you want to switch between parallel deployments
-og_image                 : '/images/wizard-on-journey.png'
+og_image                 : '/assets/images/wizard-on-journey.png'
 
 ### Owner Information -------------------------------------------------------------
 
@@ -88,8 +88,14 @@ local_git                : [ *home, 'github' ]
 logo                     : /assets/images/gravatar-small.png  # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 logo_link                : [ *url, *baseurl ] # URL to link the logo to, e.g. "/"
 
-teaser                   : /images/favicon_gpt_computer_retro.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-info_banner              : /images/info-banner-mountain-wizard.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+teaser                   : /assets/images/favicon_gpt_computer_retro.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+info_banner              : /assets/images/info-banner-mountain-wizard.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+
+# Favicon / browser identity — rendered by the theme's core/favicon.html
+# (explicit tags replace the browser's implicit /favicon.ico probe).
+favicon:
+  ico                    : /favicon.ico
+  apple_touch            : /assets/images/favicon_gpt_computer_retro.png
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 _posts_file_structure    : "year-month-day-title.md"
@@ -344,7 +350,7 @@ defaults:
       related: true
       toc_sticky: true
       sidebar:
-        nav: searchCats
+        nav: auto
     permalink: /:path/:name/
 
   # pages/_about
