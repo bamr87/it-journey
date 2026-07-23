@@ -340,7 +340,7 @@ services:
 - **Content Processing**: Various utility scripts
 
 **Key Dependencies**:
-```python
+```text
 # requirements.txt (inferred from usage)
 requests>=2.31.0      # HTTP library for link checking
 openai>=1.0.0         # OpenAI API integration
@@ -540,8 +540,13 @@ CMD ["python3", "/app/test/quest-validator/quest_validator.py"]
 #### Local Development
 
 ```bash
+# Clone the repo first — every command below runs from its root
+git clone https://github.com/bamr87/it-journey && cd it-journey
+
 # Quick Start with Docker
-docker-compose up
+# Use `docker compose` (v2 plugin). `docker-compose` (v1, hyphenated) is EOL and
+# may not exist on newer installs.
+docker compose up
 
 # Manual Jekyll Development
 bundle install
@@ -560,7 +565,7 @@ python3 test/quest-validator/quest_validator.py
 - **Link Checking**: Lychee for site-wide link validation
 
 **Pre-commit Hooks** (recommended):
-```bash
+```yaml
 # .pre-commit-config.yaml
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -579,7 +584,7 @@ repos:
 
 ### Ruby Dependencies
 
-```ruby
+```text
 # Core Dependencies (from Gemfile.lock)
 jekyll (3.9.5)
   - Safe HTML rendering
@@ -613,7 +618,7 @@ webrick (1.8)
 
 ### Python Dependencies
 
-```python
+```text
 # Inferred from script usage
 requests (>=2.31.0)
   - HTTP library for API calls

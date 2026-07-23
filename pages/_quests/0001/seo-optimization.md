@@ -149,6 +149,9 @@ This **🟢 Easy** quest expects:
 # In an existing Jekyll site, add the SEO and sitemap plugins
 cd ~/my-site
 bundle add jekyll-seo-tag jekyll-sitemap
+# `bundle add` only edits the Gemfile — Jekyll won't load the plugins until you
+# also add them to the `plugins:` list in _config.yml (see Chapter 2). Without
+# that step, /sitemap.xml is never generated.
 bundle exec jekyll serve
 
 # View the generated metadata
@@ -170,6 +173,9 @@ open http://127.0.0.1:4000/
 # In an existing Jekyll site, add the SEO and sitemap plugins
 cd $HOME\my-site
 bundle add jekyll-seo-tag jekyll-sitemap
+# `bundle add` only edits the Gemfile — Jekyll won't load the plugins until you
+# also add them to the `plugins:` list in _config.yml (see Chapter 2). Without
+# that step, /sitemap.xml is never generated.
 bundle exec jekyll serve
 
 Start-Process http://127.0.0.1:4000/
@@ -190,6 +196,9 @@ Start-Process http://127.0.0.1:4000/
 # In an existing Jekyll site, add the SEO and sitemap plugins
 cd ~/my-site
 bundle add jekyll-seo-tag jekyll-sitemap
+# `bundle add` only edits the Gemfile — Jekyll won't load the plugins until you
+# also add them to the `plugins:` list in _config.yml (see Chapter 2). Without
+# that step, /sitemap.xml is never generated.
 bundle exec jekyll serve
 xdg-open http://127.0.0.1:4000/
 ```

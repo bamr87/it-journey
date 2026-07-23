@@ -25,13 +25,13 @@ tier: Adventurer
 verdict: fail
 quest_count: 3
 walk_date: '2026-07-10'
-run_url: https://github.com/bamr87/it-journey/actions/runs/29190829265
+run_url: https://github.com/bamr87/it-journey/actions/runs/30003953368
 source_report: test/quest-validator/walkthroughs/2026-07-10-data-scientist-0110.md
 ---
 
 > **Slice** `data-scientist/0110` · **Level** 0110 (Database Mastery) · **Adventurer tier** · **Engine verdict** ❌ fail · **Walked** 2026-07-10
 >
-> 🔗 [Perfection run](https://github.com/bamr87/it-journey/actions/runs/29190829265) · 🏠 [Perfection dashboard](/quest-reports/) · 📄 [Raw report](https://github.com/bamr87/it-journey/blob/main/test/quest-validator/walkthroughs/2026-07-10-data-scientist-0110.md) · 🕘 [Change history](https://github.com/bamr87/it-journey/commits/main/test/quest-validator/walkthroughs/2026-07-10-data-scientist-0110.md)
+> 🔗 [Perfection run](https://github.com/bamr87/it-journey/actions/runs/30003953368) · 🏠 [Perfection dashboard](/quest-reports/) · 📄 [Raw report](https://github.com/bamr87/it-journey/blob/main/test/quest-validator/walkthroughs/2026-07-10-data-scientist-0110.md) · 🕘 [Change history](https://github.com/bamr87/it-journey/commits/main/test/quest-validator/walkthroughs/2026-07-10-data-scientist-0110.md)
 
 ---
 
