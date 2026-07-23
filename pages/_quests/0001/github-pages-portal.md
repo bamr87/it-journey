@@ -362,8 +362,13 @@ git push origin main
    # Windows: Download from rubyinstaller.org
    
    # Install Jekyll and Bundler
-   gem install jekyll bundler
+   # On a standard Linux install, a bare `gem install` hits
+   # Gem::FilePermissionError (no write access to the system gem dir).
+   # Install into your user gem path instead:
+   gem install --user-install jekyll bundler
    ```
+
+   > If you manage Ruby with `rbenv`/`rvm`, or prefer per-project gems (`bundle config set path vendor/bundle`), you can drop the `--user-install` flag — those setups already write to a user-owned location.
 
 2. **Create Jekyll Site**
    ```bash
@@ -394,7 +399,6 @@ git push origin main
    
    # Build settings
    markdown: kramdown
-   highlander: true
    plugins:
      - jekyll-feed
      - jekyll-sitemap
@@ -402,7 +406,7 @@ git push origin main
    ```
 
 5. **Create Content**
-   Update `index.md`:
+   Update `index.markdown` (the file `jekyll new` generates — not `index.md`):
    ```markdown
    ---
    layout: default

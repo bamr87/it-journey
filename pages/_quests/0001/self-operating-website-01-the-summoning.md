@@ -121,6 +121,7 @@ remote_theme: bamr87/zer0-mistakes
 plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
+  - jekyll-include-cache
 ```
 
 Declare the build dependencies so the same site renders identically on your machine and in CI:
@@ -132,8 +133,11 @@ gem "jekyll", "~> 4.3"
 group :jekyll_plugins do
   gem "jekyll-remote-theme"
   gem "jekyll-seo-tag"
+  gem "jekyll-include-cache"
 end
 ```
+
+The `jekyll-include-cache` gem is required: the `bamr87/zer0-mistakes` root layout uses the `include_cached` tag, and the build fails with a `Liquid::SyntaxError` (`Unknown tag 'include_cached'`) without it.
 
 Every construct needs a face. The remote theme supplies the layouts, but your repo still needs an entry page that picks one. A minimal `index.md` is all it takes — front matter that names a layout the theme provides, plus a heading:
 

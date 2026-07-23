@@ -75,15 +75,15 @@ My personal website can be accessed through following domains. These sites are a
  1   | https://github.com/{% raw %}{{ site.github_user }}{% endraw %}/{% raw %}{{ site.github_user }}{% endraw %}.github.io | Source code repository
  2   | https://{% raw %}{{ site.github_user }}{% endraw %}.github.io/                      | `Domain 1`, hosted by GitHub Pages
  3   | <https://travis-ci.org/>                             | CI/CD for {% raw %}{{ site.github_user }}{% endraw %}.github.io
- 4   | https://{% raw %}{{ site.github_user }}{% endraw %}.netlify.com/                    | `Domain 2`, hosted by Netlify
- 5   | <https://www.netlify.com/>                           | CI/CD for {% raw %}{{ site.github_user }}{% endraw %}.netlify.com
+ 4   | https://{% raw %}{{ site.github_user }}{% endraw %}.netlify.app/                    | `Domain 2`, hosted by Netlify
+ 5   | <https://www.netlify.com/>                           | CI/CD for {% raw %}{{ site.github_user }}{% endraw %}.netlify.app
  6   | https://{% raw %}{{ site.github_user }}{% endraw %}.github.io/                             | `Domain 3`, hosted by Cloudflare
  7   | <https://www.cloudflare.com/>                        | CDN for {% raw %}{{ site.github_user }}{% endraw %}.github.io
  8   | <https://www.godaddy.com/>                           | Domain service for {% raw %}{{ site.github_user }}{% endraw %}.github.io
  9   | <https://sharethis.com/>                             | Share buttons
  10  | <https://disqus.com/>                                | Comments service
  11  | <https://analytics.google.com>                       | Track website traffic
- 12  | <https://jekyllrb.com/>                              | Comments service
+ 12  | <https://jekyllrb.com/>                              | Static site generator
  13  | <https://highlightjs.org/>                           | Syntax highlighting
  14  | <https://www.mathjax.org/>                           | JS engine for mathematics
  15  | <https://mermaidjs.github.io/>                       | Charts generated from text via JavaScript
