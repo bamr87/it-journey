@@ -62,7 +62,7 @@ jobs:
     env:
       TASK: ${{ inputs.task }}
     steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Mint the correlation ID (D5 — one name for the whole run)
         id: mint
@@ -125,7 +125,7 @@ jobs:
       # Deliberately the LIVE branch tip, not the pinned run SHA: the approval
       # wait is real time, and if a commit touched the governance surface while
       # the run sat at the gate, the drift guard below must catch it.
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ github.ref_name }}
 
