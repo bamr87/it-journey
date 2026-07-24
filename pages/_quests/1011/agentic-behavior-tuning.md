@@ -125,8 +125,11 @@ RECORDED=0
 for TASK_NUM in 1 2 3; do
     echo "Measuring task $TASK_NUM..."
     
-    # Get the latest agent run for this task (degrade gracefully if none exists yet)
-    RUN_ID=$(gh run list --workflow=agent-task.yml --limit=1 --json databaseId -q '.[0].databaseId' 2>/dev/null || true)
+    # Get the latest agent run for THIS task by matching its branch
+    # (copilot/issue-{N}-{slug}); a bare --limit=1 would return the same
+    # newest run for every task. Degrade gracefully if none exists yet.
+    RUN_ID=$(gh run list --workflow=agent-task.yml --limit=50 --json databaseId,headBranch \
+        -q "[.[] | select(.headBranch | startswith(\"copilot/issue-$TASK_NUM-\"))][0].databaseId" 2>/dev/null || true)
     if [ -z "$RUN_ID" ]; then
         echo "⚠️  No agent-task.yml run found for task $TASK_NUM — run the agent workflow at least once, then re-run this script."
         continue

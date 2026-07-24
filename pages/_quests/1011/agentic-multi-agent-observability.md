@@ -95,6 +95,7 @@ graph LR
 
 Every multi-agent operation needs a single identifier that travels through every agent:
 
+{% raw %}
 ```yaml
 # .github/workflows/orchestrator-with-tracing.yml
 name: Multi-Agent with Observability
@@ -107,13 +108,13 @@ jobs:
   orchestrate:
     runs-on: ubuntu-latest
     outputs:
-      correlation_id: ${% raw %}{{ steps.init_trace.outputs.correlation_id }}{% endraw %}
+      correlation_id: ${{ steps.init_trace.outputs.correlation_id }}
     steps:
       - name: Initialise correlation ID
         id: init_trace
         run: |
           # Create a unique correlation ID for this entire multi-agent operation
-          CORRELATION_ID="task-${% raw %}{{ github.event.issue.number }}{% endraw %}-${% raw %}{{ github.run_id }}{% endraw %}"
+          CORRELATION_ID="task-${{ github.event.issue.number }}-${{ github.run_id }}"
           echo "correlation_id=$CORRELATION_ID" >> "$GITHUB_OUTPUT"
           echo "🔗 Correlation ID: $CORRELATION_ID"
 
@@ -121,7 +122,7 @@ jobs:
     needs: orchestrate
     runs-on: ubuntu-latest
     env:
-      CORRELATION_ID: ${% raw %}{{ needs.orchestrate.outputs.correlation_id }}{% endraw %}
+      CORRELATION_ID: ${{ needs.orchestrate.outputs.correlation_id }}
     steps:
       - name: Execute with tracing
         run: |
@@ -134,9 +135,10 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: trace-${% raw %}{{ env.CORRELATION_ID }}{% endraw %}-analysis
-          path: "trace-analysis-${% raw %}{{ env.CORRELATION_ID }}{% endraw %}.jsonl"
+          name: trace-${{ env.CORRELATION_ID }}-analysis
+          path: "trace-analysis-${{ env.CORRELATION_ID }}.jsonl"
 ```
+{% endraw %}
 
 > **`traced_subtask.py` is a thin wrapper you author around `trace_writer.py`.**
 > The workflow above calls `work/gh-600/scripts/traced_subtask.py`, which is not a
