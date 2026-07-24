@@ -98,7 +98,7 @@ Before you inscribe a single sigil, gather these:
 - **Prior chapter:** Finish [Chapter III — The War Machine](/quests/1000/self-operating-website-03-the-war-machine/). You need a working CI/CD workflow to bind — this chapter secures what that one built.
 - **Tools:** Git, the [`gh` CLI](https://cli.github.com/) (authenticated to your account via `gh auth login`), and a text editor or IDE.
 - **A GitHub repository you own** with Actions enabled, plus permission to manage its secrets and variables (Settings → Secrets and variables → Actions).
-- **Accounts & tokens:** a GitHub account that can create a **fine-grained Personal Access Token**, and a **Claude Code OAuth token** to drive the agent steps. (Generate the OAuth token from your Claude Code setup; this quest stores it as the `CLAUDE_CODE_OAUTH_TOKEN` secret.)
+- **Accounts & tokens:** a GitHub account that can create a **fine-grained Personal Access Token**, and a **Claude Code OAuth token** to drive the agent steps. Generate the OAuth token by running `claude setup-token` in the [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code/overview) (it prints a long-lived token intended for CI); this quest stores that value as the `CLAUDE_CODE_OAUTH_TOKEN` secret.
 
 ## 🧙‍♂️ Chapter 1: OAuth, API Keys, and the Least-Privilege Sigil
 
@@ -147,6 +147,11 @@ Notice the `permissions:` block. By default GitHub may grant a workflow broad to
 **Now the bot PAT.** The built-in `GITHUB_TOKEN` is fine for many jobs, but it cannot trigger *other* workflows (PRs it opens won't fire your CI), so fleets often mint a dedicated **bot PAT**. When you do, use a **fine-grained PAT** scoped to a single repository, granting only the permissions the bot needs — Contents and Pull requests — and **never** Administration, which would let the token edit branch protection, secrets, or collaborators.
 
 ```bash
+# Point OWNER and REPO at the repository you own — every gh command below
+# uses them, so set them first (they are not secrets, just plain values):
+export OWNER="your-github-username"
+export REPO="your-repo-name"
+
 # First, put the token value into $FINE_GRAINED_PAT WITHOUT writing it to disk
 # or shell history. Either prompt for it silently...
 read -rs FINE_GRAINED_PAT     # paste the token, press Enter (input is hidden)
@@ -163,7 +168,7 @@ gh secret set BOT_PAT --repo "$OWNER/$REPO" --body "$FINE_GRAINED_PAT"
 gh secret list --repo "$OWNER/$REPO"
 ```
 
-If you skip the `read -rs` (or `export`) step and run `gh secret set` with `$FINE_GRAINED_PAT` unset, you'll store an **empty secret** — and every workflow that depends on it will fail in confusing ways. Always populate the variable first, then confirm the secret appears in `gh secret list`.
+If you skip the `read -rs` (or `export`) step and run `gh secret set` with `$FINE_GRAINED_PAT` unset, you'll store an **empty secret** — and every workflow that depends on it will fail in confusing ways. The same trap applies to `$OWNER` and `$REPO`: if either is unset, `--repo "$OWNER/$REPO"` silently expands to the malformed `--repo "/"`, and the command errors or targets the wrong repository with no obvious warning. Always populate all three variables first, then confirm the secret appears in `gh secret list`.
 
 If that token leaks, the blast radius is one repo's content — not your account, not branch protection, not your other projects. That is the entire point of a sigil: it opens exactly one door.
 
@@ -206,6 +211,9 @@ jobs:
 Set the switch with the CLI; it lives in plaintext because it is *not* a secret — it is a flag, and its only job is to be flippable fast:
 
 ```bash
+# These reuse the $OWNER/$REPO you exported in Chapter 1 — set them again
+# here if you started a new shell (an unset value expands to a broken "/").
+
 # Arm the automation (deliberate, explicit, reversible):
 gh variable set CONTENT_FACTORY_ENABLED --repo "$OWNER/$REPO" --body "true"
 
