@@ -233,8 +233,10 @@ Here is the integrity pillar made concrete. A checksum lets you detect if a file
 # Compute a SHA-256 hash of a downloaded artifact
 sha256sum app-release.tar.gz
 
-# Compare it to the publisher's published hash. If they differ,
-# the file's integrity is compromised - do not trust it.
+# Compare it to the publisher's published hash. Replace EXPECTED_HASH with the
+# actual 64-character hex hash the publisher provides before running this - a
+# placeholder errors with "no properly formatted checksum lines found".
+# If the hashes differ, the file's integrity is compromised - do not trust it.
 echo "EXPECTED_HASH  app-release.tar.gz" | sha256sum --check
 ```
 
@@ -310,9 +312,12 @@ If an attacker defeats the firewall, identity and encryption still stand. No sin
 
 ```sql
 -- ❌ Over-privileged: the app login can read AND drop tables
+-- MySQL 8.0+ no longer auto-creates the account via GRANT, so create it first.
+CREATE USER 'app_user'@'%' IDENTIFIED BY 'a-strong-password';
 GRANT ALL PRIVILEGES ON shop.* TO 'app_user'@'%';
 
 -- ✅ Least privilege: the app can only read and write the rows it serves
+CREATE USER 'app_user'@'10.0.%' IDENTIFIED BY 'a-strong-password';
 GRANT SELECT, INSERT, UPDATE, DELETE ON shop.orders TO 'app_user'@'10.0.%';
 GRANT SELECT ON shop.products TO 'app_user'@'10.0.%';
 ```
