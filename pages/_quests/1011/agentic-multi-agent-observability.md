@@ -140,12 +140,13 @@ jobs:
 ```
 {% endraw %}
 
-> **`traced_subtask.py` is a thin wrapper you author around `trace_writer.py`.**
+> **`traced_subtask.py` is a thin CLI wrapper around `trace_writer.py`.**
 > The workflow above calls `work/gh-600/scripts/traced_subtask.py`, which is not a
 > separate tool — it runs your sub-task and emits trace entries using the
-> `trace_writer.py` module defined in Chapter 2. If you'd rather keep the example
-> fully self-contained, call `trace_writer.py` directly instead. Either way the
-> script must exist under `work/gh-600/scripts/` before the workflow runs.
+> `trace_writer.py` module defined in Chapter 2. Its full code is given at the end of
+> Chapter 2 so the workflow's `run:` step produces the exact `--output` file that the
+> `upload-artifact` step then uploads. Both scripts must exist under
+> `work/gh-600/scripts/` before the workflow runs.
 
 ---
 
@@ -203,6 +204,38 @@ if __name__ == "__main__":
     write_trace(cid, "analysis-agent", "write-report", "completed",
                 {"report_path": "analysis-report.json"},
                 f"trace-{cid}.jsonl")
+```
+
+The workflow in Chapter 1 invokes the wrapper below, which accepts the exact `--correlation-id`, `--subtask`, and `--output` flags the `run:` step passes and writes to that `--output` path:
+
+```python
+# work/gh-600/scripts/traced_subtask.py
+"""Thin CLI wrapper: runs a sub-task and emits trace entries via trace_writer."""
+
+import argparse
+
+from trace_writer import write_trace
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--correlation-id", required=True)
+    parser.add_argument("--subtask", required=True)
+    parser.add_argument("--output", required=True)
+    args = parser.parse_args()
+
+    agent_id = f"{args.subtask}-agent"
+    write_trace(args.correlation_id, agent_id, args.subtask, "started",
+                output_file=args.output)
+
+    # ... your real sub-task work happens here ...
+
+    write_trace(args.correlation_id, agent_id, args.subtask, "completed",
+                {"subtask": args.subtask}, args.output)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ---
