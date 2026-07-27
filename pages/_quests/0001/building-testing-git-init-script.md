@@ -162,7 +162,7 @@ shellcheck scripts/git_init.sh
 - `bats tests/bats/test_headless.bats` returns pass for headless creation
 - `--gitignore` creates a `.gitignore` file when requested
 - `--scaffold python` creates `src` and `tests`
- - `--dry-run` prints operations and does not create files or push
+- `--dry-run` prints operations and does not create files or push
 
 ## Next Steps (Optional)
 
