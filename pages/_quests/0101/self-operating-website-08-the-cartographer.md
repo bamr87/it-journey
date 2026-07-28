@@ -95,6 +95,7 @@ Before you draw your first fault line, make sure your pack is stocked:
 
 - **Prior chapter:** Complete [Chapter VII — The Named Familiars](/quests/1101/self-operating-website-07-the-named-familiars/). This quest assumes you already have a working autonomous repo with named agents.
 - **Tools:** Git, a text editor or IDE, and a local Ruby/Jekyll toolchain (`bundle exec jekyll build` must run) so you can reproduce builds. A terminal with Bash for the triage script.
+- **Gemfile plugins:** The `bamr87/zer0-mistakes` theme relies on supporting plugins — at minimum `jekyll-remote-theme`, `jekyll-seo-tag`, and `jekyll-include-cache`. If you are reconstructing the environment from scratch rather than continuing an existing repo, a bare Gemfile will fail the build with unrelated `Unknown tag seo` / `Unknown tag include_cached` Liquid errors that have nothing to do with the bug you are triaging.
 - **Accounts:** A GitHub account and a repository you own. To file upstream you'll also need access to the upstream repo's issue tracker (for IT-Journey that's `bamr87/zer0-mistakes` — public, so you can open issues without special permissions).
 - **Optional:** A Claude Code OAuth token if you want the agent steps to draft repro notes for you.
 
@@ -117,31 +118,40 @@ set -euo pipefail
 echo "==> 1. Build with the full product (your repo as-is)"
 bundle exec jekyll build --trace 2>&1 | tee build-product.log || true
 
-echo "==> 2. Build a minimal page against the bare theme"
-# NOTE: do NOT put the repro in a hidden .triage/ dir — Jekyll skips dotdirs
-# by default, so the page would never build. Use a visible directory instead.
-mkdir -p triage && cat > triage/min.md <<'EOF'
+echo "==> 2. Build a minimal page against the bare theme, in an ISOLATED site"
+# Build from a throwaway source dir that shares ONLY the remote_theme — none of your
+# product's _config.yml, plugins, includes, or pages. Adding the repro into your own
+# repo and rebuilding just makes the two logs near-identical (the whole site plus one
+# page), so it never isolates anything. A separate --source/--config does.
+MINIMAL_DIR="$(mktemp -d)"
+cat > "$MINIMAL_DIR/_config.yml" <<'EOF'
+remote_theme: bamr87/zer0-mistakes
+plugins:
+  - jekyll-remote-theme
+EOF
+cat > "$MINIMAL_DIR/index.md" <<'EOF'
 ---
 layout: default
 title: Minimal Repro
-permalink: /triage/min/
 ---
 Just the theme. No custom includes, no custom CSS.
 EOF
-bundle exec jekyll build --trace 2>&1 | tee build-minimal.log || true
+bundle exec jekyll build --config "$MINIMAL_DIR/_config.yml" \
+  --source "$MINIMAL_DIR" --destination "$MINIMAL_DIR/_site" --trace 2>&1 \
+  | tee build-minimal.log || true
 
 echo "==> 3. Compare: if the bug appears in BOTH, it is a PLATFORM bug."
 echo "    If it only appears in build-product.log, it is a PRODUCT bug."
 grep -iE 'error|warning' build-product.log build-minimal.log || echo "No errors in either build."
 ```
 
-> If your build config (`_config.yml`) uses an `include:`/`exclude:` list that hides the `triage/` directory, add `triage` to `include:` so the minimal page is actually rendered. The point is the same: the minimal page must reach the build.
+> Because the minimal build uses its own `--source` and `--config`, none of your product's `_config.yml`, `include:`/`exclude:` lists, plugins, or pages apply — that is exactly what makes it a fair test of the bare theme. If the same failure still appears in `build-minimal.log`, your repo is no longer a suspect.
 
 If the minimal page reproduces the failure, you've drawn the fault line: it runs through the bedrock, not your construction. Document the exact commit of the theme you're on (`remote_theme: bamr87/zer0-mistakes@<sha>`), because "it broke" without a version is a map with no coordinates.
 
 **Finding the theme `<sha>`.** The remote theme is resolved to a specific commit at build time. To pin it precisely, you can:
 
-- Run `bundle exec gem contents jekyll-remote-theme` to locate the gem and inspect what it fetched, then check the theme's working copy under your cache.
+- Run `bundle exec jekyll build --verbose` and grep the output for `Downloading` — `jekyll-remote-theme` logs the exact `zip/<ref>` it fetches. (Note: `gem contents jekyll-remote-theme` only lists the plugin's own source files; the theme itself is fetched to a temp dir that is deleted after each build, so there is no persistent cache to inspect.)
 - Read your `Gemfile.lock` — it pins the gem versions involved in resolving the theme.
 - Check the upstream theme repo's commit history (`bamr87/zer0-mistakes`) and record the commit your build pulled (the latest on the branch your `remote_theme:` points at, at build time).
 
