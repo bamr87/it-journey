@@ -270,7 +270,16 @@ test('total of an empty cart is zero', () => {
 
 ### 🏗️ Define the Three Test Scripts
 
-Before the pipeline can call them, create the three npm scripts every job below references. Each stage maps to the folder that holds its tests:
+Each script points at the folder that holds its tests, so first create those folders and move the unit test from Chapter 1 into `test/unit/`. Because `total.test.js` now sits two levels down, update its import to reach back up to `total.js`:
+
+```bash
+mkdir -p test/unit test/integration test/e2e
+mv total.test.js test/unit/total.test.js
+# total.js stays at the project root, so fix the import path in the moved test:
+sed -i "s#from './total.js'#from '../../total.js'#" test/unit/total.test.js
+```
+
+Now define the three npm scripts every job below references:
 
 ```bash
 npm pkg set scripts.test:unit="node --test test/unit"
@@ -278,7 +287,7 @@ npm pkg set scripts.test:integration="node --test test/integration"
 npm pkg set scripts.test:e2e="node --test test/e2e"
 ```
 
-Now `npm run test:unit` (and its `test:integration` and `test:e2e` siblings) run locally exactly as the CI jobs invoke them - without this step, `npm run test:unit` fails with `Missing script: "test:unit"`.
+Now `npm run test:unit` (and its `test:integration` and `test:e2e` siblings) run locally exactly as the CI jobs invoke them - without the folders, the move, and this step, `npm run test:unit` fails with either `Missing script: "test:unit"` or `Could not find '.../test/unit'`.
 
 ### 🏗️ A Gated, Tiered Pipeline
 
@@ -381,7 +390,10 @@ The operational playbook: **detect** by re-running failures, **quarantine** a kn
 ```yaml
 # Run the runner in a reporting mode that exposes flakiness rather than hiding it.
 # A test that passes only on retry should be logged and fixed, not trusted.
-      - run: npm run test:unit -- --test-reporter=tap
+# Call node --test directly so the flag lands BEFORE the test path; passing it via
+# `npm run test:unit -- --test-reporter=tap` appends the flag after `test/unit`, and
+# Node then treats it as another test path and errors with `Could not find '.../--test-reporter=tap'`.
+      - run: node --test --test-reporter=tap test/unit
 ```
 
 ### 🔍 Knowledge Check: Coverage and Flakiness

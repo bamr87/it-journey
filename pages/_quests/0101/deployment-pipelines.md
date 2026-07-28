@@ -191,11 +191,24 @@ gh api repos/:owner/:repo/environments
 <details>
 <summary>Click to expand Cloud/Container instructions</summary>
 
+This snippet assumes a `Dockerfile` already exists in the repo root. If you are starting from an empty repo, create a minimal one first so the `docker build` below has something to build:
+
+```dockerfile
+# Dockerfile — a minimal, buildable example
+FROM alpine:3.20
+CMD ["echo", "hello from myapp"]
+```
+
 ```bash
 # Containers make promotion trivial: the SAME image tag moves between envs.
-docker build -t myapp:$(git rev-parse --short HEAD) .
-# Push once; deploy the identical digest to staging, then production.
-docker tag myapp:$(git rev-parse --short HEAD) registry.example.com/myapp:staging
+SHA=$(git rev-parse --short HEAD)
+docker build -t myapp:$SHA .
+# Push the image once, then promote that identical digest — never rebuild between envs.
+docker tag myapp:$SHA registry.example.com/myapp:staging
+docker push registry.example.com/myapp:staging
+# Promote the same artifact to production by re-tagging the staging image (no rebuild).
+docker tag registry.example.com/myapp:staging registry.example.com/myapp:production
+docker push registry.example.com/myapp:production
 ```
 
 > The golden rule of promotion: build once, deploy the same artifact everywhere. Never rebuild between staging and production, or you have not tested what you ship.
