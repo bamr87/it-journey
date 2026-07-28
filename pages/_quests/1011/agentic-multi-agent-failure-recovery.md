@@ -136,7 +136,7 @@ jobs:
           if [ $EXIT_CODE -eq 0 ]; then
             echo "status=success" >> "$GITHUB_OUTPUT"
           else
-            echo "status=failed" >> "$GITHUB_OUTPUT"
+            echo "status=failure" >> "$GITHUB_OUTPUT"
             # Save partial results before exiting
             python3 work/gh-600/scripts/save_checkpoint.py --task analysis
             exit $EXIT_CODE
@@ -160,7 +160,7 @@ jobs:
         run: |
           UPSTREAM_STATUS="${% raw %}{{ needs.sub-agent-1.outputs.status }}{% endraw %}"
           
-          if [ "$UPSTREAM_STATUS" = "failed" ]; then
+          if [ "$UPSTREAM_STATUS" = "failure" ]; then
             echo "⚠️ Sub-agent 1 failed — running in degraded mode"
             python3 work/gh-600/scripts/subtask.py \
               --task synthesis \
@@ -189,7 +189,7 @@ jobs:
           python3 work/gh-600/scripts/recovery_coordinator.py \
             --results-dir ./results/ \
             --task-id "${% raw %}{{ github.event.inputs.task_id }}{% endraw %}" \
-            --agent1-status "${% raw %}{{ needs.sub-agent-1.result }}{% endraw %}" \
+            --agent1-status "${% raw %}{{ needs.sub-agent-1.outputs.status }}{% endraw %}" \
             --agent2-status "${% raw %}{{ needs.sub-agent-2.result }}{% endraw %}" \
             --output recovery-plan.json
 
@@ -199,6 +199,10 @@ jobs:
           python3 work/gh-600/scripts/redelegate_tasks.py \
             --failed-tasks "${% raw %}{{ steps.assess.outputs.failed_tasks }}{% endraw %}"
 ```
+
+> **⚠️ `continue-on-error` gotcha:** when a job sets `continue-on-error: true`, GitHub Actions reports `needs.<job>.result` as `success` to dependents even when the job actually failed — so failure detection that reads `needs.sub-agent-1.result` silently breaks. Pass the job's own captured `outputs.status` (from `steps.run.outputs.status`) downstream instead, as the coordinator step does above. Apply the same captured-status pattern to every `continue-on-error` job — including `sub-agent-2` — before wiring its status into the recovery coordinator.
+
+> **📦 Helper scripts:** `subtask.py`, `save_checkpoint.py`, and `redelegate_tasks.py` are assumed to exist in `work/gh-600/scripts/` from your prior GH-600 quests (or as your own stubs) — this chapter focuses on the orchestration and recovery wiring, not on re-implementing those task runners. Only `recovery_coordinator.py` is authored in full below.
 
 ---
 
@@ -321,12 +325,12 @@ if __name__ == "__main__":
 Validate your work with these standalone checks — run each from your quest workspace (no extra tooling required):
 
 ```bash
-# ✅ Recovery workflow present
-test -f orchestrator-with-recovery.yml && echo "orchestrator-with-recovery.yml present"
-# ✅ Recovery coordinator present
-test -f recovery_coordinator.py && echo "recovery_coordinator.py present"
+# ✅ Recovery workflow present (path matches the code block's header comment)
+test -f .github/workflows/orchestrator-with-recovery.yml && echo "orchestrator-with-recovery.yml present"
+# ✅ Recovery coordinator present (path matches the code block's header comment)
+test -f work/gh-600/scripts/recovery_coordinator.py && echo "recovery_coordinator.py present"
 # ✅ All five compensation strategy types documented (expect a count of 5)
-grep -oiE "retry|fallback|escalat|compensat|checkpoint" recovery_coordinator.py | tr '[:upper:]' '[:lower:]' | sort -u | wc -l
+grep -oiE "retry|fallback|escalat|compensat|checkpoint" work/gh-600/scripts/recovery_coordinator.py | tr '[:upper:]' '[:lower:]' | sort -u | wc -l
 ```
 
 Manual completion checklist:
