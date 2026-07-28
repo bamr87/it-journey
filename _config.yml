@@ -485,6 +485,13 @@ exclude:
   # Configuration and metadata files
   - frontmatter.json
   - CLAUDE.md            # Claude Code guide — agent-facing, not site content
+  # AGENTS.md is the same kind of file and must be excluded for the same reason.
+  # It also *had* to be: Jekyll parses Liquid on the RAW file before Markdown, so
+  # the literal `{% %}` written in AGENTS.md:180 (prose documenting the oneline
+  # gate) is read as an unterminated tag and hard-failed the Pages build —
+  # backticks do not protect it. Excluding it fixes the break at its source and
+  # stops agent docs that discuss Liquid from breaking the site again.
+  - AGENTS.md
   - "*.md.backup"
   - "*.tmp"
   - ".seed.md"
