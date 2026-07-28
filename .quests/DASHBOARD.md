@@ -1,27 +1,27 @@
 # Quest Perfection — ledger dashboard
 
-_Generated 2026-07-24T13:56:57+00:00. Source of truth: `.quests/ledger.json` (committed, generated)._
+_Generated 2026-07-28T14:07:25+00:00. Source of truth: `.quests/ledger.json` (committed, generated)._
 
-**0/27** slices perfect · **27** walked · **3** stuck (needs human) · **485** open issue(s) outstanding
+**0/27** slices perfect · **27** walked · **3** stuck (needs human) · **473** open issue(s) outstanding
 
 ## Slices (worst-first)
 
 | Slice | Theme | Verdict | Avg | Cov | Open | Perfect | Stuck | Last run | Report |
 | --- | --- | :-: | --: | :-: | --: | :-: | :-: | --- | --- |
-| `developer/0001` | Web Fundamentals | ❌ fail | 64.2 | 18/26 | 72 |  |  | 2026-07-24 | [run](https://github.com/bamr87/it-journey/actions/runs/30090038199) |
-| `game-developer/0001` | Web Fundamentals | ❌ fail | 64.8 | 18/26 | 68 |  |  | 2026-07-24 | [run](https://github.com/bamr87/it-journey/actions/runs/30090038199) |
-| `digital-artist/0001` | Web Fundamentals | ❌ fail | 66.4 | 18/26 | 65 |  |  | 2026-07-24 | [run](https://github.com/bamr87/it-journey/actions/runs/30090038199) |
+| `developer/0001` | Web Fundamentals | ❌ fail | 64.6 | 19/26 | 71 |  |  | 2026-07-28 | [run](https://github.com/bamr87/it-journey/actions/runs/30355858267) |
+| `game-developer/0001` | Web Fundamentals | ❌ fail | 66.1 | 17/26 | 57 |  |  | 2026-07-28 | [run](https://github.com/bamr87/it-journey/actions/runs/30355858267) |
+| `digital-artist/0001` | Web Fundamentals | ❌ fail | 67.5 | 19/26 | 66 |  |  | 2026-07-28 | [run](https://github.com/bamr87/it-journey/actions/runs/30355858267) |
 | `digital-artist/0111` | API Development | ❌ fail | 71.4 | 5/10 | 12 |  |  | 2026-07-13 | [run](https://github.com/bamr87/it-journey/actions/runs/29248386306) |
-| `data-scientist/0110` | Database Mastery | ❌ fail | 73.3 | 7/8 | 27 |  |  | 2026-07-23 | [run](https://github.com/bamr87/it-journey/actions/runs/30003953368) |
-| `security-specialist/1011` | Security & Compliance | ❌ fail | 74.3 | 11/12 | 30 |  |  | 2026-07-24 | [run](https://github.com/bamr87/it-journey/actions/runs/30090038199) |
 | `game-developer/0111` | API Development | ❌ fail | 75.2 | 10/10 | 21 |  |  | 2026-07-18 | [run](https://github.com/bamr87/it-journey/actions/runs/29642483805) |
 | `developer/1110` | Architecture & Design Patterns | ❌ fail | 75.4 | 5/10 | 15 |  |  | 2026-07-15 | [run](https://github.com/bamr87/it-journey/actions/runs/29412020762) |
+| `security-specialist/1011` | Security & Compliance | ❌ fail | 75.9 | 11/12 | 26 |  |  | 2026-07-28 | [run](https://github.com/bamr87/it-journey/actions/runs/30355858267) |
+| `system-engineer/0101` | CI/CD & DevOps | ❌ fail | 76.8 | 12/13 | 25 |  |  | 2026-07-28 | [run](https://github.com/bamr87/it-journey/actions/runs/30355858267) |
 | `developer/0111` | API Development | ❌ fail | 77.4 | 5/10 | 9 |  |  | 2026-07-14 | [run](https://github.com/bamr87/it-journey/actions/runs/29329246935) |
-| `system-engineer/0101` | CI/CD & DevOps | ❌ fail | 79.7 | 12/13 | 16 |  |  | 2026-07-21 | [run](https://github.com/bamr87/it-journey/actions/runs/29826801543) |
 | `system-engineer/0010` | Terminal Mastery | ⚠️ warn | — | — | 0 |  |  | 2026-07-04 | [run](https://github.com/bamr87/it-journey/actions/runs/28703664065) |
 | `security-specialist/0010` | Terminal Mastery | ⚠️ warn | 62.0 | 1/16 | 4 |  |  | 2026-07-06 | [run](https://github.com/bamr87/it-journey/actions/runs/28791022929) |
 | `system-engineer/1010` | Monitoring & Observability | ⚠️ warn | 73.0 | 1/16 | 4 |  |  | 2026-07-14 | [run](https://github.com/bamr87/it-journey/actions/runs/29329246935) |
 | `security-specialist/1000` | Cloud Computing | ⚠️ warn | 74.0 | 1/9 | 5 |  |  | 2026-07-12 | [run](https://github.com/bamr87/it-journey/actions/runs/29190829265) |
+| `data-scientist/0110` | Database Mastery | ⚠️ warn | 76.0 | 7/8 | 21 |  |  | 2026-07-28 | [run](https://github.com/bamr87/it-journey/actions/runs/30355858267) |
 | `system-engineer/1000` | Cloud Computing | ⚠️ warn | 76.3 | 3/9 | 11 |  |  | 2026-07-12 | [run](https://github.com/bamr87/it-journey/actions/runs/29190829265) |
 | `developer/0100` | Frontend & Containers | ⚠️ warn | 76.3 | 3/8 | 13 |  |  | 2026-07-16 | [run](https://github.com/bamr87/it-journey/actions/runs/29494904212) |
 | `developer/0110` | Database Mastery | ⚠️ warn | 80.4 | 5/8 | 8 |  |  | 2026-07-13 | [run](https://github.com/bamr87/it-journey/actions/runs/29248386306) |
