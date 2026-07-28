@@ -62,6 +62,14 @@ on:
         required: false
         type: string
         default: ''
+      source_run_id:
+        description: >-
+          Run id that PRODUCED the artifacts above (optional; blank = this run).
+          Lets a LATER, SEPARATE run reuse a walk's sealed evidence instead of
+          paying for a second agentic execute pass. Requires actions:read.
+        required: false
+        type: string
+        default: ''
   workflow_dispatch:
     inputs:
       slug:
@@ -114,6 +122,8 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      # Read another run's artifacts when source_run_id is set (evidence reuse).
+      actions: read
     env:
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -128,6 +138,9 @@ jobs:
       DISPATCH_LEVEL: ${{ github.event.inputs.level }}
       PLAN_ARTIFACT: ${{ inputs.plan_artifact }}
       EVIDENCE_ARTIFACT: ${{ inputs.evidence_artifact }}
+      # Blank = artifacts live in THIS run (the in-run walk→fix handoff). Set =
+      # reuse the sealed artifacts a previous run uploaded (the periodic fix lane).
+      SOURCE_RUN_ID: ${{ inputs.source_run_id }}
     steps:
       # M5 — fail BEFORE doing any work if no PAT is present. We deliberately do
       # NOT fall back to github.token (see the env comment above).
@@ -232,19 +245,41 @@ jobs:
       # If the orchestrator uploaded them, download; otherwise re-derive
       # deterministically (plan the slice, then run the agentic execute engine).
 
+      # continue-on-error on BOTH downloads: with SOURCE_RUN_ID set, the artifact
+      # belongs to an earlier run and may have aged out of retention (or that run
+      # may have thrown the slice away). A miss must degrade to the re-derive step
+      # below — the same path a bare dispatch takes — not hard-fail the lane.
       - name: Download walk plan artifact
         if: steps.breaker.outputs.skip != 'true' && env.PLAN_ARTIFACT != ''
+        continue-on-error: true
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           name: ${{ env.PLAN_ARTIFACT }}
           path: .
+          # run-id needs an explicit token; both are no-ops when SOURCE_RUN_ID is
+          # blank and this resolves to the current run.
+          run-id: ${{ env.SOURCE_RUN_ID || github.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download walk evidence artifact
         if: steps.breaker.outputs.skip != 'true' && env.EVIDENCE_ARTIFACT != ''
+        continue-on-error: true
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           name: ${{ env.EVIDENCE_ARTIFACT }}
           path: .
+          run-id: ${{ env.SOURCE_RUN_ID || github.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Report evidence provenance
+        if: steps.breaker.outputs.skip != 'true'
+        run: |
+          set -euo pipefail
+          if [ -s walk-evidence.json ]; then
+            echo "::notice::reusing sealed evidence from run ${SOURCE_RUN_ID:-$GITHUB_RUN_ID} — no re-derive needed."
+          else
+            echo "::notice::no usable evidence artifact; the execute engine will re-derive it."
+          fi
 
       - name: Setup Node (for the execute engine, if re-deriving)
         if: steps.breaker.outputs.skip != 'true'

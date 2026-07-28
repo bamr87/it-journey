@@ -1,0 +1,319 @@
+# =============================================================================
+# quest-fix-loop.yml — the periodic FIX lane of the quest-perfection loop
+# -----------------------------------------------------------------------------
+# quest-perfection.yml WALKS (measures) one slice a day and uploads that walk's
+# sealed plan + evidence as `quest-perfection-<char>-<code>`. This workflow is
+# the other half: on its own cadence it reads the committed ledger, decides which
+# slices are most worth repairing, and calls quest-fix.yml for each — handing it
+# the run id of the walk that produced the evidence, so the fix repairs exactly
+# what a walkthrough witnessed WITHOUT paying for a second agentic execute pass
+# (~20 min per slice).
+#
+# WHY THIS IS A SEPARATE WORKFLOW
+# The walk and the fix want different rhythms. Walking is measurement and wants
+# to run often and cheaply. Fixing is bounded by HUMAN REVIEW SPEED — the caps in
+# .quests/budget.yml exist precisely because the loop can generate patches far
+# faster than one reviewer can read them. Running the fix lane inside every walk
+# meant repeatedly computing a fix budget that backpressure then threw away.
+# Decoupled, each lane runs at its natural cadence and the ledger is the contract
+# between them.
+#
+#   observe — count open auto:quest-fix PRs (the same OODA signal the walk used).
+#   orient  — read .quests/ledger.json; rank not-perfect, not-stuck slices with
+#             the SAME ordering the walk lane uses (scripts/quest/ledger.py
+#             select_priority's key: cold start first, then verdict, then average,
+#             then oldest last_run). No model runs here — selection is code.
+#   decide  — take min(max_open_quest_prs - open, max_fix_prs_per_run) of them.
+#   act     — for each, find the most recent NON-EXPIRED artifact from a
+#             successful quest-perfection run for that slug and call quest-fix.yml
+#             with source_run_id. No fresh artifact → still call it; quest-fix
+#             re-derives (slower, but correct) unless evidence is too stale.
+#
+# EVIDENCE FRESHNESS: a walk artifact older than `max_evidence_age_days` is NOT
+# reused — the content may have moved under it, and a fix built on stale evidence
+# could "repair" something already fixed. Past that age the slug is skipped and
+# left for the walk lane to re-measure, rather than silently re-deriving at full
+# cost inside the fix lane.
+#
+# SAFETY: unchanged from the in-run lane. quest-fix.yml keeps its OWN gate
+# (QUEST_FIX_ENABLED), the deterministic keep/revert signal (M1), freshness (M2),
+# vendored-content check (M3), content-only add-paths (M4), PAT hard-fail (M5),
+# and the circuit breaker (M6). Evidence stays workflow-minted: reusing an
+# artifact a walk sealed is exactly as trustworthy as reading it in-run, and no
+# agent can write it in either case.
+#
+# OFF by default: needs QUEST_PERFECTION_ENABLED (shared with the walk lane) plus
+# Claude auth. Until then this idles as a clean no-op.
+# =============================================================================
+name: 🔧 Quest Fix Loop
+
+on:
+  schedule:
+    # Every 2 days at 15:00 UTC — after the 11:00 walk has landed its ledger PR,
+    # and offset from it so the two lanes never contend for the quest-ledger
+    # concurrency group. Cadence is tunable: the reviewer queue, not the runner
+    # budget, is the binding constraint (see .quests/budget.yml).
+    - cron: '0 15 */2 * *'
+  workflow_dispatch:
+    inputs:
+      max_fixes:
+        description: 'Hard cap on fix PRs this run (blank = caps.max_fix_prs_per_run from budget.yml).'
+        required: false
+        default: ''
+      slug:
+        description: 'Fix exactly this slice id (e.g. developer/0001), bypassing ledger ranking. Still honours every quest-fix gate.'
+        required: false
+        default: ''
+      dry_run:
+        description: 'Rank and report the candidates, but call no fix lane.'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+# SHARED with quest-perfection.yml / quest-walkthrough.yml so a fix never races a
+# walk's .quests/** ledger writes. cancel-in-progress stays off: never abandon a
+# fix mid-write.
+concurrency:
+  group: quest-ledger
+  cancel-in-progress: false
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # gate — opt-in only: the shared kill switch AND Claude auth must both be set.
+  # ---------------------------------------------------------------------------
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      go: ${{ steps.check.outputs.go }}
+    steps:
+      - id: check
+        env:
+          ENABLED: ${{ vars.QUEST_PERFECTION_ENABLED }}
+          OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          set -euo pipefail
+          go=false
+          if [ "$ENABLED" = "true" ] && { [ -n "$OAUTH" ] || [ -n "$KEY" ]; }; then
+            go=true
+          else
+            echo "quest-fix-loop idle (enabled=$ENABLED, auth=$([ -n "$OAUTH$KEY" ] && echo yes || echo no))."
+          fi
+          echo "go=$go" >> "$GITHUB_OUTPUT"
+
+  # ---------------------------------------------------------------------------
+  # select — observe/orient/decide, entirely in code. Emits a matrix of slices to
+  # repair, each carrying the run id of the walk whose evidence it should reuse.
+  # ---------------------------------------------------------------------------
+  select:
+    needs: gate
+    if: ${{ needs.gate.outputs.go == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: read
+      actions: read          # list artifacts + runs of the walk lane
+    env:
+      GH_TOKEN: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
+      MAX_FIXES: ${{ github.event.inputs.max_fixes }}
+      ONLY_SLUG: ${{ github.event.inputs.slug }}
+    outputs:
+      matrix: ${{ steps.pick.outputs.matrix }}
+      count: ${{ steps.pick.outputs.count }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+
+      - name: Install Python tooling
+        run: pip install pyyaml
+
+      - name: Observe → rank → pick the slices to repair
+        id: pick
+        run: |
+          set -euo pipefail
+          open_fix_prs=$(gh pr list --state open --label 'auto:quest-fix' \
+            --json number --jq 'length' 2>/dev/null || echo 0)
+          echo "open auto:quest-fix PRs: $open_fix_prs"
+          export OPEN_FIX_PRS="$open_fix_prs"
+
+          # Artifact inventory for the walk lane, newest first. `name=` filtering
+          # is done client-side because the REST filter is exact-match only and we
+          # need every quest-perfection-* artifact in one pass.
+          gh api --paginate \
+            "repos/${GITHUB_REPOSITORY}/actions/artifacts?per_page=100" \
+            --jq '.artifacts[] | select(.name | startswith("quest-perfection-"))
+                  | {name, expired, created_at, run_id: .workflow_run.id}' \
+            > artifacts.jsonl 2>/dev/null || : > artifacts.jsonl
+          echo "walk artifacts seen: $(wc -l < artifacts.jsonl)"
+
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os, sys
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          try:
+              import yaml
+          except ImportError:
+              yaml = None
+
+          # --- budget caps ------------------------------------------------------
+          budget = {}
+          bp = Path(".quests/budget.yml")
+          if yaml and bp.exists():
+              budget = yaml.safe_load(bp.read_text()) or {}
+          caps = budget.get("caps", {}) or {}
+          max_open = int(caps.get("max_open_quest_prs", 6))
+          max_fix_per_run = int(caps.get("max_fix_prs_per_run", 3))
+          max_age_days = int(caps.get("max_evidence_age_days", 7))
+
+          ov = os.environ.get("MAX_FIXES", "").strip()
+          if ov.isdigit():
+              max_fix_per_run = min(max_fix_per_run, int(ov))
+
+          open_fix_prs = int(os.environ.get("OPEN_FIX_PRS", "0") or 0)
+          budget_n = max(0, min(max_open - open_fix_prs, max_fix_per_run))
+
+          # --- rank candidates, reusing the walk lane's own ordering ------------
+          sys.path.insert(0, "scripts/quest")
+          ledger = {}
+          lp = Path(".quests/ledger.json")
+          if lp.exists():
+              try:
+                  ledger = json.loads(lp.read_text()) or {}
+              except Exception:
+                  ledger = {}
+          slices = ledger.get("slices", {}) if isinstance(ledger, dict) else {}
+
+          ranked = []
+          try:
+              import ledger as ledger_mod          # scripts/quest/ledger.py
+              universe = {f"{c}/{lv}" for c, lv, _ in ledger_mod._character_levels()}
+              universe |= set(slices)
+              cands = [(s, slices.get(s)) for s in universe
+                       if not (slices.get(s) or {}).get("perfect")
+                       and not (slices.get(s) or {}).get("stuck")
+                       and not (slices.get(s) or {}).get("needs_human")]
+              # Identical key to the walk lane's selection, so both lanes agree
+              # on what "worst" means instead of drifting apart.
+              cands.sort(key=lambda sl: ledger_mod._select_key(sl[0], sl[1]))
+              ranked = [s for s, _ in cands]
+          except Exception as e:
+              # No ledger module / cold ledger: fall back to whatever the ledger
+              # already knows is imperfect. Never invent slices.
+              print(f"::warning::ledger ranking unavailable ({e}); using ledger order.",
+                    file=sys.stderr)
+              ranked = [s for s, v in slices.items()
+                        if not (v or {}).get("perfect") and not (v or {}).get("stuck")]
+
+          only = os.environ.get("ONLY_SLUG", "").strip()
+          if only:
+              ranked = [only]
+              budget_n = max(budget_n, 1)   # an explicit dispatch names its target
+
+          # --- newest non-expired walk artifact per slug ------------------------
+          newest = {}
+          for line in Path("artifacts.jsonl").read_text().splitlines():
+              line = line.strip()
+              if not line:
+                  continue
+              try:
+                  a = json.loads(line)
+              except Exception:
+                  continue
+              if a.get("expired") or not a.get("run_id"):
+                  continue
+              prev = newest.get(a["name"])
+              if prev is None or a["created_at"] > prev["created_at"]:
+                  newest[a["name"]] = a
+
+          now = datetime.now(timezone.utc)
+
+          def age_days(ts):
+              try:
+                  return (now - datetime.fromisoformat(str(ts).replace("Z", "+00:00"))).days
+              except Exception:
+                  return None
+
+          include, skipped = [], []
+          for slug in ranked:
+              if len(include) >= budget_n:
+                  break
+              branch_slug = slug.replace("/", "-")
+              art = newest.get(f"quest-perfection-{branch_slug}")
+              if not art:
+                  skipped.append(f"{slug} (never walked / artifact gone)")
+                  continue
+              age = age_days(art["created_at"])
+              if age is None or age > max_age_days:
+                  # Stale evidence must not drive a fix: the content may have
+                  # moved. Leave it for the walk lane to re-measure.
+                  skipped.append(f"{slug} (evidence {age}d old > {max_age_days}d)")
+                  continue
+              include.append({
+                  "slug": slug,
+                  "branch_slug": branch_slug,
+                  "artifact": f"quest-perfection-{branch_slug}",
+                  "source_run_id": str(art["run_id"]),
+                  "evidence_age_days": str(age),
+              })
+
+          print(f"matrix={json.dumps({'include': include})}")
+          print(f"count={len(include)}")
+
+          # Never silently truncate: say what was considered and dropped.
+          summary = Path(os.environ.get("GITHUB_STEP_SUMMARY", "/dev/null"))
+          with summary.open("a") as fh:
+              fh.write(f"### Quest fix loop\n\n"
+                       f"- open `auto:quest-fix` PRs: **{open_fix_prs}** / {max_open}\n"
+                       f"- fix budget this run: **{budget_n}**\n"
+                       f"- ranked candidates: **{len(ranked)}**\n"
+                       f"- selected: **{len(include)}**\n")
+              for e in include:
+                  fh.write(f"  - `{e['slug']}` ← run {e['source_run_id']} "
+                           f"({e['evidence_age_days']}d old evidence)\n")
+              for s in skipped[:20]:
+                  fh.write(f"  - skipped: {s}\n")
+          PY
+          echo "--- selection ---"
+          grep -E '^(matrix|count)=' "$GITHUB_OUTPUT" || true
+
+  # ---------------------------------------------------------------------------
+  # fix — one quest-fix.yml call per selected slice, in series. Each reuses the
+  # sealed evidence from the walk run that produced it.
+  # ---------------------------------------------------------------------------
+  fix:
+    needs: select
+    if: >-
+      ${{ !cancelled() && needs.select.result == 'success'
+          && needs.select.outputs.count != '0'
+          && needs.select.outputs.matrix != ''
+          && (github.event.inputs.dry_run || 'false') != 'true' }}
+    # The caller's permissions CAP every job in the called workflow, and GitHub
+    # validates containment AT TRIGGER TIME — without these grants the whole
+    # workflow dies as a startup_failure before the gate runs.
+    permissions:
+      contents: write
+      pull-requests: write
+      actions: read
+    strategy:
+      max-parallel: 1
+      fail-fast: false
+      matrix: ${{ fromJson(needs.select.outputs.matrix) }}
+    uses: ./.github/workflows/quest-fix.yml
+    with:
+      slug: ${{ matrix.slug }}
+      # Both inputs name the same artifact; source_run_id points at the WALK run
+      # that uploaded it, so quest-fix downloads cross-run instead of re-deriving.
+      plan_artifact: ${{ matrix.artifact }}
+      evidence_artifact: ${{ matrix.artifact }}
+      source_run_id: ${{ matrix.source_run_id }}
+    secrets: inherit
