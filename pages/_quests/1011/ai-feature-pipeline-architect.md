@@ -127,7 +127,8 @@ You'll know you've truly mastered this quest when you can:
 brew install node python3 docker docker-compose git
 
 # Install AI development tools
-brew install copilot-cli
+# (no `copilot-cli` Homebrew formula exists — use the npm package or gh extension)
+npm install -g @githubnext/github-copilot-cli   # or: gh extension install github/gh-copilot
 pip3 install langchain anthropic openai
 
 # Set up MCP development environment
@@ -196,7 +197,8 @@ echo '{
 const aiPipeline = {
   stages: ['intake', 'implementation', 'documentation', 'testing', 'deployment'],
   orchestrate: async (userRequest) => {
-    // Cross-platform AI orchestration logic
+    // Illustrative only — `processFeatureRequest` is a placeholder you supply;
+    // running this snippet as-is throws a ReferenceError until you define it.
     return await processFeatureRequest(userRequest);
   }
 };
@@ -322,6 +324,8 @@ echo "I want users to be able to reset their passwords via email" | python intak
 
 ### 🏗️ Building Your Implementation Pipeline
 
+> **🧭 Architecture sketch — pseudocode, not runnable as-is.** The sub-agents this orchestrator wires together (`CodeGenerationAgent`, `SecurityAgent`, `OptimizationAgent`) are illustrative and are **not** defined in this quest; instantiating `ImplementationOrchestrator()` as written raises `NameError`. Treat this block as a design blueprint and supply the agents yourself — Chapter 1's intake stage is the fully runnable, copy-paste example.
+
 ```python
 class ImplementationOrchestrator:
     def __init__(self):
@@ -357,6 +361,8 @@ class ImplementationOrchestrator:
 - Living documentation that updates with code changes
 - Multi-format output optimization (Markdown, JSON, HTML)
 
+> **🧭 Architecture sketch — pseudocode, not runnable as-is.** The helper methods called below (`generate_openapi_spec`, `generate_user_guide`, `generate_mermaid_diagram`, `generate_changelog`) are illustrative and are **not** implemented here; calling `generate_docs(...)` as written raises `AttributeError`. Treat this block as a design blueprint you flesh out yourself.
+
 ```python
 class DocumentationAgent:
     async def generate_docs(self, code_artifacts: dict, requirements: dict):
@@ -378,6 +384,8 @@ class DocumentationAgent:
 - Performance testing and load simulation
 - Test coverage analysis and improvement suggestions
 - Continuous quality monitoring with AI insights
+
+> **🧭 Architecture sketch — pseudocode, not runnable as-is.** The sub-agents referenced below (`unit_test_agent`, `integration_agent`, `performance_agent`) are illustrative and are **not** defined here; calling `run_testing_pipeline(...)` as written raises `AttributeError`. Treat this block as a design blueprint you flesh out yourself.
 
 ```python
 class TestingOrchestrator:
@@ -406,6 +414,8 @@ class TestingOrchestrator:
 - Multi-environment deployment orchestration
 - Monitoring and alerting setup with AI insights
 - Automated rollback and disaster recovery procedures
+
+> **🧭 Architecture sketch — pseudocode, not runnable as-is.** The sub-agents referenced below (`risk_agent`, `config_agent`, `deploy_agent`, `monitoring_agent`) are illustrative and are **not** defined here; calling `deploy_feature(...)` as written raises `AttributeError`. Treat this block as a design blueprint you flesh out yourself.
 
 ```python
 class DeploymentOrchestrator:
