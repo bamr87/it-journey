@@ -5,13 +5,29 @@
 # and lifehacker.dev's _data/fleet/budget.yml). The orchestrator refuses to open
 # new fix PRs once `max_open_quest_prs` auto:content quest-fix PRs are already
 # awaiting review — so the loop can never bury the one human reviewer. These caps
-# bound a single run; the daily cadence + circuit breaker (config.fix
+# bound a single run; the cadence + circuit breaker (config.fix
 # .max_fix_rounds, M6) bound the longer arc.
+#
+# TWO LANES, TWO CADENCES. quest-perfection.yml WALKS (measures) one priority
+# slice daily and uploads its sealed evidence; quest-fix-loop.yml FIXES on its own
+# schedule, ranking candidates from the ledger and reusing that evidence by run id.
+# They were one workflow, which meant computing a fix budget on every walk that
+# backpressure then mostly discarded — patches were generated far faster than one
+# reviewer could read them. Splitting them lets measurement run often and cheaply
+# while repair stays paced to review speed, which is what these caps encode.
 # =============================================================================
 
-# ENFORCED by quest-perfection.yml's matrix step:
+# ENFORCED by quest-perfection.yml's matrix step (walk lane) and
+# quest-fix-loop.yml's select step (fix lane):
 caps:
-  max_walkthroughs_per_run: 6   # at most N (character, level) slices walked per run (one per path)
+  max_walkthroughs_per_run: 6   # at most N (character, level) slices walked per run.
+                                #   The SCHEDULED walk now plans a single priority slice, so
+                                #   this is the ceiling for an `all_paths: true` full sweep
+                                #   (one per path) rather than the daily figure. One slice is
+                                #   ~25 min of runner time; the old every-path daily sweep was
+                                #   ~150 min/day (~75 h/month), and measurement showed the cost
+                                #   is the agentic engine itself, not workflow overhead —
+                                #   setup+checkout+install was 3.9 min of a 158-minute run.
   max_quests_per_slice: 5       # ROTATING WINDOW: walk at most N quests of a slice per run,
                                 #   sweeping the rest over following days (planner --window). A level
                                 #   can hold 20-30 quests; walking them all in one run runs the engine
@@ -21,6 +37,11 @@ caps:
   max_fix_prs_per_run: 3        # at most N auto:content quest-fix PRs proposed per run
   max_open_quest_prs: 6         # never open new fix PRs once N are already awaiting review
   skip_perfect_within_days: 7   # don't re-walk a slice certified perfect in the last N days
+  max_evidence_age_days: 7      # FIX LANE: reuse a walk's sealed evidence artifact only while it
+                                #   is younger than N days. Older than that the content may have
+                                #   moved under it, so a fix built on it could "repair" something
+                                #   already fixed — the slug is skipped and left for the walk lane
+                                #   to re-measure rather than re-derived at full cost in the fix lane.
   plan_max_age_minutes: 1440    # RESERVED — not yet enforced (plans are rebuilt each run)
 
 # RESERVED / documentation only — the orchestrator hard-codes this behavior in its
