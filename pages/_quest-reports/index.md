@@ -2,7 +2,7 @@
 title: Quest Perfection Dashboard
 description: 'Live status of the autonomous quest-perfection loop: every character path''s coverage, verdicts,
   and open issues, with links to each walkthrough report and…'
-date: '2026-07-28T14:07:25.000Z'
+date: '2026-08-01T21:21:15.000Z'
 author: Quest Perfection Loop
 categories:
 - Quest Reports
@@ -21,7 +21,7 @@ render_with_liquid: false
 
 The autonomous **quest-perfection loop** walks IT-Journey's quests end-to-end as a learner, scores them with a sandboxed agentic engine, and opens content fixes for what it finds. This page mirrors the committed ledger ([`.quests/ledger.json`](https://github.com/bamr87/it-journey/blob/main/.quests/ledger.json)) — the source of truth — so you can review each incremental improvement here instead of in a PR.
 
-_Ledger generated 2026-07-28T14:07:25+00:00._
+_Ledger generated 2026-08-01T21:21:15+00:00._
 
 **0/27** slices perfect · **3** stuck (needs human) · **473** open issue(s) outstanding
 
@@ -67,6 +67,12 @@ Every session report the loop has published, newest first. Each links to the lea
 - **2026-07-28** — [Digital Artist · L0001](/quest-reports/2026-07-28-digital-artist-0001/) (`digital-artist/0001`)
 - **2026-07-28** — [Software Developer · L0001](/quest-reports/2026-07-28-developer-0001/) (`developer/0001`)
 - **2026-07-28** — [Data Scientist · L0110](/quest-reports/2026-07-28-data-scientist-0110/) (`data-scientist/0110`)
+- **2026-07-27** — [System Engineer · L0101](/quest-reports/2026-07-27-system-engineer-0101/) (`system-engineer/0101`)
+- **2026-07-27** — [Security Specialist · L1011](/quest-reports/2026-07-27-security-specialist-1011/) (`security-specialist/1011`)
+- **2026-07-27** — [Game Developer · L0001](/quest-reports/2026-07-27-game-developer-0001/) (`game-developer/0001`)
+- **2026-07-27** — [Digital Artist · L0001](/quest-reports/2026-07-27-digital-artist-0001/) (`digital-artist/0001`)
+- **2026-07-27** — [Software Developer · L0001](/quest-reports/2026-07-27-developer-0001/) (`developer/0001`)
+- **2026-07-27** — [Data Scientist · L0110](/quest-reports/2026-07-27-data-scientist-0110/) (`data-scientist/0110`)
 - **2026-07-24** — [System Engineer · L1001](/quest-reports/2026-07-24-system-engineer-1001/) (`system-engineer/1001`)
 - **2026-07-24** — [Security Specialist · L1011](/quest-reports/2026-07-24-security-specialist-1011/) (`security-specialist/1011`)
 - **2026-07-24** — [Game Developer · L0001](/quest-reports/2026-07-24-game-developer-0001/) (`game-developer/0001`)
