@@ -72,6 +72,9 @@ jobs:
       # GITHUB_TOKEN a push from Actions raises NO events, and the refreshed PR
       # would sit un-rechecked — the failure this workflow exists to prevent.
       GH_TOKEN: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
+      # The sweep checks out PR branches, so never let `gh` infer the repo from
+      # whatever remote the workspace happens to be sitting on.
+      GH_REPO: ${{ github.repository }}
       ONLY_PR: ${{ github.event.inputs.pr }}
       ENABLED: ${{ vars.PR_FRESHNESS_ENABLED }}
     steps:
