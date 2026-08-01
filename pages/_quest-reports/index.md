@@ -2,7 +2,7 @@
 title: Quest Perfection Dashboard
 description: 'Live status of the autonomous quest-perfection loop: every character path''s coverage, verdicts,
   and open issues, with links to each walkthrough report and…'
-date: '2026-07-27T14:28:56.000Z'
+date: '2026-08-01T21:21:15.000Z'
 author: Quest Perfection Loop
 categories:
 - Quest Reports
@@ -21,32 +21,32 @@ render_with_liquid: false
 
 The autonomous **quest-perfection loop** walks IT-Journey's quests end-to-end as a learner, scores them with a sandboxed agentic engine, and opens content fixes for what it finds. This page mirrors the committed ledger ([`.quests/ledger.json`](https://github.com/bamr87/it-journey/blob/main/.quests/ledger.json)) — the source of truth — so you can review each incremental improvement here instead of in a PR.
 
-_Ledger generated 2026-07-27T14:28:56+00:00._
+_Ledger generated 2026-08-01T21:21:15+00:00._
 
-**0/27** slices perfect · **3** stuck (needs human) · **476** open issue(s) outstanding
+**0/27** slices perfect · **3** stuck (needs human) · **473** open issue(s) outstanding
 
 ## Slices
 
 | Slice | Theme | Verdict | Avg | Coverage | Open | State | Latest report | Run |
 |---|---|:--:|--:|:--:|--:|:--:|---|---|
 | `security-specialist/0010` | Terminal Mastery | ⚠️ warn | 62.0 | 1/16 | 4 | 🔁 sweeping | [2026-07-06](/quest-reports/2026-07-06-security-specialist-0010/) | [run](https://github.com/bamr87/it-journey/actions/runs/28791022929) |
-| `game-developer/0001` | Web Fundamentals | ❌ fail | 65.3 | 18/26 | 66 | 🔁 sweeping | [2026-07-27](/quest-reports/2026-07-27-game-developer-0001/) | [run](https://github.com/bamr87/it-journey/actions/runs/30264458312) |
-| `developer/0001` | Web Fundamentals | ❌ fail | 66.4 | 18/26 | 69 | 🔁 sweeping | [2026-07-27](/quest-reports/2026-07-27-developer-0001/) | [run](https://github.com/bamr87/it-journey/actions/runs/30264458312) |
+| `developer/0001` | Web Fundamentals | ❌ fail | 64.6 | 19/26 | 71 | 🔁 sweeping | [2026-07-28](/quest-reports/2026-07-28-developer-0001/) | [run](https://github.com/bamr87/it-journey/actions/runs/30355858267) |
+| `game-developer/0001` | Web Fundamentals | ❌ fail | 66.1 | 17/26 | 57 | 🔁 sweeping | [2026-07-28](/quest-reports/2026-07-28-game-developer-0001/) | [run](https://github.com/bamr87/it-journey/actions/runs/30355858267) |
 | `data-scientist/1100` | Data Engineering | ❌ fail | 66.5 | 15/15 | 54 | 🛑 stuck | [2026-07-22](/quest-reports/2026-07-22-data-scientist-1100/) | [run](https://github.com/bamr87/it-journey/actions/runs/29916378064) |
-| `digital-artist/0001` | Web Fundamentals | ❌ fail | 66.9 | 18/26 | 62 | 🔁 sweeping | [2026-07-27](/quest-reports/2026-07-27-digital-artist-0001/) | [run](https://github.com/bamr87/it-journey/actions/runs/30264458312) |
+| `digital-artist/0001` | Web Fundamentals | ❌ fail | 67.5 | 19/26 | 66 | 🔁 sweeping | [2026-07-28](/quest-reports/2026-07-28-digital-artist-0001/) | [run](https://github.com/bamr87/it-journey/actions/runs/30355858267) |
 | `data-scientist/0011` | AI-Assisted Development | ❌ fail | 69.2 | 4/4 | 16 | 🛑 stuck | [2026-07-24](/quest-reports/2026-07-24-data-scientist-0011/) | [run](https://github.com/bamr87/it-journey/actions/runs/30090038199) |
 | `digital-artist/0111` | API Development | ❌ fail | 71.4 | 5/10 | 12 | 🔁 sweeping | [2026-07-13](/quest-reports/2026-07-13-digital-artist-0111/) | [run](https://github.com/bamr87/it-journey/actions/runs/29248386306) |
 | `system-engineer/1010` | Monitoring & Observability | ⚠️ warn | 73.0 | 1/16 | 4 | 🔁 sweeping | [2026-07-14](/quest-reports/2026-07-14-system-engineer-1010/) | [run](https://github.com/bamr87/it-journey/actions/runs/29329246935) |
 | `security-specialist/1000` | Cloud Computing | ⚠️ warn | 74.0 | 1/9 | 5 | 🔁 sweeping | [2026-07-12](/quest-reports/2026-07-12-security-specialist-1000/) | [run](https://github.com/bamr87/it-journey/actions/runs/29190829265) |
 | `game-developer/0111` | API Development | ❌ fail | 75.2 | 10/10 | 21 | 🔁 sweeping | [2026-07-18](/quest-reports/2026-07-18-game-developer-0111/) | [run](https://github.com/bamr87/it-journey/actions/runs/29642483805) |
 | `developer/1110` | Architecture & Design Patterns | ❌ fail | 75.4 | 5/10 | 15 | 🔁 sweeping | [2026-07-15](/quest-reports/2026-07-15-developer-1110/) | [run](https://github.com/bamr87/it-journey/actions/runs/29412020762) |
-| `data-scientist/0110` | Database Mastery | ❌ fail | 75.9 | 8/8 | 27 | 🔁 sweeping | [2026-07-27](/quest-reports/2026-07-27-data-scientist-0110/) | [run](https://github.com/bamr87/it-journey/actions/runs/30264458312) |
+| `security-specialist/1011` | Security & Compliance | ❌ fail | 75.9 | 11/12 | 26 | 🔁 sweeping | [2026-07-28](/quest-reports/2026-07-28-security-specialist-1011/) | [run](https://github.com/bamr87/it-journey/actions/runs/30355858267) |
+| `data-scientist/0110` | Database Mastery | ⚠️ warn | 76.0 | 7/8 | 21 | 🔁 sweeping | [2026-07-28](/quest-reports/2026-07-28-data-scientist-0110/) | [run](https://github.com/bamr87/it-journey/actions/runs/30355858267) |
 | `developer/0100` | Frontend & Containers | ⚠️ warn | 76.3 | 3/8 | 13 | 🔁 sweeping | [2026-07-16](/quest-reports/2026-07-16-developer-0100/) | [run](https://github.com/bamr87/it-journey/actions/runs/29494904212) |
 | `system-engineer/1000` | Cloud Computing | ⚠️ warn | 76.3 | 3/9 | 11 | 🔁 sweeping | [2026-07-12](/quest-reports/2026-07-12-system-engineer-1000/) | [run](https://github.com/bamr87/it-journey/actions/runs/29190829265) |
+| `system-engineer/0101` | CI/CD & DevOps | ❌ fail | 76.8 | 12/13 | 25 | 🔁 sweeping | [2026-07-28](/quest-reports/2026-07-28-system-engineer-0101/) | [run](https://github.com/bamr87/it-journey/actions/runs/30355858267) |
 | `developer/0111` | API Development | ❌ fail | 77.4 | 5/10 | 9 | 🔁 sweeping | [2026-07-14](/quest-reports/2026-07-14-developer-0111/) | [run](https://github.com/bamr87/it-journey/actions/runs/29329246935) |
-| `security-specialist/1011` | Security & Compliance | ❌ fail | 77.7 | 11/12 | 27 | 🔁 sweeping | [2026-07-27](/quest-reports/2026-07-27-security-specialist-1011/) | [run](https://github.com/bamr87/it-journey/actions/runs/30264458312) |
 | `developer/0110` | Database Mastery | ⚠️ warn | 80.4 | 5/8 | 8 | 🔁 sweeping | [2026-07-13](/quest-reports/2026-07-13-developer-0110/) | [run](https://github.com/bamr87/it-journey/actions/runs/29248386306) |
-| `system-engineer/0101` | CI/CD & DevOps | ⚠️ warn | 80.8 | 12/13 | 18 | 🔁 sweeping | [2026-07-27](/quest-reports/2026-07-27-system-engineer-0101/) | [run](https://github.com/bamr87/it-journey/actions/runs/30264458312) |
 | `game-developer/0100` | Frontend & Containers | ⚠️ warn | 81.3 | 3/8 | 4 | 🔁 sweeping | [2026-07-12](/quest-reports/2026-07-12-game-developer-0100/) | [run](https://github.com/bamr87/it-journey/actions/runs/29190829265) |
 | `system-engineer/1001` | Kubernetes Orchestration | ⚠️ warn | 83.0 | 9/9 | 14 | 🛑 stuck | [2026-07-24](/quest-reports/2026-07-24-system-engineer-1001/) | [run](https://github.com/bamr87/it-journey/actions/runs/30090038199) |
 | `digital-artist/0100` | Frontend & Containers | ✅ pass | 83.3 | 3/8 | 0 | 🔁 sweeping | [2026-07-12](/quest-reports/2026-07-12-digital-artist-0100/) | [run](https://github.com/bamr87/it-journey/actions/runs/29190829265) |
@@ -61,6 +61,12 @@ _Ledger generated 2026-07-27T14:28:56+00:00._
 
 Every session report the loop has published, newest first. Each links to the learner's-eye walk plus the run and the file's change history.
 
+- **2026-07-28** — [System Engineer · L0101](/quest-reports/2026-07-28-system-engineer-0101/) (`system-engineer/0101`)
+- **2026-07-28** — [Security Specialist · L1011](/quest-reports/2026-07-28-security-specialist-1011/) (`security-specialist/1011`)
+- **2026-07-28** — [Game Developer · L0001](/quest-reports/2026-07-28-game-developer-0001/) (`game-developer/0001`)
+- **2026-07-28** — [Digital Artist · L0001](/quest-reports/2026-07-28-digital-artist-0001/) (`digital-artist/0001`)
+- **2026-07-28** — [Software Developer · L0001](/quest-reports/2026-07-28-developer-0001/) (`developer/0001`)
+- **2026-07-28** — [Data Scientist · L0110](/quest-reports/2026-07-28-data-scientist-0110/) (`data-scientist/0110`)
 - **2026-07-27** — [System Engineer · L0101](/quest-reports/2026-07-27-system-engineer-0101/) (`system-engineer/0101`)
 - **2026-07-27** — [Security Specialist · L1011](/quest-reports/2026-07-27-security-specialist-1011/) (`security-specialist/1011`)
 - **2026-07-27** — [Game Developer · L0001](/quest-reports/2026-07-27-game-developer-0001/) (`game-developer/0001`)

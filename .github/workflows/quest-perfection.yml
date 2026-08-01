@@ -1,15 +1,27 @@
 # =============================================================================
 # quest-perfection.yml — the daily orchestrator of the quest-perfection loop
 # -----------------------------------------------------------------------------
-# Once a day, for EVERY character path, walk the highest-priority not-yet-perfect
-# (character, level) slice, then — when the queue is healthy — open a SEPARATE
-# content-only FIX PR that addresses the walkthrough's VERIFIED issues, so the
-# curriculum converges toward "perfect" over time. This is the conductor: it
-# composes the existing pieces rather than re-implementing them.
+# Once a day, walk THE single highest-priority not-yet-perfect (character, level)
+# slice, so the curriculum converges toward "perfect" over time. This is the
+# conductor: it composes the existing pieces rather than re-implementing them.
 #
-#   plan  — scripts/quest/walkthrough_plan.py picks one slice per character path
+# This is the WALK (measurement) lane only. The FIX lane — the content-only PRs
+# that repair what a walkthrough witnessed — runs on its own cadence in
+# quest-fix-loop.yml, reusing this workflow's sealed evidence artifact. See the
+# note where the `fix` job used to live, at the bottom of this file.
+#
+# COST: one slice is ~25 min of runner time. The previous every-path sweep was
+# ~150 min EVERY DAY (~75 h/month) — measured, not estimated: of a 158-minute
+# run, setup+checkout+install across all 15 jobs was 3.9 min and the rest was the
+# agentic engine. There was no configuration fat to trim; the only real lever is
+# how much AI work is asked for per run. Rotation covers the other paths over the
+# following days: the ledger's selection key sorts by last_run ascending, so a
+# slice that just ran sorts last among its tier.
+#
+#   plan  — scripts/quest/walkthrough_plan.py picks the one priority slice
 #           (priority-ordered against the committed ledger), then a budget step
 #           clamps the set to HUMAN REVIEW SPEED (.quests/budget.yml).
+#           `all_paths: true` on a manual dispatch restores the full sweep.
 #   slice — for each surviving slice, in series:
 #             (1) EVIDENCE — the agentic execute engine runs as a DETERMINISTIC
 #                          workflow step (the job env carries Claude auth; Claude
@@ -22,10 +34,10 @@
 #                          write evidence: the seal is restored after the agent,
 #                          so a hand-rolled file can't reach the ledger/fix lane).
 #             (3) ARTIFACT — plan + evidence + report upload as the slice
-#                          artifact: the fix lane's input and the report job's.
-#             (4) FIX    — if the queue allows new fix PRs, call quest-fix.yml for
-#                          the slug with this walk's artifact (its own gate +
-#                          deterministic keep/revert decide whether anything ships).
+#                          artifact `quest-perfection-<char>-<code>`. This is the
+#                          DURABLE HANDOFF: the report job reads it in-run, and
+#                          quest-fix-loop.yml reads it days later by run id, so a
+#                          fix never re-pays for the evidence a walk already sealed.
 #   report — ONE consolidated READ-ONLY PR per run: replays every slice's sealed
 #            evidence into the ledger (scripts/quest/ledger.py update — `perfect`
 #            recomputed deterministically, NEVER a model field, M7), renders the
@@ -34,6 +46,8 @@
 #            automated (NOT auto:content) — human review, never auto-merged.
 #            One PR per day instead of one per slice, so ledger deltas never
 #            conflict with each other.
+#   fix   — quest-fix-loop.yml, on ITS OWN SCHEDULE, replays the ledger to pick
+#           what to repair and calls quest-fix.yml with this run's artifact.
 #   merge — content-auto-merge.yml independently squash-merges the auto:content
 #           fix PRs once green.
 #
@@ -54,14 +68,14 @@ name: ♾️ Quest Perfection Loop
 
 on:
   schedule:
-    - cron: '0 11 * * *'        # daily 11:00 UTC — the ONE daily walk sweep (the
+    - cron: '0 11 * * *'        # daily 11:00 UTC — ONE priority slice per run (the
                                 # standalone quest-walkthrough is dispatch-only now)
   workflow_dispatch:
     inputs:
       all_paths:
-        description: 'Walk one slice per character path (the daily default). Unset = a single priority slice.'
+        description: 'FULL SWEEP — one slice per character path (~6× the cost). Off = the scheduled default: a single priority slice.'
         type: boolean
-        default: true
+        default: false
       max_slices:
         description: 'Hard cap on slices this run (blank = caps.max_walkthroughs_per_run from budget.yml).'
         required: false
@@ -160,13 +174,14 @@ jobs:
           echo "window=$WINDOW" >> "$GITHUB_OUTPUT"
           echo "plan_date=$PLAN_DATE" >> "$GITHUB_OUTPUT"
           echo "quest window per slice: $WINDOW (date $PLAN_DATE)"
-          # --all-paths is the daily default; an explicit `all_paths: false` dispatch
-          # narrows to a single priority slice. Either way this step must end with
-          # one plans/walk-plan-<char>-<code>.json per chosen slice AND a JSON slug
+          # A SINGLE priority slice is the scheduled default; an explicit
+          # `all_paths: true` dispatch widens to the full one-slice-per-character
+          # sweep. Either way this step must end with one
+          # plans/walk-plan-<char>-<code>.json per chosen slice AND a JSON slug
           # list in plans/slugs.json. The planner only does that itself in
           # --all-paths mode; its single-slice mode writes neither (it emits ONE
           # plan document via --json), so that branch adapts the output here.
-          if [ "${ALL_PATHS:-true}" = "false" ]; then
+          if [ "${ALL_PATHS:-false}" != "true" ]; then
             python3 scripts/quest/walkthrough_plan.py \
               --priority --ledger .quests/ledger.json \
               --window "$WINDOW" --date "$PLAN_DATE" --json plans/single.json
@@ -848,53 +863,24 @@ jobs:
             echo "::warning::no consolidated report PR (no report/ledger changes — did every slice fail?)."
           fi
 
+
   # ---------------------------------------------------------------------------
-  # fix — the write/fix lane, called per surviving slice. A reusable-workflow
-  # call cannot live inside a matrix step, so it is its own matrix job gated on
-  # the same plan output AND each entry's open_new_fix_prs flag; it depends on
-  # `slice` so the walk's sealed artifact for that slug already exists.
-  # quest-fix.yml has its OWN gate (QUEST_FIX_ENABLED) + the deterministic
-  # keep/revert signal (M1) + freshness (M2) + vendored (M3) + content-only
-  # add-paths (M4) + PAT hard-fail (M5) + circuit breaker (M6), so this is always
-  # safe to call — it no-ops when disabled or when nothing verifiably improves.
-  # content-auto-merge.yml then squash-merges the resulting auto:content PR when
-  # it is green (gated independently on CONTENT_AUTOMERGE_ENABLED).
+  # fix — MOVED OUT of this workflow. It now runs on its own cadence in
+  # quest-fix-loop.yml (scheduled), which reads the committed ledger, picks the
+  # slices most in need of repair, and calls quest-fix.yml reusing the sealed
+  # walk artifact THIS workflow uploaded (`quest-perfection-<branch_slug>`) via
+  # quest-fix's `source_run_id` input — so a fix still repairs exactly what a
+  # walkthrough witnessed, without paying for a second agentic execute pass.
+  #
+  # Why split the lanes: walking and fixing want different rhythms. The walk is
+  # the measurement loop and wants to run often (one slice, daily, ~25 min); the
+  # fix lane is bounded by HUMAN REVIEW SPEED, not by how fast we can generate
+  # patches, so running it every time we walk only ever produced PRs faster than
+  # they could be reviewed — which the max_open_quest_prs backpressure then had
+  # to throttle away. Decoupled, each runs at its own natural cadence.
+  #
+  # The plan job still emits fix_matrix/fix_count and the slice job still reads
+  # matrix.open_new_fix_prs: both remain the honest per-run record of what the
+  # OODA budget WOULD have granted, and the report job surfaces it. The grant is
+  # now advisory here and authoritative in quest-fix-loop.yml.
   # ---------------------------------------------------------------------------
-  fix:
-    needs: [plan, slice]
-    # Runs only for the slices the budget/OODA step granted a fix PR. A
-    # reusable-workflow `uses` job can't gate a step, AND its job-level `if` can't
-    # read the matrix context — so the per-entry open_new_fix_prs gate is applied
-    # UPSTREAM: the plan job emits `fix_matrix` holding only the granted entries and
-    # this job fans out over that. Per-slice "already perfect" / circuit-breaker
-    # short-circuiting is re-checked INSIDE quest-fix.yml (it reads the ledger before
-    # editing), so a slice that became perfect during the walk still ships no fix PR.
-    # !cancelled() (not the default all-success): the `slice` matrix runs fail-fast:
-    # false, so one throttled/failed slice must NOT skip the fix lane for the slices
-    # that DID produce evidence. A granted slice with no evidence just no-ops in
-    # quest-fix (M7); a successful sibling still gets its fix PR.
-    if: ${{ !cancelled() && needs.plan.result == 'success' && needs.plan.outputs.fix_count != '0' && needs.plan.outputs.fix_matrix != '' }}
-    # The caller job's permissions CAP every job in the called workflow, and GitHub
-    # validates that containment when assembling the workflow graph AT TRIGGER TIME.
-    # quest-fix.yml's `fix` job requests contents:write + pull-requests:write, so
-    # without this explicit grant the whole workflow (gate included) dies as a
-    # startup_failure before a single job runs — the workflow-level default here
-    # is contents:read.
-    permissions:
-      contents: write
-      pull-requests: write
-    strategy:
-      max-parallel: 1
-      fail-fast: false
-      matrix: ${{ fromJson(needs.plan.outputs.fix_matrix) }}
-    uses: ./.github/workflows/quest-fix.yml
-    with:
-      slug: ${{ matrix.slug }}
-      # Hand the walk's OWN plan + evidence (the slice job's artifact — both
-      # inputs name the same artifact) to the fix lane, so it repairs exactly
-      # what THIS run's walkthrough witnessed instead of re-deriving evidence
-      # with a second expensive agentic execute run. quest-fix still re-derives
-      # anything the artifact turns out not to contain.
-      plan_artifact: quest-perfection-${{ matrix.branch_slug }}
-      evidence_artifact: quest-perfection-${{ matrix.branch_slug }}
-    secrets: inherit

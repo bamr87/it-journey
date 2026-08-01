@@ -110,8 +110,24 @@ set -euo pipefail
 
 RESULTS_FILE="work/gh-600/baseline-results.jsonl"
 RUN_DATE=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+mkdir -p "$(dirname "$RESULTS_FILE")"
 
 echo "=== Agent Behaviour Baseline Measurement ==="
+
+# No agent-task.yml history yet? Pass --seed to write three synthetic sample
+# records so you can complete the iteration cycle and pass Quest Validation now,
+# then re-run WITHOUT --seed once real agent runs exist to capture live data.
+if [ "${1:-}" = "--seed" ]; then
+    : > "$RESULTS_FILE"
+    for TASK_NUM in 1 2 3; do
+        cat >> "$RESULTS_FILE" << EOF
+{"date":"$RUN_DATE","task":$TASK_NUM,"run_id":"seed","pr_opened":false,"tests_passed":false,"seed":true}
+EOF
+    done
+    echo "✅ Seed baseline written to $RESULTS_FILE (3 synthetic records)."
+    echo "   Re-run without --seed once real agent-task.yml runs exist."
+    exit 0
+fi
 
 RECORDED=0
 
@@ -153,6 +169,8 @@ fi
 echo "✅ Baseline recorded ($RECORDED task(s)) in $RESULTS_FILE"
 ```
 
+> **No agent history yet?** If you haven't yet run an `agent-task.yml` workflow (or you completed [Q12](/quests/1010/agentic-failure-root-cause-analysis/) on a different repo), run `bash work/gh-600/scripts/measure_agent_baseline.sh --seed` to write three synthetic sample records. This lets you finish the iteration cycle and pass Quest Validation now; re-run without `--seed` once real agent runs exist to replace the seed data with live measurements.
+
 ---
 
 ### Chapter 2 — Instruction Change Patterns
@@ -166,6 +184,26 @@ Based on common agent failure patterns, here are the most impactful instruction 
 | Agent creates vague commit messages | Specify commit message format exactly | Improves traceability |
 | Agent opens PR too early | Define PR readiness criteria | Reduces draft PR churn |
 | Agent re-reads files it's already read | Add "mark as read" memory convention | Reduces redundant actions |
+
+> **Exercise 13.1b:** Actually apply an instruction change. Pick one row from the table above and edit the real files — this is the hands-on core of Objective 3, not just a log entry. Example, enforcing the mandatory planning step and traceable branches:
+
+**`copilot-instructions.md`** — add the planning rule:
+
+```markdown
+## Workflow
+- **PLAN FIRST:** post a short plan (files to touch, ordered steps) before editing any file.
+- Implement the fix only after the plan is posted.
+```
+
+**`AGENTS.md`** — add the branch-naming rule:
+
+```markdown
+## Branch naming
+Branch name MUST follow: `copilot/issue-{N}-{3-5-word-slug}`
+Example: `copilot/issue-42-add-input-validation`
+```
+
+Commit both edits before you continue — Chapter 3 measures their impact and Quest Validation confirms the files changed.
 
 ---
 
@@ -245,7 +283,11 @@ ls docs/agent-instructions/*.md >/dev/null 2>&1 \
   && echo "✅ Iteration log: iteration records in docs/agent-instructions/"
 test -f docs/agent-instructions/CHANGELOG.md \
   && echo "✅ Instruction changelog: CHANGELOG.md present"
-# 🏆 Quest Q13 complete when all three checks print ✅
+grep -q "copilot/issue-" AGENTS.md 2>/dev/null \
+  && echo "✅ Instruction change: AGENTS.md carries the new branch-naming rule"
+grep -qi "plan first" copilot-instructions.md 2>/dev/null \
+  && echo "✅ Instruction change: copilot-instructions.md carries the new planning rule"
+# 🏆 Quest Q13 complete when all checks print ✅
 ```
 
 ## 🏆 Quest Rewards

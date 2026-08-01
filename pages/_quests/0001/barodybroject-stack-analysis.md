@@ -668,9 +668,13 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r src/requirements.txt
 cd src
-# The project defaults to PostgreSQL (DB_CHOICE=postgres). For a quick local run
-# with no database server, use SQLite instead so `migrate` works out of the box:
-export DB_CHOICE=sqlite
+# NOTE: This project now requires PostgreSQL. The old SQLite quick-run fallback
+# (DB_CHOICE=sqlite) has been removed, so `migrate` raises ImproperlyConfigured
+# without a database. Keep the Docker Compose stack from Option 1 running (it
+# provides PostgreSQL), then export the connection variables it uses — copy the
+# DB_HOST / DB_NAME / DB_USERNAME / DB_PASSWORD values from
+# .devcontainer/docker-compose_dev.yml before migrating, for example:
+export DB_HOST=localhost DB_NAME=barodybroject DB_USERNAME=postgres DB_PASSWORD=postgres
 python manage.py migrate
 python manage.py runserver
 

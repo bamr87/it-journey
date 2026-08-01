@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-27T10:18:24.412195+00:00",
-  "total_files": 374,
-  "scored_files": 374,
-  "actionable_files": 331,
+  "generated_at": "2026-08-01T09:37:54.848275+00:00",
+  "total_files": 380,
+  "scored_files": 380,
+  "actionable_files": 337,
   "avg_health": 97.5,
   "avg_health_actionable": 97.2,
   "total_mechanical_issues": 0,
-  "total_substantive_issues": 57,
+  "total_substantive_issues": 58,
   "total_errors": 11,
   "read_only_files": 0,
   "by_collection": {
@@ -27,8 +27,8 @@
       "avg_health": 94.1
     },
     "pages": {
-      "count": 104,
-      "scored": 104,
+      "count": 110,
+      "scored": 110,
       "mechanical": 0,
       "substantive": 6,
       "errors": 0,
@@ -38,21 +38,21 @@
       "count": 231,
       "scored": 231,
       "mechanical": 0,
-      "substantive": 31,
+      "substantive": 32,
       "errors": 5,
-      "avg_health": 97.3
+      "avg_health": 97.2
     }
   },
   "freshness_distribution": {
-    "critical": 18,
-    "fresh": 279,
+    "critical": 19,
+    "fresh": 285,
     "aging": 26,
-    "stale": 50,
+    "stale": 49,
     "unknown": 1
   },
   "health_buckets": {
-    "excellent_90_100": 359,
-    "good_70_89": 12,
+    "excellent_90_100": 364,
+    "good_70_89": 13,
     "fair_50_69": 3,
     "poor_0_49": 0
   }
