@@ -243,19 +243,16 @@ jobs:
 
           # Green, but is it still MERGEABLE? A PR that fell behind main while the
           # checks ran cannot be squashed, and silently failing here is how a
-          # perfectly good PR rots. BEHIND is ours to fix (update-branch merges the
-          # base in); DIRTY needs pr-freshness.yml, which regenerates the derived
-          # files — either way, say so and leave the PR open rather than "merged ✅".
+          # perfectly good PR rots. Both cases belong to pr-freshness.yml, not
+          # here: it holds the PAT, and a branch updated under GITHUB_TOKEN raises
+          # no events, so CI would never re-run on the new head and this lane
+          # would then poll 25 minutes for checks that are never coming. Report
+          # the state, hand off, and leave the PR open rather than "merged ✅".
           state=$(gh pr view "$PR" --json mergeStateStatus --jq '.mergeStateStatus' 2>/dev/null || echo UNKNOWN)
-          if [ "$state" = "BEHIND" ]; then
-            echo "PR #$PR is behind its base — merging the base in first."
-            gh api --method PUT "repos/${GITHUB_REPOSITORY}/pulls/${PR}/update-branch" \
-                   --silent || echo "::warning::update-branch failed for #$PR."
-            echo "The resulting push re-triggers this lane. Stopping here."
-            exit 0
-          fi
-          if [ "$state" = "DIRTY" ]; then
-            echo "::warning::PR #$PR conflicts with its base — pr-freshness.yml will refresh it."
+          if [ "$state" = "BEHIND" ] || [ "$state" = "DIRTY" ]; then
+            echo "::warning::PR #$PR is $state against its base — handing to pr-freshness.yml."
+            gh workflow run pr-freshness.yml -f pr="$PR" \
+              || echo "::warning::could not hand off #$PR to pr-freshness.yml."
             exit 0
           fi
 
