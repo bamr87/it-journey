@@ -43,6 +43,20 @@
 # required checks are configured, the poll below IS the green gate. If branch
 # protection is ever enabled, replace the poll step with `gh pr merge --auto`.
 #
+# WHY THE LABELS ARE RE-READ AND NOT TAKEN FROM THE EVENT (the #563 bug): the
+# job used to gate on `github.event.pull_request.labels`, a SNAPSHOT frozen when
+# the webhook fired. `create-pull-request` opens the PR and then adds its labels,
+# so a single PR emits `opened` (labels: NONE) plus one `labeled` per label, and
+# GitHub does not guarantee their delivery order. Paired with
+# `cancel-in-progress: true`, the newest delivery cancelled the others — so when
+# `opened` landed last, the only run left evaluated an empty label set, skipped,
+# and the PR sat open forever. PR #563 was created 14:29:00 and by 14:29:07 had
+# four runs: two cancelled, two skipped, zero merges; every check on it was green.
+# Now: the job starts for any candidate PR, reads the LIVE labels + state from the
+# API, and no-ops if nothing routes. Cancellation is off, so a correct decision is
+# never cancelled by a later, staler one, and re-running is harmless (the merge
+# step is idempotent).
+#
 # Runs via pull_request_target but never checks out or runs the PR's code — it
 # only calls the GitHub API and our own base scripts.
 # =============================================================================
@@ -50,79 +64,107 @@ name: 🤝 Content Auto-Merge
 
 on:
   pull_request_target:
-    types: [labeled, opened, reopened, synchronize, ready_for_review]
+    types: [labeled, opened, reopened, synchronize, ready_for_review, unlabeled]
+  # The self-healing entry point: pr-freshness.yml calls this for a specific PR
+  # after bringing it up to date with main, and a human can re-drive any PR that
+  # missed its merge window without touching it.
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: 'PR number to evaluate for auto-merge.'
+        required: true
+        type: string
 
 permissions:
   contents: write
   pull-requests: write
   checks: read
+  actions: write            # to hand off to pr-freshness.yml after a merge
 
 concurrency:
-  group: content-automerge-${{ github.event.pull_request.number }}
-  cancel-in-progress: true
+  group: content-automerge-${{ github.event.inputs.pr || github.event.pull_request.number }}
+  # NOT cancel-in-progress: a run that has already routed is doing the right
+  # thing, and cancelling it in favour of a fresher event's staler label snapshot
+  # is exactly how #563 was lost. Duplicate runs serialize and no-op.
+  cancel-in-progress: false
 
 jobs:
   auto-merge:
-    # Only PRs matching an ENABLED policy's label(s), never ones flagged for a
-    # human. Anything else skips here — one cheap skipped run per PR event
-    # instead of the previous three.
+    # Deliberately does NOT gate on the event's label snapshot — that snapshot is
+    # unreliable (see the header). This only filters what can never be mergeable
+    # anyway; the real routing happens against live API state below.
     if: >-
-      !contains(github.event.pull_request.labels.*.name, 'needs-human') &&
-      (
-        (vars.CONTENT_AUTOMERGE_ENABLED == 'true' &&
-         contains(github.event.pull_request.labels.*.name, 'auto:content')) ||
-        (vars.ISSUE_AUTOMERGE_ENABLED == 'true' &&
-         github.event.pull_request.head.repo.full_name == github.repository &&
-         contains(github.event.pull_request.labels.*.name, 'auto:issue')) ||
-        (vars.QUEST_REPORT_AUTOMERGE_ENABLED == 'true' &&
-         contains(github.event.pull_request.labels.*.name, 'quest-walkthrough') &&
-         contains(github.event.pull_request.labels.*.name, 'automated'))
-      )
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.pull_request.state == 'open' && !github.event.pull_request.draft)
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
       GH_TOKEN: ${{ github.token }}
-      PR: ${{ github.event.pull_request.number }}
+      PR: ${{ github.event.inputs.pr || github.event.pull_request.number }}
     steps:
-      # Base checkout (default for pull_request_target) — gives us OUR scripts to
-      # run against the PR's file LIST (never the PR's code).
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
-        with:
-          python-version: '3.12'
-
+      # Routing runs FIRST and needs nothing but `gh`, so the common case — a PR
+      # that matches no policy — costs one API call and exits. Checkout + Python
+      # are set up only once a policy has actually matched.
       - name: Route label → policy
         id: route
         env:
-          # Booleans computed by the expression engine; the shell only routes.
-          QUEST_OK: >-
-            ${{ vars.QUEST_REPORT_AUTOMERGE_ENABLED == 'true' &&
-                contains(github.event.pull_request.labels.*.name, 'quest-walkthrough') &&
-                contains(github.event.pull_request.labels.*.name, 'automated') }}
-          ISSUE_OK: >-
-            ${{ vars.ISSUE_AUTOMERGE_ENABLED == 'true' &&
-                github.event.pull_request.head.repo.full_name == github.repository &&
-                contains(github.event.pull_request.labels.*.name, 'auto:issue') }}
-          CONTENT_OK: >-
-            ${{ vars.CONTENT_AUTOMERGE_ENABLED == 'true' &&
-                contains(github.event.pull_request.labels.*.name, 'auto:content') }}
+          # The kill switches still come from the expression engine (repo vars are
+          # not webhook state, so they cannot go stale mid-run). Everything ABOUT
+          # THE PR is read live below.
+          QUEST_ENABLED: ${{ vars.QUEST_REPORT_AUTOMERGE_ENABLED }}
+          ISSUE_ENABLED: ${{ vars.ISSUE_AUTOMERGE_ENABLED }}
+          CONTENT_ENABLED: ${{ vars.CONTENT_AUTOMERGE_ENABLED }}
+          THIS_REPO: ${{ github.repository }}
         run: |
           set -euo pipefail
-          if [ "$QUEST_OK" = "true" ]; then
+          # LIVE state — never the event payload. See the header for why.
+          pr_json=$(gh pr view "$PR" --json state,isDraft,labels,headRepositoryOwner,headRefName,url)
+          state=$(jq -r '.state' <<< "$pr_json")
+          draft=$(jq -r '.isDraft' <<< "$pr_json")
+          labels=$(jq -r '.labels[].name' <<< "$pr_json")
+          head_owner=$(jq -r '.headRepositoryOwner.login // ""' <<< "$pr_json")
+          same_repo=$([ "$head_owner/$(basename "$THIS_REPO")" = "$THIS_REPO" ] && echo true || echo false)
+          has() { grep -qxF "$1" <<< "$labels"; }
+
+          echo "PR #$PR — state=$state draft=$draft same_repo=$same_repo"
+          echo "labels: $(tr '\n' ' ' <<< "$labels")"
+
+          POLICY=""
+          if [ "$state" != "OPEN" ]; then
+            echo "Not open ($state) — nothing to do."
+          elif [ "$draft" = "true" ]; then
+            echo "Draft — nothing to do."
+          elif has needs-human; then
+            echo "Flagged needs-human — leaving for a reviewer."
+          elif [ "$QUEST_ENABLED" = "true" ] && has quest-walkthrough && has automated; then
             POLICY=quest-report
-          elif [ "$ISSUE_OK" = "true" ]; then
+          elif [ "$ISSUE_ENABLED" = "true" ] && [ "$same_repo" = "true" ] && has 'auto:issue'; then
             POLICY=issue
-          elif [ "$CONTENT_OK" = "true" ]; then
+          elif [ "$CONTENT_ENABLED" = "true" ] && has 'auto:content'; then
             POLICY=content
+          fi
+
+          # No policy is a legitimate NO-OP, not an error: this job now starts for
+          # every candidate PR precisely so a stale label snapshot can't silence it.
+          if [ -z "$POLICY" ]; then
+            echo "No enabled policy matches PR #$PR — no-op." | tee -a "$GITHUB_STEP_SUMMARY"
           else
-            echo "::error::job gate passed but no policy matched — labels changed mid-run?"
-            exit 1
+            echo "Routing PR #$PR via the '$POLICY' policy." | tee -a "$GITHUB_STEP_SUMMARY"
           fi
           echo "policy=$POLICY" >> "$GITHUB_OUTPUT"
-          echo "Routing PR #$PR via the '$POLICY' policy."
+
+      # Base checkout (default for pull_request_target) — gives us OUR scripts to
+      # run against the PR's file LIST (never the PR's code).
+      - if: steps.route.outputs.policy != ''
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - if: steps.route.outputs.policy != ''
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
 
       - name: Smuggle guard — diff must stay within the policy's allowed paths
+        if: steps.route.outputs.policy != ''
         env:
           POLICY: ${{ steps.route.outputs.policy }}
         run: |
@@ -162,6 +204,7 @@ jobs:
           fi
 
       - name: Wait for checks (excluding self), then squash-merge
+        if: steps.route.outputs.policy != ''
         env:
           RUN_ID: ${{ github.run_id }}
         run: |
@@ -194,5 +237,38 @@ jobs:
             fi
             break
           done
-          gh pr merge "$PR" --squash --delete-branch
-          echo "All checks green + in-scope diff — merged ✅ (issue PRs close their linked issues; report PRs publish to the site)."
+
+          # Green, but is it still MERGEABLE? A PR that fell behind main while the
+          # checks ran cannot be squashed, and silently failing here is how a
+          # perfectly good PR rots. BEHIND is ours to fix (update-branch merges the
+          # base in); DIRTY needs pr-freshness.yml, which regenerates the derived
+          # files — either way, say so and leave the PR open rather than "merged ✅".
+          state=$(gh pr view "$PR" --json mergeStateStatus --jq '.mergeStateStatus' 2>/dev/null || echo UNKNOWN)
+          if [ "$state" = "BEHIND" ]; then
+            echo "PR #$PR is behind its base — merging the base in first."
+            gh api --method PUT "repos/${GITHUB_REPOSITORY}/pulls/${PR}/update-branch" \
+                   --silent || echo "::warning::update-branch failed for #$PR."
+            echo "The resulting push re-triggers this lane. Stopping here."
+            exit 0
+          fi
+          if [ "$state" = "DIRTY" ]; then
+            echo "::warning::PR #$PR conflicts with its base — pr-freshness.yml will refresh it."
+            exit 0
+          fi
+
+          # Idempotent: concurrent/duplicate runs are expected now that routing is
+          # live rather than snapshot-gated, so losing the race is success.
+          if gh pr merge "$PR" --squash --delete-branch; then
+            echo "All checks green + in-scope diff — merged ✅ (issue PRs close their linked issues; report PRs publish to the site)."
+          elif [ "$(gh pr view "$PR" --json state --jq '.state')" = "MERGED" ]; then
+            echo "Already merged by a concurrent run ✅"
+          else
+            echo "::error::merge failed and PR #$PR is still open."
+            exit 1
+          fi
+
+          # main just moved, so every OTHER open automated PR may have gone stale
+          # this second. Merging with GITHUB_TOKEN raises no `push` event, so hand
+          # off explicitly instead of waiting for the freshness cron.
+          gh workflow run pr-freshness.yml \
+            || echo "::warning::could not hand off to pr-freshness.yml."

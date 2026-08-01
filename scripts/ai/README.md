@@ -16,7 +16,8 @@ _data/ai.yml               # model + budget (claude-opus-4-8)
 | `content-factory.yml` | daily 08:00 UTC | `content-curator` | improves one page per collection from the `.cms` worklist, opens one `auto:content` PR each | `CONTENT_FACTORY_ENABLED` |
 | `content-review.yml` | content PR opened | `content-reviewer` | editorial pass: small on-brand fixes + comments | `CONTENT_REVIEW_ENABLED` |
 | `content-quality.yml` | content PR | _(none — deterministic)_ | `brand_lint` gate; **spelling drift fails the check** | _(always on)_ |
-| `content-auto-merge.yml` | `auto:content` PR | _(none)_ | smuggle-guard (content-only) + checks green → squash-merge | `CONTENT_AUTOMERGE_ENABLED` |
+| `content-auto-merge.yml` | `auto:content` PR; dispatch with a `pr` input | _(none)_ | smuggle-guard (content-only) + checks green → squash-merge. Routes on **live** API labels, not the event's snapshot | `CONTENT_AUTOMERGE_ENABLED` |
+| `pr-freshness.yml` | push to `main`; after a merge; 6-hourly; dispatch | _(none — deterministic)_ | keeps the lanes' open PRs mergeable: behind → merge the base in; conflicted report PR → rebuild its generated files (`refresh_report_branch.sh`); else re-drive the merge lane | `PR_FRESHNESS_ENABLED` |
 | `quest-forge.yml` | issue labeled `epic-quest`, `/forge-quest` comment, dispatch | `quest-forge` | reads an epic-quest **proposal issue**, collects it deterministically (`scripts/quest/forge_issue.py`), authors a full `epic_quest` hub + `bonus_quest` chapters in `pages/_quests/codex/`, validates (`make quest-audit`), opens one `auto:content`+`auto:quest` PR | `QUEST_FORGE_ENABLED` |
 | `quest-idea-intake.yml` | issue labeled `quest-idea` (the portal's issue form), `/refine` comment, dispatch | `idea-refiner` | reviews a **Quest Idea Forge** submission (portal: `/quests/ideas/`): deterministic floor first (`scripts/quest/idea_intake.py` — rubric score, spam flags, duplicate radar), then one review comment + one `idea:ready`/`idea:needs-detail`/`idea:declined` label; never closes, never escalates — a human promotes a ready idea with the `epic-quest` label | `QUEST_IDEA_ENABLED` |
 | `agent-audit.yml` | weekly Mon 06:00 | `agent-auditor` | tightens the fleet for drift / least-privilege | `AGENT_AUDIT_ENABLED` |
@@ -92,6 +93,9 @@ The whole fleet is **OFF by default** and idles silently until you do both:
    gh variable set CONTENT_REVIEW_ENABLED    --body true --repo bamr87/it-journey
    gh variable set CONTENT_AUTOMERGE_ENABLED --body true --repo bamr87/it-journey
    gh variable set AGENT_AUDIT_ENABLED       --body true --repo bamr87/it-journey
+   # keeps the lanes' open PRs mergeable — enable alongside ANY auto-merge lane,
+   # or a PR that misses its merge window stays conflicted forever
+   gh variable set PR_FRESHNESS_ENABLED      --body true --repo bamr87/it-journey
    # quest forge
    gh variable set QUEST_FORGE_ENABLED       --body true --repo bamr87/it-journey
    # quest idea intake (the /quests/ideas/ portal's reviewer)

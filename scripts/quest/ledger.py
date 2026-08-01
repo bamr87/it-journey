@@ -877,15 +877,23 @@ def merge_ledgers(ours: dict, theirs: dict, config: dict) -> dict:
     the body. Pure function of its inputs — no clock beyond `generated`.
     """
     cap = cfg_history_cap(config)
-    out = {
+    # Key order mirrors empty_ledger(), and slices keep THEIRS' order with any
+    # ours-only slice appended. Purely cosmetic to the engine, but it keeps the
+    # merge's diff against the base branch down to what actually changed instead
+    # of a whole-file reshuffle — which matters when the whole point is to make a
+    # conflicted PR reviewable again.
+    out: dict[str, Any] = {
         "schema_version": theirs.get("schema_version") or ours.get("schema_version")
         or LEDGER_SCHEMA_VERSION,
+        "generated": now_iso(),
+        "totals": {},
         "slices": {},
     }
     our_slices = ours.get("slices") or {}
     their_slices = theirs.get("slices") or {}
+    ordered = list(their_slices) + [s for s in our_slices if s not in their_slices]
 
-    for slug in sorted(set(our_slices) | set(their_slices)):
+    for slug in ordered:
         a, b = our_slices.get(slug), their_slices.get(slug)
         if not isinstance(a, dict) or not a:
             out["slices"][slug] = dict(b) if isinstance(b, dict) else {}
@@ -895,7 +903,8 @@ def merge_ledgers(ours: dict, theirs: dict, config: dict) -> dict:
             continue
         winner, loser = (b, a) if _slice_recency(b) >= _slice_recency(a) else (a, b)
         merged = dict(winner)
-        merged["history"] = _merge_history(loser.get("history"), winner.get("history"), cap)
+        # winner first: on an exact (event, at, date) collision its record wins.
+        merged["history"] = _merge_history(winner.get("history"), loser.get("history"), cap)
         merged["fix_rounds"] = max(int(a.get("fix_rounds") or 0), int(b.get("fix_rounds") or 0))
         merged["runs"] = max(int(a.get("runs") or 0), int(b.get("runs") or 0))
         out["slices"][slug] = merged

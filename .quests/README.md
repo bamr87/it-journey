@@ -46,7 +46,20 @@ python3 scripts/quest/ledger.py render
 
 # Self-check the ledger invariants:
 python3 scripts/quest/ledger.py selftest
+
+# Reconcile two divergent ledgers (report-PR conflict resolution — the newer
+# slice record wins wholesale, walk history unions, the breaker only tightens):
+python3 scripts/quest/ledger.py merge --ours A.json --theirs B.json --output A.json
 ```
+
+**Keeping an open report PR mergeable.** `ledger.json`, `DASHBOARD.md`, and `pages/_quest-reports/**` are rewritten wholesale by every run, so a report PR that misses its merge window conflicts with `main` the moment the next run lands. Git cannot line-merge them; the generators can:
+
+```bash
+# On the report branch — merge main and rebuild everything derived from it:
+scripts/quest/refresh_report_branch.sh origin/main
+```
+
+It refuses to touch conflicts outside that generated set, so a real content conflict still reaches a human. `pr-freshness.yml` runs it automatically.
 
 **Evidence** = the `report.aggregate()` JSON from `test/quest-validator/agentic_validate.py`: it carries `results[].quest{path,slug,level}`, `results[].verdict` (pass/warn/fail), `results[].overall`, `results[].verdict_obj{executed, commands[{command, status, detail}], recommendations[{priority, area, suggestion}], summary}`, and top-level `total / scored / errored / average / counts / truncated`.
 
