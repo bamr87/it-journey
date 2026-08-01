@@ -115,7 +115,10 @@ python3 scripts/quest/build_reports_site.py
 
 git add -- "$LEDGER" "$DASHBOARD" "$REPORTS" "$WALKTHROUGHS"
 
-if git diff --cached --quiet && [ ! -f .git/MERGE_HEAD ]; then
+# `git rev-parse MERGE_HEAD`, not `[ -f .git/MERGE_HEAD ]`: in a worktree `.git`
+# is a FILE pointing at the real gitdir, so the path test is always false there
+# and a clean merge with no regenerated delta would silently go uncommitted.
+if git diff --cached --quiet && ! git rev-parse -q --verify MERGE_HEAD >/dev/null; then
   echo "Nothing to commit — branch already consistent with $BASE."
   exit 0
 fi
