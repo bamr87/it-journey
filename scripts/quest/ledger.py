@@ -818,6 +818,92 @@ def merge_slice(
     return merged
 
 
+def _slice_recency(slc: dict) -> tuple:
+    """Sort key for "which of two divergent slice records is newer".
+
+    `last_run` is an ISO timestamp written by every walk; `last_run_date` and
+    `runs` are the coarse fallbacks for a legacy record that predates it.
+    """
+    return (
+        str(slc.get("last_run") or ""),
+        str(slc.get("last_run_date") or ""),
+        int(slc.get("runs") or 0),
+    )
+
+
+def _merge_history(a: list, b: list, cap: int) -> list:
+    """Union two history lists: dedup on (event, at), oldest first, capped.
+
+    Two branches that each walked the same slice on different days hold
+    DISJOINT history entries; a plain line-diff of the surrounding JSON cannot
+    reconcile them, but the entries themselves are immutable facts keyed by
+    timestamp, so a union is exact.
+    """
+    seen: set[tuple] = set()
+    out: list = []
+    for ev in list(a or []) + list(b or []):
+        if not isinstance(ev, dict):
+            continue
+        key = (str(ev.get("event") or ""), str(ev.get("at") or ""), str(ev.get("date") or ""))
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(ev)
+    out.sort(key=lambda e: (str(e.get("at") or ""), str(e.get("event") or "")))
+    if cap and len(out) > cap:
+        out = out[-cap:]
+    return out
+
+
+def merge_ledgers(ours: dict, theirs: dict, config: dict) -> dict:
+    """Deterministically reconcile two divergent ledgers into one.
+
+    Conflict resolution for the report lane: a walkthrough PR that misses its
+    merge window diverges from `main` the moment the next day's run lands, and
+    git cannot line-merge an aggregated JSON document. This does it
+    structurally instead, with rules that can never invent a better state:
+
+      * per slice, the record with the NEWER `last_run` wins WHOLESALE — every
+        aggregate (verdict, average, coverage, open_issues, `perfect`) comes
+        from one self-consistent record that a real walk computed, never from a
+        field-by-field blend (M7: `perfect` is never merge-derived);
+      * `history` is UNIONed across both sides, so the losing branch's walk
+        events survive instead of being dropped on the floor;
+      * `fix_rounds` takes the MAX — the M6 circuit breaker may only ever
+        tighten through a merge, never loosen;
+      * a slice present on only one side is carried over untouched.
+
+    `totals` are recomputed from the merged slices, so they always agree with
+    the body. Pure function of its inputs — no clock beyond `generated`.
+    """
+    cap = cfg_history_cap(config)
+    out = {
+        "schema_version": theirs.get("schema_version") or ours.get("schema_version")
+        or LEDGER_SCHEMA_VERSION,
+        "slices": {},
+    }
+    our_slices = ours.get("slices") or {}
+    their_slices = theirs.get("slices") or {}
+
+    for slug in sorted(set(our_slices) | set(their_slices)):
+        a, b = our_slices.get(slug), their_slices.get(slug)
+        if not isinstance(a, dict) or not a:
+            out["slices"][slug] = dict(b) if isinstance(b, dict) else {}
+            continue
+        if not isinstance(b, dict) or not b:
+            out["slices"][slug] = dict(a)
+            continue
+        winner, loser = (b, a) if _slice_recency(b) >= _slice_recency(a) else (a, b)
+        merged = dict(winner)
+        merged["history"] = _merge_history(loser.get("history"), winner.get("history"), cap)
+        merged["fix_rounds"] = max(int(a.get("fix_rounds") or 0), int(b.get("fix_rounds") or 0))
+        merged["runs"] = max(int(a.get("runs") or 0), int(b.get("runs") or 0))
+        out["slices"][slug] = merged
+
+    recompute_totals(out)
+    return out
+
+
 def recompute_totals(ledger: dict) -> None:
     slices = ledger.get("slices") or {}
     perfect = sum(1 for s in slices.values() if s.get("perfect"))
@@ -1174,6 +1260,24 @@ def cmd_render(args: argparse.Namespace) -> int:
 
 
 # --------------------------------------------------------------------------- #
+# Subcommand: merge
+# --------------------------------------------------------------------------- #
+def cmd_merge(args: argparse.Namespace) -> int:
+    """Reconcile two divergent ledger files (the report lane's conflict fix)."""
+    config = load_config()
+    ours = load_ledger(Path(args.ours))
+    theirs = load_ledger(Path(args.theirs))
+    merged = merge_ledgers(ours, theirs, config)
+    out = Path(args.output or args.ours)
+    write_json(out, merged)
+    write_dashboard(merged, DASHBOARD_PATH if out == LEDGER_PATH else out.parent / "DASHBOARD.md")
+    t = merged["totals"]
+    print(f"Merged {len(merged['slices'])} slice(s) → {out} "
+          f"({t['perfect']} perfect, {t['stuck']} stuck, {t['open_issues']} open issues)")
+    return 0
+
+
+# --------------------------------------------------------------------------- #
 # Subcommand: selftest
 # --------------------------------------------------------------------------- #
 def _agg(results: list[dict], **top) -> dict:
@@ -1405,6 +1509,41 @@ def _selftest() -> int:  # noqa: C901 - exhaustive on purpose
               f"all-paths should cover every character: {picked_chars} vs {chars}")
         check(len(ap5) == len(picked_chars), "all-paths: one slice per character")
 
+    # ---- merge_ledgers: reconcile two divergent ledgers deterministically ----
+    lo = empty_ledger()   # "ours": an older report branch that walked on day 1
+    lo["slices"]["developer/0001"] = {
+        "slug": "developer/0001", "last_run": "2026-07-27T14:28:55+00:00",
+        "last_run_date": "2026-07-27", "runs": 3, "fix_rounds": 2,
+        "perfect": False, "stuck": False, "open_issues": 9,
+        "history": [{"event": "walk", "at": "2026-07-27T14:28:55+00:00",
+                     "date": "2026-07-27", "run_url": "run/A"}],
+    }
+    lo["slices"]["only-ours/0001"] = {"slug": "only-ours/0001", "open_issues": 4, "history": []}
+    lt = empty_ledger()   # "theirs": main, which walked the same slice a day later
+    lt["slices"]["developer/0001"] = {
+        "slug": "developer/0001", "last_run": "2026-07-28T14:07:25+00:00",
+        "last_run_date": "2026-07-28", "runs": 4, "fix_rounds": 1,
+        "perfect": False, "stuck": False, "open_issues": 71,
+        "history": [{"event": "walk", "at": "2026-07-28T14:07:25+00:00",
+                     "date": "2026-07-28", "run_url": "run/B"}],
+    }
+    lt["slices"]["only-theirs/0001"] = {"slug": "only-theirs/0001", "open_issues": 6, "history": []}
+    lm = merge_ledgers(lo, lt, cfg)
+    ms = lm["slices"]["developer/0001"]
+    check(ms["last_run"] == "2026-07-28T14:07:25+00:00",
+          "merge: the NEWER slice record must win wholesale")
+    check(ms["open_issues"] == 71, "merge: aggregates come from the winning record, unblended")
+    check([h["date"] for h in ms["history"]] == ["2026-07-27", "2026-07-28"],
+          "merge: history unions both sides, oldest first")
+    check(ms["fix_rounds"] == 2, "merge: fix_rounds takes MAX (breaker may only tighten)")
+    check(ms["runs"] == 4, "merge: runs takes MAX")
+    check("only-ours/0001" in lm["slices"] and "only-theirs/0001" in lm["slices"],
+          "merge: one-sided slices are carried over")
+    check(lm["totals"]["slices"] == 3 and lm["totals"]["open_issues"] == 81,
+          "merge: totals recomputed from the merged slices")
+    check(merge_ledgers(lt, lo, cfg)["slices"]["developer/0001"]["last_run"] == ms["last_run"],
+          "merge: result is independent of argument order")
+
     # ---- render produces a non-empty dashboard with the headline sections ----
     dash = render_dashboard(ledger)
     for needle in ("Quest Perfection", "Slices (worst-first)",
@@ -1483,6 +1622,17 @@ def build_parser() -> argparse.ArgumentParser:
 
     p_render = sub.add_parser("render", help="rewrite .quests/DASHBOARD.md")
     p_render.set_defaults(func=cmd_render)
+
+    p_merge = sub.add_parser(
+        "merge",
+        help="reconcile two divergent ledgers (conflict resolution for report PRs)")
+    p_merge.add_argument("--ours", required=True,
+                         help="this branch's ledger.json (the report PR's side)")
+    p_merge.add_argument("--theirs", required=True,
+                         help="the base branch's ledger.json (usually main's)")
+    p_merge.add_argument("--output", default=None,
+                         help="where to write the merged ledger (default: --ours)")
+    p_merge.set_defaults(func=cmd_merge)
 
     p_self = sub.add_parser("selftest", help="run the offline self-check, then exit")
     p_self.set_defaults(func=cmd_selftest)
