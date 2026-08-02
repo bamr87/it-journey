@@ -116,9 +116,9 @@ Battle-tested wisdom and real-world experiences from fellow code warriors who've
 
 #### 📅 Recent Chronicles (2024-2025)
 
-- [AI-Powered Development Workflows](https://lifehacker.dev) - Advanced automation techniques
-- [GitHub Actions Mastery](https://lifehacker.dev) - CI/CD optimization
-- [Docker for IT-Journey](https://lifehacker.dev) - Containerization strategies
+- [Letting Copilot Untangle 25 Scripts Across Four Repos](https://lifehacker.dev/posts/2025/07/07/ai-assisted-script-consolidation-development-workflows/) - AI-powered automation techniques
+- [Consolidating GitHub Actions into a Modular Architecture](https://lifehacker.dev/posts/2025/01/27/consolidating-github-actions-modular-architecture/) - CI/CD optimization
+- [Dockering Your IT-Journey](https://lifehacker.dev/hacks/dockering-your-it-journey/) - Containerization strategies
 - Jekyll Theming & Bootstrap (planned) - Site customization
 
 ### ⚔️ Quests Territory (`/quests/`)
@@ -315,7 +315,7 @@ Site navigation is managed through YAML files in `_data/navigation/`:
 
 - [🏛️ Main Portal](/) - Primary entrance to IT-Journey
 - [🏰 Quest Central](/quests/) - Complete quest index and navigation
-- [📜 Chronicle Archive](https://lifehacker.dev) - All chronicles and blog posts
+- [📜 Chronicle Archive](https://lifehacker.dev/news/) - All chronicles and blog posts, at the sister site lifehacker.dev
 - [📚 Library Index](/docs/) - Documentation and guides
 - [📔 Personal Notebook](/notes/) - Your learning space
 
@@ -357,8 +357,8 @@ Site navigation is managed through YAML files in `_data/navigation/`:
 ### 🔧 For System Administrators
 
 1. **Platform Setup:** [The Self-Operating Website epic](/quests/codex/self-operating-website/)
-2. **Docker Environment:** [Container Setup](https://lifehacker.dev)
-3. **CI/CD Integration:** [GitHub Actions](https://lifehacker.dev)
+2. **Docker Environment:** [Docker from Zero: Essential Commands](https://lifehacker.dev/hacks/docker-from-zero-essential-commands/)
+3. **CI/CD Integration:** [GitHub Actions hacks on lifehacker.dev](https://lifehacker.dev/news/hacks/)
 4. **Monitoring:** [Site Analytics](/about/features/)
 
 ## 🌟 Hidden Treasures & Advanced Features

@@ -381,7 +381,7 @@ Objective: Use guardian logs to create a minimal viable resource (MVR) or redire
 
 ## 📚 Quest Resource Codex
 
-- Companion Article: <https://lifehacker.dev>
+- Companion Article: [Kill dead links in Jekyll: stable permalinks, redirect_from, and a CI link checker](https://lifehacker.dev/hacks/kill-dead-links-jekyll-permalinks/)
 - Jekyll Permalinks: <https://jekyllrb.com/docs/permalinks/>
 - Jekyll-redirect-from: <https://github.com/jekyll/jekyll-redirect-from>
 - Jekyll-sitemap: <https://github.com/jekyll/jekyll-sitemap>
