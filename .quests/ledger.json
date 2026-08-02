@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "generated": "2026-07-28T14:07:25+00:00",
+  "generated": "2026-08-01T21:21:15+00:00",
   "totals": {
     "slices": 27,
     "perfect": 0,
@@ -525,6 +525,17 @@
         },
         {
           "event": "walk",
+          "at": "2026-07-27T14:28:55+00:00",
+          "date": "2026-07-27",
+          "mode": "execute",
+          "verdict": "fail",
+          "average": 71.8,
+          "open_issues": 9,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/30264458312"
+        },
+        {
+          "event": "walk",
           "at": "2026-07-28T14:07:25+00:00",
           "date": "2026-07-28",
           "mode": "execute",
@@ -748,17 +759,6 @@
       "history": [
         {
           "event": "walk",
-          "at": "2026-07-15T14:05:32+00:00",
-          "date": "2026-07-15",
-          "mode": "execute",
-          "verdict": "fail",
-          "average": 63.8,
-          "open_issues": 15,
-          "perfect": false,
-          "run_url": "https://github.com/bamr87/it-journey/actions/runs/29412020762"
-        },
-        {
-          "event": "walk",
           "at": "2026-07-16T13:53:37+00:00",
           "date": "2026-07-16",
           "mode": "execute",
@@ -844,6 +844,17 @@
           "open_issues": 23,
           "perfect": false,
           "run_url": "https://github.com/bamr87/it-journey/actions/runs/30090038199"
+        },
+        {
+          "event": "walk",
+          "at": "2026-07-27T14:28:55+00:00",
+          "date": "2026-07-27",
+          "mode": "execute",
+          "verdict": "fail",
+          "average": 63.5,
+          "open_issues": 10,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/30264458312"
         },
         {
           "event": "walk",
@@ -1126,6 +1137,17 @@
           "open_issues": 15,
           "perfect": false,
           "run_url": "https://github.com/bamr87/it-journey/actions/runs/30090038199"
+        },
+        {
+          "event": "walk",
+          "at": "2026-07-27T14:28:56+00:00",
+          "date": "2026-07-27",
+          "mode": "execute",
+          "verdict": "fail",
+          "average": 67.2,
+          "open_issues": 10,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/30264458312"
         },
         {
           "event": "walk",
@@ -1416,6 +1438,17 @@
         },
         {
           "event": "walk",
+          "at": "2026-07-27T14:28:56+00:00",
+          "date": "2026-07-27",
+          "mode": "execute",
+          "verdict": "warn",
+          "average": 78.0,
+          "open_issues": 9,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/30264458312"
+        },
+        {
+          "event": "walk",
           "at": "2026-07-28T14:07:25+00:00",
           "date": "2026-07-28",
           "mode": "execute",
@@ -1519,7 +1552,7 @@
           "date": "2026-07-23"
         }
       },
-      "fix_rounds": 0,
+      "fix_rounds": 1,
       "stuck": false,
       "stuck_reason": null,
       "needs_human": false,
@@ -1550,6 +1583,17 @@
           "open_issues": 11,
           "perfect": false,
           "run_url": "https://github.com/bamr87/it-journey/actions/runs/30003953368"
+        },
+        {
+          "event": "walk",
+          "at": "2026-07-27T14:28:55+00:00",
+          "date": "2026-07-27",
+          "mode": "execute",
+          "verdict": "warn",
+          "average": 81.6,
+          "open_issues": 11,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/30264458312"
         },
         {
           "event": "walk",
@@ -2450,17 +2494,6 @@
       "history": [
         {
           "event": "walk",
-          "at": "2026-07-13T14:05:30+00:00",
-          "date": "2026-07-13",
-          "mode": "execute",
-          "verdict": "fail",
-          "average": 66.0,
-          "open_issues": 16,
-          "perfect": false,
-          "run_url": "https://github.com/bamr87/it-journey/actions/runs/29248386306"
-        },
-        {
-          "event": "walk",
           "at": "2026-07-15T14:05:32+00:00",
           "date": "2026-07-15",
           "mode": "execute",
@@ -2546,6 +2579,17 @@
           "open_issues": 14,
           "perfect": false,
           "run_url": "https://github.com/bamr87/it-journey/actions/runs/30090038199"
+        },
+        {
+          "event": "walk",
+          "at": "2026-07-27T14:28:56+00:00",
+          "date": "2026-07-27",
+          "mode": "execute",
+          "verdict": "warn",
+          "average": 80.4,
+          "open_issues": 11,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/30264458312"
         },
         {
           "event": "walk",

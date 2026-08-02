@@ -193,21 +193,40 @@ def history_url(rel_path: str) -> str:
     return f"{SERVER}/{REPO}/commits/{DEFAULT_BRANCH}/{rel_path}"
 
 
-def run_url_for(ledger: Dict[str, Any], slug: str, date: str) -> Optional[str]:
-    """The perfection run that produced this dated walk (from ledger history),
-    falling back to the slice's most-recent run."""
+def run_url_for(ledger: Dict[str, Any], slug: str, date: str,
+                published: Optional[str] = None) -> Optional[str]:
+    """The perfection run that produced this dated walk.
+
+    Resolution order, strictest first:
+
+      1. the ledger `history` entry for this exact (slug, date) — authoritative;
+      2. the run URL ALREADY PUBLISHED on this page — sticky, because a walk that
+         happened is a fact that does not change;
+      3. the slice's most-recent run — only for a page we have never written and
+         whose walk has no history entry.
+
+    Step 2 is not a nicety: slice history is capped (`.quests/config.yml`
+    `history.cap`, default 20 entries), so every report older than the cap falls
+    out of step 1 and used to land on step 3 — rewriting long-settled pages to
+    point at whatever run happened to be newest. That made each daily run touch
+    EVERY previously published page, so two runs' PRs conflicted by construction
+    and any report PR that missed its merge window could never be merged again.
+    Pinning the published value makes settled pages byte-stable AND corrects the
+    link: it names the run that actually produced the walk.
+    """
     slc = (ledger.get("slices") or {}).get(slug) or {}
     for ev in slc.get("history") or []:
         if ev.get("event") == "walk" and ev.get("date") == date and ev.get("run_url"):
             return ev["run_url"]
-    return slc.get("run_url")
+    return published or slc.get("run_url")
 
 
 # ---------------------------------------------------------------------------
 # page builders
 # ---------------------------------------------------------------------------
 def build_report_page(src_rel: str, meta: Dict[str, str], fm: Dict[str, Any],
-                      body: str, ledger: Dict[str, Any]) -> str:
+                      body: str, ledger: Dict[str, Any],
+                      published_run_url: Optional[str] = None) -> str:
     character, level, date, slug = (meta["character"], meta["level"],
                                     meta["date"], meta["slug"])
     ctitle = char_title(character)
@@ -258,7 +277,7 @@ def build_report_page(src_rel: str, meta: Dict[str, str], fm: Dict[str, Any],
         "quest_count": qcount,
         "engine_average": avg,
         "walk_date": date,
-        "run_url": run_url_for(ledger, slug, date),
+        "run_url": run_url_for(ledger, slug, date, published_run_url),
         "source_report": src_rel,
     }
     page_fm = {k: v for k, v in page_fm.items() if v is not None}
@@ -388,13 +407,33 @@ def build_dashboard(ledger: Dict[str, Any],
 # ---------------------------------------------------------------------------
 # driver
 # ---------------------------------------------------------------------------
-def generate(out_dir: Path, walkthrough_dir: Path, ledger_path: Path) -> Tuple[int, List[str]]:
+def generate(out_dir: Path, walkthrough_dir: Path, ledger_path: Path,
+             published_dir: Optional[Path] = None) -> Tuple[int, List[str]]:
+    # `published_dir` is where the CURRENTLY published pages live; it differs from
+    # out_dir only under --check (which writes to a temp dir but must still compare
+    # against what is actually on the site).
+    published_dir = published_dir or out_dir
     ledger: Dict[str, Any] = {}
     if ledger_path.exists():
         try:
             ledger = json.loads(ledger_path.read_text(encoding="utf-8")) or {}
         except (json.JSONDecodeError, OSError):
             ledger = {}
+
+    # What we published last time, keyed by page stem. Read BEFORE the stale-page
+    # sweep below so a settled page keeps the run it was published with instead of
+    # being rewritten to whatever run is newest (see run_url_for).
+    published_run_urls: Dict[str, str] = {}
+    for old in published_dir.glob("*.md") if published_dir.is_dir() else []:
+        if old.name == "index.md":
+            continue
+        try:
+            old_fm, _ = split_frontmatter(old.read_text(encoding="utf-8"))
+        except OSError:
+            continue
+        run = old_fm.get("run_url")
+        if isinstance(run, str) and run:
+            published_run_urls[old.stem] = run
 
     reports: List[Dict[str, str]] = []
     for md in sorted(walkthrough_dir.glob("*.md")):
@@ -405,7 +444,8 @@ def generate(out_dir: Path, walkthrough_dir: Path, ledger_path: Path) -> Tuple[i
         text = md.read_text(encoding="utf-8")
         fm, body = split_frontmatter(text)
         src_rel = md.relative_to(REPO_ROOT).as_posix()
-        page = build_report_page(src_rel, meta, fm, body, ledger)
+        page = build_report_page(src_rel, meta, fm, body, ledger,
+                                 published_run_urls.get(md.stem))
         reports.append({**meta, "stem": md.stem, "page": page})
 
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -447,11 +487,12 @@ def main(argv: Optional[List[str]] = None) -> int:
     args = ap.parse_args(argv)
 
     out_dir = Path(args.out_dir)
+    published_dir = out_dir
     if args.check:
         import tempfile
         out_dir = Path(tempfile.mkdtemp(prefix="quest-reports-check-"))
 
-    n, written = generate(out_dir, Path(args.walkthroughs), Path(args.ledger))
+    n, written = generate(out_dir, Path(args.walkthroughs), Path(args.ledger), published_dir)
     print(f"✅ generated {n} report page(s) + dashboard → {out_dir}", file=sys.stderr)
     for w in written[:5]:
         print(f"   {w}", file=sys.stderr)

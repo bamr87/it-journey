@@ -43,9 +43,13 @@
 #            recomputed deterministically, NEVER a model field, M7), renders the
 #            dashboard once, and carries ALL session reports + .quests/** (M4:
 #            .quests/** rides HERE, never a fix PR). Labels: quest-walkthrough +
-#            automated (NOT auto:content) — human review, never auto-merged.
+#            automated (NOT auto:content) — which is the `quest-report` policy in
+#            content-auto-merge.yml, so a green report PR self-merges (review
+#            happens on the FRONTEND: every published page links back to its run).
 #            One PR per day instead of one per slice, so ledger deltas never
-#            conflict with each other.
+#            conflict with each other — and if one still misses its merge window,
+#            pr-freshness.yml rebuilds its generated files against main rather
+#            than leaving it to rot (the #563 failure).
 #   fix   — quest-fix-loop.yml, on ITS OWN SCHEDULE, replays the ledger to pick
 #           what to repair and calls quest-fix.yml with this run's artifact.
 #   merge — content-auto-merge.yml independently squash-merges the auto:content
