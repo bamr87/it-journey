@@ -159,7 +159,7 @@ default_icon: "bi" ## Bootstrap Icons https://icons.getbootstrap.com/
 
 links:
   - label: "BASH Consulting"
-    url: "https://bashconsultants.com"
+    url: "https://bash-365.com"
     icon: "bi-link"
   - label: "Twitter"
     icon: "bi-twitter"
