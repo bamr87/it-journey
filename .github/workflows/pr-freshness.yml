@@ -1,0 +1,218 @@
+# =============================================================================
+# pr-freshness.yml — keep the loops' open PRs mergeable, and re-drive the merge lane
+# -----------------------------------------------------------------------------
+# The automated lanes (quest-perfection reports, quest fixes, the content
+# factory, the issue resolver) open PRs on a schedule and expect them to merge
+# themselves. Two things break that, and content-auto-merge.yml can fix neither
+# on its own because it only ever wakes on a PR event:
+#
+#   1. STALENESS. main moves — usually because the NEXT day's run merged first —
+#      and yesterday's PR is suddenly behind or conflicted. Nothing was wrong
+#      with it; nothing will ever fix it either. PR #563 sat conflicted for five
+#      days that way.
+#   2. A MISSED WAKE-UP. If the merge lane's one burst of PR events is lost (the
+#      #563 label race), no further event is coming.
+#
+# This is the periodic reconciler that closes both holes. For every open PR the
+# automated lanes own, in this repo, not flagged for a human:
+#
+#   BEHIND  → merge the base in via the update-branch API.
+#   DIRTY   → for report PRs, run scripts/quest/refresh_report_branch.sh: merge
+#             main and REBUILD the ledger + dashboard + collection from their
+#             inputs. It refuses to resolve anything outside that generated set,
+#             so a genuine content conflict still lands on a human (needs-human).
+#   CLEAN   → re-dispatch content-auto-merge.yml, which re-reads live state and
+#             merges if the checks are green. Cheap and idempotent.
+#
+# Triggered right when PRs go stale (a push to main), on a slow cron as the
+# backstop, and on demand. NOT on pull_request_target: it needs the base
+# branch's tooling and a write token, and it must be able to run when no PR
+# event is coming — that is the entire point.
+#
+# OFF by default like every other automated lane: set PR_FRESHNESS_ENABLED.
+# =============================================================================
+name: 🔄 Automated PR Freshness
+
+on:
+  push:
+    branches: [main]
+  # A merge performed with GITHUB_TOKEN raises no `push` event (GitHub's
+  # recursion guard), and the merge lane merges with exactly that token — so the
+  # push trigger above misses the single most common way main moves. The merge
+  # lane therefore dispatches this workflow itself after a merge lands (an
+  # explicit hand-off, not a workflow_run trigger, which would fire on its every
+  # no-op run and ping-pong with the dispatch below).
+  schedule:
+    - cron: '37 */6 * * *'      # backstop for anything both triggers miss
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: 'Single PR number to refresh (blank = sweep every eligible PR).'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write            # to re-dispatch content-auto-merge.yml
+
+# Never two sweeps at once — two refreshes racing on the same branch would
+# each push a different merge commit. Queue instead of cancelling: a refresh
+# that is mid-push must finish.
+concurrency:
+  group: pr-freshness
+  cancel-in-progress: false
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      # The PAT, so the refresh push fires CI + the merge lane. With the default
+      # GITHUB_TOKEN a push from Actions raises NO events, and the refreshed PR
+      # would sit un-rechecked — the failure this workflow exists to prevent.
+      GH_TOKEN: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
+      # The sweep checks out PR branches, so never let `gh` infer the repo from
+      # whatever remote the workspace happens to be sitting on.
+      GH_REPO: ${{ github.repository }}
+      ONLY_PR: ${{ github.event.inputs.pr }}
+      ENABLED: ${{ vars.PR_FRESHNESS_ENABLED }}
+    steps:
+      - name: Gate
+        id: gate
+        run: |
+          set -euo pipefail
+          if [ "$ENABLED" = "true" ]; then
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "pr-freshness idle (PR_FRESHNESS_ENABLED=${ENABLED:-unset})."
+            echo "go=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      # The BASE branch's tooling. Never the PR's — the refresh below checks out
+      # PR branches, and their scripts must never be the ones we execute.
+      - if: steps.gate.outputs.go == 'true'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - if: steps.gate.outputs.go == 'true'
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+
+      - if: steps.gate.outputs.go == 'true'
+        run: pip install --quiet pyyaml    # ledger.py + build_reports_site.py
+
+      - name: Refresh every stale automated PR
+        if: steps.gate.outputs.go == 'true'
+        run: |
+          set -euo pipefail
+
+          # Pin the base tooling and tree before any PR branch touches them.
+          BASETOOLS="$RUNNER_TEMP/basetools"
+          rm -rf "$BASETOOLS"; mkdir -p "$BASETOOLS"
+          cp -r scripts/quest "$BASETOOLS/quest"
+          BASE_SHA=$(git rev-parse HEAD)
+
+          git config user.name  'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+          # The PRs the automated lanes own. `automated` covers the report lane;
+          # the auto:* labels cover the fix / content / issue lanes.
+          if [ -n "$ONLY_PR" ]; then
+            prs="$ONLY_PR"
+          else
+            prs=$(gh pr list --state open --limit 50 \
+                    --json number,labels,isDraft,headRepositoryOwner \
+                    --jq '.[]
+                          | select(.isDraft | not)
+                          | select(.headRepositoryOwner.login == "'"${GITHUB_REPOSITORY%%/*}"'")
+                          | select([.labels[].name] | any(. == "automated" or startswith("auto:")))
+                          | select([.labels[].name] | any(. == "needs-human") | not)
+                          | .number')
+          fi
+          [ -n "$prs" ] || { echo "No eligible open PRs."; exit 0; }
+          echo "Eligible: $(tr '\n' ' ' <<< "$prs")"
+
+          refreshed=0; updated=0; poked=0; stuck=0
+          for pr in $prs; do
+            info=$(gh pr view "$pr" --json mergeStateStatus,headRefName,baseRefName,labels,state)
+            [ "$(jq -r .state <<< "$info")" = "OPEN" ] || { echo "#$pr not open — skip."; continue; }
+            ms=$(jq -r .mergeStateStatus <<< "$info")
+            head=$(jq -r .headRefName <<< "$info")
+            base=$(jq -r .baseRefName <<< "$info")
+            is_report=$(jq -r '[.labels[].name] | any(. == "quest-walkthrough")' <<< "$info")
+            echo "::group::PR #$pr ($head) — $ms"
+
+            case "$ms" in
+              BEHIND)
+                echo "Behind $base — merging the base in."
+                gh api --method PUT "repos/${GITHUB_REPOSITORY}/pulls/${pr}/update-branch" --silent \
+                  && updated=$((updated+1)) \
+                  || echo "::warning::update-branch failed for #$pr."
+                ;;
+
+              DIRTY)
+                if [ "$is_report" != "true" ]; then
+                  echo "::warning::#$pr conflicts and is not a report PR — a human must resolve it."
+                  gh pr edit "$pr" --add-label needs-human || true
+                  printf '%s\n\n%s\n%s\n' \
+                    "🛑 This PR conflicts with \`$base\`, and its diff reaches outside the deterministically regenerated report/ledger set, so it cannot be refreshed automatically. Labelled \`needs-human\`." \
+                    "---" \
+                    "_Generated by [Claude Code](https://claude.ai/code)_" \
+                    > "$RUNNER_TEMP/comment.md"
+                  gh pr comment "$pr" --body-file "$RUNNER_TEMP/comment.md" || true
+                  stuck=$((stuck+1))
+                else
+                  echo "Conflicted report PR — rebuilding its generated files."
+                  git fetch --quiet origin \
+                    "+refs/heads/$base:refs/remotes/origin/$base" \
+                    "+refs/heads/$head:refs/remotes/origin/$head"
+                  git checkout --quiet -B "$head" "origin/$head"
+                  # Base tooling wins over whatever the PR branch carries. It stays
+                  # UNSTAGED: refresh_report_branch.sh only ever commits the report
+                  # and ledger paths, so this can never leak into the PR.
+                  rm -rf scripts/quest && cp -r "$BASETOOLS/quest" scripts/quest
+                  if ./scripts/quest/refresh_report_branch.sh "origin/$base"; then
+                    git checkout --quiet -- scripts/quest 2>/dev/null || true
+                    if git push origin "$head"; then
+                      refreshed=$((refreshed+1))
+                      echo "#$pr refreshed and pushed."
+                    else
+                      echo "::warning::could not push the refresh for #$pr."
+                    fi
+                  else
+                    echo "::warning::#$pr has conflicts outside the generated set — handing to a human."
+                    git merge --abort 2>/dev/null || true
+                    gh pr edit "$pr" --add-label needs-human || true
+                    stuck=$((stuck+1))
+                  fi
+                  # Back to the base tree before the next PR in the loop.
+                  git checkout --quiet --force "$BASE_SHA"
+                fi
+                ;;
+
+              *)
+                # CLEAN / BLOCKED / UNSTABLE / UNKNOWN — mergeable as far as the
+                # branch goes, so the only question left is whether the checks are
+                # green. That is exactly what the merge lane decides; re-drive it
+                # in case its PR-event wake-up was lost.
+                gh workflow run content-auto-merge.yml -f pr="$pr" \
+                  && poked=$((poked+1)) \
+                  || echo "::warning::could not dispatch the merge lane for #$pr."
+                ;;
+            esac
+            echo "::endgroup::"
+          done
+
+          {
+            echo "### 🔄 PR freshness sweep"
+            echo
+            echo "| outcome | PRs |"
+            echo "|---|--:|"
+            echo "| conflicts rebuilt | $refreshed |"
+            echo "| branches updated | $updated |"
+            echo "| merge lane re-driven | $poked |"
+            echo "| handed to a human | $stuck |"
+          } >> "$GITHUB_STEP_SUMMARY"

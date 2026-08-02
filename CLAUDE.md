@@ -41,7 +41,9 @@ The substantive (Lane B) half of the CMS is executed by a **fleet of Claude Code
 - `content-quality.yml` — deterministic `scripts/ci/brand_lint.py` gate; **spelling
   drift fails the check** (blocks auto-merge).
 - `content-auto-merge.yml` — smuggle-guard (`classify_changes.py`, content-only) +
-  checks-green → squash-merge.
+checks-green → squash-merge. Routes on **live** API labels, never the event payload snapshot.
+- `pr-freshness.yml` (push to `main`; after a merge; 6-hourly) — the reconciler that
+keeps the loops' open PRs mergeable: behind → merge the base in; a conflicted report PR → `scripts/quest/refresh_report_branch.sh` rebuilds its generated ledger/dashboard/collection from their inputs; otherwise re-drive the merge lane. `PR_FRESHNESS_ENABLED`.
 - `quest-forge.yml` (issue labeled `epic-quest` / `/forge-quest` comment) — the
 `quest-forge` agent collects an epic-quest **proposal issue** deterministically (`scripts/quest/forge_issue.py`) and authors a full `epic_quest` hub + `bonus_quest` chapters in `pages/_quests/codex/` → one `auto:quest` PR. Closes the loop with lifehacker.dev (its quest-forge hook files the proposal; this consumes it).
 - `quest-idea-intake.yml` (issue labeled `quest-idea` / `/refine` comment) — the
