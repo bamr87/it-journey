@@ -59,11 +59,13 @@ test-results/
 ##############################
 # Link Check Results (runtime outputs)
 ##############################
+# Run outputs are regenerated every run and uploaded as workflow artifacts,
+# never committed. Only the baselines (delta-comparison inputs) stay tracked.
 link-check-results/*.json
+!link-check-results/broken_links_baseline.json
 link-check-results/*.env
-link-check-results/ai_analysis.md
-link-check-results/summary.md
-link-check-results/detailed_analysis.md
+link-check-results/*.md
+!link-check-results/posts-external-baseline.md
 
 ##############################
 # Work Directory Pattern (disposable)
