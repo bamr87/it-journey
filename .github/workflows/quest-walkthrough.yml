@@ -256,7 +256,7 @@ jobs:
       - name: Open the report PR (human review)
         id: pr
         if: steps.plan.outputs.empty != 'true'
-        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
           token: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
           commit-message: "test(quests): quest walkthrough session report [${{ steps.plan.outputs.slug }}]"
@@ -288,7 +288,7 @@ jobs:
 
       - name: Upload session report + evidence
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: quest-walkthrough-${{ steps.plan.outputs.slug }}
           path: |
