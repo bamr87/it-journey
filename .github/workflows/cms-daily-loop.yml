@@ -62,7 +62,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
           # checkout v7 persists credentials via an includeIf'd config file that
@@ -73,13 +73,13 @@ jobs:
           persist-credentials: false
 
       - name: Set up Ruby + Jekyll (for build-ci gate)
-        uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
           bundler-cache: true
 
       - name: Set up Python
-        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        uses: actions/setup-python@v7
         with:
           python-version: '3.12'
 
@@ -144,7 +144,7 @@ jobs:
       - name: Open mechanical PR
         if: steps.norm.outputs.changed == 'true'
         id: pr
-        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
+        uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "chore(content): normalize frontmatter [cms-mechanical]"
@@ -201,7 +201,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
           # checkout v7 persists credentials via an includeIf'd config file that
@@ -226,20 +226,20 @@ jobs:
 
       - name: Set up Ruby + Jekyll
         if: steps.auth.outputs.ok == 'true'
-        uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
           bundler-cache: true
 
       - name: Set up Python
         if: steps.auth.outputs.ok == 'true'
-        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        uses: actions/setup-python@v7
         with:
           python-version: '3.12'
 
       - name: Set up Node
         if: steps.auth.outputs.ok == 'true'
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        uses: actions/setup-node@v7
         with:
           node-version: '20'
 
@@ -295,7 +295,7 @@ jobs:
 
       - name: Open substantive PR (human review)
         if: steps.auth.outputs.ok == 'true' && steps.gate.outputs.changed == 'true'
-        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
+        uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "content: daily curated improvements [cms]"
@@ -326,7 +326,7 @@ jobs:
 
       - name: Upload agent log
         if: always() && steps.auth.outputs.ok == 'true'
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@v7
         with:
           name: cms-curator-run
           path: curator-run.log

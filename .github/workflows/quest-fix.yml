@@ -153,7 +153,7 @@ jobs:
           fi
           echo "PAT present — fix PR checks will fire."
 
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
           token: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN }}
@@ -164,7 +164,7 @@ jobs:
           # from its `token:` input; this job has no raw `git push`.
           persist-credentials: false
 
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
 
@@ -252,7 +252,7 @@ jobs:
       - name: Download walk plan artifact
         if: steps.breaker.outputs.skip != 'true' && env.PLAN_ARTIFACT != ''
         continue-on-error: true
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        uses: actions/download-artifact@v8
         with:
           name: ${{ env.PLAN_ARTIFACT }}
           path: .
@@ -264,7 +264,7 @@ jobs:
       - name: Download walk evidence artifact
         if: steps.breaker.outputs.skip != 'true' && env.EVIDENCE_ARTIFACT != ''
         continue-on-error: true
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        uses: actions/download-artifact@v8
         with:
           name: ${{ env.EVIDENCE_ARTIFACT }}
           path: .
@@ -283,7 +283,7 @@ jobs:
 
       - name: Setup Node (for the execute engine, if re-deriving)
         if: steps.breaker.outputs.skip != 'true'
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        uses: actions/setup-node@v7
         with:
           node-version: '20'
 
@@ -555,7 +555,7 @@ jobs:
       - name: Open the fix PR
         id: pr
         if: steps.breaker.outputs.skip != 'true' && steps.diff.outputs.changed == 'true'
-        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
+        uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN }}
           commit-message: "fix(quests): repair verified walkthrough issues [${{ steps.slice.outputs.slug }}]"
@@ -573,7 +573,7 @@ jobs:
 
       - name: Upload plan + evidence + fragment
         if: always() && steps.breaker.outputs.skip != 'true'
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@v7
         with:
           name: quest-fix-${{ steps.slice.outputs.branch_slug }}
           path: |

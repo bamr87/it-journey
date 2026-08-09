@@ -145,11 +145,11 @@ jobs:
       fix_matrix: ${{ steps.matrix.outputs.fix_matrix }}
       fix_count: ${{ steps.matrix.outputs.fix_count }}
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
           # Wheel-cache pip installs across runs (keyed on the repo's committed
@@ -447,14 +447,14 @@ jobs:
       WINDOW: ${{ matrix.window }}
       PLAN_DATE: ${{ matrix.plan_date }}
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
           # No push ever leaves this job; keep the workspace credential-free so
           # no agent step can acquire git credentials.
           persist-credentials: false
 
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
           # Wheel-cache pip installs across runs (keyed on the repo's committed
@@ -464,7 +464,7 @@ jobs:
       - name: Install Python tooling
         run: pip install pyyaml
 
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+      - uses: actions/setup-node@v7
         with:
           node-version: '20'
 
@@ -619,7 +619,7 @@ jobs:
       # every slice's copy into the ledger and opens the ONE consolidated PR.
       - name: Upload session report + evidence
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@v7
         with:
           # branch_slug, not slug — artifact names reject '/'. The fix job below
           # downloads this same artifact by name, so the two must stay in sync.
@@ -673,7 +673,7 @@ jobs:
     env:
       GH_TOKEN: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
           token: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
@@ -681,7 +681,7 @@ jobs:
           # the slice job's checkout comment for the duplicate-header backstory).
           persist-credentials: false
 
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
           # Wheel-cache pip installs across runs (keyed on the repo's committed
@@ -696,7 +696,7 @@ jobs:
       # multi-slice sweep lands each artifact in its own slices/<artifact-name>/
       # directory — but see the normalization step below for the one-slice case.
       - name: Download every slice artifact
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        uses: actions/download-artifact@v8
         with:
           pattern: quest-perfection-*
           path: slices
@@ -884,7 +884,7 @@ jobs:
 
       - name: Open the consolidated report PR (read-only)
         id: pr
-        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
+        uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
           commit-message: "test(quests): daily quest walkthroughs + ledger update [${{ steps.body.outputs.date }}]"
