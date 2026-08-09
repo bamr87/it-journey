@@ -78,12 +78,12 @@ jobs:
 
     steps:
       - name: 📥 Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
       - name: 🗄️ Restore lychee cache
-        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        uses: actions/cache@v6
         with:
           path: ${{ env.LYCHEE_CACHE }}
           key: lychee-cache-${{ runner.os }}-${{ github.sha }}
@@ -100,7 +100,7 @@ jobs:
           echo "files=${files}" >> "$GITHUB_OUTPUT"
 
       - name: 🔗 Lychee link check (changed files)
-        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2
+        uses: lycheeverse/lychee-action@v2
         with:
           args: >-
             --no-progress
@@ -128,24 +128,24 @@ jobs:
       # --changed-only diff path is PR-only), and a full-history fetch of this
       # repo costs ~12 minutes of the job's ~12.5.
       - name: 📥 Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7
 
       - name: 🗄️ Restore lychee cache
-        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        uses: actions/cache@v6
         with:
           path: ${{ env.LYCHEE_CACHE }}
           key: lychee-cache-${{ runner.os }}-${{ github.sha }}
           restore-keys: lychee-cache-${{ runner.os }}-
 
       - name: 🗄️ Restore baseline
-        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        uses: actions/cache@v6
         with:
           path: ${{ env.OUTPUT_DIR }}/broken_links_baseline.json
           key: link-baseline-${{ runner.os }}-${{ github.sha }}
           restore-keys: link-baseline-${{ runner.os }}-
 
       - name: 🐍 Setup Python
-        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        uses: actions/setup-python@v7
         with:
           python-version: '3.11'
 
@@ -158,7 +158,7 @@ jobs:
       # below, which runs lychee itself (scripts/validation/link-checker.py ->
       # run_lychee), so this step keeps the action's markdown job summary.
       - name: 🔗 Lychee link check
-        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2
+        uses: lycheeverse/lychee-action@v2
         with:
           args: --no-progress .
           fail: false
@@ -194,7 +194,7 @@ jobs:
           fi
 
       - name: 📦 Upload artifacts
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: link-health-results-${{ github.run_number }}

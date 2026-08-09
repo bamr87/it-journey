@@ -1,8 +1,9 @@
 version: 2
 updates:
   # ---------------------------------------------------------------------------
-  # GitHub Actions — keep SHA-pinned actions current (Dependabot bumps the pin
-  # + the trailing version comment).
+  # GitHub Actions — keep actions current. Actions are pinned to a floating
+  # major tag (e.g. @v7), so patch and minor releases arrive on their own and
+  # Dependabot only opens a PR for a major bump.
   #
   # Grouped so related actions move together in a single PR. This is REQUIRED
   # for github/codeql-action: its init/autobuild/analyze steps must all run the
