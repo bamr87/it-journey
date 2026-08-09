@@ -168,8 +168,13 @@
     url: /quests/0011/github-pages-hidden-gem/
   - title: 'Summon the Golem: An AI Agent Joins the Loop'
     url: /quests/0011/ouroboros-loop-03-summon-the-golem/
+  - title: The Founding Charter — Settings Hygiene, the Core App & the Guild's First
+      Seal
+    url: /quests/0011/django-merchant-guild-01-founding-charter/
   - title: 'The PRD Codex: Master Product Reality Distillation'
     url: /quests/0011/prd-codex-mastery/
+  - title: 'The Merchant Guild Chronicles: Forge an ERP Empire with Django'
+    url: /quests/codex/django-merchant-guild/
 - title: Level 0100 - Frontend & Containers
   icon: bi-box-seam
   url: /quests/0100/

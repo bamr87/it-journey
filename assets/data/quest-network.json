@@ -1,11 +1,11 @@
 {
   "stats": {
-    "total": 207,
+    "total": 209,
     "by_level": {
       "0000": 29,
       "0001": 26,
       "0010": 17,
-      "0011": 4,
+      "0011": 6,
       "0100": 8,
       "0101": 13,
       "0110": 8,
@@ -20,8 +20,8 @@
       "1111": 9
     },
     "by_type": {
-      "epic_quest": 4,
-      "main_quest": 177,
+      "epic_quest": 5,
+      "main_quest": 178,
       "side_quest": 26
     }
   },
@@ -574,6 +574,15 @@
       "difficulty": "🟡 Medium",
       "technology": "python",
       "file": "pages/_quests/0010/testing-quests-with-recursive-questing.md"
+    },
+    {
+      "id": "/quests/0011/django-merchant-guild-01-founding-charter/",
+      "title": "The Founding Charter — Settings Hygiene, the Core App & the Guild's First Seal",
+      "level": "0011",
+      "type": "main_quest",
+      "difficulty": "🟢 Easy",
+      "technology": "django",
+      "file": "pages/_quests/0011/django-merchant-guild-01-founding-charter.md"
     },
     {
       "id": "/quests/0011/github-pages-hidden-gem/",
@@ -1764,6 +1773,15 @@
       "file": "pages/_quests/codex/agentic-codex.md"
     },
     {
+      "id": "/quests/codex/django-merchant-guild/",
+      "title": "The Merchant Guild Chronicles: Forge an ERP Empire with Django",
+      "level": "0011",
+      "type": "epic_quest",
+      "difficulty": "⚔️ Epic",
+      "technology": "django",
+      "file": "pages/_quests/codex/django-merchant-guild.md"
+    },
+    {
       "id": "/quests/codex/glossary/",
       "title": "Codex Glossary: Fantasy Terms to IT Reality",
       "level": "0000",
@@ -2605,6 +2623,16 @@
       "source": "/quests/0010/terminal-artificer-frontend-building/",
       "target": "/quests/0001/terminal-mastery/",
       "kind": "required"
+    },
+    {
+      "source": "/quests/0011/django-merchant-guild-01-founding-charter/",
+      "target": "/quests/0010/django-and-git/",
+      "kind": "required"
+    },
+    {
+      "source": "/quests/0011/django-merchant-guild-01-founding-charter/",
+      "target": "/quests/codex/django-merchant-guild/",
+      "kind": "recommended"
     },
     {
       "source": "/quests/0011/github-pages-hidden-gem/",
@@ -4369,6 +4397,21 @@
     {
       "source": "/quests/codex/agentic-codex/",
       "target": "/quests/1100/agentic-codex-06-guardrails-and-accountability/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/django-merchant-guild/",
+      "target": "/quests/0010/django-and-git/",
+      "kind": "required"
+    },
+    {
+      "source": "/quests/codex/django-merchant-guild/",
+      "target": "/quests/0010/django-and-git/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/codex/django-merchant-guild/",
+      "target": "/quests/0011/django-merchant-guild-01-founding-charter/",
       "kind": "unlocks"
     },
     {

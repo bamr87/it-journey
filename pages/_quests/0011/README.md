@@ -39,6 +39,7 @@ Level 0011 quests focus on:
 | Advanced Git Workflows: Master Rebase, Cherry-pick, and Stash Commands | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
 | [Google Analytics for Jekyll: Complete User Tracking Integration Guide](/quests/0011/analytics-integration/) | 🟡 Medium | 45-60 minutes | main_quest | 🔮 Placeholder |
 | Custom Domains for GitHub Pages: Professional Website Setup Guide | 🟡 Medium | 30-45 minutes | main_quest | 🔮 Placeholder |
+| [The Founding Charter — Settings Hygiene, the Core App & the Guild's First Seal](/quests/0011/django-merchant-guild-01-founding-charter/) | 🟢 Easy | 45-60 minutes | main_quest | ✅ Complete |
 | [The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms](/quests/0011/github-pages-hidden-gem/) | 🟢 Easy | 60-90 minutes | main_quest | 🔮 Placeholder |
 | [Jekyll Plugins: Essential Extensions for Static Sites](/quests/0011/jekyll-plugins/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
 | [The PRD Codex: Mastering the Art of Product Reality Distillation](/quests/0011/prd-codex-mastery/) | 🟡 Medium | 45-60 minutes | main_quest | ✅ Complete |
@@ -60,6 +61,19 @@ Master the art of wielding GitHub Copilot - the AI pair programmer that transfor
 - AI-assisted debugging and refactoring
 
 **Prerequisites:** [VS Code Mastery Quest](../0000/vscode-mastery.md), Programming basics
+
+### 🏛️ Backend & Enterprise Systems
+
+#### [The Founding Charter: Merchant Guild Chronicles Ch. 01](django-merchant-guild-01-founding-charter.md)
+**Quest Type**: Main 🏰 | **Difficulty**: 🟢 Easy | **Estimated Time**: 45-60 minutes
+
+Chapter 01 of [The Merchant Guild Chronicles](/quests/codex/django-merchant-guild/), a twelve-chapter epic campaign that forges a complete Django ERP. Wire 12-factor settings, forge the `core` and `company` apps around an abstract timestamp mixin, brand the admin, raise a JSON health endpoint, and seal it with nine passing tests and a git tag.
+
+**Skills You'll Master:**
+- 12-factor settings hygiene with django-environ
+- Django app anatomy and app boundaries (infrastructure vs business data)
+- Abstract base models, migrations, and namespaced URLconfs
+- Admin branding and test-first verification with `django.test.TestCase`
 
 ### 🔍 Code Search & Discovery
 
