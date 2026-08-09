@@ -3,7 +3,7 @@ title: 'Deployment Pipelines: Production Release Automation'
 author: IT-Journey Team
 description: Build robust deployment pipelines for production releases. Learn environments, promotion, blue-green and canary deployments, approvals, and automated rollbacks.
 excerpt: Design and implement production-grade deployment pipelines with automated release strategies
-preview: images/previews/deployment-pipelines-production-release-automation.png
+preview: images/previews/deployment-pipelines-production-release-automation.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '0101'

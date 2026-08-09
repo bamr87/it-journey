@@ -3,7 +3,7 @@ title: 'Forging the Stats Portal: Data Analytics Quest'
 author: Quest Master IT-Journey Team
 description: 'Build a Jekyll stats portal that auto-generates site metrics and displays posts, words, categories, and tags with Bootstrap-powered visualizations.'
 excerpt: Master the art of Jekyll data generation and Bootstrap visualization to create a dynamic statistics portal
-preview: images/previews/forging-the-stats-portal-data-analytics-quest.png
+preview: images/previews/forging-the-stats-portal-data-analytics-quest.webp
 date: '2025-10-09T18:25:11.000Z'
 lastmod: '2025-10-08T18:10:29.000Z'
 level: '0001'

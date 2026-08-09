@@ -3,7 +3,7 @@ title: 'The GitHub Pages Portal: Forging Your Digital Realm'
 author: IT-Journey Team
 description: Master the art of deploying static websites using GitHub Pages, transforming your code into live web experiences with no server required.
 excerpt: Transform your code into a live website using GitHub Pages - the free hosting solution for developers.
-preview: images/previews/the-github-pages-portal-forging-your-digital-realm.png
+preview: images/previews/the-github-pages-portal-forging-your-digital-realm.webp
 date: '2025-11-15T16:34:42.000Z'
 lastmod: '2025-11-15T04:27:16.000Z'
 level: '0001'

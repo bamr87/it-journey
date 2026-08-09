@@ -3,7 +3,7 @@ title: 'Docker Container Fundamentals: Images to Registries'
 author: IT-Journey Team
 description: 'Master Docker container fundamentals: images versus containers, writing a Dockerfile, build and run workflows, image layers and caching, and registries.'
 excerpt: Master Docker container fundamentals including images, the Dockerfile, layers, and registries for portable application deployment
-preview: images/previews/container-fundamentals-isolation-quest-title-porta.png
+preview: images/previews/container-fundamentals-isolation-quest-title-porta.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-30T00:00:00.000Z'
 level: '0100'

@@ -2,7 +2,7 @@
 title: 'Conjure a Django Project into a GitHub Vault'
 author: Cloud Quest Guide
 description: Learn how to efficiently set up Django with Git for seamless version control and project management in your web development journey.
-preview: /images/git-django.png
+preview: /images/git-django.webp
 date: '2025-03-13T14:00:43.000Z'
 lastmod: '2025-03-12T15:24:58.000Z'
 level: '0010'

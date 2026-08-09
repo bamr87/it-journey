@@ -3,7 +3,7 @@ title: 'Jekyll Fundamentals: Build Static Sites with Ruby'
 author: IT-Journey Team
 description: 'Master Jekyll static site generation: install Ruby and Jekyll, learn the project structure and collections, then build and serve a fast, secure site.'
 excerpt: Build fast, secure static websites with Jekyll - no databases or servers required.
-preview: images/previews/jekyll-fundamentals-static-site-generation-descrip.png
+preview: images/previews/jekyll-fundamentals-static-site-generation-descrip.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-30T00:00:00.000Z'
 level: '0001'

@@ -3,7 +3,7 @@ title: 'Kaizen Quest: Continuous Improvement Alchemy'
 author: Quest Master IT-Journey Team
 description: 'Master Kaizen for software teams: run PDCA cycles, eliminate the seven wastes, map value streams, track DORA metrics, and build a blameless culture.'
 excerpt: Embark on an epic journey to master Kaizen principles and forge a culture of continuous improvement in software development
-preview: images/previews/kaizen-quest-the-path-of-continuous-improvement-in.png
+preview: images/previews/kaizen-quest-the-path-of-continuous-improvement-in.webp
 date: '2025-11-02T18:34:05.000Z'
 lastmod: '2025-11-02T22:13:30.000Z'
 level: '0001'

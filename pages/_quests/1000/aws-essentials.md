@@ -3,7 +3,7 @@ title: 'AWS Essentials: Core Services and Architecture'
 author: IT-Journey Team
 description: 'Get hands-on with the core AWS services - IAM, EC2, S3, and VPC networking - plus the AWS CLI and the Well-Architected Framework pillars.'
 excerpt: Master the foundational AWS services - IAM, EC2, S3, VPC, and the AWS CLI - and the Well-Architected pillars
-preview: images/previews/aws-essentials-core-services-quest-title-architect.png
+preview: images/previews/aws-essentials-core-services-quest-title-architect.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1000'

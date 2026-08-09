@@ -3,7 +3,7 @@ title: 'Begin Your IT Journey: Survey the Realm'
 author: IT-Journey Team
 description: 'Survey the major IT domains, from development to cloud and security, pick the specialization that fits you, and chart your first learning plan.'
 excerpt: Start your adventure with the essential skills and mindset for IT success
-preview: images/previews/begin-your-it-journey.png
+preview: images/previews/begin-your-it-journey.webp
 date: '2023-11-25T14:12:43.000Z'
 lastmod: '2025-11-29T21:40:00.000Z'
 level: '0000'

@@ -3,7 +3,7 @@ title: 'Docker Containerization Mastery: Level 0101 (5) Quest'
 author: Quest Master IT-Journey Team
 description: Master Docker containerization to build, deploy, and manage applications in isolated, portable environments with practical hands-on projects
 excerpt: Learn to containerize applications and manage Docker environments for consistent, scalable deployments
-preview: images/previews/docker-containerization-mastery-level-0101-5-quest.png
+preview: images/previews/docker-containerization-mastery-level-0101-5-quest.webp
 date: '2025-09-28T14:23:01.000Z'
 lastmod: '2025-09-28T18:49:08.000Z'
 level: '0101'

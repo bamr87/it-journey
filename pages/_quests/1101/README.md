@@ -2,7 +2,7 @@
 title: 'Level 1101: Machine Learning & AI'
 author: IT-Journey Team
 description: 'Master machine learning, neural networks, deep learning, NLP, and computer vision, then deploy models to production with MLOps and ethical AI.'
-preview: images/previews/level-1101-machine-learning-ai.png
+preview: images/previews/level-1101-machine-learning-ai.webp
 permalink: /quests/1101/
 layout: quest-collection
 local_graph: false

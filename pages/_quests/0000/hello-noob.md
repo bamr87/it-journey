@@ -3,7 +3,7 @@ title: 'Hello n00b: Your First Steps into the IT Journey'
 author: IT-Journey Team
 description: 'Begin your IT adventure: create a GitHub account, fork the IT-Journey repository, and confidently navigate GitHub as an absolute beginner.'
 excerpt: Begin your epic adventure in the world of IT with your very first quest - setting up GitHub and joining the community
-preview: images/previews/hello-n00b-your-first-steps-into-the-it-journey.png
+preview: images/previews/hello-n00b-your-first-steps-into-the-it-journey.webp
 date: '2022-06-05T13:48:57.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
 level: '0000'
@@ -217,7 +217,7 @@ You'll see two options:
 - Click **[Sign up](https://github.com/signup)**
 - Continue with the account creation process below
 
-![GitHub Login Interface](/assets/images/github-login.png)
+![GitHub Login Interface](/assets/images/github-login.webp)
 
 ### ⚔️ Step 3: Create Your Account (New Users Only)
 
@@ -256,7 +256,7 @@ Or manually navigate:
 
 ### 🍴 Step 2: Create Your Fork
 
-![Fork Button Screenshot](/assets/images/github-fork-it-journey.png)
+![Fork Button Screenshot](/assets/images/github-fork-it-journey.webp)
 
 1. Click the **"Fork"** button
 2. Choose where to create the fork (usually your own account)

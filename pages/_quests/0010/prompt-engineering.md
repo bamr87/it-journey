@@ -3,7 +3,7 @@ title: 'Forging the Prompt Crystal: Master AI Communication'
 author: Quest Master IT-Journey Team
 description: Master prompt engineering to craft optimal AI instructions. Learn systematic design, iterative refinement, and structured patterns for language models.
 excerpt: Transform from novice prompter to master prompt engineer, wielding the power to communicate with AI systems through precisely crafted instructions
-preview: images/previews/forging-the-prompt-crystal-master-ai-communication.png
+preview: images/previews/forging-the-prompt-crystal-master-ai-communication.webp
 date: '2025-11-02T18:34:05.000Z'
 lastmod: '2025-11-03T01:10:01.000Z'
 level: '0010'

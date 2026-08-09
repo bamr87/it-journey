@@ -3,7 +3,7 @@ title: 'SEO Optimization: Meta Tags, Sitemaps & Structured Data'
 author: IT-Journey Team
 description: 'Master technical SEO for Jekyll: write meta tags, generate sitemaps and robots.txt, add JSON-LD structured data, and automate it all with jekyll-seo-tag.'
 excerpt: Make your Jekyll site discoverable with meta tags, sitemaps, structured data, and jekyll-seo-tag.
-preview: images/previews/seo-optimization-search-engine-visibility-descript.png
+preview: images/previews/seo-optimization-search-engine-visibility-descript.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-30T00:00:00.000Z'
 level: '0001'

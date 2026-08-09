@@ -3,7 +3,7 @@ title: 'AI Feature Pipeline Architect: DevSecOps Mastery Quest'
 author: Quest Master AI-Pipeline Team
 description: Master the art of building AI-orchestrated feature pipelines from user request to deployment, combining DevSecOps practices with intelligent automation
 excerpt: Transform feature requests into deployed applications using AI-assisted DevSecOps pipelines with dual-format artifacts for both humans and AI agents
-preview: images/previews/ai-feature-pipeline-architect-devsecops-mastery-qu.png
+preview: images/previews/ai-feature-pipeline-architect-devsecops-mastery-qu.webp
 date: '2022-02-27T12:00:00.000Z'
 lastmod: '2026-06-22T12:00:00.000Z'
 level: '1011'

@@ -3,7 +3,7 @@ title: 'Hidden Gem Quest: Publish AI Chats on GitHub Pages'
 author: IT-Journey Team
 description: 'Wield GitHub Pages and Jekyll to forge repositories into live websites, then capture and immortalize AI conversations as published posts with VS Code.'
 excerpt: Transform your GitHub repositories into powerful websites and learn to preserve AI conversations forever
-preview: images/previews/the-epic-quest-for-the-hidden-gem-unleashing-githu.png
+preview: images/previews/the-epic-quest-for-the-hidden-gem-unleashing-githu.webp
 date: '2025-11-15T16:34:42.000Z'
 lastmod: '2025-11-15T03:52:35.000Z'
 level: '0011'

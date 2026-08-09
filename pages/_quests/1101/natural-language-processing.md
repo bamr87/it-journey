@@ -3,7 +3,7 @@ title: 'Natural Language Processing: Transformers & LLMs'
 author: IT-Journey Team
 description: 'Build NLP apps in Python with Hugging Face: master tokenization, embeddings, and the attention mechanism behind modern large language models.'
 excerpt: Build NLP applications with tokenization, embeddings, transformers, and large language models
-preview: images/previews/natural-language-processing-descriptive-subtitle.png
+preview: images/previews/natural-language-processing-descriptive-subtitle.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1101'

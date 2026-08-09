@@ -3,7 +3,7 @@ title: 'Artifact Management: Versioned, Signed Build Output'
 author: IT-Journey Team
 description: Manage build artifacts in CI/CD. Learn registries, semantic versioning, immutable tags, and supply-chain provenance with SBOMs and signed builds.
 excerpt: Learn to manage build artifacts and dependencies efficiently in your CI/CD pipelines
-preview: images/previews/artifact-management-build-output-quest-title-depen.png
+preview: images/previews/artifact-management-build-output-quest-title-depen.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '0101'

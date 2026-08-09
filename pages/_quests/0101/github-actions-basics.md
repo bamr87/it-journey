@@ -3,7 +3,7 @@ title: 'GitHub Actions Basics: Workflow Automation for Modern DevOps'
 author: IT-Journey Team
 description: 'Build GitHub Actions workflows from scratch: master jobs, steps, triggers, runners, secrets, and matrix builds to automate your testing and deployment.'
 excerpt: Master GitHub Actions workflow creation for automating your software development lifecycle
-preview: images/previews/github-actions-basics-workflow-automation-descript.png
+preview: images/previews/github-actions-basics-workflow-automation-descript.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '0101'

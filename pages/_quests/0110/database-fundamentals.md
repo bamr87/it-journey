@@ -3,7 +3,7 @@ title: 'Database Fundamentals: The Relational Model and ACID'
 author: IT-Journey Team
 description: 'Master the relational model behind modern databases - tables, keys, ACID transactions, and normalization - then prove it with hands-on PostgreSQL SQL.'
 excerpt: Learn how relational databases store and protect data through tables, keys, ACID transactions, and normalization.
-preview: images/previews/database-fundamentals-data-storage-quest-title-ret.png
+preview: images/previews/database-fundamentals-data-storage-quest-title-ret.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '0110'

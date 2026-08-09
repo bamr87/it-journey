@@ -3,7 +3,7 @@ title: 'Kubernetes Services and Networking: Ingress and DNS'
 author: IT-Journey Team
 description: 'Master Kubernetes networking with Services, Ingress, and cluster DNS, choosing between ClusterIP, NodePort, and LoadBalancer to expose workloads.'
 excerpt: Configure Kubernetes networking with Services, Ingress, and DNS for scalable applications
-preview: images/previews/kubernetes-services-quest-title-networking-ingress.png
+preview: images/previews/kubernetes-services-quest-title-networking-ingress.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1001'

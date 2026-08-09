@@ -3,7 +3,7 @@ title: 'Nerd Font Enchantment: Terminal Icon Mastery'
 author: IT-Journey Team
 description: 'Install Nerd Fonts on macOS, Linux, and Windows, then configure your terminal and VS Code so icons, glyphs, and Oh-My-Zsh themes render correctly.'
 excerpt: Install Nerd Fonts on macOS, Linux, and Windows to transform your terminal with beautiful icons, symbols, and glyphs. Complete guide with Oh-My-Zsh and VS Code integration.
-preview: images/previews/nerd-font-enchantment-terminal-icon-mastery.png
+preview: images/previews/nerd-font-enchantment-terminal-icon-mastery.webp
 date: '2025-09-03T22:19:06.000Z'
 lastmod: '2025-12-19T00:00:00.000Z'
 level: '0010'
