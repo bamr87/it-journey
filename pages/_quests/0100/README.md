@@ -1,7 +1,7 @@
 ---
 title: Level 0100 - Frontend Development & Docker
 description: 'Containerize frontend workflows with Docker: build images, run reproducible dev environments, and ship Jekyll and Bootstrap sites with confidence.'
-preview: images/previews/level-0100-frontend-development-docker.png
+preview: images/previews/level-0100-frontend-development-docker.webp
 permalink: /quests/0100/
 layout: quest-collection
 local_graph: false

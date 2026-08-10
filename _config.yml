@@ -54,15 +54,15 @@ subtitle_url             : "localhost"
 subtitle_icon            : ""
 title_separator          : "|" # Appears in the web browser tab name
 domain                   : &domain "it-journey"
-domain_ext               : ".dev"
+domain_ext               : &domain_ext ".dev"
 sub_domain               : &sub_domain ""
-baseurl                  : "" # the subpath of your site, e.g. /blog - Use this if you want this whole repo to be a domain branch
+baseurl                  : &baseurl "" # the subpath of your site, e.g. /blog - Use this if you want this whole repo to be a domain branch
 url_dev                  : ['https://', *sub_domain, '.', *domain, *domain_ext ]
 url                      : &url 'https://it-journey.dev' # the base hostname & protocol for your site, e.g. http://example.com
 public_folder            : "assets"
 port                     : 4002 # Jekyll Serve Dev port
 dg_port                  : 4001 # TODO: Doppelganger site. Use this if you want to switch between parallel deployments
-og_image                 : '/assets/images/wizard-on-journey.png'
+og_image                 : '/assets/images/wizard-on-journey.webp'
 
 ### Owner Information -------------------------------------------------------------
 
@@ -85,17 +85,17 @@ maintainers:
 locale                   : "en-US"
 home_dir                 : &home '/Users/bamr87/'
 local_git                : [ *home, 'github' ]
-logo                     : /assets/images/gravatar-small.png  # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+logo                     : /assets/images/gravatar-small.webp  # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 logo_link                : [ *url, *baseurl ] # URL to link the logo to, e.g. "/"
 
-teaser                   : /assets/images/favicon_gpt_computer_retro.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-info_banner              : /assets/images/info-banner-mountain-wizard.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+teaser                   : /assets/images/favicon_gpt_computer_retro.webp # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+info_banner              : /assets/images/info-banner-mountain-wizard.webp # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 
 # Favicon / browser identity — rendered by the theme's core/favicon.html
 # (explicit tags replace the browser's implicit /favicon.ico probe).
 favicon:
   ico                    : /favicon.ico
-  apple_touch            : /assets/images/favicon_gpt_computer_retro.png
+  apple_touch            : /assets/images/favicon_gpt_computer_retro.webp
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 _posts_file_structure    : "year-month-day-title.md"
@@ -104,8 +104,8 @@ _posts_file_structure    : "year-month-day-title.md"
 
 author:
   name                   : *name # *name is a YAML reference pointing to the &anchor earlier
-  avatar                 : "/assets/images/gravatar-small.png"
-  email_hash             : '71d7a4fc9712df49e13d606e620f89c7' # https://en.gravatar.com/site/check/{ site.email }
+  avatar                 : "/assets/images/gravatar-small.webp"
+  email_hash             : &email_hash '71d7a4fc9712df49e13d606e620f89c7' # https://en.gravatar.com/site/check/{ site.email }
   gravatar               : [ 'https://s.gravatar.com/avatar/', *email_hash, '?s=80' ]
   bio                    : "IT nerd trying to be an IT hero"
   location               : "Denver, CO"
@@ -293,7 +293,7 @@ kramdown: # https://kramdown.gettalong.org/options.html
   # Permalinks: https://jekyllrb.com/docs/permalinks/
 
 collections_dir: &collections_dir pages
-local_repo_path: [ *collections_dir, '/', *local_repo ]
+local_repo_path: [ *collections_dir, '/', *github_repository ]
 
 collections:
   pages:
@@ -581,8 +581,12 @@ preview_images:
   style_modifiers: "pixelated, retro gaming style, CRT screen glow effect, limited color palette"
   output_dir: assets/images/previews     # Where to save generated images
   auto_generate: false                   # Generate during build (slow, use script instead)
-  collections:                           # Collections to scan for missing previews
-    - posts
-    - docs
-    - quickstart
+  collections_dir: pages                 # Collections live under pages/_<name>
+  collections:                           # Collections to scan for missing previews.
+                                         # `posts` was dropped here: _posts moved to
+                                         # lifehacker.dev, so every run scanned a
+                                         # non-existent dir. Kept as an explicit list —
+                                         # _plugins/preview_image_generator.rb iterates it.
     - quests
+    - notes
+    - about

@@ -1,7 +1,7 @@
 ---
 title: 'Linux Fundamentals: Enter the Penguin''s Domain'
 description: 'Navigate the Linux file system, write Bash scripts, master rwx permissions, and use SSH, cron, and networking tools in the Penguin''s Domain.'
-preview: /images/previews/linux-fundamentals.png
+preview: /images/previews/linux-fundamentals.webp
 author: bamr87
 permalink: /quests/0000/linux-fundamentals/
 level: '0000'

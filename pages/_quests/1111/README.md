@@ -2,7 +2,7 @@
 title: 'Level 1111: Leadership & Innovation'
 author: IT-Journey Team
 description: 'Master technical leadership, open source contribution, mentorship, speaking, innovation, and community building to shape the future of technology'
-preview: images/previews/level-1111-leadership-innovation.png
+preview: images/previews/level-1111-leadership-innovation.webp
 permalink: /quests/1111/
 layout: quest-collection
 local_graph: false

@@ -3,7 +3,7 @@ title: 'VS Code Mastery: Forge Your Ultimate Dev Weapon'
 author: IT-Journey Team
 description: Master Visual Studio Code setup and configuration to create the ultimate development environment for any programming domain
 excerpt: Learn to configure VS Code as your primary development weapon, mastering extensions, shortcuts, and specialized setups for maximum productivity
-preview: images/previews/vs-code-mastery-quest-forge-your-ultimate-developm.png
+preview: images/previews/vs-code-mastery-quest-forge-your-ultimate-developm.webp
 date: '2025-07-21T23:30:21.000Z'
 lastmod: '2026-06-30T00:00:00.000Z'
 level: '0000'

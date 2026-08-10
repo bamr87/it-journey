@@ -71,7 +71,7 @@ Let's consider <math><mi>a</mi><mo>≠</mo><mn>0</mn></math>.
 </body>
 </html>
 ```
-![image](/assets/images/jekyll/8126/mathml.png){:width="600px"}
+![image](/assets/images/jekyll/8126/mathml.webp){:width="600px"}
 
 ## 3. Using MathJax in Jekyll with Markdown
 ### 3.1 Page Template

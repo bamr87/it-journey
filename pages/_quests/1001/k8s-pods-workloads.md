@@ -3,7 +3,7 @@ title: 'Kubernetes Pods and Workloads: Deployments and StatefulSets'
 author: IT-Journey Team
 description: 'Master Kubernetes workloads: run Pods via ReplicaSets and Deployments, scale and roll out updates, roll back, and choose StatefulSets or DaemonSets.'
 excerpt: Deploy and manage resilient Kubernetes workloads with Deployments, StatefulSets, and DaemonSets
-preview: images/previews/kubernetes-pods-quest-title-workloads-deployments-.png
+preview: images/previews/kubernetes-pods-quest-title-workloads-deployments-.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1001'

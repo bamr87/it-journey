@@ -3,7 +3,7 @@ title: 'JavaScript Fundamentals: Variables, Functions & the DOM'
 author: IT-Journey Team
 description: 'Learn JavaScript from zero: variables and types, functions, arrays and objects, DOM manipulation, events, and fetch to make web pages interactive.'
 excerpt: Make web pages come alive with JavaScript - variables, functions, the DOM, events, and fetch.
-preview: images/previews/javascript-fundamentals-interactive-web-elements-d.png
+preview: images/previews/javascript-fundamentals-interactive-web-elements-d.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '0001'

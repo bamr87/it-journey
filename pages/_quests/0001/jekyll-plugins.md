@@ -3,7 +3,7 @@ title: 'Jekyll Plugins: Extend Your Static Site Safely'
 author: IT-Journey Team
 description: 'Add Jekyll plugins safely: discover GitHub-Pages safe gems, configure SEO and sitemap extensions, then write your own custom generator or filter.'
 excerpt: Extend Jekyll with plugins - GitHub Pages safe gems, common extensions, and your own generator.
-preview: images/previews/jekyll-plugins-extending-site-functionality-descri.png
+preview: images/previews/jekyll-plugins-extending-site-functionality-descri.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '0001'

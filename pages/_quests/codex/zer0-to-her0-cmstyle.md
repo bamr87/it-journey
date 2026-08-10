@@ -2,7 +2,7 @@
 title: 'Epic Quest: Zer0-to-Her0 CMStyle'
 description: Discover how one nerd transformed from zero to hero by building an AI-powered open source CMS using VS Code and Jekyll. Join the epic journey!
 excerpt: Build your first AI-powered open-source CMS — VS Code, Git, Jekyll, GitHub Pages, and the automations that do the heavy lifting — in three acts.
-preview: images/previews/epic-quest-zer0-to-her0-cmstyle.png
+preview: images/previews/epic-quest-zer0-to-her0-cmstyle.webp
 date: '2025-08-24T18:46:40.000Z'
 lastmod: '2026-07-01T00:00:00.000Z'
 level: '0010'

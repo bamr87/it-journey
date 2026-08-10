@@ -3,7 +3,7 @@ title: 'Data Quality Engineering: Validation & Monitoring'
 author: IT-Journey Team
 description: 'Build data quality into your pipelines: master the six quality dimensions, profiling, validation suites, data contracts, anomaly detection, and lineage.'
 excerpt: Guard your pipelines with profiling, validation, data contracts, expectation suites, and lineage
-preview: images/previews/data-quality-engineering-descriptive-subtitle.png
+preview: images/previews/data-quality-engineering-descriptive-subtitle.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1100'

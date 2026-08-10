@@ -2,7 +2,7 @@
 title: iTerm Tips and Tricks
 description: Unlock your productivity with essential iTerm2 tips for customizing keybindings and navigating text efficiently in the terminal.
 date: '2025-02-05T14:08:47.000Z'
-preview: /assets/images/iTerm-shortcuts-2.png
+preview: /assets/images/iTerm-shortcuts-2.webp
 tags:
 - customization
 - iTerm2
@@ -126,7 +126,7 @@ By customizing iTerm2, you'll:
 
 - **Optimize Tools**: Apply similar techniques in other terminal emulators or software environments.
 
-![iterm](/assets/images/iTerm-shortcuts-2.png)
+![iterm](/assets/images/iTerm-shortcuts-2.webp)
 
 **Conclusion**
 

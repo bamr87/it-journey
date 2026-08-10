@@ -3,7 +3,7 @@ title: 'Analytics Integration: Privacy-Aware Web Measurement'
 author: IT-Journey Team
 description: 'Add privacy-aware analytics to your site: compare GA4 and lightweight alternatives, track custom events, respect consent, and read dashboards.'
 excerpt: Measure your site responsibly - GA4 vs privacy-first alternatives, custom events, and dashboards.
-preview: images/previews/analytics-integration-tracking-user-engagement-des.png
+preview: images/previews/analytics-integration-tracking-user-engagement-des.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '0001'

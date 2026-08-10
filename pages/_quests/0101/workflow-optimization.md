@@ -3,7 +3,7 @@ title: 'Workflow Optimization: Caching and Parallel CI/CD'
 author: IT-Journey Team
 description: Make CI/CD pipelines fast and cheap. Learn dependency caching, parallelism, matrix builds, concurrency control, and reusable workflows.
 excerpt: Speed up your CI/CD pipelines with caching strategies and parallel execution techniques
-preview: images/previews/workflow-optimization-caching-quest-title-parallel.png
+preview: images/previews/workflow-optimization-caching-quest-title-parallel.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '0101'

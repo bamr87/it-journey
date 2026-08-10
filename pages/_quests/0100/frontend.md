@@ -3,7 +3,7 @@ title: 'Frontend Forests: Building a Jekyll Site with Bootstrap'
 author: GPT and bamr87
 description: 'Venture into the Frontend Forests to build a Jekyll site, weave in Bootstrap for styling and scripts, then preview and deploy your enchanted creation.'
 excerpt: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript in the Frontend Forests
-preview: /images/frontend-forests.png
+preview: /images/frontend-forests.webp
 date: '2024-03-12T19:51:39.000Z'
 lastmod: '2024-05-28T04:03:05.000Z'
 level: '0100'

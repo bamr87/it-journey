@@ -1,7 +1,7 @@
 ---
 title: Level 1011 - Feature Development
 description: 'Develop complex features from concept to completion with structured planning, GitHub Issues, branch workflows, and pull request documentation.'
-preview: images/previews/level-1011-feature-development.png
+preview: images/previews/level-1011-feature-development.webp
 permalink: /quests/1011/
 layout: quest-collection
 local_graph: false

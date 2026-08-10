@@ -1,7 +1,7 @@
 ---
 title: Level 001 - Journeyman Challenges
 description: 'Journeyman-tier quests covering web fundamentals, GitHub Pages and Jekyll deployment, Liquid and YAML, Git workflows, and Python and JavaScript scripting.'
-preview: images/previews/level-001-journeyman-challenges.png
+preview: images/previews/level-001-journeyman-challenges.webp
 permalink: /quests/0001/
 layout: quest-collection
 local_graph: false

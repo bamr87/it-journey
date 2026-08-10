@@ -1,7 +1,7 @@
 ---
 title: Level 0101 - Advanced Docker & DevOps
 description: 'Push beyond Docker basics with advanced containerization, CI/CD pipelines, GitHub Actions, LaTeX CV automation, and production-ready DevOps workflows.'
-preview: images/previews/level-0101-advanced-docker-devops.png
+preview: images/previews/level-0101-advanced-docker-devops.webp
 permalink: /quests/0101/
 layout: quest-collection
 local_graph: false

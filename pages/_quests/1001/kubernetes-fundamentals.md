@@ -3,7 +3,7 @@ title: 'Kubernetes Fundamentals: Container Orchestration Essentials'
 author: IT-Journey Team
 description: 'Master Kubernetes basics: cluster architecture, the control plane and worker nodes, kubectl, and the declarative object model that orchestrates containers.'
 excerpt: Learn Kubernetes fundamentals - cluster architecture, the control plane, kubectl, and the declarative object model
-preview: images/previews/kubernetes-fundamentals-container-orchestration-de.png
+preview: images/previews/kubernetes-fundamentals-container-orchestration-de.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1001'

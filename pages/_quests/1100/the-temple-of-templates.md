@@ -3,7 +3,7 @@ title: 'The Temple of Templates: Reusable Abstractions'
 author: Quest Master
 description: 'Enter a fantasy quest mastering software templates across C++, Jinja, and React—abstraction, type-safety, inheritance, and composition for reuse.'
 excerpt: Master the sacred art of templates to build elegant, reusable systems across languages.
-preview: images/previews/the-temple-of-templates-binary-abstractions-and-re.png
+preview: images/previews/the-temple-of-templates-binary-abstractions-and-re.webp
 date: '2025-08-24T18:46:40.000Z'
 lastmod: '2025-08-25T00:43:51.000Z'
 level: '1100'

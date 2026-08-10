@@ -20,7 +20,7 @@ tags:
 - index
 - gamified-learning
 description: Your comprehensive guide to IT mastery through gamified learning adventures. Choose your path, level up your skills, and become an IT wizard.
-preview: /images/previews/quests-index.png
+preview: /images/previews/quests-index.webp
 permalink: /quests/
 lastmod: '2026-05-20T20:57:50.000Z'
 draft: false

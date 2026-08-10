@@ -3,7 +3,7 @@ title: 'Environment Management: Dev, Staging, and Prod Parity'
 author: IT-Journey Team
 description: Manage multiple deployment environments. Achieve dev/staging/prod parity, configure per-environment settings, and promote infrastructure changes safely.
 excerpt: Master multi-environment configuration and management for reliable software delivery
-preview: images/previews/environment-management-dev-staging-quest-title-pro.png
+preview: images/previews/environment-management-dev-staging-quest-title-pro.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '0101'

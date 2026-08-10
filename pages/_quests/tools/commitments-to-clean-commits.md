@@ -2,7 +2,7 @@
 title: 'Commit Hygiene: Crafting Clean, Atomic Commits'
 author: IT-Journey Team
 description: 'Master commit hygiene the wizardly way: write atomic commits, craft clear conventional messages, dodge cursed habits, and tidy history with rebase.'
-preview: images/previews/commitments-to-clean-commits.png
+preview: images/previews/commitments-to-clean-commits.webp
 date: '2025-04-18T13:43:43.000Z'
 lastmod: '2025-04-18T19:27:42.000Z'
 level: '0010'

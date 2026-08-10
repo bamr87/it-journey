@@ -3,7 +3,7 @@ title: 'Cloud Computing Fundamentals: IaaS, PaaS, and SaaS Explained'
 author: IT-Journey Team
 description: 'Learn the IaaS, PaaS, and SaaS service models, regions and availability zones, the shared responsibility model, and the core services every cloud offers.'
 excerpt: Understand cloud service models, regions and availability zones, shared responsibility, and the core building blocks of every cloud provider
-preview: images/previews/cloud-computing-fundamentals-iaas-paas-quest-title.png
+preview: images/previews/cloud-computing-fundamentals-iaas-paas-quest-title.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1000'

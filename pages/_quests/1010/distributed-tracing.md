@@ -3,7 +3,7 @@ title: 'Distributed Tracing with Jaeger & OpenTelemetry'
 author: IT-Journey Team
 description: 'Instrument a Python service with OpenTelemetry, emit spans to Jaeger, propagate trace context, and debug latency across your microservices.'
 excerpt: Follow a single request across services with spans, traces, OpenTelemetry, and Jaeger
-preview: images/previews/distributed-tracing-jaeger-quest-title-opentelemet.png
+preview: images/previews/distributed-tracing-jaeger-quest-title-opentelemet.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1010'

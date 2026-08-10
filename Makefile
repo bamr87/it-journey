@@ -391,6 +391,18 @@ content-normalize-apply:
 	@python3 scripts/content/normalize-frontmatter.py pages/ --apply --quiet \
 		--report TODO/seo/data/normalize-apply.json
 
+# Raster image compression (WebP). Both preview-image generators emit PNG, which
+# for AI artwork runs ~2 MB a banner; run this after a generation run to
+# re-encode and repoint the references. Idempotent — already-WebP files and any
+# image that would grow are left alone.
+compress-images:
+	@echo "🖼️  Dry-run image compression ..."
+	@python3 scripts/generation/compress_images.py --dry-run
+
+compress-images-apply:
+	@echo "🖼️  Compressing images to WebP ..."
+	@python3 scripts/generation/compress_images.py
+
 # One-paragraph-per-line prose normalization (the "oneline" house rule).
 # Single local + CI entry point for tools/unwrap-prose.py, the Liquid-safe
 # surgical unwrapper. The EXCLUDES here MUST stay in lockstep with the check in
