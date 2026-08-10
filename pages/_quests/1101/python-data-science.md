@@ -3,7 +3,7 @@ title: 'Python for Data Science: NumPy, Pandas & Matplotlib'
 author: IT-Journey Team
 description: 'Forge the Data Artisan''s Toolkit: master NumPy vectorization, Pandas DataFrames, exploratory analysis, and Matplotlib charts, then train a scikit-learn model.'
 excerpt: Master NumPy, Pandas, Matplotlib, and EDA for Python data science workflows
-preview: images/previews/python-for-data-science-descriptive-subtitle.png
+preview: images/previews/python-for-data-science-descriptive-subtitle.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1101'

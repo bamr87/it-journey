@@ -3,7 +3,7 @@ title: 'IT Fundamentals: Your Digital Awakening Quest'
 author: IT-Journey Team
 description: 'Build core IT skills hands-on: file management, operating systems, networking basics, scripting, cloud, containers, and Git version control.'
 excerpt: Learn the core principles of IT infrastructure, networking, and computing
-preview: images/previews/it-fundamentals.png
+preview: images/previews/it-fundamentals.webp
 date: '2023-11-25T14:12:43.000Z'
 lastmod: '2025-11-29T21:40:00.000Z'
 level: '0000'

@@ -3,7 +3,7 @@ title: 'Neural Networks Deep Dive: Build One From Scratch'
 author: IT-Journey Team
 description: 'Build a neural network from scratch, then in PyTorch, mastering neurons, layers, activations, forward propagation, backpropagation, and gradient descent.'
 excerpt: Build a neural network from first principles, then in PyTorch, and understand backpropagation
-preview: images/previews/neural-networks-deep-dive-descriptive-subtitle.png
+preview: images/previews/neural-networks-deep-dive-descriptive-subtitle.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1101'

@@ -3,7 +3,7 @@ title: 'Data Warehousing: Build a Dimensional Star Schema in SQL'
 author: IT-Journey Team
 description: 'Build the Analytical Citadel: model OLTP vs OLAP, design star and snowflake schemas, implement slowly changing dimensions, and explore columnar storage.'
 excerpt: Design data warehouses with dimensional modeling, star schemas, slowly changing dimensions, and columnar storage
-preview: images/previews/data-warehousing-descriptive-subtitle.png
+preview: images/previews/data-warehousing-descriptive-subtitle.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1100'

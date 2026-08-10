@@ -3,7 +3,7 @@ title: 'Recursive Realms: Testing Infinite Loops with AI'
 author: Quest Master IT-Journey Team
 description: 'Master Python recursion, base cases, and call stacks while building pytest suites, preventing stack overflows, and applying recursive thinking to AI design.'
 excerpt: Learn recursive problem-solving patterns and comprehensive unit testing
-preview: images/previews/recursive-realms-testing-infinite-loops-with-ai.png
+preview: images/previews/recursive-realms-testing-infinite-loops-with-ai.webp
 date: '2025-10-08T19:11:31.000Z'
 lastmod: '2025-10-09T00:09:00.000Z'
 level: '0010'

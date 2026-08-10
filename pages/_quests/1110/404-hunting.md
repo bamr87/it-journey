@@ -3,7 +3,7 @@ title: '404 Hunting: Binary Wards for Unbreakable Links'
 author: Quest Master IT-Journey
 description: Banish 404s in Jekyll with permalink magic, redirect runes, CI link guardians, and living resource endpoints powered by GitHub.
 excerpt: Hunt the 404 Specter with Jekyll permalink magic, redirect runes, CI hyperlink guardians, and organic resource endpoints.
-preview: images/previews/404-hunting-binary-wards-for-unbreakable-links.png
+preview: images/previews/404-hunting-binary-wards-for-unbreakable-links.webp
 date: '2025-08-31T18:32:58.000Z'
 lastmod: '2025-08-31T23:16:16.000Z'
 level: '1110'
@@ -381,7 +381,7 @@ Objective: Use guardian logs to create a minimal viable resource (MVR) or redire
 
 ## 📚 Quest Resource Codex
 
-- Companion Article: <https://lifehacker.dev>
+- Companion Article: [Kill dead links in Jekyll: stable permalinks, redirect_from, and a CI link checker](https://lifehacker.dev/hacks/kill-dead-links-jekyll-permalinks/)
 - Jekyll Permalinks: <https://jekyllrb.com/docs/permalinks/>
 - Jekyll-redirect-from: <https://github.com/jekyll/jekyll-redirect-from>
 - Jekyll-sitemap: <https://github.com/jekyll/jekyll-sitemap>

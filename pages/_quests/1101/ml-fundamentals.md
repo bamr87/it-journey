@@ -3,7 +3,7 @@ title: 'Machine Learning Fundamentals with Scikit-Learn'
 author: IT-Journey Team
 description: 'Master supervised and unsupervised learning in Python: split data correctly, fight overfitting, and evaluate scikit-learn models with honest metrics.'
 excerpt: 'Master ML fundamentals with scikit-learn: classification, regression, clustering, and honest model evaluation'
-preview: images/previews/machine-learning-fundamentals-descriptive-subtitle.png
+preview: images/previews/machine-learning-fundamentals-descriptive-subtitle.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1101'

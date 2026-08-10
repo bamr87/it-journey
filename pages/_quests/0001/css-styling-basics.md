@@ -3,7 +3,7 @@ title: 'CSS Styling Basics: Selectors, the Box Model & Layout'
 author: IT-Journey Team
 description: 'Master CSS fundamentals: selectors, the box model, flexbox and grid, responsive media queries, and custom properties through hands-on examples.'
 excerpt: Style and lay out web pages with CSS selectors, the box model, flexbox, grid, and variables.
-preview: images/previews/css-styling-basics-visual-design-fundamentals-desc.png
+preview: images/previews/css-styling-basics-visual-design-fundamentals-desc.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '0001'

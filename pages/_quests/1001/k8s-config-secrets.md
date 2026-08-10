@@ -3,7 +3,7 @@ title: 'Kubernetes ConfigMaps and Secrets: The Vault'
 author: IT-Journey Team
 description: 'Manage Kubernetes config with ConfigMaps and Secrets: inject settings via env vars and volume mounts, and guard credentials beyond base64.'
 excerpt: Manage Kubernetes configuration securely with ConfigMaps, Secrets, env vars, and volumes
-preview: images/previews/kubernetes-configmaps-quest-title-secrets-configur.png
+preview: images/previews/kubernetes-configmaps-quest-title-secrets-configur.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1001'

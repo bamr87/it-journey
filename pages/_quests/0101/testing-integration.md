@@ -3,7 +3,7 @@ title: 'Testing Integration: Tiered CI/CD Test Gates'
 author: IT-Journey Team
 description: Integrate automated testing into your CI/CD pipeline. Learn unit, integration, and end-to-end test stages, coverage gating, and taming flaky tests.
 excerpt: Implement comprehensive automated testing strategies in your CI/CD workflows
-preview: images/previews/testing-integration-automated-quality-assurance-de.png
+preview: images/previews/testing-integration-automated-quality-assurance-de.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '0101'

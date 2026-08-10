@@ -3,7 +3,7 @@ title: 'Docker Compose Orchestration: Multi-Container Apps'
 author: IT-Journey Team
 description: 'Master Docker Compose to orchestrate multi-container apps. Define services, networks, volumes, depends_on, and environment variables in one YAML file.'
 excerpt: Build and orchestrate multi-container applications with Docker Compose - services, networks, volumes, and environment configuration
-preview: images/previews/docker-compose-orchestration-multi-container-apps-.png
+preview: images/previews/docker-compose-orchestration-multi-container-apps-.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '0100'

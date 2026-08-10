@@ -3,7 +3,7 @@ title: 'Deep Learning Frameworks: PyTorch vs TensorFlow'
 author: IT-Journey Team
 description: 'Compare PyTorch and TensorFlow hands-on: master tensors, autograd, model building, the training loop, and GPU acceleration for production deep learning.'
 excerpt: Master PyTorch and TensorFlow for production deep learning with GPU acceleration
-preview: images/previews/deep-learning-frameworks-descriptive-subtitle.png
+preview: images/previews/deep-learning-frameworks-descriptive-subtitle.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1101'

@@ -3,7 +3,7 @@ title: 'Terminal Artificer: Forging the Glass Interface'
 author: Quest Master Copilot
 description: Master the art of crafting beautiful, interactive frontends for your shell scripts using Gum, transforming raw command-line magic into elegant tools.
 excerpt: Transform your raw shell scripts into interactive, user-friendly tools with menus, inputs, and beautiful styling.
-preview: images/previews/terminal-artificer-forging-the-glass-interface.png
+preview: images/previews/terminal-artificer-forging-the-glass-interface.webp
 date: '2025-11-19T22:47:27.000Z'
 lastmod: '2025-11-29T01:07:17.000Z'
 level: '0010'
@@ -88,7 +88,7 @@ mermaid: true
 
 *Today, you will learn to craft these interfaces using **Gum**, a mystical artifact from the Charm realm that brings glamour and interactivity to your shell scripts.*
 
-![Quest Preview: Terminal Artificer: Forging the Glass Interface](/assets/images/previews/terminal-artificer-forging-the-glass-interface.png)
+![Quest Preview: Terminal Artificer: Forging the Glass Interface](/assets/images/previews/terminal-artificer-forging-the-glass-interface.webp)
 
 ### 🌟 The Legend Behind This Quest
 For decades, wizards of the terminal have relied on `read` and arcane flags to gather intelligence from users. But the modern era demands more. We crave the tactile feedback of a menu, the safety of a confirmation dialog, and the clarity of a well-formatted prompt. Gum is the modern artificer's hammer, allowing you to build beautiful, composable CLIs with simple shell commands.

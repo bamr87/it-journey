@@ -291,6 +291,8 @@ GEM
     unicode-display_width (1.8.0)
     uri (1.1.1)
     webrick (1.9.2)
+    zer0-image-generator (0.6.0)
+      jekyll (>= 3.9, < 5.0)
 
 PLATFORMS
   aarch64-linux
@@ -306,6 +308,7 @@ DEPENDENCIES
   jekyll-include-cache
   posthog-ruby
   webrick
+  zer0-image-generator
 
 BUNDLED WITH
    2.3.25

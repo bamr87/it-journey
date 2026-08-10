@@ -3,7 +3,7 @@ title: 'Terminal Mastery: Conquering the Command-Line Realm'
 author: Quest Master IT-Journey Team
 description: Master terminal navigation and command-line tools to unlock developer productivity and system control powers in this hands-on quest
 excerpt: Transform from terminal novice to command-line champion through hands-on practice with essential shell commands and navigation techniques
-preview: images/previews/terminal-mastery-conquering-the-command-line-realm.png
+preview: images/previews/terminal-mastery-conquering-the-command-line-realm.webp
 date: '2025-07-28T23:34:51.000Z'
 lastmod: '2025-09-27T19:59:13.000Z'
 level: '0001'

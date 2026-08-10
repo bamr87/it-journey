@@ -3,7 +3,7 @@ title: 'Markdown Mastery: Content Formatting Fundamentals'
 author: IT-Journey Team
 description: Master Markdown syntax for creating rich documentation, blog posts, and technical content with proper formatting, links, images, and code blocks.
 excerpt: Learn essential Markdown syntax to create beautifully formatted documentation and technical content.
-preview: images/previews/markdown-mastery-content-formatting-fundamentals-d.png
+preview: images/previews/markdown-mastery-content-formatting-fundamentals-d.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-30T00:00:00.000Z'
 level: '0000'

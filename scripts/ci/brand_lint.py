@@ -45,7 +45,7 @@ FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?\n)---\s*\n", re.DOTALL)
 FENCE_RE = re.compile(r"^([`~]{3,})")
 INLINE_CODE_RE = re.compile(r"`[^`]*`")
 # Markdown link/image destinations `](url)`, bare URLs, and `<url>` autolinks are
-# NOT prose — a real asset filename like `/assets/images/github-login.png` can't be
+# NOT prose — a real asset filename like `/assets/images/github-login.webp` can't be
 # re-cased, so spelling/hype must not be policed inside them (false positives that
 # would otherwise block the brand gate on any quest referencing such a file).
 LINK_TARGET_RE = re.compile(r"\]\([^)]*\)|<https?://[^>]*>|\bhttps?://\S+")

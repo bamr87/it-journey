@@ -3,7 +3,7 @@ title: 'ETL Pipeline Design: Scalable Python Data Pipelines'
 author: IT-Journey Team
 description: 'Build production ETL pipelines in Python: ETL vs ELT, extraction and loading, idempotent upserts, incremental loads, and Airflow orchestration.'
 excerpt: Build production-grade ETL pipelines with Python, covering extraction, transformation, idempotent loading, and Airflow orchestration
-preview: images/previews/etl-pipeline-design-descriptive-subtitle.png
+preview: images/previews/etl-pipeline-design-descriptive-subtitle.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1100'

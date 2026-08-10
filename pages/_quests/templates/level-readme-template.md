@@ -2,7 +2,7 @@
 title: Level [BINARY] ([DECIMAL]) - [Level Name]
 layout: quest-collection
 description: 'Reusable template for an IT-Journey level README, indexing main, side, and bonus quests with learning objectives, prerequisites, and progression.'
-preview: /images/previews/level-binary-decimal-level-name.png - Concise description of what this level covers and its role in the learning journey
+preview: /images/previews/level-binary-decimal-level-name.webp - Concise description of what this level covers and its role in the learning journey
 permalink: /quests/[LEVEL]/
 categories:
 - Quests

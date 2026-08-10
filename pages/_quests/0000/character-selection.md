@@ -3,7 +3,7 @@ title: 'Character Selection: Choose Your IT Class'
 author: IT-Journey Team
 description: 'Explore eight RPG-styled IT character classes, from Developer to DevOps Engineer, and choose the specialization and learning path that fits you.'
 excerpt: Select from six unique character classes, each with distinct skills and career paths
-preview: images/previews/character-selection.png
+preview: images/previews/character-selection.webp
 date: '2023-11-25T14:12:43.000Z'
 lastmod: '2025-11-29T21:40:00.000Z'
 level: '0000'

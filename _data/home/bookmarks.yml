@@ -4,7 +4,7 @@ groups:
     items:
       - { title: GitHub, url: 'https://github.com/bamr87', icon: github }
       - { title: it-journey.dev, url: 'https://it-journey.dev', icon: rocket-takeoff }
-      - { title: BASH Consulting, url: 'https://bashconsultants.com', icon: terminal }
+      - { title: BASH Consulting, url: 'https://bash-365.com', icon: terminal }
       - { title: lifehacker.dev, url: 'https://lifehacker.dev', icon: newspaper }
   - name: AI
     items:

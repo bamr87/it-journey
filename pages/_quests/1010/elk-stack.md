@@ -3,7 +3,7 @@ title: 'ELK Stack: Elasticsearch, Logstash & Kibana Logs'
 author: IT-Journey Team
 description: 'Deploy the ELK stack for centralized logging: Elasticsearch indexing, Logstash and Beats pipelines, and Kibana dashboards for distributed systems.'
 excerpt: Build centralized logging with Elasticsearch, Logstash pipelines, Beats shippers, and Kibana visualization
-preview: images/previews/elk-stack-elasticsearch-logstash-quest-title-kiban.png
+preview: images/previews/elk-stack-elasticsearch-logstash-quest-title-kiban.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1010'
