@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "generated": "2026-08-01T21:21:15+00:00",
+  "generated": "2026-08-10T11:56:42+00:00",
   "totals": {
     "slices": 27,
     "perfect": 0,
@@ -233,13 +233,13 @@
       "tier": "Apprentice",
       "mode": "execute",
       "verdict": "fail",
-      "average": 64.6,
+      "average": 65.3,
       "total": 5,
       "scored": 19,
       "requested": 26,
       "total_quests": 26,
       "covered": 19,
-      "errored": 1,
+      "errored": 2,
       "truncated": false,
       "counts": {
         "pass": 6,
@@ -247,11 +247,11 @@
         "fail": 8
       },
       "open_issues": 71,
-      "high_priority_issues": 28,
+      "high_priority_issues": 26,
       "executed": true,
       "perfect": false,
       "perfect_since": null,
-      "reason": "covered 19/26; 8 fail; 5 warn; avg 64.6 < 95.0; 71 open issue(s); 28 high-priority",
+      "reason": "covered 19/26; 8 fail; 5 warn; avg 65.3 < 95.0; 71 open issue(s); 26 high-priority",
       "coverage": {
         "pages/_quests/0001/stating-the-stats.md": {
           "verdict": "fail",
@@ -282,21 +282,21 @@
         },
         "pages/_quests/0001/github-pages-portal.md": {
           "verdict": "fail",
-          "average": 48.0,
-          "open_issues": 8,
-          "high": 4,
-          "mode": "execute",
-          "executed": true,
-          "date": "2026-07-23"
-        },
-        "pages/_quests/0001/personal-site.md": {
-          "verdict": "fail",
-          "average": 16.0,
-          "open_issues": 5,
+          "average": 56.0,
+          "open_issues": 7,
           "high": 3,
           "mode": "execute",
           "executed": true,
-          "date": "2026-07-23"
+          "date": "2026-08-10"
+        },
+        "pages/_quests/0001/personal-site.md": {
+          "verdict": "fail",
+          "average": 19.0,
+          "open_issues": 6,
+          "high": 2,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-08-10"
         },
         "pages/_quests/0001/self-operating-website-01-the-summoning.md": {
           "verdict": "warn",
@@ -309,12 +309,12 @@
         },
         "pages/_quests/0001/seo-optimization.md": {
           "verdict": "warn",
-          "average": 73.0,
+          "average": 75.0,
           "open_issues": 4,
           "high": 1,
           "mode": "execute",
           "executed": true,
-          "date": "2026-07-23"
+          "date": "2026-08-10"
         },
         "pages/_quests/0001/side-quest-badge-collector.md": {
           "verdict": "fail",
@@ -430,22 +430,11 @@
       "stuck_reason": null,
       "needs_human": false,
       "last_fixed": null,
-      "last_run": "2026-07-28T14:07:25+00:00",
-      "last_run_date": "2026-07-28",
-      "runs": 9,
-      "run_url": "https://github.com/bamr87/it-journey/actions/runs/30355858267",
+      "last_run": "2026-08-10T11:56:42+00:00",
+      "last_run_date": "2026-08-10",
+      "runs": 10,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/31383397327",
       "history": [
-        {
-          "event": "walk",
-          "at": "2026-07-06T14:21:55+00:00",
-          "date": "2026-07-06",
-          "mode": "execute",
-          "verdict": "fail",
-          "average": 59.7,
-          "open_issues": 18,
-          "perfect": false,
-          "run_url": "https://github.com/bamr87/it-journey/actions/runs/28791022929"
-        },
         {
           "event": "walk",
           "at": "2026-07-17T14:18:49+00:00",
@@ -544,6 +533,17 @@
           "open_issues": 3,
           "perfect": false,
           "run_url": "https://github.com/bamr87/it-journey/actions/runs/30355858267"
+        },
+        {
+          "event": "walk",
+          "at": "2026-08-10T11:56:42+00:00",
+          "date": "2026-08-10",
+          "mode": "execute",
+          "verdict": "fail",
+          "average": 50.0,
+          "open_issues": 17,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/31383397327"
         }
       ]
     },
