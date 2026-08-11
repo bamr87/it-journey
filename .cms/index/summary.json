@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-10T09:30:37.012167+00:00",
-  "total_files": 386,
-  "scored_files": 386,
-  "actionable_files": 343,
+  "generated_at": "2026-08-11T09:19:38.547807+00:00",
+  "total_files": 387,
+  "scored_files": 387,
+  "actionable_files": 344,
   "avg_health": 97.6,
   "avg_health_actionable": 97.3,
   "total_mechanical_issues": 0,
@@ -27,8 +27,8 @@
       "avg_health": 94.1
     },
     "pages": {
-      "count": 116,
-      "scored": 116,
+      "count": 117,
+      "scored": 117,
       "mechanical": 0,
       "substantive": 6,
       "errors": 0,
@@ -45,13 +45,13 @@
   },
   "freshness_distribution": {
     "critical": 19,
-    "fresh": 291,
+    "fresh": 292,
     "aging": 26,
     "stale": 49,
     "unknown": 1
   },
   "health_buckets": {
-    "excellent_90_100": 370,
+    "excellent_90_100": 371,
     "good_70_89": 13,
     "fair_50_69": 3,
     "poor_0_49": 0
