@@ -4,10 +4,10 @@ author: IT-Journey Team
 description: 'Turn a bare Debian box into a development server: packages, users, firewall, language toolchains, a container service stack, and a live monitoring dashboard.'
 excerpt: Provision a bare Debian machine into a hardened, observable development server you actually own
 date: '2026-08-15T04:30:00.000Z'
-lastmod: '2026-08-15T04:30:00.000Z'
+lastmod: '2026-08-15T05:20:00.000Z'
 level: '1000'
 difficulty: 🔴 Hard
-estimated_time: 180-240 minutes
+estimated_time: 240-300 minutes
 primary_technology: debian
 quest_type: main_quest
 quest_series: Cloud Journey
@@ -75,14 +75,17 @@ rewards:
   badges:
   - 🏆 Forgemaster of the Home Realm - Provisioned a bare machine into a working dev server
   - 🔭 Keeper of the Watchtower - Built a live health dashboard for a machine you own
+  - 🔬 Instrument Adept - Reads a machine through btop and a toolkit of purpose-built TUIs
   skills_unlocked:
   - 🛠️ End-to-end Linux provisioning
   - 🛡️ Host firewall and SSH hardening
   - 🔭 Self-authored health checks and dashboards
+  - 🔬 Terminal instrumentation and TUI-driven operations
   progression_points: 100
   unlocks_features:
   - The on-premises counterpart to cloud provisioning, and the box you will run every later quest on
 layout: quest
+mermaid: true
 ---
 *Every cloud you have ever rented is somebody else's forge. This quest hands you the hammer: one bare machine, one evening, and a sequence of incantations that turns an anonymous slab of silicon into a named, hardened, observable development server that answers to you alone.*
 
@@ -113,11 +116,14 @@ By the time you complete this journey, you will have mastered:
 - [ ] **The Service Stack** - Run Postgres, Redis, and a database UI as restart-safe containers
 - [ ] **The Console Mirror** - Share one terminal between the physical monitor and your SSH session
 - [ ] **The Watchtower** - Write a health check and put it on a dashboard that refreshes itself
+- [ ] **The Watchtower's Eye** - Run btop as your primary instrument, and fix it when it refuses to draw
+- [ ] **The Operator's Toolkit** - Drive containers, repositories and disk usage from purpose-built TUIs
 
 ### Secondary Objectives (Bonus Achievements)
 - [ ] **Idempotent Scripts** - Capture the whole build as scripts you can re-run without harm
 - [ ] **Health History** - Log every check to disk so you can answer "when did this start?"
 - [ ] **Wake Discipline** - Stop the box from sleeping, and learn to wake it when it does
+- [ ] **Release-Tarball Installs** - Install tools that never shipped as Debian packages
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
@@ -125,6 +131,7 @@ You'll know you've truly mastered this quest when you can:
 - [ ] Add a new check to the health script and see it on the dashboard within one refresh
 - [ ] Rebuild the entire box from your scripts onto a second machine
 - [ ] Diagnose a check that reports the wrong verdict because of the user it runs as
+- [ ] Explain why btop refuses to draw, from the error alone, in under a minute
 
 ## 🗺️ Quest Prerequisites
 
@@ -534,6 +541,130 @@ sudo install -d -o "$USER" /var/log/forge
 - [ ] Why did the firewall check report a different verdict on the dashboard than in your shell?
 - [ ] What question can the health *log* answer that the health *screen* cannot?
 
+## 🧙‍♂️ Chapter 9: The Watchtower's Eye - btop and Its Discontents
+
+### ⚔️ Skills You'll Forge in This Chapter
+- Replacing `top` with an instrument that shows history, not just an instant
+- Diagnosing the two ways btop refuses to run, both of which you *will* hit
+
+`top` answers "what is happening right now". It cannot answer "was this spike big, and is it over?" - and on a server, that second question is the one you actually have. **btop** draws a rolling history graph, a meter per core, memory and disk gauges, and a sortable process list, all at once.
+
+```bash
+sudo apt-get install -y btop
+btop
+```
+
+Configure it once, per user, at `~/.config/btop/btop.conf`:
+
+```ini
+graph_symbol = "block"     # braille is prettier in a terminal, blocks are safer (see below)
+theme_background = False   # inherit your terminal's background instead of painting its own
+update_ms = 1000           # once a second is plenty for a box you are not staring at
+```
+
+![btop running on the dev box: a filled CPU history graph, per-core meters showing cores pinned at 100 percent and others idle, load average 4.58, memory and swap gauges, and a process list led by four sha256sum processes](/assets/images/quests/1000/forge-your-own-dev-server/12-btop.png)
+
+That capture is btop under real load - four `sha256sum` processes were pinning cores while it ran, which is why the history graph has shape and several cores read 100%.
+
+### 🔮 The Two Refusals
+
+btop is opinionated about terminals, and it fails loudly rather than degrading. Both of these came up while building this quest.
+
+**Refusal one: no measurable terminal.** Launch btop from a script, a `cron` job, or anything without a real pty and it dies immediately:
+
+```text
+ERROR: Failed to get size of terminal!
+```
+
+It is not asking for a *big* terminal, it is asking for *any* terminal it can measure. If you want btop-like data without a terminal, you want `btop --utf-force` inside a tmux pane - or a different tool entirely, because btop is a viewer, not a collector.
+
+**Refusal two: a pane too small.** btop needs at least 80x24. Split a 45-row window three ways evenly and each pane gets 14 rows, so the dashboard you built in Chapter 8 greets you with this instead of a graph:
+
+![btop refusing to draw in a 14-row tmux pane, showing the message Terminal size too small, Width equals 104 Height equals 14, Needed for current config Width equals 80 Height equals 24](/assets/images/quests/1000/forge-your-own-dev-server/16-btop-too-small.png)
+
+The fix is to stop splitting evenly and give the instrument the room it asks for. Sizes, not fractions:
+
+```bash
+# btop keeps the top ~28 rows; health and history share the rest
+tmux new-window   -d -t console -n dash 'btop --utf-force'
+tmux split-window -v -t console:dash.0 -l 17 'watch -tn 5 forge-health'
+tmux split-window -v -t console:dash.1 -l 8  'tail -f /var/log/forge/health.log'
+tmux list-panes   -t console:dash -F 'pane #P: #{pane_current_command} (#{pane_width}x#{pane_height})'
+```
+
+![The three panes of the rebuilt dash window captured one after another: btop with 28 rows of graphs and process list, the forge-health pane reporting all OK including ufw active, and the rolling health log](/assets/images/quests/1000/forge-your-own-dev-server/17-dashboard-btop.png)
+
+Those are the same three panes as Chapter 8, captured one after another - 28 rows for btop, 8 each for the health verdict and the rolling log.
+
+> **⚠️ The sizing trap from Chapter 7 returns here.** tmux sizes a window to its *smallest attached client*, so a forgotten 80x24 session on another machine silently shrinks the monitor's dashboard until btop refuses to draw. If btop worked yesterday and not today, run `tmux list-clients` before you touch the config - the culprit is usually a stale client, not btop.
+
+**glances** is worth knowing as the alternate view: one screen covering CPU, memory, network, disks, sensors and containers, and it can serve that same view over HTTP with `glances -w` - useful on a box whose monitor you cannot see from where you are sitting.
+
+### 🔍 Knowledge Check: The Watchtower's Eye
+- [ ] What question does a history graph answer that a snapshot cannot?
+- [ ] Your dashboard shows "Terminal size too small" - name two different causes and how you would tell them apart.
+
+## 🧙‍♂️ Chapter 10: The Operator's Toolkit - TUIs for Services, Disks, and Repos
+
+### ⚔️ Skills You'll Forge in This Chapter
+- Installing tools that ship as release tarballs rather than Debian packages
+- Driving containers, repositories and disk usage without memorising flags
+
+Not every good tool is a `.deb`. `lazygit` and `lazydocker` ship as GitHub release tarballs, so fetch them with a small reusable function rather than copying a URL out of a browser:
+
+```bash
+gh_install() {                       # gh_install <owner/repo> <binary> <asset-pattern>
+  local repo="$1" bin="$2" pat="$3" ver url
+  ver=$(curl -fsSL "https://api.github.com/repos/$repo/releases/latest" \
+        | grep -m1 '"tag_name"' | sed -E 's/.*"v?([^"]+)".*/\1/')
+  url="https://github.com/$repo/releases/download/v${ver}/${pat//VER/$ver}"
+  curl -fsSL "$url" -o "/tmp/$bin.tgz"
+  sudo tar -xzf "/tmp/$bin.tgz" -C /usr/local/bin "$bin"
+  echo "$bin $ver installed"
+}
+ARCH=$([ "$(dpkg --print-architecture)" = arm64 ] && echo arm64 || echo x86_64)
+gh_install jesseduffield/lazygit    lazygit    "lazygit_VER_Linux_${ARCH}.tar.gz"
+gh_install jesseduffield/lazydocker lazydocker "lazydocker_VER_Linux_${ARCH}.tar.gz"
+```
+
+**lazydocker** turns the stack from Chapter 6 into something you can steer: containers with health state, live logs, stats, and restart or shell access on a keystroke.
+
+![lazydocker showing the three stack containers - forge-adminer running, forge-postgres and forge-redis both running and healthy - with the Adminer container's live log in the right pane](/assets/images/quests/1000/forge-your-own-dev-server/13-lazydocker.png)
+
+**lazygit** does the same for repositories, which matters because a dev server accumulates them. Staging hunks, rewording commits, and reading a diff are all one key away.
+
+![lazygit open in the stack repository showing the status pane on branch main, a modified docker-compose.yml in the files pane, and the unstaged diff adding the redis service in the main pane](/assets/images/quests/1000/forge-your-own-dev-server/14-lazygit.png)
+
+**ncdu** answers the question every server eventually asks you: *where did the disk go?* It walks a tree once and sorts by size, so you can descend into the guilty directory instead of guessing.
+
+```bash
+sudo apt-get install -y ncdu duf
+ncdu /usr        # navigate with arrows, delete with d, quit with q
+duf              # a friendlier df: one table, colour-coded, per-filesystem
+```
+
+![ncdu showing a scan of /usr sorted by size, with lib at 662 MiB, share at 153 MiB, libexec at 150 MiB and bin at 133 MiB, each with a proportional bar](/assets/images/quests/1000/forge-your-own-dev-server/15-ncdu.png)
+
+Finally, the small daily replacements. **eza** lists files with git status inline; **bat** is `cat` with syntax highlighting and line numbers; **fzf** turns any list into a fuzzy search; **zoxide** learns the directories you actually visit.
+
+```bash
+sudo apt-get install -y eza bat fzf zoxide
+cat >> ~/.zshrc <<'EOF'
+alias ls='eza --git --group-directories-first'
+alias cat='batcat --style=plain'     # Debian ships bat as batcat
+eval "$(zoxide init zsh)"            # then `z stack` jumps to ~/dev/stack
+source /usr/share/doc/fzf/examples/key-bindings.zsh   # Ctrl-R history, Ctrl-T files
+EOF
+```
+
+![eza listing the stack repository with git status columns showing a modified docker-compose.yml, followed by bat rendering the forge-console script with line numbers and syntax highlighting](/assets/images/quests/1000/forge-your-own-dev-server/18-toolkit.png)
+
+> **The `batcat` and `fdfind` renames are not a mistake.** Debian ships `bat` and `fd` under alternate names to avoid colliding with existing packages. Alias them and move on - but remember the real names when you write a script that must run on a machine without your dotfiles.
+
+### 🔍 Knowledge Check: The Operator's Toolkit
+- [ ] Why does `gh_install` resolve the version from the API instead of hard-coding a URL?
+- [ ] `cat` is aliased to `batcat` in your shell - why might that break a script, and what protects you?
+
 ## 🎮 Mastery Challenges
 
 ### 🟢 Novice Challenge: Prove the Box
@@ -575,7 +706,8 @@ Turn everything you ran into four idempotent scripts - `01-system.sh`, `02-user.
 
 - 🏆 **Forgemaster of the Home Realm** - you provisioned a bare machine into a working development server
 - 🔭 **Keeper of the Watchtower** - you built health checks and a dashboard for a machine you own
-- ⚡ **Skills unlocked:** end-to-end Linux provisioning, host firewalling, SSH hardening, per-user toolchains, container service stacks, tmux session sharing, self-authored monitoring
+- 🔬 **Instrument Adept** - you read the machine through btop, lazydocker, lazygit and ncdu rather than guessing
+- ⚡ **Skills unlocked:** end-to-end Linux provisioning, host firewalling, SSH hardening, per-user toolchains, container service stacks, tmux session sharing, self-authored monitoring, TUI-driven operations
 - 📈 **+100 progression points** toward the Expert tier
 
 ## 🗺️ Next Steps in Your Journey
@@ -606,6 +738,13 @@ graph LR
 - [tmux manual](https://man.openbsd.org/tmux) - sessions, windows, panes, clients, and formats
 - [Docker Compose specification](https://docs.docker.com/reference/compose-file/) - health checks and restart policies
 
+### The Instruments
+- [btop](https://github.com/aristocratos/btop) - the system monitor from Chapter 9, including its config reference
+- [glances](https://nicolargo.github.io/glances/) - the alternate one-screen view, with a built-in web server
+- [lazydocker](https://github.com/jesseduffield/lazydocker) and [lazygit](https://github.com/jesseduffield/lazygit) - the container and repository TUIs
+- [ncdu](https://dev.yorhel.nl/ncdu) and [duf](https://github.com/muesli/duf) - disk usage, interactively and at a glance
+- [eza](https://eza.rocks/), [bat](https://github.com/sharkdp/bat), [fzf](https://junegunn.github.io/fzf/) and [zoxide](https://github.com/ajeetdsouza/zoxide) - the daily replacements
+
 ### Learning Materials
 - [fnm](https://github.com/Schniz/fnm), [uv](https://docs.astral.sh/uv/), and [rustup](https://rust-lang.github.io/rustup/) - the three toolchain managers installed here
 - [Arch Wiki: Security](https://wiki.archlinux.org/title/Security) - distribution-agnostic hardening reference
@@ -619,6 +758,8 @@ graph LR
 - [ ] `docker compose ps` shows the stack healthy and it survives a reboot
 - [ ] The monitor and your SSH session share one tmux console
 - [ ] `forge-health` reports verdicts, the dashboard refreshes them, and history lands in `/var/log/forge/`
+- [ ] btop runs in a pane tall enough to draw, and you can explain both of its refusals
+- [ ] lazydocker, lazygit and ncdu are installed and answer for the stack, your repos, and your disk
 - [ ] The whole build exists as scripts you could run again tomorrow
 
 ## 🕸️ Knowledge Graph
