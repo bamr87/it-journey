@@ -1,5 +1,5 @@
 stats:
-  total: 207
+  total: 208
   by_level:
     '0000': 29
     '0001': 26
@@ -9,7 +9,7 @@ stats:
     '0101': 13
     '0110': 8
     '0111': 10
-    '1000': 9
+    '1000': 10
     '1001': 9
     '1010': 16
     '1011': 12
@@ -19,7 +19,7 @@ stats:
     '1111': 9
   by_type:
     epic_quest: 4
-    main_quest: 177
+    main_quest: 178
     side_quest: 26
 nodes:
 - id: /quests/0000/bash-run/
@@ -577,6 +577,11 @@ nodes:
   level: '1000'
   type: main_quest
   difficulty: 🟡 Medium
+- id: /quests/1000/forge-your-own-dev-server/
+  title: 'Forge Your Own Dev Server: Bare Metal to Watchtower'
+  level: '1000'
+  type: main_quest
+  difficulty: 🔴 Hard
 - id: /quests/1000/infrastructure-as-code/
   title: 'Infrastructure as Code: Terraform Fundamentals and State'
   level: '1000'
@@ -1852,6 +1857,18 @@ edges:
   kind: unlocks
 - source: /quests/1000/cloud-computing-fundamentals/
   target: /quests/1001/kubernetes-fundamentals/
+  kind: unlocks
+- source: /quests/1000/forge-your-own-dev-server/
+  target: /quests/0010/bash-scripting/
+  kind: required
+- source: /quests/1000/forge-your-own-dev-server/
+  target: /quests/0100/docker-compose-orchestration/
+  kind: recommended
+- source: /quests/1000/forge-your-own-dev-server/
+  target: /quests/1000/cloud-computing-fundamentals/
+  kind: recommended
+- source: /quests/1000/forge-your-own-dev-server/
+  target: /quests/1010/monitoring-fundamentals/
   kind: unlocks
 - source: /quests/1000/infrastructure-as-code/
   target: /quests/1000/aws-essentials/
