@@ -274,6 +274,8 @@
     url: /quests/1000/azure-ascension-jekyll-deployment/
   - title: 'Cloud Computing Fundamentals: IaaS, PaaS, and SaaS Explained'
     url: /quests/1000/cloud-computing-fundamentals/
+  - title: 'Forge Your Own Dev Server: Bare Metal to Watchtower'
+    url: /quests/1000/forge-your-own-dev-server/
   - title: 'Forging the Agent''s Arsenal: Tool Selection & Permissions'
     url: /quests/1000/agentic-tool-selection-and-permissions/
   - title: 'Forging the Arsenal: Tool Use & Environment'
