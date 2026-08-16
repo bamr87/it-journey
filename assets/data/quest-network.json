@@ -1,13 +1,13 @@
 {
   "stats": {
-    "total": 208,
+    "total": 209,
     "by_level": {
       "0000": 29,
       "0001": 26,
       "0010": 17,
       "0011": 4,
       "0100": 8,
-      "0101": 13,
+      "0101": 14,
       "0110": 8,
       "0111": 10,
       "1000": 10,
@@ -21,7 +21,7 @@
     },
     "by_type": {
       "epic_quest": 4,
-      "main_quest": 178,
+      "main_quest": 179,
       "side_quest": 26
     }
   },
@@ -754,6 +754,15 @@
       "difficulty": "🟡 Medium",
       "technology": "github-actions",
       "file": "pages/_quests/0101/ouroboros-loop-02-the-wardens-gate.md"
+    },
+    {
+      "id": "/quests/0101/second-shift-server-resurrection/",
+      "title": "The Second Shift: Resurrect an Ancient Tower as Your Home Server",
+      "level": "0101",
+      "type": "main_quest",
+      "difficulty": "🟡 Medium",
+      "technology": "docker",
+      "file": "pages/_quests/0101/second-shift-server-resurrection.md"
     },
     {
       "id": "/quests/0101/secrets-management/",
@@ -2803,6 +2812,21 @@
     {
       "source": "/quests/0101/ouroboros-loop-02-the-wardens-gate/",
       "target": "/quests/0011/ouroboros-loop-03-summon-the-golem/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/0101/second-shift-server-resurrection/",
+      "target": "/quests/0101/docker-mastery/",
+      "kind": "required"
+    },
+    {
+      "source": "/quests/0101/second-shift-server-resurrection/",
+      "target": "/quests/0101/environment-management/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/0101/second-shift-server-resurrection/",
+      "target": "/quests/0101/secrets-management/",
       "kind": "unlocks"
     },
     {
