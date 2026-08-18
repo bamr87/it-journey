@@ -1,0 +1,46 @@
+# =============================================================================
+# .theme-overrides.yml — theme files this site intentionally forks
+# =============================================================================
+#
+# Consumed by `scripts/bin/audit-consumer` in the theme repo
+# (bamr87/zer0-mistakes). It classifies every file kept here that also exists
+# in the theme:
+#
+#   IDENTICAL            byte-for-byte the same as the theme's copy
+#                        → delete it; the theme's version will be used
+#   DIFFERS_JUSTIFIED    differs AND is listed below → intentional, no action
+#   DIFFERS_UNJUSTIFIED  differs and is NOT listed below → flagged for review;
+#                        `--strict` exits non-zero
+#   UNIQUE               exists only here → this site's own file, ignored
+#
+# Run it from a theme checkout:
+#   ./scripts/bin/audit-consumer --consumer-path /path/to/it-journey
+#   ./scripts/bin/audit-consumer --consumer-path /path/to/it-journey --strict
+#   ./scripts/bin/audit-consumer --consumer-path /path/to/it-journey --fix
+#
+# This file is a STARTING POINT, not a complete inventory: it-journey shadows
+# roughly 55 theme files and only the entries below have been audited and
+# justified so far. Everything else still reads as unjustified drift, which is
+# correct — each one needs the same read-and-decide pass before it earns a row.
+#
+# Keep the `reason` current. An override whose reason has been fixed upstream
+# is the signal to delete the fork and take the theme's version back.
+# =============================================================================
+
+overrides:
+  - path: "_includes/content/giscus.html"
+    reason: >-
+      Header-comment fork only — the functional payload (the giscus.app
+      client.js <script> block and its data-* attributes) is byte-identical to
+      the theme's copy. The fork exists because the theme's original file
+      opened its doc block with a `{% comment %}` tag and documented usage with
+      a bare `include giscus.html` example written in live Liquid braces inside
+      an HTML comment. Liquid evaluates tags even inside HTML comments, so that
+      example executed as a real, recursive include and broke the build. This
+      copy keeps the header comment entirely tag-free.
+    upstream: >-
+      FIXED UPSTREAM as of zer0-mistakes v1.28.0 — the theme's
+      _includes/content/giscus.html no longer contains live Liquid in its
+      header and carries an explicit NOTE warning against reintroducing it.
+      This fork is retirable: delete it and take the theme's version back once
+      the change has been verified against a build.

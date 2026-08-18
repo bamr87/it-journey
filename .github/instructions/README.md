@@ -43,9 +43,9 @@ Brief description of the instruction file's purpose and scope.
 | `contributing.instructions.md` | `**/*` | Guide AI agents in assisting contributors across content, code, docs, community |
 | `README.instructions.md` | `**/README.md` | Maintain README.md files: structure, frontmatter, lastmod hygiene, cross-references |
 | `quest.instructions.md` | `pages/_quests/**/*.md` | Quest creation: frontmatter schema, permalink rules, `make quest-audit` gate, level README conventions |
-| `docs.instructions.md` | `pages/_docs/**/*.md` | Reference-doc standards: terse, answer-first, scannable |
+| `docs.instructions.md` | ⚠️ **RETIRED** — nothing (`pages/_docs/` was removed) | Historical record of the reference-doc standards; kept only so existing cross-references resolve |
 | `notes.instructions.md` | `pages/_notes/**/*.md` | Notes/cheatsheet standards (slim curated set) |
-| `quickstart.instructions.md` | `pages/_quickstart/**/*.md` | Quick-start guide standards |
+| `quickstart.instructions.md` | ⚠️ **RETIRED** — nothing (`pages/_quickstart/` was removed) | Historical record of the quick-start standards; kept only so existing cross-references resolve |
 | `about.instructions.md` | `pages/_about/**/*.md` | About-section page standards |
 | `brand.instructions.md` | quests + docs | Applying brand voice/tone/values to quest and doc content |
 | `ai-content-review.instructions.md` | `pages/**/*.md` | Resolving AI Content Review issues per collection |

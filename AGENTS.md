@@ -186,7 +186,7 @@ Observed from Makefile, scripts, Gemfile, and workflows:
 - **Excludes in _config.yml**: Many files/dirs excluded from Jekyll processing (e.g., scripts/, test/, *.sh).
 - **Gamification**: Quests must include fantasy elements, objectives, prerequisites; use Mermaid diagrams for maps.
 - **Multi-Platform**: Content often has sections for macOS/Windows/Linux/Cloud.
-- **Dependencies**: Ruby 3.2+, Jekyll 3.9.5; specific versions in Gemfile.
+- **Dependencies**: Ruby 3.2+ (every workflow pins `ruby-version: '3.2'`); `github-pages` **232**, which resolves Jekyll **3.10.0** and `jekyll-remote-theme` 0.4.3. The `Gemfile` is deliberately unpinned (`gem 'github-pages'`) — the exact resolved versions live in the committed `Gemfile.lock`, which is the file to read. There is **no** theme gem: `jekyll-theme-zer0` appears nowhere in `Gemfile.lock`; the theme is consumed unpinned through `remote_theme: "bamr87/zer0-mistakes"` in `_config.yml`.
 - **Deployment**: Azure-specific; script handles login, resource creation, but requires manual GitHub secret setup if gh CLI absent.
 - **Validation Scores**: Quests are scored; aim for 100% (e.g., all required fields, theme integration).
 
