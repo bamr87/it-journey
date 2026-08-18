@@ -514,8 +514,6 @@ sass:
 
 ## Style Settings -------------------------------------------------------------
 
-# theme                  : "zer0-mistakes-jekyll"
-# remote_theme           : "bamr87/zer0-mistakes"
 theme_skin               : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 # Opt in to the theme's fork-override hooks: loads /assets/css/user-overrides.css
 # and /assets/js/user-overrides.js LAST, so the site's "cosmic quest" theme wins
@@ -523,7 +521,6 @@ theme_skin               : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 user_overrides           : true
 
 # style                  : "default" # "default", "dark", "light", "solarized-dark", "solarized-light"
-# remote_style           : "bamr87/zer0-mistakes"
 
 # NOTE: hex values MUST be quoted — unquoted `main: #007bff` is parsed by YAML as
 # a comment (null), so the token never reaches core/tokens-inline.html. The
