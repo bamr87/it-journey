@@ -273,7 +273,7 @@ These mistakes have each generated dedicated corrective PRs — do not repeat th
 5. **Update `lastmod` on every meaningful edit** (this is enforced by the README-First / README-Last principle below).
 6. **Do not link from `pages/_docs/` to `../../docs/...`.** The repo's `docs/` directory is excluded from Jekyll processing (`_config.yml` exclude list); use a full GitHub URL instead.
 7. **Trim long descriptions by removing words, not by adding ellipses or cutting mid-sentence.** Aim for the 120–155 char optimal band.
-8. **The blog is gone — don't author `pages/_posts/`, `pages/_notebooks`, or `pages/_hobbies`.** Those collections were removed: general posts moved to the separate **lifehacker.dev** repo, and the OverTheWire `wargames` docs were extracted to **github.com/bamr87/wargames**. Surviving collections are `quests`, `docs`, `notes` (slim), `quickstart`, `about`. The GH-600 "Agentic Codex" track now lives in `pages/_docs/agentic-codex/`.
+8. **The blog is gone — don't author `pages/_posts/`, `pages/_notebooks`, `pages/_hobbies`, `pages/_docs`, or `pages/_quickstart`.** Those collections were removed: general posts moved to the separate **lifehacker.dev** repo, and the OverTheWire `wargames` docs were extracted to **github.com/bamr87/wargames**. Surviving collections are `quests`, `quest-reports` (machine-authored, do not hand-author), `notes` (slim), and `about`. The GH-600 "Agentic Codex" track lives under `pages/_quests/` — the hub at `pages/_quests/codex/agentic-codex.md` and its chapters under the level directories (`pages/_quests/0111/`, `1000/`, `1001/`, `1010/`, `1011/`, `1100/`).
 9. **Never commit literal secret prefixes in code examples.** Strings starting with `ghp_`, `gho_`, `ghu_`, `ghs_`, `ghr_`, `sk-`, `AKIA`, `xoxb-`, etc. trigger reviewer + scanner alerts. Always show env-var or input-prompt placeholders instead: `"${env:GITHUB_TOKEN}"`, `"${input:openai-key}"` (see PR #272, `pages/_notes/gh-600/mcp-quickref.md`).
 10. **Nested fenced code blocks need a longer outer fence.** If an example contains an inner ```` ```bash ```` block, the outer fence must be at least one backtick longer (4 backticks) — otherwise the inner closing fence terminates the outer block and the rest renders as prose (see PR #272, `pages/_quests/1010/agentic-failure-root-cause-analysis.md`).
 11. **Quest permalinks must use the level-prefixed hierarchy.** Canonical formats: `main_quest` → `/quests/XXXX/slug/`; `side_quest` → `/quests/XXXX/side-quests/slug/`; `bonus_quest`/`epic_quest` → `/quests/codex/slug/`; level README → `/quests/XXXX/`. The old `level-XXXX-slug`, `gh-600`, and flat `side-quest-slug` patterns are invalid. Add `redirect_from:` **only when migrating** an existing permalink — new quests must not ship with redirects. After migration, update every internal reference to the canonical URL. Run `make quest-audit` before merge. See `.github/instructions/quest.instructions.md` §3.
@@ -529,7 +529,7 @@ This main copilot-instructions.md file provides **high-level principles and refe
 | **contributing.instructions.md** | Guide AI agents in assisting contributors | All contribution workflows |
 | **README.instructions.md** | Standards for creating and maintaining README files | Creating/updating any README.md |
 | **quest.instructions.md** | Quest creation standards and patterns | Creating educational quest content |
-| **docs.instructions.md** | Reference-doc standards (terse, answer-first) | Writing/editing `pages/_docs/` content |
+| **docs.instructions.md** | RETIRED — `pages/_docs/` no longer exists | Historical reference only; do not author against it |
 | **notes.instructions.md** | Notes / cheatsheet standards | Editing the slim `pages/_notes/` set |
 | **brand.instructions.md** | Applying brand voice to quests + docs | Voice/tone on quest and doc content |
 | **features.instructions.md** | Feature development pipeline and CI/CD | Implementing features and automation |
@@ -540,7 +540,7 @@ This main copilot-instructions.md file provides **high-level principles and refe
 
 **1. Identify the Task Type**
    - Creating a quest? → `quest.instructions.md`
-   - Writing a reference doc? → `docs.instructions.md`
+   - Writing reference material? → author it as a quest; `docs.instructions.md` is RETIRED (`pages/_docs/` was removed)
    - Updating documentation? → `README.instructions.md`
    - Building a feature? → `features.instructions.md`
    - Contributing code/content? → `contributing.instructions.md`
@@ -572,7 +572,7 @@ This main copilot-instructions.md file provides **high-level principles and refe
 ├─ contributing.instructions.md → Contribution workflows
 ├─ README.instructions.md → Documentation standards
 ├─ quest.instructions.md → Educational quest creation
-├─ docs.instructions.md → Reference-doc writing
+├─ docs.instructions.md → RETIRED (pages/_docs/ removed)
 ├─ notes.instructions.md → Notes / cheatsheet standards
 ├─ brand.instructions.md → Voice/tone for quests + docs
 ├─ features.instructions.md → Feature development & CI/CD
@@ -599,7 +599,7 @@ This main copilot-instructions.md file provides **high-level principles and refe
 
 IT-Journey no longer hosts a blog. The `_posts`/`_drafts` collections were removed and general blog content (including AI-session chronicles) now lives in the separate **lifehacker.dev** repo (`github.com/bamr87/lifehacker.dev`). The OverTheWire `wargames` docs were likewise extracted to **github.com/bamr87/wargames**.
 
-**Key Principle**: In this repo, document work through the surviving collections — author learning content as **quests** (`pages/_quests/`, see `.github/instructions/quest.instructions.md`) or **reference docs** (`pages/_docs/`, see `.github/instructions/docs.instructions.md`). Chronicle-style write-ups belong in lifehacker.dev, not here.
+**Key Principle**: In this repo, document work through the surviving collections — author learning content as **quests** (`pages/_quests/`, see `.github/instructions/quest.instructions.md`), or as a **note** for short reference material (`pages/_notes/`, see `.github/instructions/notes.instructions.md`). The `pages/_docs/` collection was removed; `docs.instructions.md` is retired. Chronicle-style write-ups belong in lifehacker.dev, not here.
 
 ## Quest Creation Guidelines for IT-Journey
 
@@ -1560,7 +1560,8 @@ git push origin v1.0.1
 | **Onboarding** | `CONTRIBUTING.md`, `docs/dev/` | Markdown | Yes |
 | **Changelog** | `CHANGELOG.md` | Auto-generated | Yes |
 | **Quest Content** | `pages/_quests/` | Jekyll, Markdown | Yes |
-| **Reference Docs** | `pages/_docs/` | Jekyll, Markdown | Yes |
+| **Reference Notes** | `pages/_notes/` | Jekyll, Markdown | Yes |
+| **Quest Walkthrough Reports** | `pages/_quest-reports/` | Generated by the quest-perfection loop | Yes |
 
 **Golden Rule:** All documentation lives in the repository. No Notion, Confluence, or external tool silos.
 

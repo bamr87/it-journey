@@ -1,9 +1,9 @@
 # CLAUDE.md — Claude Code guide for IT-Journey
 
-IT-Journey is a **Jekyll** site (GitHub Pages, custom domain `it-journey.dev`): a gamified, open-source platform for learning IT and software development through **quests** (zer0 → her0). ~280 Markdown content files live under `pages/` across 5 collections — **quests** (~204, the center of gravity), `docs` (~27), a slim `notes` set (~16), `quickstart` (~15), and `about` (~19), plus a few loose `pages/` files. The remote theme is `bamr87/zer0-mistakes`.
+IT-Journey is a **Jekyll** site (GitHub Pages, custom domain `it-journey.dev`): a gamified, open-source platform for learning IT and software development through **quests** (zer0 → her0). ~394 Markdown files live under `pages/` across four populated collections — **quests** (~233, the center of gravity), `quest-reports` (~117, machine-authored walkthrough reports from the quest-perfection loop), a slim `notes` set (~27), and `about` (~12) — plus 5 loose `pages/` files. `_config.yml` also declares a `pages` collection, but `pages/_pages/` does not exist, so it is currently empty. The remote theme is `bamr87/zer0-mistakes`, consumed unpinned via `remote_theme` (there is no theme gem in the `Gemfile`).
 
-> **Recent overhaul:** the `_posts`/`_drafts` blog, `_notebooks`, and `_hobbies`
-> collections were removed. General blog content moved to **lifehacker.dev**
+> **Recent overhaul:** the `_posts`/`_drafts` blog, `_notebooks`, `_hobbies`,
+> `_docs`, and `_quickstart` collections were removed. General blog content moved to **lifehacker.dev**
 > (`github.com/bamr87/lifehacker.dev`); the OverTheWire `wargames` docs (+
 > `scripts/docs-aggregator/`) were extracted to **`github.com/bamr87/wargames`**.
 
@@ -15,7 +15,7 @@ This repo already has a deep instruction set written for Copilot/Cursor. **Read 
 |---|---|
 | Anything | `AGENTS.md` (overview, commands, quest permalink regex, gotchas) |
 | Frontmatter / content rules | `.github/copilot-instructions.md` (constraints table + numbered pitfalls), `.github/FRONTMATTER.md` |
-| A specific collection | `.github/instructions/<name>.instructions.md` (quest, docs, notes, about, quickstart) |
+| A specific collection | `.github/instructions/<name>.instructions.md` (quest, notes, about — `docs` and `quickstart` are RETIRED, kept only as historical reference) |
 | Content curation / the daily loop | `.claude/skills/cms-curator/SKILL.md` + `.cms/README.md` |
 | Running/previewing the site | `.claude/skills/run-it-journey/SKILL.md` |
 | A `/slash` action | `.github/prompts/<name>.prompt.md` (15 prompt-agents: write-quest, draft-article, validate-content, publish-prep, retrospective, …) |
@@ -89,8 +89,8 @@ rendered layout, styling, or interaction (CSS/SCSS, templates/includes, nav, JS 
 
 ## Repo map (quick)
 
-- `pages/_<collection>/` — all site content (quests, docs, notes, quickstart,
-about; loose `pages/` files). The brand/voice system governs only `quests` and `docs` (`_data/brand/sections/` holds just `quest.md` + `docs.md`).
+- `pages/_<collection>/` — all site content (`_quests`, `_quest-reports`,
+`_notes`, `_about`; loose `pages/` files). The brand/voice system governs `quests` (`_data/brand/sections/` holds `quest.md` plus a now-orphaned `docs.md`, left over from the removed `_docs` collection).
 - `_data/` — site data (quests/*, navigation/*, statistics). Much is generated.
 - `scripts/` — Python/Ruby/Bash tooling (cms, quest, validation, generation, …).
 - `.cms/` — CMS index, schema, reports, worklists (Jekyll-ignored).
