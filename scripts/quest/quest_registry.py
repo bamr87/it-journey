@@ -133,13 +133,17 @@ REQUIRED_FIELDS = [
 OPTIONAL_FIELDS = [
     "lastmod", "categories", "tags", "excerpt", "sub_title", "preview",
     "primary_technology", "skill_focus", "learning_style", "quest_series",
-    "draft", "comments",
+    "draft", "comments", "walkthrough_video",
 ]
 
 # Structured-optional fields with one canonical shape each.
 PREREQUISITES_KEYS = ["knowledge_requirements", "system_requirements", "skill_level_indicators"]
 REWARDS_KEYS = ["badges", "skills_unlocked", "progression_points", "unlocks_features"]
 QUEST_DEPENDENCIES_KEYS = ["required_quests", "recommended_quests", "unlocks_quests"]
+# walkthrough_video: the published, CI-recorded walkthrough of this quest.
+# WRITTEN by the quest-video lane (scripts/quest/video_manifest.py apply);
+# rendered by _includes/quest/quest-video.html. `provider` is youtube-only today.
+WALKTHROUGH_VIDEO_KEYS = ["provider", "id", "url", "recorded", "run_url"]
 
 # Fields retired from the canonical schema (migrate then drop). Kept here so the
 # normalizer and validator know what to strip / migrate.

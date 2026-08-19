@@ -7,6 +7,8 @@ layout: default
   Wraps quest content with:
     - quest-header (level/tier/difficulty badges + meta)
     - quest-sidebar (sticky breadcrumb, progress, prerequisites)
+    - quest-video (verified walkthrough embed — only when the page's
+      frontmatter carries a walkthrough_video block)
     - The quest's own markdown body
     - quest-rewards
     - Quest dependency graph + backlinks (level-filtered)
@@ -26,6 +28,8 @@ layout: default
     </aside>
 
     <div id="quest-content" class="quest-page__content">
+      {% include quest/quest-video.html page=page %}
+
       {{ content }}
 
       {% include quest/quest-rewards.html page=page %}

@@ -1,0 +1,51 @@
+{%- comment -%}
+  quest-video.html — embedded YouTube walkthrough video for a quest page.
+
+  Renders ONLY when the quest's frontmatter carries a `walkthrough_video:`
+  block (written by the quest-video lane — scripts/quest/video_manifest.py
+  apply, driven by .github/workflows/quest-video.yml):
+
+      walkthrough_video:
+        provider: youtube
+        id: <video id>
+        url: https://www.youtube.com/watch?v=<id>   # optional (derived from id)
+        recorded: 'YYYY-MM-DD'                      # optional
+        run_url: <CI run that recorded the session> # optional
+
+  Uses the privacy-enhanced youtube-nocookie.com host and a lazy iframe so a
+  quest page without a viewer interaction loads no YouTube payload eagerly.
+  Styles live in assets/css/quest-system.css (.quest-video) — no inline
+  styles here, per the quest-UI convention.
+
+  Usage (quest layout): {% include quest/quest-video.html page=page %}
+{%- endcomment -%}
+{%- assign wv_page = include.page | default: page -%}
+{%- assign wv = wv_page.walkthrough_video -%}
+{%- if wv and wv.id -%}
+{%- if wv.url -%}
+{%- assign wv_url = wv.url -%}
+{%- else -%}
+{%- assign wv_url = 'https://www.youtube.com/watch?v=' | append: wv.id -%}
+{%- endif -%}
+<section class="quest-video" aria-labelledby="quest-video-heading">
+  <h2 id="quest-video-heading" class="quest-section-heading">🎬 Watch a Verified Run</h2>
+  <p class="quest-video__caption">
+    This walkthrough was recorded automatically: every command was executed in a
+    clean, disposable sandbox by the quest-perfection loop{% if wv.recorded %} on {{ wv.recorded }}{% endif %},
+    side by side with the quest as you read it.{% if wv.run_url %}
+    <a href="{{ wv.run_url }}" rel="noopener noreferrer">See the CI run that recorded it</a>.{% endif %}
+  </p>
+  <div class="quest-video__frame">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/{{ wv.id }}"
+      title="Quest walkthrough video: {{ wv_page.title | escape }}"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+  </div>
+  <p class="quest-video__external">
+    <a href="{{ wv_url }}" rel="noopener noreferrer">Watch on YouTube ↗</a>
+  </p>
+</section>
+{%- endif -%}
