@@ -273,7 +273,21 @@ jobs:
             ${{ inputs.all_main == true && '--all-main' || '' }}
           count=$(python3 -c 'import json;print(len(json.load(open("videos/manifest.json"))["videos"]))')
           echo "has_videos=$([ "$count" -ge 1 ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
-          echo "🎞️ $count video(s) rendered." | tee -a "$GITHUB_STEP_SUMMARY"
+          # Surface the captured results — the review signal — in the run summary:
+          # per-status counts per video, plus every step that did not cleanly pass.
+          python3 - <<'PY' | tee -a "$GITHUB_STEP_SUMMARY"
+          import json
+          m = json.load(open("videos/manifest.json"))
+          vids = m.get("videos") or []
+          print(f"🎞️ {len(vids)} video(s) rendered.")
+          for v in vids:
+              r = v.get("results") or {}
+              print(f"- `{v['name']}` — {r.get('passed',0)} passed · {r.get('failed',0)} failed · "
+                    f"{r.get('skipped',0)} skipped · {r.get('reasoned',0)} reasoned "
+                    f"({v.get('issues_count',0)} step(s) did not cleanly pass — see {v.get('findings_file')})")
+              for i in (json.load(open(v["findings_file"])).get("issues") or []):
+                  print(f"    - {'✗' if i['status']=='failed' else '∅'} `{i['command']}` — {i.get('detail','')}")
+          PY
 
       # The upload plan is composed HERE (deterministically, from the manifest +
       # this run's URL) so the publish job — which runs with write credentials —
@@ -385,6 +399,38 @@ jobs:
                     f"| {u.get('verdict') or '—'} | {score} |")
           for s in up.get("skipped", []):
               print(f"| `{s.get('permalink')}` | _skipped: {s.get('reason')}_ | | | |")
+          # WITNESSED ISSUES — the captured review signal, aligned with the
+          # walkthrough framework: every step in the recording that did not
+          # cleanly pass, plus the exact fix-lane recipe that reuses this run's
+          # sealed evidence (quest-fix consumes walk-evidence.json, not the video).
+          import glob
+          issues_rows, totals = [], {"passed": 0, "failed": 0, "skipped": 0, "reasoned": 0}
+          for f in sorted(glob.glob("videos/*.findings.json")):
+              fd = json.load(open(f))
+              for k in totals:
+                  totals[k] += (fd.get("results") or {}).get(k, 0)
+              for i in fd.get("issues") or []:
+                  mark = "✗ failed" if i["status"] == "failed" else "∅ skipped"
+                  issues_rows.append(f"| `{fd['quest']['permalink']}` | `{i['command']}` "
+                                     f"| {mark} | {i.get('detail','')} |")
+          print("\n### 🔎 Witnessed results (captured for the review/fix loop)\n")
+          print(f"**{totals['passed']} passed · {totals['failed']} failed · "
+                f"{totals['skipped']} skipped · {totals['reasoned']} reasoned** across the recording(s).\n")
+          if issues_rows:
+              print("Steps that did **not** cleanly pass — shown in each video's verdict card and")
+              print("captured in the run artifact's `*.findings.json`:\n")
+              print("| quest | step | outcome | detail |")
+              print("|---|---|---|---|")
+              for row in issues_rows:
+                  print(row)
+              print("\nTo repair what this recording witnessed, dispatch **quest-fix.yml** with")
+              slug = os.environ.get("SLUG", "")
+              run_id = os.environ.get("GITHUB_RUN_ID", "")
+              print(f"`plan_artifact` = `evidence_artifact` = `quest-video-{slug}` and")
+              print(f"`source_run_id` = `{run_id}` — it consumes this run's sealed `walk-evidence.json`")
+              print("directly, so the fix targets exactly what the video shows.")
+          else:
+              print("Every step in the recording passed cleanly — nothing queued for the fix lane.")
           print("\n**Review = watch the video.** Merge to publish the embed; flip the video")
           print("public on YouTube when satisfied. This PR intentionally matches no")
           print("auto-merge policy.")

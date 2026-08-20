@@ -302,6 +302,7 @@ def main() -> int:
                 "recorded": item.get("recorded"), "run_url": item.get("run_url"),
                 "slice": item.get("slice"), "duration_s": item.get("duration_s"),
                 "verdict": item.get("verdict"), "score": item.get("score"),
+                "results": item.get("results"), "issues_count": item.get("issues_count"),
             })
             log(f"✅ https://www.youtube.com/watch?v={vid}")
         except Exception as e:  # noqa: BLE001 — collect per-item, report at exit

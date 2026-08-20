@@ -127,6 +127,46 @@ class TestApplyToQuest(unittest.TestCase):
             vm.apply_to_quest("no frontmatter here\n", "AbC123XyZ_-", "2026-08-19", "")
 
 
+class TestResultsPassThrough(unittest.TestCase):
+    """The captured review signal (results counts + issues_count) must survive
+    the whole deterministic chain: recorder manifest → upload plan (build) →
+    uploads → catalog (apply)."""
+
+    def test_build_carries_results_and_issues(self):
+        import argparse
+        import json
+        import tempfile
+        manifest = {
+            "schema_version": "1.0.0",
+            "character": {"key": "developer", "name": "Developer"},
+            "level": {"code": "0001", "theme": "Web Fundamentals"},
+            "base_url": "https://it-journey.dev",
+            "videos": [{
+                "slug": "advanced-markdown", "name": "0001-advanced-markdown",
+                "file": "videos/0001-advanced-markdown.webm", "duration_s": 46.3,
+                "results": {"passed": 4, "failed": 0, "skipped": 2, "reasoned": 1},
+                "issues_count": 2,
+                "chapters": [{"start": 0, "label": "Intro"}, {"start": 15, "label": "$ ls"},
+                             {"start": 40, "label": "Verdict & next steps"}],
+                "quest": {"title": "Advanced Markdown", "permalink": "/quests/0001/advanced-markdown/",
+                          "path": "pages/_quests/0001/advanced-markdown.md", "level": "0001"},
+                "evidence": {"verdict": "pass", "overall": None, "mode": "execute", "executed": True},
+            }],
+        }
+        with tempfile.TemporaryDirectory() as td:
+            mpath = Path(td) / "manifest.json"
+            opath = Path(td) / "upload-plan.json"
+            mpath.write_text(json.dumps(manifest), encoding="utf-8")
+            rc = vm.cmd_build(argparse.Namespace(
+                manifest=str(mpath), out=str(opath),
+                run_url="https://example.com/run/1", privacy="unlisted", date="2026-08-20"))
+            self.assertEqual(rc, 0)
+            item = json.loads(opath.read_text(encoding="utf-8"))["items"][0]
+            self.assertEqual(item["results"], {"passed": 4, "failed": 0, "skipped": 2, "reasoned": 1})
+            self.assertEqual(item["issues_count"], 2)
+            self.assertEqual(item["slice"], "developer/0001")
+
+
 @unittest.skipUnless(HAVE_YAML, "pyyaml not installed")
 class TestCatalog(unittest.TestCase):
     def test_catalog_roundtrip(self):

@@ -49,7 +49,7 @@ The framework deliberately reuses the quest-perfection loop's architecture inste
 | Piece | Role |
 |---|---|
 | `.github/workflows/quest-video.yml` | The lane: gate → plan → evidence (fresh engine pass, or `source_run_id` reuse of a quest-perfection/quest-walkthrough artifact) → record → optional publish leg. Dispatch-only, OFF by default. |
-| `scripts/quest/walkthrough_video.mjs` | Deterministic side-by-side renderer: studio HTML + timed replay + Playwright `recordVideo` → `videos/<level>-<slug>.webm` (+ `.mp4` when ffmpeg is present) + `manifest.json` with per-step chapter times. |
+| `scripts/quest/walkthrough_video.mjs` | Deterministic side-by-side renderer: studio HTML + timed replay + Playwright `recordVideo` → `videos/<level>-<slug>.webm` (+ `.mp4` when ffmpeg is present) + `manifest.json` with per-step chapter times + `<name>.findings.json` capturing every step that did not cleanly pass (see "Closing the loop"). |
 | `scripts/quest/video_manifest.py` | `build`: recorder manifest → YouTube upload plan (title ≤100 chars, description with chapters + provenance links, bounded tags, category Education, privacy). `apply`: uploads → the quest's `walkthrough_video:` frontmatter block (+ `lastmod` bump) and the committed catalog. Unit-tested (`scripts/quest/test_video_manifest.py`). |
 | `scripts/quest/youtube_upload.py` | Stdlib-only YouTube Data API v3 resumable uploader (OAuth refresh-token flow, chunked with resume/retry, optional playlist). Idempotent against the catalog — a quest with a published video is skipped unless `--force`. |
 | `.quests/videos.yml` | The committed catalog: quest permalink → published video (id/url/recorded/run_url/slice/verdict/score). The queryable index; the per-quest frontmatter block is what the site renders. |
@@ -146,6 +146,27 @@ make quest-video-selftest    # unit tests for the deterministic manifest/apply a
 ```
 
 The renderer needs `npm install --no-save playwright && npx playwright install chromium ffmpeg`; an `ffmpeg` on PATH additionally produces the `.mp4` (YouTube accepts the raw `.webm` either way).
+
+## Closing the loop: captured results → review → fix
+
+A recording is not just evidence that the quest ran — it is a **measurement**, and steps that did not cleanly pass must flow back into the walkthrough framework for repair rather than dying inside an mp4. The lane captures its results in four aligned places, all derived from the same `analyzeResults()` pass over the **full** evidence transcript (never the render-capped subset, so a `--max-commands` cap can never hide a broken step):
+
+1. **In the video itself** — the verdict outro shows the per-status breakdown (`N passed · N failed · N skipped · N reasoned`) and lists up to four steps that did not cleanly pass, with their recorded details, so a reviewer watching the video sees the problems without opening anything else.
+2. **`<out>/<name>.findings.json`** (rides the run artifact) — the machine-readable review handoff: quest identity, per-status counts, and every failed/skipped command with its detail, plus the fix-lane recipe below.
+3. **The publish PR** — a "Witnessed results" section with the aggregate breakdown and a per-step issues table, so "review = watch the video" includes "here is exactly what didn't work".
+4. **The catalog** — each `.quests/videos.yml` entry carries `issues: N`; a non-zero count on a published video is a standing flag for dashboards and a re-record trigger once the quest is fixed.
+
+**Feeding the fix lane** needs no new machinery: `quest-fix.yml` already accepts arbitrary artifact names, and this lane's run artifact contains the sealed `walk-evidence.json` the recording replayed. To repair what a video witnessed, dispatch **quest-fix** with:
+
+```
+plan_artifact     = quest-video-<character>-<level>
+evidence_artifact = quest-video-<character>-<level>
+source_run_id     = <the quest-video run id>
+```
+
+The fixer then edits only what that evidence verifies, under its usual keep/revert gate — and the natural follow-up after the fix merges is a re-dispatch of this lane (fresh engine pass) to re-record the now-working quest and replace the video.
+
+**Reading the statuses honestly:** `failed` means the sandbox genuinely rejected a step the quest presents as working — prime fix-lane input. `skipped` is witnessed but *classified*, not automatically broken: a Windows-path block on a Linux runner or a GUI editor absent from a sandbox is environment-inapplicable, and the recorded detail says so. The review (human or fixer) judges from the detail — the capture never editorializes beyond the transcript.
 
 ## Guardrails
 

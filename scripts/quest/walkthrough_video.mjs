@@ -176,10 +176,13 @@ const STATUS = {
   reasoned: { color: '#d29922', mark: '~', label: 'reasoned' },
 };
 
-function buildSchedule(quest, result) {
+function buildSchedule(quest, result, analysis) {
   const v = (result && result.verdict_obj) || {};
   let cmds = Array.isArray(v.commands) ? v.commands.slice(0, MAX_COMMANDS) : [];
   const dropped = Array.isArray(v.commands) ? v.commands.length - cmds.length : 0;
+  // The outro holds longer when it lists not-cleanly-passed steps — the review
+  // signal deserves reading time.
+  const outroDur = 6.5 + Math.min(4, (analysis ? analysis.issues.length : 0)) * 1.3;
   const segs = [];
   segs.push({ kind: 'intro', label: 'Intro', dur: 5.0 });
   for (const [i, c] of cmds.entries()) {
@@ -195,12 +198,12 @@ function buildSchedule(quest, result) {
       typeSecs: type,
     });
   }
-  segs.push({ kind: 'outro', label: 'Verdict & next steps', dur: 6.5, dropped });
+  segs.push({ kind: 'outro', label: 'Verdict & next steps', dur: outroDur, dropped });
   // Clamp the whole video to MAX_SECONDS by scaling command segments (never the
   // intro/outro below a readable floor).
   let total = segs.reduce((s, x) => s + x.dur, 0);
   if (total > MAX_SECONDS) {
-    const fixed = 5.0 + 6.5;
+    const fixed = 5.0 + outroDur;
     const scale = Math.max(0.35, (MAX_SECONDS - fixed) / (total - fixed));
     for (const s of segs) {
       if (s.kind === 'cmd') {
@@ -215,11 +218,37 @@ function buildSchedule(quest, result) {
   return { segments: segs, duration: Math.round(t * 10) / 10, commands: cmds.length, dropped };
 }
 
+// ---- results capture ----------------------------------------------------------
+// The review signal the video lane feeds back to the walkthrough framework:
+// per-status counts plus every command that did NOT cleanly pass (failed or
+// skipped), computed over the FULL evidence transcript — not just the rendered
+// subset — so a --max-commands cap can never hide a broken step. Rendered in
+// the outro card, written to <out>/<name>.findings.json, and carried through
+// the manifest → upload plan → catalog for dashboards and the publish PR.
+function analyzeResults(result) {
+  const cmds = (result && result.verdict_obj && Array.isArray(result.verdict_obj.commands))
+    ? result.verdict_obj.commands : [];
+  const counts = { passed: 0, failed: 0, skipped: 0, reasoned: 0 };
+  const issues = [];
+  for (const c of cmds) {
+    const status = STATUS[c.status] ? c.status : 'reasoned';
+    counts[status] += 1;
+    if (status === 'failed' || status === 'skipped') {
+      issues.push({
+        command: String(c.command || '').slice(0, 220),
+        status,
+        detail: String(c.detail || '').slice(0, 360),
+      });
+    }
+  }
+  return { counts, issues, total: cmds.length };
+}
+
 // ---- studio page --------------------------------------------------------------
 // One self-driving HTML page: it receives the schedule + assets, plays the
 // timeline in real time, and resolves window.__done when the outro finishes.
 // Playwright records the whole context, so the recording IS the timeline.
-function studioHTML(quest, result, schedule, leftPane) {
+function studioHTML(quest, result, schedule, leftPane, analysis) {
   const v = (result && result.verdict_obj) || {};
   const score = result && typeof result.overall === 'number' ? `${Math.round(result.overall)}%` : '—';
   const verdict = (result && result.verdict) || 'unreviewed';
@@ -292,6 +321,15 @@ function studioHTML(quest, result, schedule, leftPane) {
   .card .meta { color:#8b949e; font-size:19px; margin-bottom:14px; }
   .card .note { color:#c9d1d9; font-size:17px; }
   .card .verdict { font-size:30px; margin:12px 0; }
+  .card .breakdown { display:flex; gap:14px; justify-content:center; margin:6px 0 12px;
+                     font-size:17px; font-weight:600; }
+  .card .issues { text-align:left; max-width:900px; margin:0 auto 4px;
+                  font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+                  color:#c9d1d9; }
+  .card .issues .hd { font-size:13px; font-weight:700; color:#8b949e; margin-bottom:4px;
+                      font-family:-apple-system,'Segoe UI',Roboto,sans-serif; letter-spacing:.04em; }
+  .card .issues .it { white-space:pre-wrap; word-break:break-word; margin:2px 0; }
+  .card .issues .why { color:#8b949e; margin-left:16px; }
   .card .url { color:#58a6ff; font-size:20px; font-weight:600; margin-top:10px; }
   </style></head><body>
   <header>
@@ -329,7 +367,18 @@ function studioHTML(quest, result, schedule, leftPane) {
   <div class="overlay hidden" id="outro"><div class="card">
     <div class="kicker">Session verdict</div>
     <div class="verdict">${esc(verdict)} · score ${esc(score)}</div>
+    ${analysis && analysis.total ? `<div class="breakdown">${['passed', 'failed', 'skipped', 'reasoned']
+      .filter((k) => analysis.counts[k] > 0)
+      .map((k) => `<span style="color:${STATUS[k].color}">${STATUS[k].mark} ${analysis.counts[k]} ${k}</span>`)
+      .join('')}</div>` : ''}
     ${summary ? `<div class="note">${esc(summary)}</div>` : ''}
+    ${analysis && analysis.issues.length ? `<div class="issues">
+      <div class="hd">STEPS THAT DID NOT CLEANLY PASS — captured for the quest-fix review loop</div>
+      ${analysis.issues.slice(0, 4).map((i) =>
+        `<div class="it"><span style="color:${STATUS[i.status].color}">${STATUS[i.status].mark}</span> $ ${esc(i.command)}${
+          i.detail ? `<div class="why">${esc(i.detail)}</div>` : ''}</div>`).join('')}
+      ${analysis.issues.length > 4 ? `<div class="why">…and ${analysis.issues.length - 4} more in the findings file.</div>` : ''}
+    </div>` : ''}
     <div class="url">${esc(BASE_URL + quest.permalink)}</div>
     <div class="note" style="margin-top:14px">Take the quest yourself — start your journey at it-journey.dev ⚔️</div>
   </div></div>
@@ -470,8 +519,12 @@ const manifest = {
 
 if (DRY_RUN) {
   for (const q of selected) {
-    const schedule = buildSchedule(q, evidenceBySlug[slugOf(q)]);
-    console.log(`${slugOf(q)}: ${schedule.commands} command(s), ~${schedule.duration}s`);
+    const result = evidenceBySlug[slugOf(q)];
+    const analysis = analyzeResults(result);
+    const schedule = buildSchedule(q, result, analysis);
+    const c = analysis.counts;
+    console.log(`${slugOf(q)}: ${schedule.commands} command(s), ~${schedule.duration}s — `
+      + `${c.passed} passed · ${c.failed} failed · ${c.skipped} skipped · ${c.reasoned} reasoned`);
     for (const s of schedule.segments) console.log(`  ${String(s.start).padStart(6)}s  ${s.label}`);
   }
   process.exit(0);
@@ -498,16 +551,18 @@ try {
       manifest.failures.push({ slug, error: 'no recorded evidence (pass --allow-no-evidence to render a read-only tour)' });
       continue;
     }
-    const schedule = buildSchedule(q, result);
+    const analysis = analyzeResults(result);
+    const schedule = buildSchedule(q, result, analysis);
     const leftPane = await captureQuestPage(browser, q);
-    console.error(`🎬 recording ${name} — ${schedule.commands} command(s), ~${schedule.duration}s …`);
+    console.error(`🎬 recording ${name} — ${schedule.commands} command(s), ~${schedule.duration}s, `
+      + `${analysis.issues.length} not-cleanly-passed step(s) …`);
     try {
       const ctx = await browser.newContext({
         viewport: SIZE,
         recordVideo: { dir: OUT, size: SIZE },
       });
       const page = await ctx.newPage();
-      await page.setContent(studioHTML(q, result, schedule, leftPane),
+      await page.setContent(studioHTML(q, result, schedule, leftPane, analysis),
         { waitUntil: 'load', timeout: 60000 });
       await page.waitForFunction(() => window.__done !== undefined, { timeout: 15000 });
       await page.evaluate(() => window.__done, { timeout: 0 })
@@ -531,6 +586,29 @@ try {
       const chapters = schedule.segments.map((s) => ({ start: s.start, label: s.label }));
       writeFileSync(join(OUT, `${name}.chapters.json`),
         JSON.stringify({ slug, duration: schedule.duration, chapters }, null, 2) + '\n');
+      // FINDINGS — the review handoff back to the walkthrough framework: the
+      // full witnessed outcome of this recording, per status, with every step
+      // that did not cleanly pass. The publish PR renders this table; the
+      // sealed walk-evidence.json in the same run artifact is what quest-fix
+      // actually consumes (plan_artifact/evidence_artifact + source_run_id).
+      const findings = {
+        schema_version: '1.0.0',
+        slug, name,
+        quest: { title: q.title, permalink: q.permalink, path: q.path,
+                 level: q.level || plan.level.code },
+        video: { file, format, duration_s: schedule.duration },
+        evidence: result ? {
+          mode: result.mode, verdict: result.verdict, overall: result.overall,
+          executed: Boolean(result.verdict_obj && result.verdict_obj.executed),
+        } : null,
+        results: analysis.counts,
+        total_commands: analysis.total,
+        issues: analysis.issues,
+        fix_lane: 'dispatch quest-fix.yml with plan_artifact + evidence_artifact set to this run\'s '
+          + 'video artifact name and source_run_id set to this run — it repairs exactly what this recording witnessed',
+      };
+      writeFileSync(join(OUT, `${name}.findings.json`),
+        JSON.stringify(findings, null, 2) + '\n');
       manifest.videos.push({
         slug, name, file, format,
         webm,
@@ -539,6 +617,9 @@ try {
         commands: schedule.commands,
         dropped_commands: schedule.dropped,
         chapters,
+        results: analysis.counts,
+        issues_count: analysis.issues.length,
+        findings_file: join(OUT, `${name}.findings.json`),
         page_capture: leftPane.dataUri ? 'live' : 'fallback',
         quest: {
           title: q.title, permalink: q.permalink, path: q.path,
@@ -549,7 +630,8 @@ try {
           executed: Boolean(result.verdict_obj && result.verdict_obj.executed),
         } : null,
       });
-      console.error(`✅ ${file} (${(statSync(file).size / 1e6).toFixed(1)} MB, ${schedule.duration}s)`);
+      console.error(`✅ ${file} (${(statSync(file).size / 1e6).toFixed(1)} MB, ${schedule.duration}s) — `
+        + `${analysis.counts.passed}✓ ${analysis.counts.failed}✗ ${analysis.counts.skipped}∅ ${analysis.counts.reasoned}~`);
     } catch (e) {
       manifest.failures.push({ slug, error: e.message });
       console.error(`⚠️  recording failed for ${slug}: ${e.message}`);

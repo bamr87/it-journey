@@ -219,6 +219,12 @@ def cmd_build(args) -> int:
             "duration_s": video.get("duration_s"),
             "verdict": ev.get("verdict"),
             "score": ev.get("overall"),
+            # The captured review signal (walkthrough_video.mjs analyzeResults):
+            # per-status counts + how many steps did not cleanly pass. Rides
+            # through uploads.json into the catalog so coverage dashboards and
+            # the publish PR can surface what the recording witnessed.
+            "results": video.get("results"),
+            "issues_count": video.get("issues_count"),
         })
     plan = {
         "schema_version": "1.0.0",
@@ -371,6 +377,10 @@ def cmd_apply(args) -> int:
             "duration_s": entry.get("duration_s"),
             "verdict": entry.get("verdict"),
             "score": entry.get("score"),
+            # Witnessed review signal: steps in the recording that did not
+            # cleanly pass (failed or skipped). A non-zero count is a standing
+            # invitation to re-run the fix lane against this video's evidence.
+            "issues": entry.get("issues_count"),
         }
     if args.apply:
         catalog_path.parent.mkdir(parents=True, exist_ok=True)
