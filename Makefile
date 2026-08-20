@@ -9,6 +9,7 @@
         quest-execute quest-execute-host \
         quest-walkthrough quest-walkthrough-plan quest-walkthrough-plan-selftest quest-walkthrough-screenshots \
         quest-video quest-video-plan quest-video-selftest \
+        quest-steps quest-stack-capture quest-env-migrate quest-steps-selftest \
         quest-ledger-update quest-ledger-dashboard quest-ledger-selftest quest-perfection-plan quest-fix \
         content-validate content-normalize content-normalize-apply content-audit \
         prose-oneline prose-oneline-apply hooks-install \
@@ -64,6 +65,9 @@ help:
 	@echo "  make quest-video-plan       - Preview which quest would be recorded (no browser, no cost)"
 	@echo "  make quest-video            - Render ./videos/ from walk-plan.json + walk-evidence.json"
 	@echo "  make quest-video-selftest   - Unit tests for the deterministic manifest/apply arm"
+	@echo "  make quest-steps QUEST=<path> [ENV=os=windows,project_dir=x] - executable step plan"
+	@echo "  make quest-stack-capture    - Walk steps.json in a sandbox, capture the whole stack"
+	@echo "  make quest-env-migrate [APPLY=1] - Derive environment: frontmatter across quests"
 	@echo ""
 	@echo "📝 Content Tooling"
 	@echo "  make content-validate          - Frontmatter validator across pages/"
@@ -351,6 +355,33 @@ quest-video:
 quest-video-selftest:
 	@echo "🧪 Quest-video deterministic arm (video_manifest.py) unit tests..."
 	@python3 scripts/quest/test_video_manifest.py
+
+# ── Whole-stack quest walking (step plan → sandbox → screenshots) ───────────
+# QUEST=<path> is required; ENV=os=windows,project_dir=my-lab overrides the
+# environment the quest is walked AS (see docs/quests/ENVIRONMENT_MATRIX.md).
+QUEST ?=
+ENV   ?=
+quest-steps:
+	@echo "🧭 Building the executable step plan (deterministic)..."
+	@python3 scripts/quest/quest_steps.py $(QUEST) $(if $(ENV),--env $(ENV),) --json steps.json
+
+quest-steps-selftest:
+	@echo "🧪 Quest step-planner self-test (offline)..."
+	@python3 scripts/quest/quest_steps.py --selftest
+
+# Walks every applicable step in an isolated sandbox and photographs the whole
+# stack after each one (browser at the viewports the step is about + box-model
+# probe + real exit status). Emits walk-evidence.json the video/ledger consume.
+quest-stack-capture:
+	@echo "📸 Walking the quest in a sandbox and capturing the whole stack..."
+	@node scripts/quest/stack_capture.mjs --steps steps.json \
+		--sandbox .sandbox --out captures --evidence walk-evidence.json
+
+# Derive the environment: frontmatter block (and repair <details> code fences)
+# across the quest collection. Dry run without APPLY=1.
+quest-env-migrate:
+	@echo "🧩 Deriving environment: frontmatter from each quest's platform sections..."
+	@python3 scripts/quest/env_migrate.py $(if $(QUEST),$(QUEST),pages/_quests) $(if $(APPLY),--apply,)
 
 # Full agentic walkthrough via the quest-walkthrough skill (needs claude login /
 # CLAUDE_CODE_OAUTH_TOKEN). Writes a report under test/quest-validator/walkthroughs/.
