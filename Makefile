@@ -8,6 +8,7 @@
         docker-validate docker-validate-strict docker-build-ci docker-audit-tier2 \
         quest-execute quest-execute-host \
         quest-walkthrough quest-walkthrough-plan quest-walkthrough-plan-selftest quest-walkthrough-screenshots \
+        quest-video quest-video-plan quest-video-selftest \
         quest-ledger-update quest-ledger-dashboard quest-ledger-selftest quest-perfection-plan quest-fix \
         content-validate content-normalize content-normalize-apply content-audit \
         prose-oneline prose-oneline-apply hooks-install \
@@ -58,6 +59,11 @@ help:
 	@echo "  make docker-audit-tier2     - Dockerized audit + Claude tier-2 (needs CLAUDE_CODE_OAUTH_TOKEN)"
 	@echo "  make quest-execute QUEST=<path> - Claude RUNS a quest's code snippets, isolated in Docker"
 	@echo "  make quest-execute SAMPLE=N     - same, across a spread of N quests"
+	@echo ""
+	@echo "🎬 Quest Walkthrough Video (side-by-side recording of a verified run)"
+	@echo "  make quest-video-plan       - Preview which quest would be recorded (no browser, no cost)"
+	@echo "  make quest-video            - Render ./videos/ from walk-plan.json + walk-evidence.json"
+	@echo "  make quest-video-selftest   - Unit tests for the deterministic manifest/apply arm"
 	@echo ""
 	@echo "📝 Content Tooling"
 	@echo "  make content-validate          - Frontmatter validator across pages/"
@@ -323,6 +329,28 @@ quest-walkthrough-screenshots:
 	@echo "📸 Capturing quest-walkthrough session screenshots into ./screenshots/ ..."
 	@node scripts/quest/walkthrough_screenshots.mjs \
 		--plan walk-plan.json --evidence walk-evidence.json --out screenshots
+
+# ── Quest walkthrough VIDEO (side-by-side recording of a verified run) ──────
+# Renders a side-by-side video (rendered quest page ⇄ recorded sandbox terminal
+# replay) into ./videos/ from the walk-plan.json + walk-evidence.json a
+# walkthrough run left in the working dir. Deterministic — no model calls; the
+# CI lane is .github/workflows/quest-video.yml (record → YouTube → frontmatter
+# PR). See docs/quests/VIDEO_FRAMEWORK.md.
+# Needs Node + playwright (npm install --no-save playwright; npx playwright
+# install chromium ffmpeg). BASE_URL overrides the site for the left pane.
+quest-video-plan:
+	@echo "🎬 Quest-video selection preview (no browser, no cost)..."
+	@node scripts/quest/walkthrough_video.mjs \
+		--plan walk-plan.json --evidence walk-evidence.json --list
+
+quest-video:
+	@echo "🎬 Recording the side-by-side quest walkthrough video into ./videos/ ..."
+	@node scripts/quest/walkthrough_video.mjs \
+		--plan walk-plan.json --evidence walk-evidence.json --out videos $(EXTRA)
+
+quest-video-selftest:
+	@echo "🧪 Quest-video deterministic arm (video_manifest.py) unit tests..."
+	@python3 scripts/quest/test_video_manifest.py
 
 # Full agentic walkthrough via the quest-walkthrough skill (needs claude login /
 # CLAUDE_CODE_OAUTH_TOKEN). Writes a report under test/quest-validator/walkthroughs/.

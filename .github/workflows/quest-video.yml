@@ -1,0 +1,473 @@
+# =============================================================================
+# quest-video.yml — the VIDEO lane of the quest-perfection loop
+# -----------------------------------------------------------------------------
+# On dispatch, record a SIDE-BY-SIDE walkthrough video of a slice's MAIN QUEST
+# — left: the rendered quest page as a learner reads it; right: an animated
+# terminal replay of the commands the agentic execute engine actually ran in
+# the sandbox — then (optionally) publish it to YouTube and open ONE PR that
+# writes the video reference into the quest's frontmatter + the committed
+# catalog (.quests/videos.yml). The goal: durable VIDEO EVIDENCE of a verified
+# run, doubling as educational content on every quest page.
+#
+# Same design as quest-perfection.yml, minus the agent: the walkthrough
+# evidence is WORKFLOW-MINTED (the agentic execute engine runs as a
+# deterministic step whose job env carries the Claude auth — Claude Code scrubs
+# auth env vars from Bash-tool subprocesses, so the engine can never run inside
+# an agent), and everything downstream of the engine is a pure function of that
+# evidence: scripts/quest/walkthrough_video.mjs renders the replay
+# deterministically, video_manifest.py composes the YouTube metadata,
+# youtube_upload.py pushes bytes, video_manifest.py apply writes the reference.
+# NO agent step runs in this workflow at all, so the seal/restore tamper dance
+# the walk lane needs is unnecessary here by construction.
+#
+# EVIDENCE REUSE (the cheap path): pass source_run_id (+ character/level) to
+# rebuild the video from a quest-perfection/quest-walkthrough run's sealed
+# artifact instead of paying for a fresh agentic execute pass — the same
+# handoff quest-fix.yml uses. A fresh engine pass is the fallback.
+#
+# TWO GATES, STAGED (mirroring the fleet's kill-switch discipline):
+#   record  — QUEST_VIDEO_ENABLED (repo variable) + Claude auth (or a
+#             source_run_id to reuse). Produces the video as a RUN ARTIFACT
+#             only: nothing is published, nothing is committed.
+#   publish — the `publish: true` dispatch input AND the YouTube secrets
+#             (YOUTUBE_CLIENT_ID / YOUTUBE_CLIENT_SECRET / YOUTUBE_REFRESH_TOKEN;
+#             optional YOUTUBE_PLAYLIST_ID). Uploads default to UNLISTED and
+#             the frontmatter/catalog change ships as a `quest-video`-labeled
+#             PR that matches NO auto-merge policy — a human reviews and
+#             merges every published video reference, and flips it public on
+#             YouTube when satisfied.
+#
+# DISPATCH-ONLY for now: video is a publishing act, not a measurement, so it
+# stays deliberate until trusted (then a weekly cron over the ledger's newly-
+# perfect slices is the natural next step — see docs/quests/VIDEO_FRAMEWORK.md).
+#
+# Setup (all OFF by default; see docs/quests/VIDEO_FRAMEWORK.md for the
+# 10-minute YouTube credential walkthrough):
+#   gh secret set CLAUDE_CODE_OAUTH_TOKEN --repo bamr87/it-journey   # engine auth
+#   gh secret set YOUTUBE_CLIENT_ID       --repo bamr87/it-journey
+#   gh secret set YOUTUBE_CLIENT_SECRET   --repo bamr87/it-journey
+#   gh secret set YOUTUBE_REFRESH_TOKEN   --repo bamr87/it-journey
+#   gh variable set QUEST_VIDEO_ENABLED --body true --repo bamr87/it-journey
+# Until then, this idles as a clean no-op.
+# =============================================================================
+name: 🎬 Quest Walkthrough Video
+
+on:
+  workflow_dispatch:
+    inputs:
+      character:
+        description: 'Character path key (developer, system-engineer, …). Blank = date-rotated.'
+        required: false
+        default: ''
+      level:
+        description: 'Binary level code (0000..1111). Blank = date-rotated.'
+        required: false
+        default: ''
+      quest:
+        description: 'Pin ONE quest (permalink, path, or slug). Blank = the slice''s main quest.'
+        required: false
+        default: ''
+      all_main:
+        description: 'Record EVERY evidenced main quest in the slice (default: just the first).'
+        type: boolean
+        default: false
+      source_run_id:
+        description: 'Reuse the sealed evidence artifact from this quest-perfection / quest-walkthrough run id instead of a fresh engine pass (requires character+level).'
+        required: false
+        default: ''
+      max_quests:
+        description: 'Cap on quests the fresh engine pass walks (ignored with source_run_id).'
+        required: false
+        default: '5'
+      publish:
+        description: 'Upload to YouTube + open the frontmatter/catalog PR (needs the YOUTUBE_* secrets).'
+        type: boolean
+        default: false
+      privacy:
+        description: 'YouTube privacy for this run''s uploads.'
+        type: choice
+        default: 'unlisted'
+        options: ['unlisted', 'public', 'private']
+
+permissions:
+  contents: read
+
+# One video run at a time; independent of the quest-ledger group because this
+# lane never writes .quests/ledger.json (its only committed write, via the
+# publish PR, is quest frontmatter + .quests/videos.yml).
+concurrency:
+  group: quest-video
+  cancel-in-progress: false
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # gate — opt-in only. Recording needs the kill switch AND either Claude auth
+  # (fresh engine pass) or a source_run_id (evidence reuse, no model at all).
+  # Publishing additionally needs the YouTube secrets; requesting publish
+  # without them warns loudly instead of failing the whole run.
+  # ---------------------------------------------------------------------------
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      go: ${{ steps.check.outputs.go }}
+      publish_go: ${{ steps.check.outputs.publish_go }}
+    steps:
+      - id: check
+        env:
+          ENABLED: ${{ vars.QUEST_VIDEO_ENABLED }}
+          OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          PUBLISH: ${{ inputs.publish }}
+          YT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YT_REFRESH: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: |
+          set -euo pipefail
+          go=false
+          if [ "$ENABLED" = "true" ] && { [ -n "$OAUTH" ] || [ -n "$KEY" ] || [ -n "$SOURCE_RUN_ID" ]; }; then
+            go=true
+          else
+            echo "quest-video idle (enabled=$ENABLED, auth=$([ -n "$OAUTH$KEY" ] && echo yes || echo no), source_run_id=${SOURCE_RUN_ID:-none})."
+          fi
+          publish_go=false
+          if [ -n "$YT_ID" ] && [ -n "$YT_SECRET" ] && [ -n "$YT_REFRESH" ]; then
+            publish_go=true
+          elif [ "$PUBLISH" = "true" ]; then
+            echo "::warning::publish requested but the YOUTUBE_CLIENT_ID / YOUTUBE_CLIENT_SECRET / YOUTUBE_REFRESH_TOKEN secrets are not all set — the run will record + attach the video artifact only. See docs/quests/VIDEO_FRAMEWORK.md."
+          fi
+          echo "go=$go" >> "$GITHUB_OUTPUT"
+          echo "publish_go=$publish_go" >> "$GITHUB_OUTPUT"
+
+  # ---------------------------------------------------------------------------
+  # record — deterministic end-to-end: plan → evidence (reused or engine-minted)
+  # → side-by-side render → upload-plan → run artifact. Read-only over GitHub.
+  # ---------------------------------------------------------------------------
+  record:
+    needs: gate
+    if: ${{ needs.gate.outputs.go == 'true' }}
+    runs-on: ubuntu-latest
+    # Engine pass (when not reusing) is the expensive leg — same generous
+    # ceiling as a perfection slice; the render itself is minutes.
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    env:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      CHARACTER: ${{ inputs.character }}
+      LEVEL: ${{ inputs.level }}
+      QUEST: ${{ inputs.quest }}
+      MAX_QUESTS: ${{ inputs.max_quests || '5' }}
+      SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+      BASE_URL: ${{ vars.QUEST_WALKTHROUGH_BASE_URL || 'https://it-journey.dev' }}
+    outputs:
+      slug: ${{ steps.slug.outputs.slug }}
+      has_videos: ${{ steps.render.outputs.has_videos }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          # No push ever leaves this job — keep the workspace credential-free.
+          persist-credentials: false
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install Python tooling
+        run: pip install pyyaml
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '20'
+
+      # ----- Obtain the slice's plan + evidence --------------------------------
+      # Reuse path: download the sealed artifact from the named run (the same
+      # durable handoff quest-fix.yml consumes). continue-on-error: a source run
+      # may have aged out of artifact retention — degrade to the engine pass.
+      - name: Download sealed evidence (perfection artifact)
+        if: env.SOURCE_RUN_ID != '' && env.CHARACTER != '' && env.LEVEL != ''
+        continue-on-error: true
+        uses: actions/download-artifact@v8
+        with:
+          name: quest-perfection-${{ inputs.character }}-${{ inputs.level }}
+          path: .
+          run-id: ${{ env.SOURCE_RUN_ID }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download sealed evidence (standalone walkthrough artifact)
+        if: env.SOURCE_RUN_ID != '' && env.CHARACTER != '' && env.LEVEL != '' && hashFiles('walk-evidence.json') == ''
+        continue-on-error: true
+        uses: actions/download-artifact@v8
+        with:
+          name: quest-walkthrough-${{ inputs.character }}-${{ inputs.level }}
+          path: .
+          run-id: ${{ env.SOURCE_RUN_ID }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Fresh path: plan the slice deterministically (same planner as the walk
+      # lane) so the log shows exactly what would be walked.
+      - name: Plan the slice (when not reusing a plan)
+        if: hashFiles('walk-plan.json') == ''
+        run: |
+          set -euo pipefail
+          python3 scripts/quest/walkthrough_plan.py \
+            ${CHARACTER:+--character "$CHARACTER"} ${LEVEL:+--level "$LEVEL"} \
+            --max-quests "$MAX_QUESTS" --json walk-plan.json
+
+      - name: Resolve the slice slug
+        id: slug
+        run: |
+          set -euo pipefail
+          python3 - >> "$GITHUB_OUTPUT" <<'PY'
+          import json
+          p = json.load(open("walk-plan.json"))
+          print(f"slug={p['character']['key']}-{p['level']['code']}")
+          print(f"empty={'true' if not p.get('quests') else 'false'}")
+          PY
+
+      # EVIDENCE — run the agentic execute engine as a DETERMINISTIC workflow
+      # step (this step's env carries the Claude auth). Exit-code contract from
+      # agentic_validate.py: 0 = evidence (possibly partial-but-scored);
+      # 2 = auth/rate-limit truncation with zero quests scored → soft-skip the
+      # run (warning, not a red build; retry later or pass source_run_id);
+      # anything else = genuine failure, fail loudly.
+      - name: Gather sandboxed evidence (agentic execute engine)
+        id: evidence
+        if: steps.slug.outputs.empty != 'true' && hashFiles('walk-evidence.json') == ''
+        run: |
+          set -euo pipefail
+          npm install -g @anthropic-ai/claude-code >/dev/null 2>&1 \
+            || { echo "::error::Claude Code install failed — the execute engine needs the claude CLI."; exit 1; }
+          mapfile -t QUEST_PATHS < <(python3 -c 'import json;[print(q["path"]) for q in json.load(open("walk-plan.json")).get("quests") or []]')
+          set +e
+          python3 test/quest-validator/agentic_validate.py \
+            --mode execute --max-turns 40 \
+            --report walk-evidence.json --md walk-evidence.md \
+            "${QUEST_PATHS[@]}"
+          rc=$?
+          set -e
+          case "$rc" in
+            0) echo "evidence gathered." ;;
+            2) echo "::warning::execute engine hit a sustained auth/rate-limit truncation (0 quests scored) — soft-skipping the recording; retry later or reuse a walk artifact via source_run_id."
+               echo "auth_skipped=true" >> "$GITHUB_OUTPUT" ;;
+            *) echo "::error::execute engine failed (exit $rc); not an auth/rate-limit truncation."
+               exit "$rc" ;;
+          esac
+
+      # RENDER — the side-by-side studio recording. Deterministic replay of the
+      # evidence transcript; Playwright's bundled ffmpeg records, the runner's
+      # system ffmpeg transcodes webm → mp4 for YouTube/artifact convenience.
+      - name: Record the side-by-side walkthrough video
+        id: render
+        if: steps.slug.outputs.empty != 'true' && steps.evidence.outputs.auth_skipped != 'true'
+        run: |
+          set -euo pipefail
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium ffmpeg
+          node scripts/quest/walkthrough_video.mjs \
+            --plan walk-plan.json --evidence walk-evidence.json --out videos \
+            ${QUEST:+--quest "$QUEST"} \
+            ${{ inputs.all_main == true && '--all-main' || '' }}
+          count=$(python3 -c 'import json;print(len(json.load(open("videos/manifest.json"))["videos"]))')
+          echo "has_videos=$([ "$count" -ge 1 ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+          # Surface the captured results — the review signal — in the run summary:
+          # per-status counts per video, plus every step that did not cleanly pass.
+          python3 - <<'PY' | tee -a "$GITHUB_STEP_SUMMARY"
+          import json
+          m = json.load(open("videos/manifest.json"))
+          vids = m.get("videos") or []
+          print(f"🎞️ {len(vids)} video(s) rendered.")
+          for v in vids:
+              r = v.get("results") or {}
+              print(f"- `{v['name']}` — {r.get('passed',0)} passed · {r.get('failed',0)} failed · "
+                    f"{r.get('skipped',0)} skipped · {r.get('reasoned',0)} reasoned "
+                    f"({v.get('issues_count',0)} step(s) did not cleanly pass — see {v.get('findings_file')})")
+              for i in (json.load(open(v["findings_file"])).get("issues") or []):
+                  print(f"    - {'✗' if i['status']=='failed' else '∅'} `{i['command']}` — {i.get('detail','')}")
+          PY
+
+      # The upload plan is composed HERE (deterministically, from the manifest +
+      # this run's URL) so the publish job — which runs with write credentials —
+      # executes a reviewed, pre-baked plan rather than composing content.
+      - name: Build the YouTube upload plan
+        if: steps.render.outputs.has_videos == 'true'
+        env:
+          PRIVACY: ${{ inputs.privacy || 'unlisted' }}
+        run: |
+          set -euo pipefail
+          python3 scripts/quest/video_manifest.py build \
+            --manifest videos/manifest.json --out videos/upload-plan.json \
+            --run-url "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            --privacy "$PRIVACY"
+
+      - name: Upload the video artifact
+        if: always() && steps.slug.outputs.slug != ''
+        uses: actions/upload-artifact@v7
+        with:
+          name: quest-video-${{ steps.slug.outputs.slug }}
+          path: |
+            walk-plan.json
+            walk-evidence.json
+            walk-evidence.md
+            videos/**
+          if-no-files-found: ignore
+          # Videos are heavy; keep the artifact around long enough to review +
+          # publish, not forever.
+          retention-days: 14
+
+  # ---------------------------------------------------------------------------
+  # publish — OPT-IN write leg: upload to YouTube (unlisted by default), then
+  # ONE PR writing the reference into the quest frontmatter + .quests/videos.yml.
+  # The `quest-video` label matches NO auto-merge policy in content-auto-merge:
+  # a human reviews the video, merges the PR, and flips the video public.
+  # ---------------------------------------------------------------------------
+  publish:
+    needs: [gate, record]
+    if: ${{ inputs.publish == true && needs.gate.outputs.publish_go == 'true' && needs.record.outputs.has_videos == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
+      SLUG: ${{ needs.record.outputs.slug }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
+          # create-pull-request authenticates itself from its `token:` input
+          # (same duplicate-Authorization-header backstory as the other lanes).
+          persist-credentials: false
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install Python tooling
+        run: pip install pyyaml
+
+      - name: Download this run's video artifact
+        uses: actions/download-artifact@v8
+        with:
+          name: quest-video-${{ env.SLUG }}
+          path: .
+
+      - name: Upload to YouTube
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_PLAYLIST_ID: ${{ secrets.YOUTUBE_PLAYLIST_ID }}
+        run: |
+          set -euo pipefail
+          python3 scripts/quest/youtube_upload.py \
+            --plan videos/upload-plan.json --out videos/uploads.json \
+            --catalog .quests/videos.yml
+
+      - name: Write the video reference (frontmatter + catalog)
+        run: |
+          set -euo pipefail
+          python3 scripts/quest/video_manifest.py apply \
+            --uploads videos/uploads.json --catalog .quests/videos.yml --apply
+
+      - name: Compose the PR body
+        id: body
+        run: |
+          set -euo pipefail
+          echo "date=$(date -u +%F)" >> "$GITHUB_OUTPUT"
+          python3 - > pr-body.md <<'PY'
+          import json, os
+          up = json.load(open("videos/uploads.json"))
+          print("## 🎬 Quest walkthrough video — published reference\n")
+          print("A side-by-side walkthrough video (rendered quest page ⇄ recorded sandbox")
+          print("terminal session) was recorded from **sealed, workflow-minted evidence** and")
+          print("published to YouTube (unlisted until you flip it). This PR writes the")
+          print("reference into the quest frontmatter (`walkthrough_video:`) and the committed")
+          print("catalog `.quests/videos.yml`; the quest page embeds it via")
+          print("`_includes/quest/quest-video.html`.\n")
+          print("| quest | video | privacy | verdict | score |")
+          print("|---|---|---|---|---|")
+          for u in up.get("uploads", []):
+              score = u.get("score")
+              score = f"{round(score)}%" if isinstance(score, (int, float)) else "—"
+              print(f"| `{u.get('permalink')}` | {u.get('url')} | {u.get('privacy')} "
+                    f"| {u.get('verdict') or '—'} | {score} |")
+          for s in up.get("skipped", []):
+              print(f"| `{s.get('permalink')}` | _skipped: {s.get('reason')}_ | | | |")
+          # WITNESSED ISSUES — the captured review signal, aligned with the
+          # walkthrough framework: every step in the recording that did not
+          # cleanly pass, plus the exact fix-lane recipe that reuses this run's
+          # sealed evidence (quest-fix consumes walk-evidence.json, not the video).
+          import glob
+          issues_rows, totals = [], {"passed": 0, "failed": 0, "skipped": 0, "reasoned": 0}
+          for f in sorted(glob.glob("videos/*.findings.json")):
+              fd = json.load(open(f))
+              for k in totals:
+                  totals[k] += (fd.get("results") or {}).get(k, 0)
+              for i in fd.get("issues") or []:
+                  mark = "✗ failed" if i["status"] == "failed" else "∅ skipped"
+                  issues_rows.append(f"| `{fd['quest']['permalink']}` | `{i['command']}` "
+                                     f"| {mark} | {i.get('detail','')} |")
+          print("\n### 🔎 Witnessed results (captured for the review/fix loop)\n")
+          print(f"**{totals['passed']} passed · {totals['failed']} failed · "
+                f"{totals['skipped']} skipped · {totals['reasoned']} reasoned** across the recording(s).\n")
+          if issues_rows:
+              print("Steps that did **not** cleanly pass — shown in each video's verdict card and")
+              print("captured in the run artifact's `*.findings.json`:\n")
+              print("| quest | step | outcome | detail |")
+              print("|---|---|---|---|")
+              for row in issues_rows:
+                  print(row)
+              print("\nTo repair what this recording witnessed, dispatch **quest-fix.yml** with")
+              slug = os.environ.get("SLUG", "")
+              run_id = os.environ.get("GITHUB_RUN_ID", "")
+              print(f"`plan_artifact` = `evidence_artifact` = `quest-video-{slug}` and")
+              print(f"`source_run_id` = `{run_id}` — it consumes this run's sealed `walk-evidence.json`")
+              print("directly, so the fix targets exactly what the video shows.")
+          else:
+              print("Every step in the recording passed cleanly — nothing queued for the fix lane.")
+          print("\n**Review = watch the video.** Merge to publish the embed; flip the video")
+          print("public on YouTube when satisfied. This PR intentionally matches no")
+          print("auto-merge policy.")
+          run_url = f"{os.environ['GITHUB_SERVER_URL']}/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{os.environ['GITHUB_RUN_ID']}"
+          print(f"\n*Generated by the Quest Video lane — [run]({run_url})*")
+          PY
+
+      - name: Open the video-reference PR (human review)
+        id: pr
+        uses: peter-evans/create-pull-request@v8
+        with:
+          token: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
+          commit-message: "content(quests): link published walkthrough video [${{ env.SLUG }}]"
+          branch: automated/quest-video-${{ env.SLUG }}
+          delete-branch: true
+          add-paths: |
+            pages/_quests/**
+            .quests/videos.yml
+          title: "🎬 Quest walkthrough video: ${{ env.SLUG }}"
+          body-path: pr-body.md
+          labels: |
+            automated
+            quest-video
+
+      - name: Report outcome
+        run: |
+          set -euo pipefail
+          if [ "${{ steps.pr.outputs.pull-request-number }}" != "" ]; then
+            echo "video-reference PR #${{ steps.pr.outputs.pull-request-number }} opened." | tee -a "$GITHUB_STEP_SUMMARY"
+          else
+            echo "::warning::no video-reference PR (every upload skipped/failed, or no frontmatter change)."
+          fi
+
+      - name: Upload the publish record
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: quest-video-publish-${{ env.SLUG }}
+          path: videos/uploads.json
+          if-no-files-found: ignore
