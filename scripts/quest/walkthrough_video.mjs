@@ -6,6 +6,11 @@
  * Composition (one continuous 1920×1080 recording per quest):
  *   left pane  — the RENDERED QUEST PAGE (captured off the live site, auto-
  *                scrolling in sync with the run) — what the learner reads.
+ *   browser pane — the FRONTEND THE LEARNER IS BUILDING: per-step screenshots
+ *                captured in the sandbox by scripts/quest/stack_capture.mjs,
+ *                swapped in as each step plays, shown at every viewport the step
+ *                is about (a @media step shows mobile+tablet+desktop side by
+ *                side). Absent captures degrade to the original two-pane layout.
  *   right pane — an animated TERMINAL REPLAY of the recorded session transcript
  *                (the commands the agentic execute engine actually ran in the
  *                sandbox, typed out with their pass/fail/skipped/reasoned
@@ -48,7 +53,7 @@
  */
 import { execFileSync, spawnSync } from 'node:child_process';
 import { readFileSync, writeFileSync, mkdirSync, renameSync, existsSync, statSync } from 'node:fs';
-import { join } from 'node:path';
+import { join, basename } from 'node:path';
 
 // ---- args -----------------------------------------------------------------
 const args = process.argv.slice(2);
@@ -176,7 +181,7 @@ const STATUS = {
   reasoned: { color: '#d29922', mark: '~', label: 'reasoned' },
 };
 
-function buildSchedule(quest, result, analysis) {
+function buildSchedule(quest, result, analysis, stack) {
   const v = (result && result.verdict_obj) || {};
   let cmds = Array.isArray(v.commands) ? v.commands.slice(0, MAX_COMMANDS) : [];
   const dropped = Array.isArray(v.commands) ? v.commands.length - cmds.length : 0;
@@ -190,11 +195,15 @@ function buildSchedule(quest, result, analysis) {
     const detail = String(c.detail || '').slice(0, 360);
     const type = Math.min(2.6, 0.35 + cmd.length * 0.045);
     const read = Math.min(3.2, 1.4 + detail.length * 0.012);
+    const shots = stack && stack.byIndex.get(i);
     segs.push({
       kind: 'cmd', index: i, cmd, detail,
       status: STATUS[c.status] ? c.status : 'reasoned',
       label: `$ ${cmd.length > 44 ? cmd.slice(0, 41) + '…' : cmd}`,
-      dur: type + 0.7 + read,
+      chapter: c.chapter || '',
+      shots: shots || [],
+      // A step whose captures show the built UI earns a beat to look at it.
+      dur: type + 0.7 + read + (shots ? Math.min(2.4, 0.9 + shots.length * 0.5) : 0),
       typeSecs: type,
     });
   }
@@ -216,6 +225,40 @@ function buildSchedule(quest, result, analysis) {
   let t = 0;
   for (const s of segs) { s.start = Math.round(t * 10) / 10; t += s.dur; }
   return { segments: segs, duration: Math.round(t * 10) / 10, commands: cmds.length, dropped };
+}
+
+// ---- stack captures -----------------------------------------------------------
+// The whole-stack evidence: per-step screenshots of what the learner is LOOKING
+// at (the artifact they built, rendered in a real browser at the viewports the
+// step is about), produced by scripts/quest/stack_capture.mjs. Inlined as data
+// URIs so the recording is a single self-contained page.
+const VP_ORDER = { mobile: 0, tablet: 1, desktop: 2 };
+
+function loadCaptures(result) {
+  const cmds = (result && result.verdict_obj && Array.isArray(result.verdict_obj.commands))
+    ? result.verdict_obj.commands : [];
+  const byIndex = new Map();
+  let total = 0;
+  for (const [i, c] of cmds.entries()) {
+    const shots = (Array.isArray(c.captures) ? c.captures : [])
+      .filter((s) => s && s.file)
+      .sort((a, b) => (VP_ORDER[a.viewport] ?? 9) - (VP_ORDER[b.viewport] ?? 9))
+      .map((s) => {
+        try {
+          const b64 = readFileSync(s.file).toString('base64');
+          total += 1;
+          return {
+            viewport: s.viewport || '', artifact: s.artifact || basename(s.file),
+            label: s.label || '', dataUri: `data:image/png;base64,${b64}`,
+          };
+        } catch {
+          return null;
+        }
+      })
+      .filter(Boolean);
+    if (shots.length) byIndex.set(i, shots);
+  }
+  return { byIndex, total };
 }
 
 // ---- results capture ----------------------------------------------------------
@@ -248,7 +291,7 @@ function analyzeResults(result) {
 // One self-driving HTML page: it receives the schedule + assets, plays the
 // timeline in real time, and resolves window.__done when the outro finishes.
 // Playwright records the whole context, so the recording IS the timeline.
-function studioHTML(quest, result, schedule, leftPane, analysis) {
+function studioHTML(quest, result, schedule, leftPane, analysis, stack) {
   const v = (result && result.verdict_obj) || {};
   const score = result && typeof result.overall === 'number' ? `${Math.round(result.overall)}%` : '—';
   const verdict = (result && result.verdict) || 'unreviewed';
@@ -283,19 +326,44 @@ function studioHTML(quest, result, schedule, leftPane, analysis) {
                   color:#8b949e; font-size:14px; }
   header .badge b { color:#e6edf3; }
   main { display:flex; height:${SIZE.height - 64 - 56}px; }
-  .pane-left { width:46%; border-right:1px solid #21262d; background:#ffffff; position:relative; overflow:hidden; }
+  .pane-left { width:${stack && stack.total ? 34 : 46}%; border-right:1px solid #21262d;
+               background:#ffffff; position:relative; overflow:hidden; }
   .scroller { position:absolute; inset:0; overflow:hidden; }
   .scroller img { width:100%; display:block; transform:translateY(0);
                   transition:transform 1.1s cubic-bezier(.4,0,.2,1); }
   .fallback { padding:40px; color:#24292f; background:#ffffff; height:100%; overflow:hidden; }
   .fallback h2 { margin:0 0 8px; } .fallback .perma { color:#57606a; font-size:14px; }
   .fallback .muted { color:#8b949e; }
-  .pane-right { width:54%; background:#0d1117; display:flex; flex-direction:column; }
+  .pane-right { width:${stack && stack.total ? 66 : 54}%; background:#0d1117;
+                display:flex; flex-direction:column; }
+  /* ---- browser pane: the frontend the learner is building ---- */
+  .browser { flex:0 0 56%; display:flex; flex-direction:column;
+             border-bottom:1px solid #21262d; background:#161b22; min-height:0; }
+  .chrome { display:flex; align-items:center; gap:8px; padding:8px 14px; background:#0b0f14;
+            border-bottom:1px solid #21262d; }
+  .chrome .dots { display:flex; gap:6px; }
+  .chrome .url { flex:1; background:#0d1117; border:1px solid #21262d; border-radius:6px;
+                 padding:4px 10px; color:#8b949e; font:12px ui-monospace,Menlo,monospace;
+                 overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .chrome .tag { color:#58a6ff; font-size:12px; font-weight:700; letter-spacing:.05em; }
+  /* The pane is the frame: portrait phone shots and wide desktop shots alike are
+     scaled to fit its height, so a 3-viewport step never spills into the
+     terminal below. */
+  .shots { flex:1 1 auto; display:flex; gap:12px; padding:10px 14px;
+           align-items:stretch; justify-content:center; min-height:0; overflow:hidden; }
+  .shot { display:flex; flex-direction:column-reverse; align-items:center; gap:4px;
+          min-width:0; min-height:0; height:100%; }
+  .shot img { flex:1 1 auto; min-height:0; height:100%; width:auto; max-width:100%;
+              object-fit:contain; object-position:top;
+              border:1px solid #30363d; border-radius:4px; background:#fff; }
+  .shot .vp { flex:0 0 auto; color:#8b949e; font-size:11px; letter-spacing:.06em;
+              text-transform:uppercase; }
+  .shots .empty { color:#6e7681; font-size:13px; align-self:center; }
   .termbar { display:flex; gap:8px; align-items:center; padding:12px 18px 8px; }
   .dot { width:13px; height:13px; border-radius:50%; }
   .termbar .name { margin-left:10px; color:#8b949e; font-size:13px; }
   #term { flex:1; overflow:hidden; padding:6px 22px 18px;
-          font:15px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+          font:${stack && stack.total ? 13 : 15}px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
   #term .line { white-space:pre-wrap; word-break:break-word; margin:3px 0; }
   #term .prompt { color:#3fb950; } #term .cmd { color:#e6edf3; }
   #term .st { font-size:13px; margin-left:8px; }
@@ -341,6 +409,16 @@ function studioHTML(quest, result, schedule, leftPane, analysis) {
   <main>
     <div class="pane-left">${left}</div>
     <div class="pane-right">
+      ${stack && stack.total ? `<div class="browser">
+        <div class="chrome">
+          <span class="dots"><span class="dot" style="background:#f85149"></span>
+            <span class="dot" style="background:#d29922"></span>
+            <span class="dot" style="background:#3fb950"></span></span>
+          <span class="url" id="shoturl">about:blank</span>
+          <span class="tag" id="shottag"></span>
+        </div>
+        <div class="shots" id="shots"><div class="empty">the page you are building appears here</div></div>
+      </div>` : ''}
       <div class="termbar">
         <span class="dot" style="background:#f85149"></span>
         <span class="dot" style="background:#d29922"></span>
@@ -391,6 +469,24 @@ function studioHTML(quest, result, schedule, leftPane, analysis) {
   const stepEl = document.getElementById('step');
   const chapterEl = document.getElementById('chapter');
   const caretLine = term.lastElementChild;
+  const shotsEl = document.getElementById('shots');
+  const shotUrlEl = document.getElementById('shoturl');
+  const shotTagEl = document.getElementById('shottag');
+
+  // Swap the browser pane to this step's captures — what the learner would be
+  // looking at right now, at the viewport(s) the step is about.
+  function showShots(seg) {
+    if (!shotsEl) return;
+    if (!seg.shots || !seg.shots.length) return;   // hold the last frame
+    shotsEl.innerHTML = seg.shots.map(function (s) {
+      return '<div class="shot"><img src="' + s.dataUri + '" alt="' + s.label + '">'
+        + '<span class="vp">' + s.viewport + '</span></div>';
+    }).join('');
+    if (shotUrlEl) shotUrlEl.textContent = seg.shots[0].artifact
+      ? 'file:///home/quest/' + seg.shots[0].artifact : 'about:blank';
+    if (shotTagEl) shotTagEl.textContent = seg.shots.length > 1
+      ? seg.shots.length + ' viewports' : (seg.shots[0].viewport || '');
+  }
 
   function scrollLeft(i, n) {
     if (!img) return;
@@ -435,7 +531,7 @@ function studioHTML(quest, result, schedule, leftPane, analysis) {
     await sleep(0.4);
     const cmds = DATA.segments.filter((s) => s.kind === 'cmd');
     for (const seg of DATA.segments) {
-      chapterEl.textContent = seg.label;
+      chapterEl.textContent = seg.chapter ? (seg.chapter + ' — ' + seg.label) : seg.label;
       bar.style.transition = 'width ' + seg.dur + 's linear';
       bar.style.width = Math.min(100, ((seg.start + seg.dur) / DATA.duration) * 100) + '%';
       if (seg.kind === 'intro') {
@@ -445,6 +541,7 @@ function studioHTML(quest, result, schedule, leftPane, analysis) {
       } else if (seg.kind === 'cmd') {
         stepEl.textContent = 'Step ' + (seg.index + 1) + '/' + cmds.length;
         scrollLeft(seg.index, cmds.length);
+        showShots(seg);
         const t0 = performance.now();
         await typeCommand(seg);
         await sleep(seg.dur - (performance.now() - t0) / 1000);
@@ -521,10 +618,12 @@ if (DRY_RUN) {
   for (const q of selected) {
     const result = evidenceBySlug[slugOf(q)];
     const analysis = analyzeResults(result);
-    const schedule = buildSchedule(q, result, analysis);
+    const stack = loadCaptures(result);
+    const schedule = buildSchedule(q, result, analysis, stack);
     const c = analysis.counts;
     console.log(`${slugOf(q)}: ${schedule.commands} command(s), ~${schedule.duration}s — `
-      + `${c.passed} passed · ${c.failed} failed · ${c.skipped} skipped · ${c.reasoned} reasoned`);
+      + `${c.passed} passed · ${c.failed} failed · ${c.skipped} skipped · ${c.reasoned} reasoned`
+      + ` · ${stack.total} stack capture(s)`);
     for (const s of schedule.segments) console.log(`  ${String(s.start).padStart(6)}s  ${s.label}`);
   }
   process.exit(0);
@@ -552,9 +651,11 @@ try {
       continue;
     }
     const analysis = analyzeResults(result);
-    const schedule = buildSchedule(q, result, analysis);
+    const stack = loadCaptures(result);
+    const schedule = buildSchedule(q, result, analysis, stack);
     const leftPane = await captureQuestPage(browser, q);
     console.error(`🎬 recording ${name} — ${schedule.commands} command(s), ~${schedule.duration}s, `
+      + `${stack.total} stack capture(s), `
       + `${analysis.issues.length} not-cleanly-passed step(s) …`);
     try {
       const ctx = await browser.newContext({
@@ -562,7 +663,7 @@ try {
         recordVideo: { dir: OUT, size: SIZE },
       });
       const page = await ctx.newPage();
-      await page.setContent(studioHTML(q, result, schedule, leftPane, analysis),
+      await page.setContent(studioHTML(q, result, schedule, leftPane, analysis, stack),
         { waitUntil: 'load', timeout: 60000 });
       await page.waitForFunction(() => window.__done !== undefined, { timeout: 15000 });
       await page.evaluate(() => window.__done, { timeout: 0 })
@@ -603,6 +704,8 @@ try {
         } : null,
         results: analysis.counts,
         total_commands: analysis.total,
+        stack_captures: stack.total,
+        steps_with_captures: stack.byIndex.size,
         issues: analysis.issues,
         fix_lane: 'dispatch quest-fix.yml with plan_artifact + evidence_artifact set to this run\'s '
           + 'video artifact name and source_run_id set to this run — it repairs exactly what this recording witnessed',
@@ -619,6 +722,8 @@ try {
         chapters,
         results: analysis.counts,
         issues_count: analysis.issues.length,
+        stack_captures: stack.total,
+        steps_with_captures: stack.byIndex.size,
         findings_file: join(OUT, `${name}.findings.json`),
         page_capture: leftPane.dataUri ? 'live' : 'fallback',
         quest: {
