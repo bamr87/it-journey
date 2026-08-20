@@ -57,6 +57,16 @@ redirect_from:
 layout: quest
 sub_title: 'Level 1010 (10) Quest: Advanced CI/CD Automation and AI Integration'
 draft: false
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *In the vast digital realm of Jekyll-powered GitHub Pages, where content flows like rivers of Markdown and links connect distant territories of knowledge, a silent corruption threatens the very foundation of your domain. Broken hyperlinks - those severed pathways between digital realms - can transform a magnificent knowledge fortress into a maze of frustration for visiting adventurers.*
 

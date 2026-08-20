@@ -84,6 +84,16 @@ rewards:
   unlocks_features:
   - Access to the AI Ethics quest of Level 1101
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! A model that lives only in a notebook helps no one. To matter, it must serve real requests, survive real data, and improve over time. This quest, **MLOps Engineering**, leads you into the **Foundry of Production**, where machine learning becomes a reliable system instead of a one-off experiment. By its end you will have tracked an experiment, registered a model, served it behind an HTTP endpoint, and built a guard that watches for drift.*
 
@@ -142,7 +152,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -159,7 +169,7 @@ python -c "import mlflow; print('mlflow', mlflow.__version__)"
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -176,7 +186,7 @@ python -c "import mlflow; print('mlflow', mlflow.__version__)"
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -192,7 +202,7 @@ python -c "import mlflow; print('mlflow', mlflow.__version__)"
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

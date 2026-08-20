@@ -80,6 +80,16 @@ rewards:
   unlocks_features:
   - Continued progress through the Level 1111 Leadership & Innovation quest line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, Master adventurer. The greatest works in our realm were not raised by lone heroes behind sealed gates - they were built in the open, stone by stone, by thousands of hands who never met. Linux, Git, Python, the very tools you wield: all are commons, tended by volunteers. This quest, **Open Source Contribution**, teaches you to give back to that commons and, in time, to tend it yourself as a maintainer.*
 
@@ -137,7 +147,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -151,7 +161,7 @@ gh repo fork OWNER/REPO --clone    # fork + clone in one step
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -164,7 +174,7 @@ gh repo fork OWNER/REPO --clone
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -178,7 +188,7 @@ gh repo fork OWNER/REPO --clone
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

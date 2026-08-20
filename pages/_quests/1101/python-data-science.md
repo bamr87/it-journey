@@ -83,6 +83,16 @@ rewards:
   unlocks_features:
   - Readiness for the Machine Learning Fundamentals quest
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! Before the Oracle can teach a machine to learn, you must first master the **Data Artisan's Toolkit**. Raw data arrives messy, missing, and mute. This quest, **Python for Data Science**, forges the three legendary instruments every practitioner carries: NumPy for raw numerical power, pandas for shaping tabular data, and Matplotlib for making data speak in pictures.*
 
@@ -141,7 +151,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -155,7 +165,7 @@ python -c "import pandas as pd; print('pandas', pd.__version__)"
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -170,7 +180,7 @@ python -c "import pandas as pd; print('pandas', pd.__version__)"
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -185,7 +195,7 @@ python -c "import pandas as pd; print('pandas', pd.__version__)"
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

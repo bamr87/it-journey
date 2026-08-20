@@ -81,6 +81,18 @@ rewards:
   unlocks_features:
   - Ability to help an organization prepare for a real security audit
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
+  variables:
+    project_dir: compliance
 ---
 *Greetings, brave adventurer! You have built strong walls and tested them well - but in the wider world, strength is not enough. You must also **prove** it, in writing, to skeptical auditors and wary customers. This quest, **Compliance Standards**, teaches the scribe's discipline: mapping the controls you already have to the great frameworks of trust - SOC 2, ISO 27001, GDPR, and PCI-DSS - and gathering the evidence that shows they truly operate.*
 
@@ -137,7 +149,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -151,7 +163,7 @@ open -a "Numbers" controls-matrix.csv 2>/dev/null || cat controls-matrix.csv
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -165,7 +177,7 @@ Get-Content "$HOME\compliance\controls-matrix.csv"
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -179,7 +191,7 @@ git init -q && git add controls-matrix.csv
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

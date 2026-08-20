@@ -84,6 +84,16 @@ rewards:
   - Access to the rest of the Level 1001 Kubernetes Orchestration quest line
 layout: quest
 mermaid: true
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You have ascended into the **Warrior tier**, and before you rises the **Orchestration Citadel** - a vast fortress where thousands of containers march in disciplined formation. This quest, **Kubernetes Fundamentals**, is your initiation. You will learn how a single brain - the control plane - commands an army of worker nodes, and how you, the operator, issue your will not as a stream of frantic commands but as a single, declared truth.*
 
@@ -142,7 +152,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -166,7 +176,7 @@ kubectl get nodes
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -190,7 +200,7 @@ kubectl get nodes
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -214,7 +224,7 @@ kubectl get nodes
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

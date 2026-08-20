@@ -79,6 +79,16 @@ rewards:
   unlocks_features:
   - Query optimization challenges in the Database Mastery line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You have learned to **store** data; now you will learn to **summon** it. SQL - the Structured Query Language - is the spellbook of the relational realm, and this quest, **SQL Mastery**, teaches you to chant the incantations that join, group, and nest data. By the end you will pull precise answers from a sprawling, multi-table database the way a battle-mage pulls fire from the air.*
 
@@ -136,7 +146,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -150,7 +160,7 @@ psql query_codex
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -163,7 +173,7 @@ psql query_codex
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -177,7 +187,7 @@ sudo -u postgres psql query_codex
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

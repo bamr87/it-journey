@@ -81,6 +81,16 @@ rewards:
   unlocks_features:
   - Access to the API Versioning and API Documentation quests
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You have learned to speak HTTP in the API Fundamentals quest. Now you will learn to speak it **well**. **REST** - Representational State Transfer - is the architectural style that turns raw HTTP requests into elegant, predictable APIs that millions of developers can use without reading a manual.*
 
@@ -140,7 +150,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -153,7 +163,7 @@ curl -s https://api.github.com/repos/torvalds/linux | jq '{name, stargazers_coun
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -166,7 +176,7 @@ curl.exe -s https://api.github.com/repos/torvalds/linux | jq "{name, stargazers_
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -179,7 +189,7 @@ curl -s https://api.github.com/repos/torvalds/linux | jq '{name, stargazers_coun
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

@@ -86,6 +86,18 @@ rewards:
   - The on-premises counterpart to cloud provisioning, and the box you will run every later quest on
 layout: quest
 mermaid: true
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
+  variables:
+    project_dir: dev
 ---
 *Every cloud you have ever rented is somebody else's forge. This quest hands you the hammer: one bare machine, one evening, and a sequence of incantations that turns an anonymous slab of silicon into a named, hardened, observable development server that answers to you alone.*
 

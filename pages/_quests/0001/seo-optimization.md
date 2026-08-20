@@ -84,6 +84,18 @@ layout: quest
 redirect_from:
 - /quests/0011/seo-optimization/
 - /quickstart/optimization-maintenance/
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
+  variables:
+    project_dir: my-site
 ---
 *Greetings, brave adventurer! Welcome to **SEO Optimization** - the quest where you light a beacon so the search engines of the realm can find your work. You can forge the most beautiful site in the kingdom, but if no crawler can read it and no result links to it, it stands silent in the fog. Search Engine Optimization is the craft of making your pages discoverable, understandable, and shareable.*
 
@@ -142,7 +154,7 @@ This **🟢 Easy** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -166,7 +178,7 @@ open http://127.0.0.1:4000/
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -189,7 +201,7 @@ Start-Process http://127.0.0.1:4000/
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -211,7 +223,7 @@ xdg-open http://127.0.0.1:4000/
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

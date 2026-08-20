@@ -52,6 +52,11 @@ categories:
 - Quests
 - Fullstack
 - Medium
+environment:
+  os:
+  - cloud
+  shell:
+  - bash
 ---
 ## 🎯 Quest Objectives
 

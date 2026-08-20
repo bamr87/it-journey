@@ -54,6 +54,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR))
 
 import quest_lib  # noqa: E402
+import quest_registry as reg  # noqa: E402
 
 REPO_ROOT = SCRIPT_DIR.parent.parent
 
@@ -150,7 +151,55 @@ def _gui_target(opener_lines):
     return None
 
 
-def build_steps(quest_path, platform: str = "linux") -> dict:
+def resolve_env(declared: dict, overrides: dict | None = None) -> dict:
+    """Resolve the environment a walk runs as: the quest's declaration, the
+    registry's per-OS defaults, then any explicit override.
+
+    This is the same resolution the reader's environment control performs in the
+    browser, so a sandbox walk and a reader on that machine see the same steps
+    and the same substituted variables.
+    """
+    declared = declared or {}
+    overrides = overrides or {}
+    env = {}
+    os_options = declared.get("os") or reg.env_options("os")
+    env["os"] = overrides.get("os") or (os_options[0] if os_options else "linux")
+    for axis in reg.ENVIRONMENT_AXIS_ORDER:
+        if axis == "os":
+            continue
+        supported = declared.get(axis) or []
+        chosen = overrides.get(axis)
+        if not chosen:
+            chosen = reg.env_default(axis, env["os"])
+            if supported and chosen not in supported:
+                chosen = supported[0]
+        env[axis] = chosen
+    variables = dict(declared.get("variables") or {})
+    for key, value in (overrides.get("variables") or {}).items():
+        if value:
+            variables[key] = value
+    env["variables"] = variables
+    env["declared_os"] = list(os_options)
+    return env
+
+
+def substitute(code: str, declared_vars: dict, resolved_vars: dict) -> str:
+    """Rewrite a snippet's declared variables to the resolved values.
+
+    Mirrors assets/js/quest-env.js: replace the quest's DEFAULT value with the
+    chosen one, so the command a learner reads on the page is the command the
+    sandbox runs.
+    """
+    out = code or ""
+    for name, default in (declared_vars or {}).items():
+        chosen = str((resolved_vars or {}).get(name) or default or "")
+        default = str(default or "")
+        if default and chosen and chosen != default:
+            out = out.replace(default, chosen)
+    return out
+
+
+def build_steps(quest_path, platform: str = "linux", env_overrides: dict | None = None) -> dict:
     """Return the ordered, executable step plan for one quest."""
     path = Path(quest_path)
     doc = quest_lib.read_quest(path)
@@ -158,6 +207,14 @@ def build_steps(quest_path, platform: str = "linux") -> dict:
     body_lines = body.split("\n")
     chapters, platforms = _context_map(body)
     blocks = quest_lib.extract_code_blocks(body)
+
+    declared_env = (doc.fm or {}).get("environment") or {}
+    overrides = dict(env_overrides or {})
+    # An explicit --platform keeps working and simply pins the os axis.
+    overrides.setdefault("os", platform)
+    env = resolve_env(declared_env, overrides)
+    platform = env["os"]
+    declared_vars = declared_env.get("variables") or {}
 
     steps = []
     written = set()
@@ -195,12 +252,13 @@ def build_steps(quest_path, platform: str = "linux") -> dict:
             block_platform = block_platform or "windows"
             applicable = platform == "windows"
 
+        resolved_code = substitute(code, declared_vars, env.get("variables"))
         steps.append({
             "index": len(steps),
             "kind": kind,
             "lang": lang,
-            "code": code,
-            "target": target,
+            "code": resolved_code,
+            "target": substitute(target, declared_vars, env.get("variables")) if target else target,
             "mode": mode,
             "anchor": anchor,
             # For a shell step that ends by opening something in a GUI: what the
@@ -225,6 +283,10 @@ def build_steps(quest_path, platform: str = "linux") -> dict:
             "slug": quest_lib_slug(path),
         },
         "platform": platform,
+        # The environment this plan was resolved FOR — the same axes the reader
+        # configures on the page. A CI matrix varies this to walk every path.
+        "environment": env,
+        "declared_environment": declared_env,
         "steps": steps,
         "stats": {
             "total": len(steps),
@@ -248,7 +310,6 @@ def _repo_rel(path: Path) -> str:
 
 
 def quest_lib_slug(path: Path) -> str:
-    import quest_registry as reg  # noqa: PLC0415
     return reg.slug_from_filename(path.name)
 
 
@@ -354,7 +415,11 @@ def main() -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("quest", nargs="?", help="quest markdown path")
     ap.add_argument("--platform", default="linux",
-                    choices=["linux", "macos", "windows", "cloud"])
+                    choices=["linux", "macos", "windows", "cloud"],
+                    help="shorthand for --env os=<value>")
+    ap.add_argument("--env", default="",
+                    help="environment overrides, e.g. "
+                         "'os=windows,shell=powershell,project_dir=my-lab'")
     ap.add_argument("--json", help="write the plan to this file (default: stdout summary)")
     ap.add_argument("--selftest", action="store_true", help="run the embedded self-test")
     args = ap.parse_args()
@@ -364,13 +429,25 @@ def main() -> int:
     if not args.quest:
         ap.error("a quest path is required (or --selftest)")
 
-    plan = build_steps(args.quest, platform=args.platform)
+    overrides = {}
+    for pair in (args.env or "").split(","):
+        if "=" not in pair:
+            continue
+        k, v = (x.strip() for x in pair.split("=", 1))
+        if k in reg.ENVIRONMENT_AXIS_ORDER:
+            overrides[k] = v
+        elif k:
+            overrides.setdefault("variables", {})[k] = v
+    plan = build_steps(args.quest, platform=args.platform, env_overrides=overrides)
     if args.json:
         Path(args.json).write_text(json.dumps(plan, indent=2, ensure_ascii=False) + "\n",
                                    encoding="utf-8")
         print(f"📄 step plan → {args.json}")
     st = plan["stats"]
-    print(f"⚔️  {plan['quest']['title']}  ({plan['quest']['level']}, {args.platform})")
+    e = plan["environment"]
+    print(f"⚔️  {plan['quest']['title']}  ({plan['quest']['level']})")
+    print(f"   env: os={e['os']} shell={e.get('shell')} editor={e.get('editor')} "
+          f"pkg={e.get('pkg')}" + (f" vars={e['variables']}" if e.get("variables") else ""))
     print(f"   {st['applicable']} applicable of {st['runnable']} runnable "
           f"({st['total']} blocks): {st['by_kind']}")
     for s in plan["steps"]:

@@ -56,6 +56,16 @@ rewards:
 redirect_from:
 - /quests/0101/docker-mastery-example/
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! Welcome to **Docker Containerization Mastery: Level 0101 (5) Quest** - an epic 🟡 Medium journey that will transform your docker mastery. This quest will guide you through tool-mastery adventures in devops, preparing you for the next level of your IT journey.*
 

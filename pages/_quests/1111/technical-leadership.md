@@ -83,6 +83,18 @@ rewards:
   unlocks_features:
   - Access to the rest of the Level 1111 Leadership & Innovation quest line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
+  variables:
+    project_dir: leadership
 ---
 *Greetings, Master adventurer. You have climbed every tier of the realm and now stand at the gates of the highest keep - **Leadership & Innovation**. Here the challenge is no longer "can you build it?" but "can you make a band of builders greater than the sum of their parts?" This capstone quest, **Technical Leadership**, teaches you to lead without a crown: to set a vision worth following, to decide under uncertainty, and to multiply your power through the hands of others.*
 
@@ -140,7 +152,7 @@ This **⚔️ Epic** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -155,7 +167,7 @@ echo "# Technical Vision" > vision/team-vision.md
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -171,7 +183,7 @@ git init
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -186,7 +198,7 @@ echo "# Technical Vision" > vision/team-vision.md
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

@@ -81,6 +81,16 @@ rewards:
   unlocks_features:
   - Access to the hands-on AWS, Terraform, and Azure quests of Level 1000
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You have crossed the threshold into the **Warrior tier**, and a vast new realm opens above you - the **Cloud**. Where earlier quests taught you to build kingdoms on a single machine, this realm teaches you to summon computing power from a sky of shared, on-demand resources that span the whole planet. This quest, **Cloud Computing Fundamentals**, is the map you study before you ever cast a spell in someone else's datacenter.*
 
@@ -138,7 +148,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -157,7 +167,7 @@ gcloud version
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -176,7 +186,7 @@ gcloud version
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -196,7 +206,7 @@ az version
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

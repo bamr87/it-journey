@@ -65,7 +65,7 @@ quest_dependencies:
   - /quests/1010/query-traffic-with-mcp/
   unlocks_quests: []
 quest_relationships:
-  parent_quest: null
+  parent_quest:
   child_quests: []
   parallel_quests: []
   sequel_quests: []
@@ -109,6 +109,14 @@ quest_mapping:
   biome: Terminal
 draft: false
 layout: quest
+environment:
+  os:
+  - macos
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
 ---
 
 ## 📖 The Legend Behind This Quest

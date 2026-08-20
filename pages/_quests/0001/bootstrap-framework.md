@@ -86,6 +86,18 @@ rewards:
 layout: quest
 redirect_from:
 - /quests/0010/bootstrap-framework/
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
+  variables:
+    project_dir: bootstrap-quest
 ---
 *Greetings, brave adventurer! Welcome to **Bootstrap Framework** - the quest where you stop hand-forging every button and column and start assembling polished pages from ready-made parts. Bootstrap is the most widely used front-end toolkit in the realm: a library of CSS classes and components that give you a responsive grid, navbars, cards, forms, and dozens of utilities out of the box.*
 
@@ -143,7 +155,7 @@ This **🟢 Easy** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -161,7 +173,7 @@ open index.html
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -179,7 +191,7 @@ Start-Process index.html
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -197,7 +209,7 @@ xdg-open index.html
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

@@ -81,6 +81,16 @@ rewards:
   unlocks_features:
   - Readiness for the CI/CD & DevOps quest line at Level 0101
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You have already forged single containers in the fires of the Container Coast. But real applications are rarely a lone process - they are a web server, a database, a cache, and a background worker, all needing to find each other, share secrets, and start in the right order. Coordinating them by hand with a dozen `docker run` flags is a path to madness.*
 
@@ -141,7 +151,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -160,7 +170,7 @@ brew install docker-compose
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -179,7 +189,7 @@ wsl docker compose version
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -198,7 +208,7 @@ docker compose version
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

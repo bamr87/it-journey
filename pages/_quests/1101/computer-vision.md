@@ -85,6 +85,16 @@ rewards:
   unlocks_features:
   - Access to the MLOps and AI Ethics quests of Level 1101
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You have taught machines to read numbers and to read words. Now you grant them sight. This quest, **Computer Vision Mastery**, leads you into the **Tower of the Seeing Eye**, where convolutional neural networks learn to recognize objects in raw pixels. By its end you will have trained a network that classifies images and bent a giant pretrained model to a task of your own choosing.*
 
@@ -143,7 +153,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -159,7 +169,7 @@ python -c "import torch, torchvision; print('torch', torch.__version__, 'mps', t
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -175,7 +185,7 @@ python -c "import torch, torchvision; print('torch', torch.__version__, 'cuda', 
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -191,7 +201,7 @@ python -c "import torch, torchvision; print('torch', torch.__version__, 'cuda', 
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

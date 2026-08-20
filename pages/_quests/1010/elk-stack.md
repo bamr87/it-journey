@@ -84,6 +84,16 @@ rewards:
   unlocks_features:
   - Access to the Distributed Tracing and Alerting Systems quests
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! High in the **Watchtower** of the Warrior tier you have learned to read the three pillars of observability. Now you descend into the great **Hall of Records** - the realm of logs - where every service in your kingdom scribbles its story in a thousand scattered scrolls. Alone, those scrolls are noise. Gathered, parsed, and indexed, they become an oracle that answers any question about what happened, when, and why. This quest, **The ELK Stack**, teaches you to build that oracle.*
 
@@ -141,7 +151,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -158,7 +168,7 @@ docker compose version
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -172,7 +182,7 @@ docker compose version
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -188,7 +198,7 @@ echo 'vm.max_map_count=262144' | sudo tee /etc/sysctl.d/99-elasticsearch.conf
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

@@ -89,6 +89,16 @@ rewards:
   unlocks_features:
   - Structured data files that power data-driven Liquid templates
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! Beneath every Jekyll site lies a quiet language of settings and data: **YAML**. It is the ink in which `_config.yml` is written, the metadata atop every page, and the format of the data files your templates loop over. Master YAML and you control the entire behaviour of your site - without touching a single line of Ruby.*
 
@@ -145,7 +155,7 @@ This **🟢 Easy** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -160,7 +170,7 @@ yamllint _config.yml
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -175,7 +185,7 @@ yamllint _config.yml
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -190,7 +200,7 @@ yamllint _config.yml
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

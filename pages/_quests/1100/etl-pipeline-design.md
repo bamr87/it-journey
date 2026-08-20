@@ -84,6 +84,16 @@ rewards:
   unlocks_features:
   - Access to the Data Warehousing and Apache Spark quests
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You stand at the gates of the **Master tier** and the realm of **Data Engineering** opens before you. Your first trial is the **ETL Pipeline** - the great aqueduct that carries raw data from scattered springs, purifies it in transformation chambers, and delivers it into the reservoirs your analysts and models depend on. Build it well and the kingdom drinks clean water; build it carelessly and every dashboard downstream is poisoned.*
 
@@ -141,7 +151,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -156,7 +166,7 @@ python --version
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -171,7 +181,7 @@ python --version
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -186,7 +196,7 @@ python --version
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

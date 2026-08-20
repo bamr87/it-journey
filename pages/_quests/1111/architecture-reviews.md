@@ -80,6 +80,16 @@ rewards:
   unlocks_features:
   - Completion of the Level 1111 Leadership & Innovation quest line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, Master adventurer. You stand at the capstone of the Crown. The grandest fortresses in the realm were never raised on a single mind's whim - they were debated at a round table where the wisest builders weighed every wall, every gate, every trade of stone for speed. This final quest, **Architecture Reviews**, teaches you to lead that round table: to facilitate a design review that makes the design stronger, to record decisions so future builders need not relitigate them, and to do it all without your ego on the table.*
 
@@ -137,7 +147,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -151,7 +161,7 @@ adr new "Use PostgreSQL for the primary datastore"
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -165,7 +175,7 @@ git add docs\adr; git commit -m "docs: start ADR log"
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -179,7 +189,7 @@ echo "# ADR-0001: Record architecture decisions" > docs/adr/0001-record-architec
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

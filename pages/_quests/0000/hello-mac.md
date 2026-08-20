@@ -82,6 +82,12 @@ draft: false
 redirect_from:
 - /quests/0000/hello-mac/
 layout: quest
+environment:
+  os:
+  - macos
+  shell:
+  - zsh
+  - bash
 ---
 *Welcome, macOS adventurer! This quest transforms your Mac into a professional-grade development workstation. You'll install core tooling, tune your terminal, and validate a clean, repeatable setup.*
 

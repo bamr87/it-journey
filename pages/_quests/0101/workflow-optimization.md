@@ -81,6 +81,16 @@ rewards:
   unlocks_features:
   - Completion of the Level 0101 CI/CD quest line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You have built a pipeline that builds, tests, secures, and ships. But a slow pipeline is a tax paid on every single commit - minutes of waiting, dollars of compute, and the erosion of the fast feedback that made CI worth doing. This quest, **Workflow Optimization**, is the final tempering of your forge: making it not just correct, but swift and frugal.*
 
@@ -138,7 +148,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -151,7 +161,7 @@ time npm ci      # note how long a clean install takes — this is what caching 
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -164,7 +174,7 @@ Measure-Command { npm ci }
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -177,7 +187,7 @@ time npm ci
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

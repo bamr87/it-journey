@@ -83,6 +83,16 @@ rewards:
   unlocks_features:
   - Access to the rest of the Level 1010 Monitoring & Observability quest line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You have climbed into the **Warrior tier**, and before you rises the **Watchtower** - the highest vantage in the realm of **Monitoring & Observability**. From here a vigilant Warrior sees fires before they spread, famine before the granaries empty, and invaders long before they breach the walls. This quest, **Monitoring Fundamentals**, hands you the spyglass, the signal-horn, and the war-map you will carry through every quest that follows.*
 
@@ -140,7 +150,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -159,7 +169,7 @@ curl -s http://localhost:9100/metrics | head -n 20
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -174,7 +184,7 @@ curl.exe -s http://localhost:9100/metrics | Select-Object -First 20
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -191,7 +201,7 @@ curl -s http://localhost:9100/metrics | head -n 20
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

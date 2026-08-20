@@ -84,6 +84,18 @@ rewards:
 layout: quest
 redirect_from:
 - /quests/0011/jekyll-plugins/
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
+  variables:
+    project_dir: my-site
 ---
 *Greetings, brave adventurer! Welcome to **Jekyll Plugins** - the quest where you teach the static-site engine new spells. Jekyll out of the box turns Markdown and Liquid into static HTML, but plugins are how it becomes truly yours: they add SEO tags, sitemaps, feeds, image processing, and any custom logic you can imagine. A plugin runs during the build, so the cost is paid once and your visitors still receive plain, fast files.*
 
@@ -141,7 +153,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -159,7 +171,7 @@ bundle exec jekyll build --verbose
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -177,7 +189,7 @@ bundle exec jekyll build --verbose
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -195,7 +207,7 @@ bundle exec jekyll build --verbose
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

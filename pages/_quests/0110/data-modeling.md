@@ -79,6 +79,16 @@ rewards:
   unlocks_features:
   - Deeper schema-design challenges in the Database Mastery line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! Before you can query a kingdom's data, someone must first **draw its map**. That mapmaker is you. This quest, **Data Modeling**, teaches the discipline of turning vague human requirements - "we need to track students, courses, and who enrolled in what" - into a precise, normalized schema that the database can enforce forever.*
 
@@ -136,7 +146,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -150,7 +160,7 @@ psql modeling_realm
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -163,7 +173,7 @@ psql modeling_realm
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -177,7 +187,7 @@ sudo -u postgres psql modeling_realm
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

@@ -118,6 +118,98 @@ LEARNING_STYLE = [
 ]
 
 # ─────────────────────────────────────────────────────────────────────────────
+# Environment matrix — the axes a quest can vary its instructions along
+# ─────────────────────────────────────────────────────────────────────────────
+# Quests are written for a learner on a MACHINE: an OS, a shell, an editor, a
+# package manager. Historically each quest hard-coded that as four prose sections
+# ("🍎 macOS Kingdom Path", "🪟 Windows Empire Path", …) which a reader had to
+# scroll past and a validator had to guess at. These axes make the same
+# information DATA: declared in frontmatter, rendered as a visible control the
+# reader configures, and consumed by the testing framework to decide which steps
+# apply to the environment under test.
+#
+# `default_for` marks the option auto-selected once the reader's OS is known, so
+# a first-time visitor lands on instructions that already match their machine.
+ENVIRONMENT_AXES = {
+    "os": {
+        "label": "Operating system", "icon": "bi-laptop", "detectable": True,
+        "options": [
+            {"value": "macos",   "label": "macOS",          "icon": "🍎"},
+            {"value": "windows", "label": "Windows",        "icon": "🪟"},
+            {"value": "linux",   "label": "Linux",          "icon": "🐧"},
+            {"value": "cloud",   "label": "Cloud / Container", "icon": "☁️"},
+        ],
+    },
+    "shell": {
+        "label": "Shell", "icon": "bi-terminal", "detectable": False,
+        "options": [
+            {"value": "zsh",        "label": "zsh",        "icon": "⚡", "default_for": ["macos"]},
+            {"value": "bash",       "label": "bash",       "icon": "🐚", "default_for": ["linux", "cloud"]},
+            {"value": "powershell", "label": "PowerShell", "icon": "💠", "default_for": ["windows"]},
+            {"value": "fish",       "label": "fish",       "icon": "🐟"},
+        ],
+    },
+    "editor": {
+        "label": "Editor", "icon": "bi-code-square", "detectable": False,
+        "options": [
+            {"value": "vscode",    "label": "VS Code", "icon": "🔵", "default_for": ["macos", "windows", "linux", "cloud"]},
+            {"value": "vim",       "label": "Vim",     "icon": "🟩"},
+            {"value": "nano",      "label": "nano",    "icon": "📝"},
+            {"value": "jetbrains", "label": "JetBrains", "icon": "🟧"},
+        ],
+    },
+    "pkg": {
+        "label": "Package manager", "icon": "bi-box", "detectable": False,
+        "options": [
+            {"value": "brew",   "label": "Homebrew", "icon": "🍺", "default_for": ["macos"]},
+            {"value": "apt",    "label": "apt",      "icon": "📦", "default_for": ["linux"]},
+            {"value": "winget", "label": "winget",   "icon": "🧰", "default_for": ["windows"]},
+            {"value": "choco",  "label": "Chocolatey", "icon": "🍫"},
+            {"value": "none",   "label": "None / preinstalled", "icon": "➖", "default_for": ["cloud"]},
+        ],
+    },
+}
+
+# Axis order for rendering the environment control.
+ENVIRONMENT_AXIS_ORDER = ["os", "shell", "editor", "pkg"]
+
+# Frontmatter sub-keys of the optional ``environment:`` block.
+ENVIRONMENT_KEYS = ["os", "shell", "editor", "pkg", "variables", "requires"]
+
+# Variables a quest may parameterize its commands with. The reader edits these in
+# the environment control and every rendered snippet follows; the testing
+# framework substitutes the same values, so page and sandbox never disagree.
+ENVIRONMENT_VARIABLES = {
+    "project_dir": {
+        "label": "Project folder", "default": "quest-project",
+        "help": "Where this quest's files are created, under your home directory.",
+    },
+}
+
+# The legacy prose headings each OS path is written under. Detection reads these
+# so the 100+ quests already using the convention gain the data with no edits.
+PLATFORM_SECTION_PATTERNS = {
+    "macos":   r"mac\s*os|macos kingdom",
+    "windows": r"windows empire|windows",
+    "linux":   r"linux territory|linux",
+    "cloud":   r"cloud realms|cloud|container",
+}
+
+
+def env_options(axis: str) -> list:
+    """Option values for one environment axis ([] for an unknown axis)."""
+    return [o["value"] for o in ENVIRONMENT_AXES.get(axis, {}).get("options", [])]
+
+
+def env_default(axis: str, os_value: str):
+    """The option an axis defaults to for a given OS (None when undecided)."""
+    for opt in ENVIRONMENT_AXES.get(axis, {}).get("options", []):
+        if os_value in (opt.get("default_for") or []):
+            return opt["value"]
+    return None
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # Frontmatter schema
 # ─────────────────────────────────────────────────────────────────────────────
 # Required fields every published quest must carry. ``layout`` and ``author``
@@ -133,7 +225,7 @@ REQUIRED_FIELDS = [
 OPTIONAL_FIELDS = [
     "lastmod", "categories", "tags", "excerpt", "sub_title", "preview",
     "primary_technology", "skill_focus", "learning_style", "quest_series",
-    "draft", "comments", "walkthrough_video",
+    "draft", "comments", "walkthrough_video", "environment",
 ]
 
 # Structured-optional fields with one canonical shape each.

@@ -83,6 +83,16 @@ rewards:
   unlocks_features:
   - Access to the Docker Compose Orchestration quest
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You have crossed into the **Adventurer tier**, and the salt air of the Container Coast fills your lungs. Here, applications no longer wander the host machine as homeless processes, fighting over libraries and ports. Instead, each one is sealed inside a tidy, portable crate that runs the same on your laptop, a teammate's machine, and a server in the cloud. This quest, **Container Fundamentals**, teaches you to forge those crates yourself.*
 
@@ -143,7 +153,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -163,7 +173,7 @@ docker run --rm hello-world
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -183,7 +193,7 @@ docker run --rm hello-world
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -206,7 +216,7 @@ docker run --rm hello-world
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

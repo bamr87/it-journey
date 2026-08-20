@@ -85,6 +85,18 @@ rewards:
 layout: quest
 redirect_from:
 - /quests/0010/javascript-fundamentals/
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
+  variables:
+    project_dir: js-quest
 ---
 *Greetings, brave adventurer! Welcome to **JavaScript Fundamentals** - the quest where your web pages stop being still portraits and start to move, listen, and respond. HTML gives a page its bones and CSS gives it skin and color, but JavaScript is the spark of life. It is the one language every browser on the planet speaks natively, and learning it unlocks interactivity, animation, and the ability to fetch fresh data from across the realm.*
 
@@ -142,7 +154,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -162,7 +174,7 @@ open index.html
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -182,7 +194,7 @@ Start-Process index.html
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -202,7 +214,7 @@ xdg-open index.html
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
