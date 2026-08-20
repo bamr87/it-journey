@@ -83,6 +83,16 @@ rewards:
   unlocks_features:
   - Access to the rest of the Level 0101 CI/CD & DevOps quest line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You have entered the **Adventurer tier**, and the great **Forge of Automation** roars before you. Here, the manual rituals of old - the late-night deploys, the "works on my machine" curses, the dread of release day - are melted down and reforged into a single, tireless machine. This quest, **CI/CD Fundamentals**, is the first hammer-strike. It teaches you to turn every commit into a verified, deployable artifact without lifting a finger.*
 
@@ -140,7 +150,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -161,7 +171,7 @@ npm init -y
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -183,7 +193,7 @@ npm init -y
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -204,7 +214,7 @@ npm init -y
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

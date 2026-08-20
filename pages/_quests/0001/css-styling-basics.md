@@ -87,6 +87,18 @@ layout: quest
 redirect_from:
 - /quests/0010/css-styling-basics/
 - /quickstart/styling-navigation/
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
+  variables:
+    project_dir: css-quest
 ---
 *Greetings, brave adventurer! Welcome to **CSS Styling Basics** - the quest where a plain, gray wall of text transforms into something people actually want to look at. HTML is the skeleton of a web page; **CSS** (Cascading Style Sheets) is the robe, the colors, and the architecture. With it you control every pixel: spacing, typography, layout, and how the whole thing reshapes itself on a phone versus a wide monitor.*
 
@@ -144,7 +156,7 @@ This **🟢 Easy** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -162,7 +174,7 @@ open index.html
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -180,7 +192,7 @@ Start-Process index.html
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -198,7 +210,7 @@ xdg-open index.html
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

@@ -84,6 +84,16 @@ rewards:
   unlocks_features:
   - Access to the Apache Spark and Data Quality quests
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! Your aqueduct from the ETL quest now delivers clean water - but where does it pool? You stand before the **Analytical Citadel**, the great reservoir where data is shaped not for fast single-row transactions but for sweeping questions across millions of rows: "What were sales by region by quarter for the last five years?" Build the citadel with the wrong layout and every report crawls; build it as a **dimensional model** and queries fly.*
 
@@ -142,7 +152,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -156,7 +166,7 @@ sqlite3 --version
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -170,7 +180,7 @@ python -m pip install --upgrade pip duckdb
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -183,7 +193,7 @@ python -m pip install --upgrade pip duckdb
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

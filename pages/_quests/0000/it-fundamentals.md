@@ -70,6 +70,14 @@ fmContentType: quest
 draft: false
 slug: fundamentals
 layout: quest
+environment:
+  os:
+  - cloud
+  shell:
+  - bash
+  - powershell
+  variables:
+    project_dir: scripts
 ---
 *Welcome, aspiring IT adventurer! Before you can cast your first spells or build grand digital fortresses, you must understand the fundamental building blocks of the IT realm. This quest covers the essential skills every technology professional needs — from organizing files to understanding networks and cloud computing.*
 

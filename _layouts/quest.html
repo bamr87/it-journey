@@ -7,6 +7,9 @@ layout: default
   Wraps quest content with:
     - quest-header (level/tier/difficulty badges + meta)
     - quest-sidebar (sticky breadcrumb, progress, prerequisites)
+    - quest-env (reader-configurable environment control — only when the
+      page's frontmatter carries an environment block; filters the platform
+      paths and rewrites snippets to the reader's machine)
     - quest-video (verified walkthrough embed — only when the page's
       frontmatter carries a walkthrough_video block)
     - The quest's own markdown body
@@ -28,6 +31,8 @@ layout: default
     </aside>
 
     <div id="quest-content" class="quest-page__content">
+      {% include quest/quest-env.html page=page %}
+
       {% include quest/quest-video.html page=page %}
 
       {{ content }}
@@ -44,3 +49,4 @@ layout: default
 </article>
 
 <script src="{{ '/assets/js/quest-progress.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/quest-env.js' | relative_url }}" defer></script>

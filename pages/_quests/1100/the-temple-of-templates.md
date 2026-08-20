@@ -56,6 +56,16 @@ layout: quest
 sub_title: 'Level 1100 (12) Quest: Function Crafting and Modular Abstractions'
 draft: false
 mermaid: true
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 ## 🧙‍♂️ Epic Introduction
 

@@ -63,6 +63,15 @@ rewards:
   progression_points: 50
   unlocks_features:
   - Continue The Ouroboros Loop campaign
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Every great engine begins as a wheel turning once. Before golems, before gates, before sealed evidence — there is a humbler rite: a loop that wakes each morning, picks **one** scroll from the shelf, tests whether its spell still casts, and writes the verdict in a ledger it never lies to. Build that today, in an hour, with nothing but a repository and a scheduled workflow — and you will hold the seed that the entire quest-perfection engine grew from.*
 

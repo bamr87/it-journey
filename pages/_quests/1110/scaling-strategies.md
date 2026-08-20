@@ -83,6 +83,16 @@ rewards:
   - The scaling toolkit needed for the system-design capstone
 layout: quest
 mermaid: true
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Architect, your kingdom thrives - and with success comes a new siege: load. Ten users become ten thousand, and the keeps that served them gracefully now groan under the weight. **Scaling Strategies** is the discipline of growing a system to meet demand without it collapsing: adding machines, caching the hot paths, splitting the data, and balancing the flow. Master it, and traffic that would have toppled a lesser realm becomes a number on a dashboard.*
 
@@ -140,7 +150,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -154,7 +164,7 @@ docker run -d --name cache -p 6379:6379 redis:7-alpine
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -167,7 +177,7 @@ docker run -d --name cache -p 6379:6379 redis:7-alpine
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -180,7 +190,7 @@ sudo docker run -d --name cache -p 6379:6379 redis:7-alpine
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

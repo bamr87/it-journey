@@ -81,6 +81,18 @@ rewards:
   unlocks_features:
   - Continued progress through the Level 1111 Leadership & Innovation quest line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
+  variables:
+    project_dir: rnd
 ---
 *Greetings, Master adventurer. You have mastered the known spells of the realm - but the frontier is dark, and the future belongs to those who venture into it deliberately. This quest, **Innovation and R&D**, teaches you to explore the unknown without gambling the kingdom: to run experiments that yield real answers, to balance safe bets against wild ones, and to kill your darlings when the evidence says so.*
 
@@ -138,7 +150,7 @@ This **⚔️ Epic** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -152,7 +164,7 @@ echo "# Experiment Brief: <title>" > experiments/exp-001.md
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -166,7 +178,7 @@ git init
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -179,7 +191,7 @@ echo "# Experiment Brief: <title>" > experiments/exp-001.md
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

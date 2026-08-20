@@ -168,6 +168,12 @@ The fixer then edits only what that evidence verifies, under its usual keep/reve
 
 **Reading the statuses honestly:** `failed` means the sandbox genuinely rejected a step the quest presents as working — prime fix-lane input. `skipped` is witnessed but *classified*, not automatically broken: a Windows-path block on a Linux runner or a GUI editor absent from a sandbox is environment-inapplicable, and the recorded detail says so. The review (human or fixer) judges from the detail — the capture never editorializes beyond the transcript.
 
+## Whole-stack capture (every step, in a sandbox)
+
+`scripts/quest/stack_capture.mjs` walks a quest's deterministic step plan (`scripts/quest/quest_steps.py`) in an isolated sandbox and photographs the whole stack after **every** step: the artifact rendered in headless Chromium at the viewports that step is about, a box-model/DOM probe, page errors, and the command's real exit status. It emits the same agentic-compatible evidence shape, with `captures[]` on each command — which the recorder turns into the video's browser pane. It calls no model, so a video can be produced at zero AI cost (`capture: stack`, the workflow's default).
+
+The environment a quest is walked AS comes from its own `environment:` frontmatter — see [`ENVIRONMENT_MATRIX.md`](ENVIRONMENT_MATRIX.md). The same declaration drives the reader-facing control on the quest page, so page and sandbox never disagree. A worked comparison of a full loop run against the video it produced is in [`LOOP_VS_VIDEO.md`](LOOP_VS_VIDEO.md).
+
 ## Guardrails
 
 - **Evidence-only replay** — the video renders the sealed transcript's commands and outcomes verbatim; no step invents, reorders, or re-runs anything. A quest without evidence gets no video.

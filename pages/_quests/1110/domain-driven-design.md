@@ -83,6 +83,18 @@ rewards:
   - Strategic design foundation for the rest of the Citadel
 layout: quest
 mermaid: true
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
+  variables:
+    project_dir: ddd-quest
 ---
 *Welcome back to the Citadel, Architect. You have learned to shape objects with patterns; now you must learn to shape the meaning the objects carry. **Domain-Driven Design** is the discipline of letting the business domain - not the database, not the framework - drive the design of your software. It is how a payments team and a payments codebase come to speak exactly the same language.*
 
@@ -140,7 +152,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -154,7 +166,7 @@ python --version
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -168,7 +180,7 @@ python --version
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -182,7 +194,7 @@ python --version
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

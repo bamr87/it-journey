@@ -154,7 +154,7 @@ echo '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' \
     npx @modelcontextprotocol/server-github
 ```
 
-<details>
+<details markdown="1">
 <summary>Windows (PowerShell)</summary>
 
 ```powershell

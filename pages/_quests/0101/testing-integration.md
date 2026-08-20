@@ -82,6 +82,16 @@ rewards:
   unlocks_features:
   - Deeper Level 0101 pipeline quests
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! The **Forge of Automation** has taught you to turn every commit into a build. But a build that compiles is not a build that works. This quest, **Testing Integration**, hangs the gates across your pipeline - the guards that ask "does this change actually do what it claims?" before letting it pass toward production.*
 
@@ -139,7 +149,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -157,7 +167,7 @@ node --version
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -174,7 +184,7 @@ node --version
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -194,7 +204,7 @@ node --version
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

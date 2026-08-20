@@ -82,6 +82,16 @@ rewards:
   unlocks_features:
   - Access to the Error Handling and Rate Limiting quests
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! Every gate worth guarding needs a guardian. An API that anyone can call without identifying themselves is a treasury with its doors flung open. This quest, **API Authentication**, teaches you to prove who you are when you call an API - and to demand proof when you build one.*
 
@@ -143,7 +153,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -158,7 +168,7 @@ curl -s -H "Authorization: Bearer $GITHUB_TOKEN" https://api.github.com/user | h
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -173,7 +183,7 @@ curl.exe -s -H "Authorization: Bearer $env:GITHUB_TOKEN" https://api.github.com/
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -188,7 +198,7 @@ curl -s -H "Authorization: Bearer $GITHUB_TOKEN" https://api.github.com/user | h
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

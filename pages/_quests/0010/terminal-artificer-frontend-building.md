@@ -83,6 +83,15 @@ layout: quest
 sub_title: 'Level 0010 (2) Quest: Terminal Frontend Building'
 draft: false
 mermaid: true
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *In the raw chaotic energy of the command line, far-reaching spells (scripts) are often cast with cryptic runes (arguments) and dangerous incantations. A single typo can spell disaster. As a Terminal Artificer, you have learned that reach without control is chaos. You seek to forge a "Glass Interface"—a layer of elegance and order that allows even the uninitiated to wield destructive magic safely.*
 

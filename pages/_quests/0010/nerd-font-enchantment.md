@@ -68,6 +68,15 @@ sub_title: 'Side Quest: Font Enhancement and Icon Display'
 redirect_from:
 - /quests/0010/side-quests/nerd-font-enchantment/
 draft: false
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 ## 🌟 The Legend of Font Enchantment
 

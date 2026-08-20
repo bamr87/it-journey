@@ -75,6 +75,11 @@ on:
         description: 'Reuse the sealed evidence artifact from this quest-perfection / quest-walkthrough run id instead of a fresh engine pass (requires character+level).'
         required: false
         default: ''
+      capture:
+        description: 'stack = deterministic step-by-step sandbox walk with whole-stack screenshots (no model cost); engine = the agentic execute engine.'
+        type: choice
+        default: 'stack'
+        options: ['stack', 'engine']
       max_quests:
         description: 'Cap on quests the fresh engine pass walks (ignored with source_run_id).'
         required: false
@@ -118,6 +123,7 @@ jobs:
           OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          CAPTURE: ${{ inputs.capture || 'stack' }}
           PUBLISH: ${{ inputs.publish }}
           YT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
           YT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
@@ -125,10 +131,12 @@ jobs:
         run: |
           set -euo pipefail
           go=false
-          if [ "$ENABLED" = "true" ] && { [ -n "$OAUTH" ] || [ -n "$KEY" ] || [ -n "$SOURCE_RUN_ID" ]; }; then
+          # The `stack` capture mode is fully deterministic (step plan → sandbox
+          # walk → screenshots) and calls no model, so it needs no Claude auth.
+          if [ "$ENABLED" = "true" ] && { [ "$CAPTURE" = "stack" ] || [ -n "$OAUTH" ] || [ -n "$KEY" ] || [ -n "$SOURCE_RUN_ID" ]; }; then
             go=true
           else
-            echo "quest-video idle (enabled=$ENABLED, auth=$([ -n "$OAUTH$KEY" ] && echo yes || echo no), source_run_id=${SOURCE_RUN_ID:-none})."
+            echo "quest-video idle (enabled=$ENABLED, capture=$CAPTURE, auth=$([ -n "$OAUTH$KEY" ] && echo yes || echo no), source_run_id=${SOURCE_RUN_ID:-none})."
           fi
           publish_go=false
           if [ -n "$YT_ID" ] && [ -n "$YT_SECRET" ] && [ -n "$YT_REFRESH" ]; then
@@ -160,6 +168,7 @@ jobs:
       QUEST: ${{ inputs.quest }}
       MAX_QUESTS: ${{ inputs.max_quests || '5' }}
       SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+      CAPTURE: ${{ inputs.capture || 'stack' }}
       BASE_URL: ${{ vars.QUEST_WALKTHROUGH_BASE_URL || 'https://it-journey.dev' }}
     outputs:
       slug: ${{ steps.slug.outputs.slug }}
@@ -228,7 +237,38 @@ jobs:
           print(f"empty={'true' if not p.get('quests') else 'false'}")
           PY
 
-      # EVIDENCE — run the agentic execute engine as a DETERMINISTIC workflow
+      # EVIDENCE (stack mode) — walk EVERY step of the slice's main quest in an
+      # isolated sandbox and photograph the whole stack after each one: the
+      # artifact rendered in a real browser at the viewports the step is about,
+      # a box-model probe, and the command's real exit status. Deterministic and
+      # model-free — the environment the quest is walked AS comes from its own
+      # `environment:` frontmatter (docs/quests/ENVIRONMENT_MATRIX.md).
+      - name: Walk the quest and capture the whole stack
+        id: stack
+        if: env.CAPTURE == 'stack' && steps.slug.outputs.empty != 'true' && hashFiles('walk-evidence.json') == ''
+        run: |
+          set -euo pipefail
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+          quest=$(python3 - <<'PY'
+          import json
+          plan = json.load(open("walk-plan.json"))
+          mains = [q for q in plan.get("quests") or [] if q.get("type") == "main_quest"]
+          pick = (mains or plan.get("quests") or [None])[0]
+          print(pick["path"] if pick else "")
+          PY
+          )
+          if [ -z "$quest" ]; then
+            echo "::warning::no walkable quest in the plan — skipping the stack capture."
+            exit 0
+          fi
+          echo "::notice::walking $quest step by step in a sandbox"
+          python3 scripts/quest/quest_steps.py "$quest" --json steps.json
+          node scripts/quest/stack_capture.mjs --steps steps.json \
+            --sandbox "$RUNNER_TEMP/quest-sandbox" --out captures \
+            --evidence walk-evidence.json
+
+      # EVIDENCE (engine mode) — run the agentic execute engine as a DETERMINISTIC
       # step (this step's env carries the Claude auth). Exit-code contract from
       # agentic_validate.py: 0 = evidence (possibly partial-but-scored);
       # 2 = auth/rate-limit truncation with zero quests scored → soft-skip the
@@ -236,7 +276,7 @@ jobs:
       # anything else = genuine failure, fail loudly.
       - name: Gather sandboxed evidence (agentic execute engine)
         id: evidence
-        if: steps.slug.outputs.empty != 'true' && hashFiles('walk-evidence.json') == ''
+        if: env.CAPTURE == 'engine' && steps.slug.outputs.empty != 'true' && hashFiles('walk-evidence.json') == ''
         run: |
           set -euo pipefail
           npm install -g @anthropic-ai/claude-code >/dev/null 2>&1 \
@@ -312,6 +352,8 @@ jobs:
             walk-plan.json
             walk-evidence.json
             walk-evidence.md
+            steps.json
+            captures/**
             videos/**
           if-no-files-found: ignore
           # Videos are heavy; keep the artifact around long enough to review +

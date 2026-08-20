@@ -81,6 +81,11 @@ rewards:
   unlocks_features:
   - Secrets and environment quests hardened on your own always-on host
 layout: quest
+environment:
+  os:
+  - cloud
+  shell:
+  - bash
 ---
 
 *Hark, adventurer! In every homestead there stands a tomb — a storage closet where a once-mighty tower sleeps beneath dust and cable-tangle. The merchants would have you believe only new iron can serve, that a machine of fourteen winters belongs to the scrapheap. They lie. This quest is an act of necromancy: you will raise that machine, bind it with containers, teach it to sleep without dying and wake at a whispered packet, and set it working the second shift — while learning more about servers than any cloud console will ever teach you.*

@@ -81,6 +81,16 @@ rewards:
   unlocks_features:
   - Workflow optimization quest in Level 0101
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! Your pipeline now builds, tests, and ships. But what exactly is the *thing* it ships, and where does it live between the forge and the gates of production? This quest, **Artifact Management**, teaches you to treat your build output as a sacred, versioned, tamper-proof relic - one you can store, trace, and trust all the way to production.*
 
@@ -138,7 +148,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -154,7 +164,7 @@ docker images myapp
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -169,7 +179,7 @@ docker images myapp
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -185,7 +195,7 @@ sudo docker images myapp
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

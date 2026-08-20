@@ -82,6 +82,16 @@ rewards:
   unlocks_features:
   - Access to the Infrastructure as Code quest, where you automate all of this
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Welcome to the Citadel, cloud Warrior. You have studied the map of the realm in **Cloud Computing Fundamentals** - now you set foot inside the largest kingdom of all: **Amazon Web Services**. Here you will not merely read about compute and storage; you will summon a running server, store treasure in an object vault, forge keys of identity, and learn the network walls that keep the kingdom safe.*
 
@@ -140,7 +150,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -160,7 +170,7 @@ aws configure
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -177,7 +187,7 @@ aws configure
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -193,7 +203,7 @@ aws configure   # enter key, secret, region us-east-1, json
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

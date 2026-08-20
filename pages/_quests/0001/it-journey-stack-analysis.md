@@ -69,6 +69,11 @@ redirect_from:
 - /quests/0001/side-quests/it-journey-stack-analysis/
 draft: false
 mermaid: true
+environment:
+  os:
+  - cloud
+  shell:
+  - bash
 ---
 # Stack Attack Analysis: IT-Journey
 

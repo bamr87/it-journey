@@ -85,6 +85,16 @@ rewards:
   unlocks_features:
   - A repeatable, safe workflow for every project you build
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You learned to commit and push in the Foundation tier - the first words of the version-control tongue. Now you will learn to speak it fluently. **Git Workflow Mastery** teaches the rituals real teams live by: branching off to work safely, opening pull requests for review, choosing between merge and rebase, and resolving conflicts with a steady hand instead of a racing heart.*
 
@@ -141,7 +151,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -160,7 +170,7 @@ git config --global init.defaultBranch main
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -177,7 +187,7 @@ git config --global init.defaultBranch main
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -194,7 +204,7 @@ git config --global init.defaultBranch main
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

@@ -82,6 +82,16 @@ rewards:
   unlocks_features:
   - Access to the Stream Processing and Data Quality quests
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You stand deep in the **Master tier**, where the rivers of data no longer fit on a single machine. In the ETL quest you built an aqueduct; now you must move an ocean. This Epic quest, **Apache Spark**, teaches you to command a fleet of machines as one - splitting petabytes into partitions, scattering work across a cluster, and gathering the results. Master it and no dataset is too large for your kingdom to reason about.*
 
@@ -139,7 +149,7 @@ This **⚔️ Epic** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -153,7 +163,7 @@ python -c "import pyspark; print(pyspark.__version__)"
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -167,7 +177,7 @@ python -c "import pyspark; print(pyspark.__version__)"
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -181,7 +191,7 @@ python -c "import pyspark; print(pyspark.__version__)"
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

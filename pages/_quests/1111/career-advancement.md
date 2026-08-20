@@ -80,6 +80,18 @@ rewards:
   unlocks_features:
   - Continued progress through the Level 1111 Leadership & Innovation quest line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
+  variables:
+    project_dir: career
 ---
 *Greetings, Master adventurer. You have gathered power across every realm, but a hero without a chosen path wanders in circles. Two great roads now diverge before you: the road of the **individual contributor**, who grows ever deeper in craft, and the road of the **manager**, who grows ever wider in people. This quest, **Career Advancement**, hands you the map for both - and the negotiation skills to claim the rewards you have earned.*
 
@@ -137,7 +149,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -151,7 +163,7 @@ echo "# Brag Doc — running log of impact" > brag-doc/$(date +%Y).md
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -165,7 +177,7 @@ git init
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -178,7 +190,7 @@ echo "# Brag Doc — running log of impact" > brag-doc/$(date +%Y).md
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

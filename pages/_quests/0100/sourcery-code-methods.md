@@ -57,6 +57,16 @@ redirect_from:
 layout: quest
 sub_title: 'Level 0100 (4) Quest: Source Control and Collaboration Mastery'
 draft: false
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *In the mystical realm of software development, there exists an ancient magic for tracking every change known as Source Control Sorcery. Long ago, master developers discovered the secrets of tracking every change, branching through parallel dimensions of code, and collaborating across vast digital territories without losing a single line of their precious creations. Today, you shall learn to wield these legendary powers, transforming from a simple code scribe into a true guardian of digital history.*
 

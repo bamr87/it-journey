@@ -74,6 +74,11 @@ draft: false
 redirect_from:
 - /quests/gh-600/agentic-dev-environment-integration/
 layout: quest
+environment:
+  os:
+  - cloud
+  shell:
+  - bash
 ---
 *Before a soldier enters battle, their weapons are sharpened, their armor fitted, their orders memorised. An agent entering a repository without an `AGENTS.md` is a soldier sent to an unknown castle with a broken sword. The Barracks Masters spend their days writing the binding documents that turn a strange repository into a familiar home for any agent that enters.*
 

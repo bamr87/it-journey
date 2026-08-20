@@ -82,6 +82,16 @@ rewards:
   unlocks_features:
   - The ability to instrument and visualize any service in the realm
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You return to the **Watchtower** with the spyglass of theory in hand - now it is time to forge the instrument itself. In this quest you will raise **Prometheus**, the tireless scout who rides out every few seconds to gather numbers from across your realm, and **Grafana**, the cartographer who paints those numbers into living maps. Together they are the beating heart of the metrics pillar.*
 
@@ -139,7 +149,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -154,7 +164,7 @@ brew install prometheus grafana
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -169,7 +179,7 @@ docker compose up -d
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -185,7 +195,7 @@ sudo docker compose up -d
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

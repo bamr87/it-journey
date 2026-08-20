@@ -83,6 +83,16 @@ rewards:
   unlocks_features:
   - Access to the rest of the Level 1011 Security & Compliance quest line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You have crossed into the **Warrior tier**, and the gates of the Bastion stand before you. Beyond them lies the realm of **Security & Compliance** - a land where every kingdom you have built in earlier quests can be defended... or breached. This quest, **Security Fundamentals**, is the oath you swear before taking up the shieldwall. It teaches you to think like both the builder and the besieger.*
 
@@ -140,7 +150,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -158,7 +168,7 @@ open http://localhost:3000
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -176,7 +186,7 @@ start http://localhost:3000
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -195,7 +205,7 @@ xdg-open http://localhost:3000
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

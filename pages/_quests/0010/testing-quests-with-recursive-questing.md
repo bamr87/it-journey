@@ -64,6 +64,17 @@ rewards:
 redirect_from:
 - /quests/0010/testing-quests-with-recursive-questing/
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  shell:
+  - zsh
+  - bash
+  - powershell
+  variables:
+    project_dir: it-journey
 ---
 *Greetings, brave code wizard! Welcome to the **Recursive Realms** - a mystical 🟡 Medium journey where ancient towers stretch infinitely. In this quest, you'll master recursion, forge unit tests that catch infinite loops, and summon AI guardians that think in layered patterns.*
 

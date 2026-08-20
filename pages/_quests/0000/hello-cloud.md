@@ -81,6 +81,13 @@ rewards:
   - Foundation for infrastructure-as-code learning
 draft: false
 layout: quest
+environment:
+  os:
+  - macos
+  - cloud
+  shell:
+  - zsh
+  - bash
 ---
 *Welcome, skybound adventurer! You stand at the edge of the mortal realm, gazing up at the shimmering **Sky Realm** — a vast kingdom of infinite compute power, boundless storage vaults, and magical services that can scale from a whisper to a thunderclap. Today, you claim your first foothold in the clouds.*
 

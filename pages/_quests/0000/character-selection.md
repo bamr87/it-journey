@@ -71,6 +71,9 @@ fmContentType: quest
 draft: false
 slug: character-selection
 layout: quest
+environment:
+  os:
+  - cloud
 ---
 *Welcome to the Character Selection chamber, brave adventurer! Just as every RPG hero must choose their class before venturing into the world, you must select your IT specialization to focus your training and skills. Each character class offers a unique path through the digital realm.*
 

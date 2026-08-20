@@ -82,6 +82,16 @@ rewards:
   unlocks_features:
   - Completion of the Level 1001 Kubernetes Orchestration quest line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *The final gate of the Orchestration Citadel, Warrior. Your workloads run, heal, and connect - but they are hardcoded, brittle things, their database passwords baked into images for any eye to see. A true master never welds configuration to code. In this quest you learn the **Vault and the Ledger**: ConfigMaps to hold non-sensitive settings, and Secrets to guard credentials, both injected cleanly into your Pods without rebuilding a single image.*
 
@@ -139,7 +149,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -153,7 +163,7 @@ kubectl config set-context --current --namespace=vault
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -166,7 +176,7 @@ kubectl config set-context --current --namespace=vault
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -178,7 +188,7 @@ kubectl config set-context --current --namespace=vault
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

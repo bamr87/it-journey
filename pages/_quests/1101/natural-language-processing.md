@@ -85,6 +85,16 @@ rewards:
   unlocks_features:
   - Access to the MLOps and AI Ethics quests of Level 1101
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You have forged models that see patterns in numbers. Now you enter the **Hall of Tongues**, where machines learn to read, write, and converse. This quest, **Natural Language Processing**, takes you from raw text - the messiest data of all - to the transformer architecture that powers every modern large language model. By its end you will have run a real pretrained model on your own words and understood the attention mechanism that made it possible.*
 
@@ -143,7 +153,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -159,7 +169,7 @@ python -c "import transformers; print('transformers', transformers.__version__)"
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -175,7 +185,7 @@ python -c "import transformers; print('transformers', transformers.__version__)"
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -191,7 +201,7 @@ python -c "import transformers; print('transformers', transformers.__version__)"
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

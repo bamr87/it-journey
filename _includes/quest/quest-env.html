@@ -1,0 +1,98 @@
+{%- comment -%}
+  quest-env.html — the reader-configurable ENVIRONMENT control for a quest.
+
+  Renders only when the quest's frontmatter declares an `environment:` block
+  (written by hand or by scripts/quest/env_migrate.py):
+
+      environment:
+        os: [macos, windows, linux, cloud]
+        shell: [zsh, bash, powershell]
+        variables:
+          project_dir: css-quest
+
+  The axis vocabulary (labels, icons, per-OS defaults) comes from
+  site.data.quests.environments, generated from scripts/quest/quest_registry.py —
+  so this control, the frontmatter contract and the testing framework all read
+  the same source.
+
+  What it does for the reader (assets/js/quest-env.js):
+    * detects their OS on first visit and preselects it
+    * shows ONLY the platform section matching their choice, collapsing the
+      three paths that are not theirs
+    * rewrites every code snippet to use the folder name they choose
+    * remembers the choice across quests (localStorage)
+
+  Progressive enhancement: with JS off, every path stays visible exactly as it
+  is today and the control renders as a plain summary.
+{%- endcomment -%}
+{%- assign qenv = include.page.environment | default: page.environment -%}
+{%- if qenv -%}
+{%- assign envdata = site.data.quests.environments -%}
+<section class="quest-env" id="quest-env" aria-labelledby="quest-env-heading"
+         data-quest-env='{{ qenv | jsonify }}'>
+  <div class="quest-env__bar">
+    <h2 id="quest-env-heading" class="quest-env__title">
+      <span aria-hidden="true">⚙️</span> Your Environment
+    </h2>
+    <p class="quest-env__summary" id="quest-env-summary">
+      Showing every platform path
+    </p>
+    <button type="button" class="quest-env__toggle" id="quest-env-toggle"
+            aria-expanded="false" aria-controls="quest-env-body">Configure</button>
+  </div>
+
+  <div class="quest-env__body" id="quest-env-body" hidden>
+    {%- for axis_key in envdata.order -%}
+      {%- assign declared = qenv[axis_key] -%}
+      {%- if declared and declared.size > 0 -%}
+        {%- assign axis = envdata.axes[axis_key] -%}
+    <div class="quest-env__axis" data-axis="{{ axis_key }}">
+      <span class="quest-env__label">{{ axis.label }}</span>
+      <div class="quest-env__options" role="group" aria-label="{{ axis.label }}">
+        {%- for opt in axis.options -%}
+          {%- if declared contains opt.value -%}
+        <button type="button" class="quest-env__opt" data-axis="{{ axis_key }}"
+                data-value="{{ opt.value }}" aria-pressed="false">
+          <span aria-hidden="true">{{ opt.icon }}</span> {{ opt.label }}
+        </button>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- if qenv.variables -%}
+    <div class="quest-env__vars">
+      {%- for pair in qenv.variables -%}
+        {%- assign vardef = envdata.variables[pair[0]] -%}
+      <div class="quest-env__var">
+        <label class="quest-env__label" for="quest-env-var-{{ pair[0] }}">
+          {{ vardef.label | default: pair[0] }}
+        </label>
+        <input type="text" id="quest-env-var-{{ pair[0] }}" class="quest-env__input"
+               data-var="{{ pair[0] }}" value="{{ pair[1] }}"
+               data-default="{{ pair[1] }}" spellcheck="false"
+               aria-describedby="quest-env-var-help-{{ pair[0] }}">
+        <span class="quest-env__help" id="quest-env-var-help-{{ pair[0] }}">
+          {{ vardef.help | default: 'Used by this quest’s commands.' }}
+        </span>
+      </div>
+      {%- endfor -%}
+    </div>
+    {%- endif -%}
+
+    {%- if qenv.requires -%}
+    <p class="quest-env__requires">
+      <strong>Assumes installed:</strong>
+      {% for r in qenv.requires %}<code>{{ r }}</code>{% unless forloop.last %}, {% endunless %}{% endfor %}
+    </p>
+    {%- endif -%}
+
+    <p class="quest-env__note">
+      Your choice is remembered across quests and rewrites the commands below to match.
+      <button type="button" class="quest-env__reset" id="quest-env-reset">Show all paths</button>
+    </p>
+  </div>
+</section>
+{%- endif -%}

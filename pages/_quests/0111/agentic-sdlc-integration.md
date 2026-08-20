@@ -150,7 +150,7 @@ This **🟡 Medium** quest expects:
 
 ## 🌍 Choose Your Adventure Platform
 
-<details>
+<details markdown="1">
 <summary>🍎 macOS / Linux</summary>
 
 ```bash
@@ -167,7 +167,7 @@ gh --version
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>🪟 Windows (PowerShell)</summary>
 
 ```powershell

@@ -80,6 +80,16 @@ rewards:
   unlocks_features:
   - Access to the REST Principles and API Authentication quests
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You stand at the gates of **Level 0111 - API Development**, the road that connects every kingdom you have ever built. An API - an Application Programming Interface - is the spoken language between programs, the way one service asks another for what it needs. This quest, **API Fundamentals**, teaches you that language from its very first word.*
 
@@ -139,7 +149,7 @@ This **🟢 Easy** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -157,7 +167,7 @@ curl https://jsonplaceholder.typicode.com/posts/1
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -175,7 +185,7 @@ curl.exe https://jsonplaceholder.typicode.com/posts/1
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -191,7 +201,7 @@ curl https://jsonplaceholder.typicode.com/posts/1
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

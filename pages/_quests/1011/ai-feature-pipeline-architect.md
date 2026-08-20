@@ -57,6 +57,16 @@ rewards:
 - 🎯 End-to-End Feature Delivery Capability
 layout: quest
 sub_title: 'Level 1011 (11) Quest: AI-Powered Development Pipeline Orchestration'
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, master architect! Welcome to the **AI Feature Pipeline Architect Quest** - an epic journey that will transform you into a wizard of AI-orchestrated development pipelines. This quest will guide you through building intelligent systems that smoothly convert user ideas into deployed applications, preparing you for the future of software engineering where AI and human creativity work in perfect harmony.*
 

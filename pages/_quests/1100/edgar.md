@@ -64,6 +64,16 @@ redirect_from:
 layout: quest
 sub_title: 'Level 1100 (12) Quest: Epic API Data Extraction and Analysis'
 mermaid: true
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 🌟 Welcome, Brave Data Sorcerer! 🌟
 

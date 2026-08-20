@@ -109,6 +109,18 @@ rewards:
 layout: quest
 redirect_from:
 - /quests/0101/side-quests/jekyll-quest-tracking/
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
+  variables:
+    project_dir: github
 ---
 *Greetings, intrepid static site architect! You stand before the great Hall of Collections—a mystical chamber where scattered content transforms into organized, filterable, and dynamic displays. In this quest, you shall master the ancient arts of Jekyll collections, forging layouts that respond to frontmatter incantations and user interactions alike.*
 

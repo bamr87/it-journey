@@ -339,7 +339,7 @@ Hidden content goes here. Supports **Markdown** inside!
 ### ⚡ Quick Wins
 - [ ] Create a table with at least 3 columns and 3 rows
 - [ ] Add a horizontal rule between two sections
-- [ ] Use a collapsible `<details>` section
+- [ ] Use a collapsible `<details markdown="1">` section
 - [ ] Escape a Markdown character to display it literally
 
 ---
