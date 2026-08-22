@@ -154,11 +154,11 @@
       var title = String(e.title || '').toLowerCase().trim();
       var base = String(e.basename || '').toLowerCase().trim();
       if (title === key || base === key || base === slug) {
-        return { url: e.permalink, title: e.title };
+        return { url: e.url, title: e.title };
       }
       if (!partial && title.indexOf(key + ':') === 0) partial = e;
     }
-    return partial ? { url: partial.permalink, title: partial.title } : null;
+    return partial ? { url: partial.url, title: partial.title } : null;
   }
   md.setWikiResolver(resolveWiki);
 
