@@ -1,0 +1,144 @@
+{%- comment -%}
+  workbench.html — the /notes/ workbench shell.
+
+  Three regions: a LIBRARY of public notes (rendered statically by
+  notes/library-static.html, then hydrated), a BOARD of draggable cards, and an
+  EDITOR drawer. assets/js/notes-workbench.js reads the data-nw-* hooks below;
+  nothing here depends on JavaScript to be readable, which is the point — with
+  scripts off this page is still a complete index of the notes collection.
+
+  Config the script needs travels on the root element rather than in an inline
+  <script>, matching the pattern in pages/quest-ideas.md.
+{%- endcomment -%}
+
+<div id="notes-workbench" class="nw" data-nw-root
+     data-search-url="{{ '/search.json' | relative_url }}"
+     data-wiki-url="{{ '/assets/data/wiki-index.json' | relative_url }}"
+     data-repo-url="https://github.com/bamr87/it-journey"
+     data-notes-dir="pages/_notes"
+     data-default-branch="main">
+
+  <div class="nw__toolbar" role="toolbar" aria-label="Workbench actions">
+    <button type="button" class="nw__btn nw__btn--primary" data-nw-action="new-note">
+      <i class="bi bi-plus-lg" aria-hidden="true"></i> New note
+    </button>
+
+    <div class="nw__find">
+      <label class="visually-hidden" for="nw-search">Search the site to pin a page</label>
+      <i class="bi bi-search nw__find-icon" aria-hidden="true"></i>
+      <input type="search" id="nw-search" class="nw__find-input" data-nw-search
+             placeholder="Search the site to pin a page…" autocomplete="off">
+    </div>
+
+    <div class="nw__toolbar-end">
+      <button type="button" class="nw__btn" data-nw-action="toggle-library" aria-expanded="true"
+              aria-controls="nw-library" title="Show or hide the library">
+        <i class="bi bi-layout-sidebar" aria-hidden="true"></i>
+        <span class="nw__btn-text">Library</span>
+      </button>
+      <button type="button" class="nw__btn" data-nw-action="export" title="Download your notes as JSON">
+        <i class="bi bi-download" aria-hidden="true"></i>
+        <span class="nw__btn-text">Export</span>
+      </button>
+      <label class="nw__btn nw__btn--file" title="Merge a workbench JSON file into this board">
+        <i class="bi bi-upload" aria-hidden="true"></i>
+        <span class="nw__btn-text">Import</span>
+        <input type="file" accept="application/json,.json" data-nw-import hidden>
+      </label>
+      <button type="button" class="nw__btn nw__btn--danger" data-nw-action="reset"
+              title="Delete every local note, clip, and pin">
+        <i class="bi bi-trash3" aria-hidden="true"></i>
+        <span class="nw__btn-text">Reset</span>
+      </button>
+    </div>
+  </div>
+
+  <p class="nw__notice" data-nw-notice hidden></p>
+
+  <div class="nw__body">
+    <aside class="nw__library" id="nw-library" data-nw-library aria-label="Note library">
+      <div class="nw__lib-head">
+        <label class="visually-hidden" for="nw-filter">Filter the library</label>
+        <input type="search" id="nw-filter" class="nw__lib-filter" data-nw-filter
+               placeholder="Filter notes…" autocomplete="off">
+      </div>
+
+      <div class="nw__lib-scroll">
+        <section class="nw-lib__section" data-nw-mine hidden>
+          <h2 class="nw-lib__heading">Yours <span class="nw-lib__count" data-nw-mine-count>0</span></h2>
+          <ul class="nw-lib__items" data-nw-mine-list></ul>
+        </section>
+
+        <section class="nw-lib__section" data-nw-results-section hidden>
+          <h2 class="nw-lib__heading">Search results</h2>
+          <ul class="nw-lib__items" data-nw-results></ul>
+          <p class="nw-lib__hint" data-nw-results-hint></p>
+        </section>
+
+        <section class="nw-lib__section" data-nw-public>
+          <h2 class="nw-lib__heading">Public notes</h2>
+          {% include notes/library-static.html %}
+        </section>
+      </div>
+    </aside>
+
+    <main class="nw__board" data-nw-board aria-label="Your board">
+      <div class="nw__empty" data-nw-empty>
+        <i class="bi bi-clipboard-plus" aria-hidden="true"></i>
+        <p class="nw__empty-title">Your board is empty.</p>
+        <p class="nw__empty-body">
+          Start a note, pin a page from the library, or clip a code block from anywhere
+          on the site — the clip button sits next to the copy button on every snippet.
+        </p>
+        <button type="button" class="nw__btn nw__btn--primary" data-nw-action="new-note">
+          <i class="bi bi-plus-lg" aria-hidden="true"></i> New note
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <section class="nw__editor" data-nw-editor hidden aria-label="Note editor">
+    <header class="nw__editor-bar">
+      <input type="text" class="nw__editor-title" data-nw-editor-title
+             placeholder="Note title" aria-label="Note title" maxlength="120">
+      <div class="nw__editor-actions">
+        <button type="button" class="nw__btn" data-nw-action="toggle-preview" aria-pressed="false">
+          <i class="bi bi-eye" aria-hidden="true"></i>
+          <span class="nw__btn-text">Preview</span>
+        </button>
+        <button type="button" class="nw__btn" data-nw-action="download-note" title="Download as Markdown">
+          <i class="bi bi-file-earmark-arrow-down" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="nw__btn" data-nw-action="publish" title="Propose this note for the public collection">
+          <i class="bi bi-git" aria-hidden="true"></i>
+          <span class="nw__btn-text">Propose</span>
+        </button>
+        <button type="button" class="nw__btn nw__btn--icon" data-nw-action="close-editor" aria-label="Close the editor">
+          <i class="bi bi-x-lg" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+
+    <div class="nw__editor-meta">
+      <label class="visually-hidden" for="nw-tags">Tags, comma separated</label>
+      <input type="text" id="nw-tags" class="nw__editor-tags" data-nw-editor-tags
+             placeholder="tags, comma separated" autocomplete="off">
+      <span class="nw__editor-saved" data-nw-editor-saved aria-live="polite"></span>
+    </div>
+
+    <label class="visually-hidden" for="nw-body">Note body, in Markdown</label>
+    <textarea id="nw-body" class="nw__editor-body" data-nw-editor-body spellcheck="true"
+              placeholder="Markdown. [[Link]] to any page on the site."></textarea>
+    <div class="nw__editor-preview" data-nw-editor-preview hidden></div>
+  </section>
+
+  <div class="nw__toast" data-nw-toast role="status" aria-live="polite" hidden></div>
+  <p class="visually-hidden" data-nw-announce aria-live="polite"></p>
+
+  <noscript>
+    <p class="nw__noscript">
+      The interactive workbench needs JavaScript. The full list of public notes is above
+      and every note links through normally without it.
+    </p>
+  </noscript>
+</div>

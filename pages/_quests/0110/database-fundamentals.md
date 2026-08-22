@@ -83,6 +83,16 @@ rewards:
   unlocks_features:
   - Access to the rest of the Level 0110 Database Mastery quest line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You have reached the gates of the **Data Keep**, the stronghold where every kingdom you will ever build stores its most precious treasure: its data. This quest, **Database Fundamentals**, is the foundation stone of the entire Level 0110 Database Mastery arc. Master it and the relational realm will obey your every command; skip it and your later spells - JOINs, indexes, migrations - will crumble for want of a footing.*
 
@@ -140,7 +150,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -157,7 +167,7 @@ psql datakeep
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -173,7 +183,7 @@ psql datakeep
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -192,7 +202,7 @@ sudo -u postgres psql datakeep
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

@@ -59,6 +59,16 @@ rewards:
 - 🎯 Advanced Developer Toolkit Access
 layout: quest
 sub_title: 'Level 0001 (1) Quest: Command-Line Interface Mastery'
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! Welcome to the Terminal Mastery Quest - an epic journey that will transform you from a mere point-and-click peasant into a command-line champion. This quest will guide you through the ancient arts of terminal navigation, file manipulation, and system command sorcery, preparing you for advanced development adventures.*
 

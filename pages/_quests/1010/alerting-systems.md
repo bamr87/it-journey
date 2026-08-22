@@ -81,6 +81,16 @@ rewards:
   unlocks_features:
   - Completes the Level 1010 Monitoring & Observability quest line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! From the **Watchtower** you have learned to see fires - in metrics, in logs, in traces. But sight alone does not save a kingdom; someone must be **woken** when the fire is real, and *not* woken for every harmless spark. This final quest of the Watchtower, **Alerting Systems**, teaches you to forge the signal-horn: alert rules that fire only on what matters, routing that wakes the right defender, and runbooks that tell them exactly what to do when the horn sounds.*
 
@@ -138,7 +148,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -153,7 +163,7 @@ open http://localhost:9093   # Alertmanager
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -167,7 +177,7 @@ start http://localhost:9093   # Alertmanager
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -181,7 +191,7 @@ xdg-open http://localhost:9093   # Alertmanager
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

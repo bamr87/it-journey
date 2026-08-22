@@ -79,6 +79,16 @@ rewards:
   unlocks_features:
   - Backup and disaster-recovery quests in the Database Mastery line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! Your Data Keep is full of treasure - customer secrets, credentials, the lifeblood of your kingdom - and treasure attracts thieves. This quest, **Database Security**, teaches you to ward the vault: to grant each visitor only the keys they need, to seal your queries against the injection curse, to encrypt your gold both in the chest and on the road, and to keep a ledger of every hand that reaches inside.*
 
@@ -136,7 +146,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -150,7 +160,7 @@ psql warded_vault
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -163,7 +173,7 @@ psql warded_vault
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -177,7 +187,7 @@ sudo -u postgres psql warded_vault
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

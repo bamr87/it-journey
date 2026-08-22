@@ -1,0 +1,12 @@
+# =============================================================================
+# .quests/videos.yml — the committed quest walkthrough-video catalog
+# -----------------------------------------------------------------------------
+# One entry per quest permalink → the published YouTube walkthrough video for
+# that quest. WRITTEN by `scripts/quest/video_manifest.py apply` (the deterministic
+# arm of the quest-video lane, driven by .github/workflows/quest-video.yml);
+# read by dashboards and coverage checks. The same reference is embedded in the
+# quest's own frontmatter (`walkthrough_video:`), which is what the site renders
+# — this file is the queryable index across quests. Do not hand-edit ids.
+# =============================================================================
+schema_version: 1.0.0
+videos: {}

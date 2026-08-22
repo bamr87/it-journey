@@ -85,6 +85,16 @@ rewards:
   unlocks_features:
   - Access to the deep learning and MLOps quests of Level 1101
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You stand at the threshold of the **Oracle's Tower**, where machines learn to read the patterns hidden in data. This quest, **Machine Learning Fundamentals**, is your initiation. By its end you will have trained a real classifier, peered into the bias-variance tradeoff, and learned the single discipline that separates a true ML practitioner from a deceived one: honest evaluation on data the model has never seen.*
 
@@ -143,7 +153,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -162,7 +172,7 @@ python -c "import sklearn; print('scikit-learn', sklearn.__version__)"
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -182,7 +192,7 @@ python -c "import sklearn; print('scikit-learn', sklearn.__version__)"
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -200,7 +210,7 @@ python -c "import sklearn; print('scikit-learn', sklearn.__version__)"
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

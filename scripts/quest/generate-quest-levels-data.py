@@ -41,6 +41,7 @@ except ImportError:  # pragma: no cover
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR))
+import quest_registry as reg  # noqa: E402
 from quest_registry import (  # noqa: E402
     LEVELS,
     LEVEL_ORDER,
@@ -60,6 +61,9 @@ OUT = {
     "levels.yml": "levels",
     "tiers.yml": "tiers",
     "order.yml": "order",
+    # The environment matrix the quest pages render as a reader-configurable
+    # control, and the testing framework matrixes over.
+    "environments.yml": "environments",
 }
 
 HEADER = (
@@ -87,7 +91,24 @@ def build_payloads() -> dict:
         for name, codes in TIERS.items()
     }
 
-    return {"levels": levels, "tiers": tiers, "order": list(LEVEL_ORDER)}
+    # Environment axes + variables, straight from the registry so the rendered
+    # control, the frontmatter contract and the step planner cannot drift.
+    environments = {
+        "order": list(reg.ENVIRONMENT_AXIS_ORDER),
+        "axes": {
+            axis: {
+                "label": meta["label"],
+                "icon": meta.get("icon", ""),
+                "detectable": bool(meta.get("detectable")),
+                "options": meta["options"],
+            }
+            for axis, meta in reg.ENVIRONMENT_AXES.items()
+        },
+        "variables": reg.ENVIRONMENT_VARIABLES,
+    }
+
+    return {"levels": levels, "tiers": tiers, "order": list(LEVEL_ORDER),
+            "environments": environments}
 
 
 def main() -> int:

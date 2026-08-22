@@ -81,6 +81,16 @@ rewards:
   unlocks_features:
   - Access to the Configuration and Secrets quest
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Warrior, your workloads now run resilient and self-healing - but they are islands. Pods are mortal: they are born, they die, and their IP addresses vanish with them. How then does one Pod find another? How does the outside world reach your service when the very addresses keep shifting? This quest teaches the **roads, gates, and naming** of the cluster: Services that give workloads a stable identity, DNS that lets them find each other by name, and Ingress that opens the gates to the world beyond.*
 
@@ -138,7 +148,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -154,7 +164,7 @@ kubectl wait --namespace ingress-nginx --for=condition=ready pod \
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -167,7 +177,7 @@ kubectl wait --namespace ingress-nginx --for=condition=ready pod --selector=app.
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -182,7 +192,7 @@ kubectl create deployment web --image=nginx:1.27 --replicas=3
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

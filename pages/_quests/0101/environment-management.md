@@ -82,6 +82,16 @@ rewards:
   unlocks_features:
   - Secrets and artifact quests in Level 0101
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You have built pipelines that ship to production - but where does a change live before it gets there? This quest, **Environment Management**, maps the realms your code passes through: the rough frontier of development, the rehearsal stage of staging, and the throne room of production. Keep them in harmony and your releases are predictable. Let them drift apart and you summon the oldest curse in software: "but it worked in staging."*
 
@@ -139,7 +149,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -153,7 +163,7 @@ echo "Running in: $APP_ENV against $DATABASE_URL"
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -167,7 +177,7 @@ Write-Host "Running in: $($env:APP_ENV) against $($env:DATABASE_URL)"
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -181,7 +191,7 @@ printf 'Running in: %s against %s\n' "$APP_ENV" "$DATABASE_URL"
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

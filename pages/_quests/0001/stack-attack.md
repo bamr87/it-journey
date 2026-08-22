@@ -107,6 +107,14 @@ rewards:
   - Enterprise architecture pattern library
 layout: quest
 mermaid: true
+environment:
+  os:
+  - cloud
+  shell:
+  - bash
+  - powershell
+  variables:
+    project_dir: Library
 ---
 *In the age of digital empires, every great corporation requires a command center — a system that orchestrates inventory, orders, finances, human resources, and logistics into one connected flow of operational data. This system is called an **ERP**: an Enterprise Resource Planning application. And today, brave architecht, you are tasked with constructing the most formidable enterprise fortress the open-source world has ever seen.*
 

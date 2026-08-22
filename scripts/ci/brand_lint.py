@@ -44,6 +44,12 @@ CONTENT_GLOBS = ("pages/**/*.md", "pages/**/*.markdown")
 FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?\n)---\s*\n", re.DOTALL)
 FENCE_RE = re.compile(r"^([`~]{3,})")
 INLINE_CODE_RE = re.compile(r"`[^`]*`")
+# HTML tags and their attributes are SYNTAX, not prose: `<details markdown="1">`
+# carries a literal "markdown" that no spelling rule should ever re-case, and an
+# `<img alt="...">` attribute is markup the author cannot freely reword. Only the
+# text BETWEEN tags is prose, so the tags themselves are blanked. Deliberately
+# narrow — it requires a tag name, so ordinary prose like "a < b" is untouched.
+HTML_TAG_RE = re.compile(r"</?[A-Za-z][\w-]*(?:\s[^<>]*)?/?>")
 # Markdown link/image destinations `](url)`, bare URLs, and `<url>` autolinks are
 # NOT prose — a real asset filename like `/assets/images/github-login.webp` can't be
 # re-cased, so spelling/hype must not be policed inside them (false positives that
@@ -116,7 +122,8 @@ def strip_code(body: str) -> List[str]:
         else:
             # Blank inline code, then markdown link/image URL targets + bare URLs,
             # so only PROSE is scanned (link text stays; only the destination goes).
-            out.append(LINK_TARGET_RE.sub("](url)", INLINE_CODE_RE.sub(" ", raw)))
+            out.append(LINK_TARGET_RE.sub(
+                "](url)", HTML_TAG_RE.sub(" ", INLINE_CODE_RE.sub(" ", raw))))
     return out
 
 

@@ -86,6 +86,16 @@ rewards:
   unlocks_features:
   - Access to the computer vision, NLP, and MLOps quests of Level 1101
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You have built a neural network from raw NumPy and felt every gradient with your own hands. That was the forge of understanding. Now you step into the **Armory of the Deep Engines**, where two legendary frameworks - **PyTorch** and **TensorFlow** - turn that hard-won understanding into models that train on millions of examples across banks of GPUs. This quest, **Deep Learning Frameworks**, is where you trade your hand tools for the machinery that practitioners actually ship.*
 
@@ -144,7 +154,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -161,7 +171,7 @@ python -c "import torch; print('torch', torch.__version__, 'mps', torch.backends
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -179,7 +189,7 @@ python -c "import torch; print('torch', torch.__version__, 'cuda', torch.cuda.is
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -195,7 +205,7 @@ python -c "import torch; print('torch', torch.__version__, 'cuda', torch.cuda.is
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

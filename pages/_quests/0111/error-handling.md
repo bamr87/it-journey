@@ -82,6 +82,16 @@ rewards:
   unlocks_features:
   - Access to the Rate Limiting and API Versioning quests
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! Anyone can build an API that works when everything goes right. The mark of a true craftsperson is an API that fails **gracefully** - one that tells the caller exactly what went wrong, lets them recover, and never duplicates an order when a request is retried. This quest, **Error Handling**, forges that craft.*
 
@@ -141,7 +151,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -154,7 +164,7 @@ curl -s -o /dev/null -w "%{http_code}\n" https://httpbin.org/status/404
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -167,7 +177,7 @@ curl.exe -s -o NUL -w "%{http_code}`n" https://httpbin.org/status/503
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -180,7 +190,7 @@ curl -s -o /dev/null -w "%{http_code}\n" https://httpbin.org/status/429
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

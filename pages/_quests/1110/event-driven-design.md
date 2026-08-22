@@ -83,6 +83,16 @@ rewards:
   - Asynchronous foundations for scaling the kingdom
 layout: quest
 mermaid: true
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Architect, your services now stand as separate keeps - but they still shout across the courtyard, each waiting for the other to answer. **Event-Driven Design** teaches them a better way to communicate: instead of demanding answers, a service simply *announces what happened* and lets anyone who cares react. This single shift - from commands to events - is the secret behind systems that scale, decouple, and heal.*
 
@@ -140,7 +150,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -154,7 +164,7 @@ docker run -d --name redpanda -p 9092:9092 \
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -167,7 +177,7 @@ docker run -d --name redpanda -p 9092:9092 `
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -181,7 +191,7 @@ sudo docker run -d --name redpanda -p 9092:9092 \
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-18T09:09:41.288514+00:00",
+  "generated_at": "2026-08-22T09:06:26.832874+00:00",
   "total_files": 394,
   "scored_files": 394,
   "actionable_files": 351,
-  "avg_health": 97.2,
-  "avg_health_actionable": 96.8,
+  "avg_health": 97.0,
+  "avg_health_actionable": 96.6,
   "total_mechanical_issues": 0,
   "total_substantive_issues": 60,
   "total_errors": 11,
@@ -40,19 +40,19 @@
       "mechanical": 0,
       "substantive": 34,
       "errors": 5,
-      "avg_health": 96.7
+      "avg_health": 96.5
     }
   },
   "freshness_distribution": {
-    "critical": 20,
-    "fresh": 269,
-    "aging": 56,
-    "stale": 48,
+    "critical": 22,
+    "fresh": 254,
+    "aging": 71,
+    "stale": 46,
     "unknown": 1
   },
   "health_buckets": {
-    "excellent_90_100": 373,
-    "good_70_89": 18,
+    "excellent_90_100": 371,
+    "good_70_89": 20,
     "fair_50_69": 3,
     "poor_0_49": 0
   }

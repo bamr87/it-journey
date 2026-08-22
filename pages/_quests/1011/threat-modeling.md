@@ -83,6 +83,16 @@ rewards:
   - Ability to threat model a design before a single line of code ships
 layout: quest
 mermaid: true
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! A wise defender never waits for the siege to discover where the walls are weak. In this quest, **Threat Modeling**, you learn the cartographer's art: to draw your system as it truly is, mark every gate and trust boundary, and ask of each one - "How would I, the attacker, break in here?" You will wield **STRIDE**, the six-fold lens of threats, and the branching logic of **attack trees**.*
 
@@ -138,7 +148,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -154,7 +164,7 @@ code --install-extension bierner.markdown-mermaid
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -169,7 +179,7 @@ winget install Microsoft.VisualStudioCode
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -183,7 +193,7 @@ code --install-extension bierner.markdown-mermaid
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

@@ -82,6 +82,16 @@ rewards:
   unlocks_features:
   - The foundation for automating Kubernetes clusters and full cloud stacks
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Hark, automation Warrior! In the previous quest you clicked and typed your way through the AWS console, summoning servers one command at a time. It worked - but it was a ritual of memory and toil, impossible to repeat exactly and dangerous to hand to another. This quest, **Infrastructure as Code**, teaches you to inscribe your infrastructure into a spellbook of declarative code, so that an entire environment can be conjured - or banished - with a single incantation.*
 
@@ -140,7 +150,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -157,7 +167,7 @@ aws sts get-caller-identity
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -173,7 +183,7 @@ aws sts get-caller-identity
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -191,7 +201,7 @@ terraform version
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

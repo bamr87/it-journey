@@ -84,6 +84,18 @@ rewards:
 layout: quest
 redirect_from:
 - /quests/0010/advanced-markdown/
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
+  variables:
+    project_dir: md-quest
 ---
 *Greetings, brave adventurer! Welcome to **Advanced Markdown** - the quest where your plain text grows tables, footnotes, callouts, and metadata. You already know that `# Heading` and `**bold**` work their small magics. Now you will learn the extended syntax that turns Markdown into a serious documentation and publishing tool - the very language every page on IT-Journey is written in.*
 
@@ -140,7 +152,7 @@ This **🟢 Easy** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -158,7 +170,7 @@ code guide.md   # open in VS Code (or use any editor)
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -176,7 +188,7 @@ code guide.md
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -194,7 +206,7 @@ code guide.md   # or nano/vim if you prefer
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

@@ -80,6 +80,16 @@ rewards:
   unlocks_features:
   - Completion of the Level 0111 API Development quest line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You stand at the final gate of the API Development road. You have learned to call, design, secure, protect, and evolve APIs. Now you will learn to **describe** them - so precisely that machines can generate clients, validate requests, and render beautiful interactive docs from your words alone. This is the art of **API Documentation**.*
 
@@ -141,7 +151,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -158,7 +168,7 @@ redocly build-docs openapi.yaml -o docs.html   # static HTML (or: redocly previe
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -174,7 +184,7 @@ redocly build-docs openapi.yaml -o docs.html   # or: redocly preview for a live 
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -187,7 +197,7 @@ redocly lint openapi.yaml && redocly build-docs openapi.yaml -o docs.html
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

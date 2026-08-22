@@ -87,6 +87,16 @@ rewards:
   unlocks_features:
   - The ability to ship every later Web Fundamentals quest to a live URL
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You forged a Jekyll site in the workshop - but a website hidden on your own machine helps no one. **GitHub Pages Basics** is the quest where your creation leaves the castle walls and joins the wider web, hosted for free and reachable from anywhere in the realm.*
 
@@ -144,7 +154,7 @@ This **🟢 Easy** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -162,7 +172,7 @@ gh repo create my-castle --public --source=. --push
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -180,7 +190,7 @@ gh repo create my-castle --public --source=. --push
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -198,7 +208,7 @@ gh repo create my-castle --public --source=. --push
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

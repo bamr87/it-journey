@@ -81,6 +81,16 @@ rewards:
   unlocks_features:
   - Access to the Alerting Systems quest
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! From the **Watchtower** you have learned to read metrics and logs. But when a request limps across a dozen services and arrives slow, metrics only tell you *that* it is slow and logs only tell you *what* each service did - neither tells you **where** the time vanished. For that you need the rarest pillar of all: the **trace**. This quest, **Distributed Tracing**, teaches you to follow a single request through your entire kingdom and pin the exact span where the delay hides.*
 
@@ -138,7 +148,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -158,7 +168,7 @@ open http://localhost:16686
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -175,7 +185,7 @@ start http://localhost:16686
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -192,7 +202,7 @@ xdg-open http://localhost:16686
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

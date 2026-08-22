@@ -79,6 +79,16 @@ rewards:
   unlocks_features:
   - Connection-level performance tuning in the Database Mastery line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! A query that returns the right answer but takes thirty seconds is a query that will one day topple your kingdom. This quest, **Query Optimization**, teaches you to see *how* the database executes your SQL - to read its battle plan - and then to tune indexes, rewrite queries, and slay the dreaded N+1 storm until milliseconds replace minutes.*
 
@@ -136,7 +146,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -150,7 +160,7 @@ psql speed_sanctum
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -163,7 +173,7 @@ psql speed_sanctum
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -177,7 +187,7 @@ sudo -u postgres psql speed_sanctum
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

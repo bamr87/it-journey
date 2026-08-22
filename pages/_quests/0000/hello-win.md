@@ -85,6 +85,14 @@ redirect_from:
 - /quests/0000/hello-win/
 layout: quest
 sub_title: 'Level 001 Quest: Windows Development Environment Mastery'
+environment:
+  os:
+  - windows
+  - linux
+  - cloud
+  shell:
+  - bash
+  - powershell
 ---
 *Welcome, Windows warrior, to the realm where Microsoft's power meets open-source flexibility! This quest will transform your Windows machine into a development powerhouse that rivals any Unix system while retaining all the advantages of the Windows ecosystem.*
 

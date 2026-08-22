@@ -83,6 +83,16 @@ rewards:
   - The capstone of the Architecture & Design Patterns quest line
 layout: quest
 mermaid: true
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Architect, this is the proving ground. You have mastered patterns, domains, services, events, gateways, and scale - and now you must wield them all *at once*, on a whiteboard, under a clock, while a stranger watches and asks "what happens when this fails?" The **System Design Interview** is the capstone of the Citadel: not a test of trivia, but of whether you can take a vague prompt and reason your way to a credible, defensible architecture out loud.*
 
@@ -140,7 +150,7 @@ This **⚔️ Epic** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -154,7 +164,7 @@ python3 -c "print('Ready to estimate at scale')"
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -166,7 +176,7 @@ python -c "print('Ready to estimate at scale')"
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -179,7 +189,7 @@ python3 -c "print('Ready to estimate at scale')"
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
