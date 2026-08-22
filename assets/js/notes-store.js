@@ -44,14 +44,28 @@
     };
   }
 
+  // Drop any card whose id would be dangerous to use as a property name later.
+  // JSON.parse itself is safe, but the ids become bracket keys all over this
+  // file, so they are filtered once here rather than guarded at every use.
+  function sanitizeBucket(raw) {
+    var out = {};
+    if (!raw || typeof raw !== 'object') return out;
+    Object.keys(raw).forEach(function (id) {
+      if (!safeKey(id)) return;
+      if (!Object.prototype.hasOwnProperty.call(raw, id)) return;
+      if (raw[id] && typeof raw[id] === 'object') out[id] = raw[id];
+    });
+    return out;
+  }
+
   // Fill in anything a older or hand-edited blob is missing, so callers can
   // always assume every branch exists.
   function normalize(raw) {
     var base = blank();
     if (!raw || typeof raw !== 'object') return base;
-    base.notes = raw.notes && typeof raw.notes === 'object' ? raw.notes : {};
-    base.clips = raw.clips && typeof raw.clips === 'object' ? raw.clips : {};
-    base.pins = raw.pins && typeof raw.pins === 'object' ? raw.pins : {};
+    base.notes = sanitizeBucket(raw.notes);
+    base.clips = sanitizeBucket(raw.clips);
+    base.pins = sanitizeBucket(raw.pins);
     if (raw.board && typeof raw.board === 'object') {
       base.board.order = Array.isArray(raw.board.order) ? raw.board.order.slice() : [];
       base.board.sizes = raw.board.sizes && typeof raw.board.sizes === 'object' ? raw.board.sizes : {};
@@ -71,6 +85,13 @@
       });
     });
     return base;
+  }
+
+  // Keys that would reach Object.prototype through a bracket assignment. An
+  // imported file is just JSON a reader picked off disk, so anything derived
+  // from one is treated as hostile before it is written anywhere by name.
+  function safeKey(k) {
+    return k !== '__proto__' && k !== 'constructor' && k !== 'prototype';
   }
 
   function bucketFor(id) {
@@ -231,7 +252,8 @@
     var item = lookup(state, id);
     if (!item || !patch) return false;
     Object.keys(patch).forEach(function (k) {
-      if (k === 'id') return;
+      if (k === 'id' || !safeKey(k)) return;
+      if (!Object.prototype.hasOwnProperty.call(patch, k)) return;
       item[k] = patch[k];
     });
     if (bucketFor(id) === 'notes') item.updated = nowIso();
@@ -281,12 +303,14 @@
   }
 
   function setSize(id, cols, rows) {
+    if (!safeKey(id)) return;
     state.board.sizes[id] = [cols, rows];
     persist();
     emit('resize', { id: id });
   }
 
   function setCollapsed(id, collapsed) {
+    if (!safeKey(id)) return;
     if (collapsed) state.board.collapsed[id] = true;
     else delete state.board.collapsed[id];
     persist();
@@ -294,6 +318,7 @@
   }
 
   function setPref(key, value) {
+    if (!safeKey(key)) return;
     state.prefs[key] = value;
     persist();
     emit('prefs', { key: key });
