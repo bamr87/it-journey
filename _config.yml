@@ -409,12 +409,16 @@ defaults:
   # nav: auto -> the theme auto-generates the left sidebar from the collection's
   # files (see _includes/navigation/sidebar-folders.html), so every note is listed
   # dynamically. No hand-maintained _data/navigation/notes.yml to drift.
+  #
+  # layout: note -> the theme's note layout, which adds the metadata header, tag
+  # badges, related notes, and prev/next links. /notes/ itself overrides this
+  # with layout: notes-workbench in its own front matter.
   -
     scope:
       path: pages/_notes
       type: notes
     values:
-      layout: *pages
+      layout: note
       share: false
       author_profile: false
       sidebar:
