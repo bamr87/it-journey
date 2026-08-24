@@ -271,9 +271,11 @@ jobs:
       # EVIDENCE (engine mode) — run the agentic execute engine as a DETERMINISTIC
       # step (this step's env carries the Claude auth). Exit-code contract from
       # agentic_validate.py: 0 = evidence (possibly partial-but-scored);
-      # 2 = auth/rate-limit truncation with zero quests scored → soft-skip the
-      # run (warning, not a red build; retry later or pass source_run_id);
-      # anything else = genuine failure, fail loudly.
+      # 2 = rate-limit truncation with zero quests scored → soft-skip the run
+      # (warning, not a red build; retry later or pass source_run_id);
+      # 4 = broken credentials (a human must rotate the token) → fail loudly —
+      # this is a dispatch-only lane, so the red lands on the dispatcher;
+      # anything else = genuine engine failure, fail loudly.
       - name: Gather sandboxed evidence (agentic execute engine)
         id: evidence
         if: env.CAPTURE == 'engine' && steps.slug.outputs.empty != 'true' && hashFiles('walk-evidence.json') == ''
@@ -291,8 +293,10 @@ jobs:
           set -e
           case "$rc" in
             0) echo "evidence gathered." ;;
-            2) echo "::warning::execute engine hit a sustained auth/rate-limit truncation (0 quests scored) — soft-skipping the recording; retry later or reuse a walk artifact via source_run_id."
+            2) echo "::warning::execute engine hit a sustained rate-limit (0 quests scored) — soft-skipping the recording; retry later or reuse a walk artifact via source_run_id."
                echo "auth_skipped=true" >> "$GITHUB_OUTPUT" ;;
+            4) echo "::error::Claude credentials are BROKEN (engine exit 4) — rotate CLAUDE_CODE_OAUTH_TOKEN (claude setup-token → repo secret), then re-dispatch."
+               exit "$rc" ;;
             *) echo "::error::execute engine failed (exit $rc); not an auth/rate-limit truncation."
                exit "$rc" ;;
           esac

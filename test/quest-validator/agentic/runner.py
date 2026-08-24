@@ -67,22 +67,39 @@ class RunnerError(RuntimeError):
 
 
 class AuthError(RunnerError):
-    """The backend refused to serve us and won't recover mid-batch — a bad/expired
-    token OR a *sustained* rate-limit/overload that outlived every retry. The batch
-    stops on this (auth won't fix itself between quests), writes the quests that DID
-    score as partial evidence, and — if zero scored — exits non-zero so the caller
-    can soft-skip the slice. Transient blips are retried in `_invoke` first; this is
-    only raised once retries are exhausted."""
+    """The backend refused to serve us and won't recover mid-batch. The batch stops
+    on this (it won't fix itself between quests), writes the quests that DID score
+    as partial evidence, and — if zero scored — exits non-zero so the caller can
+    route the slice. Transient blips are retried in `_invoke` first; this is only
+    raised once retries are exhausted. Two flavors, because they need OPPOSITE
+    responses from the orchestrator:
+
+      AuthError      — CREDENTIALS are broken (invalid/expired/revoked token, or a
+                       billing hold): retrying tomorrow with the same secret fails
+                       identically, so a HUMAN must rotate it. Permanent until acted on.
+      ThrottleError  — a *sustained* rate-limit/overload that outlived every retry:
+                       the shared token's window refills, so the loop should soft-skip
+                       and simply retry on its next run. Transient by nature."""
+    pass
+
+
+class ThrottleError(AuthError):
+    """Sustained rate-limit/overload (see AuthError). Subclasses AuthError so
+    existing `except AuthError` batch-stop handling keeps working unchanged."""
     pass
 
 
 def _looks_like_auth_failure(text: str) -> bool:
+    """CREDENTIAL problems a retry can never fix — a human must rotate the token
+    (or settle billing). Deliberately distinct from `_looks_like_transient`."""
     t = (text or "").lower()
     return ("401" in t and "auth" in t) or "failed to authenticate" in t \
         or "invalid authentication" in t or "invalid api key" in t \
         or "invalid x-api-key" in t or "no credentials" in t \
-        or ("oauth" in t and "token" in t and ("expired" in t or "invalid" in t)) \
-        or "please run" in t and "login" in t
+        or "authentication_error" in t or "invalid bearer token" in t \
+        or ("token" in t and ("expired" in t or "revoked" in t or "invalid" in t)) \
+        or ("credit balance" in t and "low" in t) \
+        or ("please run" in t and "login" in t)
 
 
 def _looks_like_transient(text: str) -> bool:
@@ -101,6 +118,9 @@ def _looks_like_transient(text: str) -> bool:
         "please try again", "try again later", "connection reset",
         "connection refused", "econnreset", "etimedout", "eai_again",
         "network error", "request timed out",
+        # Subscription-plan window exhaustion ("Claude AI usage limit reached …
+        # resets at <time>") — refills on its own, so it's throttle, not auth.
+        "usage limit",
     )
     return any(n in t for n in needles)
 
@@ -138,6 +158,66 @@ class AgenticRunner:
     def available(self) -> bool:
         """Is the claude CLI resolvable? (Not needed for mock/dry-run.)"""
         return shutil.which(self.claude_bin) is not None
+
+    def preflight(self):
+        """One tiny end-to-end call to classify the CURRENT auth state before any
+        expensive work is scheduled. Returns ``(status, detail)`` with status one of:
+
+          ok        — the CLI authenticated and answered (auth + backend healthy)
+          throttled — sustained rate-limit/overload: refills on its own, retry later
+          auth      — credentials are broken: a human must rotate the token
+          unknown   — could not classify (CLI missing, timeout, novel error). Callers
+                      should FAIL OPEN on this: the preflight is an optimization and
+                      a diagnoser, never a new single point of failure.
+
+        Runs from an empty temp dir so the CLI never scans a repo, and retries the
+        recoverable classes with the runner's (short) backoff policy so a single
+        blip doesn't misreport a healthy token."""
+        if self.mock:
+            return "ok", "mock mode — no probe sent"
+        if not self.available():
+            return "unknown", f"`{self.claude_bin}` not found on PATH"
+        cmd = [
+            self.claude_bin, "-p", "Reply with exactly: ok",
+            "--output-format", "json", "--max-turns", "1",
+            "--permission-mode", "default",
+            "--disallowedTools", "Bash", "Read", "Write", "Edit", "WebFetch", "WebSearch",
+        ]
+        if self.model:
+            cmd += ["--model", self.model]
+        if self.dry_run:
+            return "ok", "dry-run — would send: " + " ".join(cmd[:6]) + " …"
+        env = dict(os.environ)
+        env.setdefault("CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC", "1")
+        sandbox = Path(tempfile.mkdtemp(prefix="quest-preflight-"))
+        try:
+            attempts = max(1, self.max_attempts)
+            last = ""
+            for attempt in range(1, attempts + 1):
+                try:
+                    proc = subprocess.run(cmd, cwd=str(sandbox), env=env,
+                                          capture_output=True, text=True,
+                                          timeout=self.timeout)
+                except subprocess.TimeoutExpired:
+                    return "unknown", f"probe timed out after {self.timeout}s"
+                if proc.returncode == 0:
+                    return "ok", "authenticated end-to-end"
+                combined = (proc.stdout or "") + "\n" + (proc.stderr or "")
+                last = (proc.stderr or proc.stdout or "").strip()[-400:]
+                auth = _looks_like_auth_failure(combined)
+                transient = _looks_like_transient(combined)
+                if (auth or transient) and attempt < attempts:
+                    self._backoff(attempt, "auth-endpoint" if auth and not transient
+                                  else "rate-limit/overload")
+                    continue
+                if auth:
+                    return "auth", last
+                if transient:
+                    return "throttled", last
+                return "unknown", last
+            return "unknown", last
+        finally:
+            shutil.rmtree(sandbox, ignore_errors=True)
 
     def run(self, quest) -> dict:
         """Validate one quest; return a result dict (see _finalize)."""
@@ -250,7 +330,7 @@ class AgenticRunner:
                 raise AuthError(AUTH_HINT)
             if transient:
                 tail = (proc.stderr or proc.stdout or "").strip()[-400:]
-                raise AuthError(f"{THROTTLE_HINT}\nLast output: {tail}")
+                raise ThrottleError(f"{THROTTLE_HINT}\nLast output: {tail}")
             if not clean:
                 tail = (proc.stderr or proc.stdout or "").strip()[-800:]
                 raise RunnerError(f"claude exited {proc.returncode}: {tail}")
