@@ -142,6 +142,15 @@ jobs:
       GH_TOKEN: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      # MODEL POLICY — one pinned model for the whole quest loop (probe, engine
+      # walks, walker/fixer agents), Sonnet-class by default: the loop's work is
+      # high-volume sandboxed tool use, which is Sonnet's sweet spot, and on
+      # subscription (OAuth) auth an unpinned CLI default typically burns the
+      # Opus-tier rate window ~2.5× faster for no measurement benefit. The
+      # preflight probes THIS model, so the gate validates the exact
+      # (credential, model) pair the engine will use. Override without a commit:
+      #   gh variable set QUEST_AI_MODEL --body <model-id> --repo bamr87/it-journey
+      QUEST_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
     outputs:
       go: ${{ steps.verdict.outputs.go }}
     steps:
@@ -517,6 +526,11 @@ jobs:
     env:
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      # Engine model pin (see the gate's MODEL POLICY comment) — the engine reads
+      # $QUEST_AI_MODEL itself; ITJ_AI_MODEL routes the SAME model into the
+      # walker agent step (claude-run → scripts/ai/run.sh honors it).
+      QUEST_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
+      ITJ_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
       SLUG: ${{ matrix.slug }}
       PLAN_FILE: ${{ matrix.plan_file }}
       OPEN_NEW_FIX_PRS: ${{ matrix.open_new_fix_prs }}
@@ -609,8 +623,13 @@ jobs:
             exit 0
           fi
           set +e
+          # --adaptive-turns sizes each quest's allowance to its own runnable-
+          # snippet count (14 + 3×runnable, clamped to [16, 40]) instead of
+          # spending the full cap everywhere; a quest that still overruns is
+          # recorded as a harness-labeled SCORED fail (budget_exhausted), so
+          # coverage completes and the M6 breaker stays reachable (issue #642).
           python3 test/quest-validator/agentic_validate.py \
-            --mode execute --max-turns 40 \
+            --mode execute --max-turns 40 --adaptive-turns \
             --report walk-evidence.json --md walk-evidence.md \
             "${QUEST_PATHS[@]}"
           rc=$?

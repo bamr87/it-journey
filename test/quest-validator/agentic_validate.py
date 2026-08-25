@@ -87,10 +87,18 @@ def main():
     p.add_argument("--mode", choices=["review", "execute"], default="review",
                    help="review = read-only expert assessment (safe anywhere); "
                         "execute = run safe commands in a sandbox (use in CI/containers).")
-    p.add_argument("--model", help="Model override passed to claude (e.g. an alias).")
+    p.add_argument("--model", default=os.environ.get("QUEST_AI_MODEL") or None,
+                   help="Model passed to claude (full ID like claude-sonnet-5, or an alias). "
+                        "Defaults to $QUEST_AI_MODEL so CI pins one model for the probe AND "
+                        "the walks without per-invocation flags; unset = the CLI's account "
+                        "default (unpinned — burns whatever tier the subscription defaults to).")
     p.add_argument("--timeout", type=int, default=600, help="Per-quest timeout in seconds (default 600).")
     p.add_argument("--max-turns", type=int, default=0,
                    help="Per-quest agent turn ceiling (0 = CLI default). Bounds runaway loops.")
+    p.add_argument("--adaptive-turns", action="store_true",
+                   help="Size each quest's turn allowance to its own deterministic runnable-"
+                        "snippet count (14 + 3×runnable, clamped to [16, --max-turns]) instead "
+                        "of spending the full cap on every quest. Needs --max-turns > 0.")
     p.add_argument("--max-cost-usd", type=float, default=0.0,
                    help="Abort the batch once cumulative reported cost exceeds this (0 = no ceiling).")
     p.add_argument("--isolate", choices=["none", "docker"], default="none",
@@ -143,6 +151,7 @@ def main():
         mode=args.mode, model=args.model, timeout=args.timeout,
         claude_bin=args.claude_bin, mock=args.mock, dry_run=args.dry_run,
         verbose=args.verbose, max_turns=args.max_turns,
+        adaptive_turns=args.adaptive_turns,
     )
 
     if not (args.mock or args.dry_run) and not r.available():
