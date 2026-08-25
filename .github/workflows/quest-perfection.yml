@@ -932,7 +932,19 @@ jobs:
             python3 scripts/quest/loop_health.py report --kind "$kind" --lane walk \
               --run-url "$run_url" --detail "$attempted slice(s) attempted, 0 quests scored; zero-score reasons:$reasons" || true
             echo "proceed=false" >> "$GITHUB_OUTPUT"
-            exit 0
+            # auth/rate-limit are EXPECTED, self-healing states (a human rotating a
+            # secret, or a window refilling) — stay green so a scheduled run never
+            # withholds the gh-pages deploy over them (the whole point of this
+            # guard). Anything else (engine anomaly, a future new cause) is
+            # genuinely unexpected and must stay loud: fail the job so it's visible
+            # beyond the health issue. This can't become a new daily-red trap — the
+            # ledger's circuit breaker (M6) excludes a slice from selection after
+            # max_fix_rounds consecutive imperfect walks, so the same content
+            # anomaly can redden at most a few runs.
+            case "$kind" in
+              auth|rate-limit) exit 0 ;;
+              *) exit 1 ;;
+            esac
           fi
           # Progress was made — if a health issue is open from a previous bad spell,
           # close it: the loop heals its own alarm.
