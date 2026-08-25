@@ -62,6 +62,9 @@ class _StubQuest:
         return {"path": f"{self.slug}.md", "title": self.title, "level": self.level,
                 "theme": "", "difficulty": "", "quest_type": "main_quest", "slug": self.slug}
 
+    def objectives(self):
+        return []
+
 
 def test_parse_envelope():
     print("\n_parse_envelope — stdout shapes the CLI can emit:")
@@ -233,13 +236,39 @@ def test_retry_policy():
         check("transient blip then success → recovers", isinstance(res, dict))
         check("recovered after exactly one retry (2 calls)", n == 2)
 
-        # 2) Sustained rate-limit across all attempts → AuthError (stops the batch).
+        # 2) Sustained rate-limit across all attempts → ThrottleError. Still an
+        #    AuthError subclass (batch-stop), but the orchestrator must be able to
+        #    tell "wait for the window to refill" from "a human must rotate the
+        #    token" — conflating them is what mislabeled 8 days of dead-token runs
+        #    as an expected rate-limit.
         raised = None
         try:
             _drive([_FakeProc(returncode=1, stderr="429 Too Many Requests")] * 5)
         except AuthError as e:
             raised = e
         check("sustained throttle → AuthError (batch-stop signal)", raised is not None)
+        check("sustained throttle is the ThrottleError flavor",
+              isinstance(raised, runner.ThrottleError))
+
+        # 2b) Sustained CREDENTIAL failure → plain AuthError, never ThrottleError.
+        raised = None
+        try:
+            _drive([_FakeProc(returncode=1,
+                              stderr="OAuth token has expired · Please run /login")] * 5)
+        except AuthError as e:
+            raised = e
+        check("dead token → AuthError, NOT ThrottleError",
+              raised is not None and not isinstance(raised, runner.ThrottleError))
+
+        # 2c) Subscription-window exhaustion phrasing is throttle, not auth.
+        raised = None
+        try:
+            _drive([_FakeProc(returncode=1,
+                              stderr="Claude AI usage limit reached · resets 3am")] * 5)
+        except AuthError as e:
+            raised = e
+        check("usage-limit-reached → ThrottleError (refills on its own)",
+              isinstance(raised, runner.ThrottleError))
 
         # 3) A CLEAN run whose transcript merely MENTIONS a 503 is a real result,
         #    never retried (guards the agent-transcript false-positive).
@@ -261,6 +290,118 @@ def test_retry_policy():
         runner.time.sleep = orig_sleep
 
 
+def test_preflight():
+    print("\npreflight — auth-state probe the workflow gates route on:")
+    orig_run = runner.subprocess.run
+    orig_sleep = runner.time.sleep
+    runner.time.sleep = lambda *_a, **_k: None
+
+    def _probe(procs):
+        seq = list(procs)
+        calls = {"n": 0}
+
+        def fake_run(*_a, **_k):
+            calls["n"] += 1
+            return seq[min(calls["n"] - 1, len(seq) - 1)]
+
+        runner.subprocess.run = fake_run
+        r = AgenticRunner(mode="review", max_attempts=2,
+                          retry_base_s=0.001, retry_max_s=0.001)
+        r.available = lambda: True
+        return r.preflight()
+
+    try:
+        check("mock mode → ok without any probe",
+              AgenticRunner(mode="review", mock=True).preflight()[0] == "ok")
+        missing = AgenticRunner(mode="review", claude_bin="claude-definitely-not-here")
+        check("missing CLI → unknown (fail-open, never a false auth verdict)",
+              missing.preflight()[0] == "unknown")
+        check("clean exit → ok",
+              _probe([_FakeProc(returncode=0, stdout='{"result":"ok"}')])[0] == "ok")
+        check("sustained 429 → throttled",
+              _probe([_FakeProc(returncode=1, stderr="429 Too Many Requests")] * 3)[0]
+              == "throttled")
+        check("invalid key → auth",
+              _probe([_FakeProc(returncode=1,
+                                stderr="Invalid API key · Please run /login")] * 3)[0]
+              == "auth")
+        check("novel error → unknown (fail-open)",
+              _probe([_FakeProc(returncode=1, stderr="segfault in flux capacitor")])[0]
+              == "unknown")
+        check("blip then clean → ok (retry inside the probe)",
+              _probe([_FakeProc(returncode=1, stderr="529 overloaded"),
+                      _FakeProc(returncode=0, stdout='{"result":"ok"}')])[0] == "ok")
+    finally:
+        runner.subprocess.run = orig_run
+        runner.time.sleep = orig_sleep
+
+
+def test_turn_budget_and_exhaustion():
+    print("\nturn budgets — adaptive sizing + budget-exhausted becomes a SCORED fail:")
+    import types
+    from agentic import prompts
+
+    # --- adaptive sizing (deterministic from the runnable-snippet count) -----
+    fake_lib = types.SimpleNamespace(
+        snippet_summary=lambda body: {"total": 99, "runnable": int((body or "0").split(":")[-1])})
+    orig_lib = runner.quest_lib
+    runner.quest_lib = fake_lib
+    try:
+        r = AgenticRunner(mode="execute", max_turns=40, adaptive_turns=True)
+        check("adaptive: tiny quest floors at 16",
+              r._turn_budget(_StubQuest("t", "runnable:0")) == 16)
+        check("adaptive: mid quest = 14 + 3×runnable",
+              r._turn_budget(_StubQuest("t", "runnable:5")) == 29)
+        check("adaptive: heavy quest caps at max_turns",
+              r._turn_budget(_StubQuest("t", "runnable:50")) == 40)
+        fixed = AgenticRunner(mode="execute", max_turns=40)
+        check("fixed mode ignores snippet count",
+              fixed._turn_budget(_StubQuest("t", "runnable:1")) == 40)
+        uncapped = AgenticRunner(mode="execute", max_turns=0, adaptive_turns=True)
+        check("no cap → no flag (0)", uncapped._turn_budget(_StubQuest("t", "runnable:5")) == 0)
+    finally:
+        runner.quest_lib = orig_lib
+
+    # --- the budget number reaches the agent's prompt (execute mode only) ----
+    q = _StubQuest("paced", "```bash\necho hi\n```")
+    up = prompts.build_user_prompt(q, mode="execute", turn_budget=29)
+    check("execute prompt states the turn budget", "at most 29 tool turns" in up)
+    check("review prompt carries no budget block",
+          "tool turns" not in prompts.build_user_prompt(q, mode="review", turn_budget=29))
+
+    # --- error_max_turns → scored fail, not an errored void ------------------
+    orig_run = runner.subprocess.run
+    runner.subprocess.run = lambda *_a, **_k: _FakeProc(
+        returncode=0,
+        stdout=json.dumps({"is_error": True, "subtype": "error_max_turns",
+                           "result": "Reached maximum number of turns",
+                           "num_turns": 40, "total_cost_usd": 0.1}))
+    try:
+        r = AgenticRunner(mode="execute", max_turns=40)
+        r.available = lambda: True
+        import tempfile as _tf, shutil as _sh
+        sandbox = Path(_tf.mkdtemp(prefix="budget-test-"))
+        try:
+            res = r._invoke(_StubQuest("heavy", "x" * 100), ["claude", "-p", "x"], sandbox)
+        finally:
+            _sh.rmtree(sandbox, ignore_errors=True)
+        check("budget-exhausted result carries no error key", "error" not in res)
+        check("…is flagged budget_exhausted", res.get("budget_exhausted") is True)
+        check("…scores 0.0 with verdict fail",
+              res.get("overall") == 0.0 and res.get("verdict") == schema.VERDICT_FAIL)
+        check("…is clearly harness-labeled",
+              "[harness]" in (res.get("verdict_obj") or {}).get("summary", ""))
+        recs = (res.get("verdict_obj") or {}).get("recommendations") or []
+        check("…carries the split-the-quest recommendation",
+              len(recs) == 1 and recs[0].get("priority") == "high")
+        from agentic import report as _report
+        agg = _report.aggregate([res])
+        check("…counts as SCORED in the aggregate (ledger coverage completes)",
+              agg["scored"] == 1 and agg["errored"] == 0)
+    finally:
+        runner.subprocess.run = orig_run
+
+
 def main():
     print("=" * 64)
     print("AGENTIC ENVELOPE CONTRACT TEST (offline, no claude, no cost)")
@@ -272,6 +413,8 @@ def main():
     test_schema_and_scoring()
     test_mock_determinism()
     test_retry_policy()
+    test_preflight()
+    test_turn_budget_and_exhaustion()
     print("\n" + "=" * 64)
     if _failures:
         print(f"❌ {len(_failures)} contract check(s) FAILED: {_failures}")

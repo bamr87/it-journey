@@ -81,27 +81,82 @@ concurrency:
 
 jobs:
   # ---------------------------------------------------------------------------
-  # gate — opt-in only: the shared kill switch AND Claude auth must both be set.
+  # gate — opt-in only: the shared kill switch AND Claude auth must both be set,
+  # and the auth is then PROVED with one tiny probe (the same claude-preflight
+  # the walk lane's gate runs) before any fix work is scheduled. A throttled or
+  # credential-dead token idles this lane GREEN — the quest-fix agent shares the
+  # same token, so proceeding would only burn runner minutes to produce nothing —
+  # and the broken-credential state is escalated to the ONE quest-loop-health
+  # issue (scripts/quest/loop_health.py, --lane fix) rather than a red run.
   # ---------------------------------------------------------------------------
   gate:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write            # loop_health.py upserts the health issue
+    env:
+      GH_TOKEN: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      # MODEL POLICY — probe the same pinned model the lane's engine/agents use
+      # (see quest-perfection's gate comment).
+      QUEST_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
     outputs:
-      go: ${{ steps.check.outputs.go }}
+      go: ${{ steps.verdict.outputs.go }}
     steps:
-      - id: check
+      - id: switch
         env:
           ENABLED: ${{ vars.QUEST_PERFECTION_ENABLED }}
-          OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          set -euo pipefail
+          armed=false
+          if [ "$ENABLED" = "true" ] && { [ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}" ] || [ -n "${ANTHROPIC_API_KEY:-}" ]; }; then
+            armed=true
+          else
+            echo "quest-fix-loop idle (enabled=$ENABLED, auth=$([ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}${ANTHROPIC_API_KEY:-}" ] && echo yes || echo no))."
+          fi
+          echo "armed=$armed" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v7
+        if: steps.switch.outputs.armed == 'true'
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      - id: preflight
+        if: steps.switch.outputs.armed == 'true'
+        uses: ./.github/actions/claude-preflight
+
+      - id: verdict
+        env:
+          ARMED: ${{ steps.switch.outputs.armed }}
+          STATUS: ${{ steps.preflight.outputs.status }}
+          DETAIL: ${{ steps.preflight.outputs.detail }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -euo pipefail
           go=false
-          if [ "$ENABLED" = "true" ] && { [ -n "$OAUTH" ] || [ -n "$KEY" ]; }; then
-            go=true
-          else
-            echo "quest-fix-loop idle (enabled=$ENABLED, auth=$([ -n "$OAUTH$KEY" ] && echo yes || echo no))."
-          fi
+          case "${ARMED}:${STATUS}" in
+            true:ok)
+              go=true ;;
+            true:unknown)
+              go=true
+              echo "::warning::preflight could not classify Claude auth ($DETAIL) — proceeding (fail-open)." ;;
+            true:throttled)
+              echo "::warning::Claude is rate-limited at the gate ($DETAIL) — skipping this fix pass. Green by design: the next schedule retries."
+              python3 scripts/quest/loop_health.py report --kind rate-limit --lane fix \
+                --run-url "$RUN_URL" --detail "$DETAIL" || true
+              ;;
+            true:auth)
+              echo "::error::Claude credentials are BROKEN ($DETAIL) — rotate CLAUDE_CODE_OAUTH_TOKEN (claude setup-token → repo secret). Idling green; the quest-loop-health issue tracks this."
+              python3 scripts/quest/loop_health.py report --kind auth --lane fix \
+                --run-url "$RUN_URL" --detail "$DETAIL" || true
+              ;;
+            *)
+              : ;;   # not armed — the switch step already logged why
+          esac
           echo "go=$go" >> "$GITHUB_OUTPUT"
+          echo "**Gate:** armed=${ARMED} preflight=${STATUS:-—} → go=${go}" >> "$GITHUB_STEP_SUMMARY"
 
   # ---------------------------------------------------------------------------
   # select — observe/orient/decide, entirely in code. Emits a matrix of slices to
