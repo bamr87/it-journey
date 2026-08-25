@@ -327,7 +327,7 @@ erp_stack:
     ci_cd: "GitHub Actions"
     monitoring: "Prometheus + Grafana"
     log_aggregation: "Loki + Promtail"
-```markdown
+```
 
 ### Phase 4 — Architecture Diagrams
 Generate Mermaid diagrams showing:
@@ -865,6 +865,7 @@ Include configuration for:
 
 ```python
 # config/settings/base.py
+from datetime import timedelta
 from decouple import Csv, config
 from pathlib import Path
 
@@ -1121,8 +1122,10 @@ npm install \
   tailwind-merge
 
 # Install shadcn/ui prerequisites
+# Pinned to the Tailwind v3 CLI workflow below — the current npm `latest`
+# tag (Tailwind v4) removed the `init` subcommand this quest relies on.
 npm install -D \
-  tailwindcss \
+  tailwindcss@^3 \
   postcss \
   autoprefixer \
   @types/node
@@ -1131,6 +1134,9 @@ npm install -D \
 npx tailwindcss init -p
 
 # Initialize shadcn/ui
+# The CLI may prompt "Select a component library" (Base UI / React Aria /
+# Radix UI) before it reaches the --yes-covered prompts — this quest's
+# generated components assume Radix UI, so answer that prompt with Radix UI.
 npx shadcn@latest init
 
 # Add core shadcn/ui components used in ERP
@@ -1292,11 +1298,14 @@ const columns: ColumnDef<SalesOrder>[] = [
   {
     accessorKey: "customer.name",
     header: "Customer",
-    cell: ({ row }) => (
-      <Link to="/contacts/$id" params={% raw %}{{ id: row.original.customer.id }}{% endraw %}>
-        {row.original.customer.name}
-      </Link>
-    ),
+    cell: ({ row }) => {
+      const customerParams = { id: row.original.customer.id };
+      return (
+        <Link to="/contacts/$id" params={customerParams}>
+          {row.original.customer.name}
+        </Link>
+      );
+    },
   },
   {
     accessorKey: "order_date",
