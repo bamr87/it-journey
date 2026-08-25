@@ -82,6 +82,16 @@ rewards:
   unlocks_features:
   - Access to the Data Quality Engineering quest
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! In every prior quest your data sat still - a file, a table, a finished batch - waiting patiently to be processed. But the real kingdom never sleeps: orders, clicks, sensor readings, and log events pour in without end, and your analysts want answers *now*, not tomorrow. This quest, **Stream Processing**, teaches you to build aqueducts for water that never stops flowing - pipelines that compute over an endless river of events in real time.*
 
@@ -139,7 +149,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -155,7 +165,7 @@ docker compose up -d
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -169,7 +179,7 @@ docker compose up -d
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -184,7 +194,7 @@ docker compose up -d
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

@@ -81,6 +81,16 @@ rewards:
   unlocks_features:
   - Completes the core Level 1100 Data Engineering quest line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You have built aqueducts, commanded clusters, and ridden endless streams of events. But a pipeline that moves data flawlessly is still worthless if the data itself is wrong - a null where a price should be, a duplicate order, a timestamp from the future. Every dashboard, every model, every decision downstream drinks from your reservoir, and poison flows just as easily as clean water. This quest, **Data Quality Engineering**, teaches you to stand guard at the gates and let no bad data pass.*
 
@@ -138,7 +148,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -152,7 +162,7 @@ python -c "import pandas, great_expectations; print('ready')"
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -166,7 +176,7 @@ python -c "import pandas, great_expectations; print('ready')"
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -180,7 +190,7 @@ python -c "import pandas, great_expectations; print('ready')"
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

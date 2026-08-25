@@ -97,6 +97,18 @@ draft: false
 fmContentType: quest
 layout: quest
 mermaid: true
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
+  variables:
+    project_dir: github
 ---
 *Greetings, brave Scribe of the Digital Realm! You stand at the threshold of an ancient art—the distillation of scattered signals into crystalline Product Requirements. In ages past, Product Managers toiled endlessly, their PRDs growing stale mere moments after quill touched parchment. But you shall learn the secrets of the PRD MACHINE—an autonomous oracle that writes, maintains, and evolves perfect PRDs faster than any mortal hand.*
 

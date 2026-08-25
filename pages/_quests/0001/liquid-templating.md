@@ -87,6 +87,16 @@ rewards:
   unlocks_features:
   - The ability to build data-driven pages in any later quest
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You can now scaffold and serve a Jekyll site - but every page is still hand-written and static. **Liquid Templating** teaches you the spoken magic of Jekyll: a templating language that lets one template render a hundred pages, pull in data, loop over lists, and decide what to show. This is where your site stops being a stack of files and starts being a living thing.*
 
@@ -143,7 +153,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -156,7 +166,7 @@ bundle exec jekyll serve --livereload
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -169,7 +179,7 @@ bundle exec jekyll serve --livereload
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -182,7 +192,7 @@ bundle exec jekyll serve --livereload
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

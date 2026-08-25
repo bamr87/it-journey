@@ -79,6 +79,16 @@ rewards:
   unlocks_features:
   - Connection and resilience quests in the Database Mastery line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! Every kingdom falls eventually - a disk dies, a finger slips, a `DELETE` forgets its `WHERE` clause, ransomware locks the gates. The question is never *if* but *when*, and the only thing standing between disaster and a shrug is a backup you can actually restore. This quest, **Backup and Recovery**, teaches you to take backups that work, to rewind time with point-in-time recovery, and - most importantly - to *drill* your restores so you know they work before you need them.*
 
@@ -136,7 +146,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -150,7 +160,7 @@ psql restoration_vault -c "CREATE TABLE treasure(id serial primary key, name tex
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -163,7 +173,7 @@ psql restoration_vault -c "CREATE TABLE treasure(id serial primary key, name tex
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -177,7 +187,7 @@ sudo -u postgres psql restoration_vault -c "CREATE TABLE treasure(id serial prim
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

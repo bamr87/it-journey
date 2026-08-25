@@ -31,6 +31,9 @@ Welcome to the IT-Journey developer documentation. This directory contains compr
 - **[Cleanup Summary](scripts/CLEANUP_SUMMARY.md)** - Script consolidation results
 - **[Consolidation Plan](scripts/CONSOLIDATION_PLAN.md)** - Script organization strategy
 
+### Notes
+- **[Notes Workbench](notes/WORKBENCH.md)** - The interactive `/notes/` board: local notes, site-wide snippet clipping, and the public/private split
+
 ### Testing
 - **[Testing Frameworks](testing/TESTING_FRAMEWORKS.md)** - Test infrastructure and validation tools
 

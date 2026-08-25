@@ -90,6 +90,16 @@ rewards:
   unlocks_features:
   - Access to the rest of the Level 0001 Web Fundamentals quest line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! Welcome to **Jekyll Fundamentals** - your first true step into the realm of the web. In the previous tier you learned to wield the terminal and the version-control scrolls. Now you will forge something the whole world can visit: a website. And you will build it the wise way - as a fast, secure **static site** that needs no database and no fragile server to defend.*
 
@@ -147,7 +157,7 @@ This **🟢 Easy** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -174,7 +184,7 @@ jekyll --version
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -200,7 +210,7 @@ jekyll --version
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -227,7 +237,7 @@ jekyll --version
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

@@ -80,6 +80,18 @@ rewards:
   unlocks_features:
   - Continued progress through the Level 1111 Leadership & Innovation quest line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
+  variables:
+    project_dir: mentoring
 ---
 *Greetings, Master adventurer. Every legend you admire was shaped by someone who took the time to teach them. Now the torch passes to you. In this quest, **Mentorship Programs**, you learn the quiet, compounding art of making other engineers better - not by doing their work, but by growing their judgment, opening their doors, and telling them the truth kindly.*
 
@@ -137,7 +149,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -151,7 +163,7 @@ echo "# Growth Plan: <mentee>" > growth-plans/template.md
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -165,7 +177,7 @@ git init
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -178,7 +190,7 @@ echo "# Growth Plan: <mentee>" > growth-plans/template.md
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

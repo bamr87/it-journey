@@ -78,6 +78,16 @@ rewards:
   unlocks_features:
   - Completion of the Level 0110 Database Mastery quest line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You stand at the final gate of the Data Keep. Inside, your database can serve thousands of queries a second - but only if visitors enter through an orderly gate rather than battering down a fresh door each time. This quest, **Connection Pooling**, teaches you to be the gatekeeper: to understand the true cost of a connection, to size a pool so it neither starves nor floods the database, to deploy PgBouncer, and to hunt the connection leaks that quietly exhaust a healthy system.*
 
@@ -135,7 +145,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -149,7 +159,7 @@ createdb gatekeeper
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -162,7 +172,7 @@ createdb gatekeeper
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -176,7 +186,7 @@ sudo -u postgres createdb gatekeeper
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

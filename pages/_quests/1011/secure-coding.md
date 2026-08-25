@@ -82,6 +82,16 @@ rewards:
   unlocks_features:
   - Ability to harden real applications against common web attacks
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! Having sworn the oath of the Bastion in **Security Fundamentals**, you now descend into the forge. Here, abstract principles become hardened steel: real code that input validation tempers, parameterized queries shield, and strong cryptography seals. This quest, **Secure Coding Practices**, turns you from someone who knows the OWASP Top 10 by name into someone who defeats it line by line.*
 
@@ -140,7 +150,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -154,7 +164,7 @@ python3 --version
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -167,7 +177,7 @@ py -3 --version
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -180,7 +190,7 @@ python3 --version
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

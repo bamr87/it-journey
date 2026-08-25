@@ -65,6 +65,11 @@ concurrency:
 
 jobs:
   sweep:
+    # The kill switch is a JOB-level condition, not a first step. A step-level
+    # gate still provisions a runner for every cron tick and every push to main
+    # only to echo "idle" — with PR_FRESHNESS_ENABLED unset that was 100% of
+    # runs. Evaluated here, a disabled lane starts no runner at all.
+    if: vars.PR_FRESHNESS_ENABLED == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
@@ -76,36 +81,20 @@ jobs:
       # whatever remote the workspace happens to be sitting on.
       GH_REPO: ${{ github.repository }}
       ONLY_PR: ${{ github.event.inputs.pr }}
-      ENABLED: ${{ vars.PR_FRESHNESS_ENABLED }}
     steps:
-      - name: Gate
-        id: gate
-        run: |
-          set -euo pipefail
-          if [ "$ENABLED" = "true" ]; then
-            echo "go=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "pr-freshness idle (PR_FRESHNESS_ENABLED=${ENABLED:-unset})."
-            echo "go=false" >> "$GITHUB_OUTPUT"
-          fi
-
       # The BASE branch's tooling. Never the PR's — the refresh below checks out
       # PR branches, and their scripts must never be the ones we execute.
-      - if: steps.gate.outputs.go == 'true'
-        uses: actions/checkout@v7
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
-      - if: steps.gate.outputs.go == 'true'
-        uses: actions/setup-python@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
 
-      - if: steps.gate.outputs.go == 'true'
-        run: pip install --quiet pyyaml    # ledger.py + build_reports_site.py
+      - run: pip install --quiet pyyaml    # ledger.py + build_reports_site.py
 
       - name: Refresh every stale automated PR
-        if: steps.gate.outputs.go == 'true'
         run: |
           set -euo pipefail
 

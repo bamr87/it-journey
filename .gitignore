@@ -88,6 +88,10 @@ landing-full.png
 /walk-plan.json
 /walk-evidence.json
 /walk-evidence.md
+# quest_steps.py step plan + stack_capture.mjs output (per-run working state)
+/steps.json
+/captures/
+/.sandbox/
 /screenshots/
 
 # Node deps (installed --no-save for the walkthrough screenshot script + frontend crawler)

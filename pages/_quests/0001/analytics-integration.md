@@ -84,6 +84,18 @@ rewards:
 layout: quest
 redirect_from:
 - /quests/0011/analytics-integration/
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
+  variables:
+    project_dir: my-site
 ---
 *Greetings, brave adventurer! Welcome to **Analytics Integration** - the quest where you learn to see your visitors without spying on them. A published site is a message in a bottle; analytics tell you whether anyone found it, what they read, and where they left. But measurement is a responsibility as much as a power: collect what you need, respect consent, and never hoard what you cannot protect.*
 
@@ -141,7 +153,7 @@ This **🟢 Easy** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -160,7 +172,7 @@ open http://127.0.0.1:4000/
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -179,7 +191,7 @@ Start-Process http://127.0.0.1:4000/
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -198,7 +210,7 @@ xdg-open http://127.0.0.1:4000/
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

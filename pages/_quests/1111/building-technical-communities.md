@@ -80,6 +80,18 @@ rewards:
   unlocks_features:
   - Continued progress through the Level 1111 Leadership & Innovation quest line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
+  variables:
+    project_dir: community
 ---
 *Greetings, Master adventurer. A single hero can clear a dungeon, but only a guild can hold a kingdom. The most enduring forces in technology are not products - they are communities: the people who gather around a language, a project, a cause, and make each other stronger. This quest, **Building Technical Communities**, teaches you to convene that gathering, to govern it fairly, and to make sure everyone who arrives feels they belong.*
 
@@ -137,7 +149,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -152,7 +164,7 @@ echo "# Governance Model" > governance/GOVERNANCE.md
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -167,7 +179,7 @@ git init
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -181,7 +193,7 @@ echo "# Governance Model" > governance/GOVERNANCE.md
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

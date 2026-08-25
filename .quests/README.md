@@ -17,6 +17,7 @@ This is a dot-directory, so **Jekyll ignores it automatically** — the ledger a
 | `budget.yml` | ✅ (source) | hand-edited | the orchestrator (per-run backpressure) |
 | `ledger.json` | ✅ | `ledger.py update` / `fix-update` | `ledger.py select` / `render`, dashboards |
 | `DASHBOARD.md` | ✅ (generated) | `ledger.py render` | humans |
+| `videos.yml` | ✅ (generated) | `video_manifest.py apply` (the quest-video lane) | dashboards, upload idempotency (`youtube_upload.py`) |
 | `walk-plan.json` | ❌ (transient CI artifact) | `scripts/quest/walkthrough_plan.py` | the walk arm, `ledger.py update` |
 | `walk-evidence.json` | ❌ (transient CI artifact) | `agentic_validate.py` `report.aggregate()` | `ledger.py update` |
 

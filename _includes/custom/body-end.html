@@ -1,0 +1,20 @@
+{%- comment -%}
+  custom/body-end.html — this site's addition to the end of every page body.
+
+  The remote theme (bamr87/zer0-mistakes) includes _includes/custom/body-end.html
+  from _layouts/root.html as an empty stub, so this file is the sanctioned way to
+  load a script site-wide without forking a theme file.
+
+  It loads the notes clipper: the button beside every code block's copy button,
+  and the popover that appears when you select text. Both write into the same
+  localStorage the workbench at /notes/ reads.
+
+  Skipped on the workbench page itself (notes_workbench: true in its front
+  matter), which loads the store through its own layout and renders its own,
+  richer controls.
+{%- endcomment -%}
+{%- unless page.notes_workbench -%}
+<link rel="stylesheet" href="{{ '/assets/css/notes-clipper.css' | relative_url }}">
+<script src="{{ '/assets/js/notes-store.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/notes-clipper.js' | relative_url }}" defer></script>
+{%- endunless -%}

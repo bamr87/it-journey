@@ -2,7 +2,7 @@
 applyTo: "pages/_quests/**/*.md"
 description: "Create gamified IT-Journey quests: frontmatter schema, fantasy theme, learning objectives, and validation rules"
 date: 2025-07-21T23:30:21.000Z
-lastmod: 2026-06-22T00:00:00.000Z
+lastmod: 2026-08-19T00:00:00.000Z
 ---
 
 # Quest Creation Instructions
@@ -112,6 +112,19 @@ rewards:
   badges: ["🏆 Container Captain"]
   progression_points: 100
 ---
+```
+
+### Machine-written optional fields (do not author by hand)
+
+`walkthrough_video` references the quest's published, CI-recorded walkthrough video and is **written only by the quest-video lane** (`scripts/quest/video_manifest.py apply`, driven by `quest-video.yml`) after a verified run is uploaded to YouTube — never authored or edited by hand (the id must correspond to a real upload). The quest layout renders it via `_includes/quest/quest-video.html`; leave the block alone when editing a quest, and keep it intact when migrating frontmatter:
+
+```yaml
+walkthrough_video:
+  provider: youtube
+  id: <YouTube video id>
+  url: https://www.youtube.com/watch?v=<id>
+  recorded: 'YYYY-MM-DD'
+  run_url: <the CI run whose sealed evidence the video replays>
 ```
 
 ### Level README frontmatter (not playable quests)

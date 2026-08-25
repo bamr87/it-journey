@@ -1,0 +1,182 @@
+/*
+ * notes-clipper.css — the site-wide clip affordances.
+ *
+ * Loaded on every page except the workbench (see _includes/custom/body-end.html),
+ * so it stays deliberately small and every selector is namespaced .itj-clip*.
+ *
+ * The site is pinned dark by assets/js/user-overrides.js, so colors come from
+ * the theme's tokens rather than from any prefers-color-scheme rule.
+ */
+
+/* ---- the button that joins the copy button on a code block ----
+ *
+ * The site's own stylesheet carries a broad `.button, button:not(.copy)` rule
+ * that hands every other button a 20px-padded outline; the theme's copy button
+ * escapes it by name. These selectors are scoped to the header (0,2,0) so they
+ * outrank it (0,1,1) and the clip button can sit beside Copy as a sibling —
+ * same height and shape, quieter fill, since Copy is the more common action.
+ */
+
+.code-block-header .itj-clip-btn,
+.itj-clip-bare .itj-clip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  justify-content: center;
+  padding: 3px 8px;
+  margin-left: 0.35rem;
+  border: 1px solid var(--bs-border-color, rgba(248, 249, 250, 0.18));
+  border-radius: 4.5px;
+  background: transparent;
+  color: var(--bs-secondary-color, #9aa2c8);
+  font-size: 11px;
+  line-height: 1.45;
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.code-block-header .itj-clip-btn:hover,
+.code-block-header .itj-clip-btn:focus-visible,
+.itj-clip-bare .itj-clip-btn:hover,
+.itj-clip-bare .itj-clip-btn:focus-visible {
+  color: var(--zer0-color-accent, var(--bs-primary, #22d3ee));
+  border-color: var(--zer0-color-accent, #22d3ee);
+  background: rgba(255, 255, 255, 0.08);
+  background: color-mix(in srgb, transparent 88%, var(--zer0-color-accent, #22d3ee) 12%);
+  outline: none;
+}
+
+.code-block-header .itj-clip-btn:focus-visible,
+.itj-clip-bare .itj-clip-btn:focus-visible {
+  box-shadow: 0 0 0 2px var(--zer0-color-accent, #22d3ee);
+}
+
+/* On a narrow screen the header is already crowded; the scissors carries it. */
+@media (max-width: 34rem) {
+  .itj-clip-btn__text {
+    display: none;
+  }
+}
+
+/* Fallback placement when the theme renders a bare <pre> with no header. */
+.itj-clip-bare {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -0.4rem;
+}
+
+/* ---- the popover shown over a text selection ---- */
+
+.itj-clip-pop {
+  position: absolute;
+  z-index: 1080;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.12s ease;
+}
+
+.itj-clip-pop.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.itj-clip-pop__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid var(--bs-border-color, rgba(168, 85, 247, 0.22));
+  background: var(--bs-body-bg, #16142f);
+  color: var(--bs-body-color, #e7e9ff);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  white-space: nowrap;
+}
+
+.itj-clip-pop__btn:hover {
+  border-color: var(--zer0-color-accent, #22d3ee);
+  color: var(--zer0-color-accent, #22d3ee);
+}
+
+/* ---- the confirmation toast ---- */
+
+.itj-clip-toast {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1090;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  max-width: min(24rem, calc(100vw - 2rem));
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--bs-border-color, rgba(168, 85, 247, 0.22));
+  border-radius: 0.6rem;
+  background: var(--bs-body-bg, #16142f);
+  color: var(--bs-body-color, #e7e9ff);
+  font-size: 0.88rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(0.5rem);
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.itj-clip-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.itj-clip-toast__link {
+  margin-left: auto;
+  white-space: nowrap;
+  color: var(--zer0-color-accent, #22d3ee);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.itj-clip-toast__link:hover {
+  text-decoration: underline;
+}
+
+/* ---- the small toolbar on a note page ---- */
+
+.itj-clip-pagebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.25rem;
+}
+
+.itj-clip-pagebar__btn,
+.itj-clip-pagebar__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid var(--bs-border-color, rgba(168, 85, 247, 0.22));
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  background: transparent;
+  color: var(--bs-secondary-color, #9aa2c8);
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.itj-clip-pagebar__btn:hover,
+.itj-clip-pagebar__link:hover {
+  border-color: var(--zer0-color-accent, #22d3ee);
+  color: var(--zer0-color-accent, #22d3ee);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .itj-clip-toast,
+  .itj-clip-pop,
+  .itj-clip-btn {
+    transition: none;
+  }
+}

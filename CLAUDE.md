@@ -1,9 +1,9 @@
 # CLAUDE.md — Claude Code guide for IT-Journey
 
-IT-Journey is a **Jekyll** site (GitHub Pages, custom domain `it-journey.dev`): a gamified, open-source platform for learning IT and software development through **quests** (zer0 → her0). ~280 Markdown content files live under `pages/` across 5 collections — **quests** (~204, the center of gravity), `docs` (~27), a slim `notes` set (~16), `quickstart` (~15), and `about` (~19), plus a few loose `pages/` files. The remote theme is `bamr87/zer0-mistakes`.
+IT-Journey is a **Jekyll** site (GitHub Pages, custom domain `it-journey.dev`): a gamified, open-source platform for learning IT and software development through **quests** (zer0 → her0). ~394 Markdown files live under `pages/` across four populated collections — **quests** (~233, the center of gravity), `quest-reports` (~117, machine-authored walkthrough reports from the quest-perfection loop), a slim `notes` set (~27), and `about` (~12) — plus 5 loose `pages/` files. `_config.yml` also declares a `pages` collection, but `pages/_pages/` does not exist, so it is currently empty. The remote theme is `bamr87/zer0-mistakes`, consumed unpinned via `remote_theme` (there is no theme gem in the `Gemfile`).
 
-> **Recent overhaul:** the `_posts`/`_drafts` blog, `_notebooks`, and `_hobbies`
-> collections were removed. General blog content moved to **lifehacker.dev**
+> **Recent overhaul:** the `_posts`/`_drafts` blog, `_notebooks`, `_hobbies`,
+> `_docs`, and `_quickstart` collections were removed. General blog content moved to **lifehacker.dev**
 > (`github.com/bamr87/lifehacker.dev`); the OverTheWire `wargames` docs (+
 > `scripts/docs-aggregator/`) were extracted to **`github.com/bamr87/wargames`**.
 
@@ -15,7 +15,7 @@ This repo already has a deep instruction set written for Copilot/Cursor. **Read 
 |---|---|
 | Anything | `AGENTS.md` (overview, commands, quest permalink regex, gotchas) |
 | Frontmatter / content rules | `.github/copilot-instructions.md` (constraints table + numbered pitfalls), `.github/FRONTMATTER.md` |
-| A specific collection | `.github/instructions/<name>.instructions.md` (quest, docs, notes, about, quickstart) |
+| A specific collection | `.github/instructions/<name>.instructions.md` (quest, notes, about — `docs` and `quickstart` are RETIRED, kept only as historical reference) |
 | Content curation / the daily loop | `.claude/skills/cms-curator/SKILL.md` + `.cms/README.md` |
 | Running/previewing the site | `.claude/skills/run-it-journey/SKILL.md` |
 | A `/slash` action | `.github/prompts/<name>.prompt.md` (15 prompt-agents: write-quest, draft-article, validate-content, publish-prep, retrospective, …) |
@@ -50,6 +50,10 @@ keeps the loops' open PRs mergeable: behind → merge the base in; a conflicted 
 **Quest Idea Forge** lane. The portal page (`pages/quest-ideas.md`, permalink `/quests/ideas/`) shapes a visitor's quest idea client-side (registry-driven autocomplete, duplicate radar, readiness meter that gates the submit button) and files it through the `quest-idea.yml` issue form; the `idea-refiner` agent then reviews it — deterministic floor first (`scripts/quest/idea_intake.py`: rubric score, spam flags, duplicate radar; the model can only lower its verdict) → one review comment + one `idea:ready`/`idea:needs-detail`/`idea:declined` label. Never closes, never escalates; a human promotes a ready idea into quest-forge by adding `epic-quest`.
 - `quest-walkthrough.yml` (dispatch-only; the daily sweep is quest-perfection) —
 walks one linked (character, level) quest slice **end-to-end in the runner sandbox as a learner**: a deterministic workflow step runs the `test/quest-validator/agentic_validate.py` execute engine and **seals** the evidence (the engine can't run inside an agent — Claude Code scrubs auth env vars from Bash-tool subprocesses, so its child `claude` processes would auth-abort); the `quest-walker` agent then writes the session report, and a report PR opens under `test/quest-validator/walkthroughs/`. Also uploads session screenshots (rendered quest pages + a terminal render of the recorded transcript, via `scripts/quest/walkthrough_screenshots.mjs`) as run artifacts. Read-only over content; never merges.
+- `quest-video.yml` (dispatch-only) — the **quest walkthrough VIDEO lane**: records
+a side-by-side video of a slice's main-quest run (rendered quest page ⇄ animated terminal replay of the sealed execute-engine transcript; fresh engine pass or `source_run_id` reuse of a perfection artifact), and — with `publish: true` + the `YOUTUBE_*` secrets — uploads it **unlisted** to YouTube and opens one `quest-video`-labeled PR writing the `walkthrough_video:` frontmatter block + the `.quests/videos.yml` catalog (no auto-merge policy matches that label — a human reviews every published reference; quest pages embed via `_includes/quest/quest-video.html`). Deterministic after the engine — no agent step. `QUEST_VIDEO_ENABLED`; design: `docs/quests/VIDEO_FRAMEWORK.md`.
+- **Quest environment matrix** — quests declare an `environment:` block (OS / shell / editor / package manager + variables like `project_dir`), derived across the corpus by `scripts/quest/env_migrate.py` from the platform sections they already document. It drives a reader-configurable control on the quest page (`_includes/quest/quest-env.html` + `assets/js/quest-env.js`: detects the OS, hides the paths that are not theirs, rewrites snippets to their folder) AND the testing framework (`quest_steps.py --env os=windows,project_dir=my-lab` walks the quest as that machine). Axes live once in `quest_registry.py`; `make quest-data` publishes them to `_data/quests/environments.yml`. Design: `docs/quests/ENVIRONMENT_MATRIX.md`.
+- **Whole-stack quest capture** — `quest_steps.py` (quest → executable step plan) + `stack_capture.mjs` (sandbox walk + per-step browser screenshots at the viewports each step is about + box-model probe) produce evidence the video recorder renders as a three-pane whole-stack video (docs ⇄ built UI ⇄ terminal). Model-free; `make quest-steps QUEST=… && make quest-stack-capture`.
 - `quest-perfection.yml` (daily) — the **autonomous quest-perfection loop**. For
 every character path it walks the highest-priority not-yet-perfect (character, level) slice (same sealed, workflow-minted evidence pattern as above), opens **ONE consolidated** walkthroughs+ledger report PR per run, then `quest-fix.yml` opens a **separate** content-only fix PR per granted slice that repairs only that walkthrough's *verified* issues (kept solely on a deterministic signal — tier-1 score + brand lint + sandbox commands — never the model's own grade) → auto-merges when green → repeats "until perfect". Each slice walks a **rotating window** of `caps.max_quests_per_slice` quests (`.quests/budget.yml`, default 5) via `walkthrough_plan.py --window` — a level holds 20–30 quests and walking them all in one run exhausts the OAuth token's rate limit; the ledger accumulates per-quest coverage across runs and only certifies `perfect` once the whole level is swept + passing. A committed ledger + generated dashboard in `.quests/` are the source of truth; staged kill switches `QUEST_PERFECTION_ENABLED` (orchestrator) and `QUEST_FIX_ENABLED` (write lane).
 - `agent-audit.yml` (weekly) — `agent-auditor` keeps the fleet accurate/least-privilege.
@@ -89,8 +93,8 @@ rendered layout, styling, or interaction (CSS/SCSS, templates/includes, nav, JS 
 
 ## Repo map (quick)
 
-- `pages/_<collection>/` — all site content (quests, docs, notes, quickstart,
-about; loose `pages/` files). The brand/voice system governs only `quests` and `docs` (`_data/brand/sections/` holds just `quest.md` + `docs.md`).
+- `pages/_<collection>/` — all site content (`_quests`, `_quest-reports`,
+`_notes`, `_about`; loose `pages/` files). The brand/voice system governs `quests` (`_data/brand/sections/` holds `quest.md` plus a now-orphaned `docs.md`, left over from the removed `_docs` collection).
 - `_data/` — site data (quests/*, navigation/*, statistics). Much is generated.
 - `scripts/` — Python/Ruby/Bash tooling (cms, quest, validation, generation, …).
 - `.cms/` — CMS index, schema, reports, worklists (Jekyll-ignored).

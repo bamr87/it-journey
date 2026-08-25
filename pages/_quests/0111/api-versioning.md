@@ -81,6 +81,16 @@ rewards:
   unlocks_features:
   - Access to the API Documentation quest
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! An API is a promise to everyone who calls it. The moment a client depends on your endpoint, you owe them stability - yet your API must still grow. This tension is the heart of **API Versioning**: how do you change an interface without shattering the systems built on top of it?*
 
@@ -140,7 +150,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -156,7 +166,7 @@ curl -s -D - -o /dev/null \
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -169,7 +179,7 @@ curl.exe -s -H "X-GitHub-Api-Version: 2022-11-28" `
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -182,7 +192,7 @@ curl -s https://api.github.com/zen   # GitHub root; observe headers and shape
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

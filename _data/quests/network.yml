@@ -1,15 +1,15 @@
 stats:
-  total: 207
+  total: 209
   by_level:
     '0000': 29
     '0001': 26
     '0010': 17
     '0011': 4
     '0100': 8
-    '0101': 13
+    '0101': 14
     '0110': 8
     '0111': 10
-    '1000': 9
+    '1000': 10
     '1001': 9
     '1010': 16
     '1011': 12
@@ -19,7 +19,7 @@ stats:
     '1111': 9
   by_type:
     epic_quest: 4
-    main_quest: 177
+    main_quest: 179
     side_quest: 26
 nodes:
 - id: /quests/0000/bash-run/
@@ -427,6 +427,11 @@ nodes:
   level: '0101'
   type: main_quest
   difficulty: 🟡 Medium
+- id: /quests/0101/second-shift-server-resurrection/
+  title: 'The Second Shift: Resurrect an Ancient Tower as Your Home Server'
+  level: '0101'
+  type: main_quest
+  difficulty: 🟡 Medium
 - id: /quests/0101/secrets-management/
   title: 'Secrets Management: Secure CI Credentials'
   level: '0101'
@@ -577,6 +582,11 @@ nodes:
   level: '1000'
   type: main_quest
   difficulty: 🟡 Medium
+- id: /quests/1000/forge-your-own-dev-server/
+  title: 'Forge Your Own Dev Server: Bare Metal to Watchtower'
+  level: '1000'
+  type: main_quest
+  difficulty: 🔴 Hard
 - id: /quests/1000/infrastructure-as-code/
   title: 'Infrastructure as Code: Terraform Fundamentals and State'
   level: '1000'
@@ -1601,6 +1611,15 @@ edges:
 - source: /quests/0101/ouroboros-loop-02-the-wardens-gate/
   target: /quests/0011/ouroboros-loop-03-summon-the-golem/
   kind: unlocks
+- source: /quests/0101/second-shift-server-resurrection/
+  target: /quests/0101/docker-mastery/
+  kind: required
+- source: /quests/0101/second-shift-server-resurrection/
+  target: /quests/0101/environment-management/
+  kind: recommended
+- source: /quests/0101/second-shift-server-resurrection/
+  target: /quests/0101/secrets-management/
+  kind: unlocks
 - source: /quests/0101/secrets-management/
   target: /quests/0101/cicd-fundamentals/
   kind: required
@@ -1852,6 +1871,18 @@ edges:
   kind: unlocks
 - source: /quests/1000/cloud-computing-fundamentals/
   target: /quests/1001/kubernetes-fundamentals/
+  kind: unlocks
+- source: /quests/1000/forge-your-own-dev-server/
+  target: /quests/0010/bash-scripting/
+  kind: required
+- source: /quests/1000/forge-your-own-dev-server/
+  target: /quests/0100/docker-compose-orchestration/
+  kind: recommended
+- source: /quests/1000/forge-your-own-dev-server/
+  target: /quests/1000/cloud-computing-fundamentals/
+  kind: recommended
+- source: /quests/1000/forge-your-own-dev-server/
+  target: /quests/1010/monitoring-fundamentals/
   kind: unlocks
 - source: /quests/1000/infrastructure-as-code/
   target: /quests/1000/aws-essentials/

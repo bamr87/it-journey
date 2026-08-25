@@ -80,6 +80,18 @@ rewards:
   unlocks_features:
   - Continued progress through the Level 1111 Leadership & Innovation quest line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
+  variables:
+    project_dir: writing
 ---
 *Greetings, Master adventurer. You have built systems few can match - but a brilliant idea trapped inside one head changes nothing. The leaders whose names echo through the realm are those who could make others SEE what they saw. This quest, **Tech Speaking and Writing**, teaches you to turn knowledge into influence: to write a design doc that wins the room, an RFC that closes a debate, and a talk an audience actually remembers.*
 
@@ -137,7 +149,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -151,7 +163,7 @@ echo "# RFC-001: <title>" > rfcs/rfc-001.md
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -165,7 +177,7 @@ git init
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -178,7 +190,7 @@ echo "# RFC-001: <title>" > rfcs/rfc-001.md
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

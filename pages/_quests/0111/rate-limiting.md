@@ -82,6 +82,16 @@ rewards:
   unlocks_features:
   - Access to the API Versioning and API Documentation quests
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! An open gate with no guard is soon overrun. **Rate limiting** is the discipline that protects an API from being hammered into the ground - whether by a runaway script, a thundering crowd, or a deliberate attacker. This quest, **Rate Limiting**, teaches you to throttle fairly: to slow callers down without locking honest users out.*
 
@@ -141,7 +151,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -154,7 +164,7 @@ curl -s -D - -o /dev/null https://api.github.com/rate_limit | grep -i ratelimit
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -167,7 +177,7 @@ curl.exe -s -D - -o NUL https://api.github.com/rate_limit | Select-String -Patte
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -180,7 +190,7 @@ curl -s https://api.github.com/rate_limit | jq '.rate'
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

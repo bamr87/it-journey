@@ -1,0 +1,68 @@
+# =============================================================================
+# claude-preflight — probe Claude auth BEFORE scheduling expensive agentic work
+# -----------------------------------------------------------------------------
+# One tiny end-to-end `claude -p` call (via agentic_validate.py --preflight, the
+# same classifier the execute engine uses) that tells a workflow gate whether the
+# shared credential can serve today's run:
+#
+#   status=ok        — authenticated; proceed.
+#   status=throttled — sustained rate-limit; skip GREEN and retry next schedule.
+#   status=auth      — the token is invalid/expired/revoked (or billing-held);
+#                      retrying tomorrow fails identically — a human must rotate
+#                      the secret. Callers escalate (scripts/quest/loop_health.py)
+#                      and idle GREEN: a red scheduled run on main withholds the
+#                      gh-pages deploy, which punishes the site for a secret.
+#   status=unknown   — could not classify (npm/CLI flake, novel error). FAIL OPEN:
+#                      treat as ok; the engine's own handling is the backstop. The
+#                      preflight is an optimization + diagnoser, never a new
+#                      single point of failure.
+#
+# Requires: a checkout (runs the repo's validator), python3 on PATH (stdlib only
+# — the --preflight path deliberately needs no pyyaml), and Claude auth in the
+# JOB env (CLAUDE_CODE_OAUTH_TOKEN or ANTHROPIC_API_KEY).
+# =============================================================================
+name: claude-preflight
+description: Classify the Claude credential's current state (ok/throttled/auth/unknown) with one tiny probe.
+outputs:
+  status:
+    description: ok | throttled | auth | unknown
+    value: ${{ steps.probe.outputs.status }}
+  detail:
+    description: One-line diagnosis from the probe (truncated).
+    value: ${{ steps.probe.outputs.detail }}
+runs:
+  using: composite
+  steps:
+    - id: probe
+      shell: bash
+      run: |
+        set -euo pipefail
+        if [ -z "${CLAUDE_CODE_OAUTH_TOKEN:-}" ] && [ -z "${ANTHROPIC_API_KEY:-}" ]; then
+          echo "status=unknown" >> "$GITHUB_OUTPUT"
+          echo "detail=no Claude auth in the job env — nothing to probe" >> "$GITHUB_OUTPUT"
+          echo "::warning::claude-preflight: no Claude auth in the job env — the caller's own secret check should have gated this."
+          exit 0
+        fi
+        # Install failure → unknown (fail open), NOT an error: the probe must
+        # never become the run's own point of failure.
+        if ! npm install -g @anthropic-ai/claude-code >/dev/null 2>&1; then
+          echo "status=unknown" >> "$GITHUB_OUTPUT"
+          echo "detail=claude CLI install failed — probe skipped (fail-open)" >> "$GITHUB_OUTPUT"
+          echo "::warning::claude-preflight: claude CLI install failed — skipping the probe (fail-open)."
+          exit 0
+        fi
+        set +e
+        out=$(python3 test/quest-validator/agentic_validate.py --preflight 2>&1)
+        rc=$?
+        set -e
+        printf '%s\n' "$out"
+        case "$rc" in
+          0) status=ok ;;
+          2) status=throttled ;;
+          4) status=auth ;;
+          *) status=unknown ;;
+        esac
+        detail=$(printf '%s' "$out" | tr -d '\r' | tail -n 1 | head -c 300)
+        echo "status=$status" >> "$GITHUB_OUTPUT"
+        echo "detail=$detail" >> "$GITHUB_OUTPUT"
+        echo "claude-preflight: $status — $detail"

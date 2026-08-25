@@ -83,6 +83,18 @@ rewards:
   - Access to the Architecture & Design Patterns quest line
 layout: quest
 mermaid: true
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
+  variables:
+    project_dir: patterns-quest
 ---
 *Greetings, Architect! You have ascended to the **Master tier**, where the Citadel of Architecture rises above every kingdom you have ever built. Here you do not write a single spell - you design the very grammar in which all spells are written. This quest, **Software Design Patterns**, hands you the master builder's catalog: named, battle-tested solutions to problems that have recurred in software since the first object met the first method.*
 
@@ -140,7 +152,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -159,7 +171,7 @@ python --version
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -177,7 +189,7 @@ python --version
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -196,7 +208,7 @@ python --version
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

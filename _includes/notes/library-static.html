@@ -1,0 +1,101 @@
+{%- comment -%}
+  library-static.html — every public note, rendered at build time.
+
+  This is the workbench's library pane before any JavaScript runs, and it is the
+  whole of /notes/ for a reader with JS off, for a crawler, and for the
+  <noscript> path. assets/js/notes-workbench.js hydrates these same rows rather
+  than replacing them, so the markup here is the contract: one <li> per note
+  carrying data-nw-lib-item plus the fields the script needs to build a pin card.
+
+  Notes are grouped by their folder under pages/_notes/. Splitting on '_notes/'
+  rather than a fixed prefix keeps this working regardless of collections_dir.
+  A group key containing a dot came from a file, not a folder — those are the
+  top-level notes, and they collect under "General" at the end.
+{%- endcomment -%}
+
+{%- assign library = site.notes | where_exp: "n", "n.url != '/notes/'" -%}
+{%- assign groups = library | group_by_exp: "n", "n.path | split: '_notes/' | last | split: '/' | first" | sort: "name" -%}
+
+{%- capture loose_items -%}
+  {%- for group in groups -%}
+    {%- if group.name contains '.' -%}
+      {%- for note in group.items -%}
+        <li class="nw-lib__item"
+            data-nw-lib-item
+            data-nw-url="{{ note.url | relative_url }}"
+            data-nw-title="{{ note.title | strip_html | escape_once }}"
+            data-nw-collection="notes"
+            data-nw-description="{{ note.description | default: note.excerpt | strip_html | strip_newlines | truncate: 200 | escape_once }}"
+            data-nw-tags="{{ note.tags | join: ' ' | escape_once }}">
+          <a class="nw-lib__link" href="{{ note.url | relative_url }}">{{ note.title }}</a>
+          <button type="button" class="nw-lib__pin" data-nw-pin
+                  aria-label="Pin {{ note.title | strip_html | escape_once }} to the board">
+            <i class="bi bi-pin-angle" aria-hidden="true"></i>
+          </button>
+        </li>
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+
+{%- assign loose_count = 0 -%}
+{%- for group in groups -%}
+  {%- if group.name contains '.' -%}
+    {%- assign loose_count = loose_count | plus: group.items.size -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<ul class="nw-lib__groups" data-nw-lib-groups>
+  {%- for group in groups -%}
+    {%- unless group.name contains '.' -%}
+      {%- case group.name -%}
+        {%- when 'cheatsheets' -%}{%- assign label = 'Cheatsheets' -%}{%- assign icon = 'bi-card-list' -%}
+        {%- when 'gh-600' -%}{%- assign label = 'GH-600 Reference' -%}{%- assign icon = 'bi-mortarboard' -%}
+        {%- when 'obsidian' -%}{%- assign label = 'Obsidian' -%}{%- assign icon = 'bi-diagram-3' -%}
+        {%- when 'dev' -%}{%- assign label = 'Dev' -%}{%- assign icon = 'bi-code-slash' -%}
+        {%- when 'zero' -%}{%- assign label = 'Zero' -%}{%- assign icon = 'bi-rocket-takeoff' -%}
+        {%- else -%}{%- assign label = group.name | replace: '-', ' ' | capitalize -%}{%- assign icon = 'bi-folder2' -%}
+      {%- endcase -%}
+      <li class="nw-lib__group">
+        <details open>
+          <summary class="nw-lib__summary">
+            <i class="bi {{ icon }}" aria-hidden="true"></i>
+            <span class="nw-lib__label">{{ label }}</span>
+            <span class="nw-lib__count">{{ group.items | size }}</span>
+          </summary>
+          <ul class="nw-lib__items">
+            {%- assign items = group.items | sort: "title" -%}
+            {%- for note in items -%}
+              <li class="nw-lib__item"
+                  data-nw-lib-item
+                  data-nw-url="{{ note.url | relative_url }}"
+                  data-nw-title="{{ note.title | strip_html | escape_once }}"
+                  data-nw-collection="notes"
+                  data-nw-description="{{ note.description | default: note.excerpt | strip_html | strip_newlines | truncate: 200 | escape_once }}"
+                  data-nw-tags="{{ note.tags | join: ' ' | escape_once }}">
+                <a class="nw-lib__link" href="{{ note.url | relative_url }}">{{ note.title }}</a>
+                <button type="button" class="nw-lib__pin" data-nw-pin
+                        aria-label="Pin {{ note.title | strip_html | escape_once }} to the board">
+                  <i class="bi bi-pin-angle" aria-hidden="true"></i>
+                </button>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </details>
+      </li>
+    {%- endunless -%}
+  {%- endfor -%}
+
+  {%- if loose_count > 0 -%}
+    <li class="nw-lib__group">
+      <details open>
+        <summary class="nw-lib__summary">
+          <i class="bi bi-journal-text" aria-hidden="true"></i>
+          <span class="nw-lib__label">General</span>
+          <span class="nw-lib__count">{{ loose_count }}</span>
+        </summary>
+        <ul class="nw-lib__items">{{ loose_items }}</ul>
+      </details>
+    </li>
+  {%- endif -%}
+</ul>

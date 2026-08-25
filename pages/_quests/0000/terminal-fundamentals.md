@@ -79,6 +79,15 @@ rewards:
   - Foundation for all scripting and development quests
   - Confident terminal usage across platforms
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! Welcome to the Terminal Fundamentals quest — your gateway to the command line, where you type one instruction and get one result, then chain those instructions into scripts you can repeat and automate. While graphical interfaces are comfortable, the terminal is where real power lives. This quest will transform you from a GUI-bound novice into a confident command-line navigator.*
 

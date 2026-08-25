@@ -83,6 +83,16 @@ rewards:
   unlocks_features:
   - Ability to run a basic authorized penetration test end to end
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You have built the walls, hardened the code, and mapped the threats. Now you take up the most disciplined role of all: the **sanctioned besieger**. In **Penetration Testing**, you learn to attack a system the way a real adversary would - but only with permission, only within scope, and always with the goal of making the defenses stronger.*
 
@@ -141,7 +151,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -158,7 +168,7 @@ docker run --rm -d -p 3000:3000 bkimminich/juice-shop
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -175,7 +185,7 @@ docker run --rm -d -p 3000:3000 bkimminich/juice-shop
 
 ### 🐧 Linux Territory Path (Kali recommended)
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -191,7 +201,7 @@ sudo docker run --rm -d -p 3000:3000 bkimminich/juice-shop
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

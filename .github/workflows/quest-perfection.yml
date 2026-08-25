@@ -62,6 +62,20 @@
 # the fix lane's keep/revert signal, the content-only smuggle guard) are the safety
 # net under the agentic arms.
 #
+# SELF-DIAGNOSIS (why this loop never stays red): the gate PROBES the Claude
+# credential (.github/actions/claude-preflight) before scheduling anything, and
+# both the gate and the report job route every no-progress state by CAUSE —
+# rate-limit (transient: idle green, retry next schedule) vs broken credentials
+# (permanent: idle green + escalate) vs engine anomaly (escalate). Escalation is
+# scripts/quest/loop_health.py: ONE open `quest-loop-health` issue that tells a
+# human exactly what to rotate, updated (not duplicated) while the state lasts
+# and closed automatically on the next productive run. Runs stay green on these
+# expected states because a red SCHEDULED run attaches to main's HEAD and
+# sync-gh-pages then withholds the site deploy — a dead token once turned into
+# eight identical red runs AND a silently unpublished site. Red is reserved for
+# the unexpected: engine crashes (exit codes outside the 0/2/4 contract) and
+# slice legs that die without delivering evidence.
+#
 # Setup: add a CLAUDE_CODE_OAUTH_TOKEN secret (`claude setup-token`) and a PAT
 # (AUTO_PR_GITHUB_TOKEN or PAT_TOKEN — contents+PRs, NO admin) so the PRs fire CI,
 # then:
@@ -100,27 +114,90 @@ concurrency:
 
 jobs:
   # ---------------------------------------------------------------------------
-  # gate — opt-in only: needs the orchestrator kill switch AND Claude auth.
+  # gate — opt-in only: needs the orchestrator kill switch AND Claude auth, and
+  # then PROVES the auth with one tiny probe before any expensive job spins up.
+  #
+  # WHY THE PROBE, AND WHY THE BAD STATES END GREEN: the engine used to discover
+  # a dead token ~3 jobs deep, classify it as an "expected rate-limit", soft-skip,
+  # and then the report job's wipeout guard failed the run with a misleading
+  # message — every day, for as long as the token stayed broken. And a red
+  # SCHEDULED run is not a harmless alarm here: its check-runs attach to main's
+  # HEAD, and sync-gh-pages deploys only a fully-green HEAD, so the loop's red
+  # was silently withholding site deploys. So the gate now probes up front and
+  # routes each state deliberately:
+  #   ok        → proceed.
+  #   throttled → idle GREEN; the window refills, the next schedule retries.
+  #   auth      → idle GREEN but ESCALATE: loop_health.py keeps ONE open
+  #               `quest-loop-health` issue telling a human exactly how to rotate
+  #               the token; the loop closes it itself on its next productive run.
+  #   unknown   → proceed (fail-open — the probe must never be the new single
+  #               point of failure; the engine's own handling is the backstop).
   # ---------------------------------------------------------------------------
   gate:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write            # loop_health.py upserts the health issue
+    env:
+      GH_TOKEN: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
     outputs:
-      go: ${{ steps.check.outputs.go }}
+      go: ${{ steps.verdict.outputs.go }}
     steps:
-      - id: check
+      - id: switch
         env:
           ENABLED: ${{ vars.QUEST_PERFECTION_ENABLED }}
-          OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          set -euo pipefail
+          armed=false
+          if [ "$ENABLED" = "true" ] && { [ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}" ] || [ -n "${ANTHROPIC_API_KEY:-}" ]; }; then
+            armed=true
+          else
+            echo "quest-perfection idle (enabled=$ENABLED, auth=$([ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}${ANTHROPIC_API_KEY:-}" ] && echo yes || echo no))."
+          fi
+          echo "armed=$armed" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v7
+        if: steps.switch.outputs.armed == 'true'
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      - id: preflight
+        if: steps.switch.outputs.armed == 'true'
+        uses: ./.github/actions/claude-preflight
+
+      - id: verdict
+        env:
+          ARMED: ${{ steps.switch.outputs.armed }}
+          STATUS: ${{ steps.preflight.outputs.status }}
+          DETAIL: ${{ steps.preflight.outputs.detail }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -euo pipefail
           go=false
-          if [ "$ENABLED" = "true" ] && { [ -n "$OAUTH" ] || [ -n "$KEY" ]; }; then
-            go=true
-          else
-            echo "quest-perfection idle (enabled=$ENABLED, auth=$([ -n "$OAUTH$KEY" ] && echo yes || echo no))."
-          fi
+          case "${ARMED}:${STATUS}" in
+            true:ok)
+              go=true ;;
+            true:unknown)
+              go=true
+              echo "::warning::preflight could not classify Claude auth ($DETAIL) — proceeding (fail-open)." ;;
+            true:throttled)
+              echo "::warning::Claude is rate-limited at the gate ($DETAIL) — skipping today's sweep. Green by design: the window refills and the next schedule retries; see the quest-loop-health issue if this repeats."
+              python3 scripts/quest/loop_health.py report --kind rate-limit --lane walk \
+                --run-url "$RUN_URL" --detail "$DETAIL" || true
+              ;;
+            true:auth)
+              echo "::error::Claude credentials are BROKEN ($DETAIL) — rotate CLAUDE_CODE_OAUTH_TOKEN (claude setup-token → repo secret). Idling green so the red doesn't withhold the gh-pages deploy; the quest-loop-health issue tracks this until the loop scores again."
+              python3 scripts/quest/loop_health.py report --kind auth --lane walk \
+                --run-url "$RUN_URL" --detail "$DETAIL" || true
+              ;;
+            *)
+              : ;;   # not armed — the switch step already logged why
+          esac
           echo "go=$go" >> "$GITHUB_OUTPUT"
+          echo "**Gate:** armed=${ARMED} preflight=${STATUS:-—} → go=${go}" >> "$GITHUB_STEP_SUMMARY"
 
   # ---------------------------------------------------------------------------
   # plan — deterministically pick one slice per path against the ledger, then
@@ -540,18 +617,27 @@ jobs:
           set -e
           # Exit-code contract (agentic_validate.py):
           #   0 → evidence gathered (full, or partial-but-≥1-quest-scored).
-          #   2 → auth/rate-limit truncation with ZERO quests scored. The shared
-          #       OAuth token's limit refills over time, so this is EXPECTED across a
-          #       big daily sweep — soft-skip the slice (warning, not a red build) and
-          #       skip the walker agent (it shares the throttled token). The engine
+          #   2 → RATE-LIMIT truncation with ZERO quests scored. The shared token's
+          #       window refills over time, so this is EXPECTED across a big daily
+          #       sweep — soft-skip the slice (warning, not a red build) and skip
+          #       the walker agent (it shares the throttled token). The engine
           #       still wrote a TRUNCATED walk-evidence.json: the fix lane recognises
           #       it and no-ops WITHOUT re-running the engine, and the ledger records
           #       it as a non-coverage truncated run — so the slice is retried next run.
+          #   4 → BROKEN CREDENTIALS with ZERO quests scored (invalid/expired token —
+          #       the gate preflight normally catches this before any slice runs).
+          #       Also a soft-skip HERE (a red leg can't fix a secret), but the
+          #       evidence carries truncation_reason="auth" and the report job
+          #       escalates it to the quest-loop-health issue for a human.
           #   * → a genuine engine failure: fail loudly.
           case "$rc" in
             0) echo "evidence gathered for $SLUG." ;;
             2)
-              echo "::warning::$SLUG — execute engine hit a sustained auth/rate-limit truncation (0 quests scored after in-engine retries). Soft-skipping this slice; the loop retries it next run. No red build."
+              echo "::warning::$SLUG — execute engine hit a sustained rate-limit (0 quests scored after in-engine retries). Soft-skipping this slice; the loop retries it next run. No red build."
+              echo "auth_skipped=true" >> "$GITHUB_OUTPUT"
+              ;;
+            4)
+              echo "::error::$SLUG — Claude credentials are BROKEN (engine exit 4). Rotate CLAUDE_CODE_OAUTH_TOKEN (claude setup-token → repo secret). Soft-skipping the walker; the report job escalates this to the quest-loop-health issue."
               echo "auth_skipped=true" >> "$GITHUB_OUTPUT"
               ;;
             *)
@@ -644,7 +730,7 @@ jobs:
         run: |
           set -euo pipefail
           if [ "${AUTH_SKIPPED:-}" = "true" ]; then
-            echo "fix lane will NO-OP for $SLUG — evidence was a rate-limit truncation; quest-fix aborts on truncated evidence (no re-run, no edits)." | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "fix lane will NO-OP for $SLUG — evidence was a zero-scored rate-limit/credentials truncation; quest-fix aborts on truncated evidence (no re-run, no edits)." | tee -a "$GITHUB_STEP_SUMMARY"
           elif [ "$OPEN_NEW_FIX_PRS" = "true" ]; then
             echo "fix lane WILL be invoked for $SLUG (queue had room at plan time; quest-fix re-checks the ledger + evidence before editing)." | tee -a "$GITHUB_STEP_SUMMARY"
           else
@@ -670,6 +756,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      issues: write            # loop_health.py upserts/closes the health issue
     env:
       GH_TOKEN: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
     steps:
@@ -772,13 +859,18 @@ jobs:
                     f"slices' work still counts; this slice stays in the queue and is "
                     f"retried on the next run.")
           if entries and delivered == 0:
+              # Auth/rate-limit can't look like this any more: those paths still
+              # upload (truncated) evidence, and the gate preflight idles the run
+              # before a dead token reaches a slice. Zero artifacts means the legs
+              # CRASHED — runner infra or a workflow bug — which deserves a red.
               print("::error::every planned slice failed to deliver an artifact — "
-                    "sweep-wide failure (runner infra or Claude auth), not a flaky leg. "
-                    "Failing the run loudly.")
+                    "sweep-wide crash (runner infra or a workflow bug), not a flaky "
+                    "leg and not auth. Failing the run loudly.")
               sys.exit(1)
           PY
 
       - name: Replay ledger updates + collect the session reports
+        id: replay
         run: |
           set -euo pipefail
           run_url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
@@ -786,6 +878,7 @@ jobs:
           ledgered=0        # slices whose evidence was replayed into the ledger
           productive=0      # slices that actually SCORED >=1 quest this run
           attempted=0       # slices that produced a plan (i.e. were walked at all)
+          reasons=""        # truncation_reason of every zero-scored evidenced slice
           for d in slices/*/; do
             [ -s "${d}walk-plan.json" ] || continue
             attempted=$((attempted+1))
@@ -797,10 +890,16 @@ jobs:
               # A soft-skipped slice uploads a TRUNCATED, zero-scored evidence file
               # (so the fix lane no-ops without re-running the engine). Count only
               # slices that scored >=1 quest as "productive" — the systemic-health
-              # signal below distinguishes an expected per-slice rate-limit from a
-              # whole-sweep wipeout (exhausted / broken token).
+              # verdict below routes on WHY the zero-scored ones stopped
+              # (truncation_reason: rate-limit refills on its own; auth needs a
+              # human; anything else is an engine anomaly).
               scored=$(python3 -c 'import json,sys; d=json.load(open(sys.argv[1])); print(int(d.get("scored") or 0))' "${d}walk-evidence.json" 2>/dev/null || echo 0)
-              [ "${scored:-0}" -ge 1 ] && productive=$((productive+1))
+              if [ "${scored:-0}" -ge 1 ]; then
+                productive=$((productive+1))
+              else
+                reason=$(python3 -c 'import json,sys; d=json.load(open(sys.argv[1])); print(d.get("truncation_reason") or "engine")' "${d}walk-evidence.json" 2>/dev/null || echo engine)
+                reasons="$reasons $reason"
+              fi
             else
               echo "::warning::no walk-evidence.json in ${d} — that slice's walk failed; not ledgered."
             fi
@@ -816,18 +915,45 @@ jobs:
           # instead of only inside this PR.
           python3 scripts/quest/build_reports_site.py
           echo "replayed $ledgered slice(s) into the ledger ($productive productive, $attempted attempted)." | tee -a "$GITHUB_STEP_SUMMARY"
-          # Systemic-health guard: a per-slice rate-limit is EXPECTED (the slice soft-
-          # skips green and retries next run). But if EVERY attempted slice scored
-          # zero, the shared OAuth token is likely exhausted or misconfigured — the
-          # sweep made no progress at all, so fail LOUDLY rather than open a hollow
-          # report PR that looks like healthy activity.
+          # Systemic-health verdict: a per-slice rate-limit is EXPECTED (the slice
+          # soft-skips and retries next run). A whole-sweep wipeout (every attempted
+          # slice scored zero) means the run made NO progress — so DON'T open a
+          # hollow report PR, and escalate by CAUSE instead of failing red: a red
+          # scheduled run attaches to main's HEAD and withholds the gh-pages deploy
+          # (sync-gh-pages requires a fully-green HEAD), which is how a dead token
+          # once silently stopped the site publishing. The quest-loop-health issue
+          # is the durable alarm; it closes itself on the next productive run.
           if [ "$attempted" -ge 1 ] && [ "$productive" -eq 0 ]; then
-            echo "::error::whole-sweep wipeout — $attempted slice(s) attempted, 0 scored a single quest. The shared CLAUDE_CODE_OAUTH_TOKEN is likely rate-exhausted or invalid; investigate before trusting the dashboard."
-            exit 1
+            kind=engine
+            case "$reasons" in *rate-limit*) kind=rate-limit ;; esac
+            case "$reasons" in *auth*) kind=auth ;; esac   # auth outranks rate-limit
+            echo "::error::whole-sweep wipeout — $attempted slice(s) attempted, 0 scored a single quest (cause: $kind). No report PR this run; see the quest-loop-health issue."
+            echo "**Whole-sweep wipeout** (cause: \`$kind\`) — no report PR; escalated to the quest-loop-health issue." >> "$GITHUB_STEP_SUMMARY"
+            python3 scripts/quest/loop_health.py report --kind "$kind" --lane walk \
+              --run-url "$run_url" --detail "$attempted slice(s) attempted, 0 quests scored; zero-score reasons:$reasons" || true
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+            # auth/rate-limit are EXPECTED, self-healing states (a human rotating a
+            # secret, or a window refilling) — stay green so a scheduled run never
+            # withholds the gh-pages deploy over them (the whole point of this
+            # guard). Anything else (engine anomaly, a future new cause) is
+            # genuinely unexpected and must stay loud: fail the job so it's visible
+            # beyond the health issue. This can't become a new daily-red trap — the
+            # ledger's circuit breaker (M6) excludes a slice from selection after
+            # max_fix_rounds consecutive imperfect walks, so the same content
+            # anomaly can redden at most a few runs.
+            case "$kind" in
+              auth|rate-limit) exit 0 ;;
+              *) exit 1 ;;
+            esac
           fi
+          # Progress was made — if a health issue is open from a previous bad spell,
+          # close it: the loop heals its own alarm.
+          python3 scripts/quest/loop_health.py resolve --run-url "$run_url" || true
+          echo "proceed=true" >> "$GITHUB_OUTPUT"
 
       - name: Compose the consolidated PR body
         id: body
+        if: steps.replay.outputs.proceed == 'true'
         run: |
           set -euo pipefail
           echo "date=$(date -u +%F)" >> "$GITHUB_OUTPUT"
@@ -884,6 +1010,7 @@ jobs:
 
       - name: Open the consolidated report PR (read-only)
         id: pr
+        if: steps.replay.outputs.proceed == 'true'
         uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
@@ -901,6 +1028,7 @@ jobs:
             quest-walkthrough
 
       - name: Report outcome
+        if: steps.replay.outputs.proceed == 'true'
         run: |
           if [ "${{ steps.pr.outputs.pull-request-number }}" != "" ]; then
             echo "consolidated report PR #${{ steps.pr.outputs.pull-request-number }} opened." | tee -a "$GITHUB_STEP_SUMMARY"

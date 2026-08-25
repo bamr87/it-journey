@@ -409,12 +409,16 @@ defaults:
   # nav: auto -> the theme auto-generates the left sidebar from the collection's
   # files (see _includes/navigation/sidebar-folders.html), so every note is listed
   # dynamically. No hand-maintained _data/navigation/notes.yml to drift.
+  #
+  # layout: note -> the theme's note layout, which adds the metadata header, tag
+  # badges, related notes, and prev/next links. /notes/ itself overrides this
+  # with layout: notes-workbench in its own front matter.
   -
     scope:
       path: pages/_notes
       type: notes
     values:
-      layout: *pages
+      layout: note
       share: false
       author_profile: false
       sidebar:
@@ -514,8 +518,6 @@ sass:
 
 ## Style Settings -------------------------------------------------------------
 
-# theme                  : "zer0-mistakes-jekyll"
-# remote_theme           : "bamr87/zer0-mistakes"
 theme_skin               : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 # Opt in to the theme's fork-override hooks: loads /assets/css/user-overrides.css
 # and /assets/js/user-overrides.js LAST, so the site's "cosmic quest" theme wins
@@ -523,7 +525,6 @@ theme_skin               : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 user_overrides           : true
 
 # style                  : "default" # "default", "dark", "light", "solarized-dark", "solarized-light"
-# remote_style           : "bamr87/zer0-mistakes"
 
 # NOTE: hex values MUST be quoted — unquoted `main: #007bff` is parsed by YAML as
 # a comment (null), so the token never reaches core/tokens-inline.html. The

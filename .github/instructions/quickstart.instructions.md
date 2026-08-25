@@ -1,11 +1,19 @@
 ---
 applyTo: "pages/_quickstart/**/*.md"
-description: "Author IT-Journey quickstart guides: phased onboarding from machine setup through deployment, beginner-friendly and encouraging"
+description: "RETIRED — the pages/_quickstart collection was removed; kept as historical reference for the quickstart authoring standards"
 date: 2026-05-24T00:00:00.000Z
-lastmod: 2026-05-24T00:00:00.000Z
+lastmod: 2026-08-18T00:00:00.000Z
 ---
 
-# Quickstart Collection — `pages/_quickstart/**`
+# ⚠️ RETIRED — Quickstart Collection (`pages/_quickstart/**`)
+
+> **This instruction file is RETIRED and governs nothing.** The `pages/_quickstart/` collection no longer exists in this repository and `_config.yml` does not declare a `quickstart` collection. The `applyTo` glob above matches zero files.
+>
+> **Do not author new content against this file.** Onboarding material now belongs in **quests** (`pages/_quests/`, see [`quest.instructions.md`](quest.instructions.md)) — the low-level quests are the onboarding ramp.
+>
+> It is kept in place rather than deleted because sibling instruction files still link to it; deleting it would break those cross-references. Everything below is preserved verbatim as a record of the standards the collection used, in case the collection is ever restored.
+
+---
 
 The onboarding ramp: phased guides from a fresh machine through a deployed Jekyll site. Aim is to get someone unblocked fast without sacrificing accuracy. Encouraging second-person voice; imperative for every actionable step.
 

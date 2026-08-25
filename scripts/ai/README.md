@@ -61,9 +61,21 @@ deterministic engine step mints sealed evidence, the `quest-walker` agent writes
   3) fixes that never reached perfect. Ledger commits ride the **walkthrough report
   PR**, never the fix PR (which is content-only).
 
+**Self-diagnosis (why the loop never stays red).** Both lanes' gates PROBE the shared Claude credential with one tiny call (`.github/actions/claude-preflight` → `agentic_validate.py --preflight`) before scheduling any engine work, and every no-progress state is routed by CAUSE: a sustained **rate-limit** idles the run green and retries next schedule; **broken credentials** (invalid/expired/revoked token — engine exit 4, distinct from the rate-limit exit 2) idle green AND escalate; an **engine anomaly** escalates too. Escalation is `scripts/quest/loop_health.py`: it keeps exactly ONE open `quest-loop-health` issue telling a human how to rotate the token, updates it (never duplicates) while the state lasts, and the loop closes it itself on its next productive run. Runs stay green on these expected states because a red scheduled run attaches to main's HEAD and `sync-gh-pages` then withholds the site deploy — a dead token once produced eight identical red runs and a silently unpublished site. Red is reserved for the unexpected: engine crashes outside the 0/2/4 exit contract and slice legs that die without delivering evidence.
+
 Staged kill switches (all OFF): `QUEST_PERFECTION_ENABLED` (the orchestrator), `QUEST_FIX_ENABLED` (the write/fix lane), with the existing `QUEST_WALKTHROUGH_ENABLED` (walk arm) and `CONTENT_AUTOMERGE_ENABLED` (gates the fix PR through `content-auto-merge.yml`). Locally: `make quest-perfection-plan`, `make quest-fix CHARACTER=… LEVEL=…`, `make quest-ledger-dashboard`.
 
 **Safety note:** `result.verdict_obj.executed` is model-supplied, so fully hands-off auto-merge of *fix* PRs stays gated (behind `CONTENT_AUTOMERGE_ENABLED`) until a harness-stamped execution proof exists — even though the loop already requires execute mode + a non-truncated run to certify perfect.
+
+## The quest video lane (verified run → YouTube → quest page)
+
+The publishing arm of the perfection loop: turn a slice's **main-quest** run into a side-by-side video — the rendered quest page on the left, an animated replay of the recorded sandbox terminal session on the right — as durable **video evidence** and educational content. The evidence is the same workflow-minted transcript the walk lane seals (fresh engine pass, or `source_run_id` reuse of a `quest-perfection-*` artifact at zero model cost); everything after the engine is deterministic script (`scripts/quest/walkthrough_video.mjs` renders, `video_manifest.py` composes YouTube metadata + applies the frontmatter reference, stdlib-only `youtube_upload.py` pushes). **No agent runs in this lane at all.**
+
+| Workflow | Trigger | Agent | What it does | Gate variable |
+|---|---|---|---|---|
+| `quest-video.yml` | dispatch only | _(none — deterministic after the engine)_ | records the side-by-side video (artifact always); with `publish: true` + the `YOUTUBE_*` secrets it uploads **unlisted** and opens one `quest-video`-labeled PR writing `walkthrough_video:` frontmatter + the `.quests/videos.yml` catalog — a label that matches **no** auto-merge policy, so a human reviews every published reference | `QUEST_VIDEO_ENABLED` |
+
+Quest pages embed the published video via `_includes/quest/quest-video.html` (lazy, privacy-enhanced `youtube-nocookie.com`). Setup — the YouTube OAuth credentials, quota math, and local `make quest-video*` targets — is in [`docs/quests/VIDEO_FRAMEWORK.md`](../../docs/quests/VIDEO_FRAMEWORK.md).
 
 ## The frontend canary (theme bugs → upstream)
 
@@ -114,11 +126,21 @@ The whole fleet is **OFF by default** and idles silently until you do both:
    gh variable set THEME_SCOUT_ENABLED       --body true --repo bamr87/it-journey
    # quest walkthrough (end-to-end validation)
    gh variable set QUEST_WALKTHROUGH_ENABLED --body true --repo bamr87/it-journey
+   # quest walkthrough VIDEO (record + publish verified runs to YouTube)
+   gh variable set QUEST_VIDEO_ENABLED       --body true --repo bamr87/it-journey
    ```
 
    The theme scout also needs a cross-repo PAT to file upstream:
    ```bash
    gh secret set THEME_REPO_TOKEN --repo bamr87/it-journey   # issues:write on zer0-mistakes
+   ```
+
+The quest-video publish leg also needs YouTube API credentials (see `docs/quests/VIDEO_FRAMEWORK.md` for the one-time OAuth walkthrough):
+   ```bash
+   gh secret set YOUTUBE_CLIENT_ID     --repo bamr87/it-journey
+   gh secret set YOUTUBE_CLIENT_SECRET --repo bamr87/it-journey
+   gh secret set YOUTUBE_REFRESH_TOKEN --repo bamr87/it-journey
+   gh secret set YOUTUBE_PLAYLIST_ID   --repo bamr87/it-journey   # optional
    ```
 
 With `QUEST_FORGE_ENABLED` on, label any epic-quest proposal issue `epic-quest` (or comment `/forge-quest`) to forge it into a quest-campaign PR. Locally, the same procedure runs via the `/forge-quest <issue#>` prompt-agent.

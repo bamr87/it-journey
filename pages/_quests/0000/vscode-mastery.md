@@ -87,6 +87,16 @@ rewards:
   - Advanced debugging capabilities
 layout: quest
 sub_title: 'Level 0001 Quest: Essential Development Arsenal'
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, aspiring code warrior! You stand before one of the most crucial quests in your IT journey. Visual Studio Code is not just a text editor—it's a magical artifact that, when properly enchanted, becomes the ultimate weapon in any developer's arsenal.*
 

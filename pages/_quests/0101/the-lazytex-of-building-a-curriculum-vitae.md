@@ -57,6 +57,15 @@ layout: quest
 sub_title: 'Level 0101 (5) Quest: LaTeX Tool Mastery and CV Construction'
 draft: false
 mermaid: true
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 ## 🧙‍♂️ Epic Introduction
 

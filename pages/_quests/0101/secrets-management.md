@@ -82,6 +82,16 @@ rewards:
   unlocks_features:
   - Artifact and optimization quests in Level 0101
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! Every pipeline you build must hold keys - to databases, to cloud accounts, to registries. A single key dropped in the open can hand an attacker your entire kingdom. This quest, **Secrets Management**, teaches you to carry those keys without ever revealing them: where to store them, how to grant the least power that still works, and - the modern marvel - how to stop carrying long-lived keys at all.*
 
@@ -139,7 +149,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -155,7 +165,7 @@ gh secret set DATABASE_URL
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -170,7 +180,7 @@ gh secret set DATABASE_URL
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -185,7 +195,7 @@ gh secret set DATABASE_URL
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

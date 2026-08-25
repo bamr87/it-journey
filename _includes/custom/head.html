@@ -1,0 +1,17 @@
+{%- comment -%}
+  custom/head.html — this site's addition to the theme's <head>.
+
+  The remote theme (bamr87/zer0-mistakes) includes _includes/custom/head.html
+  from core/head.html as an empty stub, so this file is the sanctioned way to
+  add markup site-wide without forking a theme file.
+
+  It publishes the page's own identity for client-side scripts to read. The
+  snippet clipper (assets/js/notes-clipper.js) needs to know what page a clip
+  came from — its title, its URL, and which collection it belongs to — and
+  reading it from meta tags keeps the clipper free of Liquid and free of any
+  assumption about the theme's DOM.
+{%- endcomment -%}
+<meta name="itj:url" content="{{ page.url | relative_url }}">
+<meta name="itj:title" content="{{ page.title | default: site.title | strip_html | strip_newlines | escape_once }}">
+<meta name="itj:collection" content="{{ page.collection | default: 'pages' }}">
+<meta name="itj:workbench" content="{{ '/notes/' | relative_url }}">

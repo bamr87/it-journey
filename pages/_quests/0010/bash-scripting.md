@@ -58,6 +58,18 @@ rewards:
 - 🎯 System Administration Skills - Foundation for DevOps practices
 layout: quest
 sub_title: 'Level 0010 (2) Quest: Shell Scripting Mastery and Automation Arts'
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
+  variables:
+    project_dir: bash-quest
 ---
 *Greetings, aspiring Digital Sorcerer! Welcome to the realm of Bash Incantations - an epic journey that will transform you from a mere terminal user into an automation wizard. In this quest, you'll master the ancient art of shell scripting, learning to weave commands into reusable spells that can automate tasks, manage systems, and bend the digital realm to your will.*
 

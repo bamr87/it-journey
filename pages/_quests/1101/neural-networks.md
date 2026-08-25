@@ -87,6 +87,16 @@ rewards:
   unlocks_features:
   - Access to the deep learning frameworks, vision, and NLP quests
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! Deep within the Oracle's Tower lies a chamber where lifeless numbers awaken into something that learns. This quest, **Neural Networks Deep Dive**, reveals the machinery beneath all of deep learning. You will build a neural network by hand - neuron by neuron - then watch the same idea expressed in PyTorch. By the end you will understand the two great spells of the network: forward propagation, which makes a prediction, and backpropagation, which teaches the network from its mistakes.*
 
@@ -143,7 +153,7 @@ This **⚔️ Epic** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -158,7 +168,7 @@ python -c "import torch; print('torch', torch.__version__, 'mps', torch.backends
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -173,7 +183,7 @@ python -c "import torch; print('torch', torch.__version__, 'cuda', torch.cuda.is
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -188,7 +198,7 @@ python -c "import torch; print('torch', torch.__version__, 'cuda', torch.cuda.is
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

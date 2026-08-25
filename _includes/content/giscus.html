@@ -1,18 +1,23 @@
 <!--
   content/giscus.html  —  GitHub Discussions comment widget (giscus)
   ------------------------------------------------------------------
-  VENDORED, CORRECTED LOCAL OVERRIDE.
+  VENDORED, CORRECTED LOCAL OVERRIDE.  Declared in /.theme-overrides.yml.
 
   _layouts/article.html embeds this include for the comment section. We keep a
-  local copy for two reasons:
+  local copy for exactly one reason: the theme's shipped version carried live
+  Liquid tags inside this header comment (a bare `include giscus.html` usage
+  example). Liquid evaluates tags even inside HTML comments, so that example
+  executed as a real, recursive include and broke the build. This copy keeps the
+  header comment entirely tag-free.
 
-  1. The pinned gem (jekyll-theme-zer0 in Gemfile.lock) can lag the theme's main
-     branch, so the include may be absent from the gem used by local/CI builds.
-     A site-level copy is resolved ahead of any theme, fixing every build path.
-  2. The theme's shipped version carried Liquid tags inside this comment block
-     (a "Usage:" example). Liquid evaluates tags even inside HTML comments, so
-     that example executed as a real include and broke the build. This copy keeps
-     the comment tag-free.
+  The <script> block below is byte-identical to the theme's — only this comment
+  differs. This fork is therefore RETIRABLE: zer0-mistakes fixed the upstream
+  file in v1.28.0 (its header is now tag-free and carries a NOTE warning against
+  reintroducing the example), so this copy can be deleted once the removal has
+  been verified against a build.
+
+  NOTE: never write a bare `include giscus.html` example with live Liquid braces
+  in this file — that is the exact bug this override exists to avoid.
 
   Reads three values from site config (everything else is a theme default):
     - site.repository               -> data-repo            (e.g. bamr87/it-journey)

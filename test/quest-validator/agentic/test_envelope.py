@@ -233,13 +233,39 @@ def test_retry_policy():
         check("transient blip then success → recovers", isinstance(res, dict))
         check("recovered after exactly one retry (2 calls)", n == 2)
 
-        # 2) Sustained rate-limit across all attempts → AuthError (stops the batch).
+        # 2) Sustained rate-limit across all attempts → ThrottleError. Still an
+        #    AuthError subclass (batch-stop), but the orchestrator must be able to
+        #    tell "wait for the window to refill" from "a human must rotate the
+        #    token" — conflating them is what mislabeled 8 days of dead-token runs
+        #    as an expected rate-limit.
         raised = None
         try:
             _drive([_FakeProc(returncode=1, stderr="429 Too Many Requests")] * 5)
         except AuthError as e:
             raised = e
         check("sustained throttle → AuthError (batch-stop signal)", raised is not None)
+        check("sustained throttle is the ThrottleError flavor",
+              isinstance(raised, runner.ThrottleError))
+
+        # 2b) Sustained CREDENTIAL failure → plain AuthError, never ThrottleError.
+        raised = None
+        try:
+            _drive([_FakeProc(returncode=1,
+                              stderr="OAuth token has expired · Please run /login")] * 5)
+        except AuthError as e:
+            raised = e
+        check("dead token → AuthError, NOT ThrottleError",
+              raised is not None and not isinstance(raised, runner.ThrottleError))
+
+        # 2c) Subscription-window exhaustion phrasing is throttle, not auth.
+        raised = None
+        try:
+            _drive([_FakeProc(returncode=1,
+                              stderr="Claude AI usage limit reached · resets 3am")] * 5)
+        except AuthError as e:
+            raised = e
+        check("usage-limit-reached → ThrottleError (refills on its own)",
+              isinstance(raised, runner.ThrottleError))
 
         # 3) A CLEAN run whose transcript merely MENTIONS a 503 is a real result,
         #    never retried (guards the agent-transcript false-positive).
@@ -261,6 +287,52 @@ def test_retry_policy():
         runner.time.sleep = orig_sleep
 
 
+def test_preflight():
+    print("\npreflight — auth-state probe the workflow gates route on:")
+    orig_run = runner.subprocess.run
+    orig_sleep = runner.time.sleep
+    runner.time.sleep = lambda *_a, **_k: None
+
+    def _probe(procs):
+        seq = list(procs)
+        calls = {"n": 0}
+
+        def fake_run(*_a, **_k):
+            calls["n"] += 1
+            return seq[min(calls["n"] - 1, len(seq) - 1)]
+
+        runner.subprocess.run = fake_run
+        r = AgenticRunner(mode="review", max_attempts=2,
+                          retry_base_s=0.001, retry_max_s=0.001)
+        r.available = lambda: True
+        return r.preflight()
+
+    try:
+        check("mock mode → ok without any probe",
+              AgenticRunner(mode="review", mock=True).preflight()[0] == "ok")
+        missing = AgenticRunner(mode="review", claude_bin="claude-definitely-not-here")
+        check("missing CLI → unknown (fail-open, never a false auth verdict)",
+              missing.preflight()[0] == "unknown")
+        check("clean exit → ok",
+              _probe([_FakeProc(returncode=0, stdout='{"result":"ok"}')])[0] == "ok")
+        check("sustained 429 → throttled",
+              _probe([_FakeProc(returncode=1, stderr="429 Too Many Requests")] * 3)[0]
+              == "throttled")
+        check("invalid key → auth",
+              _probe([_FakeProc(returncode=1,
+                                stderr="Invalid API key · Please run /login")] * 3)[0]
+              == "auth")
+        check("novel error → unknown (fail-open)",
+              _probe([_FakeProc(returncode=1, stderr="segfault in flux capacitor")])[0]
+              == "unknown")
+        check("blip then clean → ok (retry inside the probe)",
+              _probe([_FakeProc(returncode=1, stderr="529 overloaded"),
+                      _FakeProc(returncode=0, stdout='{"result":"ok"}')])[0] == "ok")
+    finally:
+        runner.subprocess.run = orig_run
+        runner.time.sleep = orig_sleep
+
+
 def main():
     print("=" * 64)
     print("AGENTIC ENVELOPE CONTRACT TEST (offline, no claude, no cost)")
@@ -272,6 +344,7 @@ def main():
     test_schema_and_scoring()
     test_mock_determinism()
     test_retry_policy()
+    test_preflight()
     print("\n" + "=" * 64)
     if _failures:
         print(f"❌ {len(_failures)} contract check(s) FAILED: {_failures}")

@@ -83,6 +83,16 @@ rewards:
   unlocks_features:
   - Completion of the Level 1101 Machine Learning & AI quest line
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! You have learned to build models that predict, see, and speak. Now comes the gravest lesson of the Tower: a model that decides about people, wielded carelessly, causes real harm. This quest, **AI Ethics and Responsible AI**, leads you into the **Hall of Judgment**, where you learn to measure a model's fairness, explain its decisions, protect the people in its data, and govern it under the law. The Oracle's final law is the hardest: just because a model can decide does not mean it should.*
 
@@ -141,7 +151,7 @@ This **🟡 Medium** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -157,7 +167,7 @@ python -c "import fairlearn; print('fairlearn', fairlearn.__version__)"
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -173,7 +183,7 @@ python -c "import fairlearn; print('fairlearn', fairlearn.__version__)"
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -189,7 +199,7 @@ python -c "import fairlearn; print('fairlearn', fairlearn.__version__)"
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

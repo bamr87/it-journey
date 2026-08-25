@@ -2,7 +2,7 @@
 title: Quest Perfection Dashboard
 description: 'Live status of the autonomous quest-perfection loop: every character path''s coverage, verdicts,
   and open issues, with links to each walkthrough report and…'
-date: '2026-08-12T11:43:18.000Z'
+date: '2026-08-16T11:33:43.000Z'
 author: Quest Perfection Loop
 categories:
 - Quest Reports
@@ -21,16 +21,16 @@ render_with_liquid: false
 
 The autonomous **quest-perfection loop** walks IT-Journey's quests end-to-end as a learner, scores them with a sandboxed agentic engine, and opens content fixes for what it finds. This page mirrors the committed ledger ([`.quests/ledger.json`](https://github.com/bamr87/it-journey/blob/main/.quests/ledger.json)) — the source of truth — so you can review each incremental improvement here instead of in a PR.
 
-_Ledger generated 2026-08-12T11:43:18+00:00._
+_Ledger generated 2026-08-16T11:33:43+00:00._
 
-**0/27** slices perfect · **3** stuck (needs human) · **474** open issue(s) outstanding
+**0/27** slices perfect · **3** stuck (needs human) · **459** open issue(s) outstanding
 
 ## Slices
 
 | Slice | Theme | Verdict | Avg | Coverage | Open | State | Latest report | Run |
 |---|---|:--:|--:|:--:|--:|:--:|---|---|
+| `game-developer/0001` | Web Fundamentals | ❌ fail | 60.6 | 11/26 | 42 | 🔁 sweeping | [2026-08-16](/quest-reports/2026-08-16-game-developer-0001/) | [run](https://github.com/bamr87/it-journey/actions/runs/31943420548) |
 | `security-specialist/0010` | Terminal Mastery | ⚠️ warn | 62.0 | 1/16 | 4 | 🔁 sweeping | [2026-07-06](/quest-reports/2026-07-06-security-specialist-0010/) | [run](https://github.com/bamr87/it-journey/actions/runs/28791022929) |
-| `game-developer/0001` | Web Fundamentals | ❌ fail | 66.1 | 17/26 | 57 | 🔁 sweeping | [2026-07-28](/quest-reports/2026-07-28-game-developer-0001/) | [run](https://github.com/bamr87/it-journey/actions/runs/30355858267) |
 | `data-scientist/1100` | Data Engineering | ❌ fail | 66.5 | 15/15 | 54 | 🛑 stuck | [2026-07-22](/quest-reports/2026-07-22-data-scientist-1100/) | [run](https://github.com/bamr87/it-journey/actions/runs/29916378064) |
 | `digital-artist/0001` | Web Fundamentals | ❌ fail | 67.5 | 19/26 | 66 | 🔁 sweeping | [2026-07-28](/quest-reports/2026-07-28-digital-artist-0001/) | [run](https://github.com/bamr87/it-journey/actions/runs/30355858267) |
 | `developer/0001` | Web Fundamentals | ❌ fail | 67.9 | 18/26 | 72 | 🔁 sweeping | [2026-08-12](/quest-reports/2026-08-12-developer-0001/) | [run](https://github.com/bamr87/it-journey/actions/runs/31591270584) |
@@ -61,6 +61,9 @@ _Ledger generated 2026-08-12T11:43:18+00:00._
 
 Every session report the loop has published, newest first. Each links to the learner's-eye walk plus the run and the file's change history.
 
+- **2026-08-16** — [Game Developer · L0001](/quest-reports/2026-08-16-game-developer-0001/) (`game-developer/0001`)
+- **2026-08-15** — [Game Developer · L0001](/quest-reports/2026-08-15-game-developer-0001/) (`game-developer/0001`)
+- **2026-08-14** — [Game Developer · L0001](/quest-reports/2026-08-14-game-developer-0001/) (`game-developer/0001`)
 - **2026-08-12** — [Software Developer · L0001](/quest-reports/2026-08-12-developer-0001/) (`developer/0001`)
 - **2026-08-11** — [Software Developer · L0001](/quest-reports/2026-08-11-developer-0001/) (`developer/0001`)
 - **2026-08-10** — [Software Developer · L0001](/quest-reports/2026-08-10-developer-0001/) (`developer/0001`)

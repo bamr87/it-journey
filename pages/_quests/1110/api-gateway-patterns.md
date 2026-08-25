@@ -82,6 +82,16 @@ rewards:
   - The edge layer that fronts the scaling quest
 layout: quest
 mermaid: true
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Architect, your kingdom of services now sprawls - and your clients are lost, knocking on a dozen different gates, each demanding its own credentials. An **API Gateway** is the single grand entrance to the Citadel: one address where every request arrives, is checked, is routed to the right keep, and is sent on its way. Master it, and your clients see one clean facade instead of a chaotic warren of services.*
 
@@ -141,7 +151,7 @@ This **🔴 Hard** quest expects:
 
 ### 🍎 macOS Kingdom Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
@@ -154,7 +164,7 @@ docker run -d -p 8080:80 -v "$PWD/nginx.conf:/etc/nginx/nginx.conf:ro" nginx:alp
 
 ### 🪟 Windows Empire Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
@@ -166,7 +176,7 @@ docker run -d -p 8080:80 -v "${PWD}/nginx.conf:/etc/nginx/nginx.conf:ro" nginx:a
 
 ### 🐧 Linux Territory Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
@@ -179,7 +189,7 @@ sudo docker run -d -p 8080:80 -v "$PWD/nginx.conf:/etc/nginx/nginx.conf:ro" ngin
 
 ### ☁️ Cloud Realms Path
 
-<details>
+<details markdown="1">
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash

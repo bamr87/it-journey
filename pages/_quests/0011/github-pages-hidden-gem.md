@@ -89,6 +89,16 @@ rewards:
 layout: quest
 sub_title: 'Level 0011 (3) Quest: Web Publishing and AI Capture Mastery'
 draft: false
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 # The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms
 
