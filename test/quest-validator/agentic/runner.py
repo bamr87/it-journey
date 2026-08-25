@@ -130,7 +130,8 @@ class AgenticRunner:
                  timeout: int = 600, claude_bin: str = "claude",
                  mock: bool = False, dry_run: bool = False, verbose: bool = False,
                  max_turns: int = 0, max_attempts: int = 0,
-                 retry_base_s: float = 0.0, retry_max_s: float = 0.0):
+                 retry_base_s: float = 0.0, retry_max_s: float = 0.0,
+                 adaptive_turns: bool = False):
         if mode not in ("review", "execute"):
             raise ValueError(f"mode must be 'review' or 'execute', got {mode!r}")
         self.mode = mode
@@ -143,6 +144,12 @@ class AgenticRunner:
         # Per-quest turn ceiling (0 = CLI default). Bounds runaway agent loops
         # and is the cheapest cost governor: fewer turns ≈ less spend.
         self.max_turns = max_turns
+        # Adaptive per-quest budget: size the turn allowance to the quest's own
+        # DETERMINISTIC runnable-snippet count instead of spending the full cap
+        # on every quest (a 2-snippet intro doesn't need a capstone's budget).
+        # max_turns stays the hard cap; see _turn_budget for the formula. Only
+        # meaningful with max_turns > 0 — with no cap there is nothing to adapt.
+        self.adaptive_turns = adaptive_turns
         # Transient-failure retry policy (see _invoke). A single overload/rate-limit
         # blip on the first quest otherwise aborts the whole batch and wastes the
         # slice, so retry the recoverable classes with exponential backoff + jitter
@@ -219,14 +226,37 @@ class AgenticRunner:
         finally:
             shutil.rmtree(sandbox, ignore_errors=True)
 
+    def _turn_budget(self, quest) -> int:
+        """The per-quest turn allowance actually sent to the CLI.
+
+        Fixed mode (default): the flat ``max_turns`` cap for every quest.
+        Adaptive mode: ``14 + 3 × runnable_snippets`` clamped to [16, max_turns] —
+        derived from the SAME deterministic snippet inventory the prompt hands the
+        agent as its checklist, so the budget scales with the work the quest
+        actually contains. Small quests stop paying the capstone rate; heavy
+        quests still hit the cap (and are handled by the budget-exhausted
+        fallback in _invoke). Returns 0 (no flag) when max_turns is 0.
+        """
+        if not self.max_turns or self.max_turns <= 0:
+            return 0
+        if not self.adaptive_turns or quest_lib is None:
+            return self.max_turns
+        try:
+            runnable = int(quest_lib.snippet_summary(quest.body or "")["runnable"])
+        except Exception:
+            return self.max_turns
+        return max(16, min(self.max_turns, 14 + 3 * runnable))
+
     def run(self, quest) -> dict:
         """Validate one quest; return a result dict (see _finalize)."""
         sandbox = Path(tempfile.mkdtemp(prefix="quest-qa-"))
         try:
             (sandbox / "QUEST.md").write_text(quest.body, encoding="utf-8")
+            turns = self._turn_budget(quest)
             system_prompt = prompts.build_system_prompt(self.mode)
-            user_prompt = prompts.build_user_prompt(quest, mode=self.mode)
-            cmd = self._build_cmd(system_prompt, user_prompt)
+            user_prompt = prompts.build_user_prompt(quest, mode=self.mode,
+                                                    turn_budget=turns)
+            cmd = self._build_cmd(system_prompt, user_prompt, max_turns=turns)
 
             if self.dry_run:
                 return {"quest": quest.to_meta(), "dry_run": True,
@@ -243,7 +273,8 @@ class AgenticRunner:
 
     # ---- command construction ------------------------------------------
 
-    def _build_cmd(self, system_prompt: str, user_prompt: str) -> List[str]:
+    def _build_cmd(self, system_prompt: str, user_prompt: str,
+                   max_turns: Optional[int] = None) -> List[str]:
         cmd = [
             self.claude_bin, "-p", user_prompt,
             "--output-format", "json",
@@ -267,8 +298,9 @@ class AgenticRunner:
                 "--allowedTools", "Read",
                 "--disallowedTools", "Bash", "Write", "Edit", "WebFetch", "WebSearch",
             ]
-        if self.max_turns and self.max_turns > 0:
-            cmd += ["--max-turns", str(self.max_turns)]
+        turns = self.max_turns if max_turns is None else max_turns
+        if turns and turns > 0:
+            cmd += ["--max-turns", str(turns)]
         if self.model:
             cmd += ["--model", self.model]
         return cmd
@@ -346,6 +378,20 @@ class AgenticRunner:
             meta = {"mock": False, "cost_usd": envelope.get("total_cost_usd"),
                     "turns": envelope.get("num_turns"),
                     "session_id": envelope.get("session_id"), "duration_s": dur}
+            # error_max_turns is a VERDICT about the quest, not an engine fault:
+            # the walk happened and ran out of budget — in learner terms the
+            # session ended unfinished, which is a FAIL, not a void. Recording it
+            # as an errored (unscored) result had a nasty consequence: errored
+            # quests contribute NO ledger coverage, so a quest that always
+            # overruns blocks its slice's full-coverage forever — the circuit
+            # breaker (M6) never trips and the loop grinds that slice for good
+            # (observed: issue #642, "Stack Attack" at 40 turns). Convert it to a
+            # SCORED fail with a clearly harness-labeled verdict instead:
+            # coverage completes, the breaker can act, and the fix lane gets the
+            # one recommendation that is actually true — the quest is too heavy
+            # for a single walk session.
+            if envelope.get("subtype") == "error_max_turns":
+                return self._budget_exhausted_result(quest, meta)
             return self._finalize(quest, None, meta=meta, error=err,
                                   raw=json.dumps(envelope)[:2000])
         verdict, raw = self._extract_verdict(envelope)
@@ -419,6 +465,47 @@ class AgenticRunner:
         return None, text
 
     # ---- normalization + scoring ---------------------------------------
+
+    def _budget_exhausted_result(self, quest, meta: dict) -> dict:
+        """A SCORED fail for a walk that hit the turn cap before emitting a verdict.
+
+        Every value is deliberately harness-labeled ("[harness] …") — this is not
+        a model assessment and never pretends to be one. Dimensions score 0 (the
+        session ended with nothing verified), the single recommendation carries
+        the one finding the overrun actually proves (the quest exceeds a walk
+        session), and ``budget_exhausted: true`` marks the result for downstream
+        readers. Because the result carries no ``error`` key it counts as scored:
+        the ledger records coverage (verdict=fail), the slice can still reach
+        full coverage, and the M6 circuit breaker stays reachable.
+        """
+        turns = meta.get("turns") or self.max_turns or 0
+        turns_txt = str(turns) if turns else "its configured"
+        note = ("[harness] Not scored by the model: the walk exhausted its turn "
+                "budget before a verdict could be emitted.")
+        verdict = {
+            "executed": False,  # turns were spent, but nothing was verified into a verdict
+            "dimensions": {k: {"score": 0, "findings": [note]} for k in schema.DIM_KEYS},
+            "commands": [],
+            "recommendations": [{
+                "priority": "high",
+                "area": "structure",
+                "suggestion": (
+                    f"[harness] The sandboxed walk hit its {turns_txt}-turn budget before "
+                    "finishing this quest. Split it into smaller linked quests/chapters, or "
+                    "reduce the number of required commands, so a learner-paced session can "
+                    "complete it end to end."
+                ),
+            }],
+            "summary": (
+                f"[harness] Budget exhausted: the agent ran out of turns ({turns_txt}) "
+                "mid-walk and produced no verdict. Recorded as a FAIL so slice coverage "
+                "completes; the zeroed dimension scores are harness-assigned, not "
+                "model-assessed."
+            ),
+        }
+        result = self._finalize(quest, verdict, meta=meta)
+        result["budget_exhausted"] = True
+        return result
 
     def _finalize(self, quest, verdict, meta: dict,
                   error: Optional[str] = None, raw: Optional[str] = None) -> dict:

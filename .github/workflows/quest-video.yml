@@ -163,6 +163,8 @@ jobs:
     env:
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      # MODEL POLICY — same pin as quest-perfection's gate (see its comment).
+      QUEST_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
       CHARACTER: ${{ inputs.character }}
       LEVEL: ${{ inputs.level }}
       QUEST: ${{ inputs.quest }}
@@ -286,7 +288,7 @@ jobs:
           mapfile -t QUEST_PATHS < <(python3 -c 'import json;[print(q["path"]) for q in json.load(open("walk-plan.json")).get("quests") or []]')
           set +e
           python3 test/quest-validator/agentic_validate.py \
-            --mode execute --max-turns 40 \
+            --mode execute --max-turns 40 --adaptive-turns \
             --report walk-evidence.json --md walk-evidence.md \
             "${QUEST_PATHS[@]}"
           rc=$?

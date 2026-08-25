@@ -30,7 +30,9 @@
 #   M5 — HARD-FAIL if no PAT (AUTO_PR_GITHUB_TOKEN || PAT_TOKEN); never fall back
 #        to github.token, so the fix PR's required checks actually fire.
 #   M6 — read .quests/ledger.json; skip/abort if the slice is stuck/needs_human.
-#   M7 — the skill aborts on review-mode/truncated/not-executed evidence.
+#   M7 — the skill aborts on review-mode/truncated evidence; per-quest it skips
+#        errored / not-executed / harness budget_exhausted results (the last is
+#        structural work for a human) and fixes the rest.
 #   M8 — after the fixer edits, DETERMINISTICALLY unwrap soft-wrapped prose to
 #        the house "one paragraph per line" rule (tools/unwrap-prose.py) so the
 #        `oneline` gate (markdown-oneline.yml) can never fail the fix PR. LLMs
@@ -127,6 +129,11 @@ jobs:
     env:
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      # MODEL POLICY — same pin as quest-perfection's gate (see its comment):
+      # QUEST_AI_MODEL drives the re-derive engine, ITJ_AI_MODEL routes the same
+      # model into the quest-fixer agent step (claude-run → scripts/ai/run.sh).
+      QUEST_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
+      ITJ_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
       # M5 — a PAT ONLY (contents+PRs, NO admin). NEVER github.token: a
       # GITHUB_TOKEN-authored PR fires no checks, so the fix PR's required
       # checks would never run and it could be merged with zero gates. The
@@ -296,7 +303,8 @@ jobs:
       # job env) carries the auth, so the children authenticate. Normally both
       # files arrive via the orchestrator's artifact — this path fires only on a
       # manual dispatch. The quest-fix skill still enforces M7 on whatever it gets
-      # (it ABORTS as a no-op on review-mode/truncated/not-executed evidence).
+      # (it ABORTS as a no-op on review-mode/truncated evidence; per-quest, it skips
+      # errored / not-executed / harness budget_exhausted results and fixes the rest).
       - name: Obtain plan + evidence (re-derive if missing)
         if: steps.breaker.outputs.skip != 'true'
         run: |
@@ -318,7 +326,7 @@ jobs:
               || { echo "::error::Claude Code install failed — the execute engine needs the claude CLI."; exit 1; }
             python3 -c 'import json;[print(q["path"]) for q in json.load(open("walk-plan.json"))["quests"]]' \
               | xargs -r python3 test/quest-validator/agentic_validate.py \
-                  --mode execute --max-turns 40 \
+                  --mode execute --max-turns 40 --adaptive-turns \
                   --report walk-evidence.json --md walk-evidence.md
           fi
 
@@ -360,8 +368,12 @@ jobs:
             content-only edits to the quests named by `result.quest.path`, keeping each
             edit ONLY when the deterministic gate passes (tier-1 quest_validator.py score
             holds-or-rises AND brand_lint stays clean — never because the agentic
-            `overall` rose). ABORT as a clean no-op if the evidence is review-mode,
-            truncated, or any result is not `executed` (M7). Write your only output as a
+            `overall` rose). ABORT as a clean no-op if the evidence is review-mode or
+            truncated (M7); within an honest run, eligibility is PER-QUEST — skip (and
+            report in the fragment, never edit) any quest whose own result is errored,
+            not `executed`, or harness `budget_exhausted` (the last is structural
+            work for a human: never auto-split a quest, never trim steps to fit the
+            budget) and fix the rest. Write your only output as a
             PR-body fragment to ./quest-fix-fragment.md and STOP. Edit ONLY
             pages/_quests/**/*.md; NEVER touch vendored quests (source_repo:/source_url:),
             and NEVER touch .github/**, scripts/**, .claude/**, .quests/**, _data/**, or
