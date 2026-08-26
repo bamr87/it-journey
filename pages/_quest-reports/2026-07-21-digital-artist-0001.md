@@ -60,8 +60,7 @@ Per-dimension: commands_work 4, content_accuracy 4, completeness 5, clarity 5, s
 Verified live: `mkdir -p ~/md-quest && cd ~/md-quest && touch guide.md` **passed**; the aligned table (`| :--- | :--: | ---: |`), footnote (`[^speed]`), task list (`- [x]/- [ ]`), fenced ```python block, blockquote callouts, Kramdown attribute lists (`{: .lead #intro }`), definition list, full frontmatter file, and the `{​% raw %​}`-wrapped Liquid for-loop **all passed** when built through Jekyll+Kramdown. The two `code guide.md` platform blocks were **skipped** (editor-launch, not a testable assertion); the Cloud block was **reasoned** (comments only).
 
 ### 2. Barodybroject Stack Analysis — 36 · fail · snippets 12/12 runnable, **12 ran · 5 passed · 7 failed · 0 skipped · 11 reasoned**
-Per-dimension: commands_work 1, content_accuracy 1, completeness 2, clarity 3, structure 2, safety 4.
-Failures recorded by the engine:
+Per-dimension: commands_work 1, content_accuracy 1, completeness 2, clarity 3, structure 2, safety 4. Failures recorded by the engine:
 - "Backend Structure" tree fenced as ```python → **failed** `SyntaxError: invalid character '├'` (box-drawing chars).
 - "Database Configuration Strategy" ```python → **failed** `IndentationError` (the `if DB_CHOICE == "postgres":` branch is comment-only).
 - requirements.txt excerpt fenced ```python → **failed** `SyntaxError` on `Django==4.2.20  # comment`.
@@ -72,16 +71,13 @@ Failures recorded by the engine:
 Passed: the `generate_parody_content` stub, the commented CMS-dependency block, the `MIDDLEWARE`/GZip snippet, `pip install pip-audit && pip-audit`, and `pip list --outdated`. Content-accuracy note captured by the engine: the cloned repo actually ships `Django==5.1.4` (not 4.2.20) with header "Python >=3.10", and `views.py`/`settings.py` are already split into packages — so the quest's own "Split Large Views" recommendation is already done upstream.
 
 ### 3. CSS Styling Basics — 86 · pass · snippets 12/4 runnable, **12 ran · 11 passed · 1 failed · 1 skipped · 2 reasoned**
-Per-dimension: commands_work 4, content_accuracy 4, completeness 4, clarity 5, structure 5, safety 5.
-Verified live in headless Chromium: the `index.html` base structure; type/class/id/descendant selectors; box-model on `.lead` (`box-sizing:border-box`); `.site-header` flexbox; `.center-box` centering; the `repeat(auto-fit, minmax(200px,1fr))` card grid + its 4-article HTML; `:root` custom properties; the mobile-first `.card-grid` media queries; and the `[data-theme="dark"]` theming override — **all passed**. The one **failed** command was the **Windows PowerShell** setup line (`New-Item index.html, styles.css`) under cross-platform `pwsh` (backslash handling); the Linux equivalent **passed**. The `prefers-color-scheme` block was **reasoned**.
+Per-dimension: commands_work 4, content_accuracy 4, completeness 4, clarity 5, structure 5, safety 5. Verified live in headless Chromium: the `index.html` base structure; type/class/id/descendant selectors; box-model on `.lead` (`box-sizing:border-box`); `.site-header` flexbox; `.center-box` centering; the `repeat(auto-fit, minmax(200px,1fr))` card grid + its 4-article HTML; `:root` custom properties; the mobile-first `.card-grid` media queries; and the `[data-theme="dark"]` theming override — **all passed**. The one **failed** command was the **Windows PowerShell** setup line (`New-Item index.html, styles.css`) under cross-platform `pwsh` (backslash handling); the Linux equivalent **passed**. The `prefers-color-scheme` block was **reasoned**.
 
 ### 4. Bootstrap Framework — 80 · pass · snippets 7/4 runnable, **7 ran · 6 passed · 1 failed · 0 skipped · 3 reasoned**
-Per-dimension: commands_work 4, content_accuracy 4, completeness 3, clarity 4, structure 5, safety 5.
-Verified against a real compiled Bootstrap 5.3: the full CDN starter page (Ch.1), the card HTML, the Ch.3 utility-class divs, the CSS-variable override (Option A), and the Sass build `npm install bootstrap sass` + `$primary` override + `@import` (Option B) — **all passed**. The one **failed** item was the **Chapter 2 navbar** snippet, flagged for a real accessibility defect: the `navbar-toggler` button has no accessible text (no `aria-label`/visually-hidden label). macOS/Windows/Cloud setup blocks were **reasoned**.
+Per-dimension: commands_work 4, content_accuracy 4, completeness 3, clarity 4, structure 5, safety 5. Verified against a real compiled Bootstrap 5.3: the full CDN starter page (Ch.1), the card HTML, the Ch.3 utility-class divs, the CSS-variable override (Option A), and the Sass build `npm install bootstrap sass` + `$primary` override + `@import` (Option B) — **all passed**. The one **failed** item was the **Chapter 2 navbar** snippet, flagged for a real accessibility defect: the `navbar-toggler` button has no accessible text (no `aria-label`/visually-hidden label). macOS/Windows/Cloud setup blocks were **reasoned**.
 
 ### 5. Building & Testing the Git Init Shell Script — 34 · fail · snippets 5/5 runnable, **5 ran · 0 passed · 5 failed · 0 skipped · 0 reasoned**
-Per-dimension: commands_work 1, content_accuracy 2, completeness 1, clarity 1, structure 2, safety 5.
-Every functional command **failed**:
+Per-dimension: commands_work 1, content_accuracy 2, completeness 1, clarity 1, structure 2, safety 5. Every functional command **failed**:
 - `bash -n scripts/git_init.sh` → **failed** (`No such file or directory`).
 - `bash scripts/git_init.sh --headless -n test-quest-sample --no-push --gitignore python,macos --scaffold python` → **failed** (target script absent).
 - `cat > tests/bats/test_headless.bats` (Example Bats test) → **failed** — the test hard-codes `/path/to/scripts/git_init.sh`.

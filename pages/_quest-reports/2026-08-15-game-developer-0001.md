@@ -58,8 +58,7 @@ Walked in planner order (note: this window's order is **not** the pedagogical de
 Everything below comes from `walk-evidence.json` (execute mode, real commands in a disposable sandbox). Only two quests carry machine evidence; the other three carry none.
 
 ### 1. GitHub Pages Basics — ⚠️ 72 (executed)
-Snippet coverage: **ran 8, passed 7, failed 1, skipped 4, reasoned 8** (7 runnable snippets available).
-Per-dimension: commands_work 3 · content_accuracy 3 · completeness 3 · clarity 5 · structure 5 · safety 5.
+Snippet coverage: **ran 8, passed 7, failed 1, skipped 4, reasoned 8** (7 runnable snippets available). Per-dimension: commands_work 3 · content_accuracy 3 · completeness 3 · clarity 5 · structure 5 · safety 5.
 
 - ✅ `passed` — `git init && git add . && git commit -m "Initial site"` ran cleanly on a real Jekyll scaffold ("8 files changed, 267 insertions(+)").
 - ✅ `passed` — With `_config.yml` set to `url: "https://username.github.io"` / `baseurl: "/my-castle"` and `bundle exec jekyll build --baseurl "/my-castle"`, the `relative_url` snippet produced `/my-castle/assets/css/style.css` and `/my-castle/about/` exactly as claimed; the "wrong" hard-coded path correctly omitted the prefix. **The quest's central technical claim is confirmed.**
@@ -70,8 +69,7 @@ Per-dimension: commands_work 3 · content_accuracy 3 · completeness 3 · clarit
 - `reasoned` — macOS/Windows install blocks, CNAME/DNS reference tables (apex A records 185.199.108–111.153 match GitHub's current documented IPs).
 
 ### 4. Git Workflow Mastery — ✅ 82 (executed)
-Snippet coverage: **ran 9, passed 7, failed 2, skipped 3, reasoned 1** (10 runnable snippets available).
-Per-dimension: commands_work 4 · content_accuracy 4 · completeness 4 · clarity 4 · structure 4 · safety 5.
+Snippet coverage: **ran 9, passed 7, failed 2, skipped 3, reasoned 1** (10 runnable snippets available). Per-dimension: commands_work 4 · content_accuracy 4 · completeness 4 · clarity 4 · structure 4 · safety 5.
 
 - ✅ `passed` — Full Chapter 1 branch loop (`git switch main`/`pull`/`switch -c`/`add`/`commit`/`push -u`) against a real local repo + bare remote worked once a tracking branch existed.
 - ✅ `passed` — `git status` / `git log --oneline --graph --all` / `git diff` all produced expected output.

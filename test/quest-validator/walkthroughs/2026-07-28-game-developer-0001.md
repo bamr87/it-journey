@@ -39,8 +39,7 @@ Walked in `walk-plan.json` order:
 All command outcomes below come from the sealed `walk-evidence.json` (execute mode, sandboxed disposable temp dirs). I did **not** re-run the engine. Quoted details are trimmed from the engine's recorded commands.
 
 ### ✅ GitHub Pages Basics — 83 (pass · weight covered 1.0)
-Dimensions: commands_work 4 · content_accuracy 4 · completeness 3 · clarity 5 · structure 5 · safety 5.
-Snippet coverage: **ran 8, passed 7, failed 1, skipped 3, reasoned 6** (available_runnable 7/13).
+Dimensions: commands_work 4 · content_accuracy 4 · completeness 3 · clarity 5 · structure 5 · safety 5. Snippet coverage: **ran 8, passed 7, failed 1, skipped 3, reasoned 6** (available_runnable 7/13).
 - `passed` — `git init && git add . && git commit` against a real `jekyll new my-castle` site (after setting local git user.name/email).
 - `passed` — `_config.yml` `url`/`baseurl` edit: "Jekyll parsed and built successfully with this config."
 - `passed` — `relative_url` filter: `{{ '/assets/css/style.css' | relative_url }}` rendered `/my-castle/assets/css/style.css` with `baseurl: "/my-castle"`; hard-coded path did not.
@@ -50,8 +49,7 @@ Snippet coverage: **ran 8, passed 7, failed 1, skipped 3, reasoned 6** (availabl
 - `skipped`/`reasoned` — `brew install gh` + `gh auth login`, `gh repo create`, `winget` path, `aws s3 sync`, DNS A/CNAME tables: not safely runnable; syntax verified correct.
 
 ### ⚠️ Jekyll Fundamentals — 68 (warn · weight covered 1.0)
-Dimensions: commands_work 3 · content_accuracy 3 · completeness 3 · clarity 4 · structure 4 · safety 5.
-Snippet coverage: **ran 11, passed 7, failed 4, skipped 3, reasoned 2** (available_runnable 10/16).
+Dimensions: commands_work 3 · content_accuracy 3 · completeness 3 · clarity 4 · structure 4 · safety 5. Snippet coverage: **ran 11, passed 7, failed 4, skipped 3, reasoned 2** (available_runnable 10/16).
 - `passed` — `jekyll new my-castle && bundle exec jekyll serve`: "Bundler auto-installed 38 gems… produced the exact promised output: `Server address: http://127.0.0.1:4000/`".
 - `passed` — custom `recipes` collection: appending `collections:` to `_config.yml` + `_recipes/bread.md` produced `_site/recipes/bread/index.html` at the declared permalink.
 - `passed` — `jekyll build --drafts` correctly rendered a `_drafts/` file.
@@ -64,8 +62,7 @@ Snippet coverage: **ran 11, passed 7, failed 4, skipped 3, reasoned 2** (availab
 `verdict_obj: null`, `overall: 0.0`, `per_dimension: {}`. Engine error tail: `permission_denials: [... "sudo apt … install -y yamllint"]`, `terminal_reason: "max_turns"`, `errors: ["Reached maximum number of turns (40)"]`. **No commands were scored** — I have no execute evidence for this quest's content quality, only static reasoning (below). The `0.0`/`fail` shown in `walk-evidence.md` is an engine-abort artifact, not a graded failure.
 
 ### ✅ Git Workflow Mastery — 80 (pass · weight covered 1.0)
-Dimensions: commands_work 4 · content_accuracy 4 · completeness 3 · clarity 4 · structure 5 · safety 5.
-Snippet coverage: **ran 7, passed 7, failed 0, skipped 4, reasoned 2** (available_runnable 10/12).
+Dimensions: commands_work 4 · content_accuracy 4 · completeness 3 · clarity 4 · structure 5 · safety 5. Snippet coverage: **ran 7, passed 7, failed 0, skipped 4, reasoned 2** (available_runnable 10/12).
 - `passed` — `git config --global user.name/user.email/init.defaultBranch`, values persisted on read-back.
 - `passed` — full branch loop (`git switch -c feature/… → add → commit → push -u origin`) against a local bare `origin` repo.
 - `passed` — `git status` / `git log --oneline --graph --all` / `git diff` produced accurate output.

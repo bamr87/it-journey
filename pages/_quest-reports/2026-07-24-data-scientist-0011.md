@@ -55,8 +55,7 @@ Headline verdict: **warn.** No safety problems and every runnable snippet that e
 All evidence below is from the sealed execute-mode run (`walk-evidence.json` / `walk-evidence.md`); commands were run by the engine in its disposable sandbox. I did not re-run the engine. My own contribution is the static read of each quest source (labeled `reasoned`).
 
 ### 1. Summon the Golem — ✅ 88 (execute)
-Dimensions: commands_work 4 · content_accuracy 5 · completeness 4 · clarity 4 · structure 5 · safety 5.
-Snippets: 5 total, 0 classified runnable, **3 ran / 3 passed**, 1 skipped, 1 reasoned.
+Dimensions: commands_work 4 · content_accuracy 5 · completeness 4 · clarity 4 · structure 5 · safety 5. Snippets: 5 total, 0 classified runnable, **3 ran / 3 passed**, 1 skipped, 1 reasoned.
 
 - **`passed`** — composite-action shell block extracted and run with `CLAUDE_CODE_OAUTH_TOKEN` unset: printed `::warning::no Claude auth — AI step is a clean no-op.` and exited 0, *exactly* matching the quest's "No auth = exit 0 with a warning" claim.
 - **`passed`** — gate-arming snippet run across all four `ENABLED`/`OAUTH` combinations; `(true, unset) → go=false` matches the Mastery Challenge "disarm only the golem" scenario.
@@ -68,8 +67,7 @@ Snippets: 5 total, 0 classified runnable, **3 ran / 3 passed**, 1 skipped, 1 rea
 Engine error, verbatim from evidence: `claude exited 1: … "terminal_reason":"max_turns" … "errors":["Reached maximum number of turns (40)"]`. No dimensions, no commands, no score were produced. **Nothing about this quest's quality is asserted here** — it was not walked to completion. From a static read (my own, `reasoned`) the quest is Docker-heavy and tightly coupled to the IT-Journey repo (`docker compose build prd-machine`, `./scripts/prd-machine/prd-machine sync|status|conflicts`), which plausibly explains why the agent burned its turn budget building/running containers without reaching a verdict.
 
 ### 3. Hidden Gem (GitHub Pages) — ⚠️ 67 (execute)
-Dimensions: commands_work 3 · content_accuracy 3 · completeness 4 · clarity 3 · structure 3 · safety 5.
-Snippets: 8 total, 3 runnable, **5 ran / 5 passed**, 3 skipped, 1 reasoned.
+Dimensions: commands_work 3 · content_accuracy 3 · completeness 4 · clarity 3 · structure 3 · safety 5. Snippets: 8 total, 3 runnable, **5 ran / 5 passed**, 3 skipped, 1 reasoned.
 
 - **`passed`** — `_config.yml` (Step 2) parses via Ruby `YAML.load_file`; the Step-4 post `_posts/2025-11-14-ai-quest-chat.md` built via `bundle exec jekyll build` and rendered at `_site/2025/11/14/ai-quest-chat.html` — the date-prefixed-filename convention works as taught.
 - **`passed` but with friction** — the Step-3 `Gemfile` resolved and installed **97 gems**, *but only after* adding `bundle config set --local path vendor/bundle`; running `bundle install` verbatim as instructed failed with `Bundler::PermissionError: … write to /var/lib/gems/3.2.0/cache/minima-2.5.1.gem` on a stock system-Ruby setup. The quest never warns about this.
@@ -77,8 +75,7 @@ Snippets: 8 total, 3 runnable, **5 ran / 5 passed**, 3 skipped, 1 reasoned.
 - The `code --install-extension ms-vscode.vscode-github-pull-requests-and-issues` line (in both macOS and Linux blocks) uses a **wrong extension ID**; the real one is `GitHub.vscode-pull-request-github`.
 
 ### 4. Prompt Crystal (VS Code Copilot) — ⚠️ 77 (execute)
-Dimensions: commands_work 4 · content_accuracy 3 · completeness 4 · clarity 4 · structure 4 · safety 5.
-Snippets: 32 total, 9 runnable, **11 ran / 11 passed**, 5 skipped, 21 reasoned.
+Dimensions: commands_work 4 · content_accuracy 3 · completeness 4 · clarity 4 · structure 4 · safety 5. Snippets: 32 total, 9 runnable, **11 ran / 11 passed**, 5 skipped, 21 reasoned.
 
 - **`passed`** — every genuinely runnable snippet ran clean: directory/file setup on macOS/Linux (`mkdir -p .github/prompts && touch …`), the Windows `New-Item` equivalent, the Cloud `echo > .github/copilot-instructions.md`, both Mermaid diagrams (graph TB + flowchart TD), and all three `.prompt.md` YAML frontmatter blocks (`code-review`, `debug-assistant`, `test-generator`) parse.
 - **`skipped`** — `code --install-extension` / `--list-extensions` blocks (no `code` CLI in sandbox), platform-specific.

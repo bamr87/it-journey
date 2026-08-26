@@ -19,64 +19,40 @@ session:
 
 ## 🎯 Session Summary
 
-Walked the **second window (5 of 10 quests)** of the Security Specialist's Master-tier
-level `1110` — *Architecture & Design Patterns* — end to end as a learner, consuming the
-sealed execute-mode evidence the workflow minted (I did **not** re-run the engine).
-All five quests **passed** (engine average **93.0%**, 5 pass / 0 warn / 0 fail), and I
-independently read each quest's source in plan order to judge the *linked journey*.
+Walked the **second window (5 of 10 quests)** of the Security Specialist's Master-tier level `1110` — *Architecture & Design Patterns* — end to end as a learner, consuming the sealed execute-mode evidence the workflow minted (I did **not** re-run the engine). All five quests **passed** (engine average **93.0%**, 5 pass / 0 warn / 0 fail), and I independently read each quest's source in plan order to judge the *linked journey*.
 
-Headline: the runnable content is genuinely strong — every executable snippet the engine
-touched behaved exactly as documented (a real NGINX Compose gateway, a live Redpanda
-broker, a real `kind` Kubernetes cluster, JWT edge auth returning 401/200 correctly). The
-two things a maintainer should act on are **(1)** completeness/scaffolding gaps in
-*Scaling Strategies* (its hands-on Mastery Challenges and two secondary objectives lack
-starter code — a beginner literally hits a `NameError` if they run the cache-aside snippet
-verbatim), and **(2)** a *chain* observation: this window braids **two unrelated narratives**
-at the same level — four "Architect's Citadel" system-design quests and one out-of-series
-Ouroboros CI/CD capstone — and the "Security Specialist" framing is thin, since the material
-is generic backend/architecture content rather than security-specialist work.
+Headline: the runnable content is genuinely strong — every executable snippet the engine touched behaved exactly as documented (a real NGINX Compose gateway, a live Redpanda broker, a real `kind` Kubernetes cluster, JWT edge auth returning 401/200 correctly). The two things a maintainer should act on are **(1)** completeness/scaffolding gaps in *Scaling Strategies* (its hands-on Mastery Challenges and two secondary objectives lack starter code — a beginner literally hits a `NameError` if they run the cache-aside snippet verbatim), and **(2)** a *chain* observation: this window braids **two unrelated narratives** at the same level — four "Architect's Citadel" system-design quests and one out-of-series Ouroboros CI/CD capstone — and the "Security Specialist" framing is thin, since the material is generic backend/architecture content rather than security-specialist work.
 
 ## 🗺️ The Journey
 
 Plan order (dependency-sorted window; `⚔️ Epic`/`🔴 Hard` as tagged):
 
 1. ✅ **API Gateway Patterns: The Single Front Door** — **100** · 🔴 Hard · The whole
-   NGINX Compose gateway routed to both stub services and JWT edge-auth returned 401/200
-   correctly; only the aggregation snippet is illustrative rather than runnable.
+NGINX Compose gateway routed to both stub services and JWT edge-auth returned 401/200 correctly; only the aggregation snippet is illustrative rather than runnable.
 2. ✅ **Event-Driven Design: Pub/Sub, Event Sourcing, and CQRS** — **97** · 🔴 Hard · Every
-   snippet ran against a live Redpanda broker; the `auto_offset_reset` gotcha callout was
-   empirically confirmed accurate. CQRS is prose+diagram only (no runnable projector).
+snippet ran against a live Redpanda broker; the `auto_offset_reset` gotcha callout was empirically confirmed accurate. CQRS is prose+diagram only (no runnable projector).
 3. ✅ **Scaling Strategies: Horizontal Growth, Caching, and CAP** — **86** · 🔴 Hard · Redis,
-   the K8s Deployment/Service (verified on a real `kind` cluster), and both Python snippets
-   worked — but the Mastery Challenges and two secondary objectives lack scaffolding.
+the K8s Deployment/Service (verified on a real `kind` cluster), and both Python snippets worked — but the Mastery Challenges and two secondary objectives lack scaffolding.
 4. ✅ **Weaving the Whole: The Serpent Closes the Circle** — **86** · ⚔️ Epic · YAML/mermaid
-   valid; the auto-merge/smuggle-guard shell logic was executed against synthetic data and
-   behaved as described. The one end-to-end bash block is correctly *skipped* (needs a live
-   authed repo). Out-of-series capstone wedged into a system-design chain.
+valid; the auto-merge/smuggle-guard shell logic was executed against synthetic data and behaved as described. The one end-to-end bash block is correctly *skipped* (needs a live authed repo). Out-of-series capstone wedged into a system-design chain.
 5. ✅ **System Design Interviews: A Framework for the Whiteboard** — **96** · ⚔️ Epic ·
-   The estimation script and both short-code generators ran and matched every documented
-   number; only the promised "news feed" worked reference is missing.
+The estimation script and both short-code generators ran and matched every documented number; only the promised "news feed" worked reference is missing.
 
 ## 🔬 Evidence
 
-All outcomes below are **from the sealed execute-mode `walk-evidence.json`** (commands the
-engine actually ran in the disposable sandbox). I quote the machine evidence; I did not run
-these commands myself.
+All outcomes below are **from the sealed execute-mode `walk-evidence.json`** (commands the engine actually ran in the disposable sandbox). I quote the machine evidence; I did not run these commands myself.
 
 ### 1. API Gateway Patterns — 100 · ran 6/7 runnable snippets (6 passed, 0 failed, 4 reasoned)
 - **`docker run … nginx.conf … nginx:alpine` (bare, no upstreams)** → `passed`: container exited
-  with `nginx: [emerg] host not found in upstream "users:8000"` — **exactly** the failure the
-  quest's pre-emptive callout box warns about (evidence confirms the warning is accurate/necessary).
+with `nginx: [emerg] host not found in upstream "users:8000"` — **exactly** the failure the quest's pre-emptive callout box warns about (evidence confirms the warning is accurate/necessary).
 - **`docker compose up -d` (gateway + users/orders http-echo stubs)** → `passed`: all 3 containers
-  up; `nginx -t` reported config valid; `/users/` and `/orders/` returned HTTP 200 with the
-  documented bodies (verified via Python urllib because the sandbox blocked outbound `curl` to localhost).
+up; `nginx -t` reported config valid; `/users/` and `/orders/` returned HTTP 200 with the documented bodies (verified via Python urllib because the sandbox blocked outbound `curl` to localhost).
 - **Rate limiting** → `passed`: 40 concurrent requests produced **22×200 and 18×503**, confirming
   `limit_req burst=20 nodelay` engages after the documented burst.
 - **FastAPI JWT middleware** → `passed`: invalid token → `401 {"detail":"invalid token"}` (not a 500,
   validating the code comment), missing header → 401, valid HS256 token → `200 {"user_id":"user-123"}`.
 - **Aggregation `asyncio.gather` + `httpx`** → `passed` *as a pattern only*: engine notes it "cannot be
-  run verbatim against Chapter 2's compose stack" (targets a `catalog` service never provisioned; http-echo
-  returns plain text, not JSON) and validated an equivalent against local JSON stubs instead.
+run verbatim against Chapter 2's compose stack" (targets a `catalog` service never provisioned; http-echo returns plain text, not JSON) and validated an equivalent against local JSON stubs instead.
 - Mermaid diagrams `reasoned` (mermaid-cli install timed out with no network) — syntax statically valid.
 
 ### 2. Event-Driven Design — 97 · ran 9/10 runnable snippets (9 passed, 0 failed, 2 skipped, 1 reasoned)
@@ -93,39 +69,31 @@ these commands myself.
 ### 3. Scaling Strategies — 86 · ran 5/6 runnable snippets (5 passed, 0 failed, 2 skipped, 2 reasoned)
 - **Redis** (`docker run … redis:7-alpine`) → `passed`. **Shard router** → `passed`: `shard_for(1024)` → `db-shard-0`.
 - **Kubernetes Deployment/Service** → `passed`: applied to a **real `kind` cluster**; Deployment scheduled
-  exactly **5 pods** (`replicas: 5`), Service created with the stated selector/port. Pods stayed Pending only
-  because `orders:latest` is a deliberate placeholder image — not a manifest defect.
+exactly **5 pods** (`replicas: 5`), Service created with the stated selector/port. Pods stayed Pending only because `orders:latest` is a deliberate placeholder image — not a manifest defect.
 - **Cache-aside snippet** → `passed` *when exercised with stub db functions* (MISS → HIT → invalidate → MISS).
-  Engine flags a `DeprecationWarning` on `cache.setex()` (redis-py 8.x prefers `set(..., ex=…)`), and that
-  `db_fetch_product`/`db_update_product` are **undefined** in the snippet — a literal `NameError` if run as-is.
+Engine flags a `DeprecationWarning` on `cache.setex()` (redis-py 8.x prefers `set(..., ex=…)`), and that `db_fetch_product`/`db_update_product` are **undefined** in the snippet — a literal `NameError` if run as-is.
 - `completeness` scored **3/5**: Auto-Scaling and Bottleneck Analysis objectives have no content/exercise.
 
 ### 4. Weaving the Whole (Ouroboros VII) — 86 · ran 11/1 recorded (11 passed, 0 failed, 1 skipped)
 - **Both YAML steps** parse cleanly; **both mermaid diagrams** render (mmdc, `--no-sandbox` needed in-container).
 - **Shell logic executed against synthetic data** → all `passed`: `awk` fail/pending detection flips exit codes
-  correctly; the **run-id exclusion** `grep -v "/${RUN_ID}/"` correctly handles the adversarial near-duplicate
-  id (`160055500001` vs `16005550000`) — answering the quest's own knowledge-check; the smuggle-guard
-  `grep -vE '^potions/'` passes content-only lists and flags a `.github/workflows/` path.
+correctly; the **run-id exclusion** `grep -v "/${RUN_ID}/"` correctly handles the adversarial near-duplicate id (`160055500001` vs `16005550000`) — answering the quest's own knowledge-check; the smuggle-guard `grep -vE '^potions/'` passes content-only lists and flags a `.github/workflows/` path.
 - **`gh` field claims verified**: `gh pr checks --json bucket,link` and `gh pr view --json files` are real
   fields; bucket enum is `pass|fail|pending|skipping|cancel` as the script assumes.
 - **The one end-to-end arm-and-run bash block** → `skipped` (correctly): `gh variable set` fails cold with
-  "set the GH_TOKEN environment variable" (exit 4); it presupposes a live authed repo with Chapters I–VI
-  deployed. Skipped, not failed — the right call. `safety` scored **4/5** (see Issues).
+"set the GH_TOKEN environment variable" (exit 4); it presupposes a live authed repo with Chapters I–VI deployed. Skipped, not failed — the right call. `safety` scored **4/5** (see Issues).
 
 ### 5. System Design Interviews — 96 · ran 7/6 recorded (7 passed, 0 failed, 2 skipped, 3 reasoned)
 - **Estimation script** → `passed`: printed `Writes: ~40/s | Reads: ~4000/s` and
   `Storage: ~50 GB/month, ~3 TB / 5yr` — matching every inline comment exactly.
 - **Short-code generators** → `passed`: `code_by_hash` deterministic (same URL → `8KPWE59` twice),
-  `code_by_counter` base62 correct (`0→'a'`, `61→'9'`, `62→'ba'`), and `62**7 = 3,521,614,606,208`
-  confirms the "≈3.5 trillion codes" claim.
+`code_by_counter` base62 correct (`0→'a'`, `61→'9'`, `62→'ba'`), and `62**7 = 3,521,614,606,208` confirms the "≈3.5 trillion codes" claim.
 - **Both mermaid diagrams** render; the cloud `echo` runs and `https://excalidraw.com` returned HTTP 200;
   all seven external resource links returned HTTP 200.
 
 ## 🐞 Issues Found
 
-No **blocking** issues — all five quests pass and every executed command behaved as documented.
-The items below are quality/completeness gaps, each tied to observed evidence. Severity mirrors the
-engine's own recommendation priorities where present.
+No **blocking** issues — all five quests pass and every executed command behaved as documented. The items below are quality/completeness gaps, each tied to observed evidence. Severity mirrors the engine's own recommendation priorities where present.
 
 | Sev | Quest | Where | Observed (evidence) | Suggested fix |
 |---|---|---|---|---|
@@ -149,57 +117,24 @@ engine's own recommendation priorities where present.
 I read all five sources in plan order and traced the dependency frontmatter as a learner would.
 
 - **This is window 2 of 2** (`offset 5`, `total_quests: 10`). The four *Architect's Citadel*
-  quests here all declare **required: `/quests/1110/microservices-architecture/`**, which is
-  **not in this window** — it (and likely Domain-Driven Design) sits in window 1. So the shared
-  prerequisite is satisfied by the earlier window, not by anything in this slice; a learner
-  arriving here has already built the microservices the gateway fronts and the events decouple.
-  This is coherent **provided the windows are walked in order** — worth the ledger tracking that.
+quests here all declare **required: `/quests/1110/microservices-architecture/`**, which is **not in this window** — it (and likely Domain-Driven Design) sits in window 1. So the shared prerequisite is satisfied by the earlier window, not by anything in this slice; a learner arriving here has already built the microservices the gateway fronts and the events decouple. This is coherent **provided the windows are walked in order** — worth the ledger tracking that.
 - **Internal ordering of the Citadel quests is sound.** `event-driven-design` is a *recommended*
-  predecessor of `scaling-strategies`, and it correctly precedes it in the window. `scaling-strategies`
-  is a *required* predecessor of `system-design-interviews`, and it correctly precedes it. The capstone
-  (System Design Interviews) rightly lands last and visibly reuses the earlier material — its worked
-  URL-shortener design pulls in the gateway/load-balancer (quest 1), the Redis cache and CAP/sharding
-  (quest 3), and even offers an event-stream when the interviewer adds an analytics constraint (quest 2).
-  The chain genuinely *builds*.
+predecessor of `scaling-strategies`, and it correctly precedes it in the window. `scaling-strategies` is a *required* predecessor of `system-design-interviews`, and it correctly precedes it. The capstone (System Design Interviews) rightly lands last and visibly reuses the earlier material — its worked URL-shortener design pulls in the gateway/load-balancer (quest 1), the Redis cache and CAP/sharding (quest 3), and even offers an event-stream when the interviewer adds an analytics constraint (quest 2). The chain genuinely *builds*.
 - **One quest is an outlier: `ouroboros-loop-07-weaving-the-whole` (quest 4).** It belongs to a
-  *different* `quest_series` ("The Autonomous Realm" / The Ouroboros Loop), its `required_quests` is
-  empty and it *recommends* `/quests/1101/ouroboros-loop-06-the-fixers-oath/` — i.e. its real
-  prerequisite chain is Chapters I–VI at levels leading to `1101`, **none of which are in this slice**.
-  Topically it is CI/CD auto-merge automation, not system design. A learner walking the window linearly
-  gets a jarring hand-off: `scaling-strategies` → (sudden GitHub-Actions self-merge capstone) →
-  `system-design-interviews`. This is a curriculum *placement* artifact (both narratives happen to
-  terminate at level 1110), not a defect in any single quest — but the two threads should probably be
-  presented as parallel tracks rather than one linear list.
+*different* `quest_series` ("The Autonomous Realm" / The Ouroboros Loop), its `required_quests` is empty and it *recommends* `/quests/1101/ouroboros-loop-06-the-fixers-oath/` — i.e. its real prerequisite chain is Chapters I–VI at levels leading to `1101`, **none of which are in this slice**. Topically it is CI/CD auto-merge automation, not system design. A learner walking the window linearly gets a jarring hand-off: `scaling-strategies` → (sudden GitHub-Actions self-merge capstone) → `system-design-interviews`. This is a curriculum *placement* artifact (both narratives happen to terminate at level 1110), not a defect in any single quest — but the two threads should probably be presented as parallel tracks rather than one linear list.
 - **Character-fit caveat (Security Specialist).** The slice is served to the *security-specialist*
-  path, but the content is generic backend/architecture/DevOps. Only *API Gateway Patterns* carries a
-  security-specialist angle (edge JWT auth, TLS termination — and even there TLS is thin, see Issues).
-  A security-specialist learner would find the material valuable-but-adjacent rather than on-class.
-  Not blocking, but the "character path" framing over-promises security specialization here.
+path, but the content is generic backend/architecture/DevOps. Only *API Gateway Patterns* carries a security-specialist angle (edge JWT auth, TLS termination — and even there TLS is thin, see Issues). A security-specialist learner would find the material valuable-but-adjacent rather than on-class. Not blocking, but the "character path" framing over-promises security specialization here.
 
 ## 🧠 Reasoning & Method
 
 - **Mode: `execute` (sealed).** I consumed the workflow-minted `walk-evidence.json` /
-  `walk-evidence.md` as-is and did **not** run the agentic engine myself (its child `claude`
-  processes cannot authenticate from my Bash tool). Every `passed`/`failed`/`skipped`/`reasoned`
-  in §Evidence is quoted from that sealed file — the engine ran those commands in a disposable
-  sandbox. I did not fabricate, re-derive, or edit any evidence, plan, or quest.
+`walk-evidence.md` as-is and did **not** run the agentic engine myself (its child `claude` processes cannot authenticate from my Bash tool). Every `passed`/`failed`/`skipped`/`reasoned` in §Evidence is quoted from that sealed file — the engine ran those commands in a disposable sandbox. I did not fabricate, re-derive, or edit any evidence, plan, or quest.
 - **What I contributed** is the *linked-journey* pass (skill step 3): I read all five quest
-  sources in plan order and reasoned about prerequisites, ordering, the out-of-series capstone,
-  and the character-fit. Every §Chain-Continuity and every `reasoned`-labelled issue cites a
-  quoted line or frontmatter field from the source; every `tested`-labelled issue cites the
-  engine's recorded command result.
+sources in plan order and reasoned about prerequisites, ordering, the out-of-series capstone, and the character-fit. Every §Chain-Continuity and every `reasoned`-labelled issue cites a quoted line or frontmatter field from the source; every `tested`-labelled issue cites the engine's recorded command result.
 - **Coverage / limits.** This window is **5 of 10** quests in the level (`windowed: true`,
-  `window 1 of 2`); the first five (incl. the shared `microservices-architecture` prerequisite)
-  were **not** walked in this session and are out of scope here. Within the sandbox, several
-  commands were legitimately **not run**: macOS/Windows platform paths (Linux sandbox), mermaid
-  renders where mermaid-cli install timed out with no network (marked `reasoned`), and the
-  Ouroboros arm-and-run block (needs a live authed repo — correctly `skipped`). `curl`-to-localhost
-  was blocked and substituted with Python urllib. None of these gaps changed a verdict.
+`window 1 of 2`); the first five (incl. the shared `microservices-architecture` prerequisite) were **not** walked in this session and are out of scope here. Within the sandbox, several commands were legitimately **not run**: macOS/Windows platform paths (Linux sandbox), mermaid renders where mermaid-cli install timed out with no network (marked `reasoned`), and the Ouroboros arm-and-run block (needs a live authed repo — correctly `skipped`). `curl`-to-localhost was blocked and substituted with Python urllib. None of these gaps changed a verdict.
 - **Confidence: high** on the runnable content (real broker/cluster/gateway executions, numbers
-  matching documented output), **high** on the completeness/scaffolding and chain observations
-  (directly readable in the sources). Overall verdict **pass** — five passing quests, average
-  93.0%, no blocking issues, with the Scaling Strategies scaffolding gap and the mixed-narrative
-  placement as the two things most worth a maintainer's attention.
+matching documented output), **high** on the completeness/scaffolding and chain observations (directly readable in the sources). Overall verdict **pass** — five passing quests, average 93.0%, no blocking issues, with the Scaling Strategies scaffolding gap and the mixed-narrative placement as the two things most worth a maintainer's attention.
 
 ---
 
