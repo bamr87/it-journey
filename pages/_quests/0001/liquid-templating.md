@@ -149,7 +149,7 @@ This **🟡 Medium** quest expects:
 
 ## 🌍 Choose Your Adventure Platform
 
-*Liquid lives inside your Jekyll site, so the only setup is a running site. Use `--livereload` so each edit shows instantly.*
+*Liquid lives inside your Jekyll site, so the only setup is a running site. Use `--livereload` so each edit shows instantly. The `my-castle` folder below is the site you scaffolded in [Jekyll Fundamentals](/quests/0001/jekyll-fundamentals/) - `cd` into that same directory, not a fresh one.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -267,13 +267,15 @@ A list of the five most recent posts, each with an optional "New" badge:
 
 ```liquid
 
+{% raw %}{% assign week_ago = site.time | date: "%s" | minus: 604800 %}{% endraw %}
 <ul class="post-list">
 {% raw %}{% for post in site.posts limit:5 %}{% endraw %}
+  {% raw %}{% assign post_ts = post.date | date: "%s" %}{% endraw %}
   <li>
     <a href="{% raw %}{{ post.url | relative_url }}{% endraw %}">{% raw %}{{ post.title }}{% endraw %}</a>
     {% raw %}{% if post.featured %}{% endraw %}
       <span class="badge">⭐ Featured</span>
-    {% raw %}{% elsif post.date > site.time | date: "%s" | minus: 604800 %}{% endraw %}
+    {% raw %}{% elsif post_ts > week_ago %}{% endraw %}
       <span class="badge">New</span>
     {% raw %}{% endif %}{% endraw %}
   </li>
@@ -281,6 +283,8 @@ A list of the five most recent posts, each with an optional "New" badge:
 </ul>
 
 ```
+
+Liquid can't chain filters after a comparison operator inside an `elsif` condition - precompute both sides with `assign` first, as shown, then compare the plain values.
 
 Useful loop helpers:
 
@@ -297,7 +301,25 @@ Useful loop helpers:
 
 ```
 
-`if` understands `and`, `or`, `==`, `!=`, `>`, `<`, `contains`. Use `unless` for the negative case and `case`/`when` for many branches.
+`if` understands `and`, `or`, `==`, `!=`, `>`, `<`, `contains`. Use `unless` for the negative case and `case`/`when` for many branches:
+
+```liquid
+
+{% raw %}{% assign tags = "liquid,jekyll,templating" | split: "," %}{% endraw %}
+{% raw %}{% if tags contains "jekyll" %}{% endraw %}
+  Tagged with Jekyll!
+{% raw %}{% endif %}{% endraw %}
+
+{% raw %}{% case page.difficulty %}{% endraw %}
+  {% raw %}{% when "Easy" %}{% endraw %}
+    <span class="badge">🟢 Easy</span>
+  {% raw %}{% when "Medium" %}{% endraw %}
+    <span class="badge">🟡 Medium</span>
+  {% raw %}{% else %}{% endraw %}
+    <span class="badge">🔴 Advanced</span>
+{% raw %}{% endcase %}{% endraw %}
+
+```
 
 ### 🔍 Knowledge Check: Logic
 - [ ] How do you limit a `for` loop to the first five items?
@@ -404,12 +426,14 @@ Pair this with **loop-edge helpers** to render clean separators. `forloop.first`
 
 ```liquid
 
-{% raw %}{% for tag in page.tags %}{% endraw %}
-  {% raw %}{% unless forloop.first %}{% endraw %}, {% raw %}{% endunless %}{% endraw %}{% raw %}{{ tag }}{% endraw %}
-{% raw %}{% endfor %}{% endraw %}
+{% raw %}{%- for tag in page.tags -%}{% endraw %}
+  {% raw %}{%- unless forloop.first -%}{% endraw %}, {% raw %}{%- endunless -%}{% endraw %}{% raw %}{{ tag }}{% endraw %}
+{% raw %}{%- endfor -%}{% endraw %}
 <!-- Output: liquid, jekyll, templating  (no leading comma) -->
 
 ```
+
+The dashes on every `for`/`unless`/`endfor` tag matter here - without them, each tag leaves behind whitespace and newlines, breaking the clean single-line output this chapter is teaching.
 
 ### 🔍 Knowledge Check: Restraint
 - [ ] How do you leave a note in a template that never reaches the output?
