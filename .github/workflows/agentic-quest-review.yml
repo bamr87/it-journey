@@ -38,14 +38,30 @@ on:
         default: '0'
   pull_request:
     types: [opened, synchronize, reopened, labeled]
+    # NOT the `gh-pages` deploy PR: sync-gh-pages.yml opens a main -> gh-pages PR
+    # twice daily, and gh-pages has diverged from main (68 commits), so the merge
+    # ref GitHub builds for it never resolves — every pull_request workflow in the
+    # repo dies at startup, before a single job is created.
+    branches-ignore:
+      - gh-pages
     paths:
       - 'pages/_quests/**/*.md'
 
 permissions:
   contents: read
 
+# A `labeled` event for any label other than `agentic-review` produces a run whose
+# only job is skipped by the `if:` below — but concurrency is evaluated BEFORE the
+# job `if:`, so in a shared group that no-op run CANCELS the real review already in
+# flight. Every automated PR gets three labels applied right after `opened`, which
+# is exactly how PR #648 and #657 turned one review into six runs, none of which
+# survived. Give the no-op label runs their own group so they can cancel nothing;
+# everything that actually reviews still shares one group and still supersedes.
 concurrency:
-  group: agentic-quest-review-${{ github.ref }}
+  group: >-
+    agentic-quest-review-${{ github.ref }}-${{
+    (github.event.action == 'labeled' && github.event.label.name != 'agentic-review')
+    && github.run_id || 'review' }}
   cancel-in-progress: true
 
 jobs:
