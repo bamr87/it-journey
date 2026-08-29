@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
-  "generated": "2026-08-28T15:23:07+00:00",
+  "generated": "2026-08-29T11:32:55+00:00",
   "totals": {
     "slices": 27,
     "perfect": 0,
     "stuck": 3,
-    "open_issues": 416
+    "open_issues": 438
   },
   "slices": {
     "developer/0000": {
@@ -546,25 +546,25 @@
       "tier": "Apprentice",
       "mode": "execute",
       "verdict": "fail",
-      "average": 56.6,
+      "average": 56.3,
       "total": 5,
-      "scored": 5,
+      "scored": 9,
       "requested": 26,
       "total_quests": 26,
-      "covered": 5,
-      "errored": 0,
+      "covered": 9,
+      "errored": 1,
       "truncated": false,
       "counts": {
         "pass": 1,
-        "warn": 2,
-        "fail": 2
+        "warn": 3,
+        "fail": 5
       },
-      "open_issues": 24,
-      "high_priority_issues": 9,
+      "open_issues": 46,
+      "high_priority_issues": 16,
       "executed": true,
       "perfect": false,
       "perfect_since": null,
-      "reason": "covered 5/26; 2 fail; 2 warn; avg 56.6 < 95.0; 24 open issue(s); 9 high-priority",
+      "reason": "covered 9/26; 5 fail; 3 warn; avg 56.3 < 95.0; 46 open issue(s); 16 high-priority",
       "coverage": {
         "pages/_quests/0001/github-pages-portal.md": {
           "verdict": "warn",
@@ -610,6 +610,42 @@
           "mode": "execute",
           "executed": true,
           "date": "2026-08-28"
+        },
+        "pages/_quests/0001/stating-the-stats.md": {
+          "verdict": "fail",
+          "average": 44.0,
+          "open_issues": 6,
+          "high": 3,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-08-29"
+        },
+        "pages/_quests/0001/terminal-mastery.md": {
+          "verdict": "fail",
+          "average": 46.0,
+          "open_issues": 8,
+          "high": 3,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-08-29"
+        },
+        "pages/_quests/0001/side-quest-avatar-forge.md": {
+          "verdict": "warn",
+          "average": 79.0,
+          "open_issues": 4,
+          "high": 0,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-08-29"
+        },
+        "pages/_quests/0001/side-quest-badge-collector.md": {
+          "verdict": "fail",
+          "average": 55.0,
+          "open_issues": 4,
+          "high": 1,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-08-29"
         }
       },
       "fix_rounds": 0,
@@ -617,22 +653,11 @@
       "stuck_reason": null,
       "needs_human": false,
       "last_fixed": null,
-      "last_run": "2026-08-28T15:23:07+00:00",
-      "last_run_date": "2026-08-28",
-      "runs": 12,
-      "run_url": "https://github.com/bamr87/it-journey/actions/runs/33183081731",
+      "last_run": "2026-08-29T11:32:55+00:00",
+      "last_run_date": "2026-08-29",
+      "runs": 13,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/33249447521",
       "history": [
-        {
-          "event": "walk",
-          "at": "2026-07-17T14:18:49+00:00",
-          "date": "2026-07-17",
-          "mode": "execute",
-          "verdict": "fail",
-          "average": 51.6,
-          "open_issues": 28,
-          "perfect": false,
-          "run_url": "https://github.com/bamr87/it-journey/actions/runs/29577137232"
-        },
         {
           "event": "walk",
           "at": "2026-07-18T13:51:44+00:00",
@@ -731,6 +756,17 @@
           "open_issues": 24,
           "perfect": false,
           "run_url": "https://github.com/bamr87/it-journey/actions/runs/33183081731"
+        },
+        {
+          "event": "walk",
+          "at": "2026-08-29T11:32:55+00:00",
+          "date": "2026-08-29",
+          "mode": "execute",
+          "verdict": "fail",
+          "average": 56.0,
+          "open_issues": 22,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/33249447521"
         }
       ]
     },
