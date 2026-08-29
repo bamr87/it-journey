@@ -62,6 +62,8 @@ cannot run commands safely), fall back to `--mode review` and **say so** in the 
 
 The execute engine scores each quest **in isolation**. Your unique contribution is to reason about the chain *as one journey a real learner would take*:
 
+- **Put on the character sheet first** — `Read`
+`.claude/skills/quest-character-<character.key>/SKILL.md` (the key is in `walk-plan.json`). It defines who you are role-playing (persona), the per-level exercise checkpoints to verify for this path, the character-specific friction lens, and the voice for your report's narration (its two-layer voice rule: character dialect colors the *report*, never the quest content you judge). If the file is missing, say so in §7 and walk with the generic lens below.
 - **Read each quest's source** (`Read` the `path`) in plan order, carrying the prior
   quests' state in mind — the way a learner who just finished quest N approaches N+1.
 - **Continuity** — does quest N actually leave the learner ready for N+1? Are the
@@ -92,7 +94,7 @@ outcome (`passed`/`failed`/`skipped`/`reasoned`), and the snippet coverage (`ran
 5. **## 🐞 Issues Found** — every concrete problem, each as: **severity**
 (high/medium/low) · **quest** · **where** (section/command/line) · **what you observed** · **suggested fix**. Group nothing you can't evidence. Empty is a valid, celebrated result — say "no blocking issues" explicitly.
 6. **## 🔗 Chain Continuity** — your linked-journey findings from step 3: does the
-slice hold together as a learning path for this character, prerequisite gaps, and ordering observations.
+slice hold together as a learning path for this character (judged against the character sheet's per-level exercise checkpoints), prerequisite gaps, and ordering observations.
 7. **## 🧠 Reasoning & Method** — what you ran vs. reasoned about, the sandbox/mode,
 limits of this pass (e.g. network-restricted, timed out, review-only), and your confidence. Honesty about coverage is mandatory.
 
