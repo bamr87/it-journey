@@ -255,13 +255,14 @@ Create a Ruby script to analyze your Jekyll site and generate statistics:
 
 require 'yaml'
 require 'date'
+require 'time'
 
 # This script generates comprehensive site statistics
 # Run during Jekyll build or manually: ruby scripts/generation/generate_statistics.rb
 
 class StatisticsGenerator
   def initialize
-    @site_root = File.expand_path('../..', __FILE__)
+    @site_root = File.expand_path('../../..', __FILE__)
     @posts_dir = File.join(@site_root, 'pages/_posts')
     @output_file = File.join(@site_root, '_data/content_statistics.yml')
   end
@@ -326,7 +327,7 @@ class StatisticsGenerator
     # Simple frontmatter parser
     if content =~ /^---\s*\n(.*?)\n---\s*\n(.*)$/m
       begin
-        frontmatter = YAML.safe_load($1)
+        frontmatter = YAML.safe_load($1, permitted_classes: [Date, Time])
         body = $2
         [frontmatter, body]
       rescue => e
@@ -536,7 +537,7 @@ permalink: /stats/
         <div class="card-body text-center">
           <i class="bi bi-fonts display-4 text-success"></i>
           <h2 class="card-title mt-3 mb-0">
-            {% raw %}{{ site.data.content_statistics.total_words | number_with_delimiter }}{% endraw %}
+            {% raw %}{{ site.data.content_statistics.total_words }}{% endraw %}
           </h2>
           <p class="card-text text-muted">Total Words</p>
         </div>
@@ -1034,6 +1035,7 @@ Shows 0 posts but I have posts
 - Verify posts are in `pages/_posts/` directory
 - Check frontmatter is valid YAML
 - Ensure posts have proper date format
+- If every post is skipped, confirm `parse_post` calls `YAML.safe_load($1, permitted_classes: [Date, Time])` — without `permitted_classes` it raises `Psych::DisallowedClass` on the standard unquoted `date:` field and silently skips every post
 - Run script with debugging: `ruby -d scripts/generation/generate_statistics.rb`
 
 **Issue: Page styling broken**

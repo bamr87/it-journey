@@ -5,6 +5,7 @@
         serve build build-prod build-ci clean \
         quest-validate quest-network quest-network-strict quest-build-network \
         quest-audit quest-audit-strict quest-audit-report quest-levels-data quest-nav quest-data quest-normalize \
+        quest-skills quest-skills-check \
         docker-validate docker-validate-strict docker-build-ci docker-audit-tier2 \
         quest-execute quest-execute-host \
         quest-walkthrough quest-walkthrough-plan quest-walkthrough-plan-selftest quest-walkthrough-screenshots \
@@ -52,6 +53,8 @@ help:
 	@echo "  make quest-audit            - Unified audit: content + network + data freshness (one report)"
 	@echo "  make quest-audit-strict     - Unified audit with warnings escalated to failures"
 	@echo "  make quest-audit-report     - Unified audit + JSON report (quest-audit-report.json)"
+	@echo "  make quest-skills           - Regenerate the character-skill roadmap blocks (.claude/skills/quest-character-*)"
+	@echo "  make quest-skills-check     - Verify character skills match paths.yml + the registry"
 	@echo ""
 	@echo "🐳 Dockerized Validation (CI-parity, no host Ruby/Python)"
 	@echo "  make docker-validate        - Run the unified quest audit in Docker (python:3.12-slim)"
@@ -236,6 +239,16 @@ quest-normalize:
 
 quest-data: quest-levels-data quest-nav quest-build-network
 	@echo "✅ All registry-derived quest data regenerated (levels, tiers, order, navigation, network)."
+
+# Per-character quest skills (.claude/skills/quest-character-*/SKILL.md):
+# regenerate the paths.yml/registry-derived roadmap blocks, or check for drift.
+# Deliberately NOT part of quest-data: the fix lane runs quest-data and must
+# never write .claude/** (M4 keeps fix PRs content-only).
+quest-skills:
+	@python3 scripts/quest/character_skills.py --write
+
+quest-skills-check:
+	@python3 scripts/quest/character_skills.py --check
 
 quest-audit:
 	@echo "🎯 Unified quest audit (content + network + data freshness)..."

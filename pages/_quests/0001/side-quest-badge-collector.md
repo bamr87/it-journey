@@ -121,11 +121,23 @@ Badges include an `earned_on` date that's preserved across regeneration — your
 
 ### Step 1: Check Your Current Badges
 
-Run the stats generator (or check your data file after it's been auto-updated):
+`_data/contributors/YOUR_USERNAME.yml` is created by the **[Forge Your Character](/quests/0001/forge-your-character/)** prerequisite quest and kept up to date by the stats generator — you don't create it here; run the generator (or check your data file after it's been auto-updated):
 
 ```bash
 make contributor-stats USERNAME=YOUR_USERNAME
 cat _data/contributors/YOUR_USERNAME.yml
+```
+
+(`YOUR_USERNAME` is your GitHub handle, e.g. `octocat`.)
+
+Your file should already contain an `achievements` array like this — that's your ground truth for what you've earned so far:
+
+```yaml
+achievements:
+  - id: first_blood
+    earned_on: '2026-01-05'
+  - id: quest_forger
+    earned_on: '2026-02-14'
 ```
 
 Look at the `achievements` section to see what badges you've earned.

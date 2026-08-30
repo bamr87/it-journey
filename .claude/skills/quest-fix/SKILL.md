@@ -64,6 +64,8 @@ Anything outside these two kinds, anything on a `pass` quest, anything you canno
 
 ## 3. Apply the SMALLEST content fix that addresses the issue
 
+Before the first edit, `Read` the slice's character sheet — `.claude/skills/quest-character-<character.key>/SKILL.md`, key from `walk-plan.json`. Its **fix lens** ranks which repairs serve this path's learner and lists what each level's exercises must preserve; its **two-layer voice rule** forbids injecting character flavor into shared quest prose (quest voice stays the `quest-fantasy` brand profile). The sheet informs *edit choice only* — it never adds writable surface, never overrides an M-rule, and a missing sheet just means proceeding with the generic rules here.
+
 For each queued issue, make the **smallest faithful edit** to the quest the evidence names that addresses the witnessed defect — a broken command, a missing prerequisite step, an unrunnable example, an unmet frontmatter requirement, a dead link the engine hit. Fix the **actual defect the learner would hit**, not the symptom and not the score.
 
 - **Never weaken the quest to move a number.** You do NOT delete steps, learning
