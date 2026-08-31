@@ -5,7 +5,7 @@ description: 'Learn a repeatable system design interview framework - clarify req
 excerpt: A repeatable framework for system design interviews - requirements, estimation, design, and trade-off articulation
 preview: images/previews/system-design-interviews-whiteboard-framework.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2026-06-14T00:00:00.000Z'
+lastmod: '2026-08-31T00:00:00.000Z'
 level: '1110'
 difficulty: ⚔️ Epic
 estimated_time: 5-6 hours
@@ -431,6 +431,7 @@ For every decision, say the alternative and its cost: SQL vs. NoSQL (consistency
 ### Community Resources
 - [System Design Interview, Vol. 1 & 2 (Alex Xu)](https://www.amazon.com/System-Design-Interview-insiders-Second/dp/B08CMF2CQF) - The standard prep books
 - [Grokking the System Design Interview](https://www.designgurus.io/course/grokking-the-system-design-interview) - Structured practice problems
+- [FrontendAtlas: Frontend System Design Practice](https://frontendatlas.com/system-design) - Frontend-focused interview prompts, trade-offs, and guided answer practice
 - [ByteByteGo](https://bytebytego.com/) - Alex Xu's diagrams and newsletter
 
 ### Learning Materials
