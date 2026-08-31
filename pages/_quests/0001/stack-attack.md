@@ -815,7 +815,9 @@ pip install \
   psycopg[binary]==3.2.* \
   django-storages[s3]==1.14.* \
   sentry-sdk[django]==2.* \
-  django-health-check==3.18.*
+  django-health-check==3.18.* \
+  python-decouple==3.8.* \
+  django-celery-beat==2.7.*
 
 # Freeze dependencies
 pip freeze > requirements.txt
@@ -897,6 +899,7 @@ THIRD_PARTY_APPS = [
     "health_check.db",
     "health_check.cache",
     "health_check.contrib.celery_ping",
+    "django_celery_beat",
 ]
 
 LOCAL_APPS = [
@@ -931,7 +934,11 @@ REST_FRAMEWORK = {
         "rest_framework.filters.SearchFilter",
         "rest_framework.filters.OrderingFilter",
     ],
-    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.CursorPagination",
+    # PageNumberPagination — matches the numeric `page`/`page_size` params and
+    # the `count`-based pageCount math the SalesOrdersPage.tsx example below
+    # uses. (CursorPagination uses opaque tokens instead and does not support
+    # jumping to an arbitrary page, so it would break that frontend code.)
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 50,
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
@@ -1133,10 +1140,19 @@ npm install -D \
 # Initialize Tailwind CSS
 npx tailwindcss init -p
 
+# shadcn/ui needs a "@/*" path alias before it will initialize — add it to
+# tsconfig.json ("compilerOptions.paths": { "@/*": ["./src/*"] }, plus
+# "baseUrl": ".") and to vite.config.ts (resolve.alias["@"] = path.resolve(
+# __dirname, "./src")). Skipping this step is why `shadcn init` fails with
+# "Could not find valid path aliases".
+
 # Initialize shadcn/ui
-# The CLI may prompt "Select a component library" (Base UI / React Aria /
-# Radix UI) before it reaches the --yes-covered prompts — this quest's
-# generated components assume Radix UI, so answer that prompt with Radix UI.
+# The current CLI first prompts for a "preset" (Nova/Vega/Maia/Lyra/Mira/
+# Luma/Sera/Rhea) that this quest does not otherwise use — pick any preset
+# (e.g. `--preset nova` for a non-interactive run), then it may also prompt
+# "Select a component library" (Base UI / React Aria / Radix UI) before it
+# reaches the --yes-covered prompts — this quest's generated components
+# assume Radix UI, so answer that prompt with Radix UI.
 npx shadcn@latest init
 
 # Add core shadcn/ui components used in ERP
@@ -1146,7 +1162,12 @@ npx shadcn@latest add dropdown-menu navigation-menu sidebar
 npx shadcn@latest add data-table skeleton toast
 
 # Install API client generator
-npm install -D openapi-typescript orval
+# The Vite react-ts template now ships TypeScript 6.x, but openapi-typescript
+# currently peer-requires TypeScript ^5.x — plain `npm install` fails with an
+# ERESOLVE conflict. Install with --legacy-peer-deps and expect npm to report
+# a handful of vulnerabilities in the resulting tree (review `npm audit`
+# before shipping this to production).
+npm install -D openapi-typescript orval --legacy-peer-deps
 ```
 
 ### 🏗️ Auto-Generating the API Client
@@ -1423,6 +1444,8 @@ Requirements:
 ```
 
 **Sample Agent Output — `docker-compose.yml`:**
+
+> ⚠️ **Before you run `docker compose up -d`:** the `django`, `celery-worker`, and `celery-beat` services below build from `erp-backend/Dockerfile.dev`, and the `prometheus`/`grafana` services bind-mount `docker/prometheus/prometheus.yml` and `docker/grafana/provisioning/`. None of these three files are provided by this quest — they are left as an exercise. Ask your `/stackattack` agent to generate a minimal `Dockerfile.dev` (Python 3.12 base image, `pip install -r requirements.txt`, `CMD` matching the service's command) and a starter `prometheus.yml` (`scrape_configs` targeting `django:8000` and `redis-exporter`) before Challenge 4, or Compose will fail with a "mount a directory onto a file" / build-context error.
 
 ```yaml
 # docker-compose.yml
