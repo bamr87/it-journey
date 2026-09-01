@@ -14,12 +14,21 @@
 # the fast objective gate.
 #
 # Runs on `pull_request` (safe, read-only) so it also covers fork PRs.
+#
+# NOT on the `gh-pages` deploy PR: `sync-gh-pages.yml` opens a main -> gh-pages
+# PR twice daily, and `gh-pages` has diverged from `main` (68 commits), so the
+# merge ref GitHub builds for that PR never resolves — every `pull_request`
+# workflow in the repo dies at startup, before a single job is created. That is
+# a property of the deploy PR, not of this gate (feature-branch runs are green),
+# so filter the base branch rather than papering over the red.
 # =============================================================================
 name: ✒️ Content Quality (brand gate)
 
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+    branches-ignore:
+      - gh-pages
     paths:
       - 'pages/**/*.md'
       - 'pages/**/*.markdown'

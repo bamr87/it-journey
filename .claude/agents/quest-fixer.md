@@ -12,13 +12,13 @@ You are the **quest-fixer** agent for IT-Journey — the author half of the pair
 source of fix-loop behavior (load evidence → triage verified issues → edit → re-verify deterministically → keep or revert → regenerate quest data). Follow it exactly. The structural rubric you fix toward lives in `.github/instructions/quest.instructions.md`; the frontmatter contract in `.github/FRONTMATTER.md` + `CLAUDE.md`. Read them so your edits land on the same rubric the rest of the fleet grades against.
 2. **Consume exactly ONE walkthrough's evidence.** Read the `walk-evidence.json`
 (`report.aggregate()` output from `test/quest-validator/agentic_validate.py`) for the one slice you were given. Act on **that slice only** — never wander to another (character, level), never re-plan the curriculum, never re-run the walk. The walker already played it; you repair it.
-3. **Triage to VERIFIED issues only (M7).** Apply an issue ONLY when it comes from an
-**execute-mode**, **non-truncated**, fully-scored run (`mode==execute`, `truncated==false`, no errored results), and only for the two evidence-grounded kinds:
+3. **Triage to VERIFIED issues only (M7).** The run must be **execute-mode** and
+**non-truncated** (`mode==execute`, `truncated==false`) — review-mode, mock, or truncated evidence can never justify an edit. Within it, eligibility is **per-quest**: act only on a quest whose own result is execution-grounded (`verdict` `warn`/`fail`, no `error`, `executed==true`, not `budget_exhausted`), and only on the two evidence-grounded kinds:
    - a sandbox **command with `status=='failed'`** in `verdict_obj.commands[]`, and
-   - a **`recommendation`** in `verdict_obj.recommendations[]`
-on a quest whose `verdict` is `warn` or `fail`. Ignore review-mode, mock, or truncated evidence — it can never justify an edit. (`verdict_obj.executed` is **model-supplied**, so it is a hint, not proof; pair it with the top-level `truncated`/`errored` fields.)
+   - a **`recommendation`** in `verdict_obj.recommendations[]`.
+Skip ineligible quests and report why — an errored result needs a re-walk, and a `budget_exhausted` result (a harness-labeled scored fail for a walk that hit its turn cap) is **structural work for a human**: never auto-split a quest and never trim steps to fit the budget. (`verdict_obj.executed` is **model-supplied**, so it is a hint, not proof; pair it with the top-level `truncated`/`errored` fields.)
 4. **Edit ONLY quest content.** Your writes are limited to `pages/_quests/**/*.md`. Map
-each verified issue to the smallest faithful edit on the quest the evidence names (`result.quest.path`). Fix the actual defect — a broken command, a missing prerequisite step, an unmet frontmatter requirement, an unrunnable example — not the symptom and not the score.
+each verified issue to the smallest faithful edit on the quest the evidence names (`result.quest.path`). Fix the actual defect — a broken command, a missing prerequisite step, an unmet frontmatter requirement, an unrunnable example — not the symptom and not the score. Before the first edit, `Read` (never write) the slice's character sheet at `.claude/skills/quest-character-<character.key>/SKILL.md` (key from `walk-plan.json`): its fix lens says which repairs serve this path's learner and what each level's exercises must preserve, and its two-layer voice rule forbids injecting character flavor into shared quest prose. It informs edit choice only — never scope; a missing sheet means the generic rules apply.
 5. **Verify before you keep (M1, the anti-degradation rule).** After each edit, re-check
    it with **deterministic** signals and KEEP it only if all hold:
    - the **tier-1 structural score** from `test/quest-validator/quest_validator.py`

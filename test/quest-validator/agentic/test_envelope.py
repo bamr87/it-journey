@@ -62,6 +62,9 @@ class _StubQuest:
         return {"path": f"{self.slug}.md", "title": self.title, "level": self.level,
                 "theme": "", "difficulty": "", "quest_type": "main_quest", "slug": self.slug}
 
+    def objectives(self):
+        return []
+
 
 def test_parse_envelope():
     print("\n_parse_envelope — stdout shapes the CLI can emit:")
@@ -333,6 +336,72 @@ def test_preflight():
         runner.time.sleep = orig_sleep
 
 
+def test_turn_budget_and_exhaustion():
+    print("\nturn budgets — adaptive sizing + budget-exhausted becomes a SCORED fail:")
+    import types
+    from agentic import prompts
+
+    # --- adaptive sizing (deterministic from the runnable-snippet count) -----
+    fake_lib = types.SimpleNamespace(
+        snippet_summary=lambda body: {"total": 99, "runnable": int((body or "0").split(":")[-1])})
+    orig_lib = runner.quest_lib
+    runner.quest_lib = fake_lib
+    try:
+        r = AgenticRunner(mode="execute", max_turns=40, adaptive_turns=True)
+        check("adaptive: tiny quest floors at 16",
+              r._turn_budget(_StubQuest("t", "runnable:0")) == 16)
+        check("adaptive: mid quest = 14 + 3×runnable",
+              r._turn_budget(_StubQuest("t", "runnable:5")) == 29)
+        check("adaptive: heavy quest caps at max_turns",
+              r._turn_budget(_StubQuest("t", "runnable:50")) == 40)
+        fixed = AgenticRunner(mode="execute", max_turns=40)
+        check("fixed mode ignores snippet count",
+              fixed._turn_budget(_StubQuest("t", "runnable:1")) == 40)
+        uncapped = AgenticRunner(mode="execute", max_turns=0, adaptive_turns=True)
+        check("no cap → no flag (0)", uncapped._turn_budget(_StubQuest("t", "runnable:5")) == 0)
+    finally:
+        runner.quest_lib = orig_lib
+
+    # --- the budget number reaches the agent's prompt (execute mode only) ----
+    q = _StubQuest("paced", "```bash\necho hi\n```")
+    up = prompts.build_user_prompt(q, mode="execute", turn_budget=29)
+    check("execute prompt states the turn budget", "at most 29 tool turns" in up)
+    check("review prompt carries no budget block",
+          "tool turns" not in prompts.build_user_prompt(q, mode="review", turn_budget=29))
+
+    # --- error_max_turns → scored fail, not an errored void ------------------
+    orig_run = runner.subprocess.run
+    runner.subprocess.run = lambda *_a, **_k: _FakeProc(
+        returncode=0,
+        stdout=json.dumps({"is_error": True, "subtype": "error_max_turns",
+                           "result": "Reached maximum number of turns",
+                           "num_turns": 40, "total_cost_usd": 0.1}))
+    try:
+        r = AgenticRunner(mode="execute", max_turns=40)
+        r.available = lambda: True
+        import tempfile as _tf, shutil as _sh
+        sandbox = Path(_tf.mkdtemp(prefix="budget-test-"))
+        try:
+            res = r._invoke(_StubQuest("heavy", "x" * 100), ["claude", "-p", "x"], sandbox)
+        finally:
+            _sh.rmtree(sandbox, ignore_errors=True)
+        check("budget-exhausted result carries no error key", "error" not in res)
+        check("…is flagged budget_exhausted", res.get("budget_exhausted") is True)
+        check("…scores 0.0 with verdict fail",
+              res.get("overall") == 0.0 and res.get("verdict") == schema.VERDICT_FAIL)
+        check("…is clearly harness-labeled",
+              "[harness]" in (res.get("verdict_obj") or {}).get("summary", ""))
+        recs = (res.get("verdict_obj") or {}).get("recommendations") or []
+        check("…carries the split-the-quest recommendation",
+              len(recs) == 1 and recs[0].get("priority") == "high")
+        from agentic import report as _report
+        agg = _report.aggregate([res])
+        check("…counts as SCORED in the aggregate (ledger coverage completes)",
+              agg["scored"] == 1 and agg["errored"] == 0)
+    finally:
+        runner.subprocess.run = orig_run
+
+
 def main():
     print("=" * 64)
     print("AGENTIC ENVELOPE CONTRACT TEST (offline, no claude, no cost)")
@@ -345,6 +414,7 @@ def main():
     test_mock_determinism()
     test_retry_policy()
     test_preflight()
+    test_turn_budget_and_exhaustion()
     print("\n" + "=" * 64)
     if _failures:
         print(f"❌ {len(_failures)} contract check(s) FAILED: {_failures}")

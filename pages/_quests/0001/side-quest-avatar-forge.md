@@ -97,7 +97,7 @@ Options for sourcing an avatar:
 
 ### Step 2: Update Your Data File
 
-Edit `_data/contributors/YOUR_USERNAME.yml`:
+Edit `_data/contributors/YOUR_USERNAME.yml` — add or update only the `avatar:` key inside the existing `profile:` block, so you don't overwrite any other profile fields already there:
 
 ```yaml
 profile:
@@ -117,7 +117,8 @@ If adding the image to the repo:
 
 ```bash
 mkdir -p assets/images/contributors
-cp /path/to/your/avatar.png assets/images/contributors/YOUR_USERNAME.png
+cp <PATH_TO_YOUR_AVATAR> assets/images/contributors/YOUR_USERNAME.png
+# Replace <PATH_TO_YOUR_AVATAR> with the real path to your image file, e.g. ~/Downloads/avatar.png
 ```
 
 ### Step 4: Verify

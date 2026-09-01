@@ -113,13 +113,32 @@ def _snippet_block(quest, mode: str) -> str:
     )
 
 
-def build_user_prompt(quest, quest_file_name: str = "QUEST.md", mode: str = "review") -> str:
+def _budget_block(turn_budget: int, mode: str) -> str:
+    """Tell the agent its ACTUAL turn allowance so it paces itself and lands the
+    verdict inside the budget. Without this the --max-turns governor was invisible
+    from inside the session: the agent worked open-endedly, hit the cap mid-quest,
+    and the run ended verdict-less (an errored result instead of an honest partial
+    one). An informed agent skips the tail snippets and still reports."""
+    if not turn_budget or turn_budget <= 0 or mode != "execute":
+        return ""
+    return (
+        f"\nTurn budget: you have at most {turn_budget} tool turns for this whole session. "
+        f"Pace yourself: prefer batching related snippets into one Bash call, and RESERVE "
+        f"your final turns to emit the JSON verdict. If the budget is running out before "
+        f"every snippet is run, STOP executing, mark the remaining snippets `skipped` with "
+        f"detail 'turn budget exhausted', and emit the verdict anyway — an honest partial "
+        f"verdict beats being cut off with none.\n"
+    )
+
+
+def build_user_prompt(quest, quest_file_name: str = "QUEST.md", mode: str = "review",
+                      turn_budget: int = 0) -> str:
     meta = quest.to_meta()
     objectives = quest.objectives()
     obj_block = ""
     if objectives:
         obj_block = "\nStated objectives:\n" + "\n".join(f"  - {o}" for o in objectives)
-    snippet_block = _snippet_block(quest, mode)
+    snippet_block = _snippet_block(quest, mode) + _budget_block(turn_budget, mode)
     if mode == "execute":
         steps = (
             f"1. Read ./{quest_file_name} in full.\n"

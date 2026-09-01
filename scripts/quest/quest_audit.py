@@ -229,6 +229,40 @@ def run_freshness(gate: bool) -> Section:
     return sec
 
 
+# ── layer 3b: character skills (advisory by default) ─────────────────────────
+
+def run_character_skills(gate: bool) -> Section:
+    """Check .claude/skills/quest-character-*/SKILL.md against paths.yml + the
+    registry via character_skills.collect_problems().
+
+    Advisory by default: the PR triggers that run this audit don't watch
+    paths.yml, so a gating check could red a content PR that never touched the
+    character paths. Drift still surfaces on every audit run and heals with
+    `make quest-skills` (or authoring the missing skill).
+    """
+    sec = Section("skills", gating=gate)
+    try:
+        import character_skills  # noqa: E402  (scripts/quest/character_skills.py)
+        problems = character_skills.collect_problems()
+        count = len(character_skills.load_paths())
+    except Exception as e:  # pragma: no cover - never break the audit itself
+        sec.status = "warn" if not gate else "fail"
+        (sec.warnings if not gate else sec.errors).append(
+            f"character-skills check unavailable: {e}")
+        sec.summary = "character-skills check could not run"
+        return sec
+    if problems:
+        sec.status = "fail" if gate else "warn"
+        for pr in problems:
+            (sec.errors if gate else sec.warnings).append(pr)
+        sec.summary = (f"{len(problems)} character-skill problem(s) — "
+                       f"`make quest-skills` / author the missing skill")
+    else:
+        sec.summary = f"{count} character skills in sync with paths.yml + registry"
+    sec.detail = {"problems": problems}
+    return sec
+
+
 # ── layer 4: tier 2 (Claude, optional + advisory) ────────────────────────────
 
 def run_tier2(mode: str, changed: Optional[List[Path]], sample: int,
@@ -377,6 +411,10 @@ def main() -> int:
     p.add_argument("--no-freshness", action="store_true", help="Skip data-freshness check.")
     p.add_argument("--freshness-warn", action="store_true",
                    help="Report stale generated data as a warning, not a failure.")
+    p.add_argument("--no-skills", action="store_true",
+                   help="Skip the character-skills consistency check.")
+    p.add_argument("--skills-gate", action="store_true",
+                   help="Make character-skill drift gating (default: advisory warning).")
     p.add_argument("--tier2", choices=["off", "review", "execute"], default="off",
                    help="Run Claude Code review (default off). review = read-only; execute = sandboxed.")
     p.add_argument("--tier2-sample", type=int, default=3, help="Quests to sample for tier2 (default 3).")
@@ -408,6 +446,13 @@ def main() -> int:
             sections.append(sec)
         else:
             sections.append(run_freshness(gate=not args.freshness_warn))
+    if not args.no_skills:
+        if changed:
+            sections.append(Section(
+                "skills", gating=False, status="skip",
+                summary="skipped in --changed mode (owned by the full audit)"))
+        else:
+            sections.append(run_character_skills(gate=args.skills_gate))
 
     if args.tier2 != "off":
         sections.append(run_tier2(

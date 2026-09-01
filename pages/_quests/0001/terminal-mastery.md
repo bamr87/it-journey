@@ -333,10 +333,12 @@ cd ../Documents            # Go up one level, then into Documents
 ```bash
 # Create directories for organized learning
 mkdir terminal-practice
-mkdir -p projects/web-dev/my-first-site    # -p creates parent directories too
 
 # Navigate into your new workspace
 cd terminal-practice
+
+# Create your projects tree inside the workspace (later chapters copy/search this)
+mkdir -p projects/web-dev/my-first-site    # -p creates parent directories too
 
 # Create multiple directories at once
 mkdir docs scripts tests
@@ -395,6 +397,9 @@ EOF
 **Step 2: Copying and Moving with Precision**
 
 ```bash
+# Set up the targets these examples copy/move into
+mkdir -p backups styles backup && touch important-file.txt
+
 # Copy files (cp command)
 cp quest-log.md quest-backup.md          # Copy single file
 cp *.js scripts/                         # Copy all JavaScript files to scripts folder
@@ -412,6 +417,9 @@ cp -i important-file.txt backup/         # -i prompts before overwriting
 **Step 3: Strategic File Removal**
 
 ```bash
+# Set up sample files these examples remove/move
+mkdir -p ~/.trash && touch temp-file.txt session.tmp unwanted-file.txt
+
 # Remove files (DANGER ZONE - be careful!)
 rm temp-file.txt                         # Remove single file
 rm -i *.tmp                              # Remove with confirmation (-i)
@@ -419,7 +427,7 @@ rm -rf old-project/                      # Remove directory and contents (-rf)
 
 # Safer alternatives
 mv unwanted-file.txt ~/.trash/           # Move to trash instead of deleting
-ls *.log | head -5 | xargs rm           # Remove only first 5 log files
+ls *.log 2>/dev/null | head -5 | xargs -r rm   # Remove only first 5 log files (-r skips if none exist)
 
 # Create a safety alias (add to ~/.zshrc or ~/.bashrc)
 alias rm='rm -i'                        # Always prompt before deleting
@@ -468,8 +476,15 @@ wc -l *.txt                             # Just line counts for all text files
 **Step 2: Searching and Filtering Magic**
 
 ```bash
+# Set up sample files these search examples look through
+echo "function greet() { return 'hi'; }" > projects/app.js
+printf "info: start\nerror: disk failure\n" > logfile.txt
+echo "app.js" > file-list.txt
+printf "error: disk full\nwarning: low memory\n" > logs.txt
+printf "INFO start\nERROR disk failure\n" > app.log   # for the *.log pipeline example in Step 3
+
 # Find patterns in files using grep
-grep "terminal" learning-notes.txt       # Find lines containing "terminal"
+grep -i "terminal" learning-notes.txt    # Find lines containing "terminal" (case-insensitive, matches "Terminal")
 grep -i "COMMAND" *.txt                  # Case-insensitive search (-i)
 grep -r "function" projects/             # Recursive search in directory
 grep -n "error" logfile.txt              # Show line numbers (-n)

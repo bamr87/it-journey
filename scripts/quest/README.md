@@ -2,7 +2,7 @@
 title: Quest Framework & Tooling
 description: The single source of truth, schema, data pipeline, and tooling for IT-Journey quests.
 permalink: /scripts/quest/readme/
-lastmod: 2026-08-19T00:00:00.000Z
+lastmod: 2026-08-29T00:00:00.000Z
 date: 2026-01-14T22:23:32.000Z
 ---
 
@@ -80,6 +80,7 @@ All four are regenerated from the registry + quest files by `make quest-data`:
 | `generate-placeholder-quest.sh` | scaffold a new placeholder quest |
 | `docker-entrypoint.sh` | runs `quest_audit.py` inside the `quest-audit` Docker service |
 | `walkthrough_plan.py` | deterministic walkthrough planner: one (character, level) slice → dependency-ordered quest list (`walk-plan.json`) |
+| `character_skills.py` | generator + drift check for the per-character skills (`.claude/skills/quest-character-*/SKILL.md`): regenerates each sheet's roadmap block from `paths.yml` + the registry, verifies path↔skill coverage and per-level exercise headings (see `docs/quests/CHARACTER_SKILLS.md`) |
 | `walkthrough_screenshots.mjs` | session screenshots: rendered quest pages (mobile + desktop) + a terminal render of the recorded transcript |
 | `walkthrough_video.mjs` | side-by-side walkthrough VIDEO: rendered quest page ⇄ animated terminal replay of the sealed evidence transcript, recorded with Playwright (the quest-video lane's renderer) |
 | `video_manifest.py` | deterministic quest-video arm: `build` composes the YouTube upload plan (title/description/chapters/tags); `apply` writes `walkthrough_video:` frontmatter + the `.quests/videos.yml` catalog (tests: `test_video_manifest.py`) |
@@ -96,6 +97,8 @@ make quest-normalize   # idempotently normalize quest frontmatter
 make quest-validate    # content-quality validation (quest_validator.py)
 make quest-network     # dependency-graph validation
 make quest-audit       # UNIFIED audit: content + network + data-freshness (one report)
+make quest-skills      # regenerate the character-skill roadmap blocks (.claude/skills/quest-character-*)
+make quest-skills-check  # verify the character skills match paths.yml + the registry
 make docker-validate   # the same unified audit, in Docker (CI-parity, no host Python)
 make docker-audit-tier2 MODE=review   # + Claude tier-2 in a container (needs token)
 make quest-execute QUEST=pages/_quests/0001/terminal-mastery.md  # Claude RUNS the quest's snippets, isolated

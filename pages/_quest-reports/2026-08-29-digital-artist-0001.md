@@ -1,0 +1,147 @@
+---
+title: Digital Artist · L0001 · 2026-08-29
+description: Quest-perfection walkthrough of the Web Fundamentals slice digital-artist/0001 on 2026-08-29,
+  engine verdict fail (avg 56.0%). An evidence-based…
+date: '2026-08-29T00:00:00.000Z'
+author: Quest Perfection Loop
+categories:
+- Quest Reports
+- Digital Artist
+tags:
+- digital-artist
+- level-0001
+- walkthrough
+- quest-perfection
+- fail
+- web-fundamentals
+render_with_liquid: false
+excerpt: 'Digital Artist · Level 0001 — Web Fundamentals: an evidence-based quest-perfection walkthrough
+  from 2026-08-29.'
+slice: digital-artist/0001
+character: digital-artist
+level: '0001'
+theme: Web Fundamentals
+tier: Apprentice
+verdict: fail
+quest_count: 5
+engine_average: 56.0
+walk_date: '2026-08-29'
+run_url: https://github.com/bamr87/it-journey/actions/runs/33249447521
+source_report: test/quest-validator/walkthroughs/2026-08-29-digital-artist-0001.md
+---
+
+> **Slice** `digital-artist/0001` · **Level** 0001 (Web Fundamentals) · **Apprentice tier** · **Engine verdict** ❌ fail (avg 56.0%) · **Walked** 2026-08-29
+>
+> 🔗 [Perfection run](https://github.com/bamr87/it-journey/actions/runs/33249447521) · 🏠 [Perfection dashboard](/quest-reports/) · 📄 [Raw report](https://github.com/bamr87/it-journey/blob/main/test/quest-validator/walkthroughs/2026-08-29-digital-artist-0001.md) · 🕘 [Change history](https://github.com/bamr87/it-journey/commits/main/test/quest-validator/walkthroughs/2026-08-29-digital-artist-0001.md)
+
+---
+
+## 🎯 Session Summary
+
+I walked **window 3 of 6** of the **Digital Artist (UI/UX) → Level 0001 "Web Fundamentals" (Apprentice 🌱)** path — 5 of the level's 26 quests, in the planner's dependency-sorted order — backed by the workflow's sealed execute-mode engine evidence (real commands run in disposable sandboxes, not model assertions): *Forging the Stats Portal: Data Analytics Quest*, *Terminal Mastery: Conquering the Command-Line Realm*, *Forge Your Character: Crafting Your Contributor Identity*, *Avatar Forge: Crafting Your Digital Portrait*, and *Badge Collector: Showcasing Your Achievements*.
+
+**Headline verdict: FAIL.** Of the 4 quests the engine could actually score, the average is **56.0%** with 0 pass / 1 warn / 3 fail, and the 5th quest — *Forge Your Character*, the keystone of this window's real (frontmatter-declared) dependency chain — **errored out of the engine entirely** (hit its 40-turn cap while probing a backgrounded `bundle exec jekyll serve`, exited 1, produced no verdict). Every one of the two evaluated main quests has a genuinely broken central deliverable when run for real: *Stating the Stats*'s Ruby generator crashes on three independent bugs and never reaches its own "Total posts: 76" expected output, and *Terminal Mastery* throws real errors on 6 of 21 code blocks because later chapters reference files/directories earlier chapters never created. The two side quests (*Avatar Forge*, *Badge Collector*) fared better on safety/clarity but their commands were largely unverifiable in the engine's isolated per-quest sandbox because it lacked the full IT-Journey repo — I independently confirmed in the real repo that the Makefile targets and scripts they depend on do exist, so their low `commands_work` scores partly reflect sandbox isolation, not quest defects (see Reasoning & Method). Unlike a fully disconnected window, this one **does** contain a real 3-quest chain (*Forge Your Character* → *Avatar Forge*, *Badge Collector* via `quest_dependencies`), but its root quest is the one that errored — a maintainer cannot currently get verified evidence for the piece this window's continuity actually depends on.
+
+## 🗺️ The Journey
+
+Walked in planner order (window index 3 of 6; `stats.total_quests` = 26):
+
+| # | Verdict | Quest | Type | Score | One-line takeaway |
+|---|:--:|---|---|--:|---|
+| 1 | ❌ | Forging the Stats Portal: Data Analytics Quest | main | 44 | The core Ruby generator crashes on 3 independently-verified bugs (`require 'time'` missing, off-by-one path, `YAML.safe_load` rejects standard Jekyll dates) — the quest's own "Total posts: 76" expected output is unreachable as written. |
+| 2 | ❌ | Terminal Mastery: Conquering the Command-Line Realm | main | 46 | 15/21 code blocks run cleanly, but 6 fail for real because Ch3/Ch4 reference files/dirs (`projects/`, `backups/`, `logfile.txt`, etc.) that no earlier step in the quest ever creates; "Process Management" is a stated objective with almost no actual teaching. |
+| 3 | ⚠️ errored | Forge Your Character: Crafting Your Contributor Identity | main | — | Engine hit `max_turns` (40) probing a backgrounded `bundle exec jekyll serve` (permission-denied `ps`/`curl` checks), exited 1 — **no verdict produced**; not scored, not a 0. |
+| 4 | ⚠️ | Avatar Forge: Crafting Your Digital Portrait | side | 79 | Best-scoring quest in the window. Syntactically correct, safe, low-risk; main gaps are an unflagged placeholder path and two YAML variants that could tempt a learner to overwrite existing profile data. |
+| 5 | ❌ | Badge Collector: Showcasing Your Achievements | side | 55 | Logically sound step flow and valid YAML, but both shell commands were unverifiable in the engine's isolated sandbox (no repo checkout); only 4 of 12 catalog badges get "fastest path" guidance. |
+
+Avg **56.0%** (over the 4 scored quests) · 0 pass / 1 warn / 3 fail / 1 errored · engine cost ≈ $2.34 · engine wall time ≈ 608s across 44 turns (scored quests only; the errored quest's turns/cost are folded into the reported total but excluded from its own meta since it never returned).
+
+## 🔬 Evidence
+
+All outcomes below are commands the execute engine actually ran in its disposable sandbox, quoted/trimmed from the sealed `walk-evidence.json`.
+
+### 1. Forging the Stats Portal — ❌ 44 (15 available / 5 runnable, 4 ran, 1 passed, 3 failed, 1 skipped, 10 reasoned)
+- Dimensions: commands_work 1, content_accuracy 1, completeness 4, clarity 2, structure 5, safety 5.
+- **Confirmed bug 1 (`tested`, `failed`):** ran the Chapter 2 `generate_statistics.rb` verbatim — `scripts/generation/generate_statistics.rb:18:in 'generate': undefined method 'iso8601' for ...:Time (NoMethodError)`. Only `require 'yaml'` and `require 'date'` are present; `require 'time'` is missing, so `Time.now.iso8601` on the very first line of `generate` crashes immediately.
+- **Confirmed bug 2 (`tested`, `failed` after patching bug 1):** `File.expand_path('../..', __FILE__)` resolves to `<site_root>/scripts`, one directory level too shallow — verified with a direct Ruby one-liner reproducing the exact miscalculation — so `@posts_dir`/`@output_file` point at nonexistent paths and `File.write` throws `Errno::ENOENT`.
+- **Confirmed bug 3 (`tested`, `failed` after patching both above):** `YAML.safe_load($1)` raises `Psych::DisallowedClass: Tried to load unspecified class: Date` on any post with an unquoted `date:` field — the standard Jekyll convention the quest's own example frontmatter uses — so `parse_post` silently returns `nil` for every real post and `total_posts` stays 0, contradicting the documented "Expected Output: Total posts: 76."
+- `update_statistics.sh` (the bash wrapper) itself is correctly written and passed (`passed`) — it just faithfully surfaces the broken generator's failure end-to-end.
+- The Bootstrap stats page (`pages/stats.md`) was `reasoned`, not executed (needs a full Jekyll+Bundler build not safe/practical in this sandbox), but the engine flagged that `{​{ ... | number_with_delimiter }​}` is not a real Jekyll/Liquid filter — a Rails ActiveSupport helper — so it silently no-ops rather than adding thousands separators.
+
+### 2. Terminal Mastery — ❌ 46 (21 available / 21 runnable, 18 ran, 12 passed, 6 failed, 1 skipped, 2 reasoned)
+- Dimensions: commands_work 2, content_accuracy 2, completeness 2, clarity 2, structure 4, safety 4.
+- **Confirmed (`tested`, `failed`), Ch3 Step 2 (cp/mv):** 4 of 7 commands fail exactly as written — `cp -r projects/ backup-projects/` → `No such file or directory` (the quest created `projects/web-dev/my-first-site` one directory level **above** `terminal-practice`, not inside it, in Ch2 Step 3); `mv quest-backup.md backups/`, `mv *.css styles/`, `cp -i important-file.txt backup/` all fail because `backups/`/`styles/`/`backup/` are never created anywhere in the quest.
+- **Confirmed (`tested`, `failed`), Ch3 Step 3 (rm):** `rm temp-file.txt`, `rm -i *.tmp`, `mv unwanted-file.txt ~/.trash/` all error "No such file or directory" for files never created; `ls *.log | head -5 | xargs rm` errors "missing operand" since no `.log` files exist (GNU `xargs` invokes `rm` once anyway on empty input).
+- **Confirmed (`tested`, `failed`), Ch4 Step 2 (grep):** 5 of 7 examples fail — `grep -r "function" projects/`, `grep -n "error" logfile.txt`, `grep "\.js$" file-list.txt`, `grep -E "(error|warning)" logs.txt` all hit missing files/dirs; even `grep "terminal" learning-notes.txt`, run against the exact file Ch3 Step 1 *did* create, returns **no matches** because that file only contains capitalized "Terminal," never lowercase.
+- **Confirmed (`tested`, `failed`):** `whoami`/`pwd` are annotated "Expected output: bamr87" / "/home/bamr87" — the sandbox printed `runner` / `/home/runner`, confirming these are hardcoded from the author's own machine, not generic placeholders.
+- Confirmed-working blocks: Ch1 (whoami/pwd/ls variants/tree), Ch2 Step 3 (mkdir/cd/ls), Ch3 Step 1 (touch/echo/heredoc), Ch4 Step 1 (cat/head/tail/wc), and all three Novice/Apprentice/Expert challenges ran cleanly and matched the described behavior.
+- Completeness gap (`reasoned`): "Process Management Skills" is a stated Primary Objective and QA validation criterion, but the only process-related command in the entire quest is one incidental `ps aux | grep "node"` inside a pipeline example — no `top`/`htop`/`kill`/`jobs` coverage, and the dedicated "Master Challenge: System Monitoring Dashboard" has zero example commands (unlike the three easier challenges).
+
+### 3. Forge Your Character — ⚠️ **errored, no verdict**
+- The engine's raw error payload shows `"terminal_reason":"max_turns"`, `"errors":["Reached maximum number of turns (40)"]`, and two `permission_denials` on `Bash` tool calls attempting to poll a backgrounded server: `ps aux | grep -i jekyll`, `curl -sS -m 10 http://localhost:4000/ ...`. Cost burned before failing: **$1.15**.
+- Read directly from source instead (no execution evidence available for this quest): Step 5 ("Verify Your Character Sheet") instructs `bundle exec jekyll serve` as a foreground verification step with no guidance on backgrounding it, a timeout, or how an automated/CI checker should confirm the server actually came up — exactly the ambiguity the engine appears to have gotten stuck on.
+- **This is reported honestly as incomplete, not as a 0/100 fail** — the schema's `verdict_obj` is `null` and no `dimensions`/`commands`/`recommendations` exist to cite. I did **not** invent scores for it.
+
+### 4. Avatar Forge — ⚠️ 79 (4 available / 2 runnable, 3 ran, 2 passed, 1 failed, 0 skipped)
+- Dimensions: commands_work 4, content_accuracy 4, completeness 3, clarity 4, structure 4, safety 5.
+- **Passed (`tested`):** both YAML snippets (`profile: avatar: "https://github.com/YOUR_USERNAME.png"` and the local-path variant) parsed cleanly via Ruby `YAML.load_file`. `mkdir -p assets/images/contributors && cp <real-file> .../YOUR_USERNAME.png` succeeded exactly as described once given a real source file.
+- **Failed (`tested`) as literally written:** `cp /path/to/your/avatar.png assets/images/contributors/YOUR_USERNAME.png` — `cp: cannot stat '/path/to/your/avatar.png': No such file or directory` — expected for a placeholder, but unlike `YOUR_USERNAME` this path is never explicitly flagged as something to replace.
+- `bundle exec jekyll serve` was `skipped` — "no Gemfile, bundle, or jekyll executable... and no IT-Journey repo present (only QUEST.md exists here)" — this quest's isolated sandbox had no repo checkout at all.
+
+### 5. Badge Collector — ❌ 55 (4 available / 2 runnable, 1 ran, 1 passed, 0 failed, 3 skipped, 1 reasoned)
+- Dimensions: commands_work 2, content_accuracy 3, completeness 2, clarity 3, structure 3, safety 5.
+- **Passed (`tested`):** the pinning YAML (`profile: badges_pinned: [first_blood, quest_forger, marathon_runner]`) round-tripped cleanly through `ruby -ryaml -e "YAML.load_file(...)"`.
+- `make contributor-stats USERNAME=YOUR_USERNAME`, `cat _data/contributors/YOUR_USERNAME.yml`, and `bundle exec jekyll serve` were all `skipped` — the engine's per-quest sandbox had **no IT-Journey repo checkout**, so it could not confirm the Makefile target, the generator script, or the rendered "Featured Badges" section exist. It explicitly flagged this as unverifiable-in-isolation rather than guessing.
+- Completeness gap (`reasoned`): Step 4's "Earn More Badges" table gives a fastest path for only 4 of the 12 catalog badges (`first_blood`, `scribe`, `quest_forger`, `marathon_runner`); the other 8 (`centurion`, `thousand_cuts`, `team_player`, `pr_machine`, `quest_master`, `prolific_author`, `polyglot`, `guild_founder`) are listed in the catalog but never addressed.
+
+## 🐞 Issues Found
+
+Every item cites what was actually run/observed (`tested`) or read directly from source/frontmatter/repo state (`reasoned`); severities as the engine scored them unless marked as my own judgment.
+
+- **HIGH · Forging the Stats Portal · `generate_statistics.rb` · `tested`** — `Time.now.iso8601` throws `NoMethodError` because `require 'time'` is missing. **Fix:** add `require 'time'` alongside `require 'yaml'`/`require 'date'`.
+- **HIGH · Forging the Stats Portal · `generate_statistics.rb` `@site_root` · `tested`** — `File.expand_path('../..', __FILE__)` resolves one level too shallow (`<root>/scripts` instead of `<root>`). **Fix:** use `File.expand_path('../../..', __FILE__)`.
+- **HIGH · Forging the Stats Portal · `generate_statistics.rb` `parse_post` · `tested`** — `YAML.safe_load($1)` rejects any post with an unquoted `date:` field (the Jekyll norm, including the quest's own example), silently zeroing `total_posts`. **Fix:** pass `permitted_classes: [Date, Time]` to `YAML.safe_load` or pre-stringify the date.
+- **HIGH · Terminal Mastery · Ch3 Step 2 (cp/mv) & Ch4 Step 2 (grep) · `tested`** — 9 of 14 commands across these two blocks fail because the files/directories they target (`backups/`, `styles/`, `backup/`, `logfile.txt`, `file-list.txt`, `logs.txt`, and a correctly-cased `projects/`) are never created anywhere earlier in the quest. **Fix:** add the missing `mkdir -p`/sample-file setup immediately before each block, or explicitly label the lines as illustrative-only.
+- **HIGH · Terminal Mastery · Process Management objective · `reasoned`** — "Process Management Skills" is a stated Primary Objective and a QA validation criterion, but the quest teaches it with a single incidental `ps aux | grep "node"` and gives the dedicated Master Challenge zero example commands. **Fix:** add a real chapter/section covering `ps`, `top`/`htop`, `kill`, `jobs`/`fg`/`bg`, and seed the Master Challenge with starter commands like the three easier challenges have.
+- **MEDIUM · Forge Your Character · Step 5 verification (`bundle exec jekyll serve`) · `reasoned` (from the engine's own failure)** — the engine burned its full 40-turn budget and $1.15 trying to verify a foreground, long-running dev-server step with no backgrounding/timeout guidance, and exited without a verdict. This is a real friction signal: an automated checker (and plausibly a first-time learner unsure whether/how to stop the server before continuing) can get stuck here. **Fix:** give explicit guidance for backgrounding the server (`&` + a documented way to stop it) and a concrete, fast way to confirm success (e.g., `curl -s http://localhost:4000/contributors/YOUR_USERNAME/ | grep -q "Character"`) instead of "navigate to ... and verify" as the only check.
+- **MEDIUM · Badge Collector · Step 4 "Earn More Badges" table · `reasoned`** — only 4 of the 12 catalog badges get fastest-path guidance. **Fix:** cover all 12, or explicitly mark the long-horizon ones (`centurion`, `thousand_cuts`, `pr_machine`, `quest_master`, `prolific_author`, `polyglot`, `guild_founder`) as having no shortcut.
+- **MEDIUM · Badge Collector · "Earn More Badges" → Scribe badge · verified by direct repo inspection, not the engine** — the fastest path listed for the Scribe badge is "Write a blog post in `pages/_posts/`." I confirmed directly against this repository (`ls pages/_posts` → *No such file or directory*) that the `_posts`/`_drafts` blog collection was removed in a prior repo overhaul (per `CLAUDE.md`; blog content moved to lifehacker.dev). This instruction is stale and cannot be followed as written. **Fix:** update the guidance to whatever collection/mechanism now earns the `scribe` badge (or remove the badge/path if blog posts are no longer part of this repo).
+- **MEDIUM · Avatar Forge · Step 3 code block · `tested`** — `/path/to/your/avatar.png` is not flagged as a placeholder the way `YOUR_USERNAME` is, so a learner who copy-pastes literally hits a confusing `cp: cannot stat` error. **Fix:** mark it clearly, e.g. `<PATH_TO_YOUR_AVATAR>`.
+- **LOW · Avatar Forge · Step 2 YAML guidance · `reasoned`** — the two alternate `profile: avatar:` snippets could tempt a learner into replacing their whole YAML file instead of merging the one key in. **Fix:** clarify "add/update only the `avatar:` key inside your existing `profile:` block."
+- **LOW · Terminal Mastery · Windows Empire Path · `tested`** — the fenced block is tagged ```powershell but its last two lines (`sudo apt update && sudo apt upgrade`) are bash meant to run inside WSL after a reboot, not PowerShell. **Fix:** split into two separately-labeled blocks.
+- **LOW · Forging the Stats Portal · Test Your Stats Page block · `reasoned`** — `open http://localhost:4000/stats/` is macOS-only with no cross-platform note. **Fix:** add `xdg-open` (Linux) or "visit in your browser" guidance.
+
+**No blocking safety issues** anywhere in this window — every scored quest hit safety 4 or 5/5; no destructive or unwarned-risky command appears in any of the four scored quests.
+
+## 🔗 Chain Continuity
+
+Read in plan order (Stats Portal → Terminal Mastery → Forge Your Character → Avatar Forge → Badge Collector), carrying forward what a Digital Artist learner would actually have after each quest:
+
+- **Unlike a fully disconnected window, this one has a real, frontmatter-declared 3-quest chain — but its root errored.** *Forge Your Character*'s `quest_dependencies.unlocks_quests` lists `/quests/0001/avatar-forge/` and `/quests/0001/badge-collector/` explicitly; both side quests in turn declare `required_quests: [/quests/0001/forge-your-character/]` in their own frontmatter, and both quest bodies open with "Completed Forge Your Character quest" as a stated prerequisite. That is a genuine, intentional learning sequence — a learner is meant to forge their contributor identity, *then* customize its avatar, *then* curate its badges. The problem: the engine could not produce a verdict for the root quest at all (§Evidence #3), so the chain's foundation is currently unverified evidence, not a confirmed-working one.
+- **The two side quests silently assume state the engine's sandbox never had, but the real repo does provide it.** Both *Avatar Forge* and *Badge Collector* explicitly note their isolated sandbox had "no IT-Journey repo present" — no `_data/contributors/YOUR_USERNAME.yml`, no `Makefile`, no `generate_contributor_stats.rb`. I checked the real repository directly (read-only) and confirmed all of these exist: `_data/contributors/_template.yml`, `pages/_about/contribute/contributors/_template/`, `scripts/generation/generate_contributor_stats.rb` and `.sh`, and a `contributor-stats` Makefile target. So a learner working through the real repo (as opposed to the engine's per-quest isolated sandbox) *would* have these artifacts available from *Forge Your Character*'s own Step 2/Step 4 — the low `commands_work` scores on the two side quests are partly an artifact of per-quest sandbox isolation, not evidence the chain is broken for a real learner. This nuance matters for anyone reading the raw scores without this report.
+- **The two main quests in this window (*Stating the Stats*, *Terminal Mastery*) are not part of that chain and don't need to be.** Both declare empty `quest_dependencies` (or, for Terminal Mastery, only prose-level prerequisites pointing to level 0000, outside this window). They're independent Web Fundamentals topics that happen to fall in this window's alphabetical/difficulty tie-break slot, not a designed sequence with each other or with the contributor-identity chain. A learner doing this window top-to-bottom experiences it as two unrelated main quests followed by a genuinely linked 3-quest side arc — not one continuous story.
+- **Within Terminal Mastery itself, the *quest's own internal* chain is broken**, independent of anything else in this window: Chapter 2 creates `terminal-practice/` and (one level up) `projects/web-dev/my-first-site`, but Chapter 3's cp/mv examples and Chapter 4's grep examples assume `projects/`, `backups/`, `styles/`, `logfile.txt`, etc. exist *inside* the working directory a learner would actually be in at that point — they don't. This is the same class of problem as the cross-quest chain gap above, just intra-quest: later steps assume state earlier steps never built.
+- **Character-path fit is generic, not Digital-Artist-specific**, same observation as prior windows on this level: nothing in this window (Jekyll data analytics, terminal basics, a contributor-profile/YAML system) teaches UI/UX or visual-design skills specifically — it's level 0001's general pool, not a curated Digital Artist track. This is a scope observation about the level's content for this character, not a defect in any individual quest.
+
+**Net:** this window is the first of the digital-artist/0001 walkthrough series to contain a real designed dependency chain rather than five unrelated quests — but the chain's own root quest is exactly the one the engine couldn't finish evaluating, so a maintainer still cannot point to verified, executed evidence that "forge your identity → customize it → curate badges" actually works end-to-end for a real learner.
+
+## 🧠 Reasoning & Method
+
+- **Mode:** `execute` (sealed). The `quest-walkthrough.yml` workflow pre-computed and sealed `walk-evidence.json` / `walk-evidence.md` via the deterministic agentic execute engine before this session started; I consumed them **as-is** and made **zero** edits to `walk-plan.json`, `walk-evidence.*`, or any quest content (the engine's child `claude` processes can't authenticate from my Bash tool, so I could not and did not re-run it). This was not a `--mock` run — `walk-evidence.json`'s `meta` blocks carry real `cost_usd`/`turns`/`duration_s`/`session_id` per quest (totaling $2.339 / 44 turns / ~608s across the 4 quests that returned a verdict).
+- **What I ran vs. reasoned:** every `passed`/`failed`/`skipped` cited in §Evidence is a command the execute engine actually ran in its own disposable, per-quest sandbox (real `ruby` execution including a reproduced `File.expand_path` miscalculation, `YAML.load_file` round-trips, `cp`/`mkdir`, and a from-scratch bash session for Terminal Mastery's 21 blocks). I made **one class of independent, read-only verification of my own**: checking the *real* IT-Journey repository (via `ls`, not by running any quest command) to confirm (a) that the Makefile target, generator script, and contributor-data/profile-page templates *Forge Your Character* and its two side quests depend on genuinely exist here (they do — this reframes the side quests' low `commands_work` scores as a sandbox-isolation artifact, not a quest defect), and (b) that `pages/_posts/` — which Badge Collector's "Scribe badge" guidance still points to — was in fact removed from this repo. Both are `reasoned`, not `tested`, and are clearly labeled as such above; I did not execute any quest command against the live repo myself.
+- **The errored quest:** *Forge Your Character*'s engine run is reported as **incomplete**, not as a score. I quoted its raw error payload (`terminal_reason: max_turns`, two `permission_denials` on Bash calls polling a backgrounded server, `errors: ["Reached maximum number of turns (40)"]`) directly from `walk-evidence.json["results"][2]["error"]` — nothing in that finding is inferred; it's the literal sealed payload.
+- **Coverage / limits:** this is **window 3 of 6** — only 5 of the level's 26 quests were walked in this run; I make no claim about the other 21 (the perfection ledger accumulates coverage of the remaining windows across separate runs). One of the five (*Forge Your Character*) produced no scoreable evidence at all — the session's 56.0% average is computed over the 4 quests that did return a verdict, consistent with how `walk-evidence.json`'s own top-level `average` field is computed (`scored: 4`, `errored: 1`).
+- **Confidence:** High on the 4 scored quests' per-quest findings — each "confirmed bug" cited above was reproduced with concrete error output, not asserted (the three `generate_statistics.rb` bugs were each independently isolated and verified in sequence; the Terminal Mastery cp/mv/grep failures were run against the actual state Chapter 2/3 left behind). High confidence on the errored-quest reporting — it's a direct quote of the sealed engine payload, not a guess about what happened. Medium confidence on the "chain foundation unverified" framing in §Chain Continuity — it's a straightforward reading of `quest_dependencies` frontmatter plus the engine's own null result, but I can't rule out that a re-run with a longer turn budget would simply pass; that's a recommendation for the workflow (raise `max_turns` or give the engine explicit backgrounding guidance for `jekyll serve` steps), not a claim I'm making about the quest's ultimate correctness.
+
+---
+
+*Machine evidence excerpt (verbatim from `walk-evidence.md`):*
+> **4** quests evaluated · ✅ 0 pass · ⚠️ 1 warn · ❌ 4 fail · avg **56.0%** · ~$2.339
+>
+> | | Score | Quest | Level | Snippets run | Summary |
+> |---|--:|---|---|:-:|---|
+> | ❌ | 44 | Forging the Stats Portal: Data Analytics Quest | 0001 | 4/5 (3✗) | ...its core deliverable — the Ruby statistics generator — fails to run as written due to three independently-verified bugs... |
+> | ❌ | 46 | Terminal Mastery: Conquering the Command-Line Realm | 0001 | 18/21 (6✗) | ...a meaningful chunk of the file-manipulation and text-processing chapters... reference directories/files that were never created earlier in the same quest... |
+> | ⚠️ | — | Forge Your Character: Crafting Your Contributor Identity | 0001 | — | claude exited 1 ... "terminal_reason":"max_turns" ... "errors":["Reached maximum number of turns (40)"] |
+> | ⚠️ | 79 | Avatar Forge: Crafting Your Digital Portrait | 0001 | 3/2 (1✗) | A short, low-risk side quest whose YAML and shell snippets are syntactically correct and behave as described once placeholders are substituted... |
+> | ❌ | 55 | Badge Collector: Showcasing Your Achievements | 0001 | 1/2 | ...both shell commands are unverifiable in isolation since they depend on a full IT-Journey repo checkout... |

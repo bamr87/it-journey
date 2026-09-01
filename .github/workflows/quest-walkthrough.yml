@@ -92,6 +92,10 @@ jobs:
     env:
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      # MODEL POLICY — same pin as quest-perfection's gate (see its comment):
+      # QUEST_AI_MODEL drives the engine, ITJ_AI_MODEL the walker agent step.
+      QUEST_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
+      ITJ_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
       # A PAT (contents+PRs, NO admin) so the report PR ALSO triggers CI — a
       # GITHUB_TOKEN-authored PR doesn't fire workflows.
       GH_TOKEN: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
@@ -169,7 +173,7 @@ jobs:
             || { echo "::error::Claude Code install failed — the engine needs the claude CLI."; exit 1; }
           python3 -c 'import json;[print(q["path"]) for q in json.load(open("walk-plan.json"))["quests"]]' \
             | xargs -r python3 test/quest-validator/agentic_validate.py \
-                --mode "$MODE" --max-turns 40 \
+                --mode "$MODE" --max-turns 40 --adaptive-turns \
                 --report walk-evidence.json --md walk-evidence.md
 
       # SEAL — snapshot the deterministic outputs before ANY agent runs. The

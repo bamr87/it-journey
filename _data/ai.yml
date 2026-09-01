@@ -21,7 +21,17 @@ provider: anthropic
 
 # The model Claude Code uses (claude -p --model) AND the default for the API
 # fallback. Default to the most capable model; switch to a cheaper one
-# (claude-sonnet-4-6 / claude-haiku-4-5) here, once, if cost matters.
+# (claude-sonnet-5 / claude-haiku-4-5) here, once, if cost matters.
+#
+# EXCEPTION — the quest loop routes its own models: quest-perfection /
+# quest-fix / quest-walkthrough / quest-video pin every stage (preflight probe,
+# execute-engine walks, walker/fixer agents) to ONE Sonnet-class model via the
+# QUEST_AI_MODEL repo variable (default claude-sonnet-5), passed as
+# ITJ_AI_MODEL to run.sh for the agent steps. Rationale in quest-perfection.yml's
+# gate: the loop is high-volume sandboxed tool use — Sonnet-tier work — and on
+# subscription (OAuth) auth an Opus default burns the shared rate window ~2.5×
+# faster for no measurement benefit. This global default still governs the
+# content fleet (content-factory, cms loop, forge, …).
 model: claude-opus-4-8
 
 # The model the API fallback uses when it differs from the primary.
