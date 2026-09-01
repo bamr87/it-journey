@@ -72,6 +72,109 @@ By the end of this quest, you will be able to:
 - [ ] Ensure it is easy to run `--no-push` for local tests.
 - [ ] Add CI step instructions for running tests.
 
+## The Script
+
+Save the following as `scripts/git_init.sh` in a fresh local project directory (not inside a clone of the IT-Journey repo) before you do anything else — every step below assumes this file already exists and is executable.
+
+```bash
+#!/usr/bin/env bash
+# git_init.sh — interactive and headless repository initializer.
+#
+# Interactive:  ./git_init.sh
+# Headless:     ./git_init.sh --headless -n <name> [--no-push] \
+#                 [--gitignore <lang1,lang2,...>] [--scaffold <lang>] [--dry-run]
+set -euo pipefail
+
+HEADLESS=false
+NO_PUSH=false
+DRY_RUN=false
+NAME=""
+GITIGNORE_LANGS=""
+SCAFFOLD_LANG=""
+BASE_DIR="${GIT_INIT_BASE_DIR:-$HOME/github}"
+
+usage() {
+  cat <<'USAGE'
+Usage: git_init.sh [--headless] -n <name> [--no-push] [--gitignore <langs>] [--scaffold <lang>] [--dry-run]
+USAGE
+}
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --headless) HEADLESS=true; shift ;;
+    -n|--name) NAME="$2"; shift 2 ;;
+    --no-push) NO_PUSH=true; shift ;;
+    --gitignore) GITIGNORE_LANGS="$2"; shift 2 ;;
+    --scaffold) SCAFFOLD_LANG="$2"; shift 2 ;;
+    --dry-run) DRY_RUN=true; shift ;;
+    -h|--help) usage; exit 0 ;;
+    *) echo "Unknown argument: $1" >&2; usage; exit 1 ;;
+  esac
+done
+
+if [[ -z "$NAME" ]]; then
+  if [[ "$HEADLESS" == true ]]; then
+    echo "error: --headless requires -n <name>" >&2
+    exit 1
+  fi
+  read -rp "Repository name: " NAME
+fi
+
+REPO_DIR="$BASE_DIR/$NAME"
+
+echo "Initializing repository '$NAME' at $REPO_DIR"
+
+if [[ "$DRY_RUN" == true ]]; then
+  echo "[dry-run] mkdir -p $REPO_DIR"
+  echo "[dry-run] git -C $REPO_DIR init"
+else
+  mkdir -p "$REPO_DIR"
+  git -C "$REPO_DIR" init -q
+fi
+
+if [[ -n "$GITIGNORE_LANGS" ]]; then
+  if [[ "$DRY_RUN" == true ]]; then
+    echo "[dry-run] write .gitignore for: $GITIGNORE_LANGS"
+  else
+    IFS=',' read -ra LANGS <<< "$GITIGNORE_LANGS"
+    : > "$REPO_DIR/.gitignore"
+    for lang in "${LANGS[@]}"; do
+      echo "# --- $lang ---" >> "$REPO_DIR/.gitignore"
+    done
+  fi
+fi
+
+if [[ -n "$SCAFFOLD_LANG" ]]; then
+  if [[ "$DRY_RUN" == true ]]; then
+    echo "[dry-run] mkdir -p $REPO_DIR/src $REPO_DIR/tests"
+  else
+    mkdir -p "$REPO_DIR/src" "$REPO_DIR/tests"
+  fi
+fi
+
+if [[ "$DRY_RUN" == true ]]; then
+  echo "[dry-run] git -C $REPO_DIR add -A && git -C $REPO_DIR commit -m 'chore: initial commit'"
+else
+  git -C "$REPO_DIR" add -A
+  git -C "$REPO_DIR" -c user.email="quest@it-journey.dev" -c user.name="IT-Journey Quest" \
+    commit -q -m "chore: initial commit" --allow-empty
+fi
+
+if [[ "$NO_PUSH" == true || "$DRY_RUN" == true ]]; then
+  echo "Skipping push (--no-push or --dry-run)."
+else
+  echo "Push step intentionally left for you to wire up to your own remote."
+fi
+
+echo "Done."
+```
+
+Make it executable once before running anything below:
+
+```bash
+chmod +x scripts/git_init.sh
+```
+
 ## Tests and Tools
 
 We suggest two layers of tests:
@@ -111,14 +214,14 @@ Use `bash -n scripts/git_init.sh` to detect syntax issues early.
 ## Try it locally
 
 > **Get the script first.** Every command below expects `scripts/git_init.sh` to
-> exist in your working directory. It ships in the IT-Journey repository — clone it
-> (or download the single file) before running anything else:
+> exist in your working directory and be executable. Create the project directory,
+> save the script from [The Script](#the-script) above into it, and make it
+> executable:
 >
 > ```bash
-> git clone https://github.com/bamr87/it-journey.git
-> cd it-journey
-> # the initializer lives at scripts/git_init.sh
-> chmod +x scripts/git_init.sh
+> mkdir -p ~/quest-git-init && cd ~/quest-git-init
+> # save the script above as scripts/git_init.sh here, then:
+> mkdir -p scripts && chmod +x scripts/git_init.sh
 > ```
 
 1. Syntax check
