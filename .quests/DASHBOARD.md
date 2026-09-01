@@ -1,14 +1,14 @@
 # Quest Perfection — ledger dashboard
 
-_Generated 2026-08-31T11:22:52+00:00. Source of truth: `.quests/ledger.json` (committed, generated)._
+_Generated 2026-09-01T11:35:23+00:00. Source of truth: `.quests/ledger.json` (committed, generated)._
 
-**0/27** slices perfect · **27** walked · **3** stuck (needs human) · **444** open issue(s) outstanding
+**0/27** slices perfect · **27** walked · **3** stuck (needs human) · **454** open issue(s) outstanding
 
 ## Slices (worst-first)
 
 | Slice | Theme | Verdict | Avg | Cov | Open | Perfect | Stuck | Last run | Report |
 | --- | --- | :-: | --: | :-: | --: | :-: | :-: | --- | --- |
-| `digital-artist/0001` | Web Fundamentals | ❌ fail | 55.8 | 10/26 | 52 |  |  | 2026-08-31 | [run](https://github.com/bamr87/it-journey/actions/runs/33385816307) |
+| `digital-artist/0001` | Web Fundamentals | ❌ fail | 61.1 | 15/26 | 62 |  |  | 2026-09-01 | [run](https://github.com/bamr87/it-journey/actions/runs/33501251884) |
 | `developer/0001` | Web Fundamentals | ❌ fail | 67.9 | 18/26 | 72 |  |  | 2026-08-12 | [run](https://github.com/bamr87/it-journey/actions/runs/31591270584) |
 | `game-developer/0001` | Web Fundamentals | ❌ fail | 68.0 | 14/26 | 41 |  |  | 2026-08-27 | [run](https://github.com/bamr87/it-journey/actions/runs/33083807177) |
 | `digital-artist/0111` | API Development | ❌ fail | 71.4 | 5/10 | 12 |  |  | 2026-07-13 | [run](https://github.com/bamr87/it-journey/actions/runs/29248386306) |
