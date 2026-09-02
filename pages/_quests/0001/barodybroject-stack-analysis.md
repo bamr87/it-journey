@@ -86,8 +86,23 @@ By the end of this quest, you will be able to:
 > Analysis Date above and *will drift* as the project evolves. Version numbers
 > (e.g. the Django version), file layout, and dependency claims below may no
 > longer match `main` — the live repo has since moved to a newer Django release
-> and split `settings.py`/`views.py` into packages. Always re-verify against the
-> current repository before relying on any specific figure here.
+> and split `settings.py`/`views.py` into packages. This includes the **Security
+> & Quality Assessment's "Known Vulnerabilities" claims** — they reflect a scan
+> taken on the Analysis Date, not a live guarantee; run `pip-audit` yourself
+> (see Quick Setup) against the current `main` before trusting them, since new
+> CVEs are disclosed continuously. Always re-verify against the current
+> repository before relying on any specific figure here.
+
+## ✅ Do This (Hands-On Walkthrough)
+
+Work these four steps in order — each maps directly to a Quest Objective above:
+
+1. **Clone the repo** and skim the Stack Overview + Detailed Stack Analysis tables below to identify the frontend/backend/data/infrastructure layers (Objective 1). Use the `git clone` command from Quick Setup, in [For New Contributors](#for-new-contributors).
+2. **Run `pip-audit`** against your clone (the command is in [For Maintenance → Immediate Actions](#for-maintenance)) to evaluate real dependency risk (Objective 2).
+3. **Diff what you found against this document**: does the Django version, file layout, and the Security & Quality Assessment's vulnerability claims still match what you just saw? Note every place they've drifted (Objective 3).
+4. **Pick any row** in a Detailed Stack Analysis table and open its "Configuration Location" in the cloned repo to confirm the mapping is still accurate (Objective 4).
+
+**Quest complete when:** you can list at least one confirmed-accurate claim and one confirmed-stale claim from this document, backed by what you actually saw in the live repo — check off each objective above as you go.
 
 ## 📊 Executive Summary
 
@@ -535,7 +550,7 @@ dev = [
 **Dependency Security**:
 - ✅ Regular updates via Dependabot (if configured)
 - ✅ Django LTS version (4.2.20) with security patches
-- ✅ Known vulnerabilities: None identified in core dependencies
+- ⚠️ Known vulnerabilities: none identified as of the Analysis Date (point-in-time; re-run `pip-audit`)
 - ✅ AWS Secrets Manager integration for production secrets
 - ⚠️ Consider: django-security and django-ratelimit for enhanced security
 
@@ -588,7 +603,7 @@ dev = [
 - ✅ No hardcoded credentials in repository
 
 **Known Vulnerabilities**:
-- ✅ None identified in current dependency scan
+- ⚠️ None identified as of the Analysis Date above — a point-in-time claim, not a live guarantee; run `pip-audit` against the current `main` yourself (see Quick Setup) before relying on it
 - ⚠️ Recommendation: Enable Dependabot security alerts
 - ⚠️ Consider: Regular security audits with `safety` or `pip-audit`
 
