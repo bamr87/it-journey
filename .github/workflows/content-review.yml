@@ -17,6 +17,12 @@ name: 📝 Content Review
 
 on:
   pull_request:
+    # Only PRs *into* main. The `🚀 Sync gh-pages from main` deploy PRs
+    # (main -> gh-pages) are opened and auto-merged within ~9s, which deletes the
+    # refs/pull/N/merge ref this run resolves its workflow from, so the run dies
+    # at load time with zero jobs ("workflow file issue"). They also carry nothing
+    # to review: gh-pages is a mirror of commits already reviewed into main.
+    branches: [main]
     types: [opened, reopened, ready_for_review]
     paths:
       - 'pages/**/*.md'
