@@ -9,8 +9,14 @@ name: Frontmatter Validation
 # cms-daily-loop.yml (Lane A). Quest frontmatter is validated by
 # quest-validation.yml, so it is excluded here to avoid double coverage.
 
+# `branches:` filters on the PR's BASE branch. The `paths:` filter alone does not
+# exclude the bot's `main` -> `gh-pages` deploy PR (sync-gh-pages.yml): that PR's
+# diff spans the whole tree, so `pages/**/*.md` always matches, and the run then
+# dies as a startup_failure because GitHub cannot build a merge ref against
+# gh-pages' unrelated history.
 on:
   pull_request:
+    branches: [main]
     paths:
       - 'pages/**/*.md'
     types: [opened, synchronize, reopened]

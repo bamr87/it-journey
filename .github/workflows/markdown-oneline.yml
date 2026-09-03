@@ -6,8 +6,16 @@
 # Fix locally:  python3 tools/unwrap-prose.py --write
 name: markdown-oneline
 
+# `branches: [main]` on the pull_request half matters as much as the paths
+# filter: gh-pages is the BUILT site, and the recurring "🚀 Deploy: sync
+# gh-pages with main@<sha>" pull requests target it. GitHub cannot resolve a
+# merge ref for those, so every one of them failed this workflow at STARTUP —
+# zero jobs, no logs, just a red X that had nothing to do with markdown. The
+# prose rule only applies to hand-authored source landing on main, which is
+# exactly what the push half already says.
 on:
   pull_request:
+    branches: [main]
     paths: ["**/*.md", "**/*.markdown"]
   push:
     branches: [main]
