@@ -386,6 +386,12 @@ git push origin main
    jekyll new . --force  # Force to avoid conflicts
    ```
 
+   > ⚠️ `jekyll new --force` will NOT overwrite the `index.html` you created in
+   > Chapter 1 — it generates `index.markdown` alongside it instead. If both files
+   > remain, `jekyll build` silently keeps the OLD static `index.html` and discards
+   > your new Jekyll content (only a "Conflict: shared destination" warning, easy to
+   > miss). Delete or rename the Chapter 1 `index.html` now: `rm index.html`.
+
 3. **Configure for GitHub Pages**
    Create `Gemfile`:
    ```ruby
@@ -440,7 +446,7 @@ git push origin main
    ### Project 1: GitHub Pages Mastery
    - **Status**: ✅ Completed
    - **Technologies**: HTML, CSS, Jekyll
-   - **Live Demo**: [View Site]({% raw %}{{ site.url }}{% endraw %})
+   - **Live Demo**: [View Site](https://yourusername.github.io/)
    
    ### Project 2: Portfolio Foundation
    - **Status**: 🚧 In Progress
@@ -450,6 +456,11 @@ git push origin main
 
 6. **Build and Test Locally**
    ```bash
+   # On a stock Linux Ruby install, a plain `bundle install` can fail with
+   # Bundler::PermissionError (no write access to the system gem cache) even
+   # after installing Jekyll/Bundler with --user-install. Scope bundler to a
+   # project-local folder first to avoid it:
+   bundle config set --local path vendor/bundle
    bundle install
    bundle exec jekyll serve
    # Visit http://localhost:4000

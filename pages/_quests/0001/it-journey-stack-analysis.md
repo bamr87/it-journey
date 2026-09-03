@@ -93,7 +93,7 @@ By the end of this quest, you will be able to:
 
 ### Key Highlights
 
-- **Primary Stack**: Jekyll 3.9.5 + Ruby 3.2.3 + Bootstrap 5.2.0
+- **Primary Stack**: Jekyll 3.10.0 + Ruby 3.2.3 + Bootstrap 5.2.0
 - **Deployment**: GitHub Pages with automated CI/CD pipelines
 - **Innovation**: AI-powered content analysis and link monitoring (Guardian 2.0)
 - **Architecture**: Container-first development with Docker
@@ -146,7 +146,7 @@ graph TB
     end
     
     subgraph "Build Layer"
-        JK[Jekyll 3.9.5]
+        JK[Jekyll 3.10.0]
         RB[Ruby 3.2.3]
         BS[Bootstrap 5.2.0]
         SASS[Sass/SCSS]
@@ -219,7 +219,7 @@ graph TB
 
 ### 1. Frontend Stack
 
-#### Core Framework: Jekyll 3.9.5
+#### Core Framework: Jekyll 3.10.0
 ```yaml
 # _config.yml - Jekyll Configuration
 markdown: kramdown
@@ -246,15 +246,15 @@ collections:
 - Liquid templating for complex logic
 - Collection-based content organization
 
-**Version Justification**: Jekyll 3.9.5 is the latest GitHub Pages-compatible version, ensuring deployment reliability.
+**Version Justification**: Jekyll 3.10.0 is the version this repo's Gemfile.lock currently resolves via the `github-pages` gem, ensuring deployment reliability.
 
 #### UI Framework: Bootstrap 5.2.0
 
 ```ruby
 # Gemfile - Frontend Dependencies
-gem 'github-pages', '~> 231'
+gem 'github-pages', '~> 232'
 gem 'jekyll-theme-zer0'
-gem 'webrick', '~> 1.8'
+gem 'webrick', '~> 1.9'
 ```
 
 **Component Library**: Bootstrap 5.2.0 via CDN
@@ -279,10 +279,10 @@ gem 'webrick', '~> 1.8'
 ```ruby
 # Gemfile
 source "https://rubygems.org"
-gem 'github-pages', '~> 231'
+gem 'github-pages', '~> 232'
 gem 'jekyll-theme-zer0'
-gem 'ffi', "~> 1.17.0"
-gem 'webrick', '~> 1.8'
+gem 'ffi', "~> 1.17.4"
+gem 'webrick', '~> 1.9'
 
 # Jekyll Plugins (included in github-pages)
 group :jekyll_plugins do
@@ -296,8 +296,8 @@ end
 
 **Version Details**:
 - **Ruby**: 3.2.3 (stable, secure, performant)
-- **Jekyll**: 3.9.5 (GitHub Pages compatible)
-- **GitHub Pages Gem**: 231 (ensures version compatibility)
+- **Jekyll**: 3.10.0 (GitHub Pages compatible)
+- **GitHub Pages Gem**: 232 (ensures version compatibility)
 
 #### Build Pipeline
 
@@ -557,8 +557,8 @@ docker compose up
 bundle install
 bundle exec jekyll serve --config "_config.yml,_config_dev.yml"
 
-# Quest Validator
-python3 test/quest-validator/quest_validator.py
+# Quest Validator — requires a quest_file or --directory, e.g. validate the whole collection:
+python3 test/quest-validator/quest_validator.py -d pages/_quests/ --summary
 ```
 
 #### Code Quality Tools
@@ -591,12 +591,12 @@ repos:
 
 ```text
 # Core Dependencies (from Gemfile.lock)
-jekyll (3.9.5)
+jekyll (3.10.0)
   - Safe HTML rendering
   - Liquid templating
   - Plugin system
   
-github-pages (231)
+github-pages (232)
   - Pins all Jekyll dependencies to GitHub Pages versions
   - Ensures deployment compatibility
   - Includes all default plugins
@@ -606,11 +606,11 @@ jekyll-theme-zer0 (custom theme)
   - Custom layouts and includes
   - Dark/light theme support
 
-ffi (1.17.0)
+ffi (1.17.4)
   - Foreign function interface
   - Required for Jekyll on M1 Macs
 
-webrick (1.8)
+webrick (1.9.2)
   - Ruby web server
   - Required for Jekyll 3.x on Ruby 3.x
 ```
@@ -897,7 +897,7 @@ This stack directly translates to professional skills:
 ### Current Maturity: ✅ **Modern (2024-2025 Standards)**
 
 The IT-Journey stack runs current versions across the board:
-- Jekyll 3.9.5 (latest GitHub Pages-compatible version)
+- Jekyll 3.10.0 (current GitHub Pages-compatible version, per this repo's Gemfile.lock)
 - Ruby 3.2.3 (current stable)
 - Bootstrap 5.2.0 (modern UI framework)
 - Docker-first development
@@ -1273,7 +1273,7 @@ The IT-Journey stack represents a mature, well-architected solution that balance
 ### Summary
 
 IT-Journey is a **modern, production-ready educational platform** built on a solid foundation of:
-- **Jekyll 3.9.5** for static site generation
+- **Jekyll 3.10.0** for static site generation
 - **Ruby 3.2.3** for build tooling
 - **Python 3.11+** for automation and AI integration
 - **Docker** for consistent development environments
