@@ -5,8 +5,14 @@ name: CI
 # bamr87/bamr87/.github/workflows/standard-ci.yml. Don't edit the logic here.
 # (main is substituted with the repo's default branch on adoption.)
 
+# `pull_request.branches` filters on the PR's BASE branch. Without it this gate
+# also fires on the bot's `main` -> `gh-pages` deploy PR opened by
+# sync-gh-pages.yml, where GitHub cannot compute a merge ref against gh-pages'
+# unrelated history — every such run dies as a startup_failure (0 jobs) and
+# shows up as a red CI run that has nothing to do with the code.
 on:
   pull_request:
+    branches: [main]
   push:
     branches: [main]
 
