@@ -1,0 +1,140 @@
+---
+title: Digital Artist · L0001 · 2026-09-03
+description: Quest-perfection walkthrough of the Web Fundamentals slice digital-artist/0001 on 2026-09-03,
+  engine verdict fail (avg 53.2%). An evidence-based…
+date: '2026-09-03T00:00:00.000Z'
+author: Quest Perfection Loop
+categories:
+- Quest Reports
+- Digital Artist
+tags:
+- digital-artist
+- level-0001
+- walkthrough
+- quest-perfection
+- fail
+- web-fundamentals
+render_with_liquid: false
+excerpt: 'Digital Artist · Level 0001 — Web Fundamentals: an evidence-based quest-perfection walkthrough
+  from 2026-09-03.'
+slice: digital-artist/0001
+character: digital-artist
+level: '0001'
+theme: Web Fundamentals
+tier: Apprentice
+verdict: fail
+quest_count: 5
+engine_average: 53.2
+walk_date: '2026-09-03'
+run_url: https://github.com/bamr87/it-journey/actions/runs/33748325930
+source_report: test/quest-validator/walkthroughs/2026-09-03-digital-artist-0001.md
+---
+
+> **Slice** `digital-artist/0001` · **Level** 0001 (Web Fundamentals) · **Apprentice tier** · **Engine verdict** ❌ fail (avg 53.2%) · **Walked** 2026-09-03
+>
+> 🔗 [Perfection run](https://github.com/bamr87/it-journey/actions/runs/33748325930) · 🏠 [Perfection dashboard](/quest-reports/) · 📄 [Raw report](https://github.com/bamr87/it-journey/blob/main/test/quest-validator/walkthroughs/2026-09-03-digital-artist-0001.md) · 🕘 [Change history](https://github.com/bamr87/it-journey/commits/main/test/quest-validator/walkthroughs/2026-09-03-digital-artist-0001.md)
+
+---
+
+## 🎯 Session Summary
+
+I walked **window 2 of 6** of the **Digital Artist (UI/UX) → Level 0001 "Web Fundamentals" (Apprentice 🌱)** path, backed by the workflow's sealed execute-mode engine evidence — real commands run for real in a disposable sandbox, not model assertions. The window covers 5 quests with no declared prerequisite links to each other: *The GitHub Pages Portal*, *Stack Attack Analysis: IT-Journey*, *Build a Personal Website with GitHub Pages*, *The Summoning: Raise the Site and Give It a Voice*, and *SEO Optimization*.
+
+**Headline verdict: FAIL (engine avg 53.2%, 1 pass / 1 warn / 3 fail).** This window is a mixed bag by design and by execution. The one genuine standout is *The Summoning* (92/100, ✅ pass) — every runnable snippet actually worked end-to-end in the sandbox, from a remote-theme Jekyll build to a reproduced-and-fixed dependency bug to a working session-scribe script. *The GitHub Pages Portal* (62, ⚠️ warn) has a solid, verified git/HTML workflow but its Jekyll chapter hides a real `bundle install` permission failure and a silent build conflict that discards the learner's new content — plus it claims custom-domain and CI/CD coverage it never delivers. *Stack Attack Analysis* (44, ❌ fail) is a static architecture report mislabeled as a hands-on "quest," with version claims (Jekyll 3.9.5, `jekyll-theme-zer0` gem) verified wrong against the live repo. *Build a Personal Website* (15, ❌ fail) is the most consequential finding for this character specifically: it is this path's designated portfolio/identity "motivation engine" per the character sheet, and it is an empty stub with zero tutorial content. *SEO Optimization*'s engine pass **hit the max-turns limit (29) mid-run** while checking network connectivity and the quest's own local-server verification commands — it produced **no verdict at all**, so its "fail" in the machine table is an execution-capacity artifact, not a graded content judgment, and I report it as such rather than as evidence of a broken quest. None of the five quests raised a safety concern (safety scored 5/5 wherever a verdict was produced). For a design-first, terminal-shy learner, the standout risk isn't any one bug — it's that the window's one quest explicitly built to be their motivation engine (personal-site) delivers nothing to build.
+
+## 🗺️ The Journey
+
+| # | Verdict | Quest | Type | Score | One-line takeaway |
+|---|:--:|---|---|--:|---|
+| 1 | ⚠️ | The GitHub Pages Portal: Forging Your Digital Realm | main | 62 | Git/HTML/PowerShell workflow verified solid; Jekyll chapter has an undocumented `bundle install` permission failure and a silent index.html/index.markdown content-loss bug. |
+| 2 | ❌ | Stack Attack Analysis: IT-Journey | side | 44 | A static stack report, not a tutorial — its one runnable command errors as written, and its version/config claims are verified wrong against the live repo. |
+| 3 | ❌ | Build a Personal Website with GitHub Pages | side | 15 | A stub: no build instructions, no exercises — just a reference table of the original author's own site links, with a copy/paste bug and leaked Liquid tags. |
+| 4 | ✅ | The Summoning: Raise the Site and Give It a Voice | main | 92 | Every runnable snippet (remote-theme Jekyll build, dependency-failure reproduction, brand-as-data render, session-scribe script) actually worked exactly as documented. |
+| 5 | ❌ | SEO Optimization: Meta Tags, Sitemaps & Structured Data | main | — (engine error) | Execute engine hit its max-turns limit (29) mid-verification; no verdict was produced — inconclusive, not a genuine content failure. |
+
+Score **53.2%** average across the 4 scored quests · 1 pass / 1 warn / 3 fail (engine counts, including the 1 unscored error as a "fail") · engine cost ≈ $3.0022.
+
+## 🔬 Evidence
+
+All outcomes below are commands the execute engine actually ran in its own disposable sandbox, quoted/trimmed from the sealed `walk-evidence.json`/`walk-evidence.md`. Dimensions are on a 0-5 scale.
+
+### 1. The GitHub Pages Portal — ⚠️ 62 (15/11 runnable snippets ran, 3 failed)
+- Dimensions: `commands_work` 3, `content_accuracy` 3, `completeness` 2, `clarity` 3, `structure` 4, `safety` 5.
+- **Passed:** all platform-specific `git clone`/`add`/`commit`/`push` blocks (macOS, Linux, Windows via `pwsh`, Cloud) reproduced identically against a local bare remote seeded README-on-`main`, matching the quest exactly; the Chapter 1 styled HTML block parsed cleanly with Python's `html.parser`; `gem install --user-install jekyll bundler` genuinely installed Jekyll 4.4.1 + Bundler 4.0.20; `jekyll new . --force` correctly generated `index.markdown` (not `index.md`), matching the quest's own callout.
+- **Failed:** Chapter 3 Step 6's plain `bundle install` throws `Bundler::PermissionError` writing to `/var/lib/gems/.../cache/...gem` on a stock Linux install — **even after** `gem install --user-install jekyll bundler` — requiring an undocumented `bundle config set --local path vendor/bundle` fix the quest never mentions.
+- **Failed:** after that fix, `jekyll build` prints `Conflict: The following destination is shared by multiple files... _site/index.html - index.markdown - index.html` and **silently keeps the stale Chapter-1 `index.html`**, discarding the new Jekyll `index.markdown` content the learner just wrote — the quest never instructs deleting/renaming the old file.
+- **Failed (content_accuracy):** the copy-paste `index.markdown` snippet (line 369) contains a leaked template artifact — `[View Site]({​% raw %​}{​{ site.url }​}{​% endraw %​}){​% endraw %​}` — that would render as the literal string `{​{ site.url }​}` if pasted into a real learner site.
+- **completeness gap (score 2):** the Quest Validation Checklist claims "Custom domain setup instructions included (optional bonus)" and the Master Challenge requires "GitHub Actions for automated deployment," but zero CNAME/DNS/HTTPS steps or workflow YAML appear anywhere in the body.
+
+### 2. Stack Attack Analysis: IT-Journey — ❌ 44 (11/4 runnable snippets ran, 2 failed)
+- Dimensions: `commands_work` 2, `content_accuracy` 1, `completeness` 2, `clarity` 3, `structure` 2, `safety` 5.
+- **Passed:** `git clone https://github.com/bamr87/it-journey` succeeded and was used to verify the document's claims against the live repo; all 5 YAML snippets parsed with `yaml.safe_load`; both Ruby Gemfile snippets passed `ruby -c`.
+- **Failed:** the "Local Development" bash block's only actionable command, `python3 test/quest-validator/quest_validator.py` (run exactly as shown, no arguments), errors immediately: `error: Either quest_file or --directory must be specified`.
+- **Failed:** the "Quest Validator Service" Dockerfile snippet fails `docker build` (`COPY test/quest-validator/ ... not found`) and doesn't match the real repo's actual root Dockerfile (`FROM ruby:3.2.3`, builds the full Jekyll+Python environment, not `python:3.11-slim`).
+- **content_accuracy (score 1):** "Jekyll 3.9.5 is the latest GitHub Pages-compatible version" is repeated as fact 5 times, but the real repo's `Gemfile.lock` resolves `jekyll (= 3.10.0)`; the Gemfile snippet lists a `jekyll-theme-zer0` gem that doesn't exist in the real Gemfile (the theme is loaded via `remote_theme` instead); the `_config.yml` collections snippet (`posts, quests, notebooks, docs`) doesn't match the real collections (`pages, quests, notes, about, quest-reports`); the docker-compose snippet shows `jekyll/jekyll:latest`, an image the real repo's own comments say was deliberately abandoned as Ruby-incompatible with the theme.
+
+### 3. Build a Personal Website with GitHub Pages — ❌ 15 (0 runnable snippets; 1 recorded/reasoned)
+- Dimensions: `commands_work` 0, `content_accuracy` 1, `completeness` 0, `clarity` 0, `structure` 0, `safety` 5.
+- **Reasoned (nothing to run):** the entire 45-line body has zero fenced code/shell/config blocks — no `git init`, no Jekyll scaffold, no `_config.yml`, no repo/Pages settings walkthrough. It is a markdown table of external service links describing the *original author's own personal site* (Netlify, Cloudflare, AdSense, Disqus, etc.), not a tutorial a learner can replicate.
+- **content_accuracy:** row 6 claims a domain "hosted by Cloudflare" but the URL given is byte-identical to row 2's GitHub Pages URL — a copy/paste error; row 3 lists `travis-ci.org`, whose free/OSS tier has been defunct for years; the `{​% raw %​}{​{ site.github_user }​}{​% endraw %​}` Liquid tags are left unrendered in the shipped quest text.
+- **completeness/clarity/structure all score 0:** the title promises "Build a Personal Website with GitHub Pages," but no step ever instructs creating a repo, adding `index.html`/Jekyll content, enabling Pages, or verifying a live URL; the objectives checklist itself carries an unresolved author note admitting it was auto-seeded and never refined.
+
+### 4. The Summoning: Raise the Site and Give It a Voice — ✅ 92 (8/3 runnable snippets ran, all passed)
+- Dimensions: `commands_work` 5, `content_accuracy` 4, `completeness` 4, `clarity` 5, `structure` 5, `safety` 5.
+- **Passed:** `_config.yml` + `Gemfile` + `index.md` as written produced a real working site — `bundle install` completed (40 gems), `bundle exec jekyll build` finished in 0.387s, and `_site/index.html` genuinely contained remote-theme-rendered markup pulled live from `bamr87/zer0-mistakes` over the network (not a stub).
+- **Passed:** reproduced the quest's own specific claim exactly — removing `jekyll-include-cache` from Gemfile and `_config.yml` and rebuilding threw `Liquid syntax error (line 98): Unknown tag include_cached` in the theme's `_layouts/root.html`, word-for-word what the quest predicts; re-adding the gem fixed it.
+- **Passed:** `_data/brand.yml` + `_includes/voice.html` rendered the tagline and a populated `<li>` values list correctly when included from `index.md` — front-matter-as-data genuinely worked.
+- **Passed:** `scripts/session-scribe.sh` ran correctly on a first commit (exercised the `git show --name-only` fallback since `HEAD^1` doesn't exist) and again on a second commit (exercised the primary `git diff --name-only HEAD^1 HEAD` path), both producing correct dated dispatches under `dispatches/`.
+- **Reasoned:** the GitHub Actions `pages.yml` workflow couldn't run in this sandbox (no Actions runner); static review flagged `configure-pages` running before `checkout` (non-standard vs. GitHub's official starter order) and a missing `--baseurl` flag needed for project-page (non-`username.github.io`) deployments.
+
+### 5. SEO Optimization: Meta Tags, Sitemaps & Structured Data — ⚠️/❌ inconclusive (engine error, no verdict)
+- The execute pass errored out (`claude exited 1`) with `terminal_reason: "max_turns"` and `errors: ["Reached maximum number of turns (29)"]`. The last recorded tool calls show it was mid-way through a `curl -m 5` connectivity check to `rubygems.org` and then the quest's own Linux-path verification commands (`curl .../sitemap.xml`, a `grep -i '<meta'` scan, `curl .../robots.txt`, then `pkill -f "jekyll serve"`) — the kind of "stand up a local Jekyll server, add SEO plugins, curl the result" sequence that legitimately takes many turns (`bundle add`, `bundle exec jekyll serve`, wait for boot, then verify).
+- `verdict_obj` is `null` and `overall` is reported as `0.0` in the raw JSON, but this **must not be read as a graded content failure** — no dimension scores, no command pass/fail list, and no recommendations were ever produced for this quest. I am reporting this quest as **not evaluated this session**, not as "fails."
+
+## 🐞 Issues Found
+
+Every item cites what was actually run/observed (`tested`) or read directly from the quest source/frontmatter (`reasoned`).
+
+- **HIGH · Build a Personal Website · whole quest body · `tested`/`reasoned`** — this is the level's designated portfolio/identity quest, and the digital-artist character sheet names exactly this thread ("avatar, personal site... this path's motivation engine") as core to Level 0001. The quest delivers a reference table of the original author's own site links instead of a tutorial — zero runnable content, zero step-by-step instructions, `commands_work`/`completeness`/`clarity`/`structure` all scored 0. **Fix:** replace the table with an actual step-by-step build (create `<username>.github.io`, add `index.html`/Jekyll scaffold, enable Pages, verify the live URL) as the engine's own recommendation already states.
+- **HIGH · The GitHub Pages Portal · Chapter 3 Step 6, `bundle install` · `tested`** — fails with `Bundler::PermissionError` on a stock Linux install, even after the quest's own `--user-install` guidance, because bundler still defaults to writing gem caches system-wide. **Fix:** add `bundle config set --local path vendor/bundle` (or note the equivalent) before `bundle install`.
+- **HIGH · The GitHub Pages Portal · Chapter 1 → Chapter 3 handoff · `tested`** — `jekyll build` silently discards the new `index.markdown` content in favor of the stale Chapter-1 `index.html`, surfacing only an easy-to-miss build warning. **Fix:** explicitly instruct deleting/renaming the Chapter 1 `index.html` when Chapter 3 introduces `index.markdown`.
+- **HIGH · Stack Attack Analysis · repeated version/content claims · `tested`** — "Jekyll 3.9.5" (stated 5×), a fictional `jekyll-theme-zer0` gem, a stale `docker-compose.yml` image the real repo explicitly abandoned, and a mismatched `_config.yml` collections list are all verified wrong against the live `bamr87/it-journey` repo. **Fix:** regenerate version/config claims from the live `Gemfile.lock`/`_config.yml` rather than hardcoding them.
+- **MEDIUM · The Summoning · Quest Prerequisites, "A live zer0-mistakes Jekyll site (complete the prequel epic first)" · `reasoned`** — this text is quoted directly from the quest's own Prerequisites section, but `quest_dependencies.required_quests` in its frontmatter is `[]` (empty) and the referenced "prequel epic" (`/quests/codex/self-operating-website/`) is outside both this window and this level. A learner who reaches this quest via the planned window order — having only completed *The GitHub Pages Portal*'s **manual, non-remote-theme** site — has not satisfied the prose prerequisite, and nothing in the frontmatter or plan would have warned them. **Fix:** either add the epic hub to `required_quests` so tooling can gate on it, or soften the prose to make clear the quest is self-contained without it (the engine's own execute pass found it built and worked from empty, suggesting the prerequisite may be more aspirational than strictly required).
+- **MEDIUM · Stack Attack Analysis · "Local Development" bash block · `tested`** — `python3 test/quest-validator/quest_validator.py`, copy-pasted exactly as shown with no arguments, errors immediately (`Either quest_file or --directory must be specified`). **Fix:** show the working invocation, e.g. `python3 test/quest-validator/quest_validator.py -d pages/_quests/ --summary`.
+- **MEDIUM · SEO Optimization · engine execution · `tested` (of the failure itself)** — the execute pass never reached a verdict, hitting the 29-turn cap mid-verification (network check + local-server curl loop). This is a coverage gap for this session, not a confirmed quest defect — but it means none of this quest's Chapter 4 accessibility/performance content (a strong on-paper fit for this character) was execution-verified this run. **Fix (process, not content):** flag to the workflow owner that this quest's verification sequence (bundle add → jekyll serve boot → multiple curls → pkill) may need either a higher turn budget or a leaner verification path for future runs.
+- **LOW · Build a Personal Website · row 6 (Cloudflare) · `tested`** — the URL given is byte-identical to row 2's GitHub Pages URL, a copy/paste error that makes the Cloudflare claim unverifiable. **Fix:** correct the URL or remove the row.
+- **LOW · The GitHub Pages Portal · "Choose Your Adventure Platform" ordering · `reasoned`** — this section instructs `git clone your-repo-name.git` before Chapter 1 (further down the page) ever explains creating that repository — confusing ordering for a true beginner, and exactly the kind of CLI-without-orientation friction this character's lens flags as a real defect. **Fix:** move the platform quick-start after Chapter 1, or add a forward note that repo creation happens first.
+- **LOW · Stack Attack Analysis · quest framing · `reasoned`** — this is a static architecture/analysis report with an unresolved auto-seeded objectives placeholder, not a hands-on quest for any character path; it's a particularly poor fit for a design-first learner since it has no visual/UI content at all. **Fix:** either convert it into an actual guided exercise or reclassify it outside the quest collection (a `notes`/`about` piece).
+
+No safety issues anywhere in the slice — every scored quest hit `safety` 5/5, and no destructive commands were present or run. *SEO Optimization* was not scored so its safety posture is untested this session, but nothing in its source (meta tags, sitemap plugins, Lighthouse audits, `sips`/`imageoptim`) is inherently unsafe on inspection.
+
+## 🔗 Chain Continuity
+
+Playing this window in order, **as the Digital Artist persona** (design-first, terminal-shy, judges every quest partly by whether the visual outcome is confirmable):
+
+- **This window is not a frontmatter-declared chain.** All 5 quests have `quest_dependencies.required_quests: []`; only *The Summoning* references anything outside itself (`recommended_quests: [/quests/codex/self-operating-website/]`, an epic hub not in this level). Unlike a tightly sequenced arc, these 5 are grouped only by shared `level: '0001'` — the planner's window is a level-themed bundle, and I report it as such rather than implying a designed progression that doesn't exist in the data.
+- **Two different "build a Jekyll site and publish it" main quests land in the same window with no cross-reference.** *The GitHub Pages Portal* teaches a manual HTML→Jekyll-scaffold-via-`jekyll new` path; *The Summoning* teaches a remote-theme (`bamr87/zer0-mistakes`) path with brand-as-data and a session scribe. Both are verified as teaching genuinely different, non-overlapping skills (the character sheet's "theme a Jekyll site and publish it via GitHub Pages" checkpoint is covered twice, from two angles) — but neither quest acknowledges the other exists, so a learner doing both back-to-back in this window builds two unrelated sites with no narrative or technical bridge between them.
+- **The one explicit prose prerequisite in this window doesn't line up with the frontmatter graph.** *The Summoning*'s Prerequisites section says to "complete the prequel epic first" for a live zer0-mistakes site, but neither `required_quests` nor the plan enforces that, and the window doesn't include the epic. In practice the engine's own execute run built the quest's site from scratch successfully with none of that history — so the prerequisite reads as more aspirational than load-bearing, but a learner reading the quest prose literally would reasonably believe they're missing a required earlier chapter that this window never gives them.
+- **`SEO Optimization`'s own system requirement — "A Jekyll site (or any static HTML site) to edit" — is well satisfied by this window's ordering**, since it's walked last, after two quests that each build a Jekyll site. This is the one place the plan order genuinely helps a learner, even without a declared dependency forcing it.
+- **Against the character sheet's Level 0001 checkpoints** (semantic HTML + CSS/Bootstrap styling; theme a Jekyll site and publish via GitHub Pages; craft avatar/identity assets via the forge side-quests; one JS interaction), this window covers the Jekyll-theming-and-publishing checkpoint twice and well (especially via *The Summoning*), touches semantic HTML lightly (*The GitHub Pages Portal*'s Chapter 1 HTML block, verified valid), and **completely misses** the avatar/identity checkpoint — the side quest built to carry it (*Build a Personal Website*) is an empty stub — and the JS-interaction checkpoint, which no quest in this window addresses at all. No claim is made about the other 21 quests at this level; CSS/Bootstrap/avatar/JS content may well live in a different window per the ledger's accumulating coverage.
+- **Where this window does touch a visual payoff, the result is mixed.** *The Summoning* is exemplary for this lens — verified render, explicit checkpoints, a real `_site/index.html` a learner can point at. *The GitHub Pages Portal* is the opposite case: its Jekyll chapter's visible payoff (the new `index.markdown` content) is the exact thing the silently-discarded-build bug destroys — for a character who "judges every quest partly by its output," that's a more serious defect than the raw `commands_work: 3` score alone conveys.
+
+## 🧠 Reasoning & Method
+
+- **Mode:** `execute` (sealed). The `quest-walkthrough.yml` workflow pre-computed and sealed `walk-evidence.json`/`walk-evidence.md` via the deterministic agentic execute engine before this session started; I consumed both files **as-is** and made **zero** edits to `walk-plan.json`, `walk-evidence.*`, or any quest content under `pages/_quests/**`. I did not and could not re-run the engine myself (its child `claude` processes cannot authenticate from my Bash tool). This was not a `--mock` run — 4 of the 5 quests carry real `cost_usd`/`turns`/`duration_s`/`session_id` metadata (turns 4–27, 45.8s–311.1s wall time each, $3.0022 total); the 5th (*SEO Optimization*) genuinely errored out inside the engine (`terminal_reason: max_turns`) rather than completing with a low score.
+- **What I ran vs. reasoned:** every `passed`/`failed`/`skipped` cited in §Evidence is a command the execute engine actually ran in its own disposable sandbox (real `git`/`gem`/`bundle`/`jekyll` invocations, a real `docker build` attempt, a real dependency-removal-and-rebuild reproduction, a real `session-scribe.sh` run against real git history). My own contribution this session is **read-only reasoning** on top of that sealed evidence: I read all 5 quest source files end to end in plan order and the `quest-character-digital-artist` character sheet for persona/lens/per-level checkpoints, and I read each quest's `quest_dependencies`/`prerequisites` frontmatter directly — which is how I found the empty-`required_quests`-vs-window-grouping structure and the *Summoning* prose-prerequisite-vs-frontmatter mismatch (both `reasoned`, cited by exact quoted frontmatter/prose, not executed).
+- **Coverage / limits:** this is **window 2 of 6** of a 26-quest level (offset 10, size 5); I make no claim about the other 21 quests at level 0001 — they accumulate coverage in the ledger across runs. Within this window, all 5 planned quests were read and reasoned about, but only 4 of the 5 were execution-verified — *SEO Optimization*'s engine pass genuinely errored (`max_turns`) before producing any verdict, so my Evidence/Issues sections treat it as **unevaluated**, not failing, and my Journey table score is explicitly "—" rather than a number. This honesty gap should be read plainly: this session cannot certify or refute *SEO Optimization*'s commands as written.
+- **Confidence:** High on every `tested` finding sourced from the sealed evidence (the `bundle install` permission error, the silent `index.html`/`index.markdown` build conflict, the `quest_validator.py` argument error, the Docker build failure, the `include_cached` dependency reproduction, the session-scribe script runs) — each is a reproduced command outcome with a concrete message, not an assertion. High also on the personal-site character-fit finding — it's a direct comparison between the character sheet's explicit named checkpoint and the quest's near-total absence of content. Medium on the *Summoning* prerequisite-mismatch and window-grouping findings — these are direct frontmatter/prose readings, but whether the mismatch is a real learner-facing problem versus a harmless "your mileage may vary" caveat is a judgment call for a maintainer to weigh. Low confidence on anything about *SEO Optimization*'s actual runnable behavior — this session simply doesn't have execution evidence for it.
+
+---
+
+*Machine evidence excerpt (verbatim from `walk-evidence.md`):*
+> **4** quests evaluated · ✅ 1 pass · ⚠️ 1 warn · ❌ 3 fail · avg **53.2%** · ~$3.0022
+>
+> | | Score | Quest | Level | Snippets run | Summary |
+> |---|--:|---|---|:-:|---|
+> | ⚠️ | 62 | The GitHub Pages Portal: Forging Your Digital Realm | 0001 | 15/11 (3✗) | The quest's core git/HTML/PowerShell workflow is solid and verified to work end-to-end, but the Jekyll chapter has two reproducible, uncaught bugs... |
+> | ❌ | 44 | Stack Attack Analysis: IT-Journey | 0001 | 11/4 (2✗) | This "quest" is really a static architecture/analysis report rather than a hands-on tutorial... |
+> | ❌ | 15 | Build a Personal Website with GitHub Pages | 0001 | yes | This quest is essentially a stub: it contains no runnable code, no step-by-step build instructions, and no verification steps... |
+> | ✅ | 92 | The Summoning: Raise the Site and Give It a Voice | 0001 | 8/3 | This quest is technically solid and unusually well-verified: every runnable snippet... actually ran and worked exactly as described in this sandbox. |
+> | ❌ | — | SEO Optimization: Meta Tags, Sitemaps & Structured Data | 0001 | — | ⚠️ claude exited 1... "terminal_reason":"max_turns"... "errors":["Reached maximum number of turns (29)"] |
