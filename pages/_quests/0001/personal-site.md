@@ -77,7 +77,7 @@ My personal website can be accessed through following domains. These sites are a
  3   | <https://travis-ci.org/>                             | CI/CD for {% raw %}{{ site.github_user }}{% endraw %}.github.io
  4   | https://{% raw %}{{ site.github_user }}{% endraw %}.netlify.app/                    | `Domain 2`, hosted by Netlify
  5   | <https://www.netlify.com/>                           | CI/CD for {% raw %}{{ site.github_user }}{% endraw %}.netlify.app
- 6   | https://{% raw %}{{ site.github_user }}{% endraw %}.github.io/                             | `Domain 3`, hosted by Cloudflare
+ 6   | *(update with your own Cloudflare-hosted custom domain — was a copy/paste duplicate of Domain 1)* | `Domain 3`, hosted by Cloudflare
  7   | <https://www.cloudflare.com/>                        | CDN for {% raw %}{{ site.github_user }}{% endraw %}.github.io
  8   | <https://www.godaddy.com/>                           | Domain service for {% raw %}{{ site.github_user }}{% endraw %}.github.io
  9   | <https://sharethis.com/>                             | Share buttons
