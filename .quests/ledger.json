@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
-  "generated": "2026-09-04T11:35:22+00:00",
+  "generated": "2026-09-05T11:37:14+00:00",
   "totals": {
     "slices": 27,
     "perfect": 0,
     "stuck": 3,
-    "open_issues": 467
+    "open_issues": 407
   },
   "slices": {
     "developer/0000": {
@@ -233,187 +233,70 @@
       "tier": "Apprentice",
       "mode": "execute",
       "verdict": "fail",
-      "average": 67.9,
+      "average": 75.4,
       "total": 5,
-      "scored": 18,
+      "scored": 5,
       "requested": 26,
       "total_quests": 26,
-      "covered": 18,
-      "errored": 1,
+      "covered": 5,
+      "errored": 0,
       "truncated": false,
       "counts": {
-        "pass": 4,
-        "warn": 8,
-        "fail": 6
+        "pass": 3,
+        "warn": 1,
+        "fail": 1
       },
-      "open_issues": 72,
-      "high_priority_issues": 24,
+      "open_issues": 12,
+      "high_priority_issues": 4,
       "executed": true,
       "perfect": false,
       "perfect_since": null,
-      "reason": "covered 18/26; 6 fail; 8 warn; avg 67.9 < 95.0; 72 open issue(s); 24 high-priority",
+      "reason": "covered 5/26; 1 fail; 1 warn; avg 75.4 < 95.0; 12 open issue(s); 4 high-priority",
       "coverage": {
-        "pages/_quests/0001/stating-the-stats.md": {
-          "verdict": "fail",
-          "average": 45.0,
-          "open_issues": 5,
-          "high": 2,
-          "mode": "execute",
-          "executed": true,
-          "date": "2026-08-11"
-        },
-        "pages/_quests/0001/terminal-mastery.md": {
-          "verdict": "fail",
-          "average": 54.0,
-          "open_issues": 7,
-          "high": 2,
-          "mode": "execute",
-          "executed": true,
-          "date": "2026-08-11"
-        },
-        "pages/_quests/0001/side-quest-avatar-forge.md": {
-          "verdict": "warn",
-          "average": 79.0,
-          "open_issues": 4,
-          "high": 0,
-          "mode": "execute",
-          "executed": true,
-          "date": "2026-08-11"
-        },
-        "pages/_quests/0001/github-pages-portal.md": {
-          "verdict": "fail",
-          "average": 56.0,
-          "open_issues": 7,
-          "high": 3,
-          "mode": "execute",
-          "executed": true,
-          "date": "2026-08-10"
-        },
-        "pages/_quests/0001/personal-site.md": {
-          "verdict": "fail",
-          "average": 19.0,
-          "open_issues": 6,
-          "high": 2,
-          "mode": "execute",
-          "executed": true,
-          "date": "2026-08-10"
-        },
-        "pages/_quests/0001/self-operating-website-01-the-summoning.md": {
-          "verdict": "warn",
-          "average": 66.0,
-          "open_issues": 4,
-          "high": 1,
-          "mode": "execute",
-          "executed": true,
-          "date": "2026-07-23"
-        },
-        "pages/_quests/0001/seo-optimization.md": {
-          "verdict": "warn",
-          "average": 75.0,
-          "open_issues": 4,
-          "high": 1,
-          "mode": "execute",
-          "executed": true,
-          "date": "2026-08-10"
-        },
-        "pages/_quests/0001/side-quest-badge-collector.md": {
-          "verdict": "warn",
-          "average": 76.0,
-          "open_issues": 4,
-          "high": 1,
-          "mode": "execute",
-          "executed": true,
-          "date": "2026-08-11"
-        },
-        "pages/_quests/0001/github-pages-basics.md": {
-          "verdict": "pass",
-          "average": 86.0,
-          "open_issues": 0,
-          "high": 0,
-          "mode": "execute",
-          "executed": true,
-          "date": "2026-07-28"
-        },
-        "pages/_quests/0001/jekyll-fundamentals.md": {
-          "verdict": "warn",
-          "average": 78.0,
-          "open_issues": 6,
-          "high": 2,
-          "mode": "execute",
-          "executed": true,
-          "date": "2026-07-22"
-        },
-        "pages/_quests/0001/yaml-configuration.md": {
-          "verdict": "pass",
-          "average": 97.0,
-          "open_issues": 0,
-          "high": 0,
-          "mode": "execute",
-          "executed": true,
-          "date": "2026-07-28"
-        },
-        "pages/_quests/0001/git-workflow-mastery.md": {
-          "verdict": "pass",
-          "average": 83.0,
-          "open_issues": 0,
-          "high": 0,
-          "mode": "execute",
-          "executed": true,
-          "date": "2026-07-28"
-        },
-        "pages/_quests/0001/it-journey-stack-analysis.md": {
-          "verdict": "fail",
-          "average": 48.0,
-          "open_issues": 7,
-          "high": 3,
-          "mode": "execute",
-          "executed": true,
-          "date": "2026-07-23"
-        },
-        "pages/_quests/0001/liquid-templating.md": {
-          "verdict": "warn",
-          "average": 71.0,
-          "open_issues": 3,
-          "high": 1,
-          "mode": "execute",
-          "executed": true,
-          "date": "2026-07-28"
-        },
         "pages/_quests/0001/docs-in-a-row.md": {
           "verdict": "fail",
-          "average": 43.0,
-          "open_issues": 7,
+          "average": 42.0,
+          "open_issues": 8,
           "high": 3,
           "mode": "execute",
           "executed": true,
-          "date": "2026-08-12"
+          "date": "2026-09-05"
         },
         "pages/_quests/0001/javascript-fundamentals.md": {
           "verdict": "pass",
-          "average": 97.0,
+          "average": 94.0,
           "open_issues": 0,
           "high": 0,
           "mode": "execute",
           "executed": true,
-          "date": "2026-08-12"
+          "date": "2026-09-05"
         },
         "pages/_quests/0001/analytics-integration.md": {
           "verdict": "warn",
-          "average": 71.0,
-          "open_issues": 4,
-          "high": 2,
-          "mode": "execute",
-          "executed": true,
-          "date": "2026-08-12"
-        },
-        "pages/_quests/0001/kaizen.md": {
-          "verdict": "warn",
-          "average": 78.0,
+          "average": 72.0,
           "open_issues": 4,
           "high": 1,
           "mode": "execute",
           "executed": true,
-          "date": "2026-08-12"
+          "date": "2026-09-05"
+        },
+        "pages/_quests/0001/kaizen.md": {
+          "verdict": "pass",
+          "average": 81.0,
+          "open_issues": 0,
+          "high": 0,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-09-05"
+        },
+        "pages/_quests/0001/jekyll-plugins.md": {
+          "verdict": "pass",
+          "average": 88.0,
+          "open_issues": 0,
+          "high": 0,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-09-05"
         }
       },
       "fix_rounds": 0,
@@ -421,22 +304,11 @@
       "stuck_reason": null,
       "needs_human": false,
       "last_fixed": null,
-      "last_run": "2026-08-12T11:43:18+00:00",
-      "last_run_date": "2026-08-12",
-      "runs": 12,
-      "run_url": "https://github.com/bamr87/it-journey/actions/runs/31591270584",
+      "last_run": "2026-09-05T11:37:14+00:00",
+      "last_run_date": "2026-09-05",
+      "runs": 13,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/33962573170",
       "history": [
-        {
-          "event": "walk",
-          "at": "2026-07-20T13:25:53+00:00",
-          "date": "2026-07-20",
-          "mode": "execute",
-          "verdict": "fail",
-          "average": 0.0,
-          "open_issues": 0,
-          "perfect": false,
-          "run_url": "https://github.com/bamr87/it-journey/actions/runs/29740320814"
-        },
         {
           "event": "walk",
           "at": "2026-07-21T14:02:21+00:00",
@@ -535,6 +407,17 @@
           "open_issues": 15,
           "perfect": false,
           "run_url": "https://github.com/bamr87/it-journey/actions/runs/31591270584"
+        },
+        {
+          "event": "walk",
+          "at": "2026-09-05T11:37:14+00:00",
+          "date": "2026-09-05",
+          "mode": "execute",
+          "verdict": "fail",
+          "average": 75.4,
+          "open_issues": 12,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/33962573170"
         }
       ]
     },
