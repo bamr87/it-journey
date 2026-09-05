@@ -146,33 +146,34 @@ Open the file in your editor and fill in your details:
 # ═══════════════════════════════════════════
 profile:
   display_name: "Your Display Name"
-  class: Wizard          # Choose: Wizard, Warrior, Ranger, Rogue, Healer, Bard, Paladin
   avatar: ""             # URL to avatar image (leave blank for GitHub default)
+  class: Wizard          # Choose: Wizard, Warrior, Ranger, Rogue, Healer, Bard, Paladin
+  title: "Your Title or Role"
   bio: "A brief description of your quest in IT."
   location: ""
-  joined: "2026-03-20"
+  motto: ""
   banner_color: "#6c3fc5" # Hex color for your profile banner
   links:
     github: "https://github.com/YOUR_USERNAME"
-    website: ""
     twitter: ""
-  badges_pinned: []      # Pin up to 3 badge IDs here after earning them
+    linkedin: ""
+    website: ""
+  badges_pinned: []      # Pin up to 5 achievement IDs here after earning them
 
 # ═══════════════════════════════════════════
 # 🤖 AUTO-GENERATED — Do not edit below
 # ═══════════════════════════════════════════
 stats:
-  commits: 0
-  prs_merged: 0
-  quests_authored: 0
-  posts_authored: 0
+  total_commits: 0
+  total_prs_merged: 0
+  total_quests_authored: 0
+  total_posts_authored: 0
   lines_added: 0
   lines_removed: 0
+  first_contribution_date: null
+  latest_contribution_date: null
   active_days: 0
-  current_streak: 0
-  longest_streak: 0
-  first_commit: null
-  latest_commit: null
+  streak_days: 0
   top_languages: []
   top_categories: []
   contribution_calendar: []
@@ -181,9 +182,10 @@ achievements: []
 
 level:
   xp: 0
-  current_level: 0
-  tier: Apprentice
-  next_level_xp: 100
+  current_level: "0000"
+  tier: "Apprentice"
+  xp_to_next_level: 100
+  progress_percent: 0
 ```
 
 ### 🎭 Choosing Your Class
@@ -228,9 +230,9 @@ permalink: /contributors/YOUR_USERNAME/
 lastmod: 2026-03-20T00:00:00.000Z
 ---
 
-<link rel="stylesheet" href="{% raw %}{{ '/assets/css/contributor-profile.css' | relative_url }}{% endraw %}">
+<link rel="stylesheet" href="{{ '/assets/css/contributor-profile.css' | relative_url }}">
 
-{% raw %}{% include contributor/character_sheet.html username="YOUR_USERNAME" %}{% endraw %}
+{% include contributor/character_sheet.html username="YOUR_USERNAME" %}
 
 ---
 
@@ -277,9 +279,10 @@ cat _data/contributors/YOUR_USERNAME.yml
 
 ## ✅ Step 5: Verify Your Character Sheet
 
-Build the Jekyll site locally to see your profile:
+Build the Jekyll site locally to see your profile. If this is your first time running the site, install the Ruby gems first:
 
 ```bash
+bundle install
 bundle exec jekyll serve
 ```
 

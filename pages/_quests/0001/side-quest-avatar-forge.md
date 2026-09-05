@@ -123,9 +123,10 @@ cp <PATH_TO_YOUR_AVATAR> assets/images/contributors/YOUR_USERNAME.png
 
 ### Step 4: Verify
 
-Build the site and check your profile page:
+Build the site and check your profile page. This assumes the site repo is already cloned and bundled from the prerequisite **Forge Your Character** quest — run `bundle install` first if you haven't yet:
 
 ```bash
+bundle install
 bundle exec jekyll serve
 # Visit http://localhost:4000/contributors/YOUR_USERNAME/
 ```
@@ -133,7 +134,7 @@ bundle exec jekyll serve
 Your avatar should appear in the circular frame at the top of your character card.
 
 - [ ] Avatar displays correctly
-- [ ] Fallback still works if image fails to load
+- [ ] Fallback still works if image fails to load — test by temporarily pointing `avatar:` at a broken URL and confirming the GitHub identicon (or a default placeholder) still renders instead of a blank/broken image
 
 ## 🏆 Reward: Portrait Artist Badge 🎨
 
