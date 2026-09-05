@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Security
+- **nokogiri 1.19.3 → 1.19.4 and faraday 2.14.2 → 2.14.3** — clears every advisory reported by the dependency-security checker in #388: 9 nokogiri advisories (`GHSA-5prr-v3j2-97mh`, `GHSA-5v8h-3h3q-446p`, `GHSA-8678-w3jw-xfc2`, `GHSA-9cv2-cfxc-v4v2`, `GHSA-g9g8-vgvw-g3vf`, `GHSA-p67v-3w7g-wjg7`, `GHSA-phwj-rprq-35pp`, `GHSA-wfpw-mmfh-qq69`, `GHSA-wjv4-x9w8-wm3h` — use-after-free, out-of-bounds read, and null-pointer-dereference issues in the libxml2 bindings, all patched in `>= 1.19.4`) and `CVE-2026-54297` in faraday (CVSS 7.5, uncontrolled recursion in `NestedParamsEncoder` allowing a stack-exhaustion DoS, patched in `>= 2.14.3`). The checker counted these as 55 because nokogiri resolves to six platform-specific variants (6 × 9 + 1). `Gemfile.lock` only — no `Gemfile` constraint changed, and both new versions satisfy the existing `nokogiri (>= 1.16.2, < 2.0)` and `faraday (>= 1, < 3)` requirements
+
 ### Added
 - **Bashcrawl quest hub rewrite** — `pages/_quests/0000/bashcrawl/README.md` fully rewritten with Mermaid dungeon map, chapter guide table, quick-start command, and play-mode reference; links to all 10 side-quests
 - **Bashcrawl launcher script v3.0.0** — `pages/_quests/0000/bashcrawl/bash_crawl.sh` with `tutorial`/`agent` subcommands, `--quest <chamber>` flag, and 7-option interactive menu
