@@ -1,19 +1,19 @@
 # Quest Perfection — ledger dashboard
 
-_Generated 2026-09-04T11:35:22+00:00. Source of truth: `.quests/ledger.json` (committed, generated)._
+_Generated 2026-09-05T11:37:14+00:00. Source of truth: `.quests/ledger.json` (committed, generated)._
 
-**0/27** slices perfect · **27** walked · **3** stuck (needs human) · **467** open issue(s) outstanding
+**0/27** slices perfect · **27** walked · **3** stuck (needs human) · **407** open issue(s) outstanding
 
 ## Slices (worst-first)
 
 | Slice | Theme | Verdict | Avg | Cov | Open | Perfect | Stuck | Last run | Report |
 | --- | --- | :-: | --: | :-: | --: | :-: | :-: | --- | --- |
-| `developer/0001` | Web Fundamentals | ❌ fail | 67.9 | 18/26 | 72 |  |  | 2026-08-12 | [run](https://github.com/bamr87/it-journey/actions/runs/31591270584) |
 | `digital-artist/0001` | Web Fundamentals | ❌ fail | 67.9 | 21/26 | 75 |  |  | 2026-09-04 | [run](https://github.com/bamr87/it-journey/actions/runs/33866757240) |
 | `game-developer/0001` | Web Fundamentals | ❌ fail | 68.0 | 14/26 | 41 |  |  | 2026-08-27 | [run](https://github.com/bamr87/it-journey/actions/runs/33083807177) |
 | `digital-artist/0111` | API Development | ❌ fail | 71.4 | 5/10 | 12 |  |  | 2026-07-13 | [run](https://github.com/bamr87/it-journey/actions/runs/29248386306) |
 | `game-developer/0111` | API Development | ❌ fail | 75.2 | 10/10 | 21 |  |  | 2026-07-18 | [run](https://github.com/bamr87/it-journey/actions/runs/29642483805) |
 | `developer/1110` | Architecture & Design Patterns | ❌ fail | 75.4 | 5/10 | 15 |  |  | 2026-07-15 | [run](https://github.com/bamr87/it-journey/actions/runs/29412020762) |
+| `developer/0001` | Web Fundamentals | ❌ fail | 75.4 | 5/26 | 12 |  |  | 2026-09-05 | [run](https://github.com/bamr87/it-journey/actions/runs/33962573170) |
 | `security-specialist/1011` | Security & Compliance | ❌ fail | 75.9 | 11/12 | 26 |  |  | 2026-07-28 | [run](https://github.com/bamr87/it-journey/actions/runs/30355858267) |
 | `system-engineer/0101` | CI/CD & DevOps | ❌ fail | 76.8 | 12/13 | 25 |  |  | 2026-07-28 | [run](https://github.com/bamr87/it-journey/actions/runs/30355858267) |
 | `developer/0111` | API Development | ❌ fail | 77.4 | 5/10 | 9 |  |  | 2026-07-14 | [run](https://github.com/bamr87/it-journey/actions/runs/29329246935) |
