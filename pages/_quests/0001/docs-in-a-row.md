@@ -230,7 +230,7 @@ By completing this quest, you will:
 **Checkpoint**: You now have a structured repository ready for automation!
 
 ### Step 2: Weave the Automation Spell (GitHub Workflow)
-Harness the power of GitHub Actions to automate your doc-harvesting ritual. Create `.github/workflows/aggregate-docs.yaml` with this incantation:
+Harness the power of GitHub Actions to automate your doc-harvesting ritual. Open the `.github/workflows/aggregate-docs.yml` file you created in Step 1 and add this incantation:
 
 ```yaml
 name: Aggregate Documentation
@@ -365,7 +365,8 @@ while IFS= read -r repo || [ -n "$repo" ]; do
         
         # Create target directory and copy file
         mkdir -p "$target_dir"
-        cp "$file" "$target_dir/" && ((file_count++))
+        cp "$file" "$target_dir/"
+        file_count=$((file_count + 1))
     done < <(find "$temp_dir" -type f \( -name "*.md" -o -name "README*" \) -not -path "*/.git/*" -not -path "*/node_modules/*" -not -path "*/vendor/*")
     
     log_info "Collected $file_count documentation files from $repo_name"
@@ -440,7 +441,9 @@ def generate_front_matter(content):
 # Process files
 for root, dirs, files in os.walk(RAW_DIR):
     for file in files:
-        if file.endswith('.md'):
+        # aggregate.sh collects both *.md and extension-less README* files,
+        # so process.py must handle both or it silently loses the READMEs.
+        if file.endswith('.md') or file.startswith('README'):
             src_path = Path(root) / file
             with open(src_path, 'r') as f:
                 content = f.read()
@@ -459,7 +462,10 @@ for root, dirs, files in os.walk(RAW_DIR):
 
             # Organize
             category = categorize_content(body)
-            dest_dir = Path(ORGANIZED_DIR) / category / Path(root).relative_to(RAW_DIR).parent
+            # Note: no trailing .parent here — keep the per-repo subpath so
+            # same-named files from different repos (e.g. every README.md)
+            # never collide and overwrite each other under docs/.
+            dest_dir = Path(ORGANIZED_DIR) / category / Path(root).relative_to(RAW_DIR)
             dest_dir.mkdir(parents=True, exist_ok=True)
             dest_path = dest_dir / file
 

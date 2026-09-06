@@ -203,7 +203,7 @@ xdg-open http://127.0.0.1:4000/
 ```
 
 **Linux-Specific Notes:**
-- `curl -s http://127.0.0.1:4000/ | grep -i analytics` confirms the snippet renders.
+- `curl -s http://127.0.0.1:4000/ | grep -iE 'googletagmanager|gtag|plausible'` confirms the snippet renders (the rendered GA4/Plausible tags never contain the literal word "analytics").
 - Use the provider's real-time view to verify events arrive.
 
 </details>
@@ -254,12 +254,12 @@ A clean GA4 install lives in one include so a single config value controls it. I
   window.dataLayer = window.dataLayer || [];
   function gtag(){ dataLayer.push(arguments); }
   gtag('js', new Date());
-  // anonymize_ip trims the visitor's IP for privacy
-  gtag('config', '{% raw %}{{ site.ga_id }}{% endraw %}', { anonymize_ip: true });
+  gtag('config', '{% raw %}{{ site.ga_id }}{% endraw %}');
 </script>
 {% raw %}{% endif %}{% endraw %}
 ```
 
+GA4 does not store visitor IP addresses by default, so it needs no `anonymize_ip` flag - that option only did something on the older Universal Analytics. If you migrated a snippet from Universal Analytics, drop `anonymize_ip` rather than carrying it forward; it is silently ignored by GA4's `gtag('config', ...)` call.
 
 The `jekyll.environment == "production"` guard is the key habit: your local clicks never pollute your real data. (This is a common, real-world mistake - sites that fire analytics in dev end up with most of their "traffic" being themselves.) A privacy-first tool is even simpler - one script tag, no cookies:
 
