@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
-  "generated": "2026-09-05T11:37:14+00:00",
+  "generated": "2026-09-07T11:35:52+00:00",
   "totals": {
     "slices": 27,
     "perfect": 0,
     "stuck": 3,
-    "open_issues": 407
+    "open_issues": 401
   },
   "slices": {
     "developer/0000": {
@@ -429,7 +429,7 @@
       "tier": "Apprentice",
       "mode": "execute",
       "verdict": "fail",
-      "average": 67.9,
+      "average": 71.5,
       "total": 5,
       "scored": 21,
       "requested": 26,
@@ -438,16 +438,16 @@
       "errored": 0,
       "truncated": false,
       "counts": {
-        "pass": 6,
+        "pass": 7,
         "warn": 11,
-        "fail": 4
+        "fail": 3
       },
-      "open_issues": 75,
-      "high_priority_issues": 24,
+      "open_issues": 69,
+      "high_priority_issues": 21,
       "executed": true,
       "perfect": false,
       "perfect_since": null,
-      "reason": "covered 21/26; 4 fail; 11 warn; avg 67.9 < 95.0; 75 open issue(s); 24 high-priority",
+      "reason": "covered 21/26; 3 fail; 11 warn; avg 71.5 < 95.0; 69 open issue(s); 21 high-priority",
       "coverage": {
         "pages/_quests/0001/github-pages-portal.md": {
           "verdict": "warn",
@@ -541,21 +541,21 @@
         },
         "pages/_quests/0001/advanced-markdown.md": {
           "verdict": "pass",
-          "average": 100.0,
+          "average": 95.0,
           "open_issues": 0,
           "high": 0,
           "mode": "execute",
           "executed": true,
-          "date": "2026-09-01"
+          "date": "2026-09-07"
         },
         "pages/_quests/0001/barodybroject-stack-analysis.md": {
           "verdict": "warn",
-          "average": 69.0,
-          "open_issues": 5,
-          "high": 2,
+          "average": 76.0,
+          "open_issues": 4,
+          "high": 1,
           "mode": "execute",
           "executed": true,
-          "date": "2026-09-01"
+          "date": "2026-09-07"
         },
         "pages/_quests/0001/css-styling-basics.md": {
           "verdict": "pass",
@@ -564,25 +564,25 @@
           "high": 0,
           "mode": "execute",
           "executed": true,
-          "date": "2026-09-01"
+          "date": "2026-09-07"
         },
         "pages/_quests/0001/bootstrap-framework.md": {
           "verdict": "pass",
-          "average": 83.0,
+          "average": 97.0,
           "open_issues": 0,
           "high": 0,
           "mode": "execute",
           "executed": true,
-          "date": "2026-09-01"
+          "date": "2026-09-07"
         },
         "pages/_quests/0001/building-testing-git-init-script.md": {
-          "verdict": "fail",
-          "average": 24.0,
-          "open_issues": 5,
-          "high": 2,
+          "verdict": "pass",
+          "average": 85.0,
+          "open_issues": 0,
+          "high": 0,
           "mode": "execute",
           "executed": true,
-          "date": "2026-09-01"
+          "date": "2026-09-07"
         },
         "pages/_quests/0001/github-pages-basics.md": {
           "verdict": "warn",
@@ -644,22 +644,11 @@
       "stuck_reason": null,
       "needs_human": false,
       "last_fixed": null,
-      "last_run": "2026-09-04T11:35:22+00:00",
-      "last_run_date": "2026-09-04",
-      "runs": 18,
-      "run_url": "https://github.com/bamr87/it-journey/actions/runs/33866757240",
+      "last_run": "2026-09-07T11:35:52+00:00",
+      "last_run_date": "2026-09-07",
+      "runs": 19,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/34115397074",
       "history": [
-        {
-          "event": "walk",
-          "at": "2026-07-24T13:56:56+00:00",
-          "date": "2026-07-24",
-          "mode": "execute",
-          "verdict": "fail",
-          "average": 59.2,
-          "open_issues": 23,
-          "perfect": false,
-          "run_url": "https://github.com/bamr87/it-journey/actions/runs/30090038199"
-        },
         {
           "event": "walk",
           "at": "2026-07-27T14:28:55+00:00",
@@ -758,6 +747,17 @@
           "open_issues": 24,
           "perfect": false,
           "run_url": "https://github.com/bamr87/it-journey/actions/runs/33866757240"
+        },
+        {
+          "event": "walk",
+          "at": "2026-09-07T11:35:52+00:00",
+          "date": "2026-09-07",
+          "mode": "execute",
+          "verdict": "warn",
+          "average": 87.2,
+          "open_issues": 4,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/34115397074"
         }
       ]
     },
