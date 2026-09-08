@@ -33,7 +33,7 @@ To run an incremental content-improvement pass, **invoke the `cms-curator` skill
 
 ## The AI content fleet (Claude-Code-OAuth, on-brand, continuous)
 
-The substantive (Lane B) half of the CMS is executed by a **fleet of Claude Code agents** modeled on lifehacker.dev. All AI goes through one runner (`scripts/ai/run.sh` + `_data/ai.yml` + the `.github/actions/claude-run` step), authenticated by a `CLAUDE_CODE_OAUTH_TOKEN` secret. Roles are in `.claude/agents/*.md`; the `content-curator` skill composes the existing `cms-curator` + `brand-voice` skills. See **`scripts/ai/README.md`** for the full map and setup.
+The substantive (Lane B) half of the CMS is executed by a **fleet of Claude Code agents** modeled on lifehacker.dev. All AI goes through one runner — the fleet's `claude-run` action, consumed by reference (`uses: bamr87/bamr87/.github/actions/claude-run@main`; nothing vendored here) and configured by this repo's `_data/ai.yml` — authenticated by a `CLAUDE_CODE_OAUTH_TOKEN` secret. Roles are in `.claude/agents/*.md`; the `content-curator` skill composes the existing `cms-curator` + `brand-voice` skills. See **`scripts/ai/README.md`** for the full map and setup.
 
 - `content-factory.yml` (daily) — `content-curator` improves one page per
   collection from the `.cms` worklist → one `auto:content` PR each.
@@ -105,9 +105,9 @@ rendered layout, styling, or interaction (CSS/SCSS, templates/includes, nav, JS 
 
 ## Fleet context
 
-This repo is one of ~40 managed by the [bamr87/bamr87 dash](https://github.com/bamr87/bamr87) (registry: `_data/projects.yml`; tiered baseline: `docs/STANDARDS.md`). It is vendored there as a git submodule: commit and push changes **here** first — the hub only bumps its pointer afterwards. Shared CI, release, schema, and agent kits are seeded from the hub's `templates/`; prefer adopting those over hand-rolling equivalents.
+This repo is one of ~40 managed by the [bamr87/bamr87 dash](https://github.com/bamr87/bamr87) (registry: `_data/projects.yml`; tiered baseline: `docs/STANDARDS.md`). It is vendored there as a git submodule: commit and push changes **here** first — the hub only bumps its pointer afterwards. Shared CI, release, schema, and agent kits are seeded from the hub's `templates/`; prefer adopting those over hand-rolling equivalents. The AI runner (`ai-runner` kit) is the exception to seeding: it is consumed **by reference** from the hub (`bamr87/bamr87/.github/actions/claude-run@main`), never copied in — only its companions (`_data/ai.yml`, `scripts/ai/usage.rb` + `usage_report.rb` + `api_call.rb`, `.prose-excludes`) live here.
 
 ## Standard deviations
 
 - `UPS-REPO-02` — tests live under `test/` (grandfathered).
-- `markdown-oneline.yml` carries `branches: [main]` on its `pull_request` trigger on top of the hub prose kit 0.3.0 shape: the recurring "sync gh-pages with main" deploy PRs target the built `gh-pages` branch, GitHub cannot resolve a merge ref for them, and the kit's unfiltered trigger failed every one at startup with a red X unrelated to prose. The two extra `--exclude` patterns (machine-authored quest reports + walkthroughs) are the same list `.prose-excludes` hands the shared AI runner.
+- `markdown-oneline.yml` carries `branches: [main]` on its `pull_request` trigger on top of the hub prose kit 0.3.0 shape: the recurring "sync gh-pages with main" deploy PRs target the built `gh-pages` branch, GitHub cannot resolve a merge ref for them, and the kit's unfiltered trigger failed every one at startup with a red X unrelated to prose. The two extra `--exclude` patterns (machine-authored quest reports + walkthroughs) are the same list `.prose-excludes` hands the fleet's `claude-run` runner.

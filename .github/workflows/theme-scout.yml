@@ -117,7 +117,7 @@ jobs:
 
       - name: File deduped theme issues upstream (theme-scout agent)
         if: ${{ steps.token.outputs.has == 'true' }}
-        uses: ./.github/actions/claude-run
+        uses: bamr87/bamr87/.github/actions/claude-run@main
         with:
           agent: theme-scout
           prompt: >-

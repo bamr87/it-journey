@@ -479,7 +479,7 @@ compress-images-apply:
 # Single local + CI entry point for tools/unwrap-prose.py, the Liquid-safe
 # surgical unwrapper. The EXCLUDES here MUST stay in lockstep with the check in
 # .github/workflows/markdown-oneline.yml and with .prose-excludes (read by the
-# shared scripts/ai/run.sh kit) — generated SCHEMA/CHANGELOG + the
+# fleet's claude-run runner, the shared ai-runner kit) — generated SCHEMA/CHANGELOG + the
 # machine-authored quest reports/walkthroughs are not hand-authored prose.
 # AI content agents run `make prose-oneline-apply` before opening a PR so the
 # `oneline` CI gate can never fail on their soft-wrapped prose.

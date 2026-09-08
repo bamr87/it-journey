@@ -1,17 +1,18 @@
 # =============================================================================
 # ai.yml — the ONE place AI is configured for the whole repo
 # -----------------------------------------------------------------------------
-# Everything that calls a model — every workflow agent step and every skill —
-# goes through scripts/ai/run.sh, which reads this file. Primary path is Claude
-# Code (the `claude` CLI / agent, authenticated by CLAUDE_CODE_OAUTH_TOKEN); if
-# it is unavailable or fails, run.sh falls back to the Claude API
-# (scripts/ai/api_call.rb, stdlib HTTP, no gem). Change the model or budget
-# here and it changes everywhere. run.sh + the claude-run action are the shared
-# `ai-runner` kit (byte-identical to lifehacker.dev's) — see scripts/ai/README.md.
+# Everything that calls a model — every workflow agent step — goes through the
+# fleet's claude-run action (bamr87/bamr87/.github/actions/claude-run@main,
+# consumed by reference; its run.sh reads this file from the consumer tree).
+# Primary path is Claude Code (the `claude` CLI / agent, authenticated by
+# CLAUDE_CODE_OAUTH_TOKEN); if it is unavailable or fails, the runner falls back
+# to the Claude API (scripts/ai/api_call.rb, stdlib HTTP, no gem). Change the
+# model or budget here and it changes everywhere. The action + runner are the
+# shared `ai-runner` kit, held once in the hub — see scripts/ai/README.md.
 #
 # Auth is NOT set here (a token is a secret, never committed): provide EITHER
 # CLAUDE_CODE_OAUTH_TOKEN (from `claude setup-token`; subscription auth, the
-# preferred CI credential) OR ANTHROPIC_API_KEY in the environment. run.sh
+# preferred CI credential) OR ANTHROPIC_API_KEY in the environment. The runner
 # prefers the OAuth token for the Claude Code path; the API fallback can only
 # use ANTHROPIC_API_KEY.
 #
