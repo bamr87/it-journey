@@ -128,7 +128,7 @@ module AIUsage
   end
 
   def stable_id(payload_anchor)
-    Digest::SHA1.hexdigest("#{ENV['GITHUB_RUN_ID']}|#{ENV['GITHUB_JOB']}|#{payload_anchor}")[0, 16]
+    Digest::SHA256.hexdigest("#{ENV['GITHUB_RUN_ID']}|#{ENV['GITHUB_JOB']}|#{payload_anchor}")[0, 16]
   end
 
   # --- ingesters ---------------------------------------------------------------
@@ -136,7 +136,7 @@ module AIUsage
   # total_cost_usd, usage{...}, modelUsage{<id>=>{...costUSD}}, num_turns, uuid).
   def from_claude_result(res, agent: '', exit_code: 0, source: 'claude-code')
     rec = base_record(source: source, agent: agent)
-    rec['id']          = stable_id(res['uuid'] || res['session_id'] || Digest::SHA1.hexdigest(res.to_s))
+    rec['id']          = stable_id(res['uuid'] || res['session_id'] || Digest::SHA256.hexdigest(res.to_s))
     rec['status']      = (res['is_error'] || exit_code.to_i != 0) ? 'error' : 'success'
     rec['duration_ms'] = res['duration_ms']
     rec['num_turns']   = res['num_turns']
@@ -190,7 +190,7 @@ module AIUsage
   # A raw Messages API response (api_call.rb fallback). No cost field — estimate.
   def from_api_response(data, agent: '')
     rec = base_record(source: 'api-fallback', agent: agent)
-    rec['id']     = stable_id(data['id'] || Digest::SHA1.hexdigest(data.to_s))
+    rec['id']     = stable_id(data['id'] || Digest::SHA256.hexdigest(data.to_s))
     rec['model']  = data['model'].to_s
     rec['status'] = data['stop_reason'] == 'refusal' ? 'error' : 'success'
     usage = data['usage'] || {}
@@ -225,7 +225,7 @@ module AIUsage
     return from_claude_result(result, agent: agent, source: 'claude-code-action') if result
 
     rec = base_record(source: 'claude-code-action', agent: agent)
-    rec['id'] = stable_id(Digest::SHA1.hexdigest(text))
+    rec['id'] = stable_id(Digest::SHA256.hexdigest(text))
     turns = 0
     events.each do |e|
       next unless e.is_a?(Hash) && e['type'] == 'assistant'
