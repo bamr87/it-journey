@@ -1,5 +1,6 @@
 name: Claude
 
+# kit: agent-context v0.4.0
 # @claude mention handler, seeded from bamr87/bamr87 templates/agent-context/.
 # Mention @claude in an issue or PR comment and Claude Code picks up the task.
 #
