@@ -27,8 +27,8 @@ Plus a shared AI chokepoint: `scripts/ai/run.sh` + `.github/actions/claude-run` 
 | Layer | Covers | Lives in (one place) | Status |
 |---|---|---|---|
 | 0. CI check | any wrapped prose reaching a PR, all repos | fanned-out `markdown-oneline.yml` | shipped (the backstop) |
-| 1. CI auto-fix | same, but self-heals instead of failing | hub prose kit — one edit | draft below |
-| 2. AI runner sweep | all AI markdown in CI, all sibling repos | `scripts/ai/run.sh` (shared) | shipped in this repo; upstream it |
+| 1. CI auto-fix | same, but self-heals instead of failing | hub prose kit 0.3.0 (`markdown-oneline.yml`) | shipped — adopted here |
+| 2. AI runner sweep | all AI markdown in CI, all sibling repos | `scripts/ai/run.sh` (the shared `ai-runner` kit) + `.prose-excludes` | shipped in the kit |
 | 3. Claude Code hook | all Claude markdown, every repo + session | `~/.claude/settings.json` (global) or `.claude/settings.json` (project) | config + script below |
 | 4. pre-commit hook | all commits, any author | `tools/hooks/` + `core.hooksPath` | shipped in this repo; kit it |
 
@@ -99,7 +99,7 @@ Tradeoff: auto-committing edits the contributor's PR and can race other automati
 
 ## Layer 2 — the shared AI runner sweep (shipped here)
 
-`scripts/ai/run.sh` now normalizes any markdown the agent changed after a successful Claude Code run (`normalize_changed_markdown`). It is best-effort, skips the gate-excluded files, and is idempotent with `quest-fix.yml`'s M8 step. Because `run.sh` is ported to the sibling sites, upstream this change to `bamr87/bamr87` and `lifehacker.dev` so every repo's AI workflows inherit it.
+`scripts/ai/run.sh` normalizes any markdown the agent changed after a successful Claude Code run (`normalize_changed_markdown`). It is best-effort, skips the gate-excluded files, and is idempotent with `quest-fix.yml`'s M8 step. The sweep was upstreamed into the shared `ai-runner` kit (lifehacker.dev is the source of truth; this repo carries a byte-identical copy — see `scripts/ai/README.md`), so the kit's `run.sh` no longer hard-codes this repo's excludes: it always skips `SCHEMA.md`/`CHANGELOG.md` and reads the rest, one extended regex per line, from the repo-root `.prose-excludes`.
 
 This sweep catches *uncommitted* edits (the workflow-opens-PR flows). Agents that commit inside their own run — `content-factory`, `quest-forge`, the issue resolver — are covered by Layer 3, which fires per-edit *during* the run, before the agent commits.
 
@@ -181,11 +181,11 @@ Bypass a single commit with `git commit --no-verify`. To distribute it, add `too
 ## Rollout checklist
 
 - [x] Layer 0 — CI check fanned out (already in every repo).
-- [ ] Layer 1 — paste the auto-fix `markdown-oneline.yml` into the hub's `--kit prose`, re-fanout (optional; tradeoff above).
-- [x] Layer 2 — `scripts/ai/run.sh` sweep (this repo); upstream to `bamr87/bamr87` + `lifehacker.dev`.
+- [x] Layer 1 — the hub's `--kit prose` 0.3.0 ships the self-healing `markdown-oneline.yml`; adopted here (with this repo's two extra excludes).
+- [x] Layer 2 — `scripts/ai/run.sh` sweep, now in the shared `ai-runner` kit; this repo's excludes live in `.prose-excludes`.
 - [ ] Layer 3 — add the global `~/.claude/settings.json` hook on your machine; optionally kit the project variant.
 - [x] Layer 4 — `tools/hooks/pre-commit` + `make hooks-install` (this repo); kit it for the rest.
 
 ## Keep in lockstep
 
-The exclude list appears in `markdown-oneline.yml`, the `Makefile` (`PROSE_ONELINE_EXCLUDES`), `scripts/ai/run.sh`, and both hook scripts. When it changes, update all of them. `tools/unwrap-prose.py` is the single engine everywhere.
+The exclude list appears in `markdown-oneline.yml`, the `Makefile` (`PROSE_ONELINE_EXCLUDES`), `.prose-excludes` (read by the kit's `scripts/ai/run.sh` — never edit `run.sh` itself, it is byte-identical to lifehacker.dev's), and both hook scripts. When it changes, update all of them. `tools/unwrap-prose.py` is the single engine everywhere.

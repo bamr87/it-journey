@@ -1,0 +1,36 @@
+# =============================================================================
+# ai_pricing.yml — API list prices used to ESTIMATE AI spend (per million tokens)
+# -----------------------------------------------------------------------------
+# The telemetry layer (scripts/ai/usage.rb) prefers the cost the Claude Code CLI
+# itself reports (`total_cost_usd`) — that number is authoritative and this file
+# is never consulted for it. This table exists for the paths that report tokens
+# but no dollars: the raw Claude API fallback (scripts/ai/api_call.rb) and any
+# execution log that predates cost reporting. Those records get cost_source:
+# "estimated", computed as
+#
+#   input×in + output×out + cache_read×(0.1×in)
+#     + cache_write_5m×(1.25×in) + cache_write_1h×(2×in)
+#
+# which reproduces the CLI's own arithmetic to the cent (validated 2026-07-14
+# against a live run). Prices are USD per MTok at standard API list rates —
+# subscription (OAuth) runs have no marginal dollar cost, so every published
+# figure is labeled "API-equivalent". Source: platform.claude.com/docs/en/pricing
+# (cached 2026-07-14). Update this file when Anthropic changes list prices;
+# estimates are marked as such everywhere they surface.
+# =============================================================================
+multipliers:
+  cache_read: 0.1        # × input price
+  cache_write_5m: 1.25   # × input price (5-minute TTL — the CLI default)
+  cache_write_1h: 2.0    # × input price (1-hour TTL)
+
+# Matched by longest model-id prefix, so dated snapshots (claude-haiku-4-5-20251001)
+# resolve to their family row. `default` catches unknown models (opus-tier, so an
+# unknown model over- rather than under-estimates).
+models:
+  claude-opus-4-8:   { input: 5.00,  output: 25.00 }
+  claude-opus-4-7:   { input: 5.00,  output: 25.00 }
+  claude-opus-4-6:   { input: 5.00,  output: 25.00 }
+  claude-sonnet-5:   { input: 3.00,  output: 15.00 }
+  claude-sonnet-4-6: { input: 3.00,  output: 15.00 }
+  claude-haiku-4-5:  { input: 1.00,  output: 5.00 }
+  default:           { input: 5.00,  output: 25.00 }
