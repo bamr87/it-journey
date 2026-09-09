@@ -273,6 +273,14 @@ The `jekyll.environment == "production"` guard is the key habit: your local clic
 - [ ] Why guard the snippet on `jekyll.environment == "production"`?
 - [ ] What does `anonymize_ip` do?
 
+<details><summary>Answer key</summary>
+
+- GA4: free, event-based, deep integration with Google Ads/Search Console. A cookieless tool (e.g. Plausible): no cookie banner needed, lighter weight, simpler privacy story.
+- The guard keeps local development clicks out of production analytics - without it, your own testing looks like "traffic."
+- `anonymize_ip` was a Universal Analytics option to trim the visitor's IP before storing it; GA4 does not store IP addresses at all, so the flag is unused there (see the note above).
+
+</details>
+
 ### ⚡ Quick Wins and Checkpoints
 - [ ] **Tool chosen**: You picked an analytics provider for your needs
 - [ ] **Snippet gated**: Analytics only fires in production, not on localhost
@@ -331,6 +339,14 @@ Collect the minimum, anonymize where you can, and make it easy to opt out. Good 
 - [ ] Why check `typeof gtag === "function"` before calling it?
 - [ ] What is the simplest way to respect consent before tracking?
 
+<details><summary>Answer key</summary>
+
+- A page view says someone loaded a page; an event says they *did* something on it - clicked, submitted, scrolled.
+- The check avoids a `ReferenceError` if the analytics script has not loaded yet (blocked, still loading, or consent not yet granted).
+- Do not load or call the analytics script at all until the visitor opts in - gate the load, not just the calls.
+
+</details>
+
 ### ⚡ Quick Wins and Checkpoints
 - [ ] **Event fired**: A custom event appears in your provider's real-time view
 - [ ] **Consent respected**: Tracking waits for opt-in where required
@@ -357,7 +373,15 @@ Events / Goals     — which actions people took
 Engagement time    — how long they actually stayed
 ```
 
-A critical, often-skipped step: **filter out pollution**. Your own visits and bot traffic can dwarf real users on a small site. In GA4, add an internal-traffic filter (by IP) or a hostname filter so only your production domain counts. The lesson from real sites is blunt: without a hostname filter, the bulk of "traffic" can be developers hitting `localhost`.
+A critical, often-skipped step: **filter out pollution**. Your own visits and bot traffic can dwarf real users on a small site. In GA4, add an internal-traffic filter (by IP, under Admin → Data Streams → Configure tag settings → Show more → Define internal traffic) or a hostname filter so only your production domain counts. The lesson from real sites is blunt: without a hostname filter, the bulk of "traffic" can be developers hitting `localhost`. A quick client-side hostname guard gives the same protection without any dashboard configuration:
+
+```javascript
+if (location.hostname !== 'example.com') {
+  // Not the production domain (localhost, a preview deploy, etc.) - skip tracking.
+} else {
+  gtag('event', 'page_view');
+}
+```
 
 Finally, define a **goal**: the one action that means a visit succeeded - a newsletter signup, a quest started, a contact form sent. Tracking a goal turns vanity metrics into a measure of whether your site does its job.
 
@@ -365,6 +389,14 @@ Finally, define a **goal**: the one action that means a visit succeeded - a news
 - [ ] What is the difference between a user and a session?
 - [ ] Why filter by hostname or internal IP?
 - [ ] What makes a good goal for a content site?
+
+<details><summary>Answer key</summary>
+
+- A user is a distinct person (by device/browser); a session is one visit - the same user can open several sessions.
+- Without it, your own dev-server visits and bot traffic can outnumber real visitors, especially on a small site.
+- One action that means the visit succeeded - a newsletter signup, a quest started, a contact form sent - not a vanity metric like raw page views.
+
+</details>
 
 ## 🎮 Mastery Challenges
 
