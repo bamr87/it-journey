@@ -1,0 +1,9 @@
+# .prose-excludes — extra paths the "one paragraph per line" normalizer skips.
+# scripts/ai/run.sh (the shared ai-runner kit) reads this file after every
+# successful agent run before unwrapping the markdown the agent changed; one
+# extended regex per line, matched against repo-relative paths. SCHEMA.md and
+# CHANGELOG.md are always skipped. These two are machine-authored session
+# reports from the quest-perfection loop, never hand-authored prose — keep them
+# in lockstep with .github/workflows/markdown-oneline.yml and the Makefile.
+(^|/)pages/_quest-reports/
+(^|/)test/quest-validator/walkthroughs/

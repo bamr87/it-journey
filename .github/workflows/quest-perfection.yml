@@ -527,10 +527,10 @@ jobs:
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       # Engine model pin (see the gate's MODEL POLICY comment) — the engine reads
-      # $QUEST_AI_MODEL itself; ITJ_AI_MODEL routes the SAME model into the
+      # $QUEST_AI_MODEL itself; AI_MODEL routes the SAME model into the
       # walker agent step (claude-run → scripts/ai/run.sh honors it).
       QUEST_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
-      ITJ_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
+      AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
       SLUG: ${{ matrix.slug }}
       PLAN_FILE: ${{ matrix.plan_file }}
       OPEN_NEW_FIX_PRS: ${{ matrix.open_new_fix_prs }}
