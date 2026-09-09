@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
-  "generated": "2026-09-08T11:34:40+00:00",
+  "generated": "2026-09-09T11:31:48+00:00",
   "totals": {
     "slices": 27,
     "perfect": 0,
     "stuck": 3,
-    "open_issues": 382
+    "open_issues": 380
   },
   "slices": {
     "developer/0000": {
@@ -1950,7 +1950,7 @@
       "tier": "Adventurer",
       "mode": "execute",
       "verdict": "fail",
-      "average": 71.4,
+      "average": 70.4,
       "total": 5,
       "scored": 5,
       "requested": 10,
@@ -1963,57 +1963,57 @@
         "warn": 0,
         "fail": 2
       },
-      "open_issues": 12,
-      "high_priority_issues": 6,
+      "open_issues": 10,
+      "high_priority_issues": 5,
       "executed": true,
       "perfect": false,
       "perfect_since": null,
-      "reason": "covered 5/10; 2 fail; avg 71.4 < 95.0; 12 open issue(s); 6 high-priority",
+      "reason": "covered 5/10; 2 fail; avg 70.4 < 95.0; 10 open issue(s); 5 high-priority",
       "coverage": {
         "pages/_quests/0111/api-fundamentals.md": {
           "verdict": "pass",
-          "average": 91.0,
+          "average": 94.0,
           "open_issues": 0,
           "high": 0,
           "mode": "execute",
           "executed": true,
-          "date": "2026-07-13"
+          "date": "2026-09-09"
         },
         "pages/_quests/0111/agentic-codex-01-agents-in-the-sdlc.md": {
           "verdict": "pass",
-          "average": 86.0,
+          "average": 83.0,
           "open_issues": 0,
           "high": 0,
           "mode": "execute",
           "executed": true,
-          "date": "2026-07-13"
+          "date": "2026-09-09"
         },
         "pages/_quests/0111/rest-principles.md": {
           "verdict": "pass",
-          "average": 91.0,
+          "average": 94.0,
           "open_issues": 0,
           "high": 0,
           "mode": "execute",
           "executed": true,
-          "date": "2026-07-13"
+          "date": "2026-09-09"
         },
         "pages/_quests/0111/agentic-sdlc-integration.md": {
           "verdict": "fail",
-          "average": 52.0,
-          "open_issues": 5,
+          "average": 51.0,
+          "open_issues": 4,
           "high": 2,
           "mode": "execute",
           "executed": true,
-          "date": "2026-07-13"
+          "date": "2026-09-09"
         },
         "pages/_quests/0111/agentic-plan-vs-action-boundaries.md": {
           "verdict": "fail",
-          "average": 37.0,
-          "open_issues": 7,
-          "high": 4,
+          "average": 30.0,
+          "open_issues": 6,
+          "high": 3,
           "mode": "execute",
           "executed": true,
-          "date": "2026-07-13"
+          "date": "2026-09-09"
         }
       },
       "fix_rounds": 0,
@@ -2021,10 +2021,10 @@
       "stuck_reason": null,
       "needs_human": false,
       "last_fixed": null,
-      "last_run": "2026-07-13T14:05:29+00:00",
-      "last_run_date": "2026-07-13",
-      "runs": 1,
-      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29248386306",
+      "last_run": "2026-09-09T11:31:48+00:00",
+      "last_run_date": "2026-09-09",
+      "runs": 2,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/34344247056",
       "history": [
         {
           "event": "walk",
@@ -2036,6 +2036,17 @@
           "open_issues": 12,
           "perfect": false,
           "run_url": "https://github.com/bamr87/it-journey/actions/runs/29248386306"
+        },
+        {
+          "event": "walk",
+          "at": "2026-09-09T11:31:48+00:00",
+          "date": "2026-09-09",
+          "mode": "execute",
+          "verdict": "fail",
+          "average": 70.4,
+          "open_issues": 10,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/34344247056"
         }
       ]
     },
