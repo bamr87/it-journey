@@ -5,8 +5,9 @@
 # goes through scripts/ai/run.sh, which reads this file. Primary path is Claude
 # Code (the `claude` CLI / agent, authenticated by CLAUDE_CODE_OAUTH_TOKEN); if
 # it is unavailable or fails, run.sh falls back to the Claude API
-# (scripts/ai/api_call.py, via scripts/lib/ai_client.py). Change the model or
-# budget here and it changes everywhere.
+# (scripts/ai/api_call.rb, stdlib HTTP, no gem). Change the model or budget
+# here and it changes everywhere. run.sh + the claude-run action are the shared
+# `ai-runner` kit (byte-identical to lifehacker.dev's) — see scripts/ai/README.md.
 #
 # Auth is NOT set here (a token is a secret, never committed): provide EITHER
 # CLAUDE_CODE_OAUTH_TOKEN (from `claude setup-token`; subscription auth, the
@@ -27,7 +28,7 @@ provider: anthropic
 # quest-fix / quest-walkthrough / quest-video pin every stage (preflight probe,
 # execute-engine walks, walker/fixer agents) to ONE Sonnet-class model via the
 # QUEST_AI_MODEL repo variable (default claude-sonnet-5), passed as
-# ITJ_AI_MODEL to run.sh for the agent steps. Rationale in quest-perfection.yml's
+# AI_MODEL (the kit's canonical env name) to run.sh for the agent steps. Rationale in quest-perfection.yml's
 # gate: the loop is high-volume sandboxed tool use — Sonnet-tier work — and on
 # subscription (OAuth) auth an Opus default burns the shared rate window ~2.5×
 # faster for no measurement benefit. This global default still governs the

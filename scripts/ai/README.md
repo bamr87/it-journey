@@ -1,13 +1,55 @@
 # IT-Journey AI runner & content fleet
 
-This directory holds the **one place AI is wired** for the repo. Everything that calls a model — every workflow agent step and every skill — goes through `run.sh`, which reads `_data/ai.yml` for the model and runs **Claude Code first** (the full agent, authed by `CLAUDE_CODE_OAUTH_TOKEN`), falling back to the Claude API (`api_call.py` → `scripts/lib/ai_client.py`) only if the CLI is missing/fails and an `ANTHROPIC_API_KEY` is present. Ported from lifehacker.dev so the sibling sites share one agentic convention.
+This directory holds the **one place AI is wired** for the repo. Everything that calls a model — every workflow agent step and every skill — goes through `run.sh`, which reads `_data/ai.yml` for the model and runs **Claude Code first** (the full agent, authed by `CLAUDE_CODE_OAUTH_TOKEN`), falling back to the Claude API (`api_call.rb`, stdlib HTTP) only if the CLI is missing/fails and an `ANTHROPIC_API_KEY` is present.
 
+The runner is the fleet's shared **`ai-runner` kit**. lifehacker.dev's `scripts/ai/` is the source of truth; the files marked **kit** below are **byte-identical** to lifehacker.dev's copies — change them there first, then copy them forward, never fork them here (`shasum` against lifehacker.dev's `main` is the parity check). A drifted copy is a repo passing a *different* gate from everyone else, which is exactly how this repo's earlier port came to exit 0 on a dead credential and to bill the API key when both secrets were set.
+
+| File | Kit | What it does |
+| --- | --- | --- |
+| `run.sh` | **kit** | The universal runner: Claude Code first (`claude -p … --output-format json`), Claude API fallback; OAuth-first auth (`env -u ANTHROPIC_API_KEY` around the CLI when the OAuth token exists, so the metered key is never billed for subscription work); honest exit codes; failure diagnosis (`::error::` annotation naming the cause + an operator hint); optional metering, prose normalization, and API fallback (below). |
+| `../../.github/actions/claude-run/action.yml` | **kit** | The composite action every AI workflow uses instead of hand-rolling `npm install` + `claude -p`. Installs the CLI, calls `run.sh`, publishes metering (when present). Inputs: `prompt`, `agent`, `tools`, `mcp`, `system`, `out`, `model`, `max-turns`. |
+| `usage.rb` | kit (optional) | Metering: one JSONL record per call (tokens, API-equivalent cost, model, status, CI context) into `$AI_USAGE_DIR/records.jsonl` (default `$RUNNER_TEMP/ai-usage`, outside the checkout). Prices come from `_data/ai_pricing.yml`. |
+| `usage_report.rb` | kit (optional) | End-of-job publisher: step summary, `ai-usage-*` artifact, sticky PR comment (marker `<!-- lh-ai-usage -->`). This repo has no ledger sweep (lifehacker.dev's `usage_ledger.rb` / `ai-usage.yml` are not part of the kit), so the artifacts are the record. |
+| `api_call.rb` | kit (optional) | The single-shot Messages API fallback. Stdlib only, self-contained. Replaced the old `api_call.py` (→ `scripts/lib/ai_client.py`), which nothing else referenced; `ai_client.py` itself stays for the validation/PRD scripts that import it. |
+| `../ci/test_ai_runner.sh` | kit (test) | Pins the exit-code contract with a stubbed `claude`: success, rejected call, silent CLI, no-op, is_error-with-exit-0, kit-only mode, flag passthrough. No network, no credentials. |
+| `drift-guard.sh`, `mcp/` | local | GH-600 plan-then-act helpers (snapshot watched files; committed MCP server configs). Not part of the kit. |
+| `_data/ai.yml` | local | Model + budget (`model`, `fallback_model`, `max_tokens`, API wire details). Auth never lives in a file. |
+
+## The runner contract
+
+**Invocation**
+
+```bash
+scripts/ai/run.sh --prompt "..." [--agent name] [--tools "Bash,Read"] [--mcp cfg.json] \
+                  [--system "..."] [--out file] [--model id] [--max-turns N]
 ```
-scripts/ai/run.sh          # universal runner (Claude Code → API fallback)
-scripts/ai/api_call.py     # single-shot API fallback
-_data/ai.yml               # model + budget (claude-opus-4-8)
-.github/actions/claude-run # the composite CI step every AI workflow uses
-```
+
+**Environment** (canonical names — no repo prefix, so the file stays identical everywhere; the old repo-prefixed names from the earlier port are gone)
+
+| Variable | Meaning |
+| --- | --- |
+| `CLAUDE_CODE_OAUTH_TOKEN` | Preferred credential (`claude setup-token`). When set, `ANTHROPIC_API_KEY` is stripped from the CLI's environment so the metered key is never billed for subscription work. |
+| `ANTHROPIC_API_KEY` | Fallback credential; the only one the raw API fallback can use. |
+| `AI_MODEL` | Override the model from `_data/ai.yml` for one run (`--model` beats it). The quest lanes set it from the `QUEST_AI_MODEL` repo variable. |
+| `AI_FORCE_API=1` | Skip Claude Code, go straight to the API fallback. |
+| `AI_MAX_TURNS` | Cap the agent's turns (`--max-turns`); unset = CLI default. |
+| `AI_USAGE_DIR` | Where `usage.rb` writes records. |
+| `AI_ROLE` | Set by `run.sh` for the fallback so its record carries the agent name. |
+
+**Exit codes** — a failed call is never silently green.
+
+| Exit | Meaning |
+| --- | --- |
+| `0` | The call ran, **or** nothing was ever attempted (no `claude` on PATH and no API key — the documented no-op). |
+| `1` | The call was attempted and failed with no usable fallback. The reason is printed and raised as a `::error::` annotation under Actions. |
+
+**Optional companions.** `run.sh` probes for each and degrades honestly when one is absent:
+
+- `scripts/ai/usage.rb` — metering. Without it, an inline stdlib emitter enforces the same "is_error is a failure" rule; nothing is recorded.
+- `scripts/ai/api_call.rb` (or `api_call.py`) — the fallback. Without it, a failed primary call exits `1` with "no scripts/ai/api_call.rb|py to fall back to".
+- `tools/unwrap-prose.py` — after a successful run, markdown the agent changed is unwrapped to one paragraph per line (the `markdown-oneline` gate). `SCHEMA.md`/`CHANGELOG.md` are always skipped; this repo's further exclusions (`pages/_quest-reports/`, `test/quest-validator/walkthroughs/`) live in the repo-root **`.prose-excludes`**, one extended regex per line — the file replaced the exclusions the old port hard-coded.
+
+Run `bash scripts/ci/test_ai_runner.sh` after touching anything here.
 
 ## The content fleet (continuous, on-brand improvement)
 

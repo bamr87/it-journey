@@ -16,6 +16,7 @@ cancel in-progress runs; mutating/long jobs (auto-merge, CMS loop, contributor r
   interpolated directly into `run:`.
 - **AI is opt-in.** Every Claude-powered workflow gates on a `*_ENABLED` repo
 variable **and** the `CLAUDE_CODE_OAUTH_TOKEN`/`ANTHROPIC_API_KEY` secret, so nothing AI runs until both are present (see `scripts/ai/README.md`).
+- **One AI step.** Model calls go through `uses: ./.github/actions/claude-run` → `scripts/ai/run.sh`, the fleet's shared `ai-runner` kit (byte-identical to lifehacker.dev's; never edit locally). An attempted-and-failed call fails the step with the reason (`::error::`), a run with no credentials is a clean no-op. Per-step model routing uses the `AI_MODEL` env (the quest lanes set it from `vars.QUEST_AI_MODEL`) or the action's `model` input.
 
 ## Inventory
 
@@ -28,6 +29,7 @@ variable **and** the `CLAUDE_CODE_OAUTH_TOKEN`/`ANTHROPIC_API_KEY` secret, so no
 | `quest-validation.yml` | PR/push on `pages/_quests/**`; weekly; dispatch | Quest content scoring (≥70%), network integrity, and stale generated-data check (the weekly/push full audit runs the unified Docker audit = `make docker-validate`). |
 | `validate-solutions.yml` | PR/push on `test/quest-solutions/**` (main/master); dispatch | Structural validation of quest solution fixtures. |
 | `codeql-analysis.yml` | push/PR to main (code paths only); weekly | CodeQL security analysis (JavaScript, Python, Ruby). Push/PR runs skip content-only diffs (`pages/**`, `**/*.md`, `_data/**`, `assets/images/**`); the weekly cron always runs a full scan. |
+| `markdown-oneline.yml` | PR to `main` + push to `main` on `*.md`/`*.markdown` | **Hub prose kit 0.3.0 (self-healing).** Unwraps soft-wrapped prose to one paragraph per line (`tools/unwrap-prose.py --write`) and, on a same-repo PR, commits the repair back to the branch with `GITHUB_TOKEN` (no extra CI runs); a fork PR or a push to `main` still fails with the fix instructions. Local additions to the kit: `branches: [main]` on the PR trigger (gh-pages sync PRs cannot resolve a merge ref and failed at startup) and two extra `--exclude`s for the machine-authored `pages/_quest-reports/` + `test/quest-validator/walkthroughs/` — the same list `.prose-excludes` hands `scripts/ai/run.sh`. |
 
 ### Content quality & AI fleet (opt-in)
 
@@ -65,6 +67,7 @@ These implement the AI-augmented CMS described in the root `CLAUDE.md` and `scri
 
 | Workflow | Triggers | What it does |
 |---|---|---|
+| `claude.yml` | `@claude` mention in an issue / PR / review comment | Hub `agent-context` kit v0.4.0 (`anthropics/claude-code-action`), stamped `# kit: agent-context v0.4.0` so drift is detectable. Serialized per thread. |
 | `issue-autopilot.yml` | daily 07:00 UTC; dispatch; `autopilot:go` label (gated) | **The issue autopilot loop.** Deterministic engine (`scripts/issues/triage.py`) classifies every open issue + groups into batches; `issue-triager` comments a plan, labels, and closes **bot-noise only** (never a human's issue, double-gated on `ISSUE_AUTOCLOSE_ENABLED`); `issue-resolver` turns one batch into one `auto:issue` PR (`Closes #N`), backpressured via `scripts/issues/dispatch.py` + `.issues/budget.yml`. OFF behind `ISSUE_AUTOPILOT_ENABLED` (+ `ISSUE_RESOLVE_ENABLED` for the PR lane). Green `auto:issue` PRs merge via the `auto:issue` policy in `content-auto-merge.yml`. |
 | `quest-forge.yml` | issue labeled `epic-quest`; `/forge-quest` comment; dispatch (gated) | Forges an epic-quest **proposal issue** into a quest-campaign PR (see the AI fleet table above). |
 | `dependabot-auto-merge.yml` | Dependabot PRs | Enables auto-merge for passing Dependabot PRs. |

@@ -130,10 +130,10 @@ jobs:
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       # MODEL POLICY — same pin as quest-perfection's gate (see its comment):
-      # QUEST_AI_MODEL drives the re-derive engine, ITJ_AI_MODEL routes the same
+      # QUEST_AI_MODEL drives the re-derive engine, AI_MODEL routes the same
       # model into the quest-fixer agent step (claude-run → scripts/ai/run.sh).
       QUEST_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
-      ITJ_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
+      AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
       # M5 — a PAT ONLY (contents+PRs, NO admin). NEVER github.token: a
       # GITHUB_TOKEN-authored PR fires no checks, so the fix PR's required
       # checks would never run and it could be merged with zero gates. The

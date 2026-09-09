@@ -82,7 +82,7 @@ Hand-authored: `_data/quests/paths.yml`, `_data/quests/dashboard.yml`.
 
 Non-quest `pages/**` (`frontmatter-validation.yml` / `make content-validate`): required `title`, `description`, `date`, `author`, `categories`, `tags`. Dates are ISO-8601 with milliseconds. `tags`/`categories` are YAML lists, never bare strings. Description ~120–160 chars. Quest schema is different — see `REQUIRED_FIELDS` in `quest_registry.py`.
 
-One paragraph per line. Never soft-wrap prose. `make prose-oneline-apply` joins only prose (code, tables, Liquid, HTML, and front matter stay byte-identical). Excluded: `SCHEMA.md`, `CHANGELOG.md`, `pages/_quest-reports/`, `test/quest-validator/walkthroughs/`.
+One paragraph per line. Never soft-wrap prose. `make prose-oneline-apply` joins only prose (code, tables, Liquid, HTML, and front matter stay byte-identical). Excluded: `SCHEMA.md`, `CHANGELOG.md`, `pages/_quest-reports/`, `test/quest-validator/walkthroughs/` (the last two also live in `.prose-excludes`, which the shared AI runner reads).
 
 A Mermaid diagram on a page requires `mermaid: true` in frontmatter (`make mermaid-check`). Nested fences: if the example contains a 3-backtick fence, the outer fence must be 4+ backticks. Never put literal secret prefixes (`ghp_`, `sk-`, `AKIA`, …) in examples.
 

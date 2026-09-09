@@ -102,3 +102,12 @@ rendered layout, styling, or interaction (CSS/SCSS, templates/includes, nav, JS 
 - `TODO/` — worklist hub (SEO, links, reports). Excluded from the build.
 - `frontmatter.json` + `.frontmatter/` — the Front Matter CMS VS Code config
   (content types, taxonomy, templates) the new CMS extends.
+
+## Fleet context
+
+This repo is one of ~40 managed by the [bamr87/bamr87 dash](https://github.com/bamr87/bamr87) (registry: `_data/projects.yml`; tiered baseline: `docs/STANDARDS.md`). It is vendored there as a git submodule: commit and push changes **here** first — the hub only bumps its pointer afterwards. Shared CI, release, schema, and agent kits are seeded from the hub's `templates/`; prefer adopting those over hand-rolling equivalents.
+
+## Standard deviations
+
+- `UPS-REPO-02` — tests live under `test/` (grandfathered).
+- `markdown-oneline.yml` carries `branches: [main]` on its `pull_request` trigger on top of the hub prose kit 0.3.0 shape: the recurring "sync gh-pages with main" deploy PRs target the built `gh-pages` branch, GitHub cannot resolve a merge ref for them, and the kit's unfiltered trigger failed every one at startup with a red X unrelated to prose. The two extra `--exclude` patterns (machine-authored quest reports + walkthroughs) are the same list `.prose-excludes` hands the shared AI runner.

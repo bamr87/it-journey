@@ -93,9 +93,9 @@ jobs:
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       # MODEL POLICY — same pin as quest-perfection's gate (see its comment):
-      # QUEST_AI_MODEL drives the engine, ITJ_AI_MODEL the walker agent step.
+      # QUEST_AI_MODEL drives the engine, AI_MODEL the walker agent step.
       QUEST_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
-      ITJ_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
+      AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
       # A PAT (contents+PRs, NO admin) so the report PR ALSO triggers CI — a
       # GITHUB_TOKEN-authored PR doesn't fire workflows.
       GH_TOKEN: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
