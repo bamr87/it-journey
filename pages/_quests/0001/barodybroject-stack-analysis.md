@@ -108,6 +108,15 @@ Work these four steps in order — each maps directly to a Quest Objective above
 
 **Quest complete when:** you can list at least one confirmed-accurate claim and one confirmed-stale claim from this document, backed by what you actually saw in the live repo — check off each objective above as you go.
 
+> **Reading map.** The four steps above are the entire hands-on walkthrough. Everything
+> from Executive Summary through Detailed Stack Analysis, Dependency Analysis, and
+> Security & Quality Assessment is reference material the steps point into. The
+> Recommendations, Educational Value, Modernization Opportunities, Comparative Analysis,
+> Strategic Recommendations, Innovation Highlights, and Stack Maturity Assessment sections
+> further below are optional deep-dive reading, generated at Analysis Date as
+> forward-looking commentary — skip straight to them only if you want more context after
+> completing the four steps.
+
 ## 📊 Executive Summary
 
 Barodybroject is a Django-based web application that leverages OpenAI's APIs to generate AI-powered parody news content. The project demonstrates modern web development practices with a focus on **container-first development**, **cloud-native deployment**, and **cost-optimized infrastructure**. Successfully deployed to Azure Container Apps in January 2025, the application showcases a production-ready Django stack with sophisticated AI integration.
