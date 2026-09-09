@@ -13,7 +13,7 @@ It ends in **exactly one pull request** (or a clean no-op with a reason), never 
 
 - **`COLLECTION`** — one of `quests · docs · notes · quickstart · about` (the loose
   `pages/` root counts as `root`). You improve only this collection this run.
-- Auth + model come from the runner (`scripts/ai/run.sh` + `_data/ai.yml`); you
+- Auth + model come from the runner (the fleet's `claude-run` action + `_data/ai.yml`); you
   don't manage them.
 
 ## 1. Orient (delegate to cms-curator §1)

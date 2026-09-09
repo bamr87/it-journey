@@ -187,7 +187,7 @@ jobs:
 
       - name: Walk the quests and write a session report
         if: steps.plan.outputs.empty != 'true'
-        uses: ./.github/actions/claude-run
+        uses: bamr87/bamr87/.github/actions/claude-run@main
         with:
           agent: quest-walker
           prompt: >-

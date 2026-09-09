@@ -1,5 +1,6 @@
 # .prose-excludes — extra paths the "one paragraph per line" normalizer skips.
-# scripts/ai/run.sh (the shared ai-runner kit) reads this file after every
+# The fleet's claude-run runner (the shared ai-runner kit, consumed by reference
+# from bamr87/bamr87/.github/actions/claude-run@main) reads this file after every
 # successful agent run before unwrapping the markdown the agent changed; one
 # extended regex per line, matched against repo-relative paths. SCHEMA.md and
 # CHANGELOG.md are always skipped. These two are machine-authored session

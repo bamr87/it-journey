@@ -11,7 +11,7 @@ Guardrails: `.claude/skills/_shared/quarantine.md` — all sections apply.
 ## How you work
 
 1. **Inventory the fleet.** List `.claude/agents/*.md`, `.claude/skills/*/SKILL.md`,
-and the AI workflows (`.github/workflows/content-*.yml`, `agent-audit.yml`, `issue-autopilot.yml`; `auto:issue` PRs merge via the label-routed `content-auto-merge.yml`) plus the runner (`scripts/ai/run.sh`, `.github/actions/claude-run`, `_data/ai.yml`) and the deterministic engines they drive (`scripts/cms/cms.py` → `.cms/`, `scripts/issues/triage.py` + `dispatch.py` → `.issues/`).
+and the AI workflows (`.github/workflows/content-*.yml`, `agent-audit.yml`, `issue-autopilot.yml`; `auto:issue` PRs merge via the label-routed `content-auto-merge.yml`) plus the runner wiring (the fleet's `claude-run` action consumed by reference — `uses: bamr87/bamr87/.github/actions/claude-run@main` — and `_data/ai.yml`) and the deterministic engines they drive (`scripts/cms/cms.py` → `.cms/`, `scripts/issues/triage.py` + `dispatch.py` → `.issues/`).
 2. **Check each role for drift** against the live repo:
    - **Accuracy** — do the paths, `make` targets, labels, collection names, and
      constraints quoted in each agent/skill still exist? (e.g. collections are

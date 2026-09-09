@@ -131,7 +131,7 @@ jobs:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       # MODEL POLICY — same pin as quest-perfection's gate (see its comment):
       # QUEST_AI_MODEL drives the re-derive engine, AI_MODEL routes the same
-      # model into the quest-fixer agent step (claude-run → scripts/ai/run.sh).
+      # model into the quest-fixer agent step (the fleet's claude-run action honors it).
       QUEST_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
       AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
       # M5 — a PAT ONLY (contents+PRs, NO admin). NEVER github.token: a
@@ -357,7 +357,7 @@ jobs:
       # ----- The fix itself: the quest-fixer agent runs the quest-fix skill ----
       - name: Fix the slice (quest-fix skill)
         if: steps.breaker.outputs.skip != 'true'
-        uses: ./.github/actions/claude-run
+        uses: bamr87/bamr87/.github/actions/claude-run@main
         with:
           agent: quest-fixer
           prompt: >-
