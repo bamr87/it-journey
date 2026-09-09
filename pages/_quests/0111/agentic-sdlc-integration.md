@@ -156,7 +156,12 @@ This **🟡 Medium** quest expects:
 ```bash
 # Clone the starter sandbox
 git clone https://github.com/bamr87/it-journey.git
-cd it-journey/work/gh-600
+cd it-journey
+
+# work/gh-600 is your own local workspace for this quest line — it is not
+# tracked in the repo, so create it before moving in
+mkdir -p work/gh-600/{notes,task-cards,diagrams,scripts}
+cd work/gh-600
 
 # Install Python deps for the agent task card generator
 python3 -m pip install --quiet pyyaml
@@ -172,7 +177,12 @@ gh --version
 
 ```powershell
 git clone https://github.com/bamr87/it-journey.git
-Set-Location it-journey/work/gh-600
+Set-Location it-journey
+
+# work/gh-600 is your own local workspace for this quest line — it is not
+# tracked in the repo, so create it before moving in
+New-Item -ItemType Directory -Force -Path work/gh-600/notes, work/gh-600/task-cards, work/gh-600/diagrams, work/gh-600/scripts | Out-Null
+Set-Location work/gh-600
 
 python -m pip install --quiet pyyaml
 
@@ -185,7 +195,7 @@ gh --version
 <summary>☁️ GitHub Codespaces</summary>
 
 1. Open `https://github.com/bamr87/it-journey` and click **Code → Codespaces → New codespace**.
-2. All prerequisites are pre-installed. Navigate to `work/gh-600/` in the terminal.
+2. `work/gh-600` is your own local workspace for this quest line — it is not tracked in the repo. Create it and move in: `mkdir -p work/gh-600/{notes,task-cards,diagrams,scripts} && cd work/gh-600`.
 
 </details>
 
@@ -336,21 +346,16 @@ sequenceDiagram
 
 ## ✅ Quest Validation
 
-Run the quest self-check to confirm completion:
+`work/gh-600` is your own local workspace, not a tracked part of the repo, so confirm completion with this self-check checklist instead of a script:
 
-```bash
-# From work/gh-600/
-python3 scripts/validate_quest.py --quest q1
+- [ ] `work/gh-600/task-cards/dependency-updater.yml` exists (Exercise 1.3)
+- [ ] The task card defines at least 2 `inputs` and 2 `outputs`
+- [ ] The task card's `success_criteria` has at least 4 entries
+- [ ] The task card has a `mitigations:` section addressing ≥3 anti-patterns (Exercise 1.4)
+- [ ] `work/gh-600/diagrams/q1-sdlc-agent-map.md` exists with your customised sequence diagram (Exercise 1.5)
+- [ ] `work/gh-600/notes/q1-sdlc-map.md` lists 5 PR-workflow steps classified agent-appropriate vs. human-required (Exercise 1.2)
 
-# Expected output:
-# ✅ Task card: dependency-updater.yml present
-# ✅ Inputs defined: 2
-# ✅ Outputs defined: 2
-# ✅ Success criteria: 4
-# ✅ Mitigations: ≥3 anti-patterns addressed
-# ✅ SDLC diagram: q1-sdlc-agent-map.md present
-# 🏆 Quest Q1 complete!
-```
+When every box is checked, you've completed Q1. 🏆
 
 ---
 

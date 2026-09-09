@@ -147,7 +147,7 @@ GitHub Copilot's coding agent reads a `.github/copilot-instructions.md` file to 
 
 > **Exercise 2.1:** Create `.github/copilot-instructions.md` in your sandbox with the following content, then customise it for a repo you own.
 
-```markdown
+````markdown
 # GitHub Copilot Agent Instructions
 
 ## Mandatory Operating Protocol
@@ -160,7 +160,9 @@ modifies files, creates branches, or opens pull requests, you MUST:
 Output a JSON plan in this exact schema before writing any code:
 
 ```json
-{ "task_summary": "One sentence describing the task", "steps": [
+{
+  "task_summary": "One sentence describing the task",
+  "steps": [
     {
       "step_number": 1,
       "action": "human-readable action",
@@ -168,10 +170,12 @@ Output a JSON plan in this exact schema before writing any code:
       "reversible": true,
       "rationale": "Why this step is necessary"
     }
-], "estimated_prs": 1,
+  ],
+  "estimated_prs": 1,
   "risk_level": "low|medium|high",
-"requires_human_approval": true }
-```markdown
+  "requires_human_approval": true
+}
+```
 
 ### Step 2 — Wait for Explicit Approval
 
@@ -192,8 +196,7 @@ If you discover you need additional steps, STOP and re-plan.
 - Commit or push code
 - Open, close, or merge pull requests
 - Modify any file outside the stated scope
-```
-```bash
+````
 
 ---
 
@@ -202,7 +205,12 @@ If you discover you need additional steps, STOP and re-plan.
 A parseable plan is a testable plan. Save the schema to `work/gh-600/schemas/agent-plan.json`.
 
 ```json
-{ "$schema": "http://json-schema.org/draft-07/schema#", "title": "AgentPlan", "type": "object", "required": ["task_summary", "steps", "risk_level", "requires_human_approval"], "properties": {
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AgentPlan",
+  "type": "object",
+  "required": ["task_summary", "steps", "risk_level", "requires_human_approval"],
+  "properties": {
     "task_summary": { "type": "string", "minLength": 10, "maxLength": 200 },
     "steps": {
       "type": "array",
@@ -221,15 +229,23 @@ A parseable plan is a testable plan. Save the schema to `work/gh-600/schemas/age
     },
     "risk_level": { "type": "string", "enum": ["low", "medium", "high"] },
     "requires_human_approval": { "type": "boolean" }
-} }
-```text
+  }
+}
+```
 
 Validate a plan with:
 
 ```bash
 # macOS / Linux
-pip install jsonschema python3 -c " import json, jsonschema schema = json.load(open('work/gh-600/schemas/agent-plan.json')) plan   = json.load(open('work/gh-600/sample-plan.json')) jsonschema.validate(plan, schema) print('✅ Plan is valid') "
-```bash
+pip install jsonschema
+python3 -c "
+import json, jsonschema
+schema = json.load(open('work/gh-600/schemas/agent-plan.json'))
+plan   = json.load(open('work/gh-600/sample-plan.json'))
+jsonschema.validate(plan, schema)
+print('✅ Plan is valid')
+"
+```
 
 ---
 
@@ -244,14 +260,18 @@ pip install jsonschema python3 -c " import json, jsonschema schema = json.load(o
 
 name: Agent Plan Gate
 
-on: push:
+on:
+  push:
     branches-ignore: [main]
     paths:
       - "agent-plan.json"
 
-permissions: contents: read pull-requests: write
+permissions:
+  contents: read
+  pull-requests: write
 
-jobs: validate-plan:
+jobs:
+  validate-plan:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -275,7 +295,7 @@ jobs: validate-plan:
           EOF
 
       - name: Comment plan on PR
-        uses: actions/GitHub-script@v7
+        uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
@@ -292,7 +312,7 @@ jobs: validate-plan:
               issue_number: context.issue.number,
               body
             });
-```bash
+```
 
 ---
 
@@ -323,7 +343,7 @@ python3 scripts/validate_quest.py --quest q2
 # ✅ GitHub Actions gate: agent-plan-gate.yml present
 # ✅ Sample plan: real-plan.json present
 # 🏆 Quest Q2 complete!
-```markdown
+```
 
 ---
 
@@ -348,11 +368,5 @@ python3 scripts/validate_quest.py --quest q2
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0111 (7) - API Development]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
-**Prerequisites:** [[Initiation Rites: Embedding Agents in the SDLC]]
-**Unlocks:** [[The All-Seeing Eye: Observability & Control for Autonomous Agents]]
-**Sequel quests:** [[The All-Seeing Eye: Observability & Control for Autonomous Agents]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0111 (7) - API Development]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] **Prerequisites:** [[Initiation Rites: Embedding Agents in the SDLC]] **Unlocks:** [[The All-Seeing Eye: Observability & Control for Autonomous Agents]] **Sequel quests:** [[The All-Seeing Eye: Observability & Control for Autonomous Agents]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 
