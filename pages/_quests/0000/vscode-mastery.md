@@ -679,27 +679,27 @@ To summon the dashboard: **Cmd/Ctrl + Shift + P** → **Front Matter: Open Dashb
 
 ### ⚡ One-Key Build Rituals (Tasks)
 
-The repo's `.vscode/tasks.json` binds the Docker + Jekyll workflow to **Cmd/Ctrl + Shift + B**:
+The repo's `.vscode/tasks.json` follows the fleet convention every bamr87 repo shares (the vocabulary is written down in `.vscode/README.md`):
 
 | Task | Command | Purpose |
 |------|---------|---------|
-| **Docker: Compose Up** | `docker-compose up -d` | Start the dev environment |
-| **Docker: Compose Down** | `docker-compose down` | Stop and clean up |
-| **Docker: Rebuild (Force)** | `docker-compose up --build --force-recreate -d` | Full rebuild |
-| **Docker: Logs (Follow)** | `docker-compose logs -f jekyll` | Watch the build output |
-| **Jekyll: Build Site** | `bundle exec jekyll build` | Production build (in Docker) |
-| **Lint: Markdown Files** | `markdownlint **/*.md` | Check Markdown quality |
+| **Serve** | `docker compose up jekyll` | Start the dev server on :4002 (runs until **Stop**) |
+| **Stop** | `docker compose down` | Stop and clean up |
+| **Build** | `bundle exec jekyll build` (in Docker) | The dev-config build — **Cmd/Ctrl + Shift + B** |
+| **Lint** | `make liquid-check && make content-audit` | The pre-build checks CI runs |
+| **Verify** | Lint, then Build | The gate, locally — **Tasks: Run Test Task** |
+| **Docker: rebuild** / **Docker: logs** | `docker compose …` | Full rebuild / watch the build output |
 
-Press **Cmd/Ctrl + Shift + B**, pick a task, and output streams into the integrated terminal.
+Press **Cmd/Ctrl + Shift + B** for Build, or **Cmd/Ctrl + Shift + P** → **Tasks: Run Task** for the rest; output streams into the integrated terminal.
 
 ### 🐛 Live-Preview Debug Configurations
 
 `.vscode/launch.json` ships ready-made launch configs — hit **F5** and choose one:
 
-- **Debug IT-Journey (Docker)** — launches a browser with remote debugging attached
-- **Attach to Running Jekyll** — connects to an already-running container
-- **Docker Rebuild & Debug** — force-rebuilds, then debugs
-- **Mobile Debug** — simulates an iPhone screen for responsive testing
+- **Debug: site in Edge (:4002)** — runs the **Serve** task, then opens Edge with DevTools attached and breakpoints mapped to the source tree
+- **Debug: live site (it-journey.dev)** — the published site, for reproducing a reader's report with real DevTools
+
+For a phone-sized viewport use the DevTools device toolbar (**Cmd/Ctrl + Shift + M**) inside either session.
 
 ### 🔧 Workspace Spells for Jekyll
 
