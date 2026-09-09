@@ -18,7 +18,7 @@
 #
 # The "agent" here is deliberately a deterministic stub (no model call, no
 # auth needed): the pipeline demonstrates the CONTROL PLANE the fleet's real
-# workflows share. Swap the stub step for `scripts/ai/run.sh` to make it live.
+# workflows share. Swap the stub step for the fleet's claude-run action to make it live.
 #
 # OFF by default behind AGENT_DEMO_ENABLED (a repo variable). One-time setup:
 #   1. Settings → Environments → new environment `agent-approval` → add a
@@ -138,7 +138,7 @@ jobs:
       - name: Verify the world has not drifted while we waited (D3 — abort before acting)
         run: DRIFT_SNAPSHOT=.agent/snapshot.sha256 scripts/ai/drift-guard.sh verify
 
-      - name: Act on the approved plan (stub — swap for scripts/ai/run.sh to go live)
+      - name: Act on the approved plan (stub — swap for bamr87/bamr87/.github/actions/claude-run@main to go live)
         run: |
           task="$(python3 -c 'import json;print(json.load(open(".agent/plan.json"))["task"])')"
           echo "Executing approved plan for task: $task"

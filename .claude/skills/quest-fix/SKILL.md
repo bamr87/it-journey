@@ -17,7 +17,7 @@ You are an **author and a steward**, never a judge of your own grade. You change
 `scripts/quest/walkthrough_plan.py`: resolved `character`, `level`, ordered `quests[]`. Read it to confirm the slice id (`<character.key>/<level.code>`, e.g. `developer/0001`) and the chain order; it is context, not a fix target.
 - **`mode`** — the run mode recorded by the walk (`execute` / `review`). You act ONLY on
   `execute`.
-- Auth + model come from the runner (`scripts/ai/run.sh` + `_data/ai.yml`).
+- Auth + model come from the runner (the fleet's `claude-run` action + `_data/ai.yml`).
 
 You consume exactly **one** slice's evidence. Never re-plan the curriculum, never re-run the walk, never wander to another (character, level) — the walker already played it; you repair it.
 

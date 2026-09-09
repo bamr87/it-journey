@@ -132,7 +132,7 @@ jobs:
           python3 -c "import json;m=json.load(open('forge.json'));print('forging',m['stats'])"
 
       - name: Forge the campaign and open a PR
-        uses: ./.github/actions/claude-run
+        uses: bamr87/bamr87/.github/actions/claude-run@main
         with:
           agent: quest-forge
           prompt: >-

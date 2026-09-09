@@ -39,7 +39,7 @@ The Agentic Codex is not a thought experiment — **this repository runs on the 
 
 | Sub-skill | Implemented by | What it proves |
 |---|---|---|
-| Tool selection & least privilege | `permissions:` blocks in every workflow (default `contents: read`); [`scripts/ai/run.sh`](https://github.com/bamr87/it-journey/blob/main/scripts/ai/run.sh) `--tools` allow-list | Grants are per-job and by omission; the runner passes agents only the tools the task names |
+| Tool selection & least privilege | `permissions:` blocks in every workflow (default `contents: read`); the fleet's [`claude-run`](https://github.com/bamr87/bamr87/tree/main/.github/actions/claude-run) step's `tools:` allow-list | Grants are per-job and by omission; the runner passes agents only the tools the task names |
 | MCP server configuration | [`.vscode/mcp.json`](https://github.com/bamr87/it-journey/blob/main/.vscode/mcp.json) (editor, `promptString` token) + [`scripts/ai/mcp/github-readonly.json`](https://github.com/bamr87/it-journey/blob/main/scripts/ai/mcp/github-readonly.json) (runner, env token) | Declared servers, secrets never committed, allow-list at the call site |
 | Environment integration | [`AGENTS.md`](https://github.com/bamr87/it-journey/blob/main/AGENTS.md) + [`.github/copilot-instructions.md`](https://github.com/bamr87/it-journey/blob/main/.github/copilot-instructions.md) + [`_data/ai.yml`](https://github.com/bamr87/it-journey/blob/main/_data/ai.yml) | The realm's law, written for the agent; ONE config file for every model call |
 | Safe execution paths | Claude-Code→API fallback in `run.sh`; `timeout-minutes` + `concurrency` on every lane; `needs-human` escalation | Failures retry once (fallback), then surface loudly — never a silent green |

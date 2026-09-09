@@ -17,7 +17,7 @@ It ends in **exactly one report file** (committed or attached by the caller), ne
 - **`MAX_QUESTS`** (optional, default 5) — cap on how many linked quests to walk.
 - If `CHARACTER`/`LEVEL` are omitted, the planner **rotates the slice by date** so a
   daily run sweeps the whole curriculum over time.
-- Auth + model come from the runner (`scripts/ai/run.sh` + `_data/ai.yml`).
+- Auth + model come from the runner (the fleet's `claude-run` action + `_data/ai.yml`).
 
 ## 1. Plan the slice (deterministic, before any playing)
 

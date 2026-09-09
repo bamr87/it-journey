@@ -16,7 +16,7 @@ cancel in-progress runs; mutating/long jobs (auto-merge, CMS loop, contributor r
   interpolated directly into `run:`.
 - **AI is opt-in.** Every Claude-powered workflow gates on a `*_ENABLED` repo
 variable **and** the `CLAUDE_CODE_OAUTH_TOKEN`/`ANTHROPIC_API_KEY` secret, so nothing AI runs until both are present (see `scripts/ai/README.md`).
-- **One AI step.** Model calls go through `uses: ./.github/actions/claude-run` → `scripts/ai/run.sh`, the fleet's shared `ai-runner` kit (byte-identical to lifehacker.dev's; never edit locally). An attempted-and-failed call fails the step with the reason (`::error::`), a run with no credentials is a clean no-op. Per-step model routing uses the `AI_MODEL` env (the quest lanes set it from `vars.QUEST_AI_MODEL`) or the action's `model` input.
+- **One AI step.** Model calls go through `uses: bamr87/bamr87/.github/actions/claude-run@main`, the fleet's shared `ai-runner` kit consumed by reference from the hub (nothing vendored here; fix it upstream in bamr87/bamr87 and every lane picks it up on its next run). An attempted-and-failed call fails the step with the reason (`::error::`), a run with no credentials is a clean no-op. Per-step model routing uses the `AI_MODEL` env (the quest lanes set it from `vars.QUEST_AI_MODEL`) or the action's `model` input.
 
 ## Inventory
 
@@ -29,7 +29,7 @@ variable **and** the `CLAUDE_CODE_OAUTH_TOKEN`/`ANTHROPIC_API_KEY` secret, so no
 | `quest-validation.yml` | PR/push on `pages/_quests/**`; weekly; dispatch | Quest content scoring (≥70%), network integrity, and stale generated-data check (the weekly/push full audit runs the unified Docker audit = `make docker-validate`). |
 | `validate-solutions.yml` | PR/push on `test/quest-solutions/**` (main/master); dispatch | Structural validation of quest solution fixtures. |
 | `codeql-analysis.yml` | push/PR to main (code paths only); weekly | CodeQL security analysis (JavaScript, Python, Ruby). Push/PR runs skip content-only diffs (`pages/**`, `**/*.md`, `_data/**`, `assets/images/**`); the weekly cron always runs a full scan. |
-| `markdown-oneline.yml` | PR to `main` + push to `main` on `*.md`/`*.markdown` | **Hub prose kit 0.3.0 (self-healing).** Unwraps soft-wrapped prose to one paragraph per line (`tools/unwrap-prose.py --write`) and, on a same-repo PR, commits the repair back to the branch with `GITHUB_TOKEN` (no extra CI runs); a fork PR or a push to `main` still fails with the fix instructions. Local additions to the kit: `branches: [main]` on the PR trigger (gh-pages sync PRs cannot resolve a merge ref and failed at startup) and two extra `--exclude`s for the machine-authored `pages/_quest-reports/` + `test/quest-validator/walkthroughs/` — the same list `.prose-excludes` hands `scripts/ai/run.sh`. |
+| `markdown-oneline.yml` | PR to `main` + push to `main` on `*.md`/`*.markdown` | **Hub prose kit 0.3.0 (self-healing).** Unwraps soft-wrapped prose to one paragraph per line (`tools/unwrap-prose.py --write`) and, on a same-repo PR, commits the repair back to the branch with `GITHUB_TOKEN` (no extra CI runs); a fork PR or a push to `main` still fails with the fix instructions. Local additions to the kit: `branches: [main]` on the PR trigger (gh-pages sync PRs cannot resolve a merge ref and failed at startup) and two extra `--exclude`s for the machine-authored `pages/_quest-reports/` + `test/quest-validator/walkthroughs/` — the same list `.prose-excludes` hands the fleet's `claude-run` runner. |
 
 ### Content quality & AI fleet (opt-in)
 
