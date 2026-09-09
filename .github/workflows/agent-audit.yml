@@ -68,13 +68,13 @@ jobs:
         run: pip install pyyaml
 
       - name: Audit the fleet (agent-auditor)
-        uses: ./.github/actions/claude-run
+        uses: bamr87/bamr87/.github/actions/claude-run@main
         with:
           agent: agent-auditor
           prompt: >-
             Audit the IT-Journey AI fleet for drift. Inventory .claude/agents/*.md,
             .claude/skills/*/SKILL.md, the content-*.yml + agent-audit.yml workflows,
-            and the runner (scripts/ai/run.sh, .github/actions/claude-run,
+            and the runner wiring (the fleet's claude-run action consumed by reference,
             _data/ai.yml). Verify every quoted path, make target, label, collection
             name, and model is accurate against the live repo; that each workflow's
             prompt agrees with its agent's hard rules and the skill it delegates to;

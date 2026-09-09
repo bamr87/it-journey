@@ -12,7 +12,7 @@ It ends in **exactly one pull request** (or a clean no-op with a reason), never 
 ## 0. Inputs
 
 - **`ISSUE`** — the proposal issue number (e.g. `365`).
-- Auth + model come from the runner (`scripts/ai/run.sh` + `_data/ai.yml`).
+- Auth + model come from the runner (the fleet's `claude-run` action + `_data/ai.yml`).
 
 ## 1. Collect (deterministic, before any prose)
 

@@ -528,7 +528,7 @@ jobs:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       # Engine model pin (see the gate's MODEL POLICY comment) — the engine reads
       # $QUEST_AI_MODEL itself; AI_MODEL routes the SAME model into the
-      # walker agent step (claude-run → scripts/ai/run.sh honors it).
+      # walker agent step (the fleet's claude-run action honors it).
       QUEST_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
       AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
       SLUG: ${{ matrix.slug }}
@@ -683,7 +683,7 @@ jobs:
       # in full on the next run.
       - name: Walk the slice and write a session report
         if: steps.plan.outputs.empty != 'true' && steps.evidence.outputs.auth_skipped != 'true'
-        uses: ./.github/actions/claude-run
+        uses: bamr87/bamr87/.github/actions/claude-run@main
         with:
           agent: quest-walker
           prompt: >-

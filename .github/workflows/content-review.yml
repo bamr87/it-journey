@@ -90,7 +90,7 @@ jobs:
           git config user.email "bot@it-journey.dev"
 
       - name: Editorial pass (content-reviewer agent)
-        uses: ./.github/actions/claude-run
+        uses: bamr87/bamr87/.github/actions/claude-run@main
         with:
           agent: content-reviewer
           prompt: >-

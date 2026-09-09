@@ -1,30 +1,35 @@
 # IT-Journey AI runner & content fleet
 
-This directory holds the **one place AI is wired** for the repo. Everything that calls a model — every workflow agent step and every skill — goes through `run.sh`, which reads `_data/ai.yml` for the model and runs **Claude Code first** (the full agent, authed by `CLAUDE_CODE_OAUTH_TOKEN`), falling back to the Claude API (`api_call.rb`, stdlib HTTP) only if the CLI is missing/fails and an `ANTHROPIC_API_KEY` is present.
+This directory holds the repo's half of the **one place AI is wired**. Everything that calls a model — every workflow agent step — goes through the fleet's `claude-run` action, consumed **by reference** (`uses: bamr87/bamr87/.github/actions/claude-run@main`), which reads this repo's `_data/ai.yml` for the model and runs **Claude Code first** (the full agent, authed by `CLAUDE_CODE_OAUTH_TOKEN`), falling back to the Claude API (`api_call.rb`, stdlib HTTP) only if the CLI is missing/fails and an `ANTHROPIC_API_KEY` is present.
 
-The runner is the fleet's shared **`ai-runner` kit**. lifehacker.dev's `scripts/ai/` is the source of truth; the files marked **kit** below are **byte-identical** to lifehacker.dev's copies — change them there first, then copy them forward, never fork them here (`shasum` against lifehacker.dev's `main` is the parity check). A drifted copy is a repo passing a *different* gate from everyone else, which is exactly how this repo's earlier port came to exit 0 on a dead credential and to bill the API key when both secrets were set.
+The runner is the fleet's shared **`ai-runner` kit**, and this repo no longer carries a copy of it: the action (`action.yml`) and the runner (`run.sh`) live once in the hub at [`bamr87/bamr87/.github/actions/claude-run`](https://github.com/bamr87/bamr87/tree/main/.github/actions/claude-run) (kit docs: [`templates/ai-runner/README.md`](https://github.com/bamr87/bamr87/blob/main/templates/ai-runner/README.md)) and every workflow references them at `@main`, so a fix lands here on the next run with nothing to copy forward. The runner acts on the consumer tree (`$GITHUB_WORKSPACE`) and probes it for the optional **companions** below, which stay here by design. Earlier this repo vendored the kit byte-for-byte (and before that a drifted port that exited 0 on a dead credential and billed the API key when both secrets were set) — that copy-forward discipline is what the by-reference consumption replaces.
 
-| File | Kit | What it does |
+| File | Role | What it does |
 | --- | --- | --- |
-| `run.sh` | **kit** | The universal runner: Claude Code first (`claude -p … --output-format json`), Claude API fallback; OAuth-first auth (`env -u ANTHROPIC_API_KEY` around the CLI when the OAuth token exists, so the metered key is never billed for subscription work); honest exit codes; failure diagnosis (`::error::` annotation naming the cause + an operator hint); optional metering, prose normalization, and API fallback (below). |
-| `../../.github/actions/claude-run/action.yml` | **kit** | The composite action every AI workflow uses instead of hand-rolling `npm install` + `claude -p`. Installs the CLI, calls `run.sh`, publishes metering (when present). Inputs: `prompt`, `agent`, `tools`, `mcp`, `system`, `out`, `model`, `max-turns`. |
-| `usage.rb` | kit (optional) | Metering: one JSONL record per call (tokens, API-equivalent cost, model, status, CI context) into `$AI_USAGE_DIR/records.jsonl` (default `$RUNNER_TEMP/ai-usage`, outside the checkout). Prices come from `_data/ai_pricing.yml`. |
-| `usage_report.rb` | kit (optional) | End-of-job publisher: step summary, `ai-usage-*` artifact, sticky PR comment (marker `<!-- lh-ai-usage -->`). This repo has no ledger sweep (lifehacker.dev's `usage_ledger.rb` / `ai-usage.yml` are not part of the kit), so the artifacts are the record. |
-| `api_call.rb` | kit (optional) | The single-shot Messages API fallback. Stdlib only, self-contained. Replaced the old `api_call.py` (→ `scripts/lib/ai_client.py`), which nothing else referenced; `ai_client.py` itself stays for the validation/PRD scripts that import it. |
-| `../ci/test_ai_runner.sh` | kit (test) | Pins the exit-code contract with a stubbed `claude`: success, rejected call, silent CLI, no-op, is_error-with-exit-0, kit-only mode, flag passthrough. No network, no credentials. |
+| `bamr87/bamr87/.github/actions/claude-run@main` (hub, by reference) | **kit** | The composite action every AI workflow uses instead of hand-rolling `npm install` + `claude -p`. Installs the CLI, runs the kit's `run.sh` — Claude Code first (`claude -p … --output-format json`), Claude API fallback; OAuth-first auth (`env -u ANTHROPIC_API_KEY` around the CLI when the OAuth token exists, so the metered key is never billed for subscription work); honest exit codes; failure diagnosis (`::error::` naming the cause + an operator hint) — and publishes metering when this repo's `usage_report.rb` is present. Inputs: `prompt`, `agent`, `tools`, `mcp`, `system`, `out`, `model`, `max-turns`. Not a file in this repo. |
+| `usage.rb` | companion (optional) | Metering: one JSONL record per call (tokens, API-equivalent cost, model, status, CI context) into `$AI_USAGE_DIR/records.jsonl` (default `$RUNNER_TEMP/ai-usage`, outside the checkout). Prices come from `_data/ai_pricing.yml`. |
+| `usage_report.rb` | companion (optional) | End-of-job publisher: step summary, `ai-usage-*` artifact, sticky PR comment (marker `<!-- lh-ai-usage -->`). This repo has no ledger sweep (lifehacker.dev's `usage_ledger.rb` / `ai-usage.yml` are not part of the kit), so the artifacts are the record. |
+| `api_call.rb` | companion (optional) | The single-shot Messages API fallback. Stdlib only, self-contained. Replaced the old `api_call.py` (→ `scripts/lib/ai_client.py`), which nothing else referenced; `ai_client.py` itself stays for the validation/PRD scripts that import it. |
+| `../../.prose-excludes`, `../../tools/unwrap-prose.py` | companion (optional) | The post-run one-paragraph-per-line normalizer the runner invokes on markdown the agent changed, and this repo's extra excludes (one extended regex per line). |
 | `drift-guard.sh`, `mcp/` | local | GH-600 plan-then-act helpers (snapshot watched files; committed MCP server configs). Not part of the kit. |
-| `_data/ai.yml` | local | Model + budget (`model`, `fallback_model`, `max_tokens`, API wire details). Auth never lives in a file. |
+| `../../_data/ai.yml` | companion | Model + budget (`model`, `fallback_model`, `max_tokens`, API wire details). Auth never lives in a file. |
 
 ## The runner contract
 
-**Invocation**
+**Invocation** (a workflow step; the inputs map 1:1 onto the runner's flags)
 
-```bash
-scripts/ai/run.sh --prompt "..." [--agent name] [--tools "Bash,Read"] [--mcp cfg.json] \
-                  [--system "..."] [--out file] [--model id] [--max-turns N]
+```yaml
+- uses: bamr87/bamr87/.github/actions/claude-run@main
+  with:
+    agent: content-curator          # .claude/agents/<name>.md
+    prompt: "..."
+    tools: "Bash,Read,Write,Edit,Grep,Glob"
+    # mcp: cfg.json  system: "..."  out: file  model: id  max-turns: N
 ```
 
-**Environment** (canonical names — no repo prefix, so the file stays identical everywhere; the old repo-prefixed names from the earlier port are gone)
+Locally, run the kit's runner from a hub checkout against this tree: `AI_REPO_ROOT="$PWD" bash <hub>/.github/actions/claude-run/run.sh --prompt "..." [--agent name] …` (same flags as the inputs above).
+
+**Environment** (canonical names — no repo prefix, so nothing is repo-specific; the old repo-prefixed names from the earlier port are gone)
 
 | Variable | Meaning |
 | --- | --- |
@@ -34,7 +39,8 @@ scripts/ai/run.sh --prompt "..." [--agent name] [--tools "Bash,Read"] [--mcp cfg
 | `AI_FORCE_API=1` | Skip Claude Code, go straight to the API fallback. |
 | `AI_MAX_TURNS` | Cap the agent's turns (`--max-turns`); unset = CLI default. |
 | `AI_USAGE_DIR` | Where `usage.rb` writes records. |
-| `AI_ROLE` | Set by `run.sh` for the fallback so its record carries the agent name. |
+| `AI_ROLE` | Set by the runner for the fallback so its record carries the agent name. |
+| `AI_REPO_ROOT` | The consumer tree the runner acts on (default `$GITHUB_WORKSPACE`); only needed when running the hub's `run.sh` locally. |
 
 **Exit codes** — a failed call is never silently green.
 
@@ -43,13 +49,13 @@ scripts/ai/run.sh --prompt "..." [--agent name] [--tools "Bash,Read"] [--mcp cfg
 | `0` | The call ran, **or** nothing was ever attempted (no `claude` on PATH and no API key — the documented no-op). |
 | `1` | The call was attempted and failed with no usable fallback. The reason is printed and raised as a `::error::` annotation under Actions. |
 
-**Optional companions.** `run.sh` probes for each and degrades honestly when one is absent:
+**Optional companions.** The runner probes this tree for each and degrades honestly when one is absent:
 
 - `scripts/ai/usage.rb` — metering. Without it, an inline stdlib emitter enforces the same "is_error is a failure" rule; nothing is recorded.
 - `scripts/ai/api_call.rb` (or `api_call.py`) — the fallback. Without it, a failed primary call exits `1` with "no scripts/ai/api_call.rb|py to fall back to".
 - `tools/unwrap-prose.py` — after a successful run, markdown the agent changed is unwrapped to one paragraph per line (the `markdown-oneline` gate). `SCHEMA.md`/`CHANGELOG.md` are always skipped; this repo's further exclusions (`pages/_quest-reports/`, `test/quest-validator/walkthroughs/`) live in the repo-root **`.prose-excludes`**, one extended regex per line — the file replaced the exclusions the old port hard-coded.
 
-Run `bash scripts/ci/test_ai_runner.sh` after touching anything here.
+The runner's exit-code contract is pinned by the hub's `templates/ai-runner/tests/contract.sh` (stubbed `claude`; no network, no credentials), run by the hub's CI on every change to the kit — there is no local copy to run. After touching a companion here, exercise it through a `workflow_dispatch` of one lane.
 
 ## The content fleet (continuous, on-brand improvement)
 
@@ -206,4 +212,4 @@ bot/automation-authored noise (and only when `ISSUE_AUTOCLOSE_ENABLED`); the det
 - **Policy as data** — the fleet roster (`_data/agents/registry.yml`: lane, kill
 switch, status, review date per agent) and the autonomy matrix (`_data/agents/autonomy-matrix.yml`: recurring action → L0–L4 level + the guardrails that justify it) are the machine-readable contract the weekly audit checks reality against; the forbidden-actions Warden Pact lives in `AGENTS.md`.
 - **Drift guard** — `scripts/ai/drift-guard.sh` snapshots watched files at plan
-time and aborts (exit 78) before an agent acts on a world that changed while it waited; `scripts/ai/mcp/` holds committed MCP server configs (tokens come from the environment, allow-lists at the `run.sh --tools` call site). Both are demonstrated end-to-end by `.github/workflows/agent-plan-then-act.yml` — the GH-600 reference pipeline, mapped in `/notes/gh-600/implemented-in-it-journey/`.
+time and aborts (exit 78) before an agent acts on a world that changed while it waited; `scripts/ai/mcp/` holds committed MCP server configs (tokens come from the environment, allow-lists at the claude-run step's `tools:` input). Both are demonstrated end-to-end by `.github/workflows/agent-plan-then-act.yml` — the GH-600 reference pipeline, mapped in `/notes/gh-600/implemented-in-it-journey/`.

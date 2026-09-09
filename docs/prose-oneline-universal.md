@@ -20,7 +20,7 @@ The `bamr87/bamr87` hub distributes standards two ways:
 1. **Reusable workflows** — `.github/workflows/ci.yml` is a thin caller: `uses: bamr87/bamr87/.github/workflows/standard-ci.yml@main`. Edit the hub once and every repo runs the new logic on its next PR.
 2. **Fanout/seed** — `standardize-fanout.yml` + `tools/fanout.sh --kit prose` copies `markdown-oneline.yml` + `unwrap-prose.py` into each repo. Edit the hub kit, re-fanout, and every repo gets the new committed copy.
 
-Plus a shared AI chokepoint: `scripts/ai/run.sh` + `.github/actions/claude-run` — *every* AI call flows through it, and it is ported to the sibling sites.
+Plus a shared AI chokepoint: the fleet's `claude-run` action (`bamr87/bamr87/.github/actions/claude-run@main`, consumed by reference) — *every* AI call flows through it, in this repo and the sibling sites alike.
 
 ## The layers
 
@@ -28,7 +28,7 @@ Plus a shared AI chokepoint: `scripts/ai/run.sh` + `.github/actions/claude-run` 
 |---|---|---|---|
 | 0. CI check | any wrapped prose reaching a PR, all repos | fanned-out `markdown-oneline.yml` | shipped (the backstop) |
 | 1. CI auto-fix | same, but self-heals instead of failing | hub prose kit 0.3.0 (`markdown-oneline.yml`) | shipped — adopted here |
-| 2. AI runner sweep | all AI markdown in CI, all sibling repos | `scripts/ai/run.sh` (the shared `ai-runner` kit) + `.prose-excludes` | shipped in the kit |
+| 2. AI runner sweep | all AI markdown in CI, all sibling repos | the hub's `claude-run` runner (the shared `ai-runner` kit) + `.prose-excludes` | shipped in the kit |
 | 3. Claude Code hook | all Claude markdown, every repo + session | `~/.claude/settings.json` (global) or `.claude/settings.json` (project) | config + script below |
 | 4. pre-commit hook | all commits, any author | `tools/hooks/` + `core.hooksPath` | shipped in this repo; kit it |
 
@@ -99,7 +99,7 @@ Tradeoff: auto-committing edits the contributor's PR and can race other automati
 
 ## Layer 2 — the shared AI runner sweep (shipped here)
 
-`scripts/ai/run.sh` normalizes any markdown the agent changed after a successful Claude Code run (`normalize_changed_markdown`). It is best-effort, skips the gate-excluded files, and is idempotent with `quest-fix.yml`'s M8 step. The sweep was upstreamed into the shared `ai-runner` kit (lifehacker.dev is the source of truth; this repo carries a byte-identical copy — see `scripts/ai/README.md`), so the kit's `run.sh` no longer hard-codes this repo's excludes: it always skips `SCHEMA.md`/`CHANGELOG.md` and reads the rest, one extended regex per line, from the repo-root `.prose-excludes`.
+The kit's runner (`run.sh` beside `bamr87/bamr87/.github/actions/claude-run@main`) normalizes any markdown the agent changed after a successful Claude Code run (`normalize_changed_markdown`). It is best-effort, skips the gate-excluded files, and is idempotent with `quest-fix.yml`'s M8 step. The sweep was upstreamed into the shared `ai-runner` kit (the hub is the source of truth; this repo consumes it by reference — see `scripts/ai/README.md`), so the kit's `run.sh` no longer hard-codes this repo's excludes: it always skips `SCHEMA.md`/`CHANGELOG.md` and reads the rest, one extended regex per line, from the repo-root `.prose-excludes`.
 
 This sweep catches *uncommitted* edits (the workflow-opens-PR flows). Agents that commit inside their own run — `content-factory`, `quest-forge`, the issue resolver — are covered by Layer 3, which fires per-edit *during* the run, before the agent commits.
 
@@ -182,10 +182,10 @@ Bypass a single commit with `git commit --no-verify`. To distribute it, add `too
 
 - [x] Layer 0 — CI check fanned out (already in every repo).
 - [x] Layer 1 — the hub's `--kit prose` 0.3.0 ships the self-healing `markdown-oneline.yml`; adopted here (with this repo's two extra excludes).
-- [x] Layer 2 — `scripts/ai/run.sh` sweep, now in the shared `ai-runner` kit; this repo's excludes live in `.prose-excludes`.
+- [x] Layer 2 — the runner sweep, now in the shared `ai-runner` kit consumed by reference; this repo's excludes live in `.prose-excludes`.
 - [ ] Layer 3 — add the global `~/.claude/settings.json` hook on your machine; optionally kit the project variant.
 - [x] Layer 4 — `tools/hooks/pre-commit` + `make hooks-install` (this repo); kit it for the rest.
 
 ## Keep in lockstep
 
-The exclude list appears in `markdown-oneline.yml`, the `Makefile` (`PROSE_ONELINE_EXCLUDES`), `.prose-excludes` (read by the kit's `scripts/ai/run.sh` — never edit `run.sh` itself, it is byte-identical to lifehacker.dev's), and both hook scripts. When it changes, update all of them. `tools/unwrap-prose.py` is the single engine everywhere.
+The exclude list appears in `markdown-oneline.yml`, the `Makefile` (`PROSE_ONELINE_EXCLUDES`), `.prose-excludes` (read by the kit's `run.sh` in the hub — there is no local copy to edit), and both hook scripts. When it changes, update all of them. `tools/unwrap-prose.py` is the single engine everywhere.
