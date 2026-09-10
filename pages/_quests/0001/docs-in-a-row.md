@@ -67,13 +67,12 @@ layout: quest
 
 By the end of this quest, you will be able to:
 
-- [ ] Understand the core concepts introduced in this quest
-- [ ] Complete the hands-on exercises and verify the results
-- [ ] Apply what you learned to a follow-up scenario of your own design
+- [ ] Write a GitHub Actions workflow that runs the aggregation on a schedule and on-demand via manual trigger
+- [ ] Write a Bash script that clones and collects documentation files from at least 2 repositories
+- [ ] Write a Python script that organizes collected files into a logical, non-colliding directory structure
+- [ ] Generate correct YAML front matter for every processed document
 
-> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
-
-## � Quest Overview
+## 📖 Quest Overview
 
 **Level**: Journeyman (Lvl 001) | **Difficulty**: 🟡 Medium | **Time**: 2-3 hours
 
@@ -485,8 +484,6 @@ for root, dirs, files in os.walk(RAW_DIR, topdown=False):
 os.rmdir(RAW_DIR)
 ```
 
-**Script creates proper Python implementation** - Full implementation provided above replaces this placeholder.
-
 ---
 
 ### Step 5: Deploy and Test Your System
@@ -546,16 +543,16 @@ head -n 20 docs/api/README.md
 ```text
 docs/
 ├── api/
-│   ├── README.md
-│   └── endpoints.md
-├── guides/
-│   ├── getting-started.md
-│   └── tutorial.md
-├── architecture/
-│   └── design-decisions.md
-└── general/
-    └── misc-docs.md
+│   ├── my-repo/README.md
+│   └── my-repo/endpoints.md
+├── user-guides/
+│   ├── other-repo/getting-started.md
+│   └── other-repo/tutorial.md
+└── misc/
+    └── my-repo/notes.md
 ```
+
+`categorize_content()` only sorts into three buckets — `api` (content mentioning "api"), `user-guides` (content mentioning "guide" or "tutorial"), and `misc` (everything else) — and `process.py` keeps each file's per-repo subpath under its category, so expand the function first if you want the `guides`/`architecture`/`general` split shown in earlier drafts of this quest.
 
 **Checkpoint**: Your documentation hub is live and automatically updating!
 
@@ -595,7 +592,7 @@ Deploy your documentation hub as a searchable website:
 - name: Deploy to GitHub Pages
   uses: peaceiris/actions-gh-pages@v3
   with:
-    github_token: ${% raw %}{{ secrets.GITHUB_TOKEN }}{% endraw %}
+    github_token: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
     publish_dir: ./docs
 ```
 
