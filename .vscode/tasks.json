@@ -1,264 +1,152 @@
+// it-journey · .vscode/tasks.json — fleet-vscode/v1 · 2026-09-09. Convention + vocabulary: .vscode/README.md.
 {
-  // ==================================================
-  // UNIFIED VS CODE TASKS - Docker-First Development
-  // ==================================================
-  // Optimized for it-journey Jekyll development
-  // Last Updated: 2025-10-26
-  
   "version": "2.0.0",
   "tasks": [
-    
-    // ==========================================
-    // CORE DOCKER OPERATIONS
-    // ==========================================
     {
-      "label": "Docker: Compose Up (Detached)",
+      "label": "Serve",
+      "detail": "Docker. The Jekyll dev server (_config.yml,_config_dev.yml) on http://localhost:4002. Runs until Stop.",
       "type": "shell",
-      "command": "docker-compose",
-      "args": ["up", "-d"],
-      "options": { "cwd": "${workspaceFolder}" },
-      "group": "build",
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": false,
-        "panel": "shared",
-        "showReuseMessage": true,
-        "clear": false
-      },
-      "problemMatcher": [],
-      "detail": "Start Docker containers in detached mode"
-    },
-
-    {
-      "label": "Docker: Compose Stop",
-      "type": "shell", 
-      "command": "docker-compose",
-      "args": ["stop"],
-      "options": { "cwd": "${workspaceFolder}" },
-      "group": "build",
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": false,
-        "panel": "shared",
-        "showReuseMessage": true,
-        "clear": false
-      },
-      "problemMatcher": [],
-      "detail": "Stop running Docker containers"
-    },
-
-    {
-      "label": "Docker: Compose Down",
-      "type": "shell",
-      "command": "docker-compose", 
-      "args": ["down"],
-      "options": { "cwd": "${workspaceFolder}" },
-      "group": "build",
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": false,
-        "panel": "shared",
-        "showReuseMessage": true,
-        "clear": false
-      },
-      "problemMatcher": [],
-      "detail": "Stop and remove Docker containers, networks"
-    },
-
-    {
-      "label": "Docker: Rebuild (Force)",
-      "type": "shell",
-      "command": "docker-compose",
-      "args": ["up", "--build", "--force-recreate", "-d"],
-      "options": { "cwd": "${workspaceFolder}" },
-      "group": "build",
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": true,
-        "panel": "shared",
-        "showReuseMessage": true,
-        "clear": true
-      },
-      "problemMatcher": [],
-      "detail": "Force rebuild and recreate all Docker containers"
-    },
-
-    {
-      "label": "Docker: Logs (Follow)",
-      "type": "shell",
-      "command": "docker-compose",
-      "args": ["logs", "-f", "jekyll"],
-      "options": { "cwd": "${workspaceFolder}" },
-      "group": "test",
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": true,
-        "panel": "dedicated",
-        "showReuseMessage": false,
-        "clear": true
+      "command": "docker compose up jekyll",
+      "options": {
+        "cwd": "${workspaceFolder}"
       },
       "isBackground": true,
-      "problemMatcher": [],
-      "detail": "Follow Jekyll container logs in real-time"
-    },
-
-    // ==========================================
-    // JEKYLL SPECIFIC TASKS
-    // ==========================================
-    {
-      "label": "Jekyll: Build Site",
-      "type": "shell",
-      "command": "docker-compose",
-      "args": ["exec", "jekyll", "bundle", "exec", "jekyll", "build"],
-      "options": { "cwd": "${workspaceFolder}" },
-      "group": "build",
-      "dependsOn": "Docker: Compose Up (Detached)",
       "presentation": {
-        "echo": true,
         "reveal": "always",
-        "focus": false,
-        "panel": "shared",
-        "clear": false
+        "panel": "dedicated"
+      },
+      "problemMatcher": {
+        "owner": "serve",
+        "pattern": {
+          "regexp": "^(never-matches)$",
+          "message": 1
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".",
+          "endsPattern": "Server (running|address)|Container \\S+\\s+Running"
+        }
+      }
+    },
+    {
+      "label": "Stop",
+      "detail": "Stops and removes the dev stack (docker compose down).",
+      "type": "shell",
+      "command": "docker compose down",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build",
+      "detail": "Docker. The dev-config Jekyll build inside the container.",
+      "type": "shell",
+      "command": "docker compose up -d jekyll && docker compose exec -T jekyll bundle exec jekyll build --config _config.yml,_config_dev.yml",
+      "options": {
+        "cwd": "${workspaceFolder}"
       },
       "problemMatcher": [],
-      "detail": "Build Jekyll site inside Docker container"
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
     },
-
-    // ==========================================
-    // TESTING TASKS
-    // ==========================================
     {
-      "label": "Test: Run All Tests",
+      "label": "Lint",
+      "detail": "Host python. The pre-build checks build-validation.yml runs: Liquid raw-guards, then the content audit (frontmatter, mermaid, quests, quest network).",
       "type": "shell",
-      "command": "docker-compose",
-      "args": ["exec", "jekyll", "bundle", "exec", "rspec"],
-      "options": { "cwd": "${workspaceFolder}" },
+      "command": "make liquid-check && make content-audit",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "group": "test"
+    },
+    {
+      "label": "Verify",
+      "detail": "Lint, then Build — build-validation.yml's checks in order.",
+      "dependsOn": [
+        "Lint",
+        "Build"
+      ],
+      "dependsOrder": "sequence",
       "group": {
         "kind": "test",
         "isDefault": true
       },
-      "dependsOn": "Docker: Compose Up (Detached)",
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": true,
-        "panel": "dedicated",
-        "clear": true
-      },
-      "problemMatcher": [],
-      "detail": "Run test suite in Docker container"
+      "problemMatcher": []
     },
-
     {
-      "label": "Lint: Markdown Files",
+      "label": "Quest: audit (Docker)",
+      "detail": "Docker (python:3.12-slim). The quest audit exactly as CI runs it; EXTRA=… passes flags through.",
       "type": "shell",
-      "command": "markdownlint",
-      "args": ["**/*.md"],
-      "group": "test",
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": false,
-        "panel": "shared",
-        "clear": false
+      "command": "make docker-validate",
+      "options": {
+        "cwd": "${workspaceFolder}"
       },
       "problemMatcher": [],
-      "detail": "Lint all Markdown files with markdownlint"
+      "group": "test"
     },
-
-    // ==========================================
-    // MAINTENANCE TASKS
-    // ==========================================
     {
-      "label": "Docker: Clean Up",
+      "label": "Fix: unwrap prose",
+      "detail": "Host python. Rewrites soft-wrapped markdown to one paragraph per line (the markdown-oneline gate). Diff before you commit.",
       "type": "shell",
-      "command": "docker",
-      "args": ["system", "prune", "-f"],
-      "options": { "cwd": "${workspaceFolder}" },
-      "group": "build",
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": false,
-        "panel": "shared",
-        "clear": false
+      "command": "make prose-oneline-apply",
+      "options": {
+        "cwd": "${workspaceFolder}"
       },
-      "problemMatcher": [],
-      "detail": "Clean up Docker system (containers, networks, images)"
+      "problemMatcher": []
     },
-
     {
-      "label": "Dependencies: Update Jekyll",
+      "label": "CMS: status",
+      "detail": "Host. The content-health dashboard by collection.",
       "type": "shell",
-      "command": "docker-compose",
-      "args": ["exec", "jekyll", "bundle", "update"],
-      "options": { "cwd": "${workspaceFolder}" },
-      "group": "build",
-      "dependsOn": "Docker: Compose Up (Detached)",
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": true,
-        "panel": "shared",
-        "clear": true
+      "command": "make cms-status",
+      "options": {
+        "cwd": "${workspaceFolder}"
       },
-      "problemMatcher": [],
-      "detail": "Update Jekyll dependencies in Docker container"
+      "problemMatcher": []
     },
-
-    // ==========================================
-    // PERFORMANCE & PROFILING TASKS
-    // ==========================================
     {
-      "label": "Jekyll: Build with Profile",
+      "label": "Docker: rebuild",
+      "detail": "Force-rebuilds and recreates the stack (after Dockerfile / compose changes).",
       "type": "shell",
-      "command": "docker-compose",
-      "args": [
-        "exec", "jekyll", "bundle", "exec", "jekyll", "build",
-        "--config", "_config.yml,_config_dev.yml",
-        "--profile"
-      ],
-      "options": { "cwd": "${workspaceFolder}" },
-      "group": "build",
-      "dependsOn": "Docker: Compose Up (Detached)",
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": true,
-        "panel": "dedicated",
-        "clear": true
+      "command": "docker compose up --build --force-recreate -d jekyll",
+      "options": {
+        "cwd": "${workspaceFolder}"
       },
-      "problemMatcher": [],
-      "detail": "Build site with per-template timing report to identify slow Liquid templates"
+      "problemMatcher": []
     },
-
     {
-      "label": "Jekyll: Serve (Limit Posts)",
+      "label": "Docker: logs",
+      "detail": "Follows the jekyll container's logs.",
       "type": "shell",
-      "command": "docker-compose",
-      "args": [
-        "exec", "jekyll", "bundle", "exec", "jekyll", "serve",
-        "--watch", "--force_polling",
-        "--config", "_config.yml,_config_dev.yml",
-        "--limit_posts", "10"
-      ],
-      "options": { "cwd": "${workspaceFolder}" },
-      "group": "build",
-      "dependsOn": "Docker: Compose Up (Detached)",
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": true,
-        "panel": "dedicated",
-        "clear": true
+      "command": "docker compose logs -f jekyll",
+      "options": {
+        "cwd": "${workspaceFolder}"
       },
       "problemMatcher": [],
-      "detail": "Serve with only 10 posts - fastest possible rebuild for non-post development"
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Claude: session",
+      "detail": "Interactive Claude Code in this repo with its .claude/agents + skills, on your logged-in credentials. House rules still apply: branch from main, open a PR, a human merges.",
+      "type": "shell",
+      "command": "claude",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "focus": true
+      }
     }
   ]
 }

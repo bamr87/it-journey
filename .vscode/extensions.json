@@ -1,28 +1,21 @@
+// it-journey · .vscode/extensions.json — fleet-vscode/v1 · 2026-09-09. Convention + vocabulary: .vscode/README.md.
 {
   "recommendations": [
-    // Core
-    "github.copilot",
-    "github.copilot-chat",
-    "ms-azuretools.vscode-docker",
-    "ms-vscode-remote.remote-containers",
-
-    // Ruby / Jekyll
-    "shopify.ruby-lsp",
-    "shopify.liquid",
-
-    // Content authoring
+    "anthropic.claude-code",
+    "editorconfig.editorconfig",
+    "github.vscode-github-actions",
+    "github.vscode-pull-request-github",
+    "ms-azuretools.vscode-containers",
     "redhat.vscode-yaml",
     "davidanson.vscode-markdownlint",
-    "yzhang.markdown-all-in-one",
-    "eliostruyf.vscode-front-matter",
-    "ms-toolsai.jupyter",
-
-    // Utilities
     "streetsidesoftware.code-spell-checker",
-    "eamodio.gitlens"
-  ],
-  "unwantedRecommendations": [
-    "ms-vscode.vscode-typescript",
-    "ms-vscode.nodejs-extension-pack"
+    "timonwong.shellcheck",
+    "sissel.shopify-liquid",
+    "eliostruyf.vscode-front-matter",
+    "shopify.ruby-lsp",
+    "ms-python.python",
+    "ms-python.debugpy",
+    "charliermarsh.ruff",
+    "ms-vscode.makefile-tools"
   ]
 }

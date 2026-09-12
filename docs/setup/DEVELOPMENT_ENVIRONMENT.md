@@ -401,6 +401,8 @@ code it-journey
 
 #### 3. Configure Tasks
 
+The repo already ships a `.vscode/tasks.json` on the fleet convention (`Serve`, `Stop`, `Build`, `Lint`, `Verify`; see `.vscode/README.md`), so this step is only needed for a fresh, unrelated Jekyll project. A minimal one looks like:
+
 **File:** `.vscode/tasks.json`
 
 ```json
