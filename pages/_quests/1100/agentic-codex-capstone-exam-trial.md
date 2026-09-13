@@ -40,7 +40,7 @@ keywords:
   - GitHub Copilot certification
   - agentic codex master
   - all domains review
-lastmod: '2026-09-13T04:45:00.000Z'
+lastmod: '2026-09-13T04:55:00.000Z'
 permalink: /quests/1100/agentic-codex-capstone-exam-trial/
 quest_dependencies:
   required_quests:
@@ -118,6 +118,9 @@ graph TD
 ```
 
 ## 🎯 Quest Objectives
+
+> **Workbench status (verified):** **Needs GitHub + Copilot** for the full trial — especially the MCP seal and hosted agent runs. There is no honest local-only claim for the Grand Capstone; use the chapter mini-labs to rehearse patterns, then assemble in a real repository.
+
 
 *Six seals, six domains — break them all to claim the trial:*
 
