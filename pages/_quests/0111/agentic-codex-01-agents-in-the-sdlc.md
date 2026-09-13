@@ -2,7 +2,7 @@
 title: 'Initiation Rites: Agents in the SDLC'
 description: 'Embed GitHub Copilot agents into the software lifecycle with bounded roles, plan-then-act gates, and observable traces — GH-600 Domain 1 of The Agentic Codex.'
 date: '2026-06-30T00:00:00.000Z'
-lastmod: '2026-09-13T04:45:00.000Z'
+lastmod: '2026-09-13T04:55:00.000Z'
 level: '0111'
 difficulty: '🟡 Medium'
 estimated_time: 2-4 hours
@@ -318,6 +318,9 @@ Now the **degree of autonomy** is a dial you control: the JSONL trail is the evi
 ## 🧪 Hands-On Lab: Raise the Gate in Fifteen Minutes
 
 *Rites are learned by performing them, not reading them.* This lab stands up a real plan-then-act pipeline — plan job, human gate, observable trace — in a scratch repository, using nothing but the `gh` CLI. No Copilot subscription required: the "agent" is a stub you can later replace with the real coding agent.
+
+> **Workbench status (verified):** **Needs GitHub** for the full rite — `gh` auth, a **public** scratch repo, and an Environment with a required reviewer. The stub agent is local-honest (no Copilot). The Environment gate and artifact download only prove out on GitHub.
+
 
 ### Step 1 — Forge the scratch repo
 
