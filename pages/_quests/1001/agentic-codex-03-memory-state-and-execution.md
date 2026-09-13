@@ -2,7 +2,7 @@
 title: 'Vaults of Recollection: Memory & State'
 description: 'Master the three tiers of agent memory, persist state across GitHub Actions runs, and detect context drift before it corrupts an agent. GH-600 Domain 3.'
 date: '2026-06-30T00:00:00.000Z'
-lastmod: '2026-09-13T04:45:00.000Z'
+lastmod: '2026-09-13T04:55:00.000Z'
 level: '1001'
 difficulty: '🔴 Hard'
 estimated_time: 2-4 hours
@@ -352,6 +352,9 @@ This single document prevents the two failure modes named in the sub-skill. It p
 ## 🧪 Hands-On Lab: Carve All Three Vaults on Your Own Machine
 
 *The vaults do not require a cloud — they require discipline you can practice at a terminal.* This lab builds every memory tier and the drift guard locally, in ten minutes, with `git`, `jq`, and `sha256sum`.
+
+> **Workbench status (verified):** **Demoed locally** — Tier 1–3 vaults, drift guard, `git`/`jq`/`sha256sum`. **Needs GitHub** for Actions artifacts and the cross-surface handoff (issue → workflow → PR) the chapter describes in production shape.
+
 
 ### Step 1 — Raise the lab realm
 
