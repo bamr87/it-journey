@@ -2,7 +2,7 @@
 title: 'The Warden Pact: Guardrails & Accountability'
 description: 'GH-600 Domain 6: classify agent actions by risk, set autonomy levels, enforce least-privilege guardrails, gate humans in the loop, and build an audit trail.'
 date: '2026-06-30T00:00:00.000Z'
-lastmod: '2026-07-01T00:00:00.000Z'
+lastmod: '2026-09-13T04:55:00.000Z'
 level: '1100'
 difficulty: '🔴 Hard'
 estimated_time: 2-4 hours
@@ -79,7 +79,7 @@ validation_criteria:
 ---
 *The campaign nears its end. Your familiars can plan, reason, wield tools, remember, recover, and coordinate as a council — but power without a Warden is a wildfire. This chapter raises the last gate of the Codex: **the Warden Pact**, the sworn boundary between what an agent may do alone, what it must ask permission for, and what it may never do at all. The Warden does not fear the agent. She judges the action.*
 
-*Beneath the spellcraft lies the most consequential skill in the entire certification: **responsible autonomy**. GH-600 Domain 6 (9% of the exam — the smallest domain, yet the one that decides whether your agents are trustworthy in production) asks you to classify an action by its risk, assign exactly the right autonomy level, enforce least-privilege guardrails with GitHub-native controls, and leave behind an audit trail that proves what happened. Get the gate wrong and a single autonomous mistake becomes irreversible. Get it right and your agents move fast **because** they are constrained, not in spite of it.*
+*Beneath the spellcraft lies the most consequential skill in the entire certification: **responsible autonomy**. GH-600 Domain 6 (Learn weight **10–15%** — still the domain that decides whether your agents are trustworthy in production) asks you to classify an action by its risk, assign exactly the right autonomy level, enforce least-privilege guardrails with GitHub-native controls, and leave behind an audit trail that proves what happened. Get the gate wrong and a single autonomous mistake becomes irreversible. Get it right and your agents move fast **because** they are constrained, not in spite of it.*
 
 ## 📖 The Legend Behind This Quest
 
@@ -333,6 +333,9 @@ A final accountability note that the exam loves: the human gate must never be a 
 ## 🧪 Hands-On Lab: Build a Warden That Says No
 
 *A guardrail you have never watched refuse an action is a decoration.* This lab builds a working policy gate on your own machine: an autonomy map, a forbidden-paths list, and a warden script that allows, gates, or refuses each proposed action. Then you attack it and watch it hold. Pure shell, five minutes.
+
+> **Workbench status (verified):** **Demoed locally** — autonomy map, forbidden paths, warden allow/gate/refuse. **Needs GitHub** for production Environment required reviewers, CODEOWNERS, and repo-level audit trails.
+
 
 ### Step 1 — Write the Pact as data
 

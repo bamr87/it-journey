@@ -2,7 +2,7 @@
 title: 'Initiation Rites: Agents in the SDLC'
 description: 'Embed GitHub Copilot agents into the software lifecycle with bounded roles, plan-then-act gates, and observable traces — GH-600 Domain 1 of The Agentic Codex.'
 date: '2026-06-30T00:00:00.000Z'
-lastmod: '2026-07-01T00:00:00.000Z'
+lastmod: '2026-09-13T04:55:00.000Z'
 level: '0111'
 difficulty: '🟡 Medium'
 estimated_time: 2-4 hours
@@ -85,7 +85,7 @@ validation_criteria:
 
 *The realm has summoned its first familiars — tireless constructs that read your code, draft your changes, and stand ready at the gate. But a familiar without a leash is a liability. Loose one with the keys to the whole castle and no record of where it walked, and the first night it errs you will have no torch to follow its steps. The Initiation Rites teach the oldest discipline of the agentic order: give every familiar a **bound** — a door it enters, rooms it may touch, a task it knows is finished, and a trail of footprints anyone can read.*
 
-*Behind the spellcraft is the most-tested idea in GH-600 Domain 1 (18% of the exam, per the [official study guide](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600)): an agent is most useful and least dangerous when it has a **bounded role** in the software development lifecycle. You will design where Copilot's coding agent enters the SDLC, separate the act of **planning** from the act of **doing** with a human-approved gate, and make every agent run leave an **observable trace**. These are not three tricks — they are the contract that lets autonomy scale without becoming a runaway machine.*
+*Behind the spellcraft is a core GH-600 Domain 1 idea ([study guide](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600) weight **15–20%** — Learn publishes ranges, not a fixed percent): an agent is most useful and least dangerous when it has a **bounded role** in the software development lifecycle. You will design where Copilot's coding agent enters the SDLC, separate the act of **planning** from the act of **doing** with a human-approved gate, and make every agent run leave an **observable trace**. These are not three tricks — they are the contract that lets autonomy scale without becoming a runaway machine.*
 
 ## 📖 The Legend Behind This Quest
 
@@ -318,6 +318,9 @@ Now the **degree of autonomy** is a dial you control: the JSONL trail is the evi
 ## 🧪 Hands-On Lab: Raise the Gate in Fifteen Minutes
 
 *Rites are learned by performing them, not reading them.* This lab stands up a real plan-then-act pipeline — plan job, human gate, observable trace — in a scratch repository, using nothing but the `gh` CLI. No Copilot subscription required: the "agent" is a stub you can later replace with the real coding agent.
+
+> **Workbench status (verified):** **Needs GitHub** for the full rite — `gh` auth, a **public** scratch repo, and an Environment with a required reviewer. The stub agent is local-honest (no Copilot). The Environment gate and artifact download only prove out on GitHub.
+
 
 ### Step 1 — Forge the scratch repo
 

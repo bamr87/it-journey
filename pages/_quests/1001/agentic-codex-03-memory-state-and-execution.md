@@ -2,7 +2,7 @@
 title: 'Vaults of Recollection: Memory & State'
 description: 'Master the three tiers of agent memory, persist state across GitHub Actions runs, and detect context drift before it corrupts an agent. GH-600 Domain 3.'
 date: '2026-06-30T00:00:00.000Z'
-lastmod: '2026-07-01T00:00:00.000Z'
+lastmod: '2026-09-13T04:55:00.000Z'
 level: '1001'
 difficulty: '🔴 Hard'
 estimated_time: 2-4 hours
@@ -86,13 +86,13 @@ validation_criteria:
 
 *The agent stands again at the threshold of your repository, exactly as it stood yesterday — and it remembers nothing. Not the decision you reached together at dusk, not the file it carefully rewrote, not the plan it swore to follow. Every workflow run is a fresh-summoned familiar with no past. This is not a flaw to be patched over; it is the iron law of the realm. An agent forgets by design — and so **memory is something you must build, deliberately, from stone you lay yourself.***
 
-*Beneath this castle lie the Vaults of Recollection. Some chambers hold what vanishes when a single job ends. Some hold what survives a run but no longer. And one deep vault — sealed with a committed file — holds what endures across every awakening. Learn which vault holds which truth, and you will have learned the lesson on which 19% of the GH-600 exam turns, and the skill on which most real agentic systems quietly fail. The real-world stakes are blunt: an agent that "forgets" a prior decision will happily undo a colleague's work, re-run an irreversible step, or ship a plan built on a world that no longer exists.*
+*Beneath this castle lie the Vaults of Recollection. Some chambers hold what vanishes when a single job ends. Some hold what survives a run but no longer. And one deep vault — sealed with a committed file — holds what endures across every awakening. Learn which vault holds which truth, and you will have learned a Domain 3 lesson (Learn weight **10–15%**), and the skill on which most real agentic systems quietly fail. The real-world stakes are blunt: an agent that "forgets" a prior decision will happily undo a colleague's work, re-run an irreversible step, or ship a plan built on a world that no longer exists.*
 
 ## 📖 The Legend Behind This Quest
 
 Every agentic AI design eventually collides with the same wall: agents do not automatically remember things across tasks. A GitHub Actions workflow starts in a clean, ephemeral runner every single time. A Copilot coding-agent session begins with no recollection of the conversation before it. This is **by design** — isolation is what makes runs reproducible and safe — but it means memory is your responsibility, not the model's.
 
-The Agentic Codex models this with **three tiers** of memory, each mapped to a concrete GitHub primitive: ephemeral memory inside one job, session memory across jobs in one run, and persistent memory across runs. Get the tiers wrong and you get the quiet failure mode of agentic systems — **context drift** — where what the agent *believes* about the world has silently diverged from what is *true*. This chapter (GH-600 Domain 3, 19% of the exam) teaches you to choose the right vault for each memory, to detect drift before it corrupts a run, and to hand context cleanly across the tools and surfaces a task crosses on its way from issue to merge.
+The Agentic Codex models this with **three tiers** of memory, each mapped to a concrete GitHub primitive: ephemeral memory inside one job, session memory across jobs in one run, and persistent memory across runs. Get the tiers wrong and you get the quiet failure mode of agentic systems — **context drift** — where what the agent *believes* about the world has silently diverged from what is *true*. This chapter (GH-600 Domain 3; Learn weight **10–15%**) teaches you to choose the right vault for each memory, to detect drift before it corrupts a run, and to hand context cleanly across the tools and surfaces a task crosses on its way from issue to merge.
 
 ## 🎯 Quest Objectives
 
@@ -353,6 +353,9 @@ This single document prevents the two failure modes named in the sub-skill. It p
 
 *The vaults do not require a cloud — they require discipline you can practice at a terminal.* This lab builds every memory tier and the drift guard locally, in ten minutes, with `git`, `jq`, and `sha256sum`.
 
+> **Workbench status (verified):** **Demoed locally** — Tier 1–3 vaults, drift guard, `git`/`jq`/`sha256sum`. **Needs GitHub** for Actions artifacts and the cross-surface handoff (issue → workflow → PR) the chapter describes in production shape.
+
+
 ### Step 1 — Raise the lab realm
 
 ```bash
@@ -534,7 +537,7 @@ The vaults are carved and the world can no longer drift out from under your agen
 
 ## 📚 Resource Codex
 
-- [GH-600 Study Guide — Developing in Agentic AI Systems](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600) — the official skills-measured list; Domain 3 is 19% of the exam
+- [GH-600 Study Guide — Developing in Agentic AI Systems](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600) — the official skills-measured list; Domain 3 is **10–15%** (Learn range)
 - [GitHub Copilot coding agent documentation](https://docs.github.com/en/copilot/using-github-copilot/coding-agent) — the agent whose sessions start without memory
 - [Storing workflow data as artifacts](https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts) — Tier 2 session memory
 - [Caching dependencies with `actions/cache`](https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows) — non-authoritative persistent state
