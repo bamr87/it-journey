@@ -2,7 +2,7 @@
 title: 'Forging the Arsenal: Tool Use & Environment'
 description: 'Equip GitHub Copilot agents with the right tools, wire MCP servers, scope least-privilege permissions, and bind agents to a CI environment — GH-600 Domain 2.'
 date: '2026-06-30T00:00:00.000Z'
-lastmod: '2026-07-01T00:00:00.000Z'
+lastmod: '2026-09-13T04:55:00.000Z'
 level: '1000'
 difficulty: '🔴 Hard'
 estimated_time: 2-4 hours
@@ -334,6 +334,9 @@ Three safety properties make this safe: **bounded retries** (transient blips rec
 ## 🧪 Hands-On Lab: Slay the Silent Failure on Your Own Bench
 
 *You do not need a CI runner to fight this dragon — you need a flaky tool and a script that refuses to lie about it.* This lab runs entirely on your machine with zero credentials: a stub tool fails deterministically, the safe-execution wrapper retries and escalates, and you verify every exit code yourself.
+
+> **Workbench status (verified):** **Demoed locally** — zero-cred stub tool, retry wrapper, exit-code checks. **Needs GitHub** to swap the stub for real `gh issue create` / CI and to exercise a live MCP allow-list against a repo.
+
 
 ### Step 1 — Build the flaky tool and a stubbed `gh`
 
