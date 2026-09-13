@@ -40,7 +40,7 @@ keywords:
   - GitHub Copilot certification
   - agentic codex master
   - all domains review
-lastmod: '2026-07-01T00:00:00.000Z'
+lastmod: '2026-09-13T04:45:00.000Z'
 permalink: /quests/1100/agentic-codex-capstone-exam-trial/
 quest_dependencies:
   required_quests:
@@ -121,12 +121,12 @@ graph TD
 
 *Six seals, six domains — break them all to claim the trial:*
 
-- [ ] **Seal 1 (Domain 1 — 18%)**: Implement agent-in-SDLC and define boundaries
-- [ ] **Seal 2 (Domain 2 — 18%)**: Configure tools, permissions, MCP, environment integration
-- [ ] **Seal 3 (Domain 3 — 19%)**: Implement memory strategy and context continuity
-- [ ] **Seal 4 (Domain 4 — 19%)**: Evaluate agent performance and iterate on instructions
-- [ ] **Seal 5 (Domain 5 — 17%)**: Build and manage a multi-agent system
-- [ ] **Seal 6 (Domain 6 — 9%)**: Implement responsible autonomy, guardrails, and HITL
+- [ ] **Seal 1 (Domain 1 — Learn 15–20%)**: Implement agent-in-SDLC and define boundaries
+- [ ] **Seal 2 (Domain 2 — Learn 20–25%)**: Configure tools, permissions, MCP, environment integration
+- [ ] **Seal 3 (Domain 3 — Learn 10–15%)**: Implement memory strategy and context continuity
+- [ ] **Seal 4 (Domain 4 — Learn 15–20%)**: Evaluate agent performance and iterate on instructions
+- [ ] **Seal 5 (Domain 5 — Learn 15–20%)**: Build and manage a multi-agent system
+- [ ] **Seal 6 (Domain 6 — Learn 10–15%)**: Implement responsible autonomy, guardrails, and HITL
 
 ---
 
@@ -142,7 +142,7 @@ The following 6 chapters map directly to the GH-600 exam domains.
 
 ---
 
-## ⚔️ Seal 1: The Agentic SDLC (Domain 1 — 18%)
+## ⚔️ Seal 1: The Agentic SDLC (Domain 1 — Learn 15–20%)
 
 *Related quests: Q1 (SDLC Integration), Q2 (Plan vs Action), Q3 (Observability)*
 
@@ -224,7 +224,7 @@ jobs:
 
 ---
 
-## ⚔️ Seal 2: Tools, Permissions, and Environment (Domain 2 — 18%)
+## ⚔️ Seal 2: Tools, Permissions, and Environment (Domain 2 — Learn 20–25%)
 
 *Related quests: Q4 (Tool Selection), Q5 (MCP), Q6 (Dev Env), Q7 (Safe Execution)*
 
@@ -270,7 +270,7 @@ permissions:
 
 ---
 
-## ⚔️ Seal 3: Memory and Context (Domain 3 — 19%)
+## ⚔️ Seal 3: Memory and Context (Domain 3 — Learn 10–15%)
 
 *Related quests: Q8 (Memory Strategies), Q9 (State Persistence), Q10 (Cross-tool Continuity)*
 
@@ -300,7 +300,7 @@ permissions:
 
 ---
 
-## ⚔️ Seal 4: Evaluation and Performance (Domain 4 — 19%)
+## ⚔️ Seal 4: Evaluation and Performance (Domain 4 — Learn 15–20%)
 
 *Related quests: Q11 (Success Criteria), Q12 (Root Cause Analysis), Q13 (Behavior Tuning)*
 
@@ -349,7 +349,7 @@ permissions:
 
 ---
 
-## ⚔️ Seal 5: Multi-Agent Systems (Domain 5 — 17%)
+## ⚔️ Seal 5: Multi-Agent Systems (Domain 5 — Learn 15–20%)
 
 *Related quests: Q14 (Orchestration), Q15 (Observability), Q16 (Recovery), Q17 (Lifecycle)*
 
@@ -379,7 +379,7 @@ permissions:
 
 ---
 
-## ⚔️ Seal 6: Responsible Agentic AI (Domain 6 — 9%)
+## ⚔️ Seal 6: Responsible Agentic AI (Domain 6 — Learn 10–15%)
 
 *Related quests: Q18 (Autonomy Levels), Q19 (Guardrails & HITL)*
 
@@ -397,17 +397,19 @@ permissions:
 
 ---
 
-## 📋 Domain Coverage Rubric (GH-600 Exam Alignment)
+## 📋 Domain Coverage Rubric
 
-| Domain | Weight | Your Score | Pass Threshold |
+Official exam weights are **ranges** from Microsoft Learn ([GH-600 study guide](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600) — Skills at a glance). The campaign score columns are **IT-Journey pedagogy only** — not Microsoft point values. Official pass rule: a score of **700 or greater**.
+
+| Domain | Learn weight (official) | Campaign seal (IT-Journey) | Notes |
 |---|---|---|---|
-| D1: Agentic SDLC | 18% | /18 | ≥ 14 |
-| D2: Tools & Environment | 18% | /18 | ≥ 14 |
-| D3: Memory & Context | 19% | /19 | ≥ 15 |
-| D4: Evaluation | 19% | /19 | ≥ 15 |
-| D5: Multi-Agent | 17% | /17 | ≥ 13 |
-| D6: Governance | 9% | /9 | ≥ 7 |
-| **Total** | **100%** | **/100** | **≥ 70** |
+| D1: Agentic SDLC | 15–20% | Pass / Fail | Integrate agents; plan vs execute; observability |
+| D2: Tools & Environment | 20–25% | Pass / Fail | Tools, permissions, MCP, safe execution |
+| D3: Memory & Context | 10–15% | Pass / Fail | Memory strategy, persistence, drift |
+| D4: Evaluation | 15–20% | Pass / Fail | Signals, RCA, tune from evidence |
+| D5: Multi-Agent | 15–20% | Pass / Fail | Orchestration, observability, recovery |
+| D6: Governance | 10–15% | Pass / Fail | Autonomy levels, guardrails, HITL |
+| **Exam pass (official)** | — | — | **≥ 700** on the GH-600 (not a 70/100 campaign total) |
 
 ---
 
