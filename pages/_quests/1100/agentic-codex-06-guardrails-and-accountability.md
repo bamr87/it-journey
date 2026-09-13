@@ -2,7 +2,7 @@
 title: 'The Warden Pact: Guardrails & Accountability'
 description: 'GH-600 Domain 6: classify agent actions by risk, set autonomy levels, enforce least-privilege guardrails, gate humans in the loop, and build an audit trail.'
 date: '2026-06-30T00:00:00.000Z'
-lastmod: '2026-09-13T04:45:00.000Z'
+lastmod: '2026-09-13T04:55:00.000Z'
 level: '1100'
 difficulty: '🔴 Hard'
 estimated_time: 2-4 hours
@@ -333,6 +333,9 @@ A final accountability note that the exam loves: the human gate must never be a 
 ## 🧪 Hands-On Lab: Build a Warden That Says No
 
 *A guardrail you have never watched refuse an action is a decoration.* This lab builds a working policy gate on your own machine: an autonomy map, a forbidden-paths list, and a warden script that allows, gates, or refuses each proposed action. Then you attack it and watch it hold. Pure shell, five minutes.
+
+> **Workbench status (verified):** **Demoed locally** — autonomy map, forbidden paths, warden allow/gate/refuse. **Needs GitHub** for production Environment required reviewers, CODEOWNERS, and repo-level audit trails.
+
 
 ### Step 1 — Write the Pact as data
 
