@@ -568,26 +568,27 @@ cr_lisense: "MIT"
 sitemap_include: ["html", "xml"]
 sitemap_exclude: ["secret.html", "private"]
 # =============================================================================
-# AI Preview Image Generator Configuration
-# Feature: ZER0-003
-# Documentation: https://github.com/bamr87/zer0-mistakes/blob/main/docs/features/preview-image-generator.md
+# AI Preview Image Generator — the zer0-image-generator gem (Gemfile, :jekyll_plugins)
+# The ONE preview_images: block; keys are the gem's documented configuration:
+# https://github.com/bamr87/zer0-image-generator#configuration
+# Run it with `bundle exec jekyll preview-images --list-missing` (or --dry-run,
+# --collection quests, -f <file>). It is a command, not a build hook, and it reads
+# only this file (_config_dev.yml / _config_ci.yml overrides do not apply to it).
 # =============================================================================
 preview_images:
   enabled: true
-  provider: openai          # openai, stability, or local
+  provider: openai                       # openai | xai | stability | gemini | local
   model: dall-e-3                        # OpenAI model to use
   size: "1792x1024"                      # Landscape banner size
-  quality: standard                      # standard or hd
+  quality: standard                      # standard or hd (DALL-E 3)
   style: "retro pixel art, 8-bit video game aesthetic, vibrant colors, nostalgic, clean pixel graphics"
   style_modifiers: "pixelated, retro gaming style, CRT screen glow effect, limited color palette"
   output_dir: assets/images/previews     # Where to save generated images
-  auto_generate: false                   # Generate during build (slow, use script instead)
   collections_dir: pages                 # Collections live under pages/_<name>
   collections:                           # Collections to scan for missing previews.
                                          # `posts` was dropped here: _posts moved to
                                          # lifehacker.dev, so every run scanned a
-                                         # non-existent dir. Kept as an explicit list —
-                                         # _plugins/preview_image_generator.rb iterates it.
+                                         # non-existent dir.
     - quests
     - notes
     - about

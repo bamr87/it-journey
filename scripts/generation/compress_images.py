@@ -4,8 +4,8 @@ File: compress_images.py
 Path: scripts/generation/compress_images.py
 Purpose: Compress tracked raster images to WebP and repoint every reference.
 
-The preview-image generators (the `zer0-image-generator` gem and
-scripts/lib/preview_generator.py) both emit PNG, which for AI-rendered artwork
+The preview-image generator (the `zer0-image-generator` gem, run as
+`bundle exec jekyll preview-images`) emits PNG, which for AI-rendered artwork
 runs ~2 MB a banner. Re-encoding those to WebP costs ~84% of the bytes at
 visually indistinguishable quality, so this runs as a maintenance pass after a
 generation run.

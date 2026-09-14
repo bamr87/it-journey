@@ -20,9 +20,9 @@ gem 'github-pages'
 group :jekyll_plugins do
   gem 'jekyll-include-cache'
   # AI preview/social banner generation — adds the `jekyll preview-images`
-  # command. Not a build-time hook (`preview_images.auto_generate: false`), so
+  # command. Not a build-time hook: it registers only that command, so
   # it stays inert during the Pages build and only runs when invoked directly.
-  gem 'zer0-image-generator'
+  gem 'zer0-image-generator', '~> 0.6'
   # these are all part of the github-pages gem - updated versions
   # gem 'jekyll-remote-theme', "~> 0.4.3"
   # gem 'jekyll-feed', "~> 0.17"

@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Removed
+- **Vendored preview-image generators** — `_plugins/preview_image_generator.rb`, `scripts/lib/preview_generator.py` and `scripts/generation/generate-preview-images.sh` are retired; the `zer0-image-generator` gem (`~> 0.6`, `bundle exec jekyll preview-images`) covers every option they had, and `preview_images:` in `_config.yml` is its one config block. The `_config_dev.yml` / `_config_ci.yml` `preview_images:` overrides went with the plugin that read them.
+
 ### Added
 - **Bashcrawl quest hub rewrite** — `pages/_quests/0000/bashcrawl/README.md` fully rewritten with Mermaid dungeon map, chapter guide table, quick-start command, and play-mode reference; links to all 10 side-quests
 - **Bashcrawl launcher script v3.0.0** — `pages/_quests/0000/bashcrawl/bash_crawl.sh` with `tutorial`/`agent` subcommands, `--quest <chamber>` flag, and 7-option interactive menu
