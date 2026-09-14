@@ -171,7 +171,7 @@ The how is in the artifact; you can read it, and the familiar already did. Only 
 6. Who reads this report, and what do they do with it on the day it is wrong?
 7. What would you tell the next person before they change a single line?
 
-Record the answers in `lore/interviews/`, one file per conversation, with the Elder's words quoted and your interpretations marked. For the lab, the header comments are your Elder; the notes below are written from them and from Chapter I's reruns, and they are the honest shape of a first interview: short, partial, and specific.
+Record the answers in `lore/interviews/`, one file per conversation, with the Elder's words quoted and your interpretations marked. Make the folder before you write into it — `mkdir -p lore/interviews` — because the commands later in this chapter read `lore/interviews/*.md` and an empty glob is a confusing way to find out it was never created. For the lab, the header comments are your Elder; the notes below are written from them and from Chapter I's reruns, and they are the honest shape of a first interview: short, partial, and specific.
 
 ```markdown
 # Interview: the relic's header comments, standing in for J.R. (Accounting) — 2026-09-14

@@ -143,8 +143,8 @@ graph LR
     RPT --> TRIALS([test_relic.py<br/>golden masters])
     GATE[relic_api.py<br/>relic · shadow · port] --> RELIC
     GATE --> PORT
-    LORE[(lore/ADR-*.md<br/>lore_check.py)] -.governs.-> PORT
-    LORE -.governs.-> GATE
+    LORE[(lore/ADR-*.md<br/>lore_check.py)] -. governs .-> PORT
+    LORE -. governs .-> GATE
 ```
 
 Read it back as the archaeologist would: two engines fed by the same files, a ledger that judges them against each other, trials that judge the relic against its own past, a gate that decides who answers, and a Lore that says why. If your map cannot be read that way, the system cannot either.
@@ -165,12 +165,19 @@ Read it back as the archaeologist would: two engines fed by the same files, a le
 A runbook has three sections that matter at 2 a.m.: how to run it, how to verify it, how to roll it back. Let the familiar draft from the repository itself — pipe the files in, and redirect the answer into the runbook — and bind it to the same rule the whole campaign has obeyed: nothing goes in that a file does not contain.
 
 ```bash
-cat ARAGE01.cob INVREC.CPY aging.py reconcile.py test_relic.py relic_api.py lore/*.md | claude -p "These are the files of a revived legacy system. Draft README.md with these sections: What this system is, Strata (its history), How to run, How to verify, How to roll back, Who to ask. Every command you include must appear verbatim in the input; cite the file after each command. If a section cannot be written from the input, write TODO and say what is missing." > README.md
+cat ARAGE01.cob INVREC.CPY aging.py reconcile.py test_relic.py relic_api.py lore/*.md | claude -p "These are the files of a revived legacy system. Draft the runbook half of a README with these headings: What this system is, Strata (its history), How to run, How to verify, How to roll back, Who to ask. Every command you include must appear verbatim in the input; cite the file after each command. If a section cannot be written from the input, write TODO and say what is missing." > README.draft.md
 ```
 
-`verify.sh` is deliberately absent from that list — Part 4 has not written it yet, and piping a file that does not exist is how a runbook ends up citing a command nobody can run. Come back and add it once it exists.
+Note where that redirect points. `README.md` already holds the map you drew in Part 1, and `>` would erase it without a word — the failure is silent, and you would not notice until the Mastery Challenge asked for a map that is no longer there. Draft to a scratch file, audit it, then append what survives.
 
-Audit the draft the way you audited the dictionary: run every command it proposes; delete every sentence that explains something the files do not show. The sections that survive should read like this:
+`verify.sh` is deliberately absent from that list too — Part 4 has not written it yet, and piping a file that does not exist is how a runbook ends up citing a command nobody can run. Come back and add it once it exists.
+
+Audit the draft the way you audited the dictionary: run every command it proposes; delete every sentence that explains something the files do not show. Then join the two halves, map first:
+
+```bash
+cat README.draft.md >> README.md && rm README.draft.md
+head -20 README.md   # the map is still at the top, the runbook follows
+``` The sections that survive should read like this:
 
 ```markdown
 ## How to run
@@ -277,7 +284,15 @@ lore/ADR-0001-status-7-means-disputed.md: ok — 3 evidence item(s)
 ALL GATES PASSED
 ```
 
-Replace the trial, port, and ledger steps in `.github/workflows/gauntlet.yml` with the one that matters, so the Factory and the runbook agree on what "whole" means:
+In `.github/workflows/gauntlet.yml`, the last three steps each ran one gate. Delete them:
+
+```yaml
+      - run: python3 forge_relic_data.py && ./arage01 && diff AGING.RPT golden/AGING-260914.RPT
+      - run: python3 -m unittest -v test_relic
+      - run: python3 aging.py && python3 reconcile.py AGING.RPT AGING_PY.RPT
+```
+
+and put one step in their place, so the Factory and the runbook agree on what "whole" means:
 
 ```yaml
       - run: python3 forge_relic_data.py && ./verify.sh
@@ -302,7 +317,7 @@ git push --follow-tags
 
 **Objective:** the portfolio artifact — a repository a stranger can trust in one minute.
 
-- [ ] `README.md` has the map and the six runbook sections, and every command in it exists in a file
+- [ ] `README.md` has the map **and** the six runbook sections — the draft was appended, not redirected over the top — and every command in it exists in a file
 - [ ] `ADR-0003`, `ADR-0004`, and `ADR-0005` pass `lore_check.py`; `ADR-0005` carries a review date
 - [ ] `ROADMAP.md` gives every element a verdict and a reason, and names the next ADR to write
 - [ ] `./verify.sh` prints `ALL GATES PASSED` locally and the Factory is green with it as the final step

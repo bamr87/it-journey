@@ -158,27 +158,29 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 def run_engine(engine, asof):
     """Run one engine in a scratch dir and return its totals as a dict."""
     work = tempfile.mkdtemp()
-    shutil.copy(os.path.join(HERE, "INVOICES.DAT"), work)
-    with open(os.path.join(work, "ASOF.PRM"), "w") as f:
-        f.write(asof + "\n")
-    if engine == "relic":
-        shutil.copy(os.path.join(HERE, "arage01"), work)
-        subprocess.run(["./arage01"], cwd=work, check=True)
-        report = os.path.join(work, "AGING.RPT")
-    else:
-        subprocess.run([sys.executable, os.path.join(HERE, "aging.py")], cwd=work, check=True,
-                       stdout=subprocess.DEVNULL)
-        report = os.path.join(work, "AGING_PY.RPT")
-    totals, in_totals = {}, False
-    for line in open(report):
-        line = line.rstrip("\n")
-        if line == "TOTALS":
-            in_totals = True
-            continue
-        if in_totals and line.strip():
-            totals[line[:14].strip()] = line[14:].strip()
-    shutil.rmtree(work)
-    return totals
+    try:                                        # an engine that fails still cleans up after itself
+        shutil.copy(os.path.join(HERE, "INVOICES.DAT"), work)
+        with open(os.path.join(work, "ASOF.PRM"), "w") as f:
+            f.write(asof + "\n")
+        if engine == "relic":
+            shutil.copy(os.path.join(HERE, "arage01"), work)
+            subprocess.run(["./arage01"], cwd=work, check=True)
+            report = os.path.join(work, "AGING.RPT")
+        else:
+            subprocess.run([sys.executable, os.path.join(HERE, "aging.py")], cwd=work, check=True,
+                           stdout=subprocess.DEVNULL)
+            report = os.path.join(work, "AGING_PY.RPT")
+        totals, in_totals = {}, False
+        for line in open(report):
+            line = line.rstrip("\n")
+            if line == "TOTALS":
+                in_totals = True
+                continue
+            if in_totals and line.strip():
+                totals[line[:14].strip()] = line[14:].strip()
+        return totals
+    finally:
+        shutil.rmtree(work, ignore_errors=True)
 
 class Gate(BaseHTTPRequestHandler):
     engine = "relic"
@@ -255,7 +257,7 @@ One wrinkle to know before you trust that log: the `log_message` override prints
 
 ### 🔍 Knowledge Check
 
-- [ ] Why does every request run in a fresh scratch directory rather than in the repository folder?
+- [ ] Why does every request run in a fresh scratch directory rather than in the repository folder, and why is the cleanup in a `finally`?
 - [ ] In shadow mode, which engine's totals go back to the caller, and where do the port's go?
 - [ ] What would a MISMATCH line in the log tell you that the Chapter V ledger did not?
 
@@ -361,7 +363,7 @@ still serving: relic 11050.00
 ValueError: invalid literal for int() with base 10: 'xy'
 ```
 
-Three facts, all real: the port refused the garbage with a `ValueError`, the gate's request handler died mid-request so the caller got no response at all (`000`), and the server survived to serve the next request. The relic was wrong silently; the port was right loudly; the gate was neither. The fix belongs at the door — validate before either engine runs — and it is three lines in `do_GET`, right after `asof` is read:
+Three facts, all real: the port refused the garbage with a `ValueError`, the gate's request handler died mid-request so the caller got no response at all (`000`), and the server survived to serve the next request. The relic was wrong silently; the port was right loudly; the gate was neither. The `finally` in `run_engine` is why this costs nothing but a log line: without it, every refused request would leave its scratch directory behind, and the hazard you are about to fix would quietly fill the disk while you worked on it. The fix belongs at the door — validate before either engine runs — and it is three lines in `do_GET`, right after `asof` is read:
 
 ```python
         if not (len(asof) == 6 and asof.isdigit()):
