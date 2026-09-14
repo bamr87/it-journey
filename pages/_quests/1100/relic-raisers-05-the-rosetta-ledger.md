@@ -430,7 +430,7 @@ git commit -q -m "ledger: port reconciled to the relic; first port kept as the c
 
 ## 🔁 Reproduce It
 
-Both ports, the ledger, and every output above were executed on 2026-09-14 on Ubuntu 24.04 with GnuCOBOL 3.1.2 and Python 3.11 against the unchanged Chapter I files. The first port is the reference lab's own, written to carry the two assumptions a first translation makes and kept in the campaign as its cautionary stratum; the ledger's three mismatches and the final `RECONCILED` are the real runs.
+Both ports, the ledger, and every output above were executed on 2026-09-14 on Ubuntu 24.04 with GnuCOBOL 3.1.2 and Python 3.11 (any 3.10+ works; stock Ubuntu 24.04 ships 3.12) against the unchanged Chapter I files. The first port is the reference lab's own, written to carry the two assumptions a first translation makes and kept in the campaign as its cautionary stratum; the ledger's three mismatches and the final `RECONCILED` are the real runs.
 
 ## 🗺️ Quest Network
 
@@ -443,6 +443,8 @@ graph LR
   classDef current fill:#1f6feb,stroke:#0b3d91,color:#fff;
   class B current;
 ```
+
+*Chapters sit at different levels by design: the campaign runs through the levels, and each chapter also appears on its own level hub.*
 
 ## 🔮 Next Adventures
 

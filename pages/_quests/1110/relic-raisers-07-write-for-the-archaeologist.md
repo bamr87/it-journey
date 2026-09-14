@@ -162,10 +162,10 @@ Read it back as the archaeologist would: two engines fed by the same files, a le
 - Prompting for documentation grounded in files, not memory
 - The three sections every runbook must have
 
-A runbook has three sections that matter at 2 a.m.: how to run it, how to verify it, how to roll it back. Let the familiar draft from the repository itself — in print mode it can read files in the current directory — and bind it to the same rule the whole campaign has obeyed: nothing goes in that a file does not contain.
+A runbook has three sections that matter at 2 a.m.: how to run it, how to verify it, how to roll it back. Let the familiar draft from the repository itself — pipe the files in, and redirect the answer into the runbook — and bind it to the same rule the whole campaign has obeyed: nothing goes in that a file does not contain.
 
 ```bash
-claude -p "Read ARAGE01.cob, INVREC.CPY, aging.py, reconcile.py, test_relic.py, relic_api.py, verify.sh, and every file under lore/. Draft README.md with these sections: What this system is, Strata (its history), How to run, How to verify, How to roll back, Who to ask. Every command you include must appear verbatim in one of the files you read; cite the file after each command. If a section cannot be written from the files, write TODO and say what is missing."
+cat ARAGE01.cob INVREC.CPY aging.py reconcile.py test_relic.py relic_api.py verify.sh lore/*.md | claude -p "These are the files of a revived legacy system. Draft README.md with these sections: What this system is, Strata (its history), How to run, How to verify, How to roll back, Who to ask. Every command you include must appear verbatim in the input; cite the file after each command. If a section cannot be written from the input, write TODO and say what is missing." > README.md
 ```
 
 Audit the draft the way you audited the dictionary: run every command it proposes; delete every sentence that explains something the files do not show. The sections that survive should read like this:
@@ -265,7 +265,7 @@ chmod +x verify.sh && ./verify.sh
 
 ```text
 ----------------------------------------------------------------------
-Ran 4 tests in 0.021s
+Ran 5 tests in 0.027s
 
 OK
 RECONCILED — the ledger ties out.
@@ -315,7 +315,7 @@ git push --follow-tags
 
 ## 🔁 Reproduce It
 
-`verify.sh` and its output above were executed on 2026-09-14 on Ubuntu 24.04 with GnuCOBOL 3.1.2 and Python 3.11 in the reference lab, where the Lore held `ADR-0001`; with your five records in place the lore gate prints five lines. The map, runbook, and roadmap describe files that exist in the lab exactly as shown across Chapters I–VI.
+`verify.sh` and its output above were executed on 2026-09-14 on Ubuntu 24.04 with GnuCOBOL 3.1.2 and Python 3.11 (any 3.10+ works; stock Ubuntu 24.04 ships 3.12) in the reference lab, where the Lore held `ADR-0001`; with your five records in place the lore gate prints five lines. The map, runbook, and roadmap describe files that exist in the lab exactly as shown across Chapters I–VI.
 
 ## 🗺️ Quest Network
 
@@ -328,6 +328,8 @@ graph LR
   classDef current fill:#1f6feb,stroke:#0b3d91,color:#fff;
   class B current;
 ```
+
+*Chapters sit at different levels by design: the campaign runs through the levels, and each chapter also appears on its own level hub.*
 
 ## 🔮 Next Adventures
 

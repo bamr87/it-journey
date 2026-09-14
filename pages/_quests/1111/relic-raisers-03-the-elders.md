@@ -212,8 +212,11 @@ A decision record (an ADR — an architecture decision record) is the smallest s
 Let the familiar do the drafting — it is good at shape — but bind it to the evidence you gathered, and tell it what to do when there is none.
 
 ```bash
-cat lore/interviews/*.md ARAGE01.cob | claude -p "Write one ADR per decision you can find in these notes and this program, using exactly these sections: Status, Context, Decision, Evidence, Consequences. Under Evidence, list the interview line, the code comment, or the run that supports the decision as bullet points. If you cannot cite any evidence for a decision, write NO EVIDENCE under that heading and do not invent any. Name each file lore/ADR-NNNN-<slug>.md."
+mkdir -p lore
+cat lore/interviews/*.md ARAGE01.cob | claude -p "Write ADR-0001 for the decision that invoice status 7 is excluded from aging and reported separately, using exactly these sections: Status, Context, Decision, Evidence, Consequences. Under Evidence, list the interview line, the code comment, or the run that supports the decision as bullet points. If you cannot cite any evidence, write NO EVIDENCE under that heading and do not invent any." > lore/ADR-0001-status-7-means-disputed.md
 ```
+
+One decision per cast, one file per decision; repeat for the pivot as `ADR-0002`. Print mode answers on standard output, so the redirect is what puts the record on disk — nothing lands in `lore/` that you did not point there.
 
 Audit each draft the way you audited the dictionary. Here is the first record as it survives the audit — it carries three pieces of evidence, and it is the rule the port in Chapter V will be held to:
 
@@ -321,7 +324,7 @@ git add lore lore_check.py && git commit -q -m "lore: elders roster, interview n
 
 ## 🔁 Reproduce It
 
-`lore_check.py` and both of its outputs above — the passing run and the run that refuses an evidence-less record — were executed on 2026-09-14 with Python 3.11 against the exact ADR text shown. The interview notes are written from the relic's header comments and Chapter I's reruns, and every interpretation in them is marked as the raiser's own.
+`lore_check.py` and both of its outputs above — the passing run and the run that refuses an evidence-less record — were executed on 2026-09-14 with Python 3.11 (any 3.10+ works; stock Ubuntu 24.04 ships 3.12) against the exact ADR text shown. The interview notes are written from the relic's header comments and Chapter I's reruns, and every interpretation in them is marked as the raiser's own.
 
 ## 🗺️ Quest Network
 
@@ -334,6 +337,8 @@ graph LR
   classDef current fill:#1f6feb,stroke:#0b3d91,color:#fff;
   class B current;
 ```
+
+*Chapters sit at different levels by design: the campaign runs through the levels, and each chapter also appears on its own level hub.*
 
 ## 🔮 Next Adventures
 

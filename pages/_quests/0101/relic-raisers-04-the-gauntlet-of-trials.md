@@ -73,7 +73,7 @@ rewards:
   - Continue The Relic Raisers campaign
 validation_criteria:
   completion_requirements:
-  - Two golden masters captured and four trials passing locally
+  - Two golden masters captured and five trials passing locally
   - A Dockerfile that compiles and runs the relic from a clean image
   - A workflow that installs the compiler, rebuilds the relic, and runs the trials on push
   skill_demonstrations:
@@ -108,7 +108,7 @@ environment:
 ### Primary Objectives
 
 - [ ] **Capture golden masters** — the relic's report for two as-of dates, saved before any change
-- [ ] **Write the trials** — four characterization tests: two golden comparisons, one that encodes ADR-0001, one that encodes ADR-0002
+- [ ] **Write the trials** — five characterization tests: two golden comparisons, one that encodes ADR-0001, one that encodes ADR-0002, and one witness per branch of the `EVALUATE`
 - [ ] **Let the familiar propose, then verify** — every branch of the `EVALUATE` as a proposed trial, each confirmed by a rerun
 - [ ] **Draw the summoning circle** — a Dockerfile that installs the compiler, builds the relic, and runs it from a clean image
 - [ ] **Raise the Factory** — a GitHub Actions workflow that rebuilds the relic and runs the gauntlet on every push
@@ -173,7 +173,7 @@ git add golden && git commit -q -m "gauntlet: golden masters for 260914 and 2701
 - Trials that run the real binary, not a model of it
 - Encoding a decision record as an executable check
 
-Save this as `test_relic.py`. Each trial runs the compiled relic in its own scratch directory and judges the report it writes. The first two compare against the masters byte for byte. The third is `ADR-0001` made executable: disputed money is reported but never aged. The fourth is `ADR-0002`: a `99` year ages as 1999.
+Save this as `test_relic.py`. Each trial runs the compiled relic in its own scratch directory and judges the report it writes. The first two compare against the masters byte for byte. The third is `ADR-0001` made executable: disputed money is reported but never aged. The fourth pins one witness record for every branch of the `EVALUATE`. The fifth is `ADR-0002`: a `99` year ages as 1999.
 
 ```python
 #!/usr/bin/env python3
@@ -224,6 +224,15 @@ class CharacterizationTrials(unittest.TestCase):
         self.assertEqual(aged, Decimal("13475.74"))
         self.assertEqual(totals["DISPUTED"], Decimal("2100.50"))
 
+    def test_every_bucket_has_a_witness_in_the_sample(self):
+        # one record per branch of the EVALUATE, taken from the golden run, not from a familiar's table
+        report = run_relic("260914")
+        witnesses = {"INV10003": "CURRENT", "INV10001": "1-30", "INV10005": "31-60",
+                     "INV10002": "61-90", "INV10008": "OVER 90", "INV10004": "DISPUTED"}
+        for inv, bucket in witnesses.items():
+            line = next(l for l in report.splitlines() if inv in l)
+            self.assertTrue(line.rstrip().endswith(bucket), f"{inv} should land in {bucket}: {line}")
+
     def test_last_century_due_dates_age_as_last_century(self):
         # INV10006 is due 99-12-31: the relic windows it to 1999, not 2099
         line = next(l for l in run_relic("260914").splitlines() if "INV10006" in l)
@@ -242,23 +251,24 @@ python3 -m unittest -v test_relic
 
 ```text
 test_disputed_invoices_are_kept_out_of_the_aging_buckets (test_relic.CharacterizationTrials.test_disputed_invoices_are_kept_out_of_the_aging_buckets) ... ok
+test_every_bucket_has_a_witness_in_the_sample (test_relic.CharacterizationTrials.test_every_bucket_has_a_witness_in_the_sample) ... ok
 test_last_century_due_dates_age_as_last_century (test_relic.CharacterizationTrials.test_last_century_due_dates_age_as_last_century) ... ok
 test_report_matches_golden_master_for_20260914 (test_relic.CharacterizationTrials.test_report_matches_golden_master_for_20260914) ... ok
 test_report_matches_golden_master_for_20270101 (test_relic.CharacterizationTrials.test_report_matches_golden_master_for_20270101) ... ok
 
 ----------------------------------------------------------------------
-Ran 4 tests in 0.022s
+Ran 5 tests in 0.973s
 
 OK
 ```
 
-Four trials is a start, not a net. The relic has more branches than four, and this is where the familiar earns its keep — as a proposer, never a judge. Ask it to enumerate the branches; then you run each one.
+Five trials is a start, not a net, and this is where the familiar earns its keep — as a proposer, never a judge. Ask it to enumerate the branches; then you run each one.
 
 ```bash
 cat ARAGE01.cob | claude -p "List every branch of this program's EVALUATE and IF statements as a Markdown table with columns: condition, an example input record that takes the branch, the bucket it lands in. Do not run anything and do not guess outputs; I will run them."
 ```
 
-For each row, forge a record that takes the branch (edit the `ROWS` list in a copy of `forge_relic_data.py`), rerun the relic, and only then write the trial with the value the relic printed. A trial written from the familiar's expected bucket instead of the relic's actual output is a Plausible Ghost with a green checkmark — the most dangerous kind.
+The fourth trial above is that loop closed once. The familiar's table names six branches — status `7`, then days at or below 0, 30, 60, 90, and beyond — and the sample data already holds one record per branch, so each expected bucket was read off the golden report (`INV10005` sits in `31-60` because the relic printed it there), never off the familiar's table. For a branch the data does not cover, forge a record that takes it (edit the `ROWS` list in a copy of `forge_relic_data.py`), rerun the relic, and only then write the trial with the value the relic printed. A trial written from the familiar's expected bucket instead of the relic's actual output is a Plausible Ghost with a green checkmark — the most dangerous kind.
 
 ### 🔍 Knowledge Check
 
@@ -273,12 +283,12 @@ For each row, forge a record that takes the branch (edit the `ROWS` list in a co
 - Binding a legacy toolchain in an image
 - Making "works on my fortress" impossible to say
 
-The relic depends on a compiler most machines lack. A circle fixes that: an image that installs the compiler, builds the relic, and runs it — identically on every world. Save this as `Dockerfile`. It runs the same `apt` line the Linux path used in Chapter I, on the same Ubuntu release the reference lab ran on.
+The relic depends on a compiler most machines lack. A circle fixes that: an image that installs the compiler, builds the relic, and runs it — identically on every world. Save this as `Dockerfile`. It runs the same `apt` line the Linux path used in Chapter I, on the same Ubuntu release the reference lab ran on. The `gnucobol3` package lives in Ubuntu's `universe` component, which the reference lab's Ubuntu 24.04 container had enabled by default; if a base image of yours does not, the `apt-get install` step is where the build will say so.
 
 ```dockerfile
 # The summoning circle: the relic runs identically in every world.
 FROM ubuntu:24.04
-RUN apt-get update && apt-get install -y --no-install-recommends gnucobol3 \
+RUN apt-get update && apt-get install -y gnucobol3 \
     && rm -rf /var/lib/apt/lists/*
 WORKDIR /relic
 COPY ARAGE01.cob INVREC.CPY INVOICES.DAT ASOF.PRM ./
@@ -345,7 +355,7 @@ A green run on a runner that has never held a COBOL compiler is the proof that m
 **Objective:** a net under the relic that no change can slip through.
 
 - [ ] Two golden masters committed, captured before any change, never edited by hand
-- [ ] The four trials pass locally; at least one more trial exists for a branch the familiar proposed, with its expected value taken from a rerun
+- [ ] The five trials pass locally, and you added one more for an input the familiar proposed, with its expected value taken from a rerun
 - [ ] `docker run --rm arage01 sh -c './arage01 && cat AGING.RPT'` prints the 260914 master exactly
 - [ ] The Factory is green on GitHub, and the run log shows `cobc` installing from apt
 
@@ -359,7 +369,7 @@ A green run on a runner that has never held a COBOL compiler is the proof that m
 
 ## 🔁 Reproduce It
 
-The golden masters, the four trials, and the unittest output above were produced on 2026-09-14 on Ubuntu 24.04 with GnuCOBOL 3.1.2 and Python 3.11, from the unchanged Chapter I files. The Dockerfile and the workflow reuse those exact commands; the reference lab had no Docker daemon and did not push to GitHub, so your first image build and your first Factory run are the verifications of those two files.
+The golden masters, the five trials, and the unittest output above were produced on 2026-09-14 on Ubuntu 24.04 with GnuCOBOL 3.1.2 and Python 3.11 (any 3.10+ works; stock Ubuntu 24.04 ships 3.12), from the unchanged Chapter I files. The Dockerfile and the workflow reuse those exact commands; the reference lab had no Docker daemon and did not push to GitHub, so your first image build and your first Factory run are the verifications of those two files.
 
 ## 🗺️ Quest Network
 
@@ -372,6 +382,8 @@ graph LR
   classDef current fill:#1f6feb,stroke:#0b3d91,color:#fff;
   class B current;
 ```
+
+*Chapters sit at different levels by design: the campaign runs through the levels, and each chapter also appears on its own level hub.*
 
 ## 🔮 Next Adventures
 

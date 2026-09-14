@@ -212,7 +212,7 @@ docker build -t arage01 . && docker run --rm arage01
 
 ## 🧱 Build Plan for IT-Journey Maintainers
 
-This campaign was authored from a working lab, not from a manifest of merged pull requests. Every command and every output shown in the chapters was executed on 2026-09-14 on Ubuntu 24.04 with GnuCOBOL 3.1.2, Python 3.11, and Claude Code 2.1 — the relic, the trials, the ledger, and the gate are reproduced in full inside the chapters, so a learner can rebuild the reference lab from the text alone.
+This campaign was authored from a working lab, not from a manifest of merged pull requests. Every command and every output shown in the chapters was executed on 2026-09-14 on Ubuntu 24.04 with GnuCOBOL 3.1.2, Python 3.11 (any 3.10+ works; stock Ubuntu 24.04 ships 3.12), and Claude Code 2.1 — the relic, the trials, the ledger, and the gate are reproduced in full inside the chapters, so a learner can rebuild the reference lab from the text alone.
 
 1. The `epic_quest` hub (this file) lives at `pages/_quests/codex/relic-raisers.md`. Each chapter is a `main_quest` in its **binary-level** directory (`pages/_quests/XXXX/relic-raisers-NN-<slug>.md`) with a `/quests/XXXX/<slug>/` permalink, so it also surfaces on that level's hub.
 2. Chapters chain via `quest_dependencies.recommended_quests` / `unlocks_quests`; the hub `unlocks_quests` every chapter.

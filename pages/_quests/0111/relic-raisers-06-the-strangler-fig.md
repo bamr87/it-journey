@@ -218,6 +218,7 @@ Open the gate in shadow mode, in a second terminal or backgrounded, then knock:
 
 ```bash
 python3 relic_api.py --engine shadow --port 8765 2> gate.log &
+sleep 1   # the gate prints its banner before the port is bound; give it a moment
 curl -s "http://127.0.0.1:8765/aging?asof=260914" | python3 -m json.tool
 ```
 
@@ -278,7 +279,7 @@ for i in 1 2 3 4 5; do
   curl -s "http://127.0.0.1:8765/aging?asof=2609$(printf '%02d' $((i*5)))" \
     | python3 -c 'import json,sys; d=json.load(sys.stdin); print(d["asof"], d["engine"], "CURRENT", d["totals"]["CURRENT"])'
 done
-grep -c "SHADOW.*MATCH" gate.log; grep -c MISMATCH gate.log
+grep -c ' MATCH$' gate.log; grep -c MISMATCH gate.log
 ```
 
 ```text
@@ -291,11 +292,12 @@ grep -c "SHADOW.*MATCH" gate.log; grep -c MISMATCH gate.log
 0
 ```
 
-Between the 10th and the 15th, `INV10007` (due the 14th) leaves CURRENT — and the port agreed with the relic on every date. Five matches, zero mismatches. On a real gate you leave shadow mode running for weeks against real traffic and read this count every morning; "silent" means the mismatch count stayed at zero while the request count grew. Then, and only then, cut over:
+Between the 10th and the 15th, `INV10007` (due the 14th) leaves CURRENT — and the port agreed with the relic on every date. Five matches, zero mismatches. The match pattern is anchored on purpose: `MISMATCH` contains the letters `MATCH`, so a careless `grep -c MATCH` would count every disagreement as an agreement — a Plausible Ghost in a one-liner. On a real gate you leave shadow mode running for weeks against real traffic and read this count every morning; "silent" means the mismatch count stayed at zero while the request count grew. Then, and only then, cut over:
 
 ```bash
 kill %1
 python3 relic_api.py --engine port --port 8765 2> gate.log &
+sleep 1
 curl -s "http://127.0.0.1:8765/aging?asof=260914" \
   | python3 -c 'import json,sys; d=json.load(sys.stdin); print(d["engine"], d["totals"]["CURRENT"], d["totals"]["DISPUTED"])'
 # port 11050.00 2100.50
@@ -335,10 +337,13 @@ relic exit=0
 AR AGING REPORT       AS OF 2700/41/23
 ```
 
-The relic accepts garbage, prints a report as of the 41st month of the year 2700, and exits clean. That is not a bug in 1997 terms — `ASOF.PRM` was always written by a trusted nightly job, so nobody validated it, and that unwritten assumption is a stratum of its own. Now the same request through the gate in shadow mode:
+The relic accepts garbage, prints a report as of the 41st month of the year 2700, and exits clean. That is not a bug in 1997 terms — `ASOF.PRM` was always written by a trusted nightly job, so nobody validated it, and that unwritten assumption is a stratum of its own. Now the same request through the gate. Chapter 2 left it running in port mode, so put it back in shadow first:
 
 ```bash
 cd - > /dev/null && rm -rf "$T"
+kill %1
+python3 relic_api.py --engine shadow --port 8765 2> gate.log &
+sleep 1
 curl -s -o /dev/null -w "http %{http_code}\n" "http://127.0.0.1:8765/aging?asof=xyz123"
 curl -s "http://127.0.0.1:8765/aging?asof=260914" | python3 -c 'import json,sys; d=json.load(sys.stdin); print("still serving:", d["engine"], d["totals"]["CURRENT"])'
 grep -m1 ValueError gate.log
@@ -361,6 +366,9 @@ Three facts, all real: the port refused the garbage with a `ValueError`, the gat
 Restart the gate and knock again with the same garbage:
 
 ```bash
+kill %1
+python3 relic_api.py --engine shadow --port 8765 2> gate.log &
+sleep 1
 curl -s -o /dev/null -w "http %{http_code}\n" "http://127.0.0.1:8765/aging?asof=xyz123"
 # http 400
 ```
@@ -392,7 +400,7 @@ A `400` tells the caller what they did wrong, runs no engine, and leaves the log
 
 ## 🔁 Reproduce It
 
-The gate, every `curl` response, the five-date loop, the port-mode answer, the relic's `2700/41/23` report, the port's `ValueError`, the `000` and the `400` were all produced on 2026-09-14 on Ubuntu 24.04 with GnuCOBOL 3.1.2, Python 3.11, and curl, against the unchanged Chapter I files and the Chapter V port. Ports 8765–8768 were used in the lab; any free port works.
+The gate, every `curl` response, the five-date loop, the port-mode answer, the relic's `2700/41/23` report, the port's `ValueError`, the `000` and the `400` were all produced on 2026-09-14 on Ubuntu 24.04 with GnuCOBOL 3.1.2, Python 3.11 (any 3.10+ works; stock Ubuntu 24.04 ships 3.12), and curl, against the unchanged Chapter I files and the Chapter V port. Ports 8765–8768 were used in the lab; any free port works.
 
 ## 🗺️ Quest Network
 
@@ -405,6 +413,8 @@ graph LR
   classDef current fill:#1f6feb,stroke:#0b3d91,color:#fff;
   class B current;
 ```
+
+*Chapters sit at different levels by design: the campaign runs through the levels, and each chapter also appears on its own level hub.*
 
 ## 🔮 Next Adventures
 

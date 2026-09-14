@@ -549,7 +549,7 @@ git add EXPEDITION.md && git commit -q -m "expedition: first field notes"
 
 ## 🔁 Reproduce It
 
-Every command and output in this chapter was executed on 2026-09-14 on Ubuntu 24.04 with GnuCOBOL 3.1.2 (`apt` package `gnucobol3`), Python 3.11, and Claude Code 2.1. The three relic files are used unchanged through Chapter VII, so keep them exactly as written here; the campaign's trials, ledger, and gate all assume this byte layout and this report format.
+Every command and output in this chapter was executed on 2026-09-14 on Ubuntu 24.04 with GnuCOBOL 3.1.2 (`apt` package `gnucobol3`), Python 3.11 (any 3.10+ works; stock Ubuntu 24.04 ships 3.12), and Claude Code 2.1. The three relic files are used unchanged through Chapter VII, so keep them exactly as written here; the campaign's trials, ledger, and gate all assume this byte layout and this report format.
 
 ## 🗺️ Quest Network
 
@@ -562,6 +562,8 @@ graph LR
   classDef current fill:#1f6feb,stroke:#0b3d91,color:#fff;
   class B current;
 ```
+
+*Chapters sit at different levels by design: the campaign runs through the levels, and each chapter also appears on its own level hub.*
 
 ## 🔮 Next Adventures
 

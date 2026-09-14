@@ -262,10 +262,10 @@ Save the profile to a file and hand the familiar everything it is allowed to kno
 
 ```bash
 python3 profile_relic.py INVREC.CPY INVOICES.DAT > profile.txt
-cat INVREC.CPY ARAGE01.cob profile.txt | claude -p "Draft DATA_DICTIONARY.md as a Markdown table with one row per field of INV-RECORD: FIELD, OFFSET, LENGTH, TYPE, MEANING, EVIDENCE. Under EVIDENCE cite the copybook line, the program paragraph, or the profile line that supports the MEANING. If you are inferring a meaning rather than reading it, prefix it with HYPOTHESIS. Do not invent meanings for values no source explains."
+cat INVREC.CPY ARAGE01.cob profile.txt | claude -p "Draft a data dictionary as a Markdown table with one row per field of INV-RECORD: FIELD, OFFSET, LENGTH, TYPE, MEANING, EVIDENCE. Under EVIDENCE cite the copybook line, the program paragraph, or the profile line that supports the MEANING. If you are inferring a meaning rather than reading it, prefix it with HYPOTHESIS. Do not invent meanings for values no source explains." > DATA_DICTIONARY.md
 ```
 
-Then audit. Every row must survive three questions: does the offset match the profiler, does the evidence exist where the row says, and is the meaning read or guessed? The dictionary that survives the audit looks like this — notice the two rows that are honest about what nobody knows:
+Print mode answers on standard output, so the redirect is what puts the draft on disk. Open the file and audit it. Every row must survive three questions: does the offset match the profiler, does the evidence exist where the row says, and is the meaning read or guessed? The dictionary that survives the audit looks like this — notice the two rows that are honest about what nobody knows:
 
 | Field | Offset | Length | Type | Meaning | Evidence |
 |---|---|---|---|---|---|
@@ -308,10 +308,10 @@ git log -S'STATUS 7' --oneline -- ARAGE01.cob     # entries that added or remove
 git blame -L '/EVALUATE TRUE/,+14' ARAGE01.cob    # whose hand inscribed the bucket logic, and when
 ```
 
-Your lab relic's Chronicle has a single entry — "as found" — because you began it in Chapter I. That is itself a fact worth recording: a system whose history starts on the day you arrived has strata you can only recover from comments and people. Commit the dictionary and the strata table.
+Your lab relic's Chronicle has a single entry — "as found" — because you began it in Chapter I. That is itself a fact worth recording: a system whose history starts on the day you arrived has strata you can only recover from comments and people. Before you commit, add the two tells to the Unknowns list in `EXPEDITION.md` — what `O` means, and whether any due date before 1950 ever existed — so the interview guide for Chapter III is complete. Then commit the dictionary, the strata table, and the notes.
 
 ```bash
-git add profile_relic.py profile.txt DATA_DICTIONARY.md STRATA.md
+git add profile_relic.py profile.txt DATA_DICTIONARY.md STRATA.md EXPEDITION.md
 git commit -q -m "strata: data dictionary with evidence, profiler, dated layers"
 ```
 
@@ -333,7 +333,7 @@ git commit -q -m "strata: data dictionary with evidence, profiler, dated layers"
 
 ## 🔁 Reproduce It
 
-The profiler and its output above were run on 2026-09-14 against the exact `INVREC.CPY` and `INVOICES.DAT` from Chapter I, on Python 3.11. The dictionary table is the audited result of that run plus the relic's own comments; the only two meanings marked HYPOTHESIS are the two that no source in the folder defines.
+The profiler and its output above were run on 2026-09-14 against the exact `INVREC.CPY` and `INVOICES.DAT` from Chapter I, on Python 3.11 (any 3.10+ works; stock Ubuntu 24.04 ships 3.12). The dictionary table is the audited result of that run plus the relic's own comments; the only two meanings marked HYPOTHESIS are the two that no source in the folder defines.
 
 ## 🗺️ Quest Network
 
@@ -346,6 +346,8 @@ graph LR
   classDef current fill:#1f6feb,stroke:#0b3d91,color:#fff;
   class B current;
 ```
+
+*Chapters sit at different levels by design: the campaign runs through the levels, and each chapter also appears on its own level hub.*
 
 ## 🔮 Next Adventures
 
