@@ -2,7 +2,7 @@
 title: 'The Council of Many: Multi-Agent Coordination'
 description: 'Orchestrate a council of agents on GitHub Actions: fan-out and chain patterns, correlation-ID tracing, failure recovery, and lifecycle. GH-600 Domain 5.'
 date: '2026-06-30T00:00:00.000Z'
-lastmod: '2026-07-01T00:00:00.000Z'
+lastmod: '2026-09-13T04:55:00.000Z'
 level: '1011'
 difficulty: '🔴 Hard'
 estimated_time: 2-4 hours
@@ -314,6 +314,9 @@ Adding an agent to an existing workflow is a new roster row plus a new job; *rep
 ## 🧪 Hands-On Lab: Convene a Council at Your Own Table
 
 *The exam's hardest Domain 5 question hands you a trace and asks which agent caused the fault. Answer it once with your own hands and you will never miss it.* This lab runs a three-agent council locally — one of them sabotaged — then stitches the unified trace and finds the culprit. Pure shell and `jq`, five minutes.
+
+> **Workbench status (verified):** **Demoed locally** — three-agent council, sabotage, unified trace with `jq`. **Needs GitHub** for Actions matrix fan-out, `continue-on-error`, and correlation IDs across real workflow jobs.
+
 
 ### Step 1 — Mint the correlation ID and the trace writer
 

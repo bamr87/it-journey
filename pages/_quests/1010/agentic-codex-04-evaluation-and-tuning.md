@@ -2,7 +2,7 @@
 title: 'The Oracle Rubric: Evaluation & Tuning'
 description: 'Define machine-verifiable success criteria, read GitHub signals to grade agent runs, run root-cause analysis on failures, and tune behaviour by instruction.'
 date: '2026-06-30T00:00:00.000Z'
-lastmod: '2026-07-01T00:00:00.000Z'
+lastmod: '2026-09-13T04:55:00.000Z'
 level: '1010'
 difficulty: '🔴 Hard'
 estimated_time: 2-4 hours
@@ -385,6 +385,9 @@ This closes the loop the legend opened: rubric → signal → trace → tuned in
 ## 🧪 Hands-On Lab: Build the Oracle on Your Own Bench
 
 *A rubric you have never watched fail is a rubric you do not understand.* This lab builds a working completion detector locally — deterministic signals in a JSON file, a grader that reads them — then points it at a real pull request with `gh`. Ten minutes, no Copilot required.
+
+> **Workbench status (verified):** **Demoed locally** — fixture signals + grader (no Copilot). **Needs GitHub** (optional for the lesson, required for the live half) — point the same grader at a real PR via `gh` / Actions check conclusions.
+
 
 ### Step 1 — Fabricate a run's signals
 
