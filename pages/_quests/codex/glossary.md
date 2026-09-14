@@ -3,7 +3,7 @@ title: 'Codex Glossary: Fantasy Terms to IT Reality'
 description: The canonical lexicon of the IT-Journey realm — every fantasy term decoded into the technology behind it, from spells and scripts to golems and pipelines.
 excerpt: The realm's shared dictionary — fantasy on one side, real technology on the other.
 date: '2023-11-25T14:12:43.000Z'
-lastmod: '2026-07-06T00:00:00.000Z'
+lastmod: '2026-09-14T00:00:00.000Z'
 draft: false
 permalink: /quests/codex/glossary/
 author: IT-Journey Team
@@ -201,6 +201,7 @@ Chosen — and re-chosen — in the [Character Selection quest](/quests/0000/cha
 | **Golems** | Bots and autonomous agents | Tireless servants shaped from prompts and code. This realm's own golems — its AI fleet — are oath-bound; see *The Warden Pact*. |
 | **Familiars** | AI coding assistants | A summoned companion that drafts, explains, and fetches. Yours to command — and yours to double-check. |
 | **The Oracle** | An AI chat (a large language model) | Answers the question you asked, not the one you meant. Phrase with care; verify with your own eyes. Prophecy is not proof. |
+| **The Plausible Ghost** | A confident, wrong reading of a legacy system — from an Oracle, a familiar, or a colleague | A guess with good grammar. It haunts every port until the Rosetta Ledger ties out. |
 | **Dragons** | Production incidents | *Here be dragons* marks unmapped territory on old charts and legacy systems alike. The prepared carry runbooks. |
 | **Mimics** | Phishing | Shaped exactly like treasure — an invoice, a password-reset scroll — and bites when touched. Check the sender's true address before opening any chest. |
 | **Trolls** | Trolls | The word crossed over unchanged. Do not feed. |
@@ -218,6 +219,7 @@ Chosen — and re-chosen — in the [Character Selection quest](/quests/0000/cha
 | **Potions** | Dependencies | Drink one (`pip install …`) and gain an ability a stranger brewed. Check the label (version), the brewer (maintainer), and the recipe (lockfile) — unknown brews carry supply-chain curses. |
 | **Artifacts** | Build artifacts | Another word the mortals already had: the treasure your Factory forges from source — binaries, images, site builds. |
 | **Relics** | Legacy systems | Ancient, load-bearing, still humming in a basement. Respect them; the realm runs on more relics than anyone admits. |
+| **Strata** | The layers of decisions in a long-lived system | Dig anywhere and you hit a decade. Each layer was rational in its own year; the reason went home with whoever laid it. |
 | **Keys** | SSH keys, API keys, passwords | Literal keys. One per gate — a key reused is a key multiplied against you. Rotate them; guard the ring. |
 | **Talismans** | Auth tokens and two-factor codes | Proof of who you are. Carry a second talisman (2FA) so a stolen watchword alone opens nothing. |
 | **The Royal Seal** | TLS certificates (the padlock) | Proof a portal is what it claims to be. Ships refuse unsealed portals for good reason. |
@@ -242,6 +244,11 @@ Chosen — and re-chosen — in the [Character Selection quest](/quests/0000/cha
 | **Wards** | Firewalls, authentication, hardening | Layered protections placed *before* trouble: walls, gates, watchwords. Raised properly at [Level 1011](/quests/1011/). |
 | **Benign Necromancy** | Backups and disaster recovery | The one school of necromancy the realm honors: raising dead systems whole. No backup, no resurrection — only permadeath. Rehearse the rites (restore drills) before you need them. |
 | **Transmutation** | Refactoring | Change the form, preserve the essence. The Gauntlet proves the essence held. |
+| **Characterization Trials** | Characterization (golden-master) tests | Trials that pin what a relic *does*, not what it should do. Write them before you swing at the Hydra. |
+| **Archaeology** | Legacy-system analysis — recovering what a system does and why from its code, data, and history | The Labyrinth's craft. Bring thread, read the Chronicle, find the Elders, and never trust a guess with good grammar. |
+| **The Rosetta Ledger** | A reconciliation between an old system and its replacement | The same decree in two scripts — a trial balance that ties out on both sides. Until it does, you have copied the relic, not read it. |
+| **The Strangler Fig** | The strangler-fig migration pattern — a new system grows around the old until the old can be cut away | Nothing goes dark on cutover day; the gate routes one request at a time, and rollback is a flag. |
+| **Relic-raising** | Legacy modernization | Reviving a relic without losing what it knows: read it, pin it, translate it, then replace its housing one gate at a time. Taught in [The Relic Raisers](/quests/codex/relic-raisers/). |
 | **Alchemy** | Data engineering | Distilling rivers of raw data into gold. Pipelines are the stills; [Level 1100](/quests/1100/) is the school. |
 | **Prophecy** | Machine learning | Foretelling from patterns of the past. Honest prophets state their confidence — every prophecy carries error bars. Studied at [Level 1101](/quests/1101/). |
 | **The Ouroboros Loop** | A self-perfecting automation cycle (test → fix → merge → re-test) | The Factory's highest art: an oath-bound golem loop that walks the realm's own scrolls, repairs only what it witnessed break, and rests only when the seals say *perfect*. Forged in the [epic of the same name](/quests/codex/ouroboros-loop/). |
@@ -254,6 +261,7 @@ Chosen — and re-chosen — in the [Character Selection quest](/quests/0000/cha
 | **The Wardens** | Branch protection and CI gates | Nothing enters the main timeline without their seal. Inconvenient by design; the Frontier stands because of them. |
 | **The Warden Pact** | The rules binding this realm's own golems | The oaths IT-Journey's AI fleet cannot break — never push to main, never touch the gates, never merge their own work unwatched. Even golems answer to law. |
 | **The Council** | Maintainers and code owners | Stewards of a codebase. Their review is a gift of attention — make it easy to give. |
+| **The Elders** | The retired or departed builders of a relic, and the documents they left behind | Interview them while they still answer email. The artifact records what was done; the Elders remember why. |
 | **An Emissary** | A pull request | Your work sent to another stronghold, with a letter explaining itself. Small, well-spoken emissaries are granted audiences fastest. |
 | **A Petition** | An issue | A formal request for aid or change. The good ones state what happened, what was expected, and how to summon the problem again. |
 | **Diplomacy** | Code review | Critique the work, honor the worker. The realm's strongest alliances were forged in review threads. |

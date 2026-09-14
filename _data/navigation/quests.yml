@@ -168,6 +168,8 @@
     url: /quests/0011/github-pages-hidden-gem/
   - title: 'Summon the Golem: An AI Agent Joins the Loop'
     url: /quests/0011/ouroboros-loop-03-summon-the-golem/
+  - title: 'The Dig Site: Unearth the Relic and Name What You Do Not Know'
+    url: /quests/0011/relic-raisers-01-the-dig-site/
   - title: 'The PRD Codex: Master Product Reality Distillation'
     url: /quests/0011/prd-codex-mastery/
 - title: Level 0100 - Frontend & Containers
@@ -214,6 +216,8 @@
     url: /quests/0101/testing-integration/
   - title: 'The Cartographer: File Platform Bugs Upstream'
     url: /quests/0101/self-operating-website-08-the-cartographer/
+  - title: 'The Gauntlet of Trials: Pin the Relic Before You Touch It'
+    url: /quests/0101/relic-raisers-04-the-gauntlet-of-trials/
   - title: 'The Second Shift: Resurrect an Ancient Tower as Your Home Server'
     url: /quests/0101/second-shift-server-resurrection/
   - title: 'The Warden''s Gate: Kill Switches and Stage Gates'
@@ -242,6 +246,8 @@
     url: /quests/0110/query-optimization/
   - title: 'SQL Mastery: Query Language Proficiency'
     url: /quests/0110/sql-mastery/
+  - title: 'The Strata: Read the Copybook, Then Let the Data Testify'
+    url: /quests/0110/relic-raisers-02-the-strata/
 - title: Level 0111 - API Development
   icon: bi-cloud-arrow-up
   url: /quests/0111/
@@ -264,6 +270,8 @@
     url: /quests/0111/rate-limiting/
   - title: 'REST Principles: Resources, Statelessness, and Maturity'
     url: /quests/0111/rest-principles/
+  - title: 'The Strangler Fig: Put a Modern Gate in Front of the Relic'
+    url: /quests/0111/relic-raisers-06-the-strangler-fig/
   - title: 'The Three Sigils: Plan, Reason, Act'
     url: /quests/0111/agentic-plan-vs-action-boundaries/
 - title: Level 1000 - Cloud Computing
@@ -402,6 +410,8 @@
     url: /quests/1100/self-operating-website-10-the-bard-forge/
   - title: 'The Editor''s Eye: A Reviewer, and the Dragon It Becomes'
     url: /quests/1100/self-operating-website-06-the-editors-eye/
+  - title: 'The Rosetta Ledger: Translate the Relic and Prove It Ties Out'
+    url: /quests/1100/relic-raisers-05-the-rosetta-ledger/
   - title: 'The Temple of Templates: Reusable Abstractions'
     url: /quests/1100/temple-of-templates/
   - title: 'The Warden Pact: Guardrails & Accountability'
@@ -460,8 +470,12 @@
     url: /quests/1110/self-operating-website-09-the-chronicle/
   - title: 'Weaving the Whole: The Serpent Closes the Circle'
     url: /quests/1110/ouroboros-loop-07-weaving-the-whole/
+  - title: 'Write for the Archaeologist: Leave the Lore Where the Next One Digs'
+    url: /quests/1110/relic-raisers-07-write-for-the-archaeologist/
   - title: 'Epic Quest: The Ouroboros Loop'
     url: /quests/codex/ouroboros-loop/
+  - title: 'Epic Quest: The Relic Raisers'
+    url: /quests/codex/relic-raisers/
 - title: Level 1111 - Leadership & Innovation
   icon: bi-trophy
   url: /quests/1111/
@@ -482,6 +496,8 @@
     url: /quests/1111/tech-speaking-writing/
   - title: 'Technical Leadership: Leading Without a Crown'
     url: /quests/1111/technical-leadership/
+  - title: 'The Elders: Recover the Reasons Before They Retire'
+    url: /quests/1111/relic-raisers-03-the-elders/
   - title: 'Epic Quest: The Self-Operating Website'
     url: /quests/codex/self-operating-website/
 - title: Resources
