@@ -192,10 +192,12 @@ def parse_copybook(path):
         m = PIC_RE.match(body)
         if not m:
             continue
-        level, name, _, pic = int(m.group(1)), m.group(2), m.group(3), m.group(4)
+        level, name, redefines, pic = int(m.group(1)), m.group(2), m.group(3), m.group(4)
         length = pic_length(pic)
+        if redefines:
+            continue  # REDEFINES with its own PIC: re-names bytes already counted
         if in_redefines and level > redef_level:
-            continue  # sub-fields of a REDEFINES share bytes already counted
+            continue  # sub-fields of a REDEFINES group share bytes already counted
         in_redefines = False
         kind = "numeric" if pic.upper().lstrip("S").startswith("9") else "text"
         fields.append((name, offset, length, kind))
@@ -243,7 +245,7 @@ INV-STATUS        49   1  text            2  '7' .. 'O'
 FILLER            50  30  text            1  '                              ' .. '                              '
 ```
 
-The script's offsets match your pencil's, which is the first thing to check whenever a tool reads a copybook for you. Then the tells. The date column holds years `26` and `99`, and only the program's pivot can say whether `99` is 1999 or 2099 — you saw in Chapter I that it chose 1999, and Chapter V will show what happens when a port forgets. The status column holds `O` and `7`, and no scroll in the folder says what either means; the header comment says what `7` does, not what it *is*. On a real relic you will see a dozen codes and a comment for two of them. Write every code down; the ones without a meaning are questions for the Elders.
+The script's offsets match your pencil's, which is the first thing to check whenever a tool reads a copybook for you. That check is not a formality: COBOL writes `REDEFINES` two ways, as the group this copybook uses and as a single field carrying its own `PIC` on the same line, and a reader that handles only the first counts the redefining field's bytes twice. Every field after it then sits at the wrong offset and the record length comes out too long. Both forms are why the parser skips on `redefines` as well as on the group's level. Then the tells. The date column holds years `26` and `99`, and only the program's pivot can say whether `99` is 1999 or 2099 — you saw in Chapter I that it chose 1999, and Chapter V will show what happens when a port forgets. The status column holds `O` and `7`, and no scroll in the folder says what either means; the header comment says what `7` does, not what it *is*. On a real relic you will see a dozen codes and a comment for two of them. Write every code down; the ones without a meaning are questions for the Elders.
 
 ### 🔍 Knowledge Check
 

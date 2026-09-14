@@ -94,7 +94,7 @@ environment:
 
 ## 📖 The Legend Behind This Quest
 
-*When a NASA probe launched in 1977 fell silent in 2023, the engineers who fixed it reported that solving its problems "often entails consulting original, decades-old documents written by engineers who didn't anticipate the issues that are arising today." That is the Elders' gift and the Elders' limit in one sentence: they left documents, and the documents did not foresee you. A relic is worse off than a probe — its builders rarely wrote anything down at all. The guild's rule is that the reasons are recovered from people while people still answer, and recorded with the evidence that lets a stranger trust them. This chapter sits at Level 1111 because recovering reasons from people is leadership work; the campaign uses the level for progression, not for a change of tools.*
+*When a NASA probe launched in 1977 fell silent in 2023, the agency's own account of the work noted that finding solutions to the probes' problems "often entails consulting original, decades-old documents written by engineers who didn't anticipate the issues that are arising today." That is the Elders' gift and the Elders' limit in one sentence: they left documents, and the documents did not foresee you. A relic is worse off than a probe — its builders rarely wrote anything down at all. The guild's rule is that the reasons are recovered from people while people still answer, and recorded with the evidence that lets a stranger trust them. This chapter sits at Level 1111 because recovering reasons from people is leadership work; the campaign uses the level for progression, not for a change of tools.*
 
 ## 🎯 Quest Objectives
 
@@ -135,7 +135,18 @@ git shortlog -sne -- ARAGE01.cob
 
 - **The siblings.** The copybook's header says its layout is shared with `ARINV05` and `ARSTM02`. Whoever maintains those programs reads this record too, and may remember why `FILLER` is thirty bytes wide.
 
-Write the roster into `lore/ELDERS.md`: name or initials, what they touched, when, and how to reach them — or "retired 2019, email known to the controller". A roster with three names and one live email is a normal outcome.
+Write the roster into `lore/ELDERS.md`: name or initials, what they touched, when, and how to reach them. A roster with three names and one live contact is a normal outcome, and the gaps are part of the record:
+
+```markdown
+# Elders of ARAGE01
+
+| Who | Touched | When | How to reach |
+|---|---|---|---|
+| D.M. | Wrote the program; converted it from RPG II | 03/1997 | Unknown — ask the controller who was here before 2000 |
+| unnamed | Added the Y2K window, pivot 50 | 11/1999 | Unknown; no name in the comment or the Chronicle |
+| J.R., Accounting | Decided status 7 is excluded from aging | 06/2006 | Retired; current accounting lead can confirm whether the rule stands |
+| Maintainer of ARINV05 / ARSTM02 | Reads this same record layout | current | Ask whoever owns the statement run |
+```
 
 ### 🔍 Knowledge Check
 
@@ -229,7 +240,7 @@ Accepted (recovered from the relic, 2026-09-14)
 
 ## Context
 
-`ARAGE01` treats `INV-STATUS = "7"` as a separate class of invoice. The only record of why is a modification comment in the program header: `MOD 06/06 STATUS 7 = SHIPPED BUT DISPUTED. EXCLUDE FROM AGING BUCKETS, REPORT SEPARATELY (PER J.R./ACCTG)`. Accounting confirmed the rule still stands: a disputed invoice must not inflate the customer's past-due balance while the dispute is open.
+`ARAGE01` treats `INV-STATUS = "7"` as a separate class of invoice. The only record of why is a modification comment in the program header: `MOD 06/06 STATUS 7 = SHIPPED BUT DISPUTED. EXCLUDE FROM AGING BUCKETS, REPORT SEPARATELY (PER J.R./ACCTG)`. J.R. has retired and no one currently in Accounting has been asked, so the reading below — that a disputed invoice must not inflate a customer's past-due balance while the dispute is open — rests on the comment and the program's own behavior. A live confirmation belongs in the Evidence list the day it is given.
 
 ## Decision
 
@@ -239,11 +250,19 @@ Any replacement of `ARAGE01` keeps status `7` out of the five aging buckets and 
 
 - `ARAGE01.cob`, header comment `MOD 06/06`, and the `EVALUATE` branch `WHEN INV-STATUS = "7"`.
 - `profile_relic.py` on `INVOICES.DAT`: status distribution shows the code in live data.
-- Elder interview, accounting lead, 2026-09-14: "we never age a disputed invoice."
+- Chapter I rerun: `INV10004` prints 105 days past due in the `DISPUTED` bucket and is absent from `OVER 90`.
 
 ## Consequences
 
 The port carries a `DISPUTED` bucket; the reconciliation ledger checks it; a new status code must get its own ADR before the code changes.
+```
+
+Read that Evidence list again for what it does **not** contain: a quote from a living Elder. In this lab the Elder is a comment, so the record cites the comment, the profile, and a rerun — and its Context says plainly that nobody has been asked yet. Writing "Accounting confirmed it" when no one confirmed anything would be the exact failure this chapter exists to prevent, and it is the easiest one to commit, because a familiar drafting from your notes will supply the confirming sentence unprompted if you let it.
+
+Now the second record, the pivot. Same shape, same binding, one decision per cast:
+
+```bash
+cat lore/interviews/*.md ARAGE01.cob | claude -p "Write ADR-0002 for the decision that two-digit years are windowed at a pivot of 50 (00-49 are 20YY, 50-99 are 19YY), using exactly these sections: Status, Context, Decision, Evidence, Consequences. Under Evidence, list the code comment, the profile line, or the run that supports it as bullet points. If you cannot cite any evidence, write NO EVIDENCE under that heading and do not invent any." > lore/ADR-0002-pivot-year-is-50.md
 ```
 
 Now the gate. Save this as `lore_check.py`; it walks every `lore/ADR-*.md`, demands the five sections, and refuses any record whose Evidence lists nothing.

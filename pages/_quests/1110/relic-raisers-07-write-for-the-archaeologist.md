@@ -165,14 +165,17 @@ Read it back as the archaeologist would: two engines fed by the same files, a le
 A runbook has three sections that matter at 2 a.m.: how to run it, how to verify it, how to roll it back. Let the familiar draft from the repository itself — pipe the files in, and redirect the answer into the runbook — and bind it to the same rule the whole campaign has obeyed: nothing goes in that a file does not contain.
 
 ```bash
-cat ARAGE01.cob INVREC.CPY aging.py reconcile.py test_relic.py relic_api.py verify.sh lore/*.md | claude -p "These are the files of a revived legacy system. Draft README.md with these sections: What this system is, Strata (its history), How to run, How to verify, How to roll back, Who to ask. Every command you include must appear verbatim in the input; cite the file after each command. If a section cannot be written from the input, write TODO and say what is missing." > README.md
+cat ARAGE01.cob INVREC.CPY aging.py reconcile.py test_relic.py relic_api.py lore/*.md | claude -p "These are the files of a revived legacy system. Draft README.md with these sections: What this system is, Strata (its history), How to run, How to verify, How to roll back, Who to ask. Every command you include must appear verbatim in the input; cite the file after each command. If a section cannot be written from the input, write TODO and say what is missing." > README.md
 ```
+
+`verify.sh` is deliberately absent from that list — Part 4 has not written it yet, and piping a file that does not exist is how a runbook ends up citing a command nobody can run. Come back and add it once it exists.
 
 Audit the draft the way you audited the dictionary: run every command it proposes; delete every sentence that explains something the files do not show. The sections that survive should read like this:
 
 ```markdown
 ## How to run
-cobc -x -o arage01 ARAGE01.cob && ./arage01            # the relic (test_relic.py, verify.sh)
+cobc -x -o arage01 ARAGE01.cob 2>/dev/null             # build the relic (verify.sh)
+./arage01                                              # run it (verify.sh)
 python3 aging.py                                       # the port (verify.sh)
 python3 relic_api.py --engine shadow --port 8765       # the gate (relic_api.py)
 
@@ -270,6 +273,7 @@ Ran 5 tests in 0.027s
 OK
 RECONCILED — the ledger ties out.
 lore/ADR-0001-status-7-means-disputed.md: ok — 3 evidence item(s)
+…four more ADR lines…
 ALL GATES PASSED
 ```
 

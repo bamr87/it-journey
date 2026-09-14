@@ -120,6 +120,7 @@ environment:
 
 - **Chapter V** — the gate routes to `aging.py`; only a reconciled port may stand in the shadow.
 - **`curl`** — the only client you need; it ships with most worlds.
+- **One shell for the whole chapter** — the gate is started with `&` and referred to as `%1` from here to the end, so run every command in this chapter in the same interactive session. A fresh terminal loses the job number and the log it was writing.
 - **`http.server`** — Python's built-in server is enough for a gate that runs one batch program per request. A production gate would sit behind a real server; the routing logic does not change.
 
 ## 🧙‍♂️ Chapter 1: Raise the Gate
@@ -250,6 +251,8 @@ SHADOW asof=260914 MATCH
 GATE GET /aging?asof=260914 -> 200
 ```
 
+One wrinkle to know before you trust that log: the `log_message` override prints `args[1]`, which carries the status code for a served request but the explanation text for one the gate refuses. You will see both shapes in Chapter 3, and a parser reading this log has to expect them.
+
 ### 🔍 Knowledge Check
 
 - [ ] Why does every request run in a fresh scratch directory rather than in the repository folder?
@@ -275,6 +278,9 @@ The routing plan is the whole pattern in four rows:
 Hold the gate under a small load first — five requests with five different as-of dates — and count the shadow's verdicts:
 
 ```bash
+kill %1
+python3 relic_api.py --engine shadow --port 8765 2> gate.log &   # a fresh log: the counts below are this loop's alone
+sleep 1
 for i in 1 2 3 4 5; do
   curl -s "http://127.0.0.1:8765/aging?asof=2609$(printf '%02d' $((i*5)))" \
     | python3 -c 'import json,sys; d=json.load(sys.stdin); print(d["asof"], d["engine"], "CURRENT", d["totals"]["CURRENT"])'
@@ -292,7 +298,7 @@ grep -c ' MATCH$' gate.log; grep -c MISMATCH gate.log
 0
 ```
 
-Between the 10th and the 15th, `INV10007` (due the 14th) leaves CURRENT — and the port agreed with the relic on every date. Five matches, zero mismatches. The match pattern is anchored on purpose: `MISMATCH` contains the letters `MATCH`, so a careless `grep -c MATCH` would count every disagreement as an agreement — a Plausible Ghost in a one-liner. On a real gate you leave shadow mode running for weeks against real traffic and read this count every morning; "silent" means the mismatch count stayed at zero while the request count grew. Then, and only then, cut over:
+Between the 10th and the 15th, `INV10007` (due the 14th) leaves CURRENT — and the port agreed with the relic on every date. Five matches, zero mismatches. The restart above is what makes that five: `2> gate.log` truncates the file, so Chapter 1's request is not counted twice. Skip the restart and you get six, an off-by-one that looks like a fault in the port and is really a fault in the measurement. The match pattern is anchored on purpose: `MISMATCH` contains the letters `MATCH`, so a careless `grep -c MATCH` would count every disagreement as an agreement — a Plausible Ghost in a one-liner. On a real gate you leave shadow mode running for weeks against real traffic and read this count every morning; "silent" means the mismatch count stayed at zero while the request count grew. Then, and only then, cut over:
 
 ```bash
 kill %1
@@ -355,7 +361,7 @@ still serving: relic 11050.00
 ValueError: invalid literal for int() with base 10: 'xy'
 ```
 
-Three facts, all real: the port refused the garbage with a `ValueError`, the gate's request handler died mid-request so the caller got no response at all (`000`), and the server survived to serve the next request. The relic was wrong silently; the port was right loudly; the gate was neither. The fix belongs at the door — validate before either engine runs — and it is four lines in `do_GET`, right after `asof` is read:
+Three facts, all real: the port refused the garbage with a `ValueError`, the gate's request handler died mid-request so the caller got no response at all (`000`), and the server survived to serve the next request. The relic was wrong silently; the port was right loudly; the gate was neither. The fix belongs at the door — validate before either engine runs — and it is three lines in `do_GET`, right after `asof` is read:
 
 ```python
         if not (len(asof) == 6 and asof.isdigit()):
@@ -373,7 +379,95 @@ curl -s -o /dev/null -w "http %{http_code}\n" "http://127.0.0.1:8765/aging?asof=
 # http 400
 ```
 
-A `400` tells the caller what they did wrong, runs no engine, and leaves the log clean. Pin it: add a trial to `test_relic.py` (or a new `test_gate.py`) that starts the gate, sends `asof=xyz123`, and asserts a `400`. The hazard the familiar named became a reproduced failure, a verified fix, and a trial — in that order, never another.
+A `400` tells the caller what they did wrong, runs no engine, and leaves the log clean. Now pin it. Testing an HTTP server needs two things a file-based trial does not: a port nobody else holds, and a wait that ends when the socket is actually bound rather than after a guessed number of seconds. Save this as `test_gate.py`:
+
+```python
+#!/usr/bin/env python3
+"""test_gate.py — pin the gate's door: a bad as-of is refused before any engine runs.
+
+Starts relic_api.py on a free port, waits for the socket rather than guessing,
+and asserts the contract: garbage in the query string gets 400, a real date
+gets 200. Run: python3 -m unittest -v test_gate
+"""
+import os
+import socket
+import subprocess
+import sys
+import time
+import unittest
+import urllib.error
+import urllib.request
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+
+def free_port():
+    with socket.socket() as s:
+        s.bind(("127.0.0.1", 0))
+        return s.getsockname()[1]
+
+def wait_for_port(port, timeout=10):
+    """Poll the socket instead of sleeping a fixed amount — the banner prints early."""
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        try:
+            with socket.create_connection(("127.0.0.1", port), 0.2):
+                return True
+        except OSError:
+            time.sleep(0.05)
+    return False
+
+class GateDoor(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.port = free_port()
+        cls.proc = subprocess.Popen(
+            [sys.executable, os.path.join(HERE, "relic_api.py"),
+             "--engine", "relic", "--port", str(cls.port)],
+            cwd=HERE, stderr=subprocess.DEVNULL)
+        assert wait_for_port(cls.port), "gate never bound its port"
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.proc.terminate()
+        cls.proc.wait(timeout=10)
+
+    def get(self, asof):
+        url = f"http://127.0.0.1:{self.port}/aging?asof={asof}"
+        try:
+            with urllib.request.urlopen(url, timeout=30) as r:
+                return r.status
+        except urllib.error.HTTPError as e:
+            return e.code
+
+    def test_a_valid_asof_is_served(self):
+        self.assertEqual(self.get("260914"), 200)
+
+    def test_a_non_numeric_asof_is_refused_at_the_door(self):
+        self.assertEqual(self.get("xyz123"), 400)
+
+    def test_a_short_asof_is_refused_at_the_door(self):
+        self.assertEqual(self.get("2609"), 400)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+```bash
+python3 -m unittest -v test_gate
+```
+
+```text
+test_a_non_numeric_asof_is_refused_at_the_door (test_gate.GateDoor.test_a_non_numeric_asof_is_refused_at_the_door) ... ok
+test_a_short_asof_is_refused_at_the_door (test_gate.GateDoor.test_a_short_asof_is_refused_at_the_door) ... ok
+test_a_valid_asof_is_served (test_gate.GateDoor.test_a_valid_asof_is_served) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.116s
+
+OK
+```
+
+The hazard the familiar named became a reproduced failure, a verified fix, and a trial — in that order, never another.
 
 ### 🔍 Knowledge Check
 
@@ -387,7 +481,7 @@ A `400` tells the caller what they did wrong, runs no engine, and leaves the log
 
 - [ ] Shadow mode serves the relic's answer and logs a verdict for every request; the five-date loop shows five matches
 - [ ] Cutover to `port` and rollback to `relic` each took one restart, and the JSON totals were identical before and after
-- [ ] The bad-asof hazard is reproduced (relic: silent garbage; port: `ValueError`; gate: no response), fixed with a `400`, and covered by a trial
+- [ ] The bad-asof hazard is reproduced (relic: silent garbage; port: `ValueError`; gate: no response), fixed with a `400`, and covered by `test_gate.py`
 - [ ] `lore/ADR-0004` records that shadow runs before any cutover, with the gate log as evidence
 
 ## 🎁 Rewards & Progression
@@ -400,7 +494,7 @@ A `400` tells the caller what they did wrong, runs no engine, and leaves the log
 
 ## 🔁 Reproduce It
 
-The gate, every `curl` response, the five-date loop, the port-mode answer, the relic's `2700/41/23` report, the port's `ValueError`, the `000` and the `400` were all produced on 2026-09-14 on Ubuntu 24.04 with GnuCOBOL 3.1.2, Python 3.11 (any 3.10+ works; stock Ubuntu 24.04 ships 3.12), and curl, against the unchanged Chapter I files and the Chapter V port. Ports 8765–8768 were used in the lab; any free port works.
+The gate, every `curl` response, the five-date loop, the port-mode answer, the relic's `2700/41/23` report, the port's `ValueError`, the `000` and the `400`, and the three gate trials were all produced on 2026-09-14 on Ubuntu 24.04 with GnuCOBOL 3.1.2, Python 3.11 (any 3.10+ works; stock Ubuntu 24.04 ships 3.12), and curl, against the unchanged Chapter I files and the Chapter V port. Ports 8765–8768 were used in the lab; any free port works.
 
 ## 🗺️ Quest Network
 
