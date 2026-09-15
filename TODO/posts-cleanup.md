@@ -92,7 +92,7 @@ Branch: `chore/posts-mass-cleanup`. Plan saved in `/memories/session/plan.md`. A
 ## Phase 5 — Preview images & SEO
 
 - [ ] List posts missing `preview:`.
-- [ ] Generate via `scripts/generation/generate-preview-images.sh` (needs `OPENAI_API_KEY`).
+- [ ] Generate via `bundle exec jekyll preview-images` (the `zer0-image-generator` gem; needs `OPENAI_API_KEY`).
 
 ## Phase 7 — CI hardening
 

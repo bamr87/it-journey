@@ -470,7 +470,7 @@ content-normalize-apply:
 	@python3 scripts/content/normalize-frontmatter.py pages/ --apply --quiet \
 		--report TODO/seo/data/normalize-apply.json
 
-# Raster image compression (WebP). Both preview-image generators emit PNG, which
+# Raster image compression (WebP). The zer0-image-generator gem emits PNG, which
 # for AI artwork runs ~2 MB a banner; run this after a generation run to
 # re-encode and repoint the references. Idempotent — already-WebP files and any
 # image that would grow are left alone.
