@@ -10,6 +10,43 @@ date: 2026-01-14T22:23:32.000Z
 
 Everything about the quest taxonomy and schema is defined exactly once, in [`quest_registry.py`](quest_registry.py). Every data file, validator, template, and generator derives from it, so the framework cannot drift.
 
+## The quest system as an MCP server
+
+`mcp_server.py` serves this framework over the Model Context Protocol, so an agent asked to *execute* a campaign can fetch the method instead of being told it in a prompt. It is stdlib-only (no SDK, no install), speaks newline-delimited JSON-RPC 2.0 on stdio, and is backed by `quest_lib.py` — so it can never disagree with the validators about what a quest is.
+
+| Tool | What it answers |
+|---|---|
+| `list_campaigns` | Every epic campaign, with chapter counts. The entry point. |
+| `get_campaign` | One campaign: objectives, then every chapter in order with its own objectives and section headings. |
+| `get_quest` | One chapter in full, or a single named section of it. |
+| `get_method` | The campaign distilled to what an agent must DO: per chapter, the objectives and every runnable snippet, prose stripped. |
+| `search_quests` | Ranked full-text search across quests and codex pages, with context. |
+| `get_glossary` | The canonical fantasy-to-technical lexicon, whole or filtered by term. |
+
+```bash
+make quest-mcp-check      # self-test (protocol, tools, resolution, errors, auditing)
+make quest-mcp-tools      # print the tool catalogue
+
+# Wire it into an agent. The allow-list lives at the call site — omission is denial.
+claude --mcp-config scripts/quest/mcp.json --strict-mcp-config \
+       --allowedTools "mcp__it-journey-quests__get_quest,mcp__it-journey-quests__get_campaign" \
+       -p "Execute chapter 1 of the relic-raisers campaign."
+```
+
+`mcp.json` uses a repo-relative command path so it stays portable; an agent whose working directory is elsewhere needs a config with the absolute path to `mcp_server.py`.
+
+### Proving an agent actually consulted the quest
+
+Set `QUEST_MCP_LOG` to a file path and the server appends one JSON line per served call — timestamp, tool name, and truncated arguments. It is off unless the variable is set, and a failure to write never breaks the server.
+
+```bash
+QUEST_MCP_LOG=/tmp/quest-calls.jsonl claude --mcp-config scripts/quest/mcp.json ...
+```
+
+This exists because of a specific failure. A server pointed at a checkout that lacks the campaign still starts, still answers, and answers `no campaign matches` — so an agent runs the chapter without the method, produces plausible work, and any gate that only inspects output passes it. Nothing is visibly wrong.
+
+A harness should therefore do two things: call `get_campaign` before the run and refuse to start if the campaign does not resolve, and fail any chapter whose audit log is empty. That turns "the agent had the method" from an assumption into a recorded fact.
+
 ## Single source of truth
 
 `quest_registry.py` owns:

@@ -250,6 +250,13 @@ quest-skills:
 quest-skills-check:
 	@python3 scripts/quest/character_skills.py --check
 
+quest-mcp-check:
+	@echo "🔌 Self-testing the quest MCP server..."
+	@python3 scripts/quest/mcp_server.py --self-test
+
+quest-mcp-tools:
+	@python3 scripts/quest/mcp_server.py --list-tools
+
 quest-audit:
 	@echo "🎯 Unified quest audit (content + network + data freshness)..."
 	@python3 scripts/quest/quest_audit.py $(EXTRA)

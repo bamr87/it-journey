@@ -1,0 +1,9 @@
+{
+  "_comment": "The IT-Journey quest system as an MCP server. Stdlib-only, stdio transport, backed by scripts/quest/quest_lib.py so it can never disagree with the validators. Wire it into an agent that must EXECUTE a campaign rather than read one: `claude --mcp-config scripts/quest/mcp.json --strict-mcp-config`. Pair with an allow-list at the call site — omission is denial. Self-test: python3 scripts/quest/mcp_server.py --self-test",
+  "mcpServers": {
+    "it-journey-quests": {
+      "command": "python3",
+      "args": ["scripts/quest/mcp_server.py"]
+    }
+  }
+}
