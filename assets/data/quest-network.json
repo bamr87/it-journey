@@ -1,27 +1,27 @@
 {
   "stats": {
-    "total": 209,
+    "total": 217,
     "by_level": {
       "0000": 29,
       "0001": 26,
       "0010": 17,
-      "0011": 4,
+      "0011": 5,
       "0100": 8,
-      "0101": 14,
-      "0110": 8,
-      "0111": 10,
+      "0101": 15,
+      "0110": 9,
+      "0111": 11,
       "1000": 10,
       "1001": 9,
       "1010": 16,
       "1011": 12,
-      "1100": 16,
+      "1100": 17,
       "1101": 10,
-      "1110": 11,
-      "1111": 9
+      "1110": 13,
+      "1111": 10
     },
     "by_type": {
-      "epic_quest": 4,
-      "main_quest": 179,
+      "epic_quest": 5,
+      "main_quest": 186,
       "side_quest": 26
     }
   },
@@ -612,6 +612,15 @@
       "file": "pages/_quests/0011/prompt-crystal-mastery-vscode-copilot.md"
     },
     {
+      "id": "/quests/0011/relic-raisers-01-the-dig-site/",
+      "title": "The Dig Site: Unearth the Relic and Name What You Do Not Know",
+      "level": "0011",
+      "type": "main_quest",
+      "difficulty": "🟢 Easy",
+      "technology": "cobol",
+      "file": "pages/_quests/0011/relic-raisers-01-the-dig-site.md"
+    },
+    {
       "id": "/quests/0100/container-fundamentals/",
       "title": "Docker Container Fundamentals: Images to Registries",
       "level": "0100",
@@ -756,6 +765,15 @@
       "file": "pages/_quests/0101/ouroboros-loop-02-the-wardens-gate.md"
     },
     {
+      "id": "/quests/0101/relic-raisers-04-the-gauntlet-of-trials/",
+      "title": "The Gauntlet of Trials: Pin the Relic Before You Touch It",
+      "level": "0101",
+      "type": "main_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "github-actions",
+      "file": "pages/_quests/0101/relic-raisers-04-the-gauntlet-of-trials.md"
+    },
+    {
       "id": "/quests/0101/second-shift-server-resurrection/",
       "title": "The Second Shift: Resurrect an Ancient Tower as Your Home Server",
       "level": "0101",
@@ -873,6 +891,15 @@
       "file": "pages/_quests/0110/query-optimization.md"
     },
     {
+      "id": "/quests/0110/relic-raisers-02-the-strata/",
+      "title": "The Strata: Read the Copybook, Then Let the Data Testify",
+      "level": "0110",
+      "type": "main_quest",
+      "difficulty": "🟡 Medium",
+      "technology": "python",
+      "file": "pages/_quests/0110/relic-raisers-02-the-strata.md"
+    },
+    {
       "id": "/quests/0110/sql-mastery/",
       "title": "SQL Mastery: Query Language Proficiency",
       "level": "0110",
@@ -961,6 +988,15 @@
       "difficulty": "🟡 Medium",
       "technology": "http",
       "file": "pages/_quests/0111/rate-limiting.md"
+    },
+    {
+      "id": "/quests/0111/relic-raisers-06-the-strangler-fig/",
+      "title": "The Strangler Fig: Put a Modern Gate in Front of the Relic",
+      "level": "0111",
+      "type": "main_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "python",
+      "file": "pages/_quests/0111/relic-raisers-06-the-strangler-fig.md"
     },
     {
       "id": "/quests/0111/rest-principles/",
@@ -1485,6 +1521,15 @@
       "file": "pages/_quests/1100/etl-pipeline-design.md"
     },
     {
+      "id": "/quests/1100/relic-raisers-05-the-rosetta-ledger/",
+      "title": "The Rosetta Ledger: Translate the Relic and Prove It Ties Out",
+      "level": "1100",
+      "type": "main_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "python",
+      "file": "pages/_quests/1100/relic-raisers-05-the-rosetta-ledger.md"
+    },
+    {
       "id": "/quests/1100/self-operating-website-06-the-editors-eye/",
       "title": "The Editor's Eye: A Reviewer, and the Dragon It Becomes",
       "level": "1100",
@@ -1674,6 +1719,15 @@
       "file": "pages/_quests/1110/ouroboros-loop-07-weaving-the-whole.md"
     },
     {
+      "id": "/quests/1110/relic-raisers-07-write-for-the-archaeologist/",
+      "title": "Write for the Archaeologist: Leave the Lore Where the Next One Digs",
+      "level": "1110",
+      "type": "main_quest",
+      "difficulty": "⚔️ Epic",
+      "technology": "documentation",
+      "file": "pages/_quests/1110/relic-raisers-07-write-for-the-archaeologist.md"
+    },
+    {
       "id": "/quests/1110/scaling-strategies/",
       "title": "Scaling Strategies: Horizontal Growth, Caching, and CAP",
       "level": "1110",
@@ -1755,6 +1809,15 @@
       "file": "pages/_quests/1111/open-source-contribution.md"
     },
     {
+      "id": "/quests/1111/relic-raisers-03-the-elders/",
+      "title": "The Elders: Recover the Reasons Before They Retire",
+      "level": "1111",
+      "type": "main_quest",
+      "difficulty": "🟡 Medium",
+      "technology": "markdown",
+      "file": "pages/_quests/1111/relic-raisers-03-the-elders.md"
+    },
+    {
       "id": "/quests/1111/tech-speaking-writing/",
       "title": "Tech Speaking and Writing: RFCs, Docs, and Talks",
       "level": "1111",
@@ -1807,6 +1870,15 @@
       "difficulty": "⚔️ Epic",
       "technology": "github-actions",
       "file": "pages/_quests/codex/ouroboros-loop.md"
+    },
+    {
+      "id": "/quests/codex/relic-raisers/",
+      "title": "Epic Quest: The Relic Raisers",
+      "level": "1110",
+      "type": "epic_quest",
+      "difficulty": "⚔️ Epic",
+      "technology": "cobol",
+      "file": "pages/_quests/codex/relic-raisers.md"
     },
     {
       "id": "/quests/codex/self-operating-website/",
@@ -2670,6 +2742,16 @@
       "kind": "required"
     },
     {
+      "source": "/quests/0011/relic-raisers-01-the-dig-site/",
+      "target": "/quests/codex/relic-raisers/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/0011/relic-raisers-01-the-dig-site/",
+      "target": "/quests/0110/relic-raisers-02-the-strata/",
+      "kind": "unlocks"
+    },
+    {
       "source": "/quests/0100/container-fundamentals/",
       "target": "/quests/0100/docker-compose-orchestration/",
       "kind": "unlocks"
@@ -2812,6 +2894,16 @@
     {
       "source": "/quests/0101/ouroboros-loop-02-the-wardens-gate/",
       "target": "/quests/0011/ouroboros-loop-03-summon-the-golem/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/0101/relic-raisers-04-the-gauntlet-of-trials/",
+      "target": "/quests/1111/relic-raisers-03-the-elders/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/0101/relic-raisers-04-the-gauntlet-of-trials/",
+      "target": "/quests/1100/relic-raisers-05-the-rosetta-ledger/",
       "kind": "unlocks"
     },
     {
@@ -3015,6 +3107,16 @@
       "kind": "unlocks"
     },
     {
+      "source": "/quests/0110/relic-raisers-02-the-strata/",
+      "target": "/quests/0011/relic-raisers-01-the-dig-site/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/0110/relic-raisers-02-the-strata/",
+      "target": "/quests/1111/relic-raisers-03-the-elders/",
+      "kind": "unlocks"
+    },
+    {
       "source": "/quests/0110/sql-mastery/",
       "target": "/quests/0110/database-fundamentals/",
       "kind": "required"
@@ -3152,6 +3254,16 @@
     {
       "source": "/quests/0111/rate-limiting/",
       "target": "/quests/0111/api-documentation/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/0111/relic-raisers-06-the-strangler-fig/",
+      "target": "/quests/1100/relic-raisers-05-the-rosetta-ledger/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/0111/relic-raisers-06-the-strangler-fig/",
+      "target": "/quests/1110/relic-raisers-07-write-for-the-archaeologist/",
       "kind": "unlocks"
     },
     {
@@ -3935,6 +4047,16 @@
       "kind": "unlocks"
     },
     {
+      "source": "/quests/1100/relic-raisers-05-the-rosetta-ledger/",
+      "target": "/quests/0101/relic-raisers-04-the-gauntlet-of-trials/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/1100/relic-raisers-05-the-rosetta-ledger/",
+      "target": "/quests/0111/relic-raisers-06-the-strangler-fig/",
+      "kind": "unlocks"
+    },
+    {
       "source": "/quests/1100/self-operating-website-06-the-editors-eye/",
       "target": "/quests/1010/self-operating-website-05-the-content-forge/",
       "kind": "recommended"
@@ -4215,6 +4337,11 @@
       "kind": "unlocks"
     },
     {
+      "source": "/quests/1110/relic-raisers-07-write-for-the-archaeologist/",
+      "target": "/quests/0111/relic-raisers-06-the-strangler-fig/",
+      "kind": "recommended"
+    },
+    {
       "source": "/quests/1110/scaling-strategies/",
       "target": "/quests/1110/microservices-architecture/",
       "kind": "required"
@@ -4350,6 +4477,16 @@
       "kind": "unlocks"
     },
     {
+      "source": "/quests/1111/relic-raisers-03-the-elders/",
+      "target": "/quests/0110/relic-raisers-02-the-strata/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/1111/relic-raisers-03-the-elders/",
+      "target": "/quests/0101/relic-raisers-04-the-gauntlet-of-trials/",
+      "kind": "unlocks"
+    },
+    {
       "source": "/quests/1111/tech-speaking-writing/",
       "target": "/quests/1111/technical-leadership/",
       "kind": "required"
@@ -4462,6 +4599,51 @@
     {
       "source": "/quests/codex/ouroboros-loop/",
       "target": "/quests/1110/ouroboros-loop-07-weaving-the-whole/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/relic-raisers/",
+      "target": "/quests/0000/git-basics/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/codex/relic-raisers/",
+      "target": "/quests/0011/prompt-crystal-vscode-copilot/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/codex/relic-raisers/",
+      "target": "/quests/0011/relic-raisers-01-the-dig-site/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/relic-raisers/",
+      "target": "/quests/0110/relic-raisers-02-the-strata/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/relic-raisers/",
+      "target": "/quests/1111/relic-raisers-03-the-elders/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/relic-raisers/",
+      "target": "/quests/0101/relic-raisers-04-the-gauntlet-of-trials/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/relic-raisers/",
+      "target": "/quests/1100/relic-raisers-05-the-rosetta-ledger/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/relic-raisers/",
+      "target": "/quests/0111/relic-raisers-06-the-strangler-fig/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/relic-raisers/",
+      "target": "/quests/1110/relic-raisers-07-write-for-the-archaeologist/",
       "kind": "unlocks"
     },
     {
