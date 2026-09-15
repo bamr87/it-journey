@@ -24,8 +24,10 @@ and the validators always agree about what a quest is).
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -365,6 +367,28 @@ def _error(msg_id: Any, code: int, message: str) -> Dict:
     return {"jsonrpc": "2.0", "id": msg_id, "error": {"code": code, "message": message}}
 
 
+def _audit(name: str, args: Dict) -> None:
+    """Append one line per served call when QUEST_MCP_LOG names a file.
+
+    Off unless the variable is set. A harness that wants to *prove* an agent
+    consulted the quest — rather than assume it — reads this log; without it,
+    a server that silently serves nothing is indistinguishable from one the
+    agent never called.
+    """
+    path = os.environ.get("QUEST_MCP_LOG")
+    if not path:
+        return
+    try:
+        with open(path, "a", encoding="utf-8") as fh:
+            fh.write(json.dumps({
+                "ts": datetime.now(timezone.utc).isoformat(),
+                "tool": name,
+                "args": {k: str(v)[:120] for k, v in sorted(args.items())},
+            }) + "\n")
+    except OSError:
+        pass  # auditing must never break the server
+
+
 def handle(msg: Dict) -> Optional[Dict]:
     """Handle one JSON-RPC message. Returns None for notifications."""
     method = msg.get("method")
@@ -399,6 +423,19 @@ def handle(msg: Dict) -> Optional[Dict]:
                 "content": [{"type": "text", "text": f"unknown tool {name!r}; available: {sorted(BY_NAME)}"}],
                 "isError": True,
             })
+        # Say what is missing. A client that guesses a parameter name otherwise gets
+        # a confusing semantic error ("no campaign matches None") instead of being
+        # told which argument it failed to supply.
+        required = tool["inputSchema"].get("required") or []
+        absent = [r for r in required if args.get(r) in (None, "")]
+        if absent:
+            return _result(msg_id, {
+                "content": [{"type": "text", "text": json.dumps({
+                    "error": f"missing required argument(s): {', '.join(absent)}",
+                    "expected": sorted(tool["inputSchema"].get("properties", {})),
+                })}],
+                "isError": True,
+            })
         try:
             text = tool["handler"](args)
         except Exception as exc:  # a broken tool must not kill the server
@@ -406,6 +443,7 @@ def handle(msg: Dict) -> Optional[Dict]:
                 "content": [{"type": "text", "text": f"{type(exc).__name__}: {exc}"}],
                 "isError": True,
             })
+        _audit(name, args)
         return _result(msg_id, {"content": [{"type": "text", "text": text}]})
 
     if msg_id is None:
@@ -487,6 +525,36 @@ def _selftest() -> int:
     check("unknown quest returns a helpful error", "error" in missing)
     unknown = handle({"jsonrpc": "2.0", "id": 10, "method": "no/such/method"})
     check("unknown method returns JSON-RPC -32601", unknown["error"]["code"] == -32601)
+
+    # A client that guesses a parameter name must be told what it got wrong, not
+    # handed a semantic error about the resulting None.
+    guessed = handle({"jsonrpc": "2.0", "id": 11, "method": "tools/call",
+                      "params": {"name": "get_campaign", "arguments": {"slug": "x"}}})
+    guessed_text = guessed["result"]["content"][0]["text"]
+    check("a missing required argument names itself",
+          guessed["result"].get("isError") is True
+          and "missing required argument" in guessed_text
+          and "campaign" in guessed_text)
+
+    # The audit log is how a harness proves an agent consulted the quest rather
+    # than assuming it, so it has to actually write when asked to.
+    import tempfile
+    with tempfile.TemporaryDirectory() as tmp:
+        log = Path(tmp) / "audit.jsonl"
+        before = os.environ.get("QUEST_MCP_LOG")
+        os.environ["QUEST_MCP_LOG"] = str(log)
+        try:
+            _call("list_campaigns", {})
+            lines = log.read_text().splitlines() if log.exists() else []
+        finally:
+            if before is None:
+                os.environ.pop("QUEST_MCP_LOG", None)
+            else:
+                os.environ["QUEST_MCP_LOG"] = before
+    check("QUEST_MCP_LOG records one line per served call",
+          len(lines) == 1 and json.loads(lines[0])["tool"] == "list_campaigns")
+    check("auditing is off when QUEST_MCP_LOG is unset",
+          os.environ.get("QUEST_MCP_LOG") is None)
 
     print(f"\n{len(failures)} failure(s)")
     return 1 if failures else 0

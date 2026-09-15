@@ -24,7 +24,7 @@ Everything about the quest taxonomy and schema is defined exactly once, in [`que
 | `get_glossary` | The canonical fantasy-to-technical lexicon, whole or filtered by term. |
 
 ```bash
-make quest-mcp-check      # 17-check self-test (protocol, tools, resolution, errors)
+make quest-mcp-check      # self-test (protocol, tools, resolution, errors, auditing)
 make quest-mcp-tools      # print the tool catalogue
 
 # Wire it into an agent. The allow-list lives at the call site — omission is denial.
@@ -34,6 +34,18 @@ claude --mcp-config scripts/quest/mcp.json --strict-mcp-config \
 ```
 
 `mcp.json` uses a repo-relative command path so it stays portable; an agent whose working directory is elsewhere needs a config with the absolute path to `mcp_server.py`.
+
+### Proving an agent actually consulted the quest
+
+Set `QUEST_MCP_LOG` to a file path and the server appends one JSON line per served call — timestamp, tool name, and truncated arguments. It is off unless the variable is set, and a failure to write never breaks the server.
+
+```bash
+QUEST_MCP_LOG=/tmp/quest-calls.jsonl claude --mcp-config scripts/quest/mcp.json ...
+```
+
+This exists because of a specific failure. A server pointed at a checkout that lacks the campaign still starts, still answers, and answers `no campaign matches` — so an agent runs the chapter without the method, produces plausible work, and any gate that only inspects output passes it. Nothing is visibly wrong.
+
+A harness should therefore do two things: call `get_campaign` before the run and refuse to start if the campaign does not resolve, and fail any chapter whose audit log is empty. That turns "the agent had the method" from an assumption into a recorded fact.
 
 ## Single source of truth
 
