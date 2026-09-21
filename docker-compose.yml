@@ -15,10 +15,11 @@ services:
       - ./:/app
       - jekyll-cache:/app/.jekyll-cache
     ports:
-      - "4002:4002"
+      - "127.0.0.1:${IT_JOURNEY_PORT:-4002}:4002"
     working_dir: /app
     env_file:
-      - .env
+      - path: .env
+        required: false
     environment:
       JEKYLL_ENV: development
 
@@ -64,7 +65,7 @@ services:
   # CI-parity. Tier-2 (Claude) is opt-in and degrades gracefully when the CLI
   # is absent. Default command is a full audit; pass a subcommand to override.
   quest-audit:
-    image: python:3.12-slim
+    image: python:3.14-slim
     platform: linux/amd64
     working_dir: /app
     volumes:

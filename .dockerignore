@@ -1,0 +1,34 @@
+# Seeded by the fleet docker kit (bamr87/bamr87 docs/DOCKER.md).
+# Additive and conservative: only paths an image never needs. Add your own below.
+
+# VCS and CI
+.git
+.gitignore
+.github
+
+# Secrets — never let these reach a layer
+.env
+.env.*
+!.env.example
+
+# Dependency trees: installed inside the image, not copied in
+node_modules
+**/node_modules
+.venv
+venv
+vendor/bundle
+
+# Caches and local ephemera
+__pycache__
+**/__pycache__
+*.pyc
+.pytest_cache
+.mypy_cache
+.ruff_cache
+.jekyll-cache
+.sass-cache
+_site
+.DS_Store
+*.log
+coverage
+.nyc_output
