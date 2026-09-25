@@ -16,7 +16,7 @@
 # output, reviewed as files, not part of the published site.
 services:
   cms:
-    image: python:3.12-slim
+    image: python:3.14-slim
     platform: linux/amd64
     working_dir: /app
     volumes:
