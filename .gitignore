@@ -2,6 +2,7 @@
 # Jekyll / Ruby / Bundler
 ##############################
 _site/
+.digs/
 .jekyll-cache/
 .jekyll-metadata
 .sass-cache/

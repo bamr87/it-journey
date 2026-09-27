@@ -30,6 +30,9 @@
 - title: Blog
   url: https://lifehacker.dev
   icon: bi-newspaper
+- title: Digs
+  url: /digs/
+  icon: bi-compass
 - title: Notes
   url: /notes/
   icon: bi-journal-code

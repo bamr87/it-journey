@@ -45,6 +45,7 @@ Brief description of the instruction file's purpose and scope.
 | `quest.instructions.md` | `pages/_quests/**/*.md` | Quest creation: frontmatter schema, permalink rules, `make quest-audit` gate, level README conventions |
 | `docs.instructions.md` | ⚠️ **RETIRED** — nothing (`pages/_docs/` was removed) | Historical record of the reference-doc standards; kept only so existing cross-references resolve |
 | `notes.instructions.md` | `pages/_notes/**/*.md` | Notes/cheatsheet standards (slim curated set) |
+| `digs.instructions.md` | `pages/_digs/**/*.md` | Published Git archaeology: one repository, one post-2020 range, facts separate from inference |
 | `quickstart.instructions.md` | ⚠️ **RETIRED** — nothing (`pages/_quickstart/` was removed) | Historical record of the quick-start standards; kept only so existing cross-references resolve |
 | `about.instructions.md` | `pages/_about/**/*.md` | About-section page standards |
 | `brand.instructions.md` | quests + docs | Applying brand voice/tone/values to quest and doc content |

@@ -34,6 +34,9 @@ Welcome to the IT-Journey developer documentation. This directory contains compr
 ### Notes
 - **[Notes Workbench](notes/WORKBENCH.md)** - The interactive `/notes/` board: local notes, site-wide snippet clipping, and the public/private split
 
+### Git archaeology
+- **[Git archaeology](git-archaeology/README.md)** - Bounded retrospectives of this repository's own history. The first installment is the 2020-07-30 root through 2020-07-31.
+
 ### Testing
 - **[Testing Frameworks](testing/TESTING_FRAMEWORKS.md)** - Test infrastructure and validation tools
 
