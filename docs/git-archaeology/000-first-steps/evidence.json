@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "collection": "git-archaeology",
+  "installment": "000-first-steps",
+  "repository": "bamr87/it-journey",
+  "trust": "git-objects-are-evidence; this file is a derived index",
+  "selection": {
+    "start": "ab523954f523ddaf7402682c79630b36958fad79",
+    "end": "ff6981adbf3ef217818bac23c65110be3306c7ea",
+    "since": "2020-07-30",
+    "until": "2020-07-31T23:59:59-06:00",
+    "commits": 6,
+    "method": "git log --reverse from the 2020 root through the last commit on 2020-07-31"
+  },
+  "boundaries": {
+    "otherRoot": {
+      "sha": "6000738f5de332fa9a7989d0eaf3df20073806f9",
+      "committedAt": "2021-03-13T16:15:44-07:00",
+      "subject": "Create README.md",
+      "note": "A second parentless commit exists. It is later than the 2020 initial commit and is not part of this installment."
+    }
+  },
+  "commits": [
+    {
+      "id": "git-commit:ab523954f523ddaf7402682c79630b36958fad79",
+      "sha": "ab523954f523ddaf7402682c79630b36958fad79",
+      "committedAt": "2020-07-30T10:19:45-06:00",
+      "subject": "Initial commit",
+      "parents": [],
+      "author": "Bamrman",
+      "committer": "GitHub",
+      "url": "https://github.com/bamr87/it-journey/commit/ab523954f523ddaf7402682c79630b36958fad79",
+      "changes": [{ "status": "A", "path": "README.md" }],
+      "facts": [
+        "Parentless root commit.",
+        "README.md is the only file.",
+        "README text is exactly: '# it-journey' and 'From zero to hero collection of docs, tools, scripts, and information to support your IT journey'.",
+        "The committer is GitHub, which is the signature GitHub uses for commits created through its web interface."
+      ]
+    },
+    {
+      "id": "git-commit:4fda32c0153182b7ec6f30873a21c5c4812c709a",
+      "sha": "4fda32c0153182b7ec6f30873a21c5c4812c709a",
+      "committedAt": "2020-07-30T10:23:37-06:00",
+      "subject": "Create blank.yml",
+      "parents": ["ab523954f523ddaf7402682c79630b36958fad79"],
+      "author": "Bamrman",
+      "committer": "GitHub",
+      "url": "https://github.com/bamr87/it-journey/commit/4fda32c0153182b7ec6f30873a21c5c4812c709a",
+      "changes": [{ "status": "A", "path": ".github/workflows/blank.yml" }],
+      "facts": [
+        "Committed 3 minutes and 52 seconds after the root.",
+        "The subject says blank.yml. The path is .github/workflows/blank.yml.",
+        "The workflow is named CI, triggers on push and pull_request to master, checks out with actions/checkout@v2, and runs echo commands.",
+        "The committer is GitHub."
+      ]
+    },
+    {
+      "id": "git-commit:41fb5848e494d45fa05695240994c652bbbdacdc",
+      "sha": "41fb5848e494d45fa05695240994c652bbbdacdc",
+      "committedAt": "2020-07-31T14:14:27-06:00",
+      "subject": "adding new mac install files",
+      "parents": ["4fda32c0153182b7ec6f30873a21c5c4812c709a"],
+      "author": "amr abdel-motaleb",
+      "committer": "amr abdel-motaleb",
+      "url": "https://github.com/bamr87/it-journey/commit/41fb5848e494d45fa05695240994c652bbbdacdc",
+      "changes": [
+        { "status": "A", "path": "hb-install.sh" },
+        { "status": "A", "path": "hb-packages.sh" }
+      ],
+      "facts": [
+        "First commit in this range whose committer is not GitHub.",
+        "hb-install.sh is a Bash script that invokes the Homebrew install script from raw.githubusercontent.com.",
+        "hb-packages.sh invokes brew cask install for atom, google-chrome, and firefox."
+      ]
+    },
+    {
+      "id": "git-commit:db60402958d72ce39d24da3d8b2c15f92f75f2f5",
+      "sha": "db60402958d72ce39d24da3d8b2c15f92f75f2f5",
+      "committedAt": "2020-07-31T14:19:25-06:00",
+      "subject": "moved files",
+      "parents": ["41fb5848e494d45fa05695240994c652bbbdacdc"],
+      "author": "amr abdel-motaleb",
+      "committer": "amr abdel-motaleb",
+      "url": "https://github.com/bamr87/it-journey/commit/db60402958d72ce39d24da3d8b2c15f92f75f2f5",
+      "changes": [
+        { "status": "A", "path": "init_apps/hb-install.sh" },
+        { "status": "A", "path": "init_apps/hb-packages.sh" }
+      ],
+      "facts": [
+        "The subject says moved. The recorded changes are two additions.",
+        "The root copies hb-install.sh and hb-packages.sh are still present after this commit.",
+        "Git records additions, not renames."
+      ]
+    },
+    {
+      "id": "git-commit:e1f8546d6ac60da93fcc8e6c068f869ce09ea20e",
+      "sha": "e1f8546d6ac60da93fcc8e6c068f869ce09ea20e",
+      "committedAt": "2020-07-31T14:24:10-06:00",
+      "subject": "removed files",
+      "parents": ["db60402958d72ce39d24da3d8b2c15f92f75f2f5"],
+      "author": "amr abdel-motaleb",
+      "committer": "amr abdel-motaleb",
+      "url": "https://github.com/bamr87/it-journey/commit/e1f8546d6ac60da93fcc8e6c068f869ce09ea20e",
+      "changes": [
+        { "status": "D", "path": "hb-install.sh" },
+        { "status": "D", "path": "hb-packages.sh" }
+      ],
+      "facts": [
+        "Deletes the root copies five minutes after the init_apps copies were added.",
+        "Together with the previous commit, the scripts change directory. Git does not record that pair as a rename."
+      ]
+    },
+    {
+      "id": "git-commit:ff6981adbf3ef217818bac23c65110be3306c7ea",
+      "sha": "ff6981adbf3ef217818bac23c65110be3306c7ea",
+      "committedAt": "2020-07-31T17:32:35-06:00",
+      "subject": "updating",
+      "parents": ["e1f8546d6ac60da93fcc8e6c068f869ce09ea20e"],
+      "author": "amr abdel-motaleb",
+      "committer": "amr abdel-motaleb",
+      "url": "https://github.com/bamr87/it-journey/commit/ff6981adbf3ef217818bac23c65110be3306c7ea",
+      "changes": [
+        { "status": "A", "path": "init_apps/apm-apps.sh" },
+        { "status": "A", "path": "init_apps/hb-apps.md" },
+        { "status": "M", "path": "init_apps/hb-install.sh" },
+        { "status": "M", "path": "init_apps/hb-packages.sh" },
+        { "status": "A", "path": "zer0_dev.md" }
+      ],
+      "facts": [
+        "Adds zer0_dev.md. Its heading is '# zer0'. The README still says 'zero to hero'.",
+        "zer0_dev.md names Windows, macOS, Homebrew, Atom, Git, LaTeX, Pandoc, iTerm, Zsh, and a section titled Full Stack Attack.",
+        "The file contains a local Windows path and a gist identifier. Those values are not copied into this index; the commit is the evidence.",
+        "Tree at this commit: .github/workflows/blank.yml, README.md, init_apps/apm-apps.sh, init_apps/hb-apps.md, init_apps/hb-install.sh, init_apps/hb-packages.sh, zer0_dev.md."
+      ]
+    }
+  ],
+  "notCollected": [
+    "Pull requests, issues, reviews, and CI results.",
+    "Commits after 2020-07-31, including the August 2020 JavaScript sample reported separately.",
+    "Whether the echoed workflow ever ran.",
+    "Author email addresses."
+  ]
+}

@@ -92,3 +92,21 @@ profiles:
       - Copy-paste-ready commands with the expected result.
     avoid:
       - Narrative throat-clearing; hype adjectives; walls of prose.
+
+  git-dig:
+    summary: >-
+      The voice of published Git archaeology. Dry, satirical, sarcastic,
+      inquisitive, and philosophical. The joke may frame a fact. It may not
+      replace one.
+    person: third person
+    tense: past for what the commits record; present for the question the record leaves open
+    formality: medium (≈60)
+    emoji: none
+    sentence_length: short-to-medium; one idea per sentence
+    hallmarks:
+      - Ask what the history is doing, then answer only from the sample.
+      - Let sarcasm land on rituals, subjects, and hype, never on people.
+      - Keep a philosophical question in the lead or the limits, not in the ledger.
+    avoid:
+      - Fantasy ranks; emoji; invented motives, runs, or measurements.
+      - Satire that changes a date, a path, a subject, or a diff.

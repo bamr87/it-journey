@@ -37,7 +37,7 @@ Do not use `make test` — it still looks for removed `pages/_posts/`.
 
 ## Content map
 
-Live collections under `pages/`: `_quests`, `_quest-reports` (generated — do not hand-author), `_notes`, `_about`.
+Live collections under `pages/`: `_quests`, `_quest-reports` (generated — do not hand-author), `_digs`, `_notes`, `_about`.
 
 Do **not** create `pages/_posts/`, `_drafts/`, `_docs/`, `_quickstart/`, `_notebooks/`, or `_hobbies`. Blog content lives at lifehacker.dev; OverTheWire wargames at github.com/bamr87/wargames.
 

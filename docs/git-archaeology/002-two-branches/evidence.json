@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "collection": "git-archaeology",
+  "installment": "002-two-branches",
+  "repository": "bamr87/it-journey",
+  "selection": {
+    "start": "b6d3cf5958e6c639f13b60f47f62af715f3e788d",
+    "end": "4304ba962ea09e180c0249eed686587cd547d2a3",
+    "since": "2020-08-23",
+    "until": "2020-08-25",
+    "commits": 5,
+    "note": "Not a straight parent chain. Hello win shares a parent with js and stuff and was published in the previous dig."
+  },
+  "commits": [
+    "b6d3cf5958e6c639f13b60f47f62af715f3e788d",
+    "e5f9d75ed0130be054310daba72a03390fa00b78",
+    "1cae4d51b37a7a875855dd6acdd6ca5503562e5e",
+    "244e56725cef6fa4dec242367e882244a700e45d",
+    "4304ba962ea09e180c0249eed686587cd547d2a3"
+  ],
+  "mergeTipContainsAssignment": true,
+  "mergeTipContainsComparison": false
+}

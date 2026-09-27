@@ -30,8 +30,18 @@ sections:
     accent: secondary
     guide: docs.md
     collection: docs
+  dig:
+    title: Digs
+    permalink: /digs/
+    voice_profile: git-dig
+    personas: [practitioner, contributor]
+    icon: compass
+    accent: secondary
+    guide: dig.md
+    collection: digs
 
 # Default section per collection.
 collection_defaults:
   quests: quest
   docs: docs
+  digs: dig
