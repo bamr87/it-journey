@@ -28,6 +28,7 @@ what it got right *and wrong*. Never imply blind trust; always show the human in
 Second person + imperative for steps, past tense for "what happened". Light emoji. This is the everyday IT-Journey voice.
 - **`concept-essay`** — trends, ideas, business, culture, technology think-pieces.
 More analytical and reflective; a clear argument backed by evidence; minimal emoji. Still lands on "so what does the reader do with this".
+- **`git-dig`** — published Git archaeology. Third person, no emoji. Dry, satirical, sarcastic, inquisitive, and philosophical. The joke frames the record; the ledger does not joke its way into a new fact.
 - **`muse-opinion`** — short-form opinion/news *muses* on the magazine landing.
 First person, punchy, opinion stated early. Structure: **hook → take → one piece of evidence / one link out → zer0-to-her0 tie-back.** Moderate emoji, tight word budget.
 

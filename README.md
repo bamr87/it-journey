@@ -117,6 +117,7 @@ This provides a beautiful TUI (Text User Interface) to browse quests, docs, and 
 | **Learning Quests** | `pages/_quests/` | Hands-on, gamified skill-building | Markdown + supporting assets | ⭐⭐⭐⭐⭐ |
 | **Quickstart Guides** | `pages/_quickstart/` | Fast-track setup and onboarding | Markdown | ⭐⭐⭐ |
 | **Curated Notes** | `pages/_notes/` | Cheatsheets and quick reference | Markdown | ⭐⭐ |
+| **Digs** | `pages/_digs/` | Published Git archaeology, one repository and one post-2020 range at a time | Markdown | ⭐⭐ |
 | **Learner Docs** | `pages/_docs/` | Tool and terminal references | Markdown | ⭐⭐ |
 | **Automation Scripts** | `scripts/` | Production-style tooling | Bash, Python, Ruby | ⭐⭐⭐⭐⭐ |
 | **Developer Docs** | `docs/` | Contributor reference | Markdown | ⭐⭐ |

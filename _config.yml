@@ -316,6 +316,9 @@ collections:
   quest-reports:
     output: true
     permalink: /quest-reports/:name/
+  digs:
+    output: true
+    permalink: /digs/:name/
 
 permalink: pretty
 
@@ -395,6 +398,25 @@ defaults:
     values:
       layout: *pages
       collection: quest-reports
+      author_profile: false
+      read_time: true
+      comments: false
+      share: true
+      related: true
+      toc_sticky: true
+      render_with_liquid: false
+      sidebar:
+        nav: main
+
+  # pages/_digs — published Git archaeology. Liquid stays off on installments
+  # so a quoted commit message cannot break the build. The index turns it on.
+  -
+    scope:
+      path: pages/_digs
+      type: digs
+    values:
+      layout: *pages
+      collection: digs
       author_profile: false
       read_time: true
       comments: false

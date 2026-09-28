@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "collection": "git-archaeology",
+  "installment": "001-the-outline-moves",
+  "repository": "bamr87/it-journey",
+  "selection": {
+    "start": "00dd4b5b4104cfa4f9354e3926672e8e342f41a5",
+    "end": "7220aefde9b07375a7b64273b4b79f8a2112633b",
+    "since": "2020-08-01",
+    "until": "2020-08-17",
+    "commits": 6
+  },
+  "commits": [
+    "00dd4b5b4104cfa4f9354e3926672e8e342f41a5",
+    "ae59de3c5efeaccca16f8d9dc6f06e60a47aa4d8",
+    "a947e6b98f9f0cbb22f18544d1f305b3b78f51f9",
+    "9cc38248d83975bcdd01ab3fa749b07ec66fb52c",
+    "0ef2f16839b8ff1421ba3980363da97d9859e09f",
+    "7220aefde9b07375a7b64273b4b79f8a2112633b"
+  ],
+  "notCopied": ["local paths", "install command bodies", "author email addresses"]
+}
