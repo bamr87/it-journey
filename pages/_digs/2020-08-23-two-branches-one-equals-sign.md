@@ -1,16 +1,16 @@
 ---
-title: "Two branches, one equals sign"
-description: "Five late-August commits fork the history, add a JavaScript assignment, correct it on one side, and merge both stories."
-date: 2026-09-26T22:42:19.000Z
-lastmod: 2026-09-26T22:49:00.000Z
+title: Two branches, one equals sign
+description: Five late-August commits fork the history, add a JavaScript assignment, correct it on one side, and merge both stories.
+date: '2026-09-26T22:42:19.000Z'
+lastmod: '2026-09-26T22:49:00.000Z'
 author: bamr87
 categories:
-  - digs
+- digs
 tags:
-  - git
-  - history
-  - javascript
-excerpt: "The history splits, a condition assigns instead of compares, and the merge has to keep both versions of the mistake."
+- git
+- history
+- javascript
+excerpt: The history splits, a condition assigns instead of compares, and the merge has to keep both versions of the mistake.
 permalink: /digs/2020-08-23-two-branches-one-equals-sign/
 repository: bamr87/it-journey
 range_start: 2020-08-23
@@ -21,7 +21,6 @@ commit_count: 5
 voice_profile: git-dig
 draft: false
 ---
-
 For a moment the repository has two memories of the same afternoon. One of them says hello to Windows. The other adds a JavaScript file whose condition does not ask whether a value is `"blah"`. It makes the value `"blah"`. Philosophy has spent centuries on the difference between naming a thing and changing it. This history spends two days, and then merges the argument.
 
 ## Scope

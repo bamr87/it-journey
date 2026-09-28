@@ -1,24 +1,23 @@
 ---
-title: "The repository's first six commits"
-description: "What the 2020-07-30 root and the next day's install notes actually contain, with the commit subjects kept separate from the diffs."
-date: 2026-09-26T21:01:42.000Z
-lastmod: 2026-09-26T21:01:42.000Z
+title: The repository's first six commits
+description: What the 2020-07-30 root and the next day's install notes actually contain, with the commit subjects kept separate from the diffs.
+date: '2026-09-26T21:01:42.000Z'
+lastmod: '2026-09-26T21:01:42.000Z'
 author: bamr87
 categories:
-  - notes
+- notes
 tags:
-  - git
-  - history
-  - archaeology
+- git
+- history
+- archaeology
 keywords:
-  - git history
-  - initial commit
-  - it-journey
-excerpt: "A first dig through the repository's own beginning: one sentence, a workflow that only echoes, and a move that took two commits."
+- git history
+- initial commit
+- it-journey
+excerpt: 'A first dig through the repository''s own beginning: one sentence, a workflow that only echoes, and a move that took two commits.'
 permalink: /notes/git-archaeology/first-steps/
 draft: true
 ---
-
 The repository does not begin as a platform. It begins as two lines in `README.md`, committed on 2020-07-30 at 10:19:45 -0600, with no parent. The file says `# it-journey` and then `From zero to hero collection of docs, tools, scripts, and information to support your IT journey`. The committer is GitHub, not a local Git identity. That is the whole root. [git-commit:ab523954f523ddaf7402682c79630b36958fad79](https://github.com/bamr87/it-journey/commit/ab523954f523ddaf7402682c79630b36958fad79)
 
 Four minutes later the history adds a file the subject line calls `blank.yml`. The path is `.github/workflows/blank.yml`. The workflow is named CI, watches `master`, checks out the tree, and echoes hello. It does not build, test, or deploy anything. A workflow file is not a workflow run; this sample has no evidence that the job ever executed. [git-commit:4fda32c0153182b7ec6f30873a21c5c4812c709a](https://github.com/bamr87/it-journey/commit/4fda32c0153182b7ec6f30873a21c5c4812c709a)

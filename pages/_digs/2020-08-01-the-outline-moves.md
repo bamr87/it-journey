@@ -1,20 +1,20 @@
 ---
-title: "The outline moves, the paths do not"
-description: "Six early-August commits rename the setup files into hello folders, while the outline still names paths those commits had just left."
-date: 2026-09-26T22:42:19.000Z
-lastmod: 2026-09-26T22:49:00.000Z
+title: The outline moves, the paths do not
+description: Six early-August commits rename the setup files into hello folders, while the outline still names paths those commits had just left.
+date: '2026-09-26T22:42:19.000Z'
+lastmod: '2026-09-26T22:49:00.000Z'
 author: bamr87
 categories:
-  - digs
+- digs
 tags:
-  - git
-  - history
-  - archaeology
+- git
+- history
+- archaeology
 keywords:
-  - git history
-  - file moves
-  - it-journey
-excerpt: "The repository spends two weeks rearranging its first tools, and the map does not keep up with the move."
+- git history
+- file moves
+- it-journey
+excerpt: The repository spends two weeks rearranging its first tools, and the map does not keep up with the move.
 permalink: /digs/2020-08-01-the-outline-moves/
 repository: bamr87/it-journey
 range_start: 2020-08-01
@@ -25,7 +25,6 @@ commit_count: 6
 voice_profile: git-dig
 draft: false
 ---
-
 A repository that has promised a journey now spends sixteen days moving the luggage. The subjects get vaguer as the tree gets more organized. `Update`. `test`. `commit`. `Clean up`. If the history were a diary, these would be the days it forgot to say what happened, and then carefully recorded the furniture.
 
 ## Scope

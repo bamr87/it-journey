@@ -1,20 +1,20 @@
 ---
-title: "The repository's first six commits"
-description: "What the 2020-07-30 root and the next day's install notes actually contain, with the commit subjects kept separate from the diffs."
-date: 2026-09-26T21:21:40.000Z
-lastmod: 2026-09-26T22:49:00.000Z
+title: The repository's first six commits
+description: What the 2020-07-30 root and the next day's install notes actually contain, with the commit subjects kept separate from the diffs.
+date: '2026-09-26T21:21:40.000Z'
+lastmod: '2026-09-26T22:49:00.000Z'
 author: bamr87
 categories:
-  - digs
+- digs
 tags:
-  - git
-  - history
-  - archaeology
+- git
+- history
+- archaeology
 keywords:
-  - git history
-  - initial commit
-  - it-journey
-excerpt: "A first dig through the repository's own beginning: one sentence, a workflow that only echoes, and a move that took two commits."
+- git history
+- initial commit
+- it-journey
+excerpt: 'A first dig through the repository''s own beginning: one sentence, a workflow that only echoes, and a move that took two commits.'
 permalink: /digs/2020-07-30-first-steps/
 repository: bamr87/it-journey
 range_start: 2020-07-30
@@ -25,7 +25,6 @@ commit_count: 6
 voice_profile: git-dig
 draft: false
 ---
-
 A journey from zero to hero announces itself, and the first tool it adds is a workflow that says hello. That is a grand sentence with a very small echo. The interesting question is not whether the echo was ambitious. It is what a beginning is allowed to be before it has done anything.
 
 ## Scope
