@@ -31,10 +31,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
 
-# Performance: skip preview-image scan and FrontMatter preview mirror during dev
-preview_images:
-  enabled: false
-
+# Performance: skip the FrontMatter preview mirror (_plugins/preview_generator.rb) during dev
 preview_generator:
   enabled: false
 

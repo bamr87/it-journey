@@ -1,0 +1,126 @@
+{
+  "$schema": "https://raw.githubusercontent.com/bamr87/zer0-CMS/main/schemas/zer0.schema.json",
+  // it-journey — the zer0-CMS console config (JSONC). The repo is a consumer of the
+  // zer0 stack: theme bamr87/zer0-mistakes (remote_theme, floating), the
+  // zer0-image-generator gem (preview_images: in _config.yml), and zer0-CMS (this file).
+  // Check alignment with `zer0-cms doctor .` (see CLAUDE.md "The zer0 stack").
+  //
+  // Folders = the collections Jekyll actually reads from collections_dir `pages`
+  // (quests, notes, about, quest-reports) plus the loose pages/ files. `pages/_pages`,
+  // `_docs` and `_quickstart` are declared elsewhere (_config.yml, .cms/config.yml,
+  // frontmatter.json) but are absent on disk, so they are not registered.
+  // README.md hubs are excluded, matching .cms/config.yml structural_globs and
+  // scripts/validation/frontmatter-validator.py SKIP_FILES.
+  //
+  // `required: true` mirrors the .cms/config.yml contract: required_base
+  // (title description date author categories tags) on every hand-authored type, plus
+  // the quests required_extra (level difficulty estimated_time permalink). quest-report
+  // pages are machine-generated (scripts/quest/build_reports_site.py), outside .cms, and
+  // the validator classifies them `other` (title only). Choice vocabularies come from
+  // scripts/quest/quest_registry.py (DIFFICULTIES, QUEST_TYPES, SKILL_FOCUS, LEARNING_STYLE).
+  "platform": { "id": "jekyll", "overlay": "zer0-mistakes" },
+  "contentFolders": [
+    { "title": "Quests", "path": "[[workspace]]/pages/_quests", "contentTypes": ["quest"], "excludePaths": ["**/README.md"], "filePrefix": null },
+    { "title": "Notes", "path": "[[workspace]]/pages/_notes", "contentTypes": ["note"], "filePrefix": null },
+    { "title": "About", "path": "[[workspace]]/pages/_about", "contentTypes": ["default"], "excludePaths": ["**/README.md"], "filePrefix": null },
+    { "title": "Quest reports", "path": "[[workspace]]/pages/_quest-reports", "contentTypes": ["quest-report"], "disableCreation": true, "filePrefix": null },
+    { "title": "Pages", "path": "[[workspace]]/pages", "contentTypes": ["default"], "excludeSubdir": true, "disableCreation": true, "filePrefix": null }
+  ],
+  "contentTypes": [
+    {
+      "name": "quest",
+      "fields": [
+        { "name": "title", "type": "string", "single": true, "required": true, "description": "<= 60 chars (.cms/config.yml constraints)." },
+        { "name": "description", "type": "string", "required": true, "description": "50-160 chars; 120-155 optimal (.cms/config.yml constraints)." },
+        { "name": "date", "type": "datetime", "isPublishDate": true, "required": true, "default": "{{now}}" },
+        { "name": "lastmod", "type": "datetime", "isModifiedDate": true },
+        { "name": "author", "type": "string", "single": true, "required": true },
+        { "name": "level", "type": "choice", "required": true, "default": "0001", "choices": ["0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111"] },
+        { "name": "difficulty", "type": "choice", "required": true, "default": "🟢 Easy", "choices": ["🟢 Easy", "🟡 Medium", "🔴 Hard", "⚔️ Epic"] },
+        { "name": "estimated_time", "type": "string", "single": true, "required": true },
+        { "name": "permalink", "type": "string", "single": true, "required": true, "description": "Canonical /quests/XXXX/[side-quests/]slug/ (AGENTS.md)." },
+        { "name": "categories", "type": "categories", "required": true },
+        { "name": "tags", "type": "tags", "required": true, "taxonomyLimit": 10 },
+        { "name": "keywords", "type": "list" },
+        { "name": "primary_technology", "type": "string", "single": true },
+        { "name": "quest_type", "type": "choice", "default": "main_quest", "choices": ["main_quest", "side_quest", "epic_quest", "bonus_quest"] },
+        { "name": "skill_focus", "type": "choice", "choices": ["frontend", "backend", "fullstack", "devops", "security", "data-engineering", "cloud", "infrastructure", "ai-ml"] },
+        { "name": "learning_style", "type": "choice", "choices": ["hands-on", "conceptual", "project-based", "problem-solving", "guided-tutorial", "exploratory"] },
+        { "name": "quest_series", "type": "string", "single": true },
+        { "name": "sub_title", "type": "string", "single": true },
+        { "name": "excerpt", "type": "string" },
+        { "name": "preview", "type": "image", "isPreviewImage": true },
+        { "name": "layout", "type": "choice", "default": "quest", "choices": ["quest", "quest-hub", "quest-collection", "default"] },
+        { "name": "fmContentType", "type": "string", "single": true, "default": "quest", "hidden": true },
+        { "name": "draft", "type": "draft" },
+        { "name": "comments", "type": "boolean", "default": true },
+        { "name": "validation_criteria", "type": "list" }
+      ]
+    },
+    {
+      "name": "note",
+      "fields": [
+        { "name": "title", "type": "string", "single": true, "required": true },
+        { "name": "description", "type": "string", "required": true },
+        { "name": "date", "type": "datetime", "isPublishDate": true, "required": true, "default": "{{now}}" },
+        { "name": "lastmod", "type": "datetime", "isModifiedDate": true },
+        { "name": "author", "type": "string", "single": true, "required": true },
+        { "name": "categories", "type": "categories", "required": true },
+        { "name": "tags", "type": "tags", "required": true },
+        { "name": "keywords", "type": "list" },
+        { "name": "permalink", "type": "string", "single": true },
+        { "name": "excerpt", "type": "string" },
+        { "name": "preview", "type": "image", "isPreviewImage": true },
+        { "name": "layout", "type": "choice", "choices": ["default", "notes-workbench", "note", "root"] },
+        { "name": "draft", "type": "draft" }
+      ]
+    },
+    {
+      "name": "quest-report",
+      "fields": [
+        { "name": "title", "type": "string", "single": true, "required": true },
+        { "name": "description", "type": "string" },
+        { "name": "date", "type": "datetime", "isPublishDate": true },
+        { "name": "author", "type": "string", "single": true },
+        { "name": "categories", "type": "categories" },
+        { "name": "tags", "type": "tags" },
+        { "name": "verdict", "type": "choice", "choices": ["pass", "warn", "fail"] },
+        { "name": "character", "type": "string", "single": true },
+        { "name": "level", "type": "string", "single": true }
+      ]
+    },
+    {
+      "name": "default",
+      "fields": [
+        { "name": "title", "type": "string", "single": true, "required": true },
+        { "name": "description", "type": "string", "required": true },
+        { "name": "date", "type": "datetime", "isPublishDate": true, "required": true, "default": "{{now}}" },
+        { "name": "lastmod", "type": "datetime", "isModifiedDate": true },
+        { "name": "author", "type": "string", "single": true, "required": true },
+        { "name": "layout", "type": "choice", "choices": ["root", "default", "index", "home-os", "collection", "landing", "section"] },
+        { "name": "permalink", "type": "string", "single": true },
+        { "name": "categories", "type": "categories", "required": true },
+        { "name": "tags", "type": "tags", "required": true },
+        { "name": "keywords", "type": "list" },
+        { "name": "excerpt", "type": "string" },
+        { "name": "preview", "type": "image", "isPreviewImage": true },
+        { "name": "draft", "type": "draft" }
+      ]
+    }
+  ],
+  "taxonomy": { "categories": [], "tags": [] },
+  // frontmatter.json declared a choice draft (draft|in progress|published); the corpus
+  // is boolean (quests: 227 `draft: false`, 4 `true`), so boolean is the truth.
+  "draftField": { "name": "draft", "type": "boolean" },
+  // Most quests write flush block sequences (`tags:` then `- a` at column 0).
+  "frontMatter": { "format": "yaml", "indentArrays": false, "quoteStringValues": false, "commaSeparatedFields": [] },
+  "content": { "defaultFileType": "md", "publicFolder": "assets", "filePrefix": "", "autoUpdateModifiedDate": true },
+  "seo": { "enabled": true, "titleLength": 60, "descriptionLength": 160, "slugLength": 75, "contentLength": 1760 },
+  "slug": { "template": "{{title}}", "stopWords": "minimal" },
+  // Dates are quoted ISO-8601 with milliseconds: date: '2021-11-30T14:41:59.000Z'
+  "date": { "format": "yyyy-MM-dd'T'HH:mm:ss.SSSXXX", "timezone": "UTC" },
+  "governance": { "enabled": true, "target": "jekyll", "publishAllow": false },
+  "cms": { "root": ".cms", "python": "python3", "engineScript": "scripts/cms/cms.py", "normalizerScript": "scripts/content/normalize-frontmatter.py", "contentDirs": ["pages/"], "aiConfigPath": "_data/ai.yml", "verifyCommand": "make content-validate" },
+  "fleet": { "enabled": true, "manifestPath": "fleet.manifest.yml", "hub": "bamr87/bamr87" },
+  "validation": { "enabled": true }
+}
