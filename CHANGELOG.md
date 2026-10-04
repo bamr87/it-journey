@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Level 0000 README** — Updated Bashcrawl cross-reference link from stale `/quests/0000/bashcrawl/` to canonical `/quests/0000/bashcrawl/`
 
 ### Fixed
+- **Homepage stats and preview images** — the stats row rendered `0` until a scroll-triggered count-up ran, so no-JS visitors, screenshots, and anyone who had not scrolled it into view saw four zeros. Real values are now rendered server-side (quests = non-draft `fmContentType: quest` floored to tens, levels/tiers from `_data/quests/`), and the count-up is skipped for reduced motion. The tier cards and gallery referenced 8 `.png` previews that only exist as `.webp` (12 broken images per load); they now point at the `.webp` files
 - **173 quest files** with non-canonical permalink formats (`/quests/level-XXXX-slug/`, `/quests/side-quest-slug/`) migrated to `^/quests/[01]{4}/[side-quests/]slug/$` format
 
 ### Added
