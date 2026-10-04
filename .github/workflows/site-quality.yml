@@ -99,14 +99,15 @@ jobs:
 
       - name: 🌐 Serve _site on 127.0.0.1:4000
         run: |
-          nohup node "$QA_DIR/serve-site.mjs" _site 4000 > serve-site.log 2>&1 &
+          mkdir -p "$QA_DIR/reports"
+          nohup node "$QA_DIR/serve-site.mjs" _site 4000 > "$QA_DIR/reports/serve-site.log" 2>&1 &
           pid=$!
           for _ in $(seq 1 30); do
             kill -0 "$pid" 2>/dev/null || break
             curl -fsS -o /dev/null "$SITE_URL/" && { echo "server up (pid $pid)"; exit 0; }
             sleep 1
           done
-          cat serve-site.log; echo "::error::static server did not start"; exit 1
+          cat "$QA_DIR/reports/serve-site.log"; echo "::error::static server did not start"; exit 1
 
       - name: 🚦 Lighthouse CI — collect (3 pages × 3 mobile runs)
         id: lh_collect
@@ -148,9 +149,9 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: site-quality-reports
-          path: |
-            ${{ env.QA_DIR }}/reports/
-            serve-site.log
+          # One root (reports/) so the artifact unpacks flat — a `.github/…` prefix
+          # makes `gh run download` refuse it as path traversal.
+          path: ${{ env.QA_DIR }}/reports/
           retention-days: 14
 
       - name: ✅ Gate
