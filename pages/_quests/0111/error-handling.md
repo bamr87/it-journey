@@ -3,7 +3,7 @@ title: 'Error Handling: Status Codes, Problem Details, and Retries'
 author: IT-Journey Team
 description: Master API error handling including status code selection, the problem+json format, validation errors, idempotency keys, and safe retry strategies with backoff.
 excerpt: Learn to design clear API errors with status codes, problem+json, idempotency, and retries
-preview: images/previews/error-handling-status-codes-problem-details.png
+preview: /images/previews/error-handling-status-codes-problem-details.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '0111'

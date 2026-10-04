@@ -2,7 +2,7 @@
 title: 'The MCP Conclave: Mastering Model Context Protocol Servers'
 description: 'Configure and operate Model Context Protocol servers so GitHub Copilot agents can reach external tools and APIs securely, with observability built in.'
 date: '2026-05-17T00:00:00.000Z'
-preview: images/previews/agentic-mcp-server-mastery.png
+preview: /images/previews/agentic-mcp-server-mastery.png
 level: '1000'
 difficulty: 🔴 Hard
 estimated_time: 1-2 hours

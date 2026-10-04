@@ -3,7 +3,7 @@ title: 'Microservices Architecture: Decomposing the Monolith'
 author: IT-Journey Team
 description: 'Decide when to split a monolith, decompose by bounded context, and navigate inter-service communication, data ownership, and distributed failure modes.'
 excerpt: Decide when to split a monolith, decompose by bounded context, and manage the trade-offs of distributed systems
-preview: images/previews/microservices-architecture-decomposing-monolith.png
+preview: /images/previews/microservices-architecture-decomposing-monolith.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1110'

@@ -2,7 +2,7 @@
 title: 'The Oracle''s Rubric: Agent Success Signals'
 description: 'Define machine-verifiable acceptance criteria for agent tasks, map them to GitHub signals like Actions checks and PR states, then automate completion detection.'
 date: '2026-05-17T00:00:00.000Z'
-preview: images/previews/agentic-success-criteria-and-signals.png
+preview: /images/previews/agentic-success-criteria-and-signals.png
 level: '1010'
 difficulty: 🟡 Medium
 estimated_time: 60-90 minutes

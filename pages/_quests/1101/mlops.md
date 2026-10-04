@@ -3,7 +3,7 @@ title: 'MLOps Engineering: CI/CD Pipelines for ML in Production'
 author: IT-Journey Team
 description: 'Take ML models from notebook to production with MLflow tracking, a model registry, FastAPI serving, drift monitoring, and CI/CD retraining pipelines.'
 excerpt: Take ML models to production with experiment tracking, serving, drift monitoring, and CI/CD
-preview: images/previews/mlops-descriptive-subtitle.png
+preview: /images/previews/mlops-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1101'

@@ -3,7 +3,7 @@ title: 'Technical Leadership: Leading Without a Crown'
 author: IT-Journey Team
 description: 'Lead engineers without a title: set a technical vision, frame and close decisions under uncertainty, and delegate work with clear ownership.'
 excerpt: Lead engineers without authority by setting vision, deciding well, and delegating
-preview: images/previews/technical-leadership-leading-without-authority.png
+preview: /images/previews/technical-leadership-leading-without-authority.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1111'

@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Level 0000 README** — Updated Bashcrawl cross-reference link from stale `/quests/0000/bashcrawl/` to canonical `/quests/0000/bashcrawl/`
 
 ### Fixed
+- **Quest preview paths** — 164 quests used `preview: images/previews/…` without a leading slash, which the theme joined onto `/assets` as `/assetsimages/previews/…` (404 for the hero background and `og:image`). They now start with `/images/`, like the rest of the site, and so does the SEO frontmatter template
 - **173 quest files** with non-canonical permalink formats (`/quests/level-XXXX-slug/`, `/quests/side-quest-slug/`) migrated to `^/quests/[01]{4}/[side-quests/]slug/$` format
 
 ### Added

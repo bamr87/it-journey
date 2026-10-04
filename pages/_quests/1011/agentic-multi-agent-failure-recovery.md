@@ -2,7 +2,7 @@
 title: 'When Familiars Fall: Multi-Agent Failure Recovery'
 description: 'Build resilient multi-agent systems on GitHub: classify and detect sub-agent failures, retry with backoff, re-delegate, and preserve partial progress.'
 date: '2026-05-17T00:00:00.000Z'
-preview: images/previews/agentic-multi-agent-failure-recovery.png
+preview: /images/previews/agentic-multi-agent-failure-recovery.png
 level: '1011'
 difficulty: 🔴 Hard
 estimated_time: 1-2 hours

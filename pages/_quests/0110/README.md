@@ -1,7 +1,7 @@
 ---
 title: Level 0110 (6) - Database Mastery
 description: 'Master data storage and retrieval through SQL sorcery and NoSQL adventures—design schemas, optimize queries, secure databases, and tame backups.'
-preview: images/previews/level-0110-database-mastery.png
+preview: /images/previews/level-0110-database-mastery.png
 permalink: /quests/0110/
 layout: quest-collection
 local_graph: false

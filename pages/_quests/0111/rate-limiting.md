@@ -3,7 +3,7 @@ title: 'Rate Limiting: Token Buckets, 429s, and Quotas'
 author: IT-Journey Team
 description: 'Master API rate limiting with token and leaky bucket algorithms, the 429 response, rate-limit headers, quotas, and client-side backoff throttling.'
 excerpt: Learn rate limiting with token and leaky buckets, 429 responses, headers, and quotas
-preview: images/previews/rate-limiting-token-bucket-429-quotas.png
+preview: /images/previews/rate-limiting-token-bucket-429-quotas.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '0111'

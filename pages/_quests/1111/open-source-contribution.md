@@ -3,7 +3,7 @@ title: 'Open Source Contribution: Maintaining and Licensing'
 author: IT-Journey Team
 description: Contribute to and maintain open source. Learn the contribution workflow, community norms, reviewing and triaging issues, and the basics of software licensing.
 excerpt: Contribute and maintain open source with good etiquette and license basics
-preview: images/previews/open-source-contribution-contributing-maintaining.png
+preview: /images/previews/open-source-contribution-contributing-maintaining.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1111'

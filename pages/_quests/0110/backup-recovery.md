@@ -3,7 +3,7 @@ title: 'Backup and Recovery: Data Protection for Databases'
 author: IT-Journey Team
 description: 'Guard against data loss with logical and physical backups, point-in-time recovery, RTO/RPO targets, and the restore drills that prove a backup actually works.'
 excerpt: Master backup types, point-in-time recovery, RTO/RPO targets, and tested restore drills.
-preview: images/previews/backup-and-recovery-data-protection-quest-title.png
+preview: /images/previews/backup-and-recovery-data-protection-quest-title.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '0110'

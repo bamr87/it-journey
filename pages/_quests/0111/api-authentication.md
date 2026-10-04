@@ -3,7 +3,7 @@ title: 'API Authentication: Keys, Tokens, OAuth2, and JWT'
 author: IT-Journey Team
 description: Master API authentication including API keys, sessions versus tokens, JSON Web Tokens, OAuth2 flows, and scopes so you can secure and consume protected APIs.
 excerpt: Learn API keys, sessions vs tokens, JWT, OAuth2 flows, and scopes for securing APIs
-preview: images/previews/api-authentication-keys-tokens-oauth2-jwt.png
+preview: /images/previews/api-authentication-keys-tokens-oauth2-jwt.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '0111'

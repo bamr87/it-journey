@@ -3,7 +3,7 @@ title: 'System Design Interviews: A Framework for the Whiteboard'
 author: IT-Journey Team
 description: 'Learn a repeatable system design interview framework - clarify requirements, estimate capacity, apply RESHADED, and articulate trade-offs out loud.'
 excerpt: A repeatable framework for system design interviews - requirements, estimation, design, and trade-off articulation
-preview: images/previews/system-design-interviews-whiteboard-framework.png
+preview: /images/previews/system-design-interviews-whiteboard-framework.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-08-31T00:00:00.000Z'
 level: '1110'

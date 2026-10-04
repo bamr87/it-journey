@@ -2,7 +2,7 @@
 title: 'Bind the Agent to the Realm: Dev Environment Integration'
 description: 'Configure AGENTS.md, a dev container, and secrets so a GitHub Copilot agent runs predictably and identically in Codespaces and on your machine.'
 date: '2026-05-17T00:00:00.000Z'
-preview: images/previews/agentic-dev-environment-integration.png
+preview: /images/previews/agentic-dev-environment-integration.png
 level: '1001'
 difficulty: 🔴 Hard
 estimated_time: 1-2 hours
