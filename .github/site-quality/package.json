@@ -1,0 +1,19 @@
+{
+  "name": "site-quality",
+  "private": true,
+  "description": "PR-time Lighthouse CI + axe/pa11y accessibility checks against the locally built _site.",
+  "license": "MIT",
+  "scripts": {
+    "serve": "node serve-site.mjs",
+    "lhci": "lhci autorun --config=lighthouserc.cjs",
+    "a11y": "node a11y-check.mjs",
+    "contrast": "node contrast-check.mjs"
+  },
+  "dependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@lhci/cli": "0.15.1",
+    "axe-core": "4.13.0",
+    "pa11y": "10.0.0",
+    "playwright": "1.63.0"
+  }
+}

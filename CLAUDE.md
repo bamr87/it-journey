@@ -103,6 +103,10 @@ rendered layout, styling, or interaction (CSS/SCSS, templates/includes, nav, JS 
 - `frontmatter.json` + `.frontmatter/` — the Front Matter CMS VS Code config
   (content types, taxonomy, templates) the new CMS extends.
 
+## The zer0 stack (theme · image generator · CMS)
+
+IT-Journey is a consumer of the zer0 stack. The **theme** is `bamr87/zer0-mistakes` via the unpinned `remote_theme` in `_config.yml` (floating on purpose — there is no `theme-bump.yml`), with deliberate forks declared in `.theme-overrides.yml`. **Preview banners** come from the `zer0-image-generator` gem (`Gemfile`, `group :jekyll_plugins`, `~> 0.6`), configured by the one `preview_images:` block in `_config.yml` and run as `bundle exec jekyll preview-images --list-missing` (or `--dry-run`, `--collection quests`, `-f <file>`); the old `_plugins/preview_image_generator.rb` and the copied `scripts/lib/preview_generator.py` / `generate-preview-images.sh` are retired, while `_plugins/preview_generator.rb` is only the Front Matter CMS `/preview/` mirror. **zer0-CMS** reads `zer0.json` at the repo root (its required fields mirror `.cms/config.yml`; `frontmatter.json` stays for Front Matter CMS). Check alignment with `ruby -I rails/lib rails/bin/zer0-cms doctor /path/to/it-journey` from a zer0-CMS checkout, or dispatch `.github/workflows/zer0-doctor.yml` (weekly, report-only, never on PRs).
+
 ## Fleet context
 
 This repo is one of ~40 managed by the [bamr87/bamr87 dash](https://github.com/bamr87/bamr87) (registry: `_data/projects.yml`; tiered baseline: `docs/STANDARDS.md`). It is vendored there as a git submodule: commit and push changes **here** first — the hub only bumps its pointer afterwards. Shared CI, release, schema, and agent kits are seeded from the hub's `templates/`; prefer adopting those over hand-rolling equivalents. The AI runner (`ai-runner` kit) is the exception to seeding: it is consumed **by reference** from the hub (`bamr87/bamr87/.github/actions/claude-run@main`), never copied in — only its companions (`_data/ai.yml`, `scripts/ai/usage.rb` + `usage_report.rb` + `api_call.rb`, `.prose-excludes`) live here.

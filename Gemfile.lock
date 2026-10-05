@@ -308,7 +308,7 @@ DEPENDENCIES
   jekyll-include-cache
   posthog-ruby
   webrick
-  zer0-image-generator
+  zer0-image-generator (~> 0.6)
 
 BUNDLED WITH
    2.3.25
