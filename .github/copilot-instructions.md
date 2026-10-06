@@ -267,7 +267,7 @@ These rules are enforced by CI (`.github/workflows/frontmatter-validation.yml`) 
 These mistakes have each generated dedicated corrective PRs — do not repeat them:
 
 1. **README files in content collections are content too.** Every `README.md` under `pages/_quests/<level>/`, `pages/_docs/<topic>/`, etc. needs the full required frontmatter block. Empty or skeletal frontmatter triggers the AI Content Review workflow (see PRs #264, #266, #268).
-2. **Never gitignore `Gemfile.lock`.** It must be committed so CI resolves the same gem versions that `bundle-audit` was tested against (see PR #262 and the security alerts it resolved).
+2. **Never commit `Gemfile.lock`.** It is gitignored per the fleet dependency policy (`lockfiles: never-commit`, bamr87/bamr87 `docs/DEPENDENCIES.md`): every install resolves the newest gems, and `bundle-audit` in `dependency-checker.yml` audits the lockfile that the same CI run just resolved. A committed lockfile let Dependabot satisfy a bump by *downgrading* `github-pages` 232 → 222 (liquid 4.0.3, which crashes on Ruby ≥ 3.2 with `undefined method 'tainted?'` — it-journey#751, bamr87/bamr87#333).
 3. **Do not strip `draft: false` when editing existing files** — the field is recommended and its absence drops the quality score (PR #263).
 4. **`tags` and `categories` are YAML lists, never bare strings.** `categories: blog` is invalid; use `categories: [blog]`.
 5. **Update `lastmod` on every meaningful edit** (this is enforced by the README-First / README-Last principle below).

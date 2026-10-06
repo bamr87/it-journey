@@ -5,7 +5,7 @@ services:
     # theme >= 1.21 requires Ruby >= 3.2, so the old jekyll/jekyll:latest (Ruby
     # 3.1) image can no longer resolve the theme. Native arch (no amd64 emulation).
     # Gems are baked into the image; `bundle check || bundle install` self-heals
-    # when Gemfile.lock moves. No bundle_cache volume (it would shadow the image
+    # when the local (never committed) Gemfile.lock moves. No bundle_cache volume (it would shadow the image
     # gems and break with GemNotFound — same reason quest-build omits it).
     build:
       context: .
@@ -79,7 +79,8 @@ services:
   # the way Pages ships it. Drives `make docker-build-ci`. Uses the gems baked
   # into the image (NOT the jekyll service's Ruby-3.1 bundle_cache volume, which
   # would shadow them and break with GemNotFound); `bundle check || bundle
-  # install` self-heals if the committed Gemfile.lock has moved on.
+  # install` self-heals if the local-only Gemfile.lock (gitignored, never
+  # committed — fleet dependency policy) has moved on.
   quest-build:
     build:
       context: .
