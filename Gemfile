@@ -8,8 +8,11 @@ source "https://rubygems.org"
 # Here are the dependencies from github pages https://pages.github.com/versions/
 # For more detailed instructions, look here: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll#installing-jekyll
 
-# Github Pages Gems - Use latest compatible version:
-gem 'github-pages'
+# Github Pages Gems - Use latest compatible version. The floor is load-bearing:
+# without it Bundler satisfies newer json/dnsruby by walking github-pages BACK
+# to 222 (liquid 4.0.3 -> `undefined method 'tainted?'` on Ruby >= 3.2), even
+# on a fresh resolve with no lockfile (bamr87/bamr87#333). A floor, not a pin.
+gem 'github-pages', '>= 232'
 
 # Jekyll Theme — served via the unpinned `remote_theme` in _config.yml, which
 # always tracks the latest zer0-mistakes main (works with the legacy GitHub Pages
