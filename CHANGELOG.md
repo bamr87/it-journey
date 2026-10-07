@@ -33,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - **Quest preview paths** — 164 quests used `preview: images/previews/…` without a leading slash, which the theme joined onto `/assets` as `/assetsimages/previews/…` (404 for the hero background and `og:image`). They now start with `/images/`, like the rest of the site, and so does the SEO frontmatter template
+- **Homepage stats and preview images** — the stats row rendered `0` until a scroll-triggered count-up ran, so no-JS visitors, screenshots, and anyone who had not scrolled it into view saw four zeros. Real values are now rendered server-side (quests = non-draft `fmContentType: quest` floored to tens, levels/tiers from `_data/quests/`), and the count-up is skipped for reduced motion. The tier cards and gallery referenced 8 `.png` previews that only exist as `.webp` (12 broken images per load); they now point at the `.webp` files
 - **Quest nav copy and missing page headings** — the quest trail said "No prerequisite" right above each quest's own "Quest Prerequisites" list. It now reads "No prior experience needed" on level 0000 quests (13, including hello-noob) and "No required quest" elsewhere (101). `/search/` and `/sitemap/` had no `h1` (axe `page-has-heading-one`); their headings are now `h1`
 - **173 quest files** with non-canonical permalink formats (`/quests/level-XXXX-slug/`, `/quests/side-quest-slug/`) migrated to `^/quests/[01]{4}/[side-quests/]slug/$` format
 
