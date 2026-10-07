@@ -258,10 +258,14 @@ keywords:
   <section class="bg-panel" style="padding-top:0;">
     <div class="itj-wrap">
       <div class="itj-stats">
-        <div class="stat reveal"><div class="num grad" data-count="180" data-suffix="+">0</div><div class="lbl">Quests</div></div>
-        <div class="stat reveal"><div class="num grad" data-count="16">0</div><div class="lbl">Levels 0000&ndash;1111</div></div>
-        <div class="stat reveal"><div class="num grad" data-count="4">0</div><div class="lbl">Tiers</div></div>
-        <div class="stat reveal"><div class="num grad" data-count="100" data-suffix="%">0</div><div class="lbl">Free &amp; Open</div></div>
+        {%- comment -%} Real values are rendered server-side so visitors without JS, screenshots, and anyone who has not scrolled the row into view see the numbers (the markup used to say "0" until a count-up ran). Quests are floored to the nearest ten for the "+" label. {%- endcomment -%}
+        {%- assign itj_quests = site.quests | where: "fmContentType", "quest" | where_exp: "q", "q.draft != true" | size | divided_by: 10 | times: 10 -%}
+        {%- assign itj_levels = site.data.quests.levels | size -%}
+        {%- assign itj_tiers = site.data.quests.tiers | size -%}
+        <div class="stat reveal"><div class="num grad" data-count="{{ itj_quests }}" data-suffix="+">{{ itj_quests }}+</div><div class="lbl">Quests</div></div>
+        <div class="stat reveal"><div class="num grad" data-count="{{ itj_levels }}">{{ itj_levels }}</div><div class="lbl">Levels 0000&ndash;1111</div></div>
+        <div class="stat reveal"><div class="num grad" data-count="{{ itj_tiers }}">{{ itj_tiers }}</div><div class="lbl">Tiers</div></div>
+        <div class="stat reveal"><div class="num grad" data-count="100" data-suffix="%">100%</div><div class="lbl">Free &amp; Open</div></div>
       </div>
     </div>
   </section>
@@ -280,10 +284,10 @@ keywords:
           {%- assign lv = t[1].levels -%}
           {%- assign first = lv | first -%}
           {%- case name -%}
-            {%- when 'Apprentice' -%}{%- assign c = '#34d399' -%}{%- assign img = 'character-building-forge-your-it-identity-and-deve.png' -%}{%- assign blurb = 'Forge your identity, tame the terminal, and write your first spells. The origin story every hero needs.' -%}
-            {%- when 'Adventurer' -%}{%- assign c = '#38bdf8' -%}{%- assign img = 'container-fundamentals-isolation-quest-title-porta.png' -%}{%- assign blurb = 'Build real things — frontends, containers, APIs. Venture beyond the basics into working software.' -%}
-            {%- when 'Warrior'    -%}{%- assign c = '#fb923c' -%}{%- assign img = 'ci-cd-fundamentals-continuous-integration-quest-ti.png' -%}{%- assign blurb = 'Automate, deploy, and defend. CI/CD pipelines, cloud, and AI-augmented engineering at scale.' -%}
-            {%- else -%}{%- assign c = '#a855f7' -%}{%- assign img = 'cloud-computing-fundamentals-iaas-paas-quest-title.png' -%}{%- assign blurb = 'Architect systems, lead teams, and shape platforms. The final ascent from her0 to legend.' -%}
+            {%- when 'Apprentice' -%}{%- assign c = '#34d399' -%}{%- assign img = 'character-building-forge-your-it-identity-and-deve.webp' -%}{%- assign blurb = 'Forge your identity, tame the terminal, and write your first spells. The origin story every hero needs.' -%}
+            {%- when 'Adventurer' -%}{%- assign c = '#38bdf8' -%}{%- assign img = 'container-fundamentals-isolation-quest-title-porta.webp' -%}{%- assign blurb = 'Build real things — frontends, containers, APIs. Venture beyond the basics into working software.' -%}
+            {%- when 'Warrior'    -%}{%- assign c = '#fb923c' -%}{%- assign img = 'ci-cd-fundamentals-continuous-integration-quest-ti.webp' -%}{%- assign blurb = 'Automate, deploy, and defend. CI/CD pipelines, cloud, and AI-augmented engineering at scale.' -%}
+            {%- else -%}{%- assign c = '#a855f7' -%}{%- assign img = 'cloud-computing-fundamentals-iaas-paas-quest-title.webp' -%}{%- assign blurb = 'Architect systems, lead teams, and shape platforms. The final ascent from her0 to legend.' -%}
           {%- endcase -%}
           <a class="tier reveal" href="{{ '/quests/' | append: first | append: '/' | relative_url }}">
             <img src="{{ '/assets/images/previews/' | append: img | relative_url }}" alt="{{ name }} tier" loading="lazy">
@@ -372,7 +376,7 @@ keywords:
         <p class="itj-lead">A few of the many adventures across the realms — from terminal dungeons to cloud citadels.</p>
       </div>
       <div class="itj-gal">
-        {%- assign gal = "character-building-forge-your-it-identity-and-deve.png|Forge Your Identity,bashcrawl-quest-terminal-adventure-rpg.png|Bashcrawl: Terminal Dungeon,container-fundamentals-isolation-quest-title-porta.png|Master Containers,advanced-git-workflows-rebase-cherry-pick-quest-ti.png|Git Sorcery,ci-cd-fundamentals-continuous-integration-quest-ti.png|Automate with CI/CD,ai-feature-pipeline-architect-devsecops-mastery-qu.png|AI DevSecOps,cloud-computing-fundamentals-iaas-paas-quest-title.png|Ascend to the Cloud,404-hunting-binary-wards-for-unbreakable-links.png|404 Hunting" | split: "," -%}
+        {%- assign gal = "character-building-forge-your-it-identity-and-deve.webp|Forge Your Identity,bashcrawl-quest-terminal-adventure-rpg.webp|Bashcrawl: Terminal Dungeon,container-fundamentals-isolation-quest-title-porta.webp|Master Containers,advanced-git-workflows-rebase-cherry-pick-quest-ti.webp|Git Sorcery,ci-cd-fundamentals-continuous-integration-quest-ti.webp|Automate with CI/CD,ai-feature-pipeline-architect-devsecops-mastery-qu.webp|AI DevSecOps,cloud-computing-fundamentals-iaas-paas-quest-title.webp|Ascend to the Cloud,404-hunting-binary-wards-for-unbreakable-links.webp|404 Hunting" | split: "," -%}
         {%- for g in gal -%}
           {%- assign parts = g | split: "|" -%}
           <div class="gcard reveal">
@@ -466,11 +470,13 @@ keywords:
     function step(ts){ if(!t0)t0=ts; var p=Math.min((ts-t0)/dur,1); var e=1-Math.pow(1-p,3);
       el.textContent = Math.round(target*e) + suf; if(p<1) requestAnimationFrame(step); }
     requestAnimationFrame(step); }
+  /* The final values are already in the markup; the count-up is decoration,
+     so it is skipped for reduced motion and without IntersectionObserver. */
   var nums = root.querySelectorAll('[data-count]');
-  if('IntersectionObserver' in window){
+  if(!reduce && 'IntersectionObserver' in window){
     var io2 = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); io2.unobserve(e.target); } }); }, {threshold:.6});
     nums.forEach(function(el){ io2.observe(el); });
-  } else { nums.forEach(countUp); }
+  }
 
   /* ---- quest terminal typewriter ---- */
   var term = document.getElementById('itj-term');
