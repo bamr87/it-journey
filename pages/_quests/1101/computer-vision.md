@@ -3,7 +3,7 @@ title: 'Computer Vision Mastery: CNNs and Transfer Learning'
 author: IT-Journey Team
 description: 'Build computer vision models in PyTorch: learn convolutions, train CNNs for image classification, and fine-tune pretrained models with transfer learning.'
 excerpt: Build computer vision models with convolutions, CNNs, image classification, and transfer learning
-preview: images/previews/computer-vision-descriptive-subtitle.png
+preview: /images/previews/computer-vision-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1101'

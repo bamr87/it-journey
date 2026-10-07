@@ -3,7 +3,7 @@ title: 'Domain-Driven Design: Modeling the Business in Code'
 author: IT-Journey Team
 description: 'Master DDD: ubiquitous language, entities and value objects, aggregates, and bounded contexts so your code models the business it serves.'
 excerpt: Build software whose model speaks the language of the business using DDD's tactical and strategic patterns
-preview: images/previews/domain-driven-design-modeling-business-in-code.png
+preview: /images/previews/domain-driven-design-modeling-business-in-code.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1110'

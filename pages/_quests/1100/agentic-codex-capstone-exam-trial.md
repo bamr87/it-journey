@@ -2,7 +2,7 @@
 title: 'Trial of the Agentic Codex: The Grand Capstone'
 description: 'Face the six-domain grand trial: build a complete agentic AI system on GitHub, prove competency across all GH-600 domains, and earn Codex Master.'
 date: '2026-05-17T00:00:00.000Z'
-preview: images/previews/agentic-codex-capstone-exam-trial.png
+preview: /images/previews/agentic-codex-capstone-exam-trial.png
 level: '1100'
 difficulty: ⚔️ Epic
 estimated_time: 5-6 hours

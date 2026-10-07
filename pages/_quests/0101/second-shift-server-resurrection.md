@@ -3,7 +3,7 @@ title: 'The Second Shift: Resurrect an Ancient Tower as Your Home Server'
 author: IT-Journey Team
 description: 'Repurpose a decade-old desktop into an always-available Docker host — Wake-on-LAN necromancy, a boot-to-tmux console, LAN-scoped firewalling, and the honest limits of old silicon.'
 excerpt: Raise a retired PC from the closet and put it on the second shift as a wake-on-demand Docker home server.
-preview: images/previews/second-shift-server-resurrection-quest.png
+preview: /images/previews/second-shift-server-resurrection-quest.png
 date: '2026-08-15T18:00:00.000Z'
 lastmod: '2026-08-15T18:00:00.000Z'
 level: '0101'

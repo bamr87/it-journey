@@ -3,7 +3,7 @@ title: 'Mentorship Programs: Growing Engineering Talent'
 author: IT-Journey Team
 description: 'Build effective engineering mentorship: learn mentoring models, feedback that lands, growth frameworks, and how mentoring differs from sponsorship.'
 excerpt: Mentor and sponsor engineers with feedback models and structured growth plans
-preview: images/previews/mentorship-programs-growing-engineering-talent.png
+preview: /images/previews/mentorship-programs-growing-engineering-talent.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1111'

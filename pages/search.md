@@ -16,6 +16,6 @@ draft: false
 permalink: /search/
 date: '2023-03-11T13:54:22.000Z'
 ---
-## Search Index and Sitemap
+# Search Index and Sitemap
 
 {% include content/sitemap.html %}

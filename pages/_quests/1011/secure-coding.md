@@ -3,7 +3,7 @@ title: 'Secure Coding: Preventing the OWASP Top 10'
 author: IT-Journey Team
 description: 'Forge code that defeats the OWASP Top 10: master input validation, injection prevention, authentication, secrets handling, and dependency security.'
 excerpt: Write secure code that defeats injection, broken access control, weak auth, and leaked secrets
-preview: images/previews/secure-coding-practices-owasp-top-10-vulnerability.png
+preview: /images/previews/secure-coding-practices-owasp-top-10-vulnerability.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1011'

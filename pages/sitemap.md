@@ -16,6 +16,6 @@ date: '2026-05-23T00:00:00.000Z'
 lastmod: '2026-05-23T00:00:00.000Z'
 draft: false
 ---
-## Sitemap
+# Sitemap
 
 {% include content/sitemap.html %}

@@ -1,7 +1,7 @@
 ---
 title: Level 1001 (9) - Kubernetes Orchestration
 description: 'Command Kubernetes to orchestrate containers at scale: master pods, deployments, services, ingress, ConfigMaps, and Secrets for production workloads.'
-preview: images/previews/level-1001-kubernetes.png
+preview: /images/previews/level-1001-kubernetes.png
 permalink: /quests/1001/
 layout: quest-collection
 local_graph: false

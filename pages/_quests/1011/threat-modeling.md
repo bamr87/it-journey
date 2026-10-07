@@ -3,7 +3,7 @@ title: 'Threat Modeling: STRIDE Framework and Attack Trees Analysis'
 author: IT-Journey Team
 description: 'Master threat modeling with STRIDE, data-flow diagrams, trust boundaries, and attack trees to find security flaws systematically before attackers do.'
 excerpt: Find security threats systematically using STRIDE, data-flow diagrams, trust boundaries, and attack trees
-preview: images/previews/threat-modeling-stride-framework-and-attack-trees.png
+preview: /images/previews/threat-modeling-stride-framework-and-attack-trees.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1011'

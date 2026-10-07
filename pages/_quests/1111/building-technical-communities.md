@@ -3,7 +3,7 @@ title: 'Building Technical Communities: Govern and Include'
 author: IT-Journey Team
 description: Build thriving technical communities. Learn the membership lifecycle, running events, governance and moderation, and designing for inclusion and belonging.
 excerpt: Grow a technical community with events, fair governance, and real inclusion
-preview: images/previews/building-technical-communities-events-governance.png
+preview: /images/previews/building-technical-communities-events-governance.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1111'

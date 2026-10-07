@@ -2,7 +2,7 @@
 title: 'The Agent Pantheon: Multi-Agent Lifecycle Management'
 description: 'Run the full lifecycle of a GitHub-native multi-agent system: build a registry, monitor agent health, and provision, version, and retire agents safely.'
 date: '2026-05-17T00:00:00.000Z'
-preview: images/previews/agentic-multi-agent-lifecycle-management.png
+preview: /images/previews/agentic-multi-agent-lifecycle-management.png
 level: '1100'
 difficulty: ⚔️ Epic
 estimated_time: 2-3 hours

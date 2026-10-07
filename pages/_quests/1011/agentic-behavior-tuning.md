@@ -2,7 +2,7 @@
 title: 'Reforging the Agent''s Mind: Tuning Behavior by Instruction'
 description: 'Tune your GitHub Copilot agent by analysing failure patterns, iterating on copilot-instructions.md and AGENTS.md, and measuring each change''s impact.'
 date: '2026-05-17T00:00:00.000Z'
-preview: images/previews/agentic-behavior-tuning.png
+preview: /images/previews/agentic-behavior-tuning.png
 level: '1011'
 difficulty: 🔴 Hard
 estimated_time: 1-2 hours

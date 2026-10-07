@@ -3,7 +3,7 @@ title: 'Hello n00b: Your First Steps into the IT Journey'
 author: IT-Journey Team
 description: 'Begin your IT adventure: create a GitHub account, fork the IT-Journey repository, and confidently navigate GitHub as an absolute beginner.'
 excerpt: Begin your epic adventure in the world of IT with your very first quest - setting up GitHub and joining the community
-preview: images/previews/hello-n00b-your-first-steps-into-the-it-journey.webp
+preview: /images/previews/hello-n00b-your-first-steps-into-the-it-journey.webp
 date: '2022-06-05T13:48:57.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
 level: '0000'

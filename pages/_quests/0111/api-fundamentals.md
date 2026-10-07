@@ -3,7 +3,7 @@ title: 'API Fundamentals: HTTP, Requests, and JSON'
 author: IT-Journey Team
 description: Master the fundamentals of web APIs including HTTP methods, status codes, request/response anatomy, headers, and JSON so you can call and reason about any API.
 excerpt: Learn what an API is, the HTTP request/response cycle, methods, status codes, and JSON
-preview: images/previews/api-fundamentals-http-requests-json.png
+preview: /images/previews/api-fundamentals-http-requests-json.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '0111'

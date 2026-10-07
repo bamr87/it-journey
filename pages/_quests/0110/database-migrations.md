@@ -3,7 +3,7 @@ title: 'Database Migrations: Schema Evolution and Version Control'
 author: IT-Journey Team
 description: 'Evolve a live database safely: write versioned up/down migrations, use Flyway, Liquibase, or Alembic, and ship zero-downtime schema changes.'
 excerpt: Master versioned migrations, rollbacks, migration tools, and zero-downtime schema changes.
-preview: images/previews/database-migrations-schema-evolution-quest-title.png
+preview: /images/previews/database-migrations-schema-evolution-quest-title.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '0110'

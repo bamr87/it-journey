@@ -2,7 +2,7 @@
 title: 'The Council of Many: Multi-Agent Orchestration Patterns'
 description: 'Build multi-agent systems on GitHub: design fan-out, sequential chain, and event-driven orchestrators that dispatch sub-agent jobs and aggregate their results.'
 date: '2026-05-17T00:00:00.000Z'
-preview: images/previews/agentic-multi-agent-orchestration-patterns.png
+preview: /images/previews/agentic-multi-agent-orchestration-patterns.png
 level: '1011'
 difficulty: 🔴 Hard
 estimated_time: 2-3 hours

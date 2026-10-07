@@ -3,7 +3,7 @@ title: 'API Versioning: URI, Headers, and Backward Compatibility'
 author: IT-Journey Team
 description: Master API versioning strategies including URI versus header versioning, backward compatibility, breaking versus non-breaking changes, and graceful deprecation.
 excerpt: Learn URI vs header versioning, backward compatibility, and how to deprecate an API gracefully
-preview: images/previews/api-versioning-uri-headers-compatibility.png
+preview: /images/previews/api-versioning-uri-headers-compatibility.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '0111'

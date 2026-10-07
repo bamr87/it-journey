@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Vendored preview-image generators** — `_plugins/preview_image_generator.rb`, `scripts/lib/preview_generator.py` and `scripts/generation/generate-preview-images.sh` are retired; the `zer0-image-generator` gem (`~> 0.6`, `bundle exec jekyll preview-images`) covers every option they had, and `preview_images:` in `_config.yml` is its one config block. The `_config_dev.yml` / `_config_ci.yml` `preview_images:` overrides went with the plugin that read them.
 
 ### Added
+- **`/tags/` and `/categories/` index pages** — every tag and category chip on the site linked to `/tags/#<slug>` or `/categories/#<slug>` (2,406 links), and both pages were 404. `pages/tags.md` and `pages/categories.md` now render one anchored section per term via `_includes/content/taxonomy-index.html`: plain Liquid, GitHub Pages-safe, one sorted pass, under 1 s of build time. Collections get a tag section too, because the theme's collection badge links there
 - **Bashcrawl quest hub rewrite** — `pages/_quests/0000/bashcrawl/README.md` fully rewritten with Mermaid dungeon map, chapter guide table, quick-start command, and play-mode reference; links to all 10 side-quests
 - **Bashcrawl launcher script v3.0.0** — `pages/_quests/0000/bashcrawl/bash_crawl.sh` with `tutorial`/`agent` subcommands, `--quest <chamber>` flag, and 7-option interactive menu
 - **10 Bashcrawl side-quests** — Full dungeon coverage: entrance, workshop, cellar, armoury, chamber, hidden-chapel, vault, scrap, rift, and agent-mode; all score 92 % on the quest validator (0 errors, 0 warnings)
@@ -31,6 +32,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Level 0000 README** — Updated Bashcrawl cross-reference link from stale `/quests/0000/bashcrawl/` to canonical `/quests/0000/bashcrawl/`
 
 ### Fixed
+- **Quest preview paths** — 164 quests used `preview: images/previews/…` without a leading slash, which the theme joined onto `/assets` as `/assetsimages/previews/…` (404 for the hero background and `og:image`). They now start with `/images/`, like the rest of the site, and so does the SEO frontmatter template
+- **Homepage stats and preview images** — the stats row rendered `0` until a scroll-triggered count-up ran, so no-JS visitors, screenshots, and anyone who had not scrolled it into view saw four zeros. Real values are now rendered server-side (quests = non-draft `fmContentType: quest` floored to tens, levels/tiers from `_data/quests/`), and the count-up is skipped for reduced motion. The tier cards and gallery referenced 8 `.png` previews that only exist as `.webp` (12 broken images per load); they now point at the `.webp` files
+- **Quest nav copy and missing page headings** — the quest trail said "No prerequisite" right above each quest's own "Quest Prerequisites" list. It now reads "No prior experience needed" on level 0000 quests (13, including hello-noob) and "No required quest" elsewhere (101). `/search/` and `/sitemap/` had no `h1` (axe `page-has-heading-one`); their headings are now `h1`
 - **173 quest files** with non-canonical permalink formats (`/quests/level-XXXX-slug/`, `/quests/side-quest-slug/`) migrated to `^/quests/[01]{4}/[side-quests/]slug/$` format
 
 ### Added

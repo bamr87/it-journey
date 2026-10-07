@@ -3,7 +3,7 @@ title: 'REST Principles: Resources, Statelessness, and Maturity'
 author: IT-Journey Team
 description: 'Master REST constraints: resources, statelessness, the uniform interface, HATEOAS, and the Richardson Maturity Model to design clean web APIs.'
 excerpt: Learn the REST constraints, resource modeling, statelessness, HATEOAS, and the Richardson Maturity Model
-preview: images/previews/rest-principles-resources-statelessness-maturity.png
+preview: /images/previews/rest-principles-resources-statelessness-maturity.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '0111'

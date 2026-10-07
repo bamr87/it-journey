@@ -3,7 +3,7 @@ title: 'Software Design Patterns: Gang of Four and Modern Patterns'
 author: IT-Journey Team
 description: 'Implement Factory, Strategy, Observer, Adapter, and Decorator, master the five SOLID principles, and refactor brittle conditionals into clean patterns.'
 excerpt: Master the Gang of Four design patterns and the SOLID principles that underpin maintainable software
-preview: images/previews/software-design-patterns-gang-of-four-modern.png
+preview: /images/previews/software-design-patterns-gang-of-four-modern.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1110'
