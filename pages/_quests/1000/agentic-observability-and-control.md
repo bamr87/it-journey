@@ -2,7 +2,7 @@
 title: 'The All-Seeing Eye: Observability for AI Agents'
 description: 'Instrument GitHub Copilot agents with execution traces, inspectable artifacts, audit trails, and human review gates that catch drift without blocking runs.'
 date: '2026-05-17T00:00:00.000Z'
-preview: images/previews/agentic-observability-and-control.png
+preview: /images/previews/agentic-observability-and-control.png
 level: '1000'
 difficulty: 🟡 Medium
 estimated_time: 60-90 minutes

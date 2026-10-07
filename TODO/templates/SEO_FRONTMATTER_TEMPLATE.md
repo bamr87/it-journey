@@ -81,7 +81,7 @@ description: "[Action-oriented description with platform mentions]. [Time estima
 
 date: YYYY-MM-DDTHH:MM:SS.000Z
 lastmod: YYYY-MM-DDTHH:MM:SS.000Z
-preview: images/previews/[slug].png
+preview: /images/previews/[slug].png
 
 tags:
   - [level-tag]              # e.g., lvl-0010, binary-level-indicator

@@ -2,7 +2,7 @@
 title: 'Initiation Rites: Embedding Agents in the SDLC'
 description: 'Integrate AI agents into the SDLC: define their inputs, outputs, and success criteria, and learn the anti-patterns that sink autonomous workflows.'
 date: '2026-05-17T00:00:00.000Z'
-preview: images/previews/agentic-sdlc-integration.png
+preview: /images/previews/agentic-sdlc-integration.png
 level: '0111'
 difficulty: 🟡 Medium
 estimated_time: 60-90 minutes

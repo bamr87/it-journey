@@ -2,7 +2,7 @@
 title: 'The Necromancer''s Inquest: Agent Failure Root Cause Analysis'
 description: 'Read GitHub Actions logs, artifacts, and execution traces, then apply a 5-Why RCA framework to find why an agent failed and prevent it recurring.'
 date: '2026-05-17T00:00:00.000Z'
-preview: images/previews/agentic-failure-root-cause-analysis.png
+preview: /images/previews/agentic-failure-root-cause-analysis.png
 level: '1010'
 difficulty: 🔴 Hard
 estimated_time: 1-2 hours

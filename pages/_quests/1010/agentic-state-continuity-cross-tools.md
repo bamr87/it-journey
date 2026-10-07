@@ -2,7 +2,7 @@
 title: 'Crossing the Tool Planes: State Continuity Across Tools'
 description: 'Keep an agent''s state and context intact when tasks cross GitHub surfaces — issues, PRs, Actions runs, and Codespaces each hold fragments to weave together.'
 date: '2026-05-17T00:00:00.000Z'
-preview: images/previews/agentic-state-continuity-cross-tools.png
+preview: /images/previews/agentic-state-continuity-cross-tools.png
 level: '1010'
 difficulty: 🔴 Hard
 estimated_time: 1-2 hours

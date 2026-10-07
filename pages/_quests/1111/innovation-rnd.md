@@ -3,7 +3,7 @@ title: 'Innovation and R&D: Experimentation and Technical Bets'
 author: IT-Journey Team
 description: 'Drive engineering innovation. Learn structured experimentation, the three-horizons portfolio model, and how to manage risky technical bets responsibly.'
 excerpt: Drive innovation with structured experiments and a balanced portfolio of bets
-preview: images/previews/innovation-and-rnd-experimentation-tech-bets.png
+preview: /images/previews/innovation-and-rnd-experimentation-tech-bets.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1111'

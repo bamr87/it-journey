@@ -2,7 +2,7 @@
 title: 'The Autonomy Scales: Mapping Agent Autonomy Levels'
 description: 'Map GitHub Copilot agents across a five-level autonomy spectrum, classify your task types by risk, and configure the GitHub controls that govern each level.'
 date: '2026-05-17T00:00:00.000Z'
-preview: images/previews/agentic-autonomy-levels-matrix.png
+preview: /images/previews/agentic-autonomy-levels-matrix.png
 level: '1100'
 difficulty: 🔴 Hard
 estimated_time: 60-90 minutes

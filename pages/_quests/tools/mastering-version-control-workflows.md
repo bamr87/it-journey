@@ -2,7 +2,7 @@
 title: 'Mastering Version Control Workflows: The Grand Merge Ritual'
 author: IT-Journey Team
 description: 'Master advanced Git workflows: semantic versioning, branch strategies, CI/CD automation, and pull request orchestration with real open-source examples.'
-preview: images/previews/mastering-version-control-workflows.png
+preview: /images/previews/mastering-version-control-workflows.png
 date: '2026-03-21T00:00:00.000Z'
 lastmod: '2026-03-21T00:00:00.000Z'
 level: '1100'

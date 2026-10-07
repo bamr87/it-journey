@@ -3,7 +3,7 @@ title: 'Architecture Reviews: ADRs and Trade-off Facilitation'
 author: IT-Journey Team
 description: Run effective architecture and design reviews. Learn to facilitate trade-off discussions, write Architecture Decision Records, and lead reviews without ego.
 excerpt: Facilitate design reviews, write ADRs, and lead trade-off discussions well
-preview: images/previews/architecture-reviews-adrs-trade-off-facilitation.png
+preview: /images/previews/architecture-reviews-adrs-trade-off-facilitation.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '1111'

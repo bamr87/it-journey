@@ -3,7 +3,7 @@ title: 'Data Modeling: Schema Design and Database Relationships'
 author: IT-Journey Team
 description: 'Turn fuzzy requirements into solid database schemas using entity-relationship modeling, normalization to 3NF, and one-to-many and many-to-many relationships.'
 excerpt: Master ER modeling, normalization, relationships, and schema design to build databases that scale.
-preview: images/previews/data-modeling-schema-design-quest-title-and-relat.png
+preview: /images/previews/data-modeling-schema-design-quest-title-and-relat.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-06-14T00:00:00.000Z'
 level: '0110'
