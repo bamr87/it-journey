@@ -53,7 +53,8 @@
           <span class="quest-nav__title">{{ prev_title | default: prev_url }}</span>
         </a>
       {%- else -%}
-        <span class="quest-nav__placeholder">No prerequisite</span>
+        {%- comment -%} "No prerequisite" read as a contradiction next to the page's own "Quest Prerequisites" (knowledge/system requirements). This slot is about prerequisite *quests*, so say that; level 0000 is the entry point. {%- endcomment -%}
+        <span class="quest-nav__placeholder">{% if p.level == '0000' %}No prior experience needed{% else %}No required quest{% endif %}</span>
       {%- endif -%}
     </div>
     <div class="quest-nav__next">

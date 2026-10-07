@@ -1,0 +1,57 @@
+{%- comment -%}
+  Taxonomy index: every tag (or category) on the site, each as an anchor the
+  theme's chips link to (`/tags/#<slug>`, `/categories/#<slug>`), listing the
+  pages that carry it. GitHub Pages cannot run an archive plugin, so this is
+  plain Liquid. Usage: {% raw %}{% include content/taxonomy-index.html field="tags" %}{% endraw %}
+
+  One pass builds "slug␟label␟title␟url" records, sorts them, then emits a
+  heading whenever the slug changes, so the cost is O(entries · log entries)
+  instead of tags × documents. Grouping by slug keeps "Git" and "git" under
+  one anchor, which is what both chips link to. Every rendered page counts
+  (drafts included): any page that shows a chip must have a target here.
+{%- endcomment -%}
+{%- assign tx_field = include.field | default: "tags" -%}
+{%- assign tx_sep = "␟" -%}
+{%- assign tx_docs = site.documents | concat: site.html_pages -%}
+{%- capture tx_blob -%}
+  {%- for d in tx_docs -%}
+    {%- if d.url and d.title -%}
+      {%- comment -%} The theme's intro also links a document's collection badge to /tags/#<collection>, so collections get a tag section too. {%- endcomment -%}
+      {%- if tx_field == "tags" and d.collection -%}{{ d.collection | slugify }}{{ tx_sep }}{{ d.collection | replace: "-", " " | capitalize }}{{ tx_sep }}{{ d.title | strip_html | replace: tx_sep, " " | strip }}{{ tx_sep }}{{ d.url }}␞{%- endif -%}
+      {%- assign tx_terms = d[tx_field] -%}
+      {%- if tx_terms -%}
+        {%- for t in tx_terms -%}
+          {%- assign tx_label = t | strip -%}
+          {%- assign tx_slug = tx_label | slugify -%}
+          {%- if tx_slug != "" -%}{{ tx_slug }}{{ tx_sep }}{{ tx_label }}{{ tx_sep }}{{ d.title | strip_html | replace: tx_sep, " " | strip }}{{ tx_sep }}{{ d.url }}␞{%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- assign tx_rows = tx_blob | split: "␞" | sort_natural | uniq -%}
+{%- assign tx_count = 0 -%}
+{%- assign tx_prev = "" -%}
+{%- capture tx_body -%}
+  {%- for r in tx_rows -%}
+    {%- assign p = r | split: tx_sep -%}
+    {%- if p.size == 4 -%}
+      {%- if p[0] != tx_prev -%}
+        {%- unless tx_prev == "" -%}</ul></section>{%- endunless -%}
+        {%- assign tx_prev = p[0] -%}
+        {%- assign tx_count = tx_count | plus: 1 -%}
+<section class="taxonomy-term mb-4" id="{{ p[0] }}" aria-labelledby="{{ p[0] }}-h">
+<h2 class="h4" id="{{ p[0] }}-h"><a class="text-decoration-none" href="#{{ p[0] }}">{% if tx_field == "tags" %}#{% endif %}{{ p[1] | escape }}</a></h2>
+<ul>
+      {%- endif -%}
+<li><a href="{{ p[3] | relative_url }}">{{ p[2] | escape }}</a></li>
+    {%- endif -%}
+  {%- endfor -%}
+  {%- unless tx_prev == "" -%}</ul></section>{%- endunless -%}
+{%- endcapture -%}
+{%- if tx_count > 0 -%}
+<p class="text-body-secondary">{{ tx_count }} {{ tx_field }} across the site. Every chip on a page links to its section here.</p>
+{{ tx_body }}
+{%- else -%}
+<p class="text-body-secondary">No {{ tx_field }} yet.</p>
+{%- endif -%}
