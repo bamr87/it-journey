@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-10T09:05:59.073456+00:00",
+  "generated_at": "2026-10-11T09:06:00.121183+00:00",
   "total_files": 424,
   "scored_files": 424,
   "actionable_files": 380,
-  "avg_health": 95.0,
-  "avg_health_actionable": 94.4,
+  "avg_health": 94.9,
+  "avg_health_actionable": 94.3,
   "total_mechanical_issues": 0,
   "total_substantive_issues": 76,
   "total_errors": 11,
@@ -24,7 +24,7 @@
       "mechanical": 0,
       "substantive": 10,
       "errors": 0,
-      "avg_health": 98.3
+      "avg_health": 98.1
     },
     "notes": {
       "count": 29,
@@ -45,9 +45,9 @@
   },
   "freshness_distribution": {
     "critical": 29,
-    "aging": 210,
-    "stale": 53,
-    "fresh": 131,
+    "aging": 216,
+    "stale": 54,
+    "fresh": 124,
     "unknown": 1
   },
   "health_buckets": {
