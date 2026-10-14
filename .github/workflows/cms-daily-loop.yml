@@ -28,7 +28,7 @@ name: 🧭 CMS Daily Content Loop
 
 on:
   schedule:
-    - cron: '22 17 * * *'  # staggered AI cron (bamr87/bamr87#348); was 0 9 * * *
+    - cron: '10 22 * * *'  # staggered AI cron (bamr87/bamr87#348); was 0 9 * * *
   workflow_dispatch:
     inputs:
       enable_substantive:

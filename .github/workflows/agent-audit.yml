@@ -16,7 +16,7 @@ name: 🔍 Agent Audit
 
 on:
   schedule:
-    - cron: '37 6 * * 1'  # staggered AI cron (bamr87/bamr87#348); was 0 6 * * 1
+    - cron: '10 15 * * 1'  # staggered AI cron (bamr87/bamr87#348); was 0 6 * * 1
   workflow_dispatch:
 
 permissions:

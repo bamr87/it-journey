@@ -20,7 +20,7 @@ name: 🏭 Content Factory
 
 on:
   schedule:
-    - cron: '30 14 * * *'  # staggered AI cron (bamr87/bamr87#348); was 0 8 * * *
+    - cron: '10 20 * * *'  # staggered AI cron (bamr87/bamr87#348); was 0 8 * * *
   workflow_dispatch:
     inputs:
       collection:

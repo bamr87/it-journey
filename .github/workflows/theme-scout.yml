@@ -21,7 +21,7 @@ name: 🔭 Theme Scout
 
 on:
   schedule:
-    - cron: '20 7 * * 2'  # staggered AI cron (bamr87/bamr87#348); was 0 6 * * 2
+    - cron: '40 15 * * 2'  # staggered AI cron (bamr87/bamr87#348); was 0 6 * * 2
   workflow_dispatch:
     inputs:
       base_url:
