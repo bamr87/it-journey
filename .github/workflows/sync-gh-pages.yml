@@ -27,7 +27,7 @@ on:
     # 6-hourly cadence no-oped ~58% of the time ("gh-pages already up to date");
     # the workflow still self-gates on ahead+green, and workflow_dispatch covers
     # publish-now needs. Tunable.
-    - cron: '20 2,14 * * *'
+    - cron: '20 2 * * *'  # daily (was twice daily)
   workflow_dispatch:
 
 permissions:

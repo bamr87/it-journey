@@ -86,7 +86,7 @@ name: ♾️ Quest Perfection Loop
 
 on:
   schedule:
-    - cron: '0 11 * * *'        # daily 11:00 UTC — ONE priority slice per run (the
+    - cron: '10 23 * * *'  # staggered AI cron (bamr87/bamr87#348); was 0 11 * * *
                                 # standalone quest-walkthrough is dispatch-only now)
   workflow_dispatch:
     inputs:

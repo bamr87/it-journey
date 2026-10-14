@@ -53,7 +53,7 @@ on:
     # and offset from it so the two lanes never contend for the quest-ledger
     # concurrency group. Cadence is tunable: the reviewer queue, not the runner
     # budget, is the binding constraint (see .quests/budget.yml).
-    - cron: '0 15 */2 * *'
+    - cron: '40 1 */2 * *'  # staggered AI cron (bamr87/bamr87#348); was 0 15 */2 * *
   workflow_dispatch:
     inputs:
       max_fixes:

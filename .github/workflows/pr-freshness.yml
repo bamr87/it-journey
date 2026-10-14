@@ -42,8 +42,10 @@ on:
   # lane therefore dispatches this workflow itself after a merge lands (an
   # explicit hand-off, not a workflow_run trigger, which would fire on its every
   # no-op run and ping-pong with the dispatch below).
-  schedule:
-    - cron: '37 */6 * * *'      # backstop for anything both triggers miss
+  # Schedule paused (Actions waste reduction, Oct 14): the job is gated by vars.PR_FRESHNESS_ENABLED, which is
+  # currently off, so every scheduled run was skipped. To restore: set PR_FRESHNESS_ENABLED=true AND uncomment the block below.
+  # schedule:
+  #   - cron: '37 */6 * * *'      # backstop for anything both triggers miss
   workflow_dispatch:
     inputs:
       pr:
