@@ -25,5 +25,5 @@ concurrency:
 
 jobs:
   ci:
-    uses: bamr87/bamr87/.github/workflows/standard-ci.yml@main
+    uses: bamr87/bamr87/.github/workflows/standard-ci.yml@v2
     secrets: inherit

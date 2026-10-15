@@ -219,6 +219,7 @@ Continue your terminal adventure with these resources:
 - [GNU Bash Manual](https://www.gnu.org/software/bash/manual/) — Official Bash reference for brave heroes
 - [IT-Journey Bashcrawl Hub](/quests/0000/bashcrawl/) — Full quest series and walkthroughs
 - [chmod Calculator](https://chmod-calculator.com/) — Permission wizard for every adventurer
+- [DailyDebian chmod Calculator](https://dailydebian.com/pages/chmod-calculator) — Numeric and symbolic modes, the exact command, plus SUID, SGID and the sticky bit
 
 ---
 
