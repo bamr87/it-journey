@@ -3,6 +3,7 @@ name: 🎯 Quest Content Validation
 on:
   # Run on PRs that modify quest content or validation tooling
   pull_request:
+    branches: [main]
     paths:
       - 'pages/_quests/**/*.md'
       - 'test/quest-validator/**'
