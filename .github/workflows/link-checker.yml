@@ -3,6 +3,7 @@ name: 🔗 Link Health Guardian
 on:
   # PRs: fast incremental check (changed files only, no AI)
   pull_request:
+    branches: [main]
     paths:
       - '**.md'
       - '**.html'

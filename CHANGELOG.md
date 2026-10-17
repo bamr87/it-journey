@@ -7,10 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Removed
-- **Vendored preview-image generators** — `_plugins/preview_image_generator.rb`, `scripts/lib/preview_generator.py` and `scripts/generation/generate-preview-images.sh` are retired; the `zer0-image-generator` gem (`~> 0.6`, `bundle exec jekyll preview-images`) covers every option they had, and `preview_images:` in `_config.yml` is its one config block. The `_config_dev.yml` / `_config_ci.yml` `preview_images:` overrides went with the plugin that read them.
-
 ### Added
+
 - **`/tags/` and `/categories/` index pages** — every tag and category chip on the site linked to `/tags/#<slug>` or `/categories/#<slug>` (2,406 links), and both pages were 404. `pages/tags.md` and `pages/categories.md` now render one anchored section per term via `_includes/content/taxonomy-index.html`: plain Liquid, GitHub Pages-safe, one sorted pass, under 1 s of build time. Collections get a tag section too, because the theme's collection badge links there
 - **Bashcrawl quest hub rewrite** — `pages/_quests/0000/bashcrawl/README.md` fully rewritten with Mermaid dungeon map, chapter guide table, quick-start command, and play-mode reference; links to all 10 side-quests
 - **Bashcrawl launcher script v3.0.0** — `pages/_quests/0000/bashcrawl/bash_crawl.sh` with `tutorial`/`agent` subcommands, `--quest <chamber>` flag, and 7-option interactive menu
@@ -22,22 +20,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Quest permalink audit prompt** — `.github/prompts/quest-permalink-audit.prompt.md` for auditing and repairing quest permalink conventions
 - **Quest permalink migration script** — `scripts/quest/migrate-permalinks.py` batch-migrates all quest files to canonical permalink format
 
-### Changed
-- **Normalized quest permalinks** — All 173 quest files migrated to canonical `/quests/XXXX/[side-quests/]slug/` hierarchy; old URLs preserved in `redirect_from:` for backward compatibility
-- **Quest validator updated** — `test/quest-validator/quest_validator.py` now enforces the canonical permalink regex and validates `dir-level` consistency
-- **Quest CI workflow updated** — `full-audit` job now regenerates and drift-checks `quest-network.json` on every scheduled or manual run
-- **AGENTS.md and copilot-instructions.md updated** — Quest permalink convention documented as canonical gotcha with migration commands
-
-### Changed
-- **Level 0000 README** — Updated Bashcrawl cross-reference link from stale `/quests/0000/bashcrawl/` to canonical `/quests/0000/bashcrawl/`
-
-### Fixed
-- **Quest preview paths** — 164 quests used `preview: images/previews/…` without a leading slash, which the theme joined onto `/assets` as `/assetsimages/previews/…` (404 for the hero background and `og:image`). They now start with `/images/`, like the rest of the site, and so does the SEO frontmatter template
-- **Homepage stats and preview images** — the stats row rendered `0` until a scroll-triggered count-up ran, so no-JS visitors, screenshots, and anyone who had not scrolled it into view saw four zeros. Real values are now rendered server-side (quests = non-draft `fmContentType: quest` floored to tens, levels/tiers from `_data/quests/`), and the count-up is skipped for reduced motion. The tier cards and gallery referenced 8 `.png` previews that only exist as `.webp` (12 broken images per load); they now point at the `.webp` files
-- **Quest nav copy and missing page headings** — the quest trail said "No prerequisite" right above each quest's own "Quest Prerequisites" list. It now reads "No prior experience needed" on level 0000 quests (13, including hello-noob) and "No required quest" elsewhere (101). `/search/` and `/sitemap/` had no `h1` (axe `page-has-heading-one`); their headings are now `h1`
-- **173 quest files** with non-canonical permalink formats (`/quests/level-XXXX-slug/`, `/quests/side-quest-slug/`) migrated to `^/quests/[01]{4}/[side-quests/]slug/$` format
-
-### Added
 - **Canonical frontmatter reference** — `.github/FRONTMATTER.md` documents the required schema for `.prompt.md` and `.instructions.md` files
 - **Posts authoring standards** — `pages/_posts/README.md` documents directory layout, file naming, required frontmatter, validation tooling, link hygiene, draft lifecycle, and the cleanup metrics history (#239)
 - **Posts CI workflow** — `.github/workflows/posts-markdown-lint.yml` runs `markdownlint-cli2` on PRs touching `pages/_posts/**`; supports manual `--fix` mode (#239)
@@ -46,7 +28,139 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **External link-rot baseline** — `link-check-results/posts-external-baseline.md` catalogs 18 known-broken external links with status and remediation strategy (#239)
 - **AI-generated preview images** — 11 DALL-E previews under `assets/images/previews/` for `devops/` posts that previously had empty `preview:` fields (#239)
 
+- **New Post: `foundational-ci-cd-pipelines-github-vscode-extensions.md`** (`pages/_posts/devops/`) - Tutorial on building production-ready CI/CD pipelines for VS Code extensions with GitHub Actions, covering linting, testing, building, and automated Marketplace publishing
+- **Lychee Configuration** (`.lychee.toml`) - Declarative configuration for lychee link checker with cross-run caching, performance tuning, and URL exclusions
+- **Broken Links Baseline** (`link-check-results/broken_links_baseline.json`) - Baseline of known broken links for delta-based AI analysis
+- **Preview Images** - Generated preview banner for the new CI/CD pipelines blog post (original + enhanced variant)
+
+- **New Post: `terminal-bash-finance-accounting.md`** (`pages/_posts/business/`) - Comprehensive blog post targeting finance and accounting professionals, teaching terminal and bash scripting through relatable spreadsheet analogies. Includes real-world month-end automation script, Excel-to-Bash translation table, and links to Terminal Fundamentals, Bashcrawl, and Bashrun quests.
+
+- **Resource Codex** (`pages/_quests/0000/bashcrawl/README.md`) - Added links to the Bash Cheatsheet and Complete BASH Reference in the bashcrawl quest.
+- **Practical Application Section** (`pages/_docs/terminal/bash-complete-reference.md`) - Added links to interactive quests (`bashcrawl` and `bash-run`) to practice bash commands.
+
+- **Complete BASH Reference** (`pages/_docs/terminal/bash-complete-reference.md`) - Exhaustive 4600+ line GNU Bash reference covering built-in commands, parameter expansion, arrays, string manipulation, arithmetic, conditionals, loops, functions, process control, text processing, networking, and advanced scripting techniques
+- **Docs navigation entry** (`_data/navigation/docs.yml`) - Added "Complete BASH Reference" link under Terminal section
+- **Cursor command** (`.cursor/commands/commit-publish.md`) - Workflow command aligned with IT-Journey commit/publish standards
+
+- **Quest Registry** (`scripts/quest/quest_registry.py`) - New single source of truth for quest level metadata including level order, tier groupings, canonical metadata, and permalink utilities
+- **Git Basics Quest Enhancement** (`pages/_quests/0000/git-basics.md`) - Major content expansion:
+  - Added Mermaid diagrams: quest network position, three areas flowchart, branch lifecycle, local-remote sync, undo decision flowchart, and full quest flow
+  - Added Chapter 4: "Undoing Mistakes — The Time-Travel Spells" covering restore, reset, and revert
+  - Added checkpoints with validation commands and knowledge checks for Chapters 1–3
+  - Replaced generic challenges with structured Implementation Challenges (Chronicle Keeper, Branch Weaver, Remote Ranger)
+  - Added Boss Battle: "The Git Gauntlet" — a multi-phase capstone exercise with verification script
+  - Expanded Quest Rewards with achievement badges, skills unlocked, and journey progress
+  - Enhanced References section with categorized resources (documentation, interactive, quick references)
+
+- **Quest Validation CI Workflow** (`quest-validation.yml`) - New GitHub Actions workflow for automated quest validation on PRs and pushes
+- **Full Audit Report** (`test/quest-validator/full-audit-report.json`) - Comprehensive quest audit results (136 quests, 0 errors, 93.9% avg score)
+
+- **`_includes/components/powered-by.html`** - New reusable component for displaying "Powered by" technology cards
+  - Bootstrap 5 responsive card grid (1 column mobile, 3 columns desktop)
+  - Graceful handling of empty/null version numbers
+  - Dynamic Bootstrap icons support
+- **`_includes/components/README.md`** - Documentation for the new components directory
+- **`site.resources`** configuration block - External resource links for GitHub, RubyGems, Docker Hub
+- **`scripts/quest/update-quest-home.py`** - Generate and inject an auto-updated quest index into `pages/_quests/home.md`.
+- **`_data/navigation/README.md`** - New documentation for navigation schema with zer0-mistakes v0.17+ compatibility notes
+
+#### Phase 5: Master Tier Quest Generation (Levels 1100-1111)
+- **32 New Quests**: Complete Master Tier quest generation across 4 levels
+  - **Level 1100 - Data Engineering** (5 new quests):
+    - `apache-spark.md` - Big Data Processing with Spark
+    - `data-quality.md` - Data Quality & Validation
+    - `data-warehousing.md` - Data Warehouse Design
+    - `etl-pipeline-design.md` - ETL Pipeline Architecture
+    - `stream-processing.md` - Real-time Data Streams
+  - **Level 1101 - Machine Learning & AI** (8 new quests):
+    - `ai-ethics.md` - Responsible AI Development
+    - `computer-vision.md` - Image & Video Analysis
+    - `deep-learning-frameworks.md` - TensorFlow & PyTorch
+    - `ml-fundamentals.md` - Machine Learning Basics
+    - `mlops.md` - ML Operations & Deployment
+    - `natural-language-processing.md` - NLP Fundamentals
+    - `neural-networks.md` - Deep Learning Architecture
+    - `python-data-science.md` - Python for Data Science
+  - **Level 1110 - Architecture & Design** (7 new quests):
+    - `api-gateway-patterns.md` - API Gateway Design
+    - `design-patterns.md` - Software Design Patterns
+    - `domain-driven-design.md` - DDD Principles
+    - `event-driven-design.md` - Event-Driven Architecture
+    - `microservices-architecture.md` - Microservices Design
+    - `scaling-strategies.md` - Horizontal & Vertical Scaling
+    - `system-design-interviews.md` - System Design Practice
+  - **Level 1111 - Leadership & Innovation** (8 new quests):
+    - `architecture-reviews.md` - Technical Review Process
+    - `building-technical-communities.md` - Community Building
+    - `career-advancement.md` - IT Career Growth
+    - `innovation-rnd.md` - R&D Leadership
+    - `mentorship-programs.md` - Mentoring Skills
+    - `open-source-contribution.md` - OSS Contribution
+    - `tech-speaking-writing.md` - Technical Communication
+    - `technical-leadership.md` - Tech Lead Skills
+
+#### Quest Validation Improvements
+- **Quest Template Update**: Added `fmContentType: quest` field to `.frontmatter/templates/quests.md`
+- **Validation Rules Documentation**: Added comprehensive validation rules section to `.github/instructions/quest.instructions.md` including:
+  - Required frontmatter fields table
+  - Enhanced fields table
+  - Content structure validation requirements
+  - Difficulty level guidelines
+  - Binary level system reference
+  - Validation commands and score thresholds
+  - Common issues and fixes guide
+
+#### Phase 4: Expert Tier Quest Generation (Phases 1-4 Complete)
+- **72 New Placeholder Quests**: Complete quest generation across 4 phases
+  - **Phase 2 - Apprentice Tier** (Levels 0000-0011): 17 quests
+    - Level 0000: `terminal-fundamentals.md`, `git-basics.md`, `markdown-mastery.md`
+    - Level 0001: `github-pages-basics.md`, `jekyll-fundamentals.md`, `liquid-templating.md`, `yaml-configuration.md`, `git-workflow-mastery.md`
+    - Level 0010: `advanced-markdown.md`, `css-styling-basics.md`, `javascript-fundamentals.md`, `bootstrap-framework.md`
+    - Level 0011: `advanced-git-workflows.md`, `jekyll-plugins.md`, `seo-optimization.md`, `analytics-integration.md`, `custom-domains.md`
+  - **Phase 3 - Journeyman Tier** (Levels 0100-0111): 36 quests
+    - Level 0100: `container-fundamentals.md`, `docker-compose-orchestration.md`
+    - Level 0101: 8 CI/CD quests (`cicd-fundamentals.md`, `github-actions-basics.md`, `testing-integration.md`, etc.)
+    - Level 0110 (NEW): 8 database quests (`database-fundamentals.md`, `sql-mastery.md`, `data-modeling.md`, etc.)
+    - Level 0111 (NEW): 7 API quests (`api-fundamentals.md`, `rest-principles.md`, `api-authentication.md`, etc.)
+  - **Phase 4 - Expert Tier** (Levels 1000-1011): 19 quests
+    - Level 1000 (NEW): 6 cloud quests (`cloud-computing-fundamentals.md`, `aws-essentials.md`, `infrastructure-as-code.md`)
+    - Level 1001 (NEW): 4 Kubernetes quests (`kubernetes-fundamentals.md`, `k8s-pods-workloads.md`, `k8s-services-networking.md`, `k8s-config-secrets.md`)
+    - Level 1010: 5 monitoring quests (`monitoring-fundamentals.md`, `prometheus-grafana.md`, `elk-stack.md`, `distributed-tracing.md`, `alerting-systems.md`)
+    - Level 1011: 5 security quests (`security-fundamentals.md`, `threat-modeling.md`, `secure-coding.md`, `penetration-testing.md`, `compliance-standards.md`)
+
+#### Quest Infrastructure & Automation
+- **Quest Generation Script**: `scripts/generate-placeholder-quest.sh` - Automated quest file generation from templates
+- **Quest Validator**: `scripts/validate-quest-network.py` - Python-based frontmatter and network validation
+- **Quest Tools Wrapper**: `scripts/quest-tools.sh` - Docker wrapper for validation tools
+- **Quest Templates**: `pages/_quests/templates/` directory with `main-quest-template.md` and `level-readme-template.md`
+- **Docker Validation Environment**: Multi-service setup in `docker-compose.yml` with `quest-validator` and `quest-network-validator` services
+- **Python Dependencies**: `scripts/requirements.txt` for PyYAML and validation tools
+
+#### Quest Documentation
+- **QUEST_BUILD_PLAN.md**: 14-week roadmap for complete quest system (6 phases, 97 quests)
+- **PHASE1_COMPLETE.md**: Infrastructure phase documentation
+- **PHASE2_COMPLETE.md**: Apprentice Tier (17 quests) completion summary
+- **PHASE3_COMPLETE.md**: Journeyman Tier (36 quests) completion summary
+- **PHASE4_COMPLETE.md**: Expert Tier (19 quests) completion summary with technical coverage breakdown
+- **VALIDATION_FIXES_SUMMARY.md**: Documentation of 44 frontmatter validation fixes across 58 original quests
+
+#### Other Additions
+- Preview images for various quests in `assets/images/previews/`
+- **README.md files**: Added README.md to all level directories (0000, 0001, 0010, 0011, 0100, 0101, 1010, 1011, 1100, 1110)
+- **inventory/README.md**: New directory for learner progress tracking (future feature)
+- **tools/README.md**: Collection documentation for cross-level tool quests
+- **Directory Structure section**: Added comprehensive structure documentation to main quests README.md
+- **Binary Level System table**: Complete 16-level table (0000-1111) with status indicators and reserved levels
+
 ### Changed
+
+- **Normalized quest permalinks** — All 173 quest files migrated to canonical `/quests/XXXX/[side-quests/]slug/` hierarchy; old URLs preserved in `redirect_from:` for backward compatibility
+- **Quest validator updated** — `test/quest-validator/quest_validator.py` now enforces the canonical permalink regex and validates `dir-level` consistency
+- **Quest CI workflow updated** — `full-audit` job now regenerates and drift-checks `quest-network.json` on every scheduled or manual run
+- **AGENTS.md and copilot-instructions.md updated** — Quest permalink convention documented as canonical gotcha with migration commands
+
+- **Level 0000 README** — Updated Bashcrawl cross-reference link from stale `/quests/0000/bashcrawl/` to canonical `/quests/0000/bashcrawl/`
+
 - **`.github/` instructions and prompts slashed** — `.github/instructions/*.md` and `.github/prompts/*.md` compressed ~70%: removed generic AI-padding, duplicate examples, and motivational filler; kept only actionable rules and one canonical example per concept. All files tightened to ≤200 lines.
 - **`.github/instructions/DONTREADME.md` removed** — 235-line fantasy filler with no inbound references; superseded by tightened instruction set.
 - **Posts mass cleanup** (8-phase, #239):
@@ -59,8 +173,181 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Posts directory layout** — All posts now reside in 13 kebab-case category folders (e.g. `ai-machine-learning/`, `creative-experimental/`); previous folder names with spaces and `&` renamed via `git mv` to preserve history
 - **Frontmatter normalized** — Auto-filled `date`, `categories`, and `description` across the collection per `posts.instructions.md` schema
 
+- **Layout Rename: `journals` → `articles`** - Renamed layout references across all post instructions, prompt templates, SEO templates, documentation standards, architecture docs, and quest content for consistency with `_config.yml` default
+- **Dev Performance: Incremental Builds** (`_config_dev.yml`) - Added incremental build support, reduced plugin set, disabled preview image generation during development for faster iteration
+- **Docker Dev Environment** (`docker-compose.yml`) - Added `--incremental` flag to Jekyll serve command and persistent `jekyll-cache` volume for faster rebuilds
+- **Preview Generator** (`_plugins/preview_generator.rb`) - Skip preview generation during incremental builds to avoid full rebuild overhead
+- **Quest YAML Formatting** (`pages/_quests/0101/jekyll-quest-tracking.md`) - Normalized YAML indentation and quoting for consistency
+- **Post Metadata** (`pages/_posts/devops/2026-03-07-foundational-ci-cd-pipelines-github-vscode-extensions.md`) - Updated lastmod, removed duplicate layout field
+
+- **Link Health Guardian v3.0** (`scripts/validation/link-checker.py`) - Major rewrite:
+  - Dual engine support: lychee (primary, via `.lychee.toml`) or curl (fallback)
+  - Persistent caching via `.lycheecache` for cross-run URL skip
+  - Incremental `--changed-only` mode for fast PR checks
+  - Delta-only AI analysis (only new broken links sent to AI)
+  - Multi-provider AI support (OpenAI, Anthropic, or none via `--ai-provider`)
+  - `--include-site` flag for opt-in `_site/` scanning
+  - Timing instrumentation for performance tracking
+- **Link Checker Workflow** (`.github/workflows/link-checker.yml`) - Simplified and optimized:
+  - Added `pull_request` trigger with fast incremental check (changed files only, no AI)
+  - Removed redundant Friday schedule (keep Monday only)
+  - Added AI provider selection (OpenAI, Anthropic, or none)
+  - Removed obsolete input options (timeout, ai-analysis toggle)
+- **Preview Image Generator Plugin** (`_plugins/preview_image_generator.rb`) - Fixed `has_preview?` to reject non-path strings (text descriptions) and added multi-candidate file path checking for both absolute and relative paths
+- **Preview Image Script** (`scripts/generation/generate-preview-images.sh`) - Added `--enhance` mode for AI-powered image improvement with configurable model, fidelity, and format options; fixed `PROJECT_ROOT` path resolution
+- **Scripts README** (`scripts/README.md`) - Updated Link Health Guardian documentation for v3.0 features, configuration options, and dual-engine architecture
+- **Guardian Script** (`test/hyperlink-guardian/scripts/guardian.sh`) - Marked as deprecated in favor of `link-checker.py --engine curl`
+
+- **Consolidated Bash Cheatsheets** (`pages/_notes/cheetsheets/bash-cheatsheet.md`) - Merged duplicate bash cheatsheets into a single file and updated frontmatter with related quests.
+- **Bashcrawl Quest Enhancement** (`pages/_quests/0000/bashcrawl/README.md`) - Upgraded to a main quest with enhanced frontmatter (`level: '0000'`, `quest_type: main_quest`), added quest dependencies, and updated the setup guide to clone from `bamr87/bashcrawl`.
+- **Bash-run Side Quest** (`pages/_quests/0000/bash-run.md`) - Updated frontmatter to correctly point to `bashcrawl` as its parent/required quest and added resource links.
+
+- **Quests home page** (`pages/_quests/home.md`) - Added `mermaid: true` front matter to enable Mermaid diagram rendering
+- **Docs library index** (`pages/_docs/index.md`) - Added Terminal section listing available reference guides
+
+- **CI/CD Token Standardization** - Renamed `PAT_TOKEN` secret to `GITHUB_PAT` across all workflows and documentation for consistency:
+  - `ai-content-review.yml` — 3 references updated
+  - `dependency-checker.yml` — 2 references updated (also switched checkout token from `GITHUB_TOKEN` to `GITHUB_PAT` for write permissions)
+  - `frontmatter-validation.yml` — 2 references updated
+  - `action-triggers.md` quest — 1 reference updated
+  - Blog posts updated to reflect new token naming
+  - `PRD.md` — Issue descriptions updated
+
+- **Quest Validator v2.0.0** (`test/quest-validator/quest_validator.py`) - Major upgrade:
+  - Added placeholder content detection (brackets, TODO/TBD, lorem ipsum)
+  - Added `--exclude-drafts` and `--fail-threshold` CLI options
+  - Enhanced permalink validation supporting multiple valid patterns
+  - Improved scoring with complete vs placeholder quest classification
+  - Added JSON report output support for CI integration
+- **Placeholder Dependency Remover** (`scripts/quest/remove-placeholder-deps.py`) - Improved regex patterns to dynamically match any level (e.g., `level-\d{4}-side-quest-\d+`) instead of hardcoded level lists
+- **Quest Frontmatter Enhancements** (93 quest files across all levels) - Comprehensive frontmatter improvements:
+  - Level 0000 quests: Added `quest_line`, `quest_arc`, `quest_dependencies`, `quest_relationships`, `learning_paths`, structured `prerequisites` (knowledge/system requirements), structured `rewards` (badges/skills/progression points), expanded quest objectives and content sections
+  - Levels 0001–1111 quests: Removed placeholder dependency values (`side-quest-1`, `alternative-path`, `continuation`) replaced with empty arrays for accurate relationship tracking
+
+- **`_config.yml`** - Updated `powered_by` configuration:
+  - Removed Algolia (not currently in use)
+  - Updated jQuery version to 3.7
+  - Updated MathJax version to 3.2
+  - Added Docker to powered_by list
+  - Fixed jQuery capitalization
+
+- **`pages/_quests/home.md`** - Added auto-generated quest index section with markers and refreshed `lastmod`.
+
+- **Quest README**: Updated `pages/_quests/README.md`:
+  - Removed "Coming Soon" labels from levels 1101 and 1111
+  - Added links to all new quests in levels 1100-1111
+  - Updated quest counts and completion status
+
+#### Quest System Status Update
+- **Total Quests**: 162 quests (130 previous + 32 new)
+- **Levels Complete**: 16 of 16 levels (100%) ✅
+- **Phases Complete**: 5 of 6 phases (83%)
+  - Phase 5: Master Tier ✅ (NEW)
+
+#### Quest Frontmatter Standardization
+- **44 Frontmatter Validation Fixes**: Systematic fixes across 58 original quest files
+  - Added missing `level` field to all quests following binary format (0000-1111)
+  - Added missing `quest_type` field (main_quest, side_quest, bonus_quest, epic_quest, reference)
+  - Added missing `difficulty` field (🟢 Easy, 🟡 Medium, 🔴 Hard, ⚔️ Epic, 📚 Reference)
+  - Added missing `estimated_time` field with proper format
+  - Standardized `permalink` field structure
+  - Added missing `title` and `description` fields
+  - Fixed invalid difficulty values and quest types
+  - Fixed invalid level formats to 4-digit binary
+
+#### Docker Infrastructure Updates
+- **Dockerfile**: Added Python 3.11 venv setup at `/opt/venv` for quest validation
+- **docker-compose.yml**: Added multi-service validation environment
+  - `quest-validator` service for individual quest validation
+  - `quest-network-validator` service for network-wide validation
+  - Shared volume mounts for scripts and quest directories
+
+#### Quest System Status
+- **Total Quests**: 130 quests (58 original + 72 generated)
+- **Levels Complete**: 12 of 16 levels (75%)
+  - Original levels: 0000, 0001, 0010, 0011, 0100, 0101, 1100, 1110
+  - New levels: 0110, 0111, 1000, 1001, 1010, 1011
+- **Phases Complete**: 4 of 6 phases (67%)
+  - Phase 1: Infrastructure ✅
+  - Phase 2: Apprentice Tier ✅
+  - Phase 3: Journeyman Tier ✅
+  - Phase 4: Expert Tier ✅
+  - Phase 5: Master Tier (pending)
+  - Phase 6: Polish & Integration (pending)
+
+#### Major Quest Reorganization
+  - `init_world/` → `0000/` (Foundation & Init World)
+  - `lvl_000/` → `0000/` (merged with init_world content)
+  - `lvl_001/` → `0001/` (Journeyman Challenges)
+  - `lvl_0010/` → `0010/` (Terminal Enhancement)
+  - `frontend/` → `0100/` (Frontend & Docker)
+  - Tool quests → `tools/` directory
+  - Quest examples → `codex/` directory
+- **File Naming**: Removed date prefixes from all quest files (e.g., `2024-05-28-bash-run.md` → `bash-run.md`)
+- **Code Files**: Moved script/code examples from level root directories to subdirectories (`scripts/`, `examples/`)
+- **Updated paths**: All internal quest links updated to new binary-coded paths in README.md and home.md
+- Updated `scripts/lib/preview_generator.py` for enhanced preview generation
+- Updated `test/quest-validator/requirements.txt` for validator dependencies
+
+### Removed
+
+- **Vendored preview-image generators** — `_plugins/preview_image_generator.rb`, `scripts/lib/preview_generator.py` and `scripts/generation/generate-preview-images.sh` are retired; the `zer0-image-generator` gem (`~> 0.6`, `bundle exec jekyll preview-images`) covers every option they had, and `preview_images:` in `_config.yml` is its one config block. The `_config_dev.yml` / `_config_ci.yml` `preview_images:` overrides went with the plugin that read them.
+
+- **Empty Duplicate Post** (`pages/_posts/2025-07-10-github-actions-authentication-fix-2025-07-10.md`) - Removed empty duplicate of existing post in `devops/` subdirectory
+
+- Legacy directory structure (`init_world/`, `lvl_000/`, `lvl_001/`, `lvl_0010/`, `frontend/`, `examples/`)
+- Date prefixes from 75+ quest files
+- Duplicate `0000/tools/` directory (consolidated to root `tools/`)
+
 ### Fixed
+
+- **Quest preview paths** — 164 quests used `preview: images/previews/…` without a leading slash, which the theme joined onto `/assets` as `/assetsimages/previews/…` (404 for the hero background and `og:image`). They now start with `/images/`, like the rest of the site, and so does the SEO frontmatter template
+- **Homepage stats and preview images** — the stats row rendered `0` until a scroll-triggered count-up ran, so no-JS visitors, screenshots, and anyone who had not scrolled it into view saw four zeros. Real values are now rendered server-side (quests = non-draft `fmContentType: quest` floored to tens, levels/tiers from `_data/quests/`), and the count-up is skipped for reduced motion. The tier cards and gallery referenced 8 `.png` previews that only exist as `.webp` (12 broken images per load); they now point at the `.webp` files
+- **Quest nav copy and missing page headings** — the quest trail said "No prerequisite" right above each quest's own "Quest Prerequisites" list. It now reads "No prior experience needed" on level 0000 quests (13, including hello-noob) and "No required quest" elsewhere (101). `/search/` and `/sitemap/` had no `h1` (axe `page-has-heading-one`); their headings are now `h1`
+- **173 quest files** with non-canonical permalink formats (`/quests/level-XXXX-slug/`, `/quests/side-quest-slug/`) migrated to `^/quests/[01]{4}/[side-quests/]slug/$` format
+
 - **Broken Jekyll docs link** — `https://jekyllrb.com/docs/deployment/methods/` → `https://jekyllrb.com/docs/deployment/` in `devops/2025-11-17-deploying-jekyll-sites-to-azure-cloud.md` (#239)
+
+- **Link Check Results** - Cleaned up oversized `lychee_results.json` (reduced ~128K lines of stale data) and regenerated analysis reports
+
+- **Bashcrawl Launcher** (`pages/_quests/0000/bashcrawl/bash_crawl.sh`) - Rewrote the script to properly clone the `bashcrawl` repository and execute `entrance.sh`, removing unreachable code and adding error handling.
+
+- **`dependency-checker.yml`** — Replaced nested YAML-unsafe heredoc labels (`ISSUE_EOF`) with standard `EOF`, removed fragile `continue-on-error`, fixed backtick quoting in markdown code fences, removed unnecessary label creation step
+- **`frontmatter-validation.yml`** — Removed unused `DateTimeEncoder` class and redundant `date` import
+- **`link-checker.yml`** — Removed broken float-to-integer truncation of `success_rate` variable; bash `[[ -ge ]]` already handles integer comparison
+- **`prd-sync.yml`** — Fixed YAML block scalar indentation that broke workflow parsing, removed unnecessary `issues: write` permission
+
+- **fmContentType Field**: Added missing `fmContentType: quest` to 35 quest files:
+  - All 32 new quests in levels 1100-1111
+  - 3 existing quests: `edgar.md`, `sec-edgar.md`, `the-temple-of-templates.md`
+- **Jekyll Build Error**: Fixed invalid `preview` field in 2 blog posts:
+  - `2025-06-29-planting-seeds-software-evolution.md` - Changed text to image path
+  - `2025-07-09-fixing-github-actions-bash-compatibility-ai-evolution-engine.md` - Changed text to image path
+
+### Updated
+
+#### Navigation Schema Migration (zer0-mistakes v0.17+)
+Complete migration of all navigation files to new schema format.
+
+- **`_data/navigation/about.yml`** - Changed `sublinks` to `children`, fixed icon format to `bi-*` prefix
+- **`_data/navigation/main.yml`** - Changed `sublinks` to `children`, added Bootstrap Icons to all items
+- **`_data/navigation/home.yml`** - Changed `sublinks` to `children`, fixed icon format
+- **`_data/navigation/docs.yml`** - Changed `sublinks` to `children`, added icons, fixed icon prefix
+- **`_data/navigation/quickstart.yml`** - Changed `sublinks` to `children`, added icons
+- **`_data/navigation/posts.yml`** - Changed `sublinks` to `children`, fixed all icons to use `bi-*` format, removed empty `sublinks: []`
+- **`_data/navigation/quests.yml`** - Changed `sublinks` to `children`, fixed icons to use `bi-*` format
+- **`_data/navigation/notebooks.yml`** - Changed `sublinks` to `children`, fixed icon format
+- **`_data/navigation/hobbies.yml`** - Changed `sublinks` to `children`, added icon
+
+### Documentation
+
+- **`scripts/quest/README.md`** - Added front matter and documented quest index generation script usage.
+
+### Migration Notes
+
+- Quest permalinks may have changed - update any external references
+- Binary level directories (0000-1110) replace legacy naming convention
+- Code examples now live in subdirectories within level folders
 
 ## [2.2.0] - 2026-03-21
 
@@ -85,166 +372,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - **Quest Validator False Positives** — Skips required field errors for fields that have `_config.yml` defaults (e.g., `layout`), resolving 142/142 quest validation (#169)
-
-## [Unreleased] - 2026-03-08
-
-### Changed
-- **Layout Rename: `journals` → `articles`** - Renamed layout references across all post instructions, prompt templates, SEO templates, documentation standards, architecture docs, and quest content for consistency with `_config.yml` default
-- **Dev Performance: Incremental Builds** (`_config_dev.yml`) - Added incremental build support, reduced plugin set, disabled preview image generation during development for faster iteration
-- **Docker Dev Environment** (`docker-compose.yml`) - Added `--incremental` flag to Jekyll serve command and persistent `jekyll-cache` volume for faster rebuilds
-- **Preview Generator** (`_plugins/preview_generator.rb`) - Skip preview generation during incremental builds to avoid full rebuild overhead
-- **Quest YAML Formatting** (`pages/_quests/0101/jekyll-quest-tracking.md`) - Normalized YAML indentation and quoting for consistency
-- **Post Metadata** (`pages/_posts/devops/2026-03-07-foundational-ci-cd-pipelines-github-vscode-extensions.md`) - Updated lastmod, removed duplicate layout field
-
-### Removed
-- **Empty Duplicate Post** (`pages/_posts/2025-07-10-github-actions-authentication-fix-2025-07-10.md`) - Removed empty duplicate of existing post in `devops/` subdirectory
-
-## [Unreleased] - 2026-03-07
-
-### Added
-- **New Post: `foundational-ci-cd-pipelines-github-vscode-extensions.md`** (`pages/_posts/devops/`) - Tutorial on building production-ready CI/CD pipelines for VS Code extensions with GitHub Actions, covering linting, testing, building, and automated Marketplace publishing
-- **Lychee Configuration** (`.lychee.toml`) - Declarative configuration for lychee link checker with cross-run caching, performance tuning, and URL exclusions
-- **Broken Links Baseline** (`link-check-results/broken_links_baseline.json`) - Baseline of known broken links for delta-based AI analysis
-- **Preview Images** - Generated preview banner for the new CI/CD pipelines blog post (original + enhanced variant)
-
-### Changed
-- **Link Health Guardian v3.0** (`scripts/validation/link-checker.py`) - Major rewrite:
-  - Dual engine support: lychee (primary, via `.lychee.toml`) or curl (fallback)
-  - Persistent caching via `.lycheecache` for cross-run URL skip
-  - Incremental `--changed-only` mode for fast PR checks
-  - Delta-only AI analysis (only new broken links sent to AI)
-  - Multi-provider AI support (OpenAI, Anthropic, or none via `--ai-provider`)
-  - `--include-site` flag for opt-in `_site/` scanning
-  - Timing instrumentation for performance tracking
-- **Link Checker Workflow** (`.github/workflows/link-checker.yml`) - Simplified and optimized:
-  - Added `pull_request` trigger with fast incremental check (changed files only, no AI)
-  - Removed redundant Friday schedule (keep Monday only)
-  - Added AI provider selection (OpenAI, Anthropic, or none)
-  - Removed obsolete input options (timeout, ai-analysis toggle)
-- **Preview Image Generator Plugin** (`_plugins/preview_image_generator.rb`) - Fixed `has_preview?` to reject non-path strings (text descriptions) and added multi-candidate file path checking for both absolute and relative paths
-- **Preview Image Script** (`scripts/generation/generate-preview-images.sh`) - Added `--enhance` mode for AI-powered image improvement with configurable model, fidelity, and format options; fixed `PROJECT_ROOT` path resolution
-- **Scripts README** (`scripts/README.md`) - Updated Link Health Guardian documentation for v3.0 features, configuration options, and dual-engine architecture
-- **Guardian Script** (`test/hyperlink-guardian/scripts/guardian.sh`) - Marked as deprecated in favor of `link-checker.py --engine curl`
-
-### Fixed
-- **Link Check Results** - Cleaned up oversized `lychee_results.json` (reduced ~128K lines of stale data) and regenerated analysis reports
-
-## [Unreleased] - 2026-02-23
-
-### Added
-- **New Post: `terminal-bash-finance-accounting.md`** (`pages/_posts/business/`) - Comprehensive blog post targeting finance and accounting professionals, teaching terminal and bash scripting through relatable spreadsheet analogies. Includes real-world month-end automation script, Excel-to-Bash translation table, and links to Terminal Fundamentals, Bashcrawl, and Bashrun quests.
-
-## [Unreleased] - 2026-02-22
-
-### Added
-- **Resource Codex** (`pages/_quests/0000/bashcrawl/README.md`) - Added links to the Bash Cheatsheet and Complete BASH Reference in the bashcrawl quest.
-- **Practical Application Section** (`pages/_docs/terminal/bash-complete-reference.md`) - Added links to interactive quests (`bashcrawl` and `bash-run`) to practice bash commands.
-
-### Changed
-- **Consolidated Bash Cheatsheets** (`pages/_notes/cheetsheets/bash-cheatsheet.md`) - Merged duplicate bash cheatsheets into a single file and updated frontmatter with related quests.
-- **Bashcrawl Quest Enhancement** (`pages/_quests/0000/bashcrawl/README.md`) - Upgraded to a main quest with enhanced frontmatter (`level: '0000'`, `quest_type: main_quest`), added quest dependencies, and updated the setup guide to clone from `bamr87/bashcrawl`.
-- **Bash-run Side Quest** (`pages/_quests/0000/bash-run.md`) - Updated frontmatter to correctly point to `bashcrawl` as its parent/required quest and added resource links.
-
-### Fixed
-- **Bashcrawl Launcher** (`pages/_quests/0000/bashcrawl/bash_crawl.sh`) - Rewrote the script to properly clone the `bashcrawl` repository and execute `entrance.sh`, removing unreachable code and adding error handling.
-
-## [Unreleased] - 2026-02-21
-
-### Added
-- **Complete BASH Reference** (`pages/_docs/terminal/bash-complete-reference.md`) - Exhaustive 4600+ line GNU Bash reference covering built-in commands, parameter expansion, arrays, string manipulation, arithmetic, conditionals, loops, functions, process control, text processing, networking, and advanced scripting techniques
-- **Docs navigation entry** (`_data/navigation/docs.yml`) - Added "Complete BASH Reference" link under Terminal section
-- **Cursor command** (`.cursor/commands/commit-publish.md`) - Workflow command aligned with IT-Journey commit/publish standards
-
-### Changed
-- **Quests home page** (`pages/_quests/home.md`) - Added `mermaid: true` front matter to enable Mermaid diagram rendering
-- **Docs library index** (`pages/_docs/index.md`) - Added Terminal section listing available reference guides
-
-## [Unreleased] - 2026-02-16
-
-### Added
-- **Quest Registry** (`scripts/quest/quest_registry.py`) - New single source of truth for quest level metadata including level order, tier groupings, canonical metadata, and permalink utilities
-- **Git Basics Quest Enhancement** (`pages/_quests/0000/git-basics.md`) - Major content expansion:
-  - Added Mermaid diagrams: quest network position, three areas flowchart, branch lifecycle, local-remote sync, undo decision flowchart, and full quest flow
-  - Added Chapter 4: "Undoing Mistakes — The Time-Travel Spells" covering restore, reset, and revert
-  - Added checkpoints with validation commands and knowledge checks for Chapters 1–3
-  - Replaced generic challenges with structured Implementation Challenges (Chronicle Keeper, Branch Weaver, Remote Ranger)
-  - Added Boss Battle: "The Git Gauntlet" — a multi-phase capstone exercise with verification script
-  - Expanded Quest Rewards with achievement badges, skills unlocked, and journey progress
-  - Enhanced References section with categorized resources (documentation, interactive, quick references)
-
-### Changed
-- **CI/CD Token Standardization** - Renamed `PAT_TOKEN` secret to `GITHUB_PAT` across all workflows and documentation for consistency:
-  - `ai-content-review.yml` — 3 references updated
-  - `dependency-checker.yml` — 2 references updated (also switched checkout token from `GITHUB_TOKEN` to `GITHUB_PAT` for write permissions)
-  - `frontmatter-validation.yml` — 2 references updated
-  - `action-triggers.md` quest — 1 reference updated
-  - Blog posts updated to reflect new token naming
-  - `PRD.md` — Issue descriptions updated
-
-### Fixed
-- **`dependency-checker.yml`** — Replaced nested YAML-unsafe heredoc labels (`ISSUE_EOF`) with standard `EOF`, removed fragile `continue-on-error`, fixed backtick quoting in markdown code fences, removed unnecessary label creation step
-- **`frontmatter-validation.yml`** — Removed unused `DateTimeEncoder` class and redundant `date` import
-- **`link-checker.yml`** — Removed broken float-to-integer truncation of `success_rate` variable; bash `[[ -ge ]]` already handles integer comparison
-- **`prd-sync.yml`** — Fixed YAML block scalar indentation that broke workflow parsing, removed unnecessary `issues: write` permission
-
-## [Previous Unreleased]
-
-### Added
-- **Quest Validation CI Workflow** (`quest-validation.yml`) - New GitHub Actions workflow for automated quest validation on PRs and pushes
-- **Full Audit Report** (`test/quest-validator/full-audit-report.json`) - Comprehensive quest audit results (136 quests, 0 errors, 93.9% avg score)
-
-### Changed
-- **Quest Validator v2.0.0** (`test/quest-validator/quest_validator.py`) - Major upgrade:
-  - Added placeholder content detection (brackets, TODO/TBD, lorem ipsum)
-  - Added `--exclude-drafts` and `--fail-threshold` CLI options
-  - Enhanced permalink validation supporting multiple valid patterns
-  - Improved scoring with complete vs placeholder quest classification
-  - Added JSON report output support for CI integration
-- **Placeholder Dependency Remover** (`scripts/quest/remove-placeholder-deps.py`) - Improved regex patterns to dynamically match any level (e.g., `level-\d{4}-side-quest-\d+`) instead of hardcoded level lists
-- **Quest Frontmatter Enhancements** (93 quest files across all levels) - Comprehensive frontmatter improvements:
-  - Level 0000 quests: Added `quest_line`, `quest_arc`, `quest_dependencies`, `quest_relationships`, `learning_paths`, structured `prerequisites` (knowledge/system requirements), structured `rewards` (badges/skills/progression points), expanded quest objectives and content sections
-  - Levels 0001–1111 quests: Removed placeholder dependency values (`side-quest-1`, `alternative-path`, `continuation`) replaced with empty arrays for accurate relationship tracking
-
-## [Unreleased - Previous]
-
-### Added
-- **`_includes/components/powered-by.html`** - New reusable component for displaying "Powered by" technology cards
-  - Bootstrap 5 responsive card grid (1 column mobile, 3 columns desktop)
-  - Graceful handling of empty/null version numbers
-  - Dynamic Bootstrap icons support
-- **`_includes/components/README.md`** - Documentation for the new components directory
-- **`site.resources`** configuration block - External resource links for GitHub, RubyGems, Docker Hub
-- **`scripts/quest/update-quest-home.py`** - Generate and inject an auto-updated quest index into `pages/_quests/home.md`.
-- **`_data/navigation/README.md`** - New documentation for navigation schema with zer0-mistakes v0.17+ compatibility notes
-
-### Changed
-- **`_config.yml`** - Updated `powered_by` configuration:
-  - Removed Algolia (not currently in use)
-  - Updated jQuery version to 3.7
-  - Updated MathJax version to 3.2
-  - Added Docker to powered_by list
-  - Fixed jQuery capitalization
-
-### Changed
-- **`pages/_quests/home.md`** - Added auto-generated quest index section with markers and refreshed `lastmod`.
-
-### Updated
-
-#### Navigation Schema Migration (zer0-mistakes v0.17+)
-Complete migration of all navigation files to new schema format.
-
-- **`_data/navigation/about.yml`** - Changed `sublinks` to `children`, fixed icon format to `bi-*` prefix
-- **`_data/navigation/main.yml`** - Changed `sublinks` to `children`, added Bootstrap Icons to all items
-- **`_data/navigation/home.yml`** - Changed `sublinks` to `children`, fixed icon format
-- **`_data/navigation/docs.yml`** - Changed `sublinks` to `children`, added icons, fixed icon prefix
-- **`_data/navigation/quickstart.yml`** - Changed `sublinks` to `children`, added icons
-- **`_data/navigation/posts.yml`** - Changed `sublinks` to `children`, fixed all icons to use `bi-*` format, removed empty `sublinks: []`
-- **`_data/navigation/quests.yml`** - Changed `sublinks` to `children`, fixed icons to use `bi-*` format
-- **`_data/navigation/notebooks.yml`** - Changed `sublinks` to `children`, fixed icon format
-- **`_data/navigation/hobbies.yml`** - Changed `sublinks` to `children`, added icon
-
-### Documentation
-- **`scripts/quest/README.md`** - Added front matter and documented quest index generation script usage.
 
 ## [2.5.0] - 2025-01-27
 
@@ -501,179 +628,6 @@ Three new Ruby automation scripts for Docker/Jekyll environment:
 - **Integer/String Sorting**: Quest filters now handle mixed Integer/String level values by coercing to strings before sorting
 
 ---
-
-## [Previous Unreleased]
-
-### Added
-
-#### Phase 5: Master Tier Quest Generation (Levels 1100-1111)
-- **32 New Quests**: Complete Master Tier quest generation across 4 levels
-  - **Level 1100 - Data Engineering** (5 new quests):
-    - `apache-spark.md` - Big Data Processing with Spark
-    - `data-quality.md` - Data Quality & Validation
-    - `data-warehousing.md` - Data Warehouse Design
-    - `etl-pipeline-design.md` - ETL Pipeline Architecture
-    - `stream-processing.md` - Real-time Data Streams
-  - **Level 1101 - Machine Learning & AI** (8 new quests):
-    - `ai-ethics.md` - Responsible AI Development
-    - `computer-vision.md` - Image & Video Analysis
-    - `deep-learning-frameworks.md` - TensorFlow & PyTorch
-    - `ml-fundamentals.md` - Machine Learning Basics
-    - `mlops.md` - ML Operations & Deployment
-    - `natural-language-processing.md` - NLP Fundamentals
-    - `neural-networks.md` - Deep Learning Architecture
-    - `python-data-science.md` - Python for Data Science
-  - **Level 1110 - Architecture & Design** (7 new quests):
-    - `api-gateway-patterns.md` - API Gateway Design
-    - `design-patterns.md` - Software Design Patterns
-    - `domain-driven-design.md` - DDD Principles
-    - `event-driven-design.md` - Event-Driven Architecture
-    - `microservices-architecture.md` - Microservices Design
-    - `scaling-strategies.md` - Horizontal & Vertical Scaling
-    - `system-design-interviews.md` - System Design Practice
-  - **Level 1111 - Leadership & Innovation** (8 new quests):
-    - `architecture-reviews.md` - Technical Review Process
-    - `building-technical-communities.md` - Community Building
-    - `career-advancement.md` - IT Career Growth
-    - `innovation-rnd.md` - R&D Leadership
-    - `mentorship-programs.md` - Mentoring Skills
-    - `open-source-contribution.md` - OSS Contribution
-    - `tech-speaking-writing.md` - Technical Communication
-    - `technical-leadership.md` - Tech Lead Skills
-
-#### Quest Validation Improvements
-- **Quest Template Update**: Added `fmContentType: quest` field to `.frontmatter/templates/quests.md`
-- **Validation Rules Documentation**: Added comprehensive validation rules section to `.github/instructions/quest.instructions.md` including:
-  - Required frontmatter fields table
-  - Enhanced fields table
-  - Content structure validation requirements
-  - Difficulty level guidelines
-  - Binary level system reference
-  - Validation commands and score thresholds
-  - Common issues and fixes guide
-
-### Fixed
-- **fmContentType Field**: Added missing `fmContentType: quest` to 35 quest files:
-  - All 32 new quests in levels 1100-1111
-  - 3 existing quests: `edgar.md`, `sec-edgar.md`, `the-temple-of-templates.md`
-- **Jekyll Build Error**: Fixed invalid `preview` field in 2 blog posts:
-  - `2025-06-29-planting-seeds-software-evolution.md` - Changed text to image path
-  - `2025-07-09-fixing-github-actions-bash-compatibility-ai-evolution-engine.md` - Changed text to image path
-
-### Changed
-- **Quest README**: Updated `pages/_quests/README.md`:
-  - Removed "Coming Soon" labels from levels 1101 and 1111
-  - Added links to all new quests in levels 1100-1111
-  - Updated quest counts and completion status
-
-#### Quest System Status Update
-- **Total Quests**: 162 quests (130 previous + 32 new)
-- **Levels Complete**: 16 of 16 levels (100%) ✅
-- **Phases Complete**: 5 of 6 phases (83%)
-  - Phase 5: Master Tier ✅ (NEW)
-
----
-
-### Added
-
-#### Phase 4: Expert Tier Quest Generation (Phases 1-4 Complete)
-- **72 New Placeholder Quests**: Complete quest generation across 4 phases
-  - **Phase 2 - Apprentice Tier** (Levels 0000-0011): 17 quests
-    - Level 0000: `terminal-fundamentals.md`, `git-basics.md`, `markdown-mastery.md`
-    - Level 0001: `github-pages-basics.md`, `jekyll-fundamentals.md`, `liquid-templating.md`, `yaml-configuration.md`, `git-workflow-mastery.md`
-    - Level 0010: `advanced-markdown.md`, `css-styling-basics.md`, `javascript-fundamentals.md`, `bootstrap-framework.md`
-    - Level 0011: `advanced-git-workflows.md`, `jekyll-plugins.md`, `seo-optimization.md`, `analytics-integration.md`, `custom-domains.md`
-  - **Phase 3 - Journeyman Tier** (Levels 0100-0111): 36 quests
-    - Level 0100: `container-fundamentals.md`, `docker-compose-orchestration.md`
-    - Level 0101: 8 CI/CD quests (`cicd-fundamentals.md`, `github-actions-basics.md`, `testing-integration.md`, etc.)
-    - Level 0110 (NEW): 8 database quests (`database-fundamentals.md`, `sql-mastery.md`, `data-modeling.md`, etc.)
-    - Level 0111 (NEW): 7 API quests (`api-fundamentals.md`, `rest-principles.md`, `api-authentication.md`, etc.)
-  - **Phase 4 - Expert Tier** (Levels 1000-1011): 19 quests
-    - Level 1000 (NEW): 6 cloud quests (`cloud-computing-fundamentals.md`, `aws-essentials.md`, `infrastructure-as-code.md`)
-    - Level 1001 (NEW): 4 Kubernetes quests (`kubernetes-fundamentals.md`, `k8s-pods-workloads.md`, `k8s-services-networking.md`, `k8s-config-secrets.md`)
-    - Level 1010: 5 monitoring quests (`monitoring-fundamentals.md`, `prometheus-grafana.md`, `elk-stack.md`, `distributed-tracing.md`, `alerting-systems.md`)
-    - Level 1011: 5 security quests (`security-fundamentals.md`, `threat-modeling.md`, `secure-coding.md`, `penetration-testing.md`, `compliance-standards.md`)
-
-#### Quest Infrastructure & Automation
-- **Quest Generation Script**: `scripts/generate-placeholder-quest.sh` - Automated quest file generation from templates
-- **Quest Validator**: `scripts/validate-quest-network.py` - Python-based frontmatter and network validation
-- **Quest Tools Wrapper**: `scripts/quest-tools.sh` - Docker wrapper for validation tools
-- **Quest Templates**: `pages/_quests/templates/` directory with `main-quest-template.md` and `level-readme-template.md`
-- **Docker Validation Environment**: Multi-service setup in `docker-compose.yml` with `quest-validator` and `quest-network-validator` services
-- **Python Dependencies**: `scripts/requirements.txt` for PyYAML and validation tools
-
-#### Quest Documentation
-- **QUEST_BUILD_PLAN.md**: 14-week roadmap for complete quest system (6 phases, 97 quests)
-- **PHASE1_COMPLETE.md**: Infrastructure phase documentation
-- **PHASE2_COMPLETE.md**: Apprentice Tier (17 quests) completion summary
-- **PHASE3_COMPLETE.md**: Journeyman Tier (36 quests) completion summary
-- **PHASE4_COMPLETE.md**: Expert Tier (19 quests) completion summary with technical coverage breakdown
-- **VALIDATION_FIXES_SUMMARY.md**: Documentation of 44 frontmatter validation fixes across 58 original quests
-
-#### Other Additions
-- Preview images for various quests in `assets/images/previews/`
-- **README.md files**: Added README.md to all level directories (0000, 0001, 0010, 0011, 0100, 0101, 1010, 1011, 1100, 1110)
-- **inventory/README.md**: New directory for learner progress tracking (future feature)
-- **tools/README.md**: Collection documentation for cross-level tool quests
-- **Directory Structure section**: Added comprehensive structure documentation to main quests README.md
-- **Binary Level System table**: Complete 16-level table (0000-1111) with status indicators and reserved levels
-
-### Changed
-
-#### Quest Frontmatter Standardization
-- **44 Frontmatter Validation Fixes**: Systematic fixes across 58 original quest files
-  - Added missing `level` field to all quests following binary format (0000-1111)
-  - Added missing `quest_type` field (main_quest, side_quest, bonus_quest, epic_quest, reference)
-  - Added missing `difficulty` field (🟢 Easy, 🟡 Medium, 🔴 Hard, ⚔️ Epic, 📚 Reference)
-  - Added missing `estimated_time` field with proper format
-  - Standardized `permalink` field structure
-  - Added missing `title` and `description` fields
-  - Fixed invalid difficulty values and quest types
-  - Fixed invalid level formats to 4-digit binary
-
-#### Docker Infrastructure Updates
-- **Dockerfile**: Added Python 3.11 venv setup at `/opt/venv` for quest validation
-- **docker-compose.yml**: Added multi-service validation environment
-  - `quest-validator` service for individual quest validation
-  - `quest-network-validator` service for network-wide validation
-  - Shared volume mounts for scripts and quest directories
-
-#### Quest System Status
-- **Total Quests**: 130 quests (58 original + 72 generated)
-- **Levels Complete**: 12 of 16 levels (75%)
-  - Original levels: 0000, 0001, 0010, 0011, 0100, 0101, 1100, 1110
-  - New levels: 0110, 0111, 1000, 1001, 1010, 1011
-- **Phases Complete**: 4 of 6 phases (67%)
-  - Phase 1: Infrastructure ✅
-  - Phase 2: Apprentice Tier ✅
-  - Phase 3: Journeyman Tier ✅
-  - Phase 4: Expert Tier ✅
-  - Phase 5: Master Tier (pending)
-  - Phase 6: Polish & Integration (pending)
-
-#### Major Quest Reorganization
-  - `init_world/` → `0000/` (Foundation & Init World)
-  - `lvl_000/` → `0000/` (merged with init_world content)
-  - `lvl_001/` → `0001/` (Journeyman Challenges)
-  - `lvl_0010/` → `0010/` (Terminal Enhancement)
-  - `frontend/` → `0100/` (Frontend & Docker)
-  - Tool quests → `tools/` directory
-  - Quest examples → `codex/` directory
-- **File Naming**: Removed date prefixes from all quest files (e.g., `2024-05-28-bash-run.md` → `bash-run.md`)
-- **Code Files**: Moved script/code examples from level root directories to subdirectories (`scripts/`, `examples/`)
-- **Updated paths**: All internal quest links updated to new binary-coded paths in README.md and home.md
-- Updated `scripts/lib/preview_generator.py` for enhanced preview generation
-- Updated `test/quest-validator/requirements.txt` for validator dependencies
-
-### Removed
-- Legacy directory structure (`init_world/`, `lvl_000/`, `lvl_001/`, `lvl_0010/`, `frontend/`, `examples/`)
-- Date prefixes from 75+ quest files
-- Duplicate `0000/tools/` directory (consolidated to root `tools/`)
-
-### Migration Notes
-- Quest permalinks may have changed - update any external references
-- Binary level directories (0000-1110) replace legacy naming convention
-- Code examples now live in subdirectories within level folders
 
 ## [2.1.0] - 2025-11-26
 
