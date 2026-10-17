@@ -5,7 +5,7 @@ description: 'Begin your IT adventure: create a GitHub account, fork the IT-Jour
 excerpt: Begin your epic adventure in the world of IT with your very first quest - setting up GitHub and joining the community
 preview: /images/previews/hello-n00b-your-first-steps-into-the-it-journey.webp
 date: '2022-06-05T13:48:57.000Z'
-lastmod: '2025-11-30T05:46:59.000Z'
+lastmod: '2026-10-17T19:41:47.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 15-30 minutes
@@ -17,7 +17,8 @@ quest_arc: Digital Awakening Arc
 quest_dependencies:
   required_quests: []
   recommended_quests: []
-  unlocks_quests: []
+  unlocks_quests:
+  - /quests/0000/begin-your-it-journey/
 skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
@@ -160,23 +161,6 @@ You'll know you've mastered this quest when you can:
 - [ ] Explain what a "fork" means in the context of code sharing
 - [ ] Feel comfortable with the idea of collaborative development
 - [ ] Successfully find and interact with code repositories
-
-## 🗺️ Quest Prerequisites
-
-### 📋 Knowledge Requirements
-- [ ] Basic computer operation (clicking, typing, navigating websites)
-- [ ] Understanding of what a website is
-- [ ] Familiarity with creating online accounts (like email or social media)
-
-### 🛠️ System Requirements
-- [ ] Computer with internet connection (desktop, laptop, or even mobile device)
-- [ ] Web browser (Chrome, Firefox, Safari, or Edge)
-- [ ] Valid email address for account creation
-
-### 🧠 Skill Level Indicators
-- [ ] You're curious about technology and want to learn more
-- [ ] You're not afraid to click on things and explore
-- [ ] You can follow step-by-step instructions
 
 ## 🌟 Chapter 1: Understanding What We're About to Do
 
@@ -340,9 +324,6 @@ That's it — your profile now tells the world a little about the adventurer beh
 ## 🗺️ Quest Network Position
 
 **Quest Series**: Init World - Character Creation
-
-**Prerequisite Quests**:
-- None! This is perfect for absolute beginners
 
 **Follow-Up Quests**:
 - [Begin Your IT Journey](begin-your-it-journey.md) - Official welcome and orientation
