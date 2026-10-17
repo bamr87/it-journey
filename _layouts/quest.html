@@ -1,5 +1,8 @@
 ---
 layout: default
+# The theme's skip link (core/header.html) reads this: jump past the docs
+# sidebar, TOC and quest sidebar straight to the quest body.
+skip_link_target: quest-content
 ---
 {%- comment -%}
   quest.html — Individual quest page layout.
@@ -30,7 +33,8 @@ layout: default
       {% include quest/quest-sidebar.html page=page %}
     </aside>
 
-    <div id="quest-content" class="quest-page__content">
+    {%- comment -%} tabindex="-1": the skip link moves keyboard focus here, not just the scroll position. {%- endcomment -%}
+    <div id="quest-content" class="quest-page__content" tabindex="-1">
       {% include quest/quest-env.html page=page %}
 
       {% include quest/quest-video.html page=page %}
