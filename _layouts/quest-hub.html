@@ -22,7 +22,9 @@ hide_intro: true
 <link rel="stylesheet" href="{{ '/assets/css/quest-system.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/quest-dashboard.css' | relative_url }}">
 
-{%- assign hub_quests = site.quests | where: "fmContentType", "quest" -%}
+{%- comment -%} Totals use the shared quest filter (non-draft, no hub page, no template); see _includes/quest/real-quests.html. {%- endcomment -%}
+{%- include quest/real-quests.html -%}
+{%- assign hub_quests = real_quests -%}
 {%- assign dash = site.data.quests.dashboard -%}
 
 <div class="quest-dash" data-quest-dash data-quest-total="{{ hub_quests | size }}">
@@ -143,12 +145,22 @@ hide_intro: true
       {% when 'start' %}
         <p class="quest-dash__lead">New here? These foundation quests forge your hero. Start anywhere.</p>
         <div class="quest-dash__cards">
+          {%- comment -%} Each card is rendered from the linked quest's front matter: title (before the colon), excerpt (or description) and rewards.progression_points. dashboard.yml only lists the URLs; its own title/blurb/xp are a fallback for a URL that matches no quest. {%- endcomment -%}
           {% for q in dash.start_here %}
+          {%- assign sq = site.quests | where: "url", q.url | first -%}
+          {%- assign sq_title = q.title -%}
+          {%- assign sq_blurb = q.blurb -%}
+          {%- assign sq_xp = q.xp -%}
+          {%- if sq -%}
+            {%- assign sq_title = sq.title | split: ':' | first | strip -%}
+            {%- assign sq_blurb = sq.excerpt | default: sq.description | strip_html | strip | truncatewords: 40 -%}
+            {%- assign sq_xp = sq.rewards.progression_points -%}
+          {%- endif %}
           <a class="quest-dash__card" href="{{ q.url | relative_url }}">
             <span class="quest-dash__card-check" aria-hidden="true"><i class="bi bi-check-lg"></i></span>
-            <h4>{{ q.title }}</h4>
-            <p>{{ q.blurb }}</p>
-            {% if q.xp %}<span class="quest-dash__card-xp">+{{ q.xp }} XP</span>{% endif %}
+            <h4>{{ sq_title }}</h4>
+            <p>{{ sq_blurb }}</p>
+            {% if sq_xp %}<span class="quest-dash__card-xp">+{{ sq_xp }} XP</span>{% endif %}
           </a>
           {% endfor %}
         </div>
