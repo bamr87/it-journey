@@ -1,0 +1,20 @@
+{%- comment -%}
+  real-quests.html — the ONE definition of "a quest" for counts and totals.
+
+  Assigns `real_quests`: every document in site.quests that is a quest a
+  learner can take. That means fmContentType: quest and not a draft. The
+  Overworld hub page (pages/_quests/home.md, layout quest-hub, which also
+  carries fmContentType: quest) and the authoring template (level XXXX) are
+  excluded; the template is also unpublished via _config.yml defaults. Level
+  hub READMEs never set fmContentType: quest, so they are already out.
+  Quests that live in a README (e.g. 0000/bashcrawl/README.md) are real
+  quests and stay in.
+
+  Used by: index.html (home "Quests" stat), _layouts/quest-hub.html (Overworld
+  totals) and _includes/quest/tier-progress-bar.html (tier/level bars).
+
+  Usage:
+    {% include quest/real-quests.html %}
+    {{ real_quests | size }}
+{%- endcomment -%}
+{%- assign real_quests = site.quests | where: "fmContentType", "quest" | where_exp: "q", "q.draft != true" | where_exp: "q", "q.layout != 'quest-hub'" | where_exp: "q", "q.level != 'XXXX'" -%}
