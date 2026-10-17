@@ -2277,6 +2277,11 @@
       "kind": "unlocks"
     },
     {
+      "source": "/quests/0000/hello-noob/",
+      "target": "/quests/0000/begin-your-it-journey/",
+      "kind": "unlocks"
+    },
+    {
       "source": "/quests/0000/hello-windows/",
       "target": "/quests/0000/hello-noob/",
       "kind": "recommended"
