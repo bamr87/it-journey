@@ -120,6 +120,10 @@ google_analytics         : 'G-ZBDKNMC168'
 # PostHog product analytics (client-side). Rendered by the theme's
 # _includes/analytics/posthog.html, which loads ONLY in production
 # (jekyll.environment == "production") and respects Do Not Track.
+# privacy.require_consent: true makes the cookie banner's choice real: neither
+# PostHog nor Google Analytics (the theme's GA include follows the same flag)
+# is requested, and no ph_*/_ga cookie is set, until the visitor clicks Accept
+# All or saves preferences with Analytics on. Both then load without a reload.
 # api_key is a public project key (phc_…), safe to commit — like google_analytics above.
 posthog:
   enabled                : true
@@ -143,6 +147,7 @@ posthog:
     mask_all_text        : false
     mask_all_inputs      : true
     ip_anonymization     : false
+    require_consent      : true     # load GA + PostHog only after the visitor accepts analytics
 
 ## Site verification #############################################################
 
