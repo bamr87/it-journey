@@ -29,16 +29,19 @@ layout: home
 date: 2020-07-30T10:19:45.000Z
 
 ---
-
 # IT-Journey
+
+> Gamified, open-source platform for learning IT and software development through hands-on quests, zer0 to her0.
+
+[![CI](https://github.com/bamr87/it-journey/actions/workflows/ci.yml/badge.svg)](https://github.com/bamr87/it-journey/actions/workflows/ci.yml) [![License](https://img.shields.io/github/license/bamr87/it-journey)](LICENSE) [![Live site](https://img.shields.io/badge/live-it--journey.dev-2ea44f)](https://it-journey.dev/)
+
+## Overview
 
 Welcome to **IT-Journey**, a gamified, open-source platform for learning IT and software development through **quests** — progressive, hands-on adventures that take you from **zer0 to her0**. The site is built around a single gamified learning path, supported by reference docs, quick-start guides, and curated notes. The repository is both a learning site and a working example of a Jekyll-based platform, with GitHub Actions, Docker, validation tooling, and AI-assisted workflows woven into the project.
 
 The project is organized around hands-on learning: start with the beginner-friendly Level 0000 quests, follow the binary-leveled path upward, use the docs and notes as a reference library, and contribute improvements as you grow.
 
 > Looking for the blog? Articles, reflections, and devops news now live at **[lifehacker.dev](https://lifehacker.dev)**.
-
----
 
 ## 📊 Quick Comparison: IT-Journey vs Traditional Learning
 
@@ -532,3 +535,20 @@ IT-Journey is the quest-focused core of a small family of open-source projects:
 *Ready to begin your journey? Start with [Begin your IT Journey](pages/_quests/0000/begin-your-it-journey.md) or explore the full [learning quest index](pages/_quests/) to dive into hands-on IT education!*
 
 **Last Updated:** June 25, 2026 | **Version:** 0.0.1 | **License:** MIT | **Repository:** [github.com/bamr87/it-journey](https://github.com/bamr87/it-journey)
+
+## Development
+
+Full commands, conventions and gotchas for humans and AI agents live in [AGENTS.md](AGENTS.md).
+
+## Changelog
+
+Notable changes are recorded in [CHANGELOG.md](CHANGELOG.md). Tagged versions are on the [releases page](https://github.com/bamr87/it-journey/releases).
+
+## License
+
+Released under the [MIT License](LICENSE).
+
+---
+
+<!-- bamr87-portfolio-footer -->
+Part of the [bamr87 portfolio](https://github.com/bamr87) — browse every project on [Amr's GitHub profile](https://github.com/bamr87).
