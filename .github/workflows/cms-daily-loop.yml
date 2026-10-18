@@ -266,7 +266,7 @@ jobs:
             --allowedTools "Bash,Read,Edit,Write,Glob,Grep" \
             --disallowedTools "Bash(git:*),Bash(gh:*)" \
             --max-turns 60 \
-            --model claude-opus-4-8 \
+            --model claude-opus-5-5 \
             --output-format text | tee curator-run.log
 
       - name: Validate in-job (this IS the gate)

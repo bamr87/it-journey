@@ -257,7 +257,7 @@ class RequirementProcessor:
         """Transform natural language into structured requirements"""
         # AI processes the request and generates structured output
         response = self.llm.messages.create(
-            model="claude-3-5-sonnet-latest",
+            model="claude-sonnet-5-5",
             max_tokens=1024,
             messages=[{
                 "role": "user",
@@ -267,7 +267,8 @@ class RequirementProcessor:
                 ),
             }],
         )
-        return response.content[0].text
+        # Current models can return a thinking block first: read text by type
+        return next(b.text for b in response.content if b.type == "text")
 ```
 
 **Why this matters**: The intake stage is critical because unclear requirements lead to failed projects. AI excels at parsing natural language and asking clarifying questions that humans might miss.

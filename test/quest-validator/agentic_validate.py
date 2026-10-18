@@ -88,7 +88,7 @@ def main():
                    help="review = read-only expert assessment (safe anywhere); "
                         "execute = run safe commands in a sandbox (use in CI/containers).")
     p.add_argument("--model", default=os.environ.get("QUEST_AI_MODEL") or None,
-                   help="Model passed to claude (full ID like claude-sonnet-5, or an alias). "
+                   help="Model passed to claude (full ID like claude-sonnet-5-5, or an alias). "
                         "Defaults to $QUEST_AI_MODEL so CI pins one model for the probe AND "
                         "the walks without per-invocation flags; unset = the CLI's account "
                         "default (unpinned — burns whatever tier the subscription defaults to).")

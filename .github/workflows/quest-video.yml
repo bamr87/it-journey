@@ -164,7 +164,7 @@ jobs:
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       # MODEL POLICY — same pin as quest-perfection's gate (see its comment).
-      QUEST_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
+      QUEST_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5-5' }}
       CHARACTER: ${{ inputs.character }}
       LEVEL: ${{ inputs.level }}
       QUEST: ${{ inputs.quest }}
