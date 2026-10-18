@@ -18,7 +18,7 @@ Usage (local):
 
 Environment Variables:
     AI_PROVIDER         - "openai", "anthropic", or "none" (default: "none")
-    AI_MODEL            - Model override (e.g. "gpt-4o-mini", "claude-sonnet-4-20250514")
+    AI_MODEL            - Model override (e.g. "gpt-4o-mini", "claude-sonnet-5-5")
     OPENAI_API_KEY      - Required when AI_PROVIDER=openai
     ANTHROPIC_API_KEY   - Required when AI_PROVIDER=anthropic
 """

@@ -150,7 +150,7 @@ jobs:
       # preflight probes THIS model, so the gate validates the exact
       # (credential, model) pair the engine will use. Override without a commit:
       #   gh variable set QUEST_AI_MODEL --body <model-id> --repo bamr87/it-journey
-      QUEST_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
+      QUEST_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5-5' }}
     outputs:
       go: ${{ steps.verdict.outputs.go }}
     steps:
@@ -529,8 +529,8 @@ jobs:
       # Engine model pin (see the gate's MODEL POLICY comment) — the engine reads
       # $QUEST_AI_MODEL itself; AI_MODEL routes the SAME model into the
       # walker agent step (the fleet's claude-run action honors it).
-      QUEST_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
-      AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5' }}
+      QUEST_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5-5' }}
+      AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5-5' }}
       SLUG: ${{ matrix.slug }}
       PLAN_FILE: ${{ matrix.plan_file }}
       OPEN_NEW_FIX_PRS: ${{ matrix.open_new_fix_prs }}

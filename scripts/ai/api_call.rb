@@ -35,7 +35,7 @@ cfg = begin
 rescue StandardError
   {}
 end
-MODEL   = ENV['AI_MODEL'] || cfg['fallback_model'] || cfg['model'] || 'claude-opus-4-8'
+MODEL   = ENV['AI_MODEL'] || cfg['fallback_model'] || cfg['model'] || 'claude-opus-5-5'
 MAXTOK  = (ENV['AI_MAX_TOKENS'] || cfg['max_tokens'] || 8000).to_i
 VERSION = cfg['api_version'] || '2023-06-01'
 BASE    = cfg['api_base'] || 'https://api.anthropic.com'
