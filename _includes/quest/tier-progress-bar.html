@@ -16,7 +16,9 @@
 
 {%- assign scope_level = include.level -%}
 {%- assign scope_tier = include.tier -%}
-{%- assign all = site.quests | where: 'fmContentType', 'quest' -%}
+{%- comment -%} Shared quest filter (non-draft, no hub page, no template): _includes/quest/real-quests.html {%- endcomment -%}
+{%- include quest/real-quests.html -%}
+{%- assign all = real_quests -%}
 
 {%- if scope_level -%}
   {%- assign scoped = all | where: 'level', scope_level -%}
