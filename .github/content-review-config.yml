@@ -34,7 +34,7 @@ quality_thresholds:
 #   Can also be set via AI_PROVIDER env var (env var takes precedence).
 # model: provider-specific model name (optional; sensible defaults used when omitted)
 #   Can also be set via AI_MODEL env var (env var takes precedence).
-#   Defaults: openai → "gpt-4o-mini", anthropic → "claude-sonnet-4-20250514"
+#   Defaults: openai → "gpt-4o-mini", anthropic → "claude-sonnet-5-5"
 ai_review:
   provider: "none"  # "none" disables AI; set to "openai" or "anthropic" to enable
   max_tokens: 1500

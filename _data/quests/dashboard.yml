@@ -34,28 +34,17 @@ sections:
     default_open: false
 
 # Onboarding quests — the "Init World" foundation set. Each links to a live
-# quest; quest-progress.js tints completed ones.
+# quest; quest-progress.js tints completed ones. List URLs only: the card's
+# title, blurb and XP are rendered from that quest's front matter (title,
+# excerpt/description, rewards.progression_points) by quest-hub.html, so they
+# cannot drift from the quest. `title`/`blurb`/`xp` here are only a fallback
+# for a URL that matches no quest.
 start_here:
-  - title: "Hello, n00b"
-    url: /quests/0000/hello-noob/
-    blurb: Your very first steps — what even is an operating system?
-    xp: 50
-  - title: Begin Your IT Journey
-    url: /quests/0000/begin-your-it-journey/
-    blurb: Answer the hero's call and set out from zer0.
-    xp: 50
-  - title: VS Code Mastery
-    url: /quests/0000/vscode-mastery/
-    blurb: Forge your ultimate development weapon.
-    xp: 60
-  - title: Character Building
-    url: /quests/0000/character-building/
-    blurb: Forge your IT identity and dev environment.
-    xp: 40
-  - title: Bashcrawl Adventure
-    url: /quests/0000/bashcrawl/
-    blurb: A browser-based terminal dungeon — no install required.
-    xp: 40
+  - url: /quests/0000/hello-noob/
+  - url: /quests/0000/begin-your-it-journey/
+  - url: /quests/0000/vscode-mastery/
+  - url: /quests/0000/character-building/
+  - url: /quests/0000/bashcrawl/
 
 # Codex / quick navigation — the mystical library.
 codex:

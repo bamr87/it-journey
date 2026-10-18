@@ -44,7 +44,7 @@ except ImportError:
 
 DEFAULT_MODELS: Dict[str, str] = {
     "openai": "gpt-4o-mini",
-    "anthropic": "claude-sonnet-4-20250514",
+    "anthropic": "claude-sonnet-5-5",
 }
 
 # -- Provider API endpoints ------------------------------------------------
@@ -260,7 +260,11 @@ class AIClient:
             )
             if resp.status_code == 200:
                 data = resp.json()
-                content = data["content"][0]["text"]
+                # Adaptive thinking (on by default on current models) can put a
+                # thinking block first, so read the text blocks by type.
+                content = "".join(
+                    b.get("text", "") for b in data.get("content", []) if b.get("type") == "text"
+                )
                 return ChatResult(
                     success=True,
                     content=content,
