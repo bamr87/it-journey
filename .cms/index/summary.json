@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-17T22:19:49.016808+00:00",
+  "generated_at": "2026-10-18T22:21:05.733743+00:00",
   "total_files": 424,
   "scored_files": 424,
   "actionable_files": 380,
-  "avg_health": 94.4,
+  "avg_health": 94.5,
   "avg_health_actionable": 93.8,
   "total_mechanical_issues": 0,
   "total_substantive_issues": 76,
@@ -46,8 +46,8 @@
   "freshness_distribution": {
     "critical": 30,
     "aging": 250,
-    "stale": 54,
-    "fresh": 89,
+    "stale": 53,
+    "fresh": 90,
     "unknown": 1
   },
   "health_buckets": {
