@@ -64,6 +64,12 @@
   min-width: 0;
 }
 
+/* Skip-link target (tabindex="-1" in _layouts/quest.html): never Tab-reachable,
+   so no ring around the whole quest body; content inside keeps its rings. */
+#quest-content:focus {
+  outline: none;
+}
+
 /* ───────── Quest header ───────── */
 
 .quest-header {

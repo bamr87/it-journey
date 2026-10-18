@@ -67,8 +67,12 @@ keywords:
 @keyframes itj-grad { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
 
 /* ===== HERO ===== */
+/* --zer0-cookie-banner-inset is the cookie banner's height while it is up (set
+   by the theme's cookie-consent include, 0 otherwise). Without it the centred
+   hero copy put the bottom 16px of "Begin Your Quest" under the banner at
+   1366x800. */
 #itj .itj-hero {
-  position: relative; min-height: 100svh; display: grid; place-items: center;
+  position: relative; min-height: calc(100svh - var(--zer0-cookie-banner-inset, 0px)); display: grid; place-items: center;
   padding: clamp(6rem,12vh,9rem) 0 4rem; overflow: hidden;
   background:
     radial-gradient(1200px 700px at 78% 18%, rgba(124,58,237,.40), transparent 60%),
