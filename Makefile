@@ -411,7 +411,7 @@ quest-walkthrough:
 		--permission-mode acceptEdits \
 		--allowedTools "Bash,Read,Write,Glob,Grep" \
 		--disallowedTools "Bash(git:*),Bash(gh:*)" \
-		--max-turns 80 --model claude-opus-4-8 --output-format text
+		--max-turns 80 --model claude-opus-5-5 --output-format text
 
 # ── Autonomous quest-PERFECTION loop (walk → fix → ledger, until perfect) ───
 # The fix arm is the inverse of the walkthrough arm: the walker witnesses where a
@@ -453,7 +453,7 @@ quest-fix:
 		--permission-mode acceptEdits \
 		--allowedTools "Bash,Read,Write,Edit,Glob,Grep" \
 		--disallowedTools "Bash(git:*),Bash(gh:*)" \
-		--max-turns 80 --model claude-opus-4-8 --output-format text
+		--max-turns 80 --model claude-opus-5-5 --output-format text
 
 # Content frontmatter validation and normalization targets
 content-validate:

@@ -1,7 +1,7 @@
 ---
 layout: root
 title: "IT-Journey — Your Epic Quest from zer0 to her0"
-description: "A gamified, open-source platform for learning IT and software development through 180+ hands-on quests across 16 levels and 4 tiers. Begin your adventure from zer0 to her0."
+description: "A gamified, open-source platform for learning IT and software development through hands-on quests across 16 levels and 4 tiers. Go from zer0 to her0."
 permalink: /
 slug: /
 hide_intro: true
@@ -67,8 +67,12 @@ keywords:
 @keyframes itj-grad { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
 
 /* ===== HERO ===== */
+/* --zer0-cookie-banner-inset is the cookie banner's height while it is up (set
+   by the theme's cookie-consent include, 0 otherwise). Without it the centred
+   hero copy put the bottom 16px of "Begin Your Quest" under the banner at
+   1366x800. */
 #itj .itj-hero {
-  position: relative; min-height: 100svh; display: grid; place-items: center;
+  position: relative; min-height: calc(100svh - var(--zer0-cookie-banner-inset, 0px)); display: grid; place-items: center;
   padding: clamp(6rem,12vh,9rem) 0 4rem; overflow: hidden;
   background:
     radial-gradient(1200px 700px at 78% 18%, rgba(124,58,237,.40), transparent 60%),
@@ -258,8 +262,9 @@ keywords:
   <section class="bg-panel" style="padding-top:0;">
     <div class="itj-wrap">
       <div class="itj-stats">
-        {%- comment -%} Real values are rendered server-side so visitors without JS, screenshots, and anyone who has not scrolled the row into view see the numbers (the markup used to say "0" until a count-up ran). Quests are floored to the nearest ten for the "+" label. {%- endcomment -%}
-        {%- assign itj_quests = site.quests | where: "fmContentType", "quest" | where_exp: "q", "q.draft != true" | size | divided_by: 10 | times: 10 -%}
+        {%- comment -%} Real values are rendered server-side so visitors without JS, screenshots, and anyone who has not scrolled the row into view see the numbers (the markup used to say "0" until a count-up ran). Quests come from the shared filter in _includes/quest/real-quests.html (the same set the Overworld and tier bars count), floored to the nearest ten for the "+" label. {%- endcomment -%}
+        {%- include quest/real-quests.html -%}
+        {%- assign itj_quests = real_quests | size | divided_by: 10 | times: 10 -%}
         {%- assign itj_levels = site.data.quests.levels | size -%}
         {%- assign itj_tiers = site.data.quests.tiers | size -%}
         <div class="stat reveal"><div class="num grad" data-count="{{ itj_quests }}" data-suffix="+">{{ itj_quests }}+</div><div class="lbl">Quests</div></div>
@@ -351,17 +356,20 @@ keywords:
           </div>
           <div class="scr" id="itj-term"></div>
         </div>
+        {%- comment -%} The sample card is rendered from the front matter of the quest it links to (title, level, difficulty, time, XP from rewards.progression_points, objectives from validation_criteria.completion_requirements), so it can't drift from that quest again. It used to be a hard-coded "What is an OS? +50 XP" card linking to hello-noob, a GitHub quest worth 100 XP. Change the target by editing itj_sample_url. {%- endcomment -%}
+        {%- assign itj_sample_url = '/quests/0000/hello-noob/' -%}
+        {%- assign itj_sample = site.quests | where: "url", itj_sample_url | first -%}
+        {%- assign itj_sample_title = itj_sample.title | split: ':' | first | strip -%}
         <div class="sample reveal">
-          <div class="row"><span><i class="bi bi-geo-alt"></i> Level 0000 · Foundation</span><span class="chip" style="color:var(--green);border-color:var(--green)">🌱 Beginner</span></div>
-          <h4>Quest: "What is an OS?"</h4>
-          <div class="row" style="margin-bottom:.8rem"><span>⏱ 30–45 min</span><span class="xp" style="color:var(--gold)">+50 XP</span></div>
+          <div class="row"><span><i class="bi bi-geo-alt"></i> Level {{ itj_sample.level }} · {{ itj_sample.quest_line | default: 'Foundation' }}</span><span class="chip" style="color:var(--green);border-color:var(--green)">{{ itj_sample.difficulty }}</span></div>
+          <h4>Quest: "{{ itj_sample_title }}"</h4>
+          <div class="row" style="margin-bottom:.8rem"><span>⏱ {{ itj_sample.estimated_time }}</span>{% if itj_sample.rewards.progression_points %}<span class="xp" style="color:var(--gold)">+{{ itj_sample.rewards.progression_points }} XP</span>{% endif %}</div>
           <ul>
-            <li><i class="bi bi-check-circle-fill"></i> Identify your operating system &amp; shell</li>
-            <li><i class="bi bi-check-circle-fill"></i> Open a terminal and run your first command</li>
-            <li><i class="bi bi-check-circle-fill"></i> Navigate the filesystem like a wizard</li>
-            <li><i class="bi bi-check-circle-fill"></i> Earn your first achievement badge</li>
+            {%- for goal in itj_sample.validation_criteria.completion_requirements limit: 4 %}
+            <li><i class="bi bi-check-circle-fill"></i> {{ goal }}</li>
+            {%- endfor %}
           </ul>
-          <a class="btn-q primary" style="margin-top:1.2rem;width:100%;justify-content:center" href="{{ '/quests/0000/hello-noob/' | relative_url }}"><i class="bi bi-play-fill"></i> Accept this quest</a>
+          <a class="btn-q primary" style="margin-top:1.2rem;width:100%;justify-content:center" href="{{ itj_sample_url | relative_url }}"><i class="bi bi-play-fill"></i> Accept this quest</a>
         </div>
       </div>
     </div>
@@ -484,12 +492,12 @@ keywords:
     var lines = [
       {c:'pr', p:'$ ', t:'git init my-legend'},
       {c:'ac', t:'✨  Repository forged. Your story begins.'},
-      {c:'pr', p:'$ ', t:'quest start hello-noob'},
-      {c:'ac', t:'🌱  Quest accepted: "What is an OS?"'},
+      {c:'pr', p:'$ ', t:{{ 'quest start ' | append: itj_sample.slug | jsonify }}},
+      {c:'ac', t:{{ '🌱  Quest accepted: "' | append: itj_sample_title | append: '"' | jsonify }}},
       {c:'',   t:'    > You step into the Init World...'},
       {c:'pr', p:'$ ', t:'whoami'},
       {c:'',   t:'    a future her0'},
-      {c:'xp', t:'🏅  Objective complete  ·  +50 XP  ·  Level 0000'},
+      {c:'xp', t:{{ '🏅  Objective complete  ·  +' | append: itj_sample.rewards.progression_points | append: ' XP  ·  Level ' | append: itj_sample.level | jsonify }}},
       {c:'pr', p:'$ ', t:'_'}
     ];
     var li=0, ci=0;

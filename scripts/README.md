@@ -126,7 +126,7 @@ The workflow runs in two modes:
 | `analysis-level` | Analysis depth | `basic`, `standard`, `comprehensive`, `ai-only` |
 | `engine` | Link checking engine | `lychee` (default), `curl` (fallback) |
 | `ai-provider` | AI provider | `openai`, `anthropic`, `none` |
-| `ai-model` | Override AI model | e.g. `gpt-4o`, `claude-sonnet-4-20250514` |
+| `ai-model` | Override AI model | e.g. `gpt-4o`, `claude-sonnet-5-5` |
 | `changed-only` | Only check changed files | Flag (no value) |
 | `include-site` | Also scan `_site/` | Flag (no value) |
 | `create-issue` | Create GitHub issue | Flag (no value) |
@@ -146,7 +146,7 @@ When enabled (`--ai-provider openai` or `--ai-provider anthropic`), the AI analy
 
 - **Delta-Only**: Only sends *new* broken links (compared to baseline) to save tokens
 - **Compact Prompts**: Top 10 new broken links, max 500 tokens response
-- **Multi-Provider**: OpenAI (default `gpt-4o-mini`) or Anthropic (default `claude-sonnet-4-20250514`)
+- **Multi-Provider**: OpenAI (default `gpt-4o-mini`) or Anthropic (default `claude-sonnet-5-5`)
 - **Fallback Template**: When no AI key is available, generates a template report
 - **Prioritized Recommendations**: Actionable steps for fixing issues
 

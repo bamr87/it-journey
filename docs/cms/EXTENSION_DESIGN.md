@@ -101,7 +101,7 @@ VS Code extensions run their logic in a **Node extension host**, so the [Claude 
 ### Embedding Claude Code
 
 - Drive `query({ prompt, options })` from the extension host. Options:
-`permissionMode: 'default'`, an explicit `allowedTools` allowlist, `maxTurns`/`maxBudgetUsd` caps, `cwd` = workspace, `model: 'claude-opus-4-8'`, `systemPrompt: { type: 'preset', preset: 'claude_code', append: <cms context> }`.
+`permissionMode: 'default'`, an explicit `allowedTools` allowlist, `maxTurns`/`maxBudgetUsd` caps, `cwd` = workspace, `model: 'claude-opus-5-5'`, `systemPrompt: { type: 'preset', preset: 'claude_code', append: <cms context> }`.
 - Route **every** tool call through the `canUseTool` callback → render a
 diff/approve card in the webview; nothing writes to disk without the user's click (this is the editor-side analog of the loop's PR review).
 - Reuse the **`cms-curator` skill** verbatim so editor behavior == CI behavior.
