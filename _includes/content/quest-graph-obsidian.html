@@ -11,7 +11,9 @@
   This replaces the Mermaid quest graph (content/quest-graph.html) at
   the bottom of quest pages. Unlike Mermaid, it is fully self-contained:
   it lazy-loads cytoscape itself and does NOT depend on `page.mermaid`,
-  so it renders on every quest regardless of front matter.
+  so it renders on every quest regardless of front matter. Nothing (data
+  fetch, cytoscape, layout) starts until the graph is within 600px of
+  the viewport.
 
   Parameters:
     include.level    (optional) — 4-digit binary level string ("0000").
@@ -371,12 +373,31 @@
     obs.observe(document.documentElement, { attributes: true, attributeFilter: ['data-bs-theme'] });
   }
 
-  fetch(dataUrl, { credentials: 'same-origin' })
-    .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
-    .then(build)
-    .catch(function (err) {
-      setStatus('Quest graph unavailable.');
-      console.warn('[quest-graph-obsidian] failed to load network data', err);
-    });
+  function start() {
+    fetch(dataUrl, { credentials: 'same-origin' })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+      .then(build)
+      .catch(function (err) {
+        setStatus('Quest graph unavailable.');
+        console.warn('[quest-graph-obsidian] failed to load network data', err);
+      });
+  }
+
+  // The graph sits at the bottom of the quest page. Fetching the network
+  // JSON, downloading cytoscape (~370 KB) and running its layout used to
+  // happen on every page load and was the largest script cost on quest
+  // pages. Start only when the graph is about to scroll into view (600px
+  // ahead). Browsers without IntersectionObserver load it right away, as
+  // before.
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      if (!entries.some(function (e) { return e.isIntersecting; })) return;
+      io.disconnect();
+      start();
+    }, { rootMargin: '600px 0px' });
+    io.observe(root);
+  } else {
+    start();
+  }
 })();
 </script>
