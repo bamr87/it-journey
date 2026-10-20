@@ -5,12 +5,11 @@
 schema: sdlc/v1
 
 # Repo type (decision D6): app | library | site | docs | demo | control-plane | fork
-type: app
-# UPS kinds the specs apply to. Omit to use the type's default:
+type: site
 #   app -> [app]   library -> [lib]   site -> [site]   docs -> [content]
 #   demo -> [site]   control-plane -> [site, hub]   fork -> [fork]
 # List more when the repo is several things at once, e.g. [app, api] or [lib, cli].
-kinds: [app]
+kinds: [site]
 tier: active              # active | maintenance | experiment | archived (hub _data/standards.yml)
 
 backlog:
@@ -23,9 +22,9 @@ modules:
   spec_driven: false      # specs/NNN-slug/{spec,plan,tasks}.md + BACKLOG.md + the hub's spec-driven kit tools
   adr: true               # decision log at adr_path (UPS-WORK-04)
   features: true          # features/features.yml (features/v1)
-  issue_autopilot: false  # .issues/ (hub templates/issue-autopilot)
+  issue_autopilot: true   # .issues/ (hub templates/issue-autopilot)
   content_queue: false    # _data/backlog.yml content queue (content-queue/v1), NOT the engineering backlog
-  ai_lanes: false         # fleet.manifest.yml + <LANE>_ENABLED kill switches
+  ai_lanes: true          # fleet.manifest.yml + <LANE>_ENABLED kill switches
 
 adr_path: docs/adr        # where ADRs live: NNNN-slug.md + README.md index (decision D2)
 
