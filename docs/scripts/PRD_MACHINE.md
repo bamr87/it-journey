@@ -573,7 +573,7 @@ Main class for PRD generation.
 ## Related Documentation
 
 - [Scripts Guide](SCRIPTS_GUIDE.md) - Overview of all automation scripts
-- [GitHub Actions Workflows](../workflows/GITHUB_ACTIONS.md) - CI/CD configuration
+- [Workflow reference](../reference/workflows.md) - CI/CD configuration
 - [Content Guidelines](../standards/CONTENT_GUIDELINES.md) - Content standards
 
 ---

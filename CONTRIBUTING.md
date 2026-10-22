@@ -73,7 +73,7 @@ The `.github/instructions/` directory contains AI-optimized instructions that he
 
 ### Additional Documentation
 - **[Jekyll Implementation](docs/architecture/JEKYLL_IMPLEMENTATION.md)** - Jekyll details
-- **[GitHub Actions](docs/workflows/GITHUB_ACTIONS.md)** - CI/CD workflows
+- **[Workflow reference](docs/reference/workflows.md)** - CI/CD workflows (generated)
 - **[Scripts Guide](docs/scripts/SCRIPTS_GUIDE.md)** - Automation tools
 - **[Testing Frameworks](docs/testing/TESTING_FRAMEWORKS.md)** - Quality assurance
 

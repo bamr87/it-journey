@@ -450,7 +450,7 @@ Workflow run > Artifacts section > Download zip
 - [GitHub Actions Testing](https://docs.github.com/en/actions/automating-builds-and-tests)
 
 ### Related Documentation
-- [GitHub Actions](../workflows/GITHUB_ACTIONS.md)
+- [Workflow reference](../reference/workflows.md)
 - [Scripts Guide](../scripts/SCRIPTS_GUIDE.md)
 - [Contributing Guide](../CONTRIBUTING_DEVELOPER.md)
 
