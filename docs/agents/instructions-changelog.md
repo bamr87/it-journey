@@ -1,5 +1,7 @@
 # Agent Instruction Changelog
 
+> Every change to agent instructions and policy, with the observation that motivated it and the measured outcome.
+
 Every change to agent behavior — `AGENTS.md`, `.claude/agents/*.md`, `.claude/skills/`, `.github/copilot-instructions.md`, or the policy data under `_data/agents/` — gets an entry: **what changed, why (the observation that motivated it), and the measured outcome**. One variable at a time. This is the GH-600 Domain 4 discipline of treating instructions like code; the format is taught in [Chapter IV — The Oracle Rubric](https://it-journey.dev/quests/1010/agentic-codex-04-evaluation-and-tuning/).
 
 ## 2026-10-22

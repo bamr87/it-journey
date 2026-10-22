@@ -1,5 +1,7 @@
 # Git archaeology
 
+> Bounded retrospectives of this repository's own Git history — one evidence index per commit range, with the published reading at /digs/.
+
 Retrospective records of this repository's own Git history. Each installment is a bounded sample. The commits remain the evidence. The report may interpret them, but it must label interpretation as inference and must not treat a commit subject, a script, or a later README as proof of what ran.
 
 `docs/` is excluded from the Jekyll build. The published reading lives in the `digs` collection at `/digs/`. This directory keeps the evidence index. Do not link it as a site path.

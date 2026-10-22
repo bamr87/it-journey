@@ -1,5 +1,7 @@
 # Jekyll Implementation Details
 
+> How Jekyll is configured here — versions, collections, plugins, markdown processing, the remote theme, layouts, includes, data files and the build (last revised 2025-10; parts still describe the removed posts and docs collections).
+
 This document details how Jekyll is configured and used in the IT-Journey repository, including collections, plugins, themes, and build processes.
 
 ## Jekyll Version & Configuration

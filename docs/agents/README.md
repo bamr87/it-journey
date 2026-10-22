@@ -1,5 +1,7 @@
 # Agent Evaluation & Tuning (GH-600 Domain 4, implemented)
 
+> How this repository grades its agents with machine-verifiable gates, runs a root-cause analysis before any re-run, and logs every instruction change (GH-600 Domain 4).
+
 How this repository grades its agents with **machine-verifiable signals**, diagnoses failures instead of re-running them, and tunes instructions like code. This directory is the Domain 4 convention the fleet operates under; the campaign that teaches it is [Chapter IV — The Oracle Rubric](https://it-journey.dev/quests/1010/agentic-codex-04-evaluation-and-tuning/), and the full domain→artifact map is [GH-600 in the Wild](https://it-journey.dev/notes/gh-600/implemented-in-it-journey/).
 
 ## The rubric: machine-verifiable gates (no vibes)

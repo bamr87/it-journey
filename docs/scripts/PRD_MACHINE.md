@@ -1,5 +1,7 @@
 # PRD MACHINE Documentation
 
+> The PRD Machine (`scripts/prd-machine/`), which distills repository signals into `PRD.md` — its architecture, setup, CLI, signal sources, CI integration and configuration.
+
 *The Self-Writing, Self-Evolving Product Reality Distillery*
 
 **Version:** 1.0.0  

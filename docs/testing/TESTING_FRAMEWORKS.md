@@ -1,5 +1,7 @@
 # Testing Frameworks
 
+> The repository's test and validation tools — the Hyperlink Guardian link checker and the quest validator — and how to run them locally and in CI (last revised 2025-10).
+
 This document provides an overview of the testing infrastructure in the IT-Journey repository.
 
 ## Overview

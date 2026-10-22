@@ -1,6 +1,6 @@
 ---
 title: "IT-Journey: The Master Roadmap"
-description: "Navigate your path from digital novice to IT wizard through our interconnected learning ecosystem of QuickStart, Quests, Library, and Notebooks."
+description: "The 2024–2026 master roadmap: the four learning realms (QuickStart, Journey, Library, Notebook — three since retired), beginner-to-expert paths and the Q1 2026 priorities; kept for history, not maintained."
 layout: default
 author: IT-Journey Team
 permalink: /roadmap/

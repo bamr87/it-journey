@@ -1,5 +1,7 @@
 # Quest Walkthrough Video Framework
 
+> The VIDEO lane of the quest-perfection loop: recording a verified quest run side by side, publishing it to YouTube, referencing it from the quest page, and whole-stack capture.
+
 **The VIDEO lane of the quest-perfection loop:** turn a verified quest run into a side-by-side video — the rendered quest page on the left, the recorded sandbox terminal session on the right — publish it to YouTube, and reference it from the quest's own page. One artifact serves two goals: **video evidence** that the quest actually works as written, and **educational content** a learner can watch before (or instead of) reading.
 
 ```

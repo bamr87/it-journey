@@ -1,5 +1,7 @@
 # Scripts Guide
 
+> What the automation scripts under `scripts/` do and how to run them, plus the conventions for writing new ones (last revised 2025-10; `scripts/README.md` is the maintained index).
+
 This document provides comprehensive documentation for all automation scripts in the IT-Journey repository.
 
 ## Overview
