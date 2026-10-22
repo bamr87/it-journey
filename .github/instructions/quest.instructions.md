@@ -2,7 +2,7 @@
 applyTo: "pages/_quests/**/*.md"
 description: "Create gamified IT-Journey quests: frontmatter schema, fantasy theme, learning objectives, and validation rules"
 date: 2025-07-21T23:30:21.000Z
-lastmod: 2026-08-19T00:00:00.000Z
+lastmod: 2026-10-22T00:00:00.000Z
 ---
 
 # Quest Creation Instructions
@@ -156,25 +156,23 @@ Higher levels use 5+ bits (`10000`+) for expert specializations.
 
 ## 3. Permalink Convention
 
-Every quest must have a `permalink` that follows the canonical pattern. The type of permalink **must match** the `quest_type` frontmatter field.
+Every quest must have a `permalink` that follows the canonical pattern, and it **must match** the page's `quest_type` (or `fmContentType`). Side quests are **flattened**: they live at `/quests/XXXX/<slug>/` like main quests — there is no `/side-quests/` segment. This is the rule `test/quest-validator/quest_validator.py` enforces and `scripts/quest/quest_registry.py` (`canonical_permalink`) generates; it matches the table in the root `AGENTS.md`.
 
 ### Mapping table
 
-| `quest_type` | Permalink pattern | Example |
+| Page | Permalink pattern | Example |
 |---|---|---|
-| `main_quest` | `/quests/XXXX/<slug>/` | `/quests/0001/docker-fundamentals/` |
-| `side_quest` | `/quests/XXXX/side-quests/<slug>/` | `/quests/0000/side-quests/bash-run/` |
-| `bonus_quest` | `/quests/codex/<slug>/` | `/quests/codex/cheat-sheet-git/` |
-| `epic_quest` | `/quests/codex/<slug>/` | `/quests/codex/full-stack-epic/` |
-| Level README | `/quests/XXXX/` | `/quests/0001/` |
-| Codex example | `/quests/codex/<slug>/` | `/quests/codex/terminal-navigation-mastery/` |
+| `main_quest` / `side_quest` / `epic_quest` in a level directory | `/quests/XXXX/<slug>/` | `/quests/0001/docker-fundamentals/`, `/quests/0000/bash-run/` |
+| `bonus_quest`, `fmContentType: codex`, or any page in `pages/_quests/codex/` (quest-forge epic hubs and chapters) | `/quests/codex/<slug>/` | `/quests/codex/relic-raisers/` |
+| Level README (`layout: quest-collection`) | `/quests/XXXX/` | `/quests/0001/` |
+| `fmContentType: documentation` / `template` | `/quests/docs/<slug>/` / `/quests/templates/<slug>/` | — |
 
 Where `XXXX` is the 4-digit binary level (e.g. `0000`, `0001`, `0100`), and `<slug>` is lowercase kebab-case derived from the filename (without `.md`).
 
 ### Full regex (used by the validator)
 
 ```
-^/quests/([01]{4}/side-quests/[a-z0-9][a-z0-9-]*|[01]{4}/[a-z0-9][a-z0-9-]*|[01]{4}|codex/[a-z0-9][a-z0-9-]*|templates/[a-z0-9][a-z0-9-]*)/$
+^/quests/([01]{4}/[a-z0-9][a-z0-9-]*|[01]{4}|codex/[a-z0-9][a-z0-9-]*|templates/[a-z0-9][a-z0-9-]*|tools/[a-z0-9][a-z0-9-]*|docs/[a-z0-9][a-z0-9-]*)/$
 ```
 
 ### Filesystem layout
@@ -186,9 +184,9 @@ pages/_quests/
   0000/                       # level directory
     README.md                 # permalink: /quests/0000/  layout: quest-collection
     terminal-fundamentals.md  # permalink: /quests/0000/terminal-fundamentals/
-    bash-run.md               # side_quest → /quests/0000/side-quests/bash-run/
+    bash-run.md               # side_quest → /quests/0000/bash-run/ (flattened)
   codex/
-    full-stack-epic.md        # epic_quest → /quests/codex/full-stack-epic/
+    relic-raisers.md          # epic_quest hub → /quests/codex/relic-raisers/
   0001/
     docker-fundamentals.md    # permalink: /quests/0001/docker-fundamentals/
 ```
@@ -279,7 +277,7 @@ Explain *why* before *how*. Include code with comments and expected output.
 ## 🔮 Next Adventures
 
 - [Follow-up quest](/quests/0010/next-quest/)
-- [Side quest](/quests/0000/side-quests/related/)
+- [Side quest](/quests/0000/related/)
 
 ## 📚 Resource Codex
 
@@ -307,7 +305,7 @@ graph LR
 | Type | Icon | Scope | Permalink |
 |---|---|---|---|
 | `main_quest` | 🎯 | Core storyline for a level | `/quests/XXXX/slug/` |
-| `side_quest` | ⚔️ | Focused enhancement, 15–60 min | `/quests/XXXX/side-quests/slug/` |
+| `side_quest` | ⚔️ | Focused enhancement, 15–60 min | `/quests/XXXX/slug/` |
 | `bonus_quest` | 🎁 | Optional advanced exploration | `/quests/codex/slug/` |
 | `epic_quest` | 👑 | Multi-session portfolio project | `/quests/codex/slug/` |
 
@@ -388,7 +386,7 @@ CI will enforce `--fail-threshold 70` and block on validator/network errors.
 | Code block without language | Change ` ``` ` to ` ```bash ` (or appropriate) |
 | Missing `## 🎯 Quest Objectives` | Add the section with `- [ ]` checkboxes |
 | Bad `permalink` | Match pattern for `quest_type` (§3); `bonus_quest`/`epic_quest` → `/quests/codex/` |
-| `quest_type` / permalink mismatch | `side_quest` requires `/side-quests/` segment |
+| `quest_type` / permalink mismatch | `main_quest`/`side_quest` → `/quests/XXXX/slug/` (no `/side-quests/` segment); `bonus_quest` → `/quests/codex/slug/` |
 | Broken dependency URL | Use full path `/quests/XXXX/slug/`; add `# planned quest` if not yet authored |
 | `undefined method 'gsub' for Integer` | Quote numeric tags — `- "1100"` not `- 1100` |
 | Stale network artifacts | Run `make quest-build-network` and commit updated JSON/YAML |
