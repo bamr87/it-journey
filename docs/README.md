@@ -16,7 +16,7 @@ Start with the root [README](../README.md) for what IT-Journey is, then [AGENTS.
 | --- | --- |
 | [`AGENTS.md`](../AGENTS.md) | How to work in it-journey, the GitHub Pages Jekyll site behind it-journey.dev: commands, layout, quest and frontmatter rules, and the Warden Pact every agent obeys. |
 | [`CONTRIBUTING.md`](../CONTRIBUTING.md) | How to contribute to IT-Journey — the five-minute first pull request, the branch-commit-PR workflow, the local gates to run first, and where the detailed standards live. |
-| [`CHANGELOG.md`](../CHANGELOG.md) | Release history, written by release-please from the merged pull request titles. |
+| [`CHANGELOG.md`](../CHANGELOG.md) | Release history: the notable changes in each version, newest first. |
 | [`SECURITY.md`](../SECURITY.md) | Supported versions and how to report a vulnerability privately. |
 | [`CODE_OF_CONDUCT.md`](../CODE_OF_CONDUCT.md) | The standards of behaviour for everyone taking part. |
 | [`PRD.md`](../PRD.md) | Product requirements for IT-Journey, an open-source educational platform with gamified quests, practical tutorials, and AI-enhanced learning |

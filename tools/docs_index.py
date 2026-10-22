@@ -73,7 +73,7 @@ SUMMARY_MAX = 240
 WELL_KNOWN = {
     "AGENTS.md": "How to work in this repository — commands, layout, conventions; canonical for agents and contributors.",
     "CONTRIBUTING.md": "How to contribute: branches, commits, local gates and pull requests.",
-    "CHANGELOG.md": "Release history, written by release-please from the merged pull request titles.",
+    "CHANGELOG.md": "Release history: the notable changes in each version, newest first.",
     "SECURITY.md": "Supported versions and how to report a vulnerability privately.",
     "CODE_OF_CONDUCT.md": "The standards of behaviour for everyone taking part.",
     "SCHEMA.md": "Where everything lives and where a new file goes (the Pyramid Schema root, linted by tools/schema_lint.py).",
@@ -308,8 +308,17 @@ def collect(root, opts, index=INDEX, files=None, reader=None):
             docs.append(dict(path=path, group="", title=title, summary=rebase(summary, path, index),
                              source=source, h1=h1))
 
+    index_dir = os.path.dirname(index)
     for droot in opts["roots"]:
         prefix = droot + "/"
+        own = next((prefix + n for n in ("README.md", "index.md") if (prefix + n) in files), None)
+        if own and own != index and droot != index_dir:
+            # A root below the index's folder that has its own index is one row.
+            parent = droot.rsplit("/", 1)[0] + "/" if "/" in droot else ""
+            title, summary, source, h1 = describe(reader(own) or "")
+            docs.append(dict(path=own, group=parent, title=title, summary=rebase(summary, own, index),
+                             source=source, h1=h1, directory=prefix))
+            continue
         for p in [p for p in md if p.startswith(prefix) and p != index]:
             parts = p[len(prefix):].split("/")
             owner, group = None, prefix + "".join(d + "/" for d in parts[:-1])
