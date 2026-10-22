@@ -31,8 +31,6 @@ date: 2024-04-25T10:40:43.000Z
 
 ---
 
-Go [Home]({{ page.backlink }}) {: .btn .btn-purple .border}
-
 > *"Every expert was once a beginner who refused to give up after their first segmentation fault."*
 
 Welcome to the IT-Journey roadmap - your comprehensive guide through the interconnected realms of technology mastery. This living document maps the pathways through our four core domains: **QuickStart**, **Journey**, **Library**, and **Notebook**.
@@ -594,8 +592,7 @@ graph LR
    * Implement ML model deployment pipelines
 
 3. **Knowledge Vault** (Library)
-   * [Quest Creation Guide](.github/instructions/quest.instructions.md) - AI-assisted content
-   * [Post Creation Guidelines](.github/instructions/posts.instructions.md) - AI documentation
+   * [Quest Creation Guide](../.github/instructions/quest.instructions.md) - AI-assisted content
    * AI integration patterns and best practices
    * Ethical AI development guidelines
    * Performance and scaling considerations

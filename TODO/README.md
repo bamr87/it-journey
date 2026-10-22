@@ -130,7 +130,7 @@ Based on search data and user demand, the following content priorities have been
 | DevOps Tutorial Series | Leverage Docker content | 🟡 MEDIUM |
 
 ### Alignment with Roadmap
-- Supports **Quest System Enhancement** in [roadmap.md](/roadmap/)
+- Supports **Quest System Enhancement** in [the roadmap](../docs/ROADMAP.md)
 - Addresses **Content Gaps** identified in [PRD.md](/PRD.md)
 
 ---
@@ -255,7 +255,7 @@ HIGH IMPACT
 - GitHub Actions - Automated checks
 
 ### Reference Documentation
-- **[Roadmap](/roadmap/)** - Strategic alignment
+- **[Roadmap](../docs/ROADMAP.md)** - Strategic alignment
 - **[PRD](/PRD.md)** - Product requirements
 - **[Contributing](/CONTRIBUTING.md)** - Contribution guidelines
 
