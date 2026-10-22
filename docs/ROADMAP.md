@@ -31,6 +31,8 @@ date: 2024-04-25T10:40:43.000Z
 
 ---
 
+This roadmap is historical and no longer maintained: its task lists are not tracked. The backlog of record is [GitHub Issues](https://github.com/bamr87/it-journey/issues).
+
 > *"Every expert was once a beginner who refused to give up after their first segmentation fault."*
 
 Welcome to the IT-Journey roadmap - your comprehensive guide through the interconnected realms of technology mastery. This living document maps the pathways through our four core domains: **QuickStart**, **Journey**, **Library**, and **Notebook**.
