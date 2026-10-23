@@ -3,6 +3,8 @@ features:
     title: "Jekyll site generation"
     description: "Automated Jekyll site generation with Jekyll + GitHub Pages"
     implemented: true
+    status: shipped
+    prd: ["§1", "§3"]
     link: "/"
     tags: [site, jekyll, build]
     date: 2024-03-12
@@ -10,6 +12,8 @@ features:
     title: "Algolia Search indexing"
     description: "Search indexing for site content using Algolia"
     implemented: true
+    status: shipped
+    prd: ["§3"]
     link: "/search/"
     tags: [search, algolia]
     date: 2024-05-01
@@ -17,6 +21,89 @@ features:
     title: "Auto features index generation"
     description: "Add features metadata files across repos and auto-generate consolidated features index"
     implemented: true
+    status: shipped
+    prd: ["§3"]
     link: "/about/features/"
     tags: [automation, features]
     date: 2025-11-11
+  - id: FR-ITJ-004
+    title: "Quest collection"
+    description: "Browse gamified learning quests at /quests/ (PRD §3 Site Navigation)."
+    implemented: true
+    status: shipped
+    prd: ["§1", "§3"]
+    surface: ui
+    link: "/quests/"
+    docs: "pages/_quests"
+  - id: FR-ITJ-005
+    title: "Blog posts"
+    description: "Tutorials, case studies and guides at /posts/ (PRD §3)."
+    implemented: false
+    status: tbd
+    prd: ["§3"]
+    surface: content
+    link: "/posts/"
+  - id: FR-ITJ-006
+    title: "Documentation section"
+    description: "Reference materials and guides at /docs/ (PRD §3)."
+    implemented: false
+    status: tbd
+    prd: ["§3"]
+    surface: docs
+    link: "/docs/"
+  - id: FR-ITJ-007
+    title: "Jupyter notebooks"
+    description: "Interactive code examples at /notebooks/ (PRD §3)."
+    implemented: false
+    status: tbd
+    prd: ["§3"]
+    surface: content
+    link: "/notebooks/"
+  - id: FR-ITJ-008
+    title: "Interactive terminal interface"
+    description: "./journey.sh terminal menu (PRD §3 CLI Tools)."
+    implemented: true
+    status: shipped
+    prd: ["§3"]
+    surface: cli
+    link: "journey.sh"
+  - id: FR-ITJ-009
+    title: "Docker development and quest validation"
+    description: "docker compose up jekyll / docker compose run quest-validator (PRD §3)."
+    implemented: true
+    status: shipped
+    prd: ["§3"]
+    surface: cli
+    link: "docker-compose.yml"
+  - id: FR-ITJ-010
+    title: "Quest validation workflow"
+    description: "Validates quests in CI (.github/workflows/quest-validation.yml)."
+    implemented: true
+    status: shipped
+    prd: ["§3"]
+    surface: infra
+    link: ".github/workflows/quest-validation.yml"
+  - id: FR-ITJ-011
+    title: "Front matter validation"
+    description: "frontmatter-validation.yml validates content metadata on push (PRD §3)."
+    implemented: true
+    status: shipped
+    prd: ["§3"]
+    surface: infra
+    link: ".github/workflows/frontmatter-validation.yml"
+  - id: FR-ITJ-012
+    title: "Link health check"
+    description: "scripts/validation/link-checker.py --scope website; link-checker.yml on schedule (PRD §3)."
+    implemented: true
+    status: shipped
+    prd: ["§3"]
+    surface: cli
+    link: "scripts/validation/link-checker.py"
+  - id: FR-ITJ-013
+    title: "PRD synchronization (prd-machine)"
+    description: "scripts/prd-machine regenerates PRD.md (PRD §3; the prd-sync.yml workflow named there is not in .github/workflows)."
+    implemented: true
+    status: partial
+    prd: ["§3"]
+    surface: cli
+    link: "scripts/prd-machine"
