@@ -541,7 +541,6 @@ exclude:
   - submodules/
   - post-organization.log
   - "*_SUMMARY.md"
-  - roadmap.md
 
 # Sass/SCSS
 sass:

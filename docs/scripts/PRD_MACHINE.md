@@ -1,5 +1,7 @@
 # PRD MACHINE Documentation
 
+> The PRD Machine (`scripts/prd-machine/`), which distills repository signals into `PRD.md` — its architecture, setup, CLI, signal sources, CI integration and configuration.
+
 *The Self-Writing, Self-Evolving Product Reality Distillery*
 
 **Version:** 1.0.0  
@@ -573,7 +575,7 @@ Main class for PRD generation.
 ## Related Documentation
 
 - [Scripts Guide](SCRIPTS_GUIDE.md) - Overview of all automation scripts
-- [GitHub Actions Workflows](../workflows/GITHUB_ACTIONS.md) - CI/CD configuration
+- [Workflow reference](../reference/workflows.md) - CI/CD configuration
 - [Content Guidelines](../standards/CONTENT_GUIDELINES.md) - Content standards
 
 ---

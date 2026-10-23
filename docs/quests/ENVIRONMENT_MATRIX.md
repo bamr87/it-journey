@@ -1,5 +1,7 @@
 # Quest Environment Matrix — the refactoring plan
 
+> The quest `environment:` contract — OS, shell, editor, package manager and project folder as declared data — and how the page control, the step planner and validation consume it.
+
 **Goal:** a quest should read as if it were written for the machine you are sitting at. The environment a quest assumes — OS, shell, editor, package manager, the folder its commands create — becomes **declared data** instead of prose, so it can be *rendered* for the reader, *configured* by them, and *matrixed over* by the testing framework.
 
 ## The problem this fixes
