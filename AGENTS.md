@@ -155,3 +155,7 @@ One of ~40 repos managed by the [bamr87/bamr87 dash](https://github.com/bamr87/b
 
 - `UPS-REPO-02` — tests live under `test/` (grandfathered).
 - `markdown-oneline.yml` carries `branches: [main]` on its `pull_request` trigger on top of the hub prose kit 0.3.0 shape: the recurring "sync gh-pages with main" deploy PRs target the built `gh-pages` branch, GitHub cannot resolve a merge ref for them, and the kit's unfiltered trigger failed every one at startup. The two extra `--exclude` patterns (machine-authored quest reports + walkthroughs) are the same list `.prose-excludes` hands the fleet's `claude-run` runner.
+
+## Governance
+
+Read [`docs/constitution.md`](docs/constitution.md) before changing anything: it is the highest-precedence rule set here and wins over this file when they disagree. It changes only through a numbered record in [`docs/amendments/`](docs/amendments/), ratified by the maintainer merging the PR; agents propose, never merge. Every user-facing feature has a stable id in [`features/features.yml`](features/features.yml) with `status`, location and the PRD requirement ids it serves; the PRD's "Feature catalog" block is generated from it (`python3 <bamr87/bamr87>/tools/governance_lint.py prd-sync . --write`; check with `… check .`). Never hand-edit that block or `CHANGELOG.md`.

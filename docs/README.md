@@ -25,11 +25,13 @@ Start with the root [README](../README.md) for what IT-Journey is, then [AGENTS.
 
 | Document | What it covers |
 | --- | --- |
+| [`docs/constitution.md`](constitution.md) | The rules every change to this repo must satisfy, whoever makes it — a human or an AI agent. Agents read this before [AGENTS.md](../AGENTS.md) conventions, the [PRD](../PRD.md), or the [feature catalog](../features/features.yml). Ratified… |
 | [`docs/CONTRIBUTING_DEVELOPER.md`](CONTRIBUTING_DEVELOPER.md) | The full contribution workflow for developers and AI agents — fork and sync, branch naming, commit format, code and markdown standards, testing requirements and the pull-request checklist (last revised 2025-10). |
 | [`docs/prose-oneline-universal.md`](prose-oneline-universal.md) | How the oneline prose rule is enforced everywhere — CI backstop, hub auto-fix, the shared AI runner, a Claude Code hook, and a pre-commit hook. |
 | [`docs/ROADMAP.md`](ROADMAP.md) | The 2024–2026 master roadmap: the four learning realms (QuickStart, Journey, Library, Notebook — three since retired), beginner-to-expert paths and the Q1 2026 priorities; kept for history, not maintained. |
 | [`docs/adr/`](adr/README.md) | How this repository records hard-to-reverse decisions as numbered ADRs — the format, required sections and status values — and the index of every ADR. |
 | [`docs/agents/`](agents/README.md) | How this repository grades its agents with machine-verifiable gates, runs a root-cause analysis before any re-run, and logs every instruction change (GH-600 Domain 4). |
+| [`docs/amendments/`](amendments/README.md) | The append-only log of changes to [the constitution](constitution.md). |
 | [`docs/git-archaeology/`](git-archaeology/README.md) | Bounded retrospectives of this repository's own Git history — one evidence index per commit range, with the published reading at /digs/. |
 
 ### `docs/architecture/`
