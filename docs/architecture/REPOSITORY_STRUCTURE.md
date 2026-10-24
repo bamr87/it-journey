@@ -1,5 +1,7 @@
 # IT-Journey Repository Structure
 
+> A directory-by-directory tour of the repository with its naming conventions and content-organization principles (last revised 2025-10; the AGENTS.md **Layout** table is the current map).
+
 This document provides a comprehensive overview of the IT-Journey repository structure, explaining the purpose of each directory and major component.
 
 ## Directory Tree Overview

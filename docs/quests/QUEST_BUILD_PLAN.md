@@ -601,6 +601,7 @@ quest_mapping:
 
 draft: true  # Remove when quest is complete
 ---
+```
 
 ### Standard Quest Content Structure
 
@@ -693,7 +694,7 @@ lastmod: YYYY-MM-DDTHH:MM:SS.000Z
 ## Resources
 
 [Level-specific resources, documentation, tools]
-```bash
+```
 
 ## Automation and Tooling
 
@@ -713,7 +714,7 @@ LEVEL=$1 QUEST_SLUG=$2 QUEST_TITLE=$3
 # Update home.md and main README.md
 # Validate frontmatter
 # Create git commit
-```bash
+```
 
 ### Quest Validation Script
 
@@ -729,7 +730,7 @@ Create `scripts/quest/validate-quest-network.py`:
 # Verify quest progression paths
 # Generate network visualization
 # Report orphaned quests
-```bash
+```
 
 ### Link Update Script
 
@@ -745,7 +746,7 @@ Create `scripts/quest/update-quest-links.py`:
 # Update README.md
 # Update level README files
 # Validate all links work
-```markdown
+```
 
 ## Quality Assurance Checklist
 

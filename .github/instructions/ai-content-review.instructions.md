@@ -65,7 +65,7 @@ Do not use `redirect_from:`. When a permalink changes, update every internal ref
 
 ### Quests
 - `main_quest` → `/quests/XXXX/slug/`
-- `side_quest` → `/quests/XXXX/side-quests/slug/`
+- `side_quest` → `/quests/XXXX/slug/` (flattened — no `/side-quests/` segment)
 - Level README → `/quests/XXXX/`
 - `codex` → `/quests/codex/slug/`
 

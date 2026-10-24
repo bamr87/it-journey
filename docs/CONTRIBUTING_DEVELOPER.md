@@ -1,5 +1,7 @@
 # Developer Contribution Guide
 
+> The full contribution workflow for developers and AI agents — fork and sync, branch naming, commit format, code and markdown standards, testing requirements and the pull-request checklist (last revised 2025-10).
+
 This guide provides comprehensive instructions for developers and AI agents contributing to the IT-Journey repository.
 
 ## Table of Contents

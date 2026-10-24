@@ -1,5 +1,7 @@
 # IT-Journey CMS — VS Code extension design & contract
 
+> The design and stable data contract for the separate VS Code CMS extension that reads this repository's `.cms/` index, reports and worklists.
+
 > Status: design (the extension is built in a **separate repo**; this document is
 > the spec + the stable contract this repo emits).
 

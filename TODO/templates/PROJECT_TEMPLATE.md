@@ -224,7 +224,7 @@ _To be filled as project progresses_
 
 ## 🔗 Related Resources
 
-- **Roadmap**: [Relevant roadmap section](/roadmap/#section)
+- **Roadmap**: [Relevant roadmap section](../../docs/ROADMAP.md#section)
 - **PRD**: [Related requirement](/PRD.md#section)
 - **Documentation**: [Technical docs](/docs/topic/)
 - **Related Projects**: [Other TODO project](../project/)

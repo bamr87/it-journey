@@ -57,7 +57,7 @@ Enforced by `test/quest-validator/quest_validator.py`. Read [`.github/instructio
 | `quest_type` | `permalink` |
 |---|---|
 | `main_quest` | `/quests/XXXX/<slug>/` |
-| `side_quest` | `/quests/XXXX/side-quests/<slug>/` |
+| `side_quest` | `/quests/XXXX/<slug>/` |
 | `bonus_quest` / `epic_quest` | `/quests/codex/<slug>/` |
 
 ### Quest dependency URLs

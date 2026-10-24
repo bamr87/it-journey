@@ -17,7 +17,8 @@
         mermaid-check mermaid-fix \
         cms-index cms-analyze cms-plan cms-status cms-all \
         issue-triage issue-status issue-plan \
-        theme-crawl theme-triage
+        theme-crawl theme-triage \
+        docs docs-check
 
 JEKYLL_CONFIG_DEV := _config.yml,_config_dev.yml
 JEKYLL_CONFIG_CI  := _config.yml,_config_dev.yml,_config_ci.yml
@@ -37,7 +38,7 @@ help:
 	@echo "  make test               - Test the statistics generator"
 	@echo ""
 	@echo "🏗️  Jekyll Build"
-	@echo "  make serve              - Dev server (local theme, incremental)"
+	@echo "  make serve              - Dev server with live reload on :4002 (_config.yml + _config_dev.yml)"
 	@echo "  make build              - Dev build (_config.yml + _config_dev.yml)"
 	@echo "  make build-ci           - CI smoke build (matches PR workflow)"
 	@echo "  make build-prod         - Production build (remote theme)"
@@ -50,6 +51,7 @@ help:
 	@echo "  make quest-build-network    - Rebuild quest-network.json / network.yml"
 	@echo "  make quest-levels-data      - Emit _data/quests/levels.yml from registry"
 	@echo "  make quest-nav              - Regenerate _data/navigation/quests.yml from collection"
+	@echo "  make quest-data             - Regenerate all registry-derived quest data (levels, nav, network)"
 	@echo "  make quest-audit            - Unified audit: content + network + data freshness (one report)"
 	@echo "  make quest-audit-strict     - Unified audit with warnings escalated to failures"
 	@echo "  make quest-audit-report     - Unified audit + JSON report (quest-audit-report.json)"
@@ -59,7 +61,7 @@ help:
 	@echo "🐳 Dockerized Validation (CI-parity, no host Ruby/Python)"
 	@echo "  make docker-validate        - Run the unified quest audit in Docker (python:3.12-slim)"
 	@echo "  make docker-validate-strict - Dockerized audit with warnings as failures"
-	@echo "  make docker-build-ci        - CI-parity Jekyll build in Docker (ruby:3.2.3 + github-pages)"
+	@echo "  make docker-build-ci        - CI-parity Jekyll build in Docker (the repo Dockerfile + github-pages)"
 	@echo "  make docker-audit-tier2     - Dockerized audit + Claude tier-2 (needs CLAUDE_CODE_OAUTH_TOKEN)"
 	@echo "  make quest-execute QUEST=<path> - Claude RUNS a quest's code snippets, isolated in Docker"
 	@echo "  make quest-execute SAMPLE=N     - same, across a spread of N quests"
@@ -80,6 +82,10 @@ help:
 	@echo "  make prose-oneline             - Check one-paragraph-per-line (the 'oneline' gate)"
 	@echo "  make prose-oneline-apply       - Unwrap soft-wrapped markdown prose in place"
 	@echo "  make hooks-install             - Wire git to tools/hooks (pre-commit oneline enforcement)"
+	@echo ""
+	@echo "📚 Documentation"
+	@echo "  make docs               - Regenerate docs/reference/ and the docs/README.md index"
+	@echo "  make docs-check         - Fail when docs/reference/ or the docs index is stale"
 	@echo ""
 	@echo "🧭 AI-Augmented CMS"
 	@echo "  make cms-status         - Terminal content dashboard (health by collection)"
@@ -524,6 +530,17 @@ liquid-check:
 content-audit: content-validate mermaid-check quest-validate quest-network
 	@echo "✅ Content audit complete — frontmatter, mermaid, quests, and network validated."
 	@echo "   (run 'make liquid-check' for the repo-wide Liquid raw-guard sweep)"
+
+# Documentation: generated reference (tools/gen_reference.py) + docs index
+# (tools/docs_index.py, vendored from the bamr87 hub). Reference first, so the
+# index picks up the reference pages' summaries.
+docs:
+	@python3 tools/gen_reference.py
+	@python3 tools/docs_index.py --write
+
+docs-check:
+	@python3 tools/gen_reference.py --check
+	@python3 tools/docs_index.py --check
 
 # AI-augmented CMS engine (scripts/cms/cms.py -> .cms/)
 cms-index:

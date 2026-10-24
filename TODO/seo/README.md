@@ -182,7 +182,7 @@ date: 2025-12-20T10:05:28.000Z
 ## 🔗 Related Resources
 
 - **[Main TODO Hub](../README.md)** - Central TODO directory
-- **[Roadmap](/roadmap/)** - Project alignment
+- **[Roadmap](../../docs/ROADMAP.md)** - Project alignment
 - **[PRD](/PRD.md)** - Product requirements
 
 ---

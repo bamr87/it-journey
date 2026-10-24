@@ -1,6 +1,6 @@
 ---
 title: "IT-Journey: The Master Roadmap"
-description: "Navigate your path from digital novice to IT wizard through our interconnected learning ecosystem of QuickStart, Quests, Library, and Notebooks."
+description: "The 2024–2026 master roadmap: the four learning realms (QuickStart, Journey, Library, Notebook — three since retired), beginner-to-expert paths and the Q1 2026 priorities; kept for history, not maintained."
 layout: default
 author: IT-Journey Team
 permalink: /roadmap/
@@ -31,7 +31,7 @@ date: 2024-04-25T10:40:43.000Z
 
 ---
 
-Go [Home]({{ page.backlink }}) {: .btn .btn-purple .border}
+This roadmap is historical and no longer maintained: its task lists are not tracked. The backlog of record is [GitHub Issues](https://github.com/bamr87/it-journey/issues).
 
 > *"Every expert was once a beginner who refused to give up after their first segmentation fault."*
 
@@ -594,8 +594,7 @@ graph LR
    * Implement ML model deployment pipelines
 
 3. **Knowledge Vault** (Library)
-   * [Quest Creation Guide](.github/instructions/quest.instructions.md) - AI-assisted content
-   * [Post Creation Guidelines](.github/instructions/posts.instructions.md) - AI documentation
+   * [Quest Creation Guide](../.github/instructions/quest.instructions.md) - AI-assisted content
    * AI integration patterns and best practices
    * Ethical AI development guidelines
    * Performance and scaling considerations

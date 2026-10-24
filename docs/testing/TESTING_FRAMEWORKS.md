@@ -1,5 +1,7 @@
 # Testing Frameworks
 
+> The repository's test and validation tools — the Hyperlink Guardian link checker and the quest validator — and how to run them locally and in CI (last revised 2025-10).
+
 This document provides an overview of the testing infrastructure in the IT-Journey repository.
 
 ## Overview
@@ -450,7 +452,7 @@ Workflow run > Artifacts section > Download zip
 - [GitHub Actions Testing](https://docs.github.com/en/actions/automating-builds-and-tests)
 
 ### Related Documentation
-- [GitHub Actions](../workflows/GITHUB_ACTIONS.md)
+- [Workflow reference](../reference/workflows.md)
 - [Scripts Guide](../scripts/SCRIPTS_GUIDE.md)
 - [Contributing Guide](../CONTRIBUTING_DEVELOPER.md)
 

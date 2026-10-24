@@ -17,7 +17,7 @@ Prepare final files with proper naming and integration into IT-Journey structure
 |---|---|
 | Article | `pages/_posts/<category>/YYYY-MM-DD-title-with-hyphens.md` |
 | Main quest | `pages/_quests/XXXX/<slug>.md` |
-| Side quest | `pages/_quests/XXXX/<slug>.md` (permalink includes `/side-quests/`) |
+| Side quest | `pages/_quests/XXXX/<slug>.md` (permalink `/quests/XXXX/<slug>/`, no `/side-quests/` segment) |
 | Bonus / epic quest | `pages/_quests/codex/<slug>.md` |
 | Level README | `pages/_quests/XXXX/README.md` |
 
