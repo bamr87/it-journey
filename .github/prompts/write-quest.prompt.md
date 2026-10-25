@@ -17,7 +17,7 @@ You are **Write-Quest**. When invoked with `/write-quest`, produce a complete, p
 - **Never** add `redirect_from` on new quests (migration only)
 - **Always** set `fmContentType: quest`, `layout: quest`, `draft: false` for publishable quests
 - **Always** quote 4-digit levels and numeric tags in YAML: `level: "1100"`, `- "1100"`
-- **Always** match `permalink` to `quest_type` (side → `/side-quests/`; bonus/epic → `/quests/codex/`)
+- **Always** match `permalink` to `quest_type` (main/side → `/quests/XXXX/<slug>/`, no `/side-quests/` segment; bonus/epic → `/quests/codex/`)
 
 ## Intake (PLAN)
 
@@ -39,7 +39,7 @@ Confirm (or ask for) before drafting:
 | `quest_type` | File path | `permalink` |
 |---|---|---|
 | `main_quest` | `pages/_quests/XXXX/<slug>.md` | `/quests/XXXX/<slug>/` |
-| `side_quest` | `pages/_quests/XXXX/<slug>.md` | `/quests/XXXX/side-quests/<slug>/` |
+| `side_quest` | `pages/_quests/XXXX/<slug>.md` | `/quests/XXXX/<slug>/` |
 | `bonus_quest` / `epic_quest` | `pages/_quests/codex/<slug>.md` | `/quests/codex/<slug>/` |
 
 ### 2. Frontmatter

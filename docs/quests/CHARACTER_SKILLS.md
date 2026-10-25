@@ -1,5 +1,7 @@
 # Character Skills — per-path voices and exercises for the quest-perfection loop
 
+> The six per-character skill sheets the quest-perfection loop role-plays — persona, voice and per-level exercises — and the generator that keeps their roadmaps in step with the character paths.
+
 The quest-perfection loop always works one **(character, level) slice**: the walk lane (`quest-walkthrough` skill → `quest-walker` agent) plays it as a learner, and the fix lane (`quest-fix` skill → `quest-fixer` agent) repairs what the walk witnessed. Until now "as a learner of this character class" was a single sentence of instruction; the **character skills** make it a real, versioned contract — one skill per character path, holding the persona, the voice, the per-level exercise checkpoints, and the friction lens for that path.
 
 ## The files

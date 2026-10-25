@@ -1,5 +1,7 @@
 # IT-Journey — Branding & Content-Governance System (plan)
 
+> The brand store in `_data/brand/`, its per-section guides, the skill, prompts and instructions that load it, and the `.cms` brand-drift scoring — a shipped plan, since narrowed from posts to quests and docs.
+
 > Status: implemented. This document specifies a central branding layer for
 > collection content and how it wires into the existing CMS engine, skills,
 > prompts, and editor instructions.

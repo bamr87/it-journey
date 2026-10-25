@@ -394,8 +394,6 @@ This system serves as both a practical tool and an educational example of modern
 ### IT-Journey Documentation
 - [Scripts Instructions](../.github/instructions/scripts.instructions.md) - Standards and best practices for scripts
 - [Scripts Guide](../docs/scripts/SCRIPTS_GUIDE.md) - Comprehensive scripts documentation
-- [Script Cleanup Summary](../docs/scripts/CLEANUP_SUMMARY.md) - Consolidation results
-- [Script Consolidation Plan](../docs/scripts/CONSOLIDATION_PLAN.md) - Organization strategy
 - [Development Environment](../docs/setup/DEVELOPMENT_ENVIRONMENT.md) - Setup guide
 - [Contributing Guide](../docs/CONTRIBUTING_DEVELOPER.md) - Contribution workflow
 

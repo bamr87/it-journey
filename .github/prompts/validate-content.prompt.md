@@ -45,7 +45,7 @@ Validate article and quest content against IT-Journey standards. For quests, [`.
 | `quest_type` | Expected pattern |
 |---|---|
 | `main_quest` | `/quests/XXXX/slug/` |
-| `side_quest` | `/quests/XXXX/side-quests/slug/` |
+| `side_quest` | `/quests/XXXX/slug/` |
 | `bonus_quest` / `epic_quest` | `/quests/codex/slug/` |
 
 Dependency URLs must be full canonical paths with trailing slashes.

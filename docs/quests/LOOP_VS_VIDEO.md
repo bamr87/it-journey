@@ -1,5 +1,7 @@
 # Perfection loop vs. the video it produces — a side-by-side run
 
+> A side-by-side run of the quest-perfection loop and the walkthrough video it produced, showing where the two must agree and what each medium is for.
+
 A record of running the quest-perfection loop over one main quest and comparing what the **loop** reports with what the **video** shows, so it is clear what each medium is for and where they must agree.
 
 **Run:** slice `game-developer/0001` (the ledger's own priority pick), main quest **CSS Styling Basics: Selectors, the Box Model & Layout** (`pages/_quests/0001/css-styling-basics.md`), Linux path, 2026-08-20.

@@ -1,6 +1,8 @@
 <!-- kit: sdlc v0.1.0 · ADR index (UPS-WORK-04, decision D2: law-ai format) -->
 # Architecture Decision Records
 
+> How this repository records hard-to-reverse decisions as numbered ADRs — the format, required sections and status values — and the index of every ADR.
+
 This directory records decisions for it-journey that are hard to reverse: the stack, data model, security model, public interfaces, and any relaxation of a gate. Add an ADR in the same PR as the change it justifies.
 
 ## Format

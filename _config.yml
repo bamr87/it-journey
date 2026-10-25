@@ -479,6 +479,7 @@ exclude:
   - Gemfile.lock
   - gemfiles/
   - vendor/
+  - features/
   
   # Build and dependency directories
   - node_modules/
@@ -541,7 +542,6 @@ exclude:
   - submodules/
   - post-organization.log
   - "*_SUMMARY.md"
-  - roadmap.md
 
 # Sass/SCSS
 sass:

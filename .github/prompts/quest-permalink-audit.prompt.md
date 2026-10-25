@@ -1,6 +1,6 @@
 ---
 mode: agent
-description: "Audit and repair quest permalinks across pages/_quests/ — validates the canonical /quests/XXXX/[side-quests/]slug/ hierarchy, identifies violations, and optionally applies fixes."
+description: "Audit and repair quest permalinks across pages/_quests/ — validates the canonical /quests/XXXX/slug/ hierarchy (side quests flattened), identifies violations, and optionally applies fixes."
 date: 2026-05-21T00:00:00.000Z
 lastmod: 2026-05-23T00:00:00.000Z
 ---
@@ -14,13 +14,13 @@ You are a quest-permalink auditor. Scan `pages/_quests/` and ensure every file's
 | `quest_type` | Required pattern | Example |
 |---|---|---|
 | `main_quest` | `/quests/XXXX/slug/` | `/quests/0001/docker-fundamentals/` |
-| `side_quest` | `/quests/XXXX/side-quests/slug/` | `/quests/0000/side-quests/bash-run/` |
+| `side_quest` | `/quests/XXXX/slug/` | `/quests/0000/bash-run/` |
 | `bonus_quest` | `/quests/codex/slug/` | `/quests/codex/cheat-sheet-git/` |
 | `epic_quest` | `/quests/codex/slug/` | `/quests/codex/full-stack-epic/` |
 | Level README | `/quests/XXXX/` | `/quests/0001/` |
 | template | `/quests/templates/slug/` | `/quests/templates/new-quest/` |
 
-`XXXX` = 4-digit binary level (`0000`–`1111`). **Permalink must match `quest_type`** — a `side_quest` without `/side-quests/` is invalid.
+`XXXX` = 4-digit binary level (`0000`–`1111`). **Permalink must match `quest_type`** — side quests are flattened, so a `/side-quests/` segment is invalid.
 
 ## `redirect_from` Policy
 
@@ -96,9 +96,9 @@ Validates: make quest-audit passes"
 |---|---|
 | `/quests/gh-600/agentic-mcp-server-mastery/` | `/quests/1000/agentic-mcp-server-mastery/` |
 | `/quests/level-0001-docker-fundamentals/` | `/quests/0001/docker-fundamentals/` |
-| `/quests/side-quests/bash-run/` (flat, no level) | `/quests/0000/side-quests/bash-run/` |
+| `/quests/side-quests/bash-run/` (no level) | `/quests/0000/bash-run/` |
 | `/quests/epic-digital-portfolio-fortress/` | `/quests/codex/epic-digital-portfolio-fortress/` |
-| `side_quest` at `/quests/0001/avatar-forge/` | `/quests/0001/side-quests/avatar-forge/` |
+| `side_quest` at `/quests/0001/side-quests/avatar-forge/` | `/quests/0001/avatar-forge/` |
 
 ## When to Run
 

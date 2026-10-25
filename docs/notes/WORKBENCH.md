@@ -1,5 +1,7 @@
 # Notes Workbench — the design
 
+> The design of the interactive /notes/ board: local notes, site-wide snippet clipping, and the public/private split.
+
 ## The problem this fixes
 
 `/notes/` was a folder of files with a scratchpad in front of it. `pages/_notes/index.md` was 309 lines of PowerShell dumps, Liquid scraps, MathJax samples, and cat photos, and nothing in the repository ever iterated `site.notes` — the 27 real notes were reachable only through the theme's auto-generated sidebar. A reader could read a cheatsheet. They could not keep anything.
