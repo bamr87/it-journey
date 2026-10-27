@@ -1,11 +1,11 @@
 ---
-title: "Install Windows 11: Summon a Fresh World onto a Blank Drive"
+title: 'Install Windows 11: Summon a Fresh World onto a Blank Drive'
 author: IT-Journey Team
-description: "Install Windows 11 from scratch on a laptop with a brand-new SSD: fit the drive, build a bootable USB on any OS, check the UEFI firmware, run Setup and first boot, then verify drivers, activation and BitLocker."
+description: 'Install Windows 11 from scratch on a laptop with a brand-new SSD: fit the drive, build a bootable USB on any OS, check the UEFI firmware, run Setup and first boot, then verify drivers, activation and BitLocker.'
 excerpt: Turn a laptop with an empty SSD into a working, activated, fully updated Windows 11 machine
-date: 2026-10-27T12:00:00.000Z
-lastmod: 2026-10-27T20:06:16.225Z
-level: "0000"
+date: '2026-10-27T12:00:00.000Z'
+lastmod: '2026-10-27T20:06:16.000Z'
+level: '0000'
 difficulty: 🟡 Medium
 estimated_time: 2-3 hours
 primary_technology: windows
@@ -16,87 +16,87 @@ quest_arc: Platform Mastery Arc
 quest_dependencies:
   required_quests: []
   recommended_quests:
-    - /quests/0000/os-selection/
-    - /quests/0000/it-fundamentals/
+  - /quests/0000/os-selection/
+  - /quests/0000/it-fundamentals/
   unlocks_quests:
-    - /quests/0000/hello-windows/
+  - /quests/0000/hello-windows/
 skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-    - Comfortable downloading files and running programs on an existing computer
-    - Know your laptop's manufacturer and exact model number
+  - Comfortable downloading files and running programs on an existing computer
+  - Know your laptop's manufacturer and exact model number
   system_requirements:
-    - A laptop that meets the Windows 11 requirements (UEFI with Secure Boot, TPM 2.0, 4 GB RAM)
-    - A new internal SSD of 64 GB or more that fits the laptop's drive slot
-    - A USB flash drive of 16 GB or more whose contents you can erase
-    - A second working computer (Windows, macOS or Linux) with internet access
-    - A small Phillips screwdriver and a plastic pry tool
+  - A laptop that meets the Windows 11 requirements (UEFI with Secure Boot, TPM 2.0, 4 GB RAM)
+  - A new internal SSD of 64 GB or more that fits the laptop's drive slot
+  - A USB flash drive of 16 GB or more whose contents you can erase
+  - A second working computer (Windows, macOS or Linux) with internet access
+  - A small Phillips screwdriver and a plastic pry tool
   skill_level_indicators:
-    - Ready to open a laptop's bottom panel with care
-    - Patient enough to read every Setup screen before clicking Next
+  - Ready to open a laptop's bottom panel with care
+  - Patient enough to read every Setup screen before clicking Next
 validation_criteria:
   completion_requirements:
-    - Windows 11 boots from the new SSD with the USB stick removed
-    - The SSD uses GPT with EFI system, Microsoft reserved, Windows and recovery partitions
-    - Windows reports as activated and no device is missing a driver
+  - Windows 11 boots from the new SSD with the USB stick removed
+  - The SSD uses GPT with EFI system, Microsoft reserved, Windows and recovery partitions
+  - Windows reports as activated and no device is missing a driver
   skill_demonstrations:
-    - Can build bootable install media from an ISO on Windows, macOS or Linux
-    - Can boot an installer from a one-time boot menu without changing the boot order
+  - Can build bootable install media from an ISO on Windows, macOS or Linux
+  - Can boot an installer from a one-time boot menu without changing the boot order
   knowledge_checks:
-    - Can explain why Windows 11 needs UEFI, Secure Boot and TPM 2.0
-    - Knows where the BitLocker recovery key is stored and how to retrieve it
+  - Can explain why Windows 11 needs UEFI, Secure Boot and TPM 2.0
+  - Knows where the BitLocker recovery key is stored and how to retrieve it
 rewards:
   badges:
-    - 🏆 World Summoner - Installed Windows 11 onto bare gear from a USB stick
-    - 🛡️ Keeper of the Recovery Key - Found and saved the BitLocker recovery key off the machine
+  - 🏆 World Summoner - Installed Windows 11 onto bare gear from a USB stick
+  - 🛡️ Keeper of the Recovery Key - Found and saved the BitLocker recovery key off the machine
   skills_unlocked:
-    - 🛠️ Bootable install media on any operating system
-    - 🎯 UEFI firmware settings and one-time boot menus
-    - 🔧 Storage driver loading and GPT partition layout
+  - 🛠️ Bootable install media on any operating system
+  - 🎯 UEFI firmware settings and one-time boot menus
+  - 🔧 Storage driver loading and GPT partition layout
   progression_points: 100
   unlocks_features:
-    - A clean Windows 11 fortress, ready for the Hello Windows quest
+  - A clean Windows 11 fortress, ready for the Hello Windows quest
 permalink: /quests/0000/install-windows-11/
 categories:
-  - Quests
-  - Init-World
-  - Windows
+- Quests
+- Init-World
+- Windows
 tags:
-  - "0000"
-  - windows
-  - windows-11
-  - main_quest
-  - hands-on
-  - bootable-usb
-  - uefi
-  - gamified-learning
+- '0000'
+- windows
+- windows-11
+- main_quest
+- hands-on
+- bootable-usb
+- uefi
+- gamified-learning
 keywords:
   primary:
-    - "0000"
-    - windows 11
-    - clean install
+  - '0000'
+  - windows 11
+  - clean install
   secondary:
-    - bootable-usb
-    - uefi-firmware
-    - media-creation-tool
-    - rufus
-    - bitlocker
+  - bootable-usb
+  - uefi-firmware
+  - media-creation-tool
+  - rufus
+  - bitlocker
 fmContentType: quest
 draft: false
 comments: true
-sub_title: "Level 0000 (0) Quest: Main Quest - Install Windows 11"
+sub_title: 'Level 0000 (0) Quest: Main Quest - Install Windows 11'
 layout: quest
 mermaid: true
 environment:
   os:
-    - windows
-    - macos
-    - linux
+  - windows
+  - macos
+  - linux
   shell:
-    - powershell
-    - zsh
-    - bash
+  - powershell
+  - zsh
+  - bash
 ---
 *A laptop with a brand-new SSD is gear without a world. The fans spin, the screen glows, and the firmware searches every corner for something to boot — and finds nothing. This quest teaches you the summoning: a USB stick carrying Windows 11, a few careful choices in the firmware, and a Setup wizard that carves an empty drive into a living World.*
 
