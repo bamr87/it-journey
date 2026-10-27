@@ -1,8 +1,8 @@
 {
   "stats": {
-    "total": 217,
+    "total": 218,
     "by_level": {
-      "0000": 29,
+      "0000": 30,
       "0001": 26,
       "0010": 17,
       "0011": 5,
@@ -21,7 +21,7 @@
     },
     "by_type": {
       "epic_quest": 5,
-      "main_quest": 186,
+      "main_quest": 187,
       "side_quest": 26
     }
   },
@@ -196,6 +196,15 @@
       "difficulty": "🟡 Medium",
       "technology": "windows",
       "file": "pages/_quests/0000/hello-win.md"
+    },
+    {
+      "id": "/quests/0000/install-windows-11/",
+      "title": "Install Windows 11: Summon a Fresh World onto a Blank Drive",
+      "level": "0000",
+      "type": "main_quest",
+      "difficulty": "🟡 Medium",
+      "technology": "windows",
+      "file": "pages/_quests/0000/install-windows-11.md"
     },
     {
       "id": "/quests/0000/it-fundamentals/",
@@ -2312,6 +2321,21 @@
       "kind": "unlocks"
     },
     {
+      "source": "/quests/0000/install-windows-11/",
+      "target": "/quests/0000/os-selection/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/0000/install-windows-11/",
+      "target": "/quests/0000/it-fundamentals/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/0000/install-windows-11/",
+      "target": "/quests/0000/hello-windows/",
+      "kind": "unlocks"
+    },
+    {
       "source": "/quests/0000/it-fundamentals/",
       "target": "/quests/0000/hello-noob/",
       "kind": "recommended"
@@ -2370,6 +2394,11 @@
       "source": "/quests/0000/os-selection/",
       "target": "/quests/0000/character-selection/",
       "kind": "recommended"
+    },
+    {
+      "source": "/quests/0000/os-selection/",
+      "target": "/quests/0000/install-windows-11/",
+      "kind": "unlocks"
     },
     {
       "source": "/quests/0000/os-selection/",

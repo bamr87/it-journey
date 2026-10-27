@@ -28,6 +28,8 @@
     url: /quests/0000/hello-noob/
   - title: 'Hello Windows: Mastering the Windows Development Environment'
     url: /quests/0000/hello-windows/
+  - title: 'Install Windows 11: Summon a Fresh World onto a Blank Drive'
+    url: /quests/0000/install-windows-11/
   - title: 'IT Fundamentals: Your Digital Awakening Quest'
     url: /quests/0000/it-fundamentals/
   - title: 'Linux Fundamentals: Enter the Penguin''s Domain'
