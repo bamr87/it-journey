@@ -255,10 +255,11 @@ giscus:
   data-repo-id: "MDEwOlJlcG9zaXRvcnkyODM4MjI1NzM="
   data-category-id: "DIC_kwDOEOrJ7c4CAn8D"
   # The site is always dark; the theme default (preferred_color_scheme) follows
-  # the visitor's OS and renders a light widget on the dark page. Use the opaque
-  # "dark" theme, not "transparent_dark": with a transparent iframe background
-  # axe measures giscus's light text against white and fails color-contrast.
-  data-theme: "dark"
+  # the visitor's OS and renders a light widget on the dark page. Use
+  # "dark_high_contrast": with "transparent_dark" axe measures the widget's text
+  # against white, and plain "dark" renders the reaction/comment counters below
+  # AA, both of which fail the site-quality color-contrast gate.
+  data-theme: "dark_high_contrast"
 
 ## Mermaid Diagram Configuration #################################################
 # Mermaid diagrams support both native markdown code blocks and div syntax
