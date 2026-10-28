@@ -1,0 +1,33 @@
+{%- comment -%}
+  custom/footer.html — this site's addition after the theme footer.
+
+  The remote theme (bamr87/zer0-mistakes) includes _includes/custom/footer.html
+  from _layouts/root.html as an empty stub, directly after core/footer-fabs.html,
+  so this file is the sanctioned way to add page-dependent footer markup without
+  forking a theme file.
+
+  It restores the mobile table-of-contents FAB on this site's own layouts. The
+  theme renders it (core/footer-fabs.html) only for layouts on a hard-coded list
+  in navigation/sidebar-config.html (`sidebar_offcanvas_rendered`), because
+  there is no Liquid API to walk the layout chain. quest, quest-hub,
+  quest-collection, home-os, notes-workbench and javascript all extend `default`,
+  so they DO render #tocContents — but they are not on that list, so below lg
+  the table of contents had no button to open it.
+
+  The local-graph FAB/panel that footer-fabs.html pairs with it is left out on
+  purpose: quests already draw their own graph (the Quest Network section).
+
+  `layout.layout` is the parent of the page's own layout: Jekyll merges layout
+  front matter down the chain with the innermost layout winning, so it reads
+  "default" exactly when the page's layout extends default (for a page whose
+  layout IS default it reads "root"). That covers any future local layout
+  without a list to keep in sync.
+
+  Self-retiring: when the theme already rendered the FAB
+  (`sidebar_offcanvas_rendered`), this renders nothing, so a theme fix can never
+  produce a duplicate #tocFab. Upstream: bamr87/zer0-mistakes#570.
+{%- endcomment -%}
+{%- include navigation/sidebar-config.html -%}
+{%- if sidebar_offcanvas_rendered == false and layout.layout == "default" -%}
+  {% include navigation/toc-fab.html %}
+{%- endif -%}

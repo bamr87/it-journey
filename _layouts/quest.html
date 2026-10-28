@@ -18,6 +18,7 @@ skip_link_target: quest-content
     - The quest's own markdown body
     - quest-rewards
     - Quest dependency graph + backlinks (level-filtered)
+    - giscus comments (GitHub Discussions; on unless `comments: false`)
 
   Assets/CSS for this layout live in assets/css/quest-system.css; the
   progress JS lives in assets/js/quest-progress.js.
@@ -48,6 +49,14 @@ skip_link_target: quest-content
         {% include content/quest-graph-obsidian.html level=page.level current=page.permalink %}
         {% include content/quest-backlinks.html %}
       </section>
+
+      {%- comment -%} Same gate as the theme's article/note layouts. {%- endcomment -%}
+      {% if page.comments != false and site.giscus.enabled %}
+      <section class="quest-page__comments" id="comments" aria-labelledby="quest-comments-heading">
+        <h2 id="quest-comments-heading" class="quest-section-heading">💬 Comments</h2>
+        {% include content/giscus.html %}
+      </section>
+      {% endif %}
     </div>
   </div>
 </article>

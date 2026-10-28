@@ -252,8 +252,11 @@ relative_links:
 
 giscus:
   enabled: true
-  data-repo-id: "MDEwOlJlcG9zaXRvcnkyODM4MjI1NzM"
+  data-repo-id: "MDEwOlJlcG9zaXRvcnkyODM4MjI1NzM="
   data-category-id: "DIC_kwDOEOrJ7c4CAn8D"
+  # The site is always dark; the theme default (preferred_color_scheme) follows
+  # the visitor's OS and renders a light widget on the dark page.
+  data-theme: "transparent_dark"
 
 ## Mermaid Diagram Configuration #################################################
 # Mermaid diagrams support both native markdown code blocks and div syntax
@@ -385,7 +388,10 @@ defaults:
       layout: quest
       author_profile: true
       read_time: true
-      comments: # true
+      # giscus thread under each quest (_layouts/quest.html). Set it in each
+      # collection's own scope: `path: pages` above never reaches collection
+      # documents, and a nil default never overrides the global `false`.
+      comments: true
       share: true
       related: true
       sidebar:
@@ -458,6 +464,7 @@ defaults:
       layout: note
       share: false
       author_profile: false
+      comments: true # giscus, rendered by the theme's note layout
       sidebar:
         nav: auto
 
