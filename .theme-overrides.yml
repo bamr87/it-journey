@@ -34,7 +34,7 @@ overrides:
       preferred_color_scheme) instead of the theme's hard-coded
       preferred_color_scheme. This site is always dark, so following the
       visitor's OS gave light-mode visitors a white widget with near-invisible
-      text on the dark page; _config.yml sets transparent_dark. The rest of the
+      text on the dark page; _config.yml sets dark. The rest of the
       <script> block matches the theme's. (The fork originally existed for a
       live Liquid include example in the theme's header comment that recursed
       and broke the build; that was fixed upstream in v1.28.0.)
