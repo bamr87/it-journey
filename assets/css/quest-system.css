@@ -547,6 +547,12 @@
   border-radius: var(--quest-card-radius);
 }
 
+/* ───────── Quest comments (giscus) ───────── */
+
+.quest-page__comments {
+  margin-top: 2rem;
+}
+
 /* ───────── Quest hub (overworld) ───────── */
 
 .quest-hub {
