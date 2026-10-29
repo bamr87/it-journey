@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.1](https://github.com/bamr87/it-journey/compare/v0.2.0...v0.2.1) (2026-10-29)
+
+
+### Fixed
+
+* **giscus:** dark_high_contrast so the widget's counters pass AA ([b7bea6e](https://github.com/bamr87/it-journey/commit/b7bea6eeefaf20b3a7cc5a96a2e760c4764f5cec))
+* **giscus:** use the opaque dark theme so axe color-contrast passes ([2496bd1](https://github.com/bamr87/it-journey/commit/2496bd16c04c1da2f4e0fd0d0c1ca5aae84781ef))
+* **ui:** restore mobile TOC button, space task-list checkboxes, turn on giscus ([25d8192](https://github.com/bamr87/it-journey/commit/25d81922be408ba075faaf797e9d63f5a1d84834))
+* **ui:** restore mobile TOC button, space task-list checkboxes, turn on giscus ([4a13e7c](https://github.com/bamr87/it-journey/commit/4a13e7c9f9707603800d439176d1a5886fc11358))
+
 ## [0.2.0](https://github.com/bamr87/it-journey/compare/v0.1.0...v0.2.0) (2026-10-27)
 
 
