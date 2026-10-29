@@ -107,3 +107,19 @@ features:
     prd: ["§3"]
     surface: cli
     link: "scripts/prd-machine"
+  - id: FR-ITJ-014
+    title: "Quest Atom feed"
+    description: "jekyll-feed collection feed of new and updated quests so learners can subscribe (issue #870; fixes the empty /feed.xml, #869)."
+    implemented: false
+    status: planned
+    prd: ["§3"]
+    surface: ui
+    link: "/quests/feed.xml"
+  - id: FR-ITJ-015
+    title: "Quest page feedback"
+    description: "zer0-mistakes page_feedback enabled on quest pages, opening page-feedback issues (issue #871; UPS-FB-01, UPS-FE-13)."
+    implemented: false
+    status: planned
+    prd: ["§3"]
+    surface: ui
+    link: "/quests/"
