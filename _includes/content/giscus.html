@@ -3,26 +3,27 @@
   ------------------------------------------------------------------
   VENDORED, CORRECTED LOCAL OVERRIDE.  Declared in /.theme-overrides.yml.
 
-  _layouts/article.html embeds this include for the comment section. We keep a
-  local copy for exactly one reason: the theme's shipped version carried live
-  Liquid tags inside this header comment (a bare `include giscus.html` usage
-  example). Liquid evaluates tags even inside HTML comments, so that example
-  executed as a real, recursive include and broke the build. This copy keeps the
-  header comment entirely tag-free.
+  The theme's article/note/notebook layouts and this site's _layouts/quest.html
+  embed this include for the comment section.
 
-  The <script> block below is byte-identical to the theme's — only this comment
-  differs. This fork is therefore RETIRABLE: zer0-mistakes fixed the upstream
-  file in v1.28.0 (its header is now tag-free and carries a NOTE warning against
-  reintroducing the example), so this copy can be deleted once the removal has
-  been verified against a build.
+  Why a local copy: the theme hard-codes the preferred_color_scheme giscus
+  theme, which follows the visitor's OS setting. This site is always dark, so
+  a visitor in light mode got a white comment box and near-invisible text.
+  This copy reads the giscus theme from config instead (theme default kept as
+  the fallback); the rest of the <script> block matches the theme's.
+
+  (The fork originally existed because the theme's header comment held a live
+  Liquid include example that recursed and broke the build. zer0-mistakes fixed
+  that in v1.28.0; keep this header tag-free all the same.)
 
   NOTE: never write a bare `include giscus.html` example with live Liquid braces
-  in this file — that is the exact bug this override exists to avoid.
+  in this file — Liquid evaluates tags even inside HTML comments.
 
-  Reads three values from site config (everything else is a theme default):
+  Reads four values from site config (everything else is a theme default):
     - site.repository               -> data-repo            (e.g. bamr87/it-journey)
     - site.giscus.data-repo-id      -> data-repo-id
     - site.giscus.data-category-id  -> data-category-id
+    - site.giscus.data-theme        -> data-theme           (default preferred_color_scheme)
 
   Walkthrough: pages/_posts/tools-environment/2026-06-23-embedding-giscus-comments-zer0-mistakes.md
   Docs: https://giscus.app/
@@ -36,7 +37,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="preferred_color_scheme"
+        data-theme="{{ site.giscus.data-theme | default: 'preferred_color_scheme' }}"
         data-lang="en"
         crossorigin="anonymous"
         async>

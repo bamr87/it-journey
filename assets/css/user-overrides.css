@@ -190,6 +190,23 @@ blockquote, .blockquote {
 .form-control:focus, .form-select:focus { background: rgba(255, 255, 255, .06); border-color: var(--zer0-color-accent); box-shadow: 0 0 0 .2rem rgba(34, 211, 238, .2); color: #fff; }
 .form-control::placeholder { color: #6f76a0; }
 
+/* ---- task lists (`- [ ]` checkboxes) ------------------------------------ */
+/* kramdown emits `<li class="task-list-item"><input class="task-list-item-checkbox">text`
+   with no whitespace between box and text, and the theme ships no task-list
+   styling, so the box sat flush against the text after a stray bullet. Hang
+   the box in the bullet gutter instead: width + right margin == the negative
+   left margin, so the text (and its wrapped lines) keep the list's indent.
+   Upstream: bamr87/zer0-mistakes#573. */
+.task-list-item { list-style-type: none; }
+.task-list-item-checkbox {
+  width: 1.05em;
+  height: 1.05em;
+  margin: 0 .55em 0 -1.6em;
+  vertical-align: -.15em;
+  accent-color: var(--zer0-color-primary);
+}
+.task-list-item-checkbox:not(:disabled) { cursor: pointer; }
+
 /* ---- footer ------------------------------------------------------------- */
 footer, .footer, .footer-powered-by {
   background: #08071a; border-top: 1px solid var(--zer0-color-border); color: var(--zer0-color-ink-muted);
@@ -209,6 +226,20 @@ footer a { color: var(--zer0-color-link); }
 .bd-toc-fab {
   position: fixed !important;
   width: auto !important;
+}
+
+/* Below lg the theme parks BOTH the docs-sidebar FAB (`.bd-sidebar-fab`) and
+   the local-graph FAB in left-edge "slot 2", so on note pages the graph button
+   (higher z-index) sat exactly on top of the sidebar button and hid it. When
+   both are on the page, lift the graph FAB one slot higher.
+   Upstream: bamr87/zer0-mistakes#571. */
+@media (max-width: 991.98px) {
+  body:has(#sidebarFab) #obsidianLocalGraphFab.obsidian-local-graph-fab {
+    bottom: calc(
+      var(--zer0-space-fab-offset, 1rem) +
+      2 * (var(--zer0-space-fab-size, 3.5rem) + var(--zer0-space-fab-gap, 0.75rem))
+    );
+  }
 }
 
 /* Belt-and-suspenders: never let a stray full-bleed child force the page wider
