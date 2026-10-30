@@ -1,0 +1,30 @@
+{%- comment -%}
+  Atom feed of published quests (FR-ITJ-014, issue #869/#870).
+  Rendered by feed.xml (/feed.xml) and quests-feed.xml (/quests/feed.xml).
+  jekyll-feed only reads site.posts, and this site has no posts collection
+  (blog lives at lifehacker.dev), so its default /feed.xml was empty.
+  Entries: fmContentType == quest, draft != true; newest lastmod/date first.
+{%- endcomment -%}
+{%- assign quests = site.quests | where: "fmContentType", "quest" | where_exp: "q", "q.draft != true" | where_exp: "q", "q.published != false" | sort: "date" | reverse -%}
+{%- assign feed_url = include.path | absolute_url -%}
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.title | default: "IT-Journey" | xml_escape }} — Quests</title>
+  <subtitle>New and updated IT-Journey quests</subtitle>
+  <link href="{{ feed_url }}" rel="self" type="application/atom+xml"/>
+  <link href="{{ '/quests/' | absolute_url }}" rel="alternate" type="text/html"/>
+  <id>{{ feed_url }}</id>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <author><name>{{ site.author.name | default: site.author | default: "IT-Journey Team" | xml_escape }}</name></author>
+{%- for q in quests limit: 30 %}
+  <entry>
+    <title>{{ q.title | strip_html | xml_escape }}</title>
+    <link href="{{ q.url | absolute_url }}" rel="alternate" type="text/html"/>
+    <id>{{ q.url | absolute_url }}</id>
+    <published>{{ q.date | date_to_xmlschema }}</published>
+    <updated>{{ q.lastmod | default: q.date | date_to_xmlschema }}</updated>
+    {%- if q.level %}<category term="level-{{ q.level }}"/>{% endif %}
+    <summary>{{ q.description | default: q.excerpt | strip_html | strip | xml_escape }}</summary>
+  </entry>
+{%- endfor %}
+</feed>

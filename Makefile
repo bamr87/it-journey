@@ -154,17 +154,12 @@ stats-config:
 		echo "❌ Configuration file not found"; \
 	fi
 
-# Test the generator
+# Test the generator scripts and run the content audit
 test:
 	@echo "🧪 Testing statistics generator..."
 	@ruby -c scripts/generation/generate_statistics.rb && echo "✅ Ruby syntax check passed"
-	@if [ -d "pages/_posts" ]; then \
-		echo "✅ Posts directory found"; \
-	else \
-		echo "❌ Posts directory not found"; \
-		exit 1; \
-	fi
 	@bash -n scripts/generation/generate_statistics.sh && echo "✅ Bash script syntax check passed"
+	@$(MAKE) --no-print-directory content-audit
 	@echo "🎉 All tests passed!"
 
 # Contributor stats targets
