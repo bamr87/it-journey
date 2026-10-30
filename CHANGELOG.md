@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.2](https://github.com/bamr87/it-journey/compare/v0.2.1...v0.2.2) (2026-10-30)
+
+
+### Fixed
+
+* **ci:** keep axe out of the third-party giscus iframe ([5e0b7f5](https://github.com/bamr87/it-journey/commit/5e0b7f5d0205b7789c3a4c939b598e21ef0240e8))
+* **ci:** keep axe out of the third-party giscus iframe ([2aaaedc](https://github.com/bamr87/it-journey/commit/2aaaedc9aa9bc089e5496e372c2f7ab6081c62d3))
+
+
+### Documentation
+
+* **about:** draft rewrite of stale /about/purpose/ page (refs [#876](https://github.com/bamr87/it-journey/issues/876)) ([461571f](https://github.com/bamr87/it-journey/commit/461571f5a09d99fafcbae71375009ddc5200648e))
+
 ## [0.2.1](https://github.com/bamr87/it-journey/compare/v0.2.0...v0.2.1) (2026-10-29)
 
 
