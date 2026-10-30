@@ -24,6 +24,14 @@ export default {
     // toggle is >= 24 px wide.
     warnTags: ['wcag22a', 'wcag22aa'],
 
+    // Third-party, cross-origin frames axe must not scan. The giscus comment
+    // widget is rendered by giscus.app from its own stylesheet and loads over
+    // the network (present or not when axe runs, depending on timing); its
+    // markup is not in this repo, so a violation inside it (e.g.
+    // `.gsc-reactions-count` contrast) can't be fixed here and made the gate
+    // flaky. The giscus *theme* is ours: `giscus.data-theme` in _config.yml.
+    exclude: ['iframe.giscus-frame'],
+
     // Violations that already exist on main. Each one is downgraded to a
     // WARNING — still listed in the job summary and as an annotation — but only
     // for this rule, on these pages, on nodes matching `nodes` (a regex over the
