@@ -200,6 +200,8 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 | [FR-ITJ-011](features/features.yml) | Front matter validation | shipped | [`.github/workflows/frontmatter-validation.yml`](.github/workflows/frontmatter-validation.yml) | §3 |
 | [FR-ITJ-012](features/features.yml) | Link health check | shipped | [`scripts/validation/link-checker.py`](scripts/validation/link-checker.py) | §3 |
 | [FR-ITJ-013](features/features.yml) | PRD synchronization (prd-machine) | partial | [`scripts/prd-machine`](scripts/prd-machine) | §3 |
+| [FR-ITJ-016](features/features.yml) | Quest editorial charter | planned | [`docs/amendments/proposed/editorial-charter.md`](docs/amendments/proposed/editorial-charter.md) | §4, §9 |
+| [FR-ITJ-017](features/features.yml) | Editorial charter CI checks | planned | [`docs/amendments/proposed/editorial-charter.md`](docs/amendments/proposed/editorial-charter.md) | §4, §9 |
 
 **Requirement → feature trace**
 
@@ -207,6 +209,8 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 | --- | --- |
 | §1 | FR-ITJ-001, FR-ITJ-004 |
 | §3 | FR-ITJ-001, FR-ITJ-002, FR-ITJ-003, FR-ITJ-004, FR-ITJ-005, FR-ITJ-006, FR-ITJ-007, FR-ITJ-008, FR-ITJ-009, FR-ITJ-010, FR-ITJ-011, FR-ITJ-012, FR-ITJ-013 |
+| §4 | FR-ITJ-016, FR-ITJ-017 |
+| §9 | FR-ITJ-016, FR-ITJ-017 |
 <!-- features:end -->
 
 ## 6. OOS (Out Of Scope)

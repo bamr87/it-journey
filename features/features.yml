@@ -107,3 +107,23 @@ features:
     prd: ["§3"]
     surface: cli
     link: "scripts/prd-machine"
+  - id: FR-ITJ-016
+    title: "Quest editorial charter"
+    description: "Editorial rules for quests: brief-based authorization with minor/substantive/structural tiers, quality standards, a five-stage review pipeline, reviewer independence and corrections (constitution § 9, proposed amendment docs/amendments/proposed/editorial-charter.md)."
+    implemented: false
+    status: planned
+    prd: ["§4", "§9"]
+    surface: content
+    docs: "docs/amendments/proposed/editorial-charter.md"
+    tags: [governance, editorial, quests]
+    date: 2026-10-30
+  - id: FR-ITJ-017
+    title: "Editorial charter CI checks"
+    description: "Automated gates for the quest editorial charter: front matter schema with tested versions, last-verified date and AI disclosure; links; runnable code blocks in a pinned container; prerequisite links; readability; and freshness-window flags (constitution § 9.2-9.3)."
+    implemented: false
+    status: planned
+    prd: ["§4", "§9"]
+    surface: ci
+    docs: "docs/amendments/proposed/editorial-charter.md"
+    tags: [governance, ci, quests]
+    date: 2026-10-30
