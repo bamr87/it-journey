@@ -18,6 +18,7 @@ Run on every PR to `main` that touches the site by [`site-quality.yml`](../workf
 - **Lighthouse, `off`:** `uses-long-cache-ttl` and `cache-insight`. GitHub Pages always sends `max-age=600`, and that can't be changed.
 - **axe, fail:** any `critical` or `serious` violation of a `wcag2a`/`wcag2aa`/`wcag21a`/`wcag21aa` rule.
 - **axe, warn:** WCAG 2.2 rules (`target-size`), plus the entries in `known` in `a11y.config.mjs`. Each entry is limited to one rule, the listed pages and viewports, and the nodes that match its regex, so a new violation under the same rule still fails.
+- **axe, not scanned:** the selectors in `exclude` in `a11y.config.mjs`. Today that is only the third-party giscus comment iframe (`iframe.giscus-frame`): its markup and styles come from giscus.app over the network, so a violation inside it is out of this repo's reach and appears or not depending on load timing.
 - **Contrast:** a page with `max` fails when it has more contrast failures than that number. Pages that are clean today are pinned at `max: 0`. `/search/` is report-only until the badge colours are fixed.
 
 ## Tightening

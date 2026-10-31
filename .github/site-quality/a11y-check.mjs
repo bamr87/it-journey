@@ -21,7 +21,7 @@ import config from './a11y.config.mjs';
 
 const BASE = (process.env.SITE_URL || 'http://127.0.0.1:4000').replace(/\/$/, '');
 const OUT = 'reports/a11y';
-const { blockingTags, blockingImpacts, warnTags, known = [] } = config.axe;
+const { blockingTags, blockingImpacts, warnTags, known = [], exclude = [] } = config.axe;
 mkdirSync(OUT, { recursive: true });
 
 const gh = (level, title, msg) =>
@@ -66,7 +66,9 @@ for (const vp of config.viewports) {
       await tab.close();
       continue;
     }
-    const axe = await new AxeBuilder({ page: tab }).withTags([...blockingTags, ...warnTags]).analyze();
+    const builder = new AxeBuilder({ page: tab }).withTags([...blockingTags, ...warnTags]);
+    for (const sel of exclude) builder.exclude(sel);
+    const axe = await builder.analyze();
     for (const v of axe.violations) {
       const isBlockingRule = v.tags.some((t) => blockingTags.includes(t)) && blockingImpacts.includes(v.impact);
       const isWcag22 = !v.tags.some((t) => blockingTags.includes(t)) && v.tags.some((t) => warnTags.includes(t));
