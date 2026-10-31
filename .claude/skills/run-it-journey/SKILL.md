@@ -97,8 +97,7 @@ The repo also ships a `quest-validator` compose service for the same purpose (`d
 
 - **First serve builds the Docker image (Ruby 3.2.3) + bundle, then the site —
 a few minutes, and `:4002` refuses connections the whole time.** The `jekyll` service now builds from the repo `Dockerfile` and runs natively (no amd64 emulation), so it's much faster than the old `jekyll/jekyll` image — the site build is ~30-40s. Until it finishes, `curl localhost:4002` returns *"Connection reset by peer."* Don't kill it — watch for `Server running` in the logs.
-- **`.env` must exist or `docker compose up jekyll` errors.** The service has
-  `env_file: .env`; the repo only ships `.env.example`. `cp .env.example .env`.
+- **`.env` must exist or `docker compose up jekyll` errors.** The service has `env_file: .env`; the repo only ships `.env.example`. `cp .env.example .env`.
 - **Don't fight the host Ruby.** System Ruby 2.6.10 can't resolve the theme
 (needs ≥ 3.2) and there's no version manager installed. `bundle exec jekyll …` on the host gives `command not found: jekyll`. The whole point of Docker here is the Ruby 3.2.3 image built from the `Dockerfile`.
 - **A curl 200 is not proof of a render.** Always open the screenshot PNG.
@@ -106,11 +105,8 @@ a few minutes, and `:4002` refuses connections the whole time.** The `jekyll` se
 back `command not found`. `smoke.sh` pins PATH defensively; in one-off shells use absolute paths like `/usr/bin/curl`.
 ## Troubleshooting
 
-- **`curl: (56) Recv failure: Connection reset by peer` on :4002** — the server
-  is still building. Wait for `Server running` (`docker compose logs -f jekyll`).
+- **`curl: (56) Recv failure: Connection reset by peer` on :4002** — the server is still building. Wait for `Server running` (`docker compose logs -f jekyll`).
 - **`Error: PyYAML is required but not installed`** when running a validator on
 the host — host Python has no deps. Use the `python:3.12-slim` docker command in the Test section.
-- **`bundler: command not found: jekyll`** on the host — system Ruby has no gems
-  installed and is too old anyway. Use Docker.
-- **`docker compose up` hangs at `Generating...`** — it's not hung; that's the
-  ~8 min build. Confirm forward progress with `docker compose logs jekyll`.
+- **`bundler: command not found: jekyll`** on the host — system Ruby has no gems installed and is too old anyway. Use Docker.
+- **`docker compose up` hangs at `Generating...`** — it's not hung; that's the ~8 min build. Confirm forward progress with `docker compose logs jekyll`.

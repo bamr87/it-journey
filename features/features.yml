@@ -118,3 +118,11 @@ features:
     docs: "_includes/feed/quests-atom.xml"
     tags: [feed, atom, quests]
     date: 2026-10-30
+  - id: FR-ITJ-015
+    title: "Quest page feedback"
+    description: "zer0-mistakes page_feedback enabled on quest pages, opening page-feedback issues (issue #871; UPS-FB-01, UPS-FE-13)."
+    implemented: false
+    status: planned
+    prd: ["§3"]
+    surface: ui
+    link: "/quests/"

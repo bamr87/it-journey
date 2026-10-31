@@ -75,13 +75,10 @@ Old `level-XXXX-slug` and flat `side-quest-slug` patterns are invalid.
 
 ## 4. Content Quality Standards
 
-- **Word count**: 100–3000 words per file. Split long files instead of trimming
-  meaningful content.
+- **Word count**: 100–3000 words per file. Split long files instead of trimming meaningful content.
 - **Headings**: at least one H2; never skip heading levels.
-- **Code blocks**: always specify a language for syntax highlighting
-  (` ```bash`, ` ```python`, etc.).
-- **Nested fenced code blocks** need a longer outer fence (4 backticks if inner
-  uses 3).
+- **Code blocks**: always specify a language for syntax highlighting (` ```bash`, ` ```python`, etc.).
+- **Nested fenced code blocks** need a longer outer fence (4 backticks if inner uses 3).
 - **No literal secrets**: never paste strings starting with `ghp_`, `gho_`,
 `ghu_`, `ghs_`, `ghr_`, `sk-`, `AKIA`, `xoxb-`. Use placeholders like `${env:GITHUB_TOKEN}` or `${input:openai-key}`.
 
@@ -89,10 +86,8 @@ Old `level-XXXX-slug` and flat `side-quest-slug` patterns are invalid.
 
 ## 5. Cross-References & Links
 
-- `pages/_docs/**` → links to repo `docs/` directory must use **full GitHub
-  URLs**, not relative paths (the `docs/` directory is excluded from Jekyll).
-- Posts linked from non-post content require an explicit `permalink:` override —
-  the default `/:collection/:year/:month/:day/:slug/` will 404 otherwise.
+- `pages/_docs/**` → links to repo `docs/` directory must use **full GitHub URLs**, not relative paths (the `docs/` directory is excluded from Jekyll).
+- Posts linked from non-post content require an explicit `permalink:` override — the default `/:collection/:year/:month/:day/:slug/` will 404 otherwise.
 - After any link change, run a quick check: `python scripts/link-checker.py --scope local`.
 
 ---
@@ -119,8 +114,7 @@ bundle exec jekyll build
 ## 7. Pull Request Conventions
 
 - **One PR per issue** (or per logical group of issues in the same collection).
-- **Branch name**: `fix/ai-review-<collection>-<short-slug>`
-  (e.g. `fix/ai-review-posts-2025-docker-quickstart`).
+- **Branch name**: `fix/ai-review-<collection>-<short-slug>` (e.g. `fix/ai-review-posts-2025-docker-quickstart`).
 - **Commit message** (Conventional Commits):
   ```
   fix(content): address AI review feedback for _<collection>
@@ -132,8 +126,7 @@ bundle exec jekyll build
 
   Closes #<issue-number>
   ```
-- **PR description**: link the issue, list files changed, note any items
-  deliberately deferred and why.
+- **PR description**: link the issue, list files changed, note any items deliberately deferred and why.
 - **Always update `lastmod`** on every file you touch.
 
 ---

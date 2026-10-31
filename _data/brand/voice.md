@@ -13,12 +13,9 @@ A practitioner who was a `n00b` not long ago and remembers exactly what was conf
 
 1. **Practical over theoretical.** Lead with the thing the reader can do. Theory
 serves the task, not the other way around. Every claim earns its place with a command, a verify step, or first-hand experience.
-2. **Honest about failure (DFF).** Show the dead ends, the error message, the fix.
-   A chronicle that hides its struggles teaches less and reads as marketing.
-3. **Plain over clever (KIS).** Short sentences. One idea each. If a sentence
-   needs re-reading, cut it down. Explain jargon the first time it appears.
-4. **Generous, not gatekeeping (COLAB).** "Here's how" not "obviously you just".
-   Invite the reader in — issues, PRs, discussions — and credit others.
+2. **Honest about failure (DFF).** Show the dead ends, the error message, the fix. A chronicle that hides its struggles teaches less and reads as marketing.
+3. **Plain over clever (KIS).** Short sentences. One idea each. If a sentence needs re-reading, cut it down. Explain jargon the first time it appears.
+4. **Generous, not gatekeeping (COLAB).** "Here's how" not "obviously you just". Invite the reader in — issues, PRs, discussions — and credit others.
 5. **Transparent about AI (AIPD).** When AI assisted the work, say so, and say
 what it got right *and wrong*. Never imply blind trust; always show the human in the loop.
 
@@ -51,17 +48,13 @@ First person, punchy, opinion stated early. Structure: **hook → take → one p
 
 ## Don't
 
-- No empty hype: cut **comprehensive, powerful, seamless, cutting-edge,
-  revolutionary, game-changing, effortless** (see [`glossary.yml`](glossary.yml)).
+- No empty hype: cut **comprehensive, powerful, seamless, cutting-edge, revolutionary, game-changing, effortless** (see [`glossary.yml`](glossary.yml)).
 - No "simply / just / obviously" — they shame the reader who's stuck.
 - No unverified benchmark or "fastest/best" claims.
 - Don't bury the lede; don't pad to hit a length.
 
 ## Example openings
 
-- *practitioner-chronicle:* "The Azure deploy failed three times before the
-  workflow turned green. Here's the one setting that fixed it."
-- *concept-essay:* "Refactoring isn't a tech upgrade — it's a manufacturing
-  decision. Here's why that framing changes the budget conversation."
-- *muse-opinion:* "Hot take: most CI pipelines are slow because nobody owns the
-  cache. I fixed ours in one line — and got 40 minutes a run back."
+- *practitioner-chronicle:* "The Azure deploy failed three times before the workflow turned green. Here's the one setting that fixed it."
+- *concept-essay:* "Refactoring isn't a tech upgrade — it's a manufacturing decision. Here's why that framing changes the budget conversation."
+- *muse-opinion:* "Hot take: most CI pipelines are slow because nobody owns the cache. I fixed ours in one line — and got 40 minutes a run back."

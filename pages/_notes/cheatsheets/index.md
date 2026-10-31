@@ -35,15 +35,12 @@ Fast, scannable reference cards for the tools you reach for every day. These are
 
 ## Command line
 
-- **[Bash Cheatsheet](/notes/cheatsheets/bash-cheatsheet/)** — essential commands,
-  variables, functions, and control-flow patterns for the shell.
-- **[PowerShell Cheatsheet](/notes/cheatsheets/powershell/)** — scripting reference
-  for Windows system administration and automation.
+- **[Bash Cheatsheet](/notes/cheatsheets/bash-cheatsheet/)** — essential commands, variables, functions, and control-flow patterns for the shell.
+- **[PowerShell Cheatsheet](/notes/cheatsheets/powershell/)** — scripting reference for Windows system administration and automation.
 
 ## Content authoring
 
-- **[Markdown Cheatsheet](/notes/cheatsheets/markdown/)** — Markdown, Kramdown, and
-  Jekyll-flavored syntax for writing content.
+- **[Markdown Cheatsheet](/notes/cheatsheets/markdown/)** — Markdown, Kramdown, and Jekyll-flavored syntax for writing content.
 
 ---
 
