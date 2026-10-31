@@ -40,8 +40,7 @@ above the backdrop **only while the menu is open**. A consumer-side override tha
 
 1. Open the home page at ≤ 768px width.
 2. Tap the main-nav (hamburger / "···") toggle.
-3. The menu chrome shows but the body is transparent with no usable links;
-   `elementFromPoint` over a link returns the offcanvas backdrop.
+3. The menu chrome shows but the body is transparent with no usable links; `elementFromPoint` over a link returns the offcanvas backdrop.
 
 ## Downstream note
 

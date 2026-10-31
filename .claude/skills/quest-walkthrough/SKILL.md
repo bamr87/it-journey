@@ -11,12 +11,10 @@ It ends in **exactly one report file** (committed or attached by the caller), ne
 
 ## 0. Inputs
 
-- **`CHARACTER`** (optional) — a character-path key (`developer`, `system-engineer`,
-  `security-specialist`, `data-scientist`, `digital-artist`, `game-developer`).
+- **`CHARACTER`** (optional) — a character-path key (`developer`, `system-engineer`, `security-specialist`, `data-scientist`, `digital-artist`, `game-developer`).
 - **`LEVEL`** (optional) — a binary level code (`0000`..`1111`).
 - **`MAX_QUESTS`** (optional, default 5) — cap on how many linked quests to walk.
-- If `CHARACTER`/`LEVEL` are omitted, the planner **rotates the slice by date** so a
-  daily run sweeps the whole curriculum over time.
+- If `CHARACTER`/`LEVEL` are omitted, the planner **rotates the slice by date** so a daily run sweeps the whole curriculum over time.
 - Auth + model come from the runner (the fleet's `claude-run` action + `_data/ai.yml`).
 
 ## 1. Plan the slice (deterministic, before any playing)
@@ -55,8 +53,7 @@ python3 test/quest-validator/agentic_validate.py $paths \
 
 - In CI the runner is disposable, so `--mode execute` is safe. Outside CI (or if you
 cannot run commands safely), fall back to `--mode review` and **say so** in the report — a review-only pass is weaker evidence and must be labeled as such.
-- `--mock` is for pipeline testing only; a mock run is **not** a walkthrough and its
-  numbers must never be reported as real.
+- `--mock` is for pipeline testing only; a mock run is **not** a walkthrough and its numbers must never be reported as real.
 
 ## 3. Walk the chain as a learner (the linked-journey pass)
 
@@ -64,8 +61,7 @@ The execute engine scores each quest **in isolation**. Your unique contribution 
 
 - **Put on the character sheet first** — `Read`
 `.claude/skills/quest-character-<character.key>/SKILL.md` (the key is in `walk-plan.json`). It defines who you are role-playing (persona), the per-level exercise checkpoints to verify for this path, the character-specific friction lens, and the voice for your report's narration (its two-layer voice rule: character dialect colors the *report*, never the quest content you judge). If the file is missing, say so in §7 and walk with the generic lens below.
-- **Read each quest's source** (`Read` the `path`) in plan order, carrying the prior
-  quests' state in mind — the way a learner who just finished quest N approaches N+1.
+- **Read each quest's source** (`Read` the `path`) in plan order, carrying the prior quests' state in mind — the way a learner who just finished quest N approaches N+1.
 - **Continuity** — does quest N actually leave the learner ready for N+1? Are the
 prerequisites the chain assumes actually satisfied by earlier quests in the slice, or does a step silently assume knowledge/setup the path never provided?
 - **End-user friction** — where would a real beginner of this character class get
@@ -85,10 +81,8 @@ Structure (this IS the report contract — keep these sections):
 
 1. **Frontmatter** — `title`, `date` (ISO-8601 with ms), `character`, `level`,
 `theme`, `tier`, `quest_count`, `mode` (`execute`/`review`), `overall_verdict` (`pass`/`warn`/`fail`), and `session` notes. (This file lives under `test/`, which Jekyll excludes, so it is a report artifact — not published quest content.)
-2. **## 🎯 Session Summary** — character, level/theme, how many quests walked, the
-   headline verdict, and 2-3 sentences of reasoning a maintainer can act on.
-3. **## 🗺️ The Journey** — the ordered quest list with a per-quest line:
-   `verdict emoji · title · score · one-line takeaway`.
+2. **## 🎯 Session Summary** — character, level/theme, how many quests walked, the headline verdict, and 2-3 sentences of reasoning a maintainer can act on.
+3. **## 🗺️ The Journey** — the ordered quest list with a per-quest line: `verdict emoji · title · score · one-line takeaway`.
 4. **## 🔬 Evidence** — per quest: the key commands run and their real
 outcome (`passed`/`failed`/`skipped`/`reasoned`), and the snippet coverage (`ran N/M runnable snippets`). Quote actual output, trimmed. This is the proof.
 5. **## 🐞 Issues Found** — every concrete problem, each as: **severity**

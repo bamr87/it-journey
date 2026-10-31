@@ -46,23 +46,18 @@ NEW      Authoring surfaces        →  brand-voice skill · /draft-muse · /bra
 
 ## Scope decisions
 
-1. **Granularity = Hybrid** — per-section guides as the backbone, anchored to one
-   central store, plus an optional per-article frontmatter pointer.
+1. **Granularity = Hybrid** — per-section guides as the backbone, anchored to one central store, plus an optional per-article frontmatter pointer.
 2. **Enforcement = Guidance + automated validation** — extend `scripts/cms/cms.py`
 and `.cms/config.yml` to flag brand drift alongside the existing SEO/freshness/required-field checks.
-3. **Mechanism = all three wired together** — central store → skill → slash prompts
-   → instructions files.
+3. **Mechanism = all three wired together** — central store → skill → slash prompts → instructions files.
 
 **Posts only.** The 94 files in `pages/_posts/**` across 13 category folders, plus the devops-news/muse format surfaced via `pages/news.md`. The `quest`/`docs`/`notes` content types are untouched.
 
 ## Guiding principles (from the repo's own conventions)
 
-- **DRY against one store.** Guides and instructions *point at* the store; they never
-  restate values or voice pillars.
-- **Two layers per artifact.** Machine-readable YAML core + human/narrative Markdown
-  twin (mirrors `config.yml`+`instructions/*.md`, `frontmatter.json`+`FRONTMATTER.md`).
-- **Detect, don't duplicate / don't rewrite.** Brand checks *score and flag*; they
-  never rewrite prose — the same rule `cms.py` already follows.
+- **DRY against one store.** Guides and instructions *point at* the store; they never restate values or voice pillars.
+- **Two layers per artifact.** Machine-readable YAML core + human/narrative Markdown twin (mirrors `config.yml`+`instructions/*.md`, `frontmatter.json`+`FRONTMATTER.md`).
+- **Detect, don't duplicate / don't rewrite.** Brand checks *score and flag*; they never rewrite prose — the same rule `cms.py` already follows.
 - **Brand is advisory.** Brand issues are `lane=substantive` and never touch the
 health score or the mechanical auto-merge lane. The whole system is reversible via a `brand.enabled` flag.
 
@@ -91,8 +86,7 @@ health score or the mechanical auto-merge lane. The whole system is reversible v
 into pillars + do/don't + example openings. The single place guides point to for "how we sound."
 - `_data/brand/style.md` — prose/formatting rules (imperative for instructions, past
 tense for chronicles, one H1, no marketing fluff, language tags on code blocks, Mermaid for flows). **Absorbs the duplicated rules currently in `posts.instructions.md` §7**, which then shrinks to a pointer.
-- `_data/brand/README.md` — explains authoritative-vs-derived and the "facts here,
-  enforcement thresholds in `.cms/config.yml`" rule.
+- `_data/brand/README.md` — explains authoritative-vs-derived and the "facts here, enforcement thresholds in `.cms/config.yml`" rule.
 
 ---
 
@@ -157,10 +151,8 @@ Two new **optional** keys on posts:
 
 - Register both keys as optional `choice` fields on the `default` content type in
 `frontmatter.json` (dropdowns: 14 slugs / profile names) — prevents typos, mirrors the taxonomy approach. **Do not** touch the `quest` content type.
-- Add both to `collections.posts.recommended` in `.cms/config.yml` (a nudge, never a
-  CI-blocking required field).
-- Add `section_guide:` (pre-filled/commented) to the `.frontmatter/templates/` post
-  template so new drafts start governed.
+- Add both to `collections.posts.recommended` in `.cms/config.yml` (a nudge, never a CI-blocking required field).
+- Add `section_guide:` (pre-filled/commented) to the `.frontmatter/templates/` post template so new drafts start governed.
 
 ---
 
@@ -203,8 +195,7 @@ Canonical `.instructions.md` schema (double-quoted `applyTo` glob + `description
 a post is open. Pointer-form brand contract: the resolution rule, the two keys, the top banned terms, links to `voice.md`/`style.md`/section guides. One concern: *applying brand to posts* (structural rules stay in `posts.instructions.md`).
 - **Extend `posts.instructions.md`** — replace the §7 "Style" body with a pointer to
 `_data/brand/style.md` + `brand.instructions.md` (DRY); add the two keys to §2 Recommended.
-- **Extend `index-hub.instructions.md`** — note §4's category map now mirrors
-  `_data/brand/sections/_registry.yml` and must stay in sync (registry is the source).
+- **Extend `index-hub.instructions.md`** — note §4's category map now mirrors `_data/brand/sections/_registry.yml` and must stay in sync (registry is the source).
 
 ---
 
@@ -231,22 +222,18 @@ brand:
 
 **New `_check_brand(rec, fm, body, cfg)` in `scripts/cms/cms.py`** — called from `analyze_file` only when `brand.enabled` and the record is a post (not read-only/structural/generated). It:
 
-1. Resolves the profile via §3 (reads `sections/_registry.yml` + `voice.yml`, cached at
-   config-load like the existing `_GLOB_CACHE`).
+1. Resolves the profile via §3 (reads `sections/_registry.yml` + `voice.yml`, cached at config-load like the existing `_GLOB_CACHE`).
 2. Merges `brand.global` ← `brand.sections[<slug>]`.
 3. Emits standard `Issue` records, **all `lane="substantive"`**, with a new `kind`
 family `brand_drift:<rule>` — `banned_term` (warning), `preferred_term` (info), `emoji_intensity` (info), `formality` (info, cheap heuristic), `missing_structural` (info), `guide_unresolved` (info). Reuse the existing `CODE_FENCE_RE` to strip code before term/emoji scanning (so commands aren't flagged), as `count_words` does.
-4. `FileRecord` gains optional `section_guide`, `voice_profile`, and a
-   `brand_issue_count` computed property (like the existing `error_count`).
+4. `FileRecord` gains optional `section_guide`, `voice_profile`, and a `brand_issue_count` computed property (like the existing `error_count`).
 
 **Scoring — advisory, NOT a health factor (recommended).** Do **not** add brand to `_score` / `health_weights`. Voice/formality are heuristic and subjective; folding them into the CI-aligned health number would make it noisy and silently re-rank the worklist on soft signals. Brand issues are real `Issue`s (they appear in the index, the report's "Top issue types," and the worklist's substantive lane via existing plumbing) but `health` is unchanged. `advisory_only: true` + `enabled: false` make it fully reversible. (If wanted later: add a 5–10% `brand` weight + a `brand_score` term.)
 
 **Surfacing + curator pickup:**
 
-- `cmd_analyze`: the existing "Top issue types" auto-counts `brand_drift`; optionally
-  add a small "Brand drift by section" table (a few lines).
-- `cmd_plan`: brand issues are substantive → already flow into Lane B (no planner
-  change).
+- `cmd_analyze`: the existing "Top issue types" auto-counts `brand_drift`; optionally add a small "Brand drift by section" table (a few lines).
+- `cmd_plan`: brand issues are substantive → already flow into Lane B (no planner change).
 - `.claude/skills/cms-curator/SKILL.md`: add `_data/brand/` to its Phase 0 policy
 reads, and one Lane B bullet — "`brand_drift:*` → load `brand-voice`, resolve the guide, apply the smallest term/voice fix; never rewrite wholesale."
 
@@ -256,8 +243,7 @@ reads, and one Lane B bullet — "`brand_drift:*` → load `brand-voice`, resolv
 
 Branch first; **never commit to `main`**. New post keys are all optional and `_data/brand/**` is non-rendered data, so `frontmatter-validation` + `make build-ci` + `make content-audit` stay green throughout.
 
-1. **Store (data only, zero behavior change).** Create the nine `_data/brand/*` files
-   from `about.md`/`purpose.md`/`_config.yml`. Verify `make build-ci` still builds.
+1. **Store (data only, zero behavior change).** Create the nine `_data/brand/*` files from `about.md`/`purpose.md`/`_config.yml`. Verify `make build-ci` still builds.
 2. **Section guides + registry.** Create `_registry.yml` + 14 `sections/*.md` (13
 categories + `devops-news-muse.md`), thin/pointer-based; populate the registry from `index-hub.instructions.md` §4.
 3. **Frontmatter pointer.** Edit `frontmatter.json` (2 optional choice fields),
@@ -285,19 +271,11 @@ Phases 1–5 are merged in it-journey **and validated** (build-ci + content-audi
 **Theme vs site split** (the core design rule of the upstream):
 
 - **Upstream to the theme (generic framework / scaffolding):**
-  - The `_data/brand/` **schema + a neutral default set + README** — the theme ships
-    sensible empty/example defaults; consuming sites override with their own values.
-  - The **section-guide template** + the `_registry.yml` **schema** (the *shape*, not
-    IT-Journey's 14 concrete guides).
-  - The **authoring surfaces as canonical templates**, mirrored per the FRONTMATTER.md
-    precedent: `brand-voice` skill, `brand.instructions.md`, `/draft-muse` +
-    `/brand-audit` prompts land in zer0-mistakes `.claude/` / `.github/` as the source
-    of truth, then mirror back into it-journey + bashconsultants.
-  - Optional **theme Liquid includes** that render `site.data.brand.*` (section color
-    chips, a values block) — rendering is the theme's job.
-  - **Feature doc** under the theme's `docs/features/` (matches the existing pattern
-    referenced at `_config.yml` line 574) + a **theme version bump** (the theme is
-    versioned; `_data/navigation/README.md` notes the v0.17+ convention).
+  - The `_data/brand/` **schema + a neutral default set + README** — the theme ships sensible empty/example defaults; consuming sites override with their own values.
+  - The **section-guide template** + the `_registry.yml` **schema** (the *shape*, not IT-Journey's 14 concrete guides).
+  - The **authoring surfaces as canonical templates**, mirrored per the FRONTMATTER.md precedent: `brand-voice` skill, `brand.instructions.md`, `/draft-muse` + `/brand-audit` prompts land in zer0-mistakes `.claude/` / `.github/` as the source of truth, then mirror back into it-journey + bashconsultants.
+  - Optional **theme Liquid includes** that render `site.data.brand.*` (section color chips, a values block) — rendering is the theme's job.
+  - **Feature doc** under the theme's `docs/features/` (matches the existing pattern referenced at `_config.yml` line 574) + a **theme version bump** (the theme is versioned; `_data/navigation/README.md` notes the v0.17+ convention).
 - **Stays site-specific (NOT upstreamed):** IT-Journey's actual brand *facts*
 (`values.yml` / `voice.yml` / `colors.yml` / `personas.yml` content), the 14 concrete section guides, and the site's `section_accent` mappings.
 
@@ -323,7 +301,6 @@ that `.cms/index/content-index.json` and `.cms/reports/<date>.md` show `brand_dr
 `pages/_posts/devops/` with no `section_guide` still resolves to the `devops` guide (it appears under devops in the new "Brand drift by section" table).
 - **Skill loads end-to-end:** invoke `brand-voice` (or `/draft-muse`) on a sample
 devops topic and confirm it loads the store + the `devops-news-muse` guide and produces a draft honoring the `muse-opinion` profile (no banned terms, emoji in band, hook→take→link structure).
-- **Audit reporter works:** run `/brand-audit` and confirm it lists drift grouped by
-  section with the offending term + rule.
+- **Audit reporter works:** run `/brand-audit` and confirm it lists drift grouped by section with the offending term + rule.
 - **Reversibility:** set `brand.enabled: false` in `.cms/config.yml`, run
 `make cms-all`, and confirm `brand_drift` issues disappear and outputs match the pre-feature baseline.

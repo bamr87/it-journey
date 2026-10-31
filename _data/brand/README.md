@@ -21,8 +21,7 @@ It lives under `_data/` so it is **build-consumed** (`site.data.brand.*`, addres
 
 ## The one rule: facts here, thresholds in the engine config
 
-- **Brand facts** (values, voice pillars, palette, personas, glossary) live
-  **here**.
+- **Brand facts** (values, voice pillars, palette, personas, glossary) live **here**.
 - **Brand enforcement thresholds** (banned/preferred terms toggles, emoji count
 ranges, formality targets, required structural elements) live in **`.cms/config.yml` → `brand`**, keyed by section slug.
 
@@ -43,6 +42,5 @@ So the two frontmatter keys are **optional** — every existing post, quest, and
 - `scripts/cms/cms.py` (`_check_brand`) — flags brand drift into the daily worklist.
 - `.claude/skills/brand-voice/SKILL.md` — loads this store before drafting/editing.
 - `.github/prompts/{draft-article,draft-muse,brand-audit,…}.prompt.md`.
-- `.github/instructions/brand.instructions.md` (auto-applies to `pages/_posts/**`,
-  `pages/_quests/**`, `pages/_docs/**`).
+- `.github/instructions/brand.instructions.md` (auto-applies to `pages/_posts/**`, `pages/_quests/**`, `pages/_docs/**`).
 - The site (later): `site.data.brand.*` for on-page rendering.
