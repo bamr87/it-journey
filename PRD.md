@@ -200,7 +200,7 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 | [FR-ITJ-011](features/features.yml) | Front matter validation | shipped | [`.github/workflows/frontmatter-validation.yml`](.github/workflows/frontmatter-validation.yml) | §3 |
 | [FR-ITJ-012](features/features.yml) | Link health check | shipped | [`scripts/validation/link-checker.py`](scripts/validation/link-checker.py) | §3 |
 | [FR-ITJ-013](features/features.yml) | PRD synchronization (prd-machine) | partial | [`scripts/prd-machine`](scripts/prd-machine) | §3 |
-| [FR-ITJ-014](features/features.yml) | Quest Atom feed | planned | route `/quests/feed.xml` | §3 |
+| [FR-ITJ-014](features/features.yml) | Quest Atom feed | shipped | route `/quests/feed.xml` · [`_includes/feed/quests-atom.xml`](_includes/feed/quests-atom.xml) | §3 |
 | [FR-ITJ-015](features/features.yml) | Quest page feedback | planned | route `/quests/` | §3 |
 
 **Requirement → feature trace**

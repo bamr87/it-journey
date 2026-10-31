@@ -28,7 +28,7 @@ make docs                    # regenerate docs/reference/ and the docs/README.md
 make hooks-install           # once per clone: pre-commit one-paragraph-per-line hook
 ```
 
-Every target is listed in [docs/reference/make-targets.md](docs/reference/make-targets.md) (generated from the `Makefile`). Do not use `make test`: it still looks for the removed `pages/_posts/`. `make quest-audit-strict` escalates warnings to errors; `make docs-check` fails when `docs/reference/` or the docs index is stale.
+Every target is listed in [docs/reference/make-targets.md](docs/reference/make-targets.md) (generated from the `Makefile`). `make test` runs the script syntax checks plus `make content-audit`. `make quest-audit-strict` escalates warnings to errors; `make docs-check` fails when `docs/reference/` or the docs index is stale.
 
 ## Layout
 
