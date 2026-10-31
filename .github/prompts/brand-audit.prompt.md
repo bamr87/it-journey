@@ -20,14 +20,10 @@ make cms-all     # or: python3 scripts/cms/cms.py all
 ```
 
 2. **Read the drift.** Two sources, same data:
-   - `.cms/reports/<date>.md` → the **Brand drift by section (advisory)** table and
-     the `brand_drift` row in **Top issue types**.
-   - `.cms/index/content-index.json` → per-file `issues` where
-     `kind` starts with `brand_drift:` (also `section_guide` / `voice_profile`
-     fields show how each post resolved).
+   - `.cms/reports/<date>.md` → the **Brand drift by section (advisory)** table and the `brand_drift` row in **Top issue types**.
+   - `.cms/index/content-index.json` → per-file `issues` where `kind` starts with `brand_drift:` (also `section_guide` / `voice_profile` fields show how each post resolved).
 
-3. **Optionally scope** to a single file or section the user names; otherwise audit
-   all posts.
+3. **Optionally scope** to a single file or section the user names; otherwise audit all posts.
 
 ## What the `brand_drift:*` kinds mean
 
@@ -66,8 +62,7 @@ queue items for `cms-curator`. Note this is advisory — nothing is blocking.>
 
 - **Read-only.** Never edit content or frontmatter from this prompt.
 - Report exactly what the engine found; do not infer drift the engine didn't flag.
-- If `brand.enabled` is `false` in `.cms/config.yml`, say so and stop — there is
-  nothing to audit.
+- If `brand.enabled` is `false` in `.cms/config.yml`, say so and stop — there is nothing to audit.
 
 ---
 

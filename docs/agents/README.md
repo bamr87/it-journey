@@ -24,8 +24,7 @@ The keep/revert gate is the purest Domain 4 artifact in the repo: the quest-fixe
 Re-running a failed agent without understanding it manufactures intermittent failures that never get fixed. When a fleet run fails:
 
 1. Pull the forensic trail: `gh run download <RUN_ID> --dir ./forensics/run-<RUN_ID>`
-2. Classify the failure by **layer** (reasoning / tool misuse / permissions /
-   context drift / environment / completion).
+2. Classify the failure by **layer** (reasoning / tool misuse / permissions / context drift / environment / completion).
 3. Drive it to a root cause with 5-Why using [`rca-template.md`](rca-template.md).
 4. Ship the prevention, and record it in the instruction changelog below.
 

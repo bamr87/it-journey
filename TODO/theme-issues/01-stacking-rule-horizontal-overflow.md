@@ -54,10 +54,8 @@ Or, more robustly, raise the FAB rules' specificity / mark the intended position
 ## Reproduction
 
 1. Open any docs/quest page at ≤ 768px width.
-2. Observe `document.documentElement.scrollWidth > clientWidth` (16px) and a
-   horizontal scrollbar / rubber-band.
-3. Inspect `.obsidian-local-graph-fab` → computed `position` is `relative`, not
-   `fixed`.
+2. Observe `document.documentElement.scrollWidth > clientWidth` (16px) and a horizontal scrollbar / rubber-band.
+3. Inspect `.obsidian-local-graph-fab` → computed `position` is `relative`, not `fixed`.
 
 ## Downstream note
 

@@ -37,8 +37,7 @@ the header, like `#bdNavbar`). Cleanest — the offcanvas then participates in t
 2. **Don't let `<main>` trap descendant overlays.** If `<main>` doesn't actually
 need `z-index: 1`, drop it (keep `position: relative` only where required), or exclude structural landmarks from the rule.
 
-3. **Offset the open offcanvas below the fixed header** (pragmatic, what the
-   downstream site does):
+3. **Offset the open offcanvas below the fixed header** (pragmatic, what the downstream site does):
 
    ```css
    @media (max-width: 991.98px) {
