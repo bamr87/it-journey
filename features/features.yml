@@ -107,6 +107,17 @@ features:
     prd: ["§3"]
     surface: cli
     link: "scripts/prd-machine"
+  - id: FR-ITJ-014
+    title: "Quest Atom feed"
+    description: "Atom feed of published quests (fmContentType quest, non-draft, newest first) at /quests/feed.xml and /feed.xml, so learners can subscribe; replaces the empty jekyll-feed posts feed (issues #869, #870)."
+    implemented: true
+    status: shipped
+    prd: ["§3"]
+    surface: ui
+    link: "/quests/feed.xml"
+    docs: "_includes/feed/quests-atom.xml"
+    tags: [feed, atom, quests]
+    date: 2026-10-30
   - id: FR-ITJ-016
     title: "Quest editorial charter"
     description: "Editorial rules for quests: brief-based authorization with minor/substantive/structural tiers, quality standards, a five-stage review pipeline, reviewer independence and corrections (constitution § 9, proposed amendment docs/amendments/proposed/editorial-charter.md)."

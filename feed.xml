@@ -1,0 +1,6 @@
+---
+layout: null
+permalink: /feed.xml
+sitemap: false
+---
+{% include feed/quests-atom.xml path="/feed.xml" %}
