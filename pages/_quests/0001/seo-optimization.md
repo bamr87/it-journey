@@ -1,14 +1,14 @@
 ---
-title: 'SEO Optimization: Meta Tags, Sitemaps & Structured Data'
+title: 'SEO & AI-Citability: Meta Tags, Structured Data & E-E-A-T'
 author: IT-Journey Team
-description: 'Master technical SEO for Jekyll: write meta tags, generate sitemaps and robots.txt, add JSON-LD structured data, and automate it all with jekyll-seo-tag.'
+description: 'Master technical SEO and AI-citability for Jekyll: meta tags, sitemaps, JSON-LD structured data, E-E-A-T author signals, and a score-fix-rescore loop that makes any website AI-citable.'
 excerpt: Make your Jekyll site discoverable with meta tags, sitemaps, structured data, and jekyll-seo-tag.
 preview: /images/previews/seo-optimization-search-engine-visibility-descript.webp
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2026-06-30T00:00:00.000Z'
+lastmod: '2026-11-01T00:00:00.000Z'
 level: '0001'
-difficulty: 🟢 Easy
-estimated_time: 45-60 minutes
+difficulty: 🟡 Medium
+estimated_time: 90-120 minutes
 primary_technology: jekyll
 quest_type: main_quest
 quest_series: Jekyll Mastery
@@ -61,7 +61,11 @@ keywords:
   - '0001'
   - jekyll
   - seo
+  - ai-citability
+  - json-ld
   secondary:
+  - e-e-a-t
+  - aieo
   - main_quest
   - frontend
   - hands-on
@@ -69,6 +73,7 @@ keywords:
 fmContentType: quest
 draft: false
 comments: true
+mermaid: true
 sub_title: 'Level 0001 (1) Quest: Main Quest - SEO'
 rewards:
   badges:
@@ -122,12 +127,14 @@ By the time you complete this journey, you will have mastered:
 - [ ] **Canonical URLs** - Prevent duplicate-content confusion
 - [ ] **Search Console** - Verify your site and watch how it is indexed
 - [ ] **Performance & Accessibility** - Audit Core Web Vitals and WCAG basics that lift rank
+- [ ] **AI-Citability** - Apply JSON-LD, E-E-A-T, and entity density, then score before and after
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
 - [ ] Write a title and description that earn a click
 - [ ] Explain what a sitemap and robots.txt each do
 - [ ] Add JSON-LD structured data for an article
+- [ ] Publish a before/after AI-citability delta for a real page
 
 ## 🗺️ Quest Prerequisites
 
@@ -452,6 +459,144 @@ Verify with a dedicated checker beyond Lighthouse:
 - [ ] **Lighthouse run**: You have a baseline score for a key page
 - [ ] **Alt text pass**: Every image on one page has descriptive `alt` text
 
+## 🧙‍♂️ Chapter 5: Making Any Website AI-Citable - The Oracle's Trifecta
+
+*Search crawlers rank your page; AI assistants **quote** it. When an assistant answers a question, it reaches for sources it can parse, attribute, and trust. This chapter teaches that craft as a trifecta: the **Information** (what to put on the page), the **Process** (a repeatable score-fix-rescore loop), and the **Knowledge** (the patterns underneath, with real bamr87 sites as specimens).*
+
+> **Source:** this chapter adapts the six-section outline of the lifehacker.dev article *"How to Make Any Website AI-Citable"*, backlog entry **POST-129** in [`_data/backlog.yml`](https://github.com/bamr87/lifehacker.dev/blob/main/_data/backlog.yml), added in [bamr87/lifehacker.dev#798](https://github.com/bamr87/lifehacker.dev/pull/798). The finished article will live on [lifehacker.dev](https://lifehacker.dev/).
+
+### ⚔️ Skills You'll Forge in This Chapter
+- Explain why an AI assistant cites one page and skips (or misquotes) another
+- Apply the three pillars: JSON-LD structured data, E-E-A-T signals, and entity density
+- Run a before/after citability audit and publish the delta
+
+### 🔮 Part I - Information: The Six Scrolls
+
+#### 1. The Hook: Why Assistants Cite Bad Sources (Exercise)
+
+*This is a research exercise, not a recounted incident.* Ask two or three AI assistants a niche question in a field you know well, and record which sources they cite. You will often find a thin forum post or a scraped copy cited over the authoritative page. Write down, for each cited source, what made it easy to quote: a clear question-and-answer shape, a named author, machine-readable metadata, or simply being the only page that stated the fact plainly. Assistants cite what they can **parse, attribute, and match to the question** — not necessarily what is most correct. Your job is to make the correct page also the easiest to cite.
+
+#### 2. The Three Pillars
+
+| Pillar | What it means | How a machine sees it |
+|---|---|---|
+| **Structured data (JSON-LD)** | A `<script type="application/ld+json">` block describing the page as a schema.org entity (`Article`, `FAQPage`, `BreadcrumbList`, `Person`) | Unambiguous type, author, date, and Q&A pairs without guessing from layout |
+| **E-E-A-T signals** | Experience, Expertise, Authoritativeness, Trust: a visible author bio, credentials, outbound citations, dates | A named, linkable `Person` behind the claims, and sources a model can cross-check |
+| **Entity density** | Naming the specific things (tools, versions, organisations, files) the page is about, consistently | Clear subject entities to match a question against, instead of vague pronouns |
+
+#### 3. Worked Example: zer0-mistakes, Section by Section
+
+The [zer0-mistakes](https://github.com/bamr87/zer0-mistakes) Jekyll theme (which also powers this site) ships each pillar as an include. Read them in order:
+
+| Include | Pillar | What it actually does |
+|---|---|---|
+| [`_includes/content/seo.html`](https://github.com/bamr87/zer0-mistakes/blob/main/_includes/content/seo.html) | Foundation | Supplements `jekyll-seo-tag` (which emits title, Open Graph, canonical and the base JSON-LD) with `og:image` path normalisation and non-Google verification tags — it deliberately avoids duplicating what the plugin already outputs |
+| [`_includes/components/author-eeat.html`](https://github.com/bamr87/zer0-mistakes/blob/main/_includes/components/author-eeat.html) | E-E-A-T | Renders a **visible** author credibility block from `_data/authors.yml` (banner or card style); no person is hard-coded into the theme |
+| [`_includes/content/jsonld-faq.html`](https://github.com/bamr87/zer0-mistakes/blob/main/_includes/content/jsonld-faq.html) | Structured data | Emits `FAQPage` JSON-LD only when a page defines `faq_items` in its front matter |
+| [`_includes/content/jsonld-software.html`](https://github.com/bamr87/zer0-mistakes/blob/main/_includes/content/jsonld-software.html) | Structured data | `SoftwareApplication` + `WebPage` schema describing *the theme itself* — **opt-in only** (`jsonld_software_application: true`), because on a consumer site it would falsely claim that site is a Ruby gem |
+| [`_includes/navigation/breadcrumbs.html`](https://github.com/bamr87/zer0-mistakes/blob/main/_includes/navigation/breadcrumbs.html) | Structured data | A visible breadcrumb trail marked up as `BreadcrumbList` microdata |
+
+To enable the FAQ schema on a page, add front matter like this; the include turns it into `FAQPage` JSON-LD:
+
+```yaml
+faq_items:
+  - question: "What makes a page AI-citable?"
+    answer: "Machine-readable structured data, a named and credible author, and specific, consistently named entities."
+  - question: "Does JSON-LD have to match the visible page?"
+    answer: "Yes. Schema that describes content the reader cannot see is an anti-pattern."
+```
+
+The rendered output looks like this (trimmed):
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What makes a page AI-citable?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Machine-readable structured data, a named and credible author, and specific, consistently named entities." }
+    }
+  ]
+}
+```
+
+#### 4. Anti-Patterns (Curses to Avoid)
+
+- **Thin content** — a page that restates the question without facts, steps, or sources gives a model nothing worth quoting.
+- **Missing author info** — no byline, no bio, no `Person` entity: the claim has no one standing behind it.
+- **Schema not matching the page** — JSON-LD describing FAQs, ratings, or products the reader cannot see. zer0-mistakes' opt-in gate on `jsonld-software.html` exists precisely to stop this curse.
+
+#### 5. The Checklist (Apply Today)
+
+- [ ] Every page has a unique title, a 120–160 character description, and a canonical URL
+- [ ] One JSON-LD block whose `@type` matches what the page really is
+- [ ] A visible author byline linked to a bio page, mirrored as a `Person` entity
+- [ ] Q&A content marked up as `FAQPage`, and only where the Q&A is visible
+- [ ] Breadcrumbs marked up as `BreadcrumbList`
+- [ ] Claims link to primary sources; pages show a published and updated date
+- [ ] Key entities (tools, versions, files) named explicitly and consistently
+- [ ] `robots.txt` does not block the crawlers you want to be cited by
+
+#### 6. The Close: AIEO
+
+**AIEO** (AI Engine Optimization) is the tool intended to automate this loop — scoring pages for citability and proposing refactors. At the time of writing there is **no AIEO tool in the [bamr87/bamr87 hub](https://github.com/bamr87/bamr87)** `tools/` directory (and no `bamr87/aieo` repository); the term currently appears in zer0-mistakes, where `author-eeat.html` is documented as an AIEO/E-E-A-T component. Link the tool here once it ships; until then, run the process below by hand.
+
+### 🛠️ Part II - Process: Score, Fix, Rescore, Publish the Delta
+
+```mermaid
+flowchart LR
+  A[Pick 3-5 pages] --> B[Score baseline]
+  B --> C[Fix one pillar at a time]
+  C --> D[Rescore]
+  D --> E[Publish the delta]
+  E --> A
+```
+
+1. **Pick** three to five representative pages (a home page, an article, a how-to).
+2. **Score the baseline** with AIEO when available, or the manual rubric: one point per checklist item above (0–8).
+3. **Fix one pillar at a time** so you can attribute the change (structured data, then author signals, then entity density).
+4. **Rescore** and validate the JSON-LD with the [Schema Markup Validator](https://validator.schema.org/) or Google's Rich Results Test.
+5. **Publish the delta** — a short before/after table in the PR or a changelog post, so the improvement is itself citable evidence.
+
+A quick, tool-free baseline you can run against any live page:
+
+```bash
+# Count JSON-LD blocks and list the schema types a page declares
+URL="https://it-journey.dev/"
+curl -sL "$URL" | grep -c 'application/ld+json'
+curl -sL "$URL" | grep -oE '"@type": ?"[A-Za-z]+"' | sort -u
+# Check crawl-control files
+for f in robots.txt llms.txt; do
+  printf '%s %s\n' "$f" "$(curl -s -o /dev/null -w '%{http_code}' -L "${URL%/}/$f")"
+done
+```
+
+### 📚 Part III - Knowledge: Specimens from the bamr87 Realm
+
+These observations were checked against each repository and its live site on 2026-11-01. Describe what is real; note what is missing.
+
+| Site / repo | What it demonstrates | What it lacks |
+|---|---|---|
+| [zer0-mistakes](https://github.com/bamr87/zer0-mistakes) · [zer0-mistakes.com](https://zer0-mistakes.com/) | Live JSON-LD for `WebSite`, `Organization`, `Person`, plus the opted-in `SoftwareApplication`/`WebPage`/`Offer`; `_data/authors.yml`; `robots.txt`; the includes above | No `llms.txt` |
+| [lifehacker.dev](https://github.com/bamr87/lifehacker.dev) · [lifehacker.dev](https://lifehacker.dev/) | Home page JSON-LD (`WebSite`, `Organization`, `Person`); `_data/authors.yml` with per-author pages under `pages/_about/authors/` (strong E-E-A-T); `AGENTS.md`; `robots.txt`. Home of POST-129 | No `llms.txt` |
+| [it-journey](https://github.com/bamr87/it-journey) · [it-journey.dev](https://it-journey.dev/) | Inherits the theme's JSON-LD (`WebSite`, `Organization`, `Person`); `robots.txt`; `AGENTS.md` | No `llms.txt` |
+| [fredgar-ai](https://github.com/bamr87/fredgar-ai) | The **consumer** side: `src/enrichment/providers/webdiscovery.py` reads `ld+json` from company web pages (fixtures under `tests/enrichment/fixtures/`) — proof that machines really do harvest this markup; `AGENTS.md` | Its Pages site serves no JSON-LD and no `llms.txt` |
+| [law-ai](https://github.com/bamr87/law-ai) | `AGENTS.md` (agent-readable repo instructions) | Pages site has no JSON-LD, `robots.txt`, or `llms.txt` |
+| [gitorio](https://github.com/bamr87/gitorio) | `AGENTS.md`; JSON Schemas for its own data model (not schema.org) | Pages site has no JSON-LD, `robots.txt`, or `llms.txt` |
+| [ragio-ai](https://github.com/bamr87/ragio-ai) | `AGENTS.md` | No live Pages site found; no JSON-LD |
+
+**Patterns to remember:**
+- `AGENTS.md` makes a *repository* legible to coding agents; JSON-LD and author pages make a *website* legible to answer engines. They are different audiences.
+- `llms.txt` is an emerging convention for a curated, model-friendly site index. None of the specimens ship one yet — an easy first win.
+- Schema must describe the page it sits on. Theme-level schema needs an opt-in gate, as zer0-mistakes does.
+
+### 🔍 Knowledge Check: AI-Citability
+- [ ] Can you name the three pillars and give one concrete markup for each?
+- [ ] Why does `jsonld-software.html` render only on opt-in?
+- [ ] What would you put in a before/after delta table for a PR?
+
 ## 🎮 Mastery Challenges
 
 ### 🟢 Novice Challenge: A Perfect Snippet
@@ -540,6 +685,12 @@ Verify with a dedicated checker beyond Lighthouse:
 ### Learning Materials
 - [Google Search Console](https://search.google.com/search-console/about) - Monitor indexing and performance
 - [Moz Beginner's Guide to SEO](https://moz.com/beginners-guide-to-seo) - A thorough primer
+
+### AI-Citability
+- [lifehacker.dev POST-129 backlog entry (PR #798)](https://github.com/bamr87/lifehacker.dev/pull/798) - Source outline for Chapter 5
+- [zer0-mistakes](https://github.com/bamr87/zer0-mistakes) - Theme with FAQ, author E-E-A-T, and breadcrumb schema includes
+- [bamr87/bamr87 hub](https://github.com/bamr87/bamr87) - Fleet hub (AIEO tool not yet published)
+- [Schema Markup Validator](https://validator.schema.org/) - Validate any schema.org markup
 
 ### Performance & Accessibility
 - [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/) - Audit performance, accessibility, and SEO
