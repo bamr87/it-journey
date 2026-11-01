@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.3](https://github.com/bamr87/it-journey/compare/v0.2.2...v0.2.3) (2026-10-31)
+
+
+### Fixed
+
+* **deps:** override vulnerable transitive deps in site-quality tooling ([c02b53e](https://github.com/bamr87/it-journey/commit/c02b53ed8ba8bdc505f4e7d4e63f663d456d8ff0))
+* **feed:** publish quests as an Atom feed (FR-ITJ-014); fix make test ([f8c3c51](https://github.com/bamr87/it-journey/commit/f8c3c5177c5e347bac0575aec4f0980409282181))
+
+
+### Documentation
+
+* **governance:** add proposed amendment record ([d7816c0](https://github.com/bamr87/it-journey/commit/d7816c0684cac631965e388d0e3232aa72925f4d))
+* **governance:** propose amendment — agent merge of mergeable PRs + review gate ([4b0e1d8](https://github.com/bamr87/it-journey/commit/4b0e1d8a2426f671f814532c5362506124e378a3))
+* **governance:** propose amendment — agent merge of mergeable PRs and a review gate (conforms to hub § 12) ([5b96984](https://github.com/bamr87/it-journey/commit/5b96984caa381192baac0ac0100b9d8d6137b5f9))
+
 ## [0.2.2](https://github.com/bamr87/it-journey/compare/v0.2.1...v0.2.2) (2026-10-30)
 
 
