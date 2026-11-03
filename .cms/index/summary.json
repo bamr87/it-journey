@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T22:16:11.774093+00:00",
+  "generated_at": "2026-11-03T22:15:59.884782+00:00",
   "total_files": 425,
   "scored_files": 425,
   "actionable_files": 381,
@@ -40,19 +40,19 @@
       "mechanical": 0,
       "substantive": 45,
       "errors": 5,
-      "avg_health": 93.6
+      "avg_health": 93.5
     }
   },
   "freshness_distribution": {
-    "critical": 30,
+    "critical": 33,
     "aging": 277,
-    "stale": 62,
+    "stale": 59,
     "fresh": 55,
     "unknown": 1
   },
   "health_buckets": {
-    "excellent_90_100": 374,
-    "good_70_89": 48,
+    "excellent_90_100": 371,
+    "good_70_89": 51,
     "fair_50_69": 3,
     "poor_0_49": 0
   }
