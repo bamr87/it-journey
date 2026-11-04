@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T22:15:59.884782+00:00",
+  "generated_at": "2026-11-04T22:15:27.559458+00:00",
   "total_files": 425,
   "scored_files": 425,
   "actionable_files": 381,
@@ -44,15 +44,15 @@
     }
   },
   "freshness_distribution": {
-    "critical": 33,
+    "critical": 34,
     "aging": 277,
-    "stale": 59,
+    "stale": 58,
     "fresh": 55,
     "unknown": 1
   },
   "health_buckets": {
-    "excellent_90_100": 371,
-    "good_70_89": 51,
+    "excellent_90_100": 370,
+    "good_70_89": 52,
     "fair_50_69": 3,
     "poor_0_49": 0
   }
