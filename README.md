@@ -1,10 +1,6 @@
 ---
 title: README - it-journey
 description: IT-Journey is a gamified, open-source platform for learning IT and software development through quests — progressive, hands-on adventures from zer0 to her0.
-excerpt: A gamified, open-source platform for learning IT and software development through quests — progressive, hands-on adventures from zer0 to her0.
-version: 0.0.1
-date-released: 2022-03-01
-repo: https://github.com/bamr87/it-journey
 tags:
     - it-journey
     - jekyll
@@ -12,22 +8,10 @@ tags:
     - learning-path
     - quests
     - documentation
-license: MIT
-lastmod: 2026-10-22T00:00:00.000Z
-created: 2022-03-01T12:00:00.000Z
-draft: false
-slug: readme
-keywords:
-    - readme
-    - it-journey
-    - learning-platform
-    - quests
-    - gamified-learning
-    - documentation
+lastmod: 2026-11-02T00:00:00.000Z
 permalink: /readme/
 layout: home
 date: 2020-07-30T10:19:45.000Z
-
 ---
 # IT-Journey
 
@@ -35,11 +19,19 @@ date: 2020-07-30T10:19:45.000Z
 
 [![CI](https://github.com/bamr87/it-journey/actions/workflows/ci.yml/badge.svg)](https://github.com/bamr87/it-journey/actions/workflows/ci.yml) [![License](https://img.shields.io/github/license/bamr87/it-journey)](LICENSE) [![Live site](https://img.shields.io/badge/live-it--journey.dev-2ea44f)](https://it-journey.dev/)
 
+**A curriculum that checks its own homework:** hands-on IT quests on a binary level map from `0000` to `1111`, scored by a validator and walked by opt-in AI agents that write down what breaks.
+
+**[Live](https://it-journey.dev/)** · **[Source](https://github.com/bamr87/it-journey)** · **[Read the story](https://bamr87.github.io/posts/2026/11/02/quest-log-it-journey/)**
+
+[![The it-journey.dev homepage: an IT-JOURNEY wordmark over the zer0 to her0 tagline, the prompt "learn the terminal", the promise that every concept is a quest and every skill an unlocked power, Begin Your Quest and Enter the Overworld buttons, and a wizard on a cliff among floating server racks](/assets/images/readme-hero.jpg)](https://it-journey.dev/)
+
+*The it-journey.dev homepage on 2 November 2026. The live site keeps changing; this picture does not.*
+
 ## Overview
 
 IT-Journey turns IT and software-development learning into **quests**: fantasy-framed, hands-on lessons on a binary level path from Level `0000` (Apprentice: first terminal, first Git commit) to Level `1111` (Legend). Each quest has objectives you tick off, commands you actually run on macOS, Windows or Linux, and links to the quests it unlocks. The site is published at [it-journey.dev](https://it-journey.dev/).
 
-This repository is both the learning site and a working example of the platform behind it: a Jekyll site on GitHub Pages, validation tooling that scores every quest, and opt-in AI agents that walk, review and repair the curriculum through pull requests a human merges.
+This repository is both the learning site and a working example of the platform behind it: a Jekyll site on GitHub Pages, validation tooling that scores every quest, and opt-in AI agents that walk, review and repair the curriculum through pull requests; labelled, content-only ones merge automatically on green checks, behind switches the maintainer sets.
 
 > Looking for the blog? Articles, reflections, and devops news now live at **[lifehacker.dev](https://lifehacker.dev)**.
 
