@@ -49,16 +49,14 @@ The facts in a sheet come from the same sources the planner resolves slices from
 roadmap blocks are byte-fresh, the authored exercises cover exactly the path's levels (one `### … Level <code>` heading each), and the frontmatter `name:` matches the directory.
 - `make quest-skills` (regenerate) / `make quest-skills-check` (verify);
 `quest_audit.py` runs the same check as its **non-gating `skills` layer** — advisory because the audit's PR triggers don't watch paths.yml, so a gating check could red an unrelated content PR. Drift heals with one make target.
-- Deliberately **not** part of `make quest-data`: the fix lane runs quest-data and
-  must never write `.claude/**` (fix PRs stay content-only, M4).
+- Deliberately **not** part of `make quest-data`: the fix lane runs quest-data and must never write `.claude/**` (fix PRs stay content-only, M4).
 
 ## Changing the paths
 
 Adding, removing, or re-leveling a character in `paths.yml`:
 
 1. Edit `_data/quests/paths.yml` (it is curated, not generated).
-2. Run `make quest-skills` — stale roadmaps regenerate; a new path is reported as a
-   missing sheet.
+2. Run `make quest-skills` — stale roadmaps regenerate; a new path is reported as a missing sheet.
 3. For a new path, author the sheet by copying an existing one's section skeleton,
 then write the persona/voice/lenses and one exercises heading per level; `make quest-skills` fills the roadmap and `make quest-skills-check` proves coverage.
 4. A removed path's sheet is reported as an orphan — delete the directory.

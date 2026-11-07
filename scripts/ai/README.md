@@ -106,8 +106,7 @@ deterministic engine step mints sealed evidence, the `quest-walker` agent writes
 *verified* issues, keeping an edit **only** when a deterministic signal improves (tier-1 structural score holds/rises **and** `brand_lint` stays clean **and** no sandbox command regresses) — never because the model graded its own work up. It opens a **separate** content-only fix PR (`auto:content` + `auto:quest-fix` + `automated`), runs `make quest-data` (failing on uncommitted `_data/quests` drift), refuses to touch vendored (`source_repo`/`source_url`) quests, and hard-fails without a PAT so the PR's required checks actually fire.
 - **Ledger** — `scripts/quest/ledger.py` is the one deterministic source of truth
 (`.quests/ledger.json`, committed; `.quests/DASHBOARD.md` generated). It tracks per-slice state, `fix-update` bumps a fix round without ever certifying perfect, and a circuit breaker marks a slice `needs_human` after `max_fix_rounds` (default
-  3) fixes that never reached perfect. Ledger commits ride the **walkthrough report
-  PR**, never the fix PR (which is content-only).
+  3) fixes that never reached perfect. Ledger commits ride the **walkthrough report PR**, never the fix PR (which is content-only).
 
 **Self-diagnosis (why the loop never stays red).** Both lanes' gates PROBE the shared Claude credential with one tiny call (`.github/actions/claude-preflight` → `agentic_validate.py --preflight`) before scheduling any engine work, and every no-progress state is routed by CAUSE: a sustained **rate-limit** idles the run green and retries next schedule; **broken credentials** (invalid/expired/revoked token — engine exit 4, distinct from the rate-limit exit 2) idle green AND escalate; an **engine anomaly** escalates too. Escalation is `scripts/quest/loop_health.py`: it keeps exactly ONE open `quest-loop-health` issue telling a human how to rotate the token, updates it (never duplicates) while the state lasts, and the loop closes it itself on its next productive run. Runs stay green on these expected states because a red scheduled run attaches to main's HEAD and `sync-gh-pages` then withholds the site deploy — a dead token once produced eight identical red runs and a silently unpublished site. Red is reserved for the unexpected: engine crashes outside the 0/2/4 exit contract and slice legs that die without delivering evidence.
 
@@ -200,15 +199,12 @@ Recommended ramp: turn on `CONTENT_FACTORY_ENABLED` + `CONTENT_REVIEW_ENABLED` f
 ## Guardrails (how drift is minimized)
 
 - **Deterministic gate** — `brand_lint` blocks spelling drift before merge.
-- **Smuggle guard** — an `auto:content` / `auto:issue` PR that touches
-  infra/config/deps is routed to a human, never auto-merged.
+- **Smuggle guard** — an `auto:content` / `auto:issue` PR that touches infra/config/deps is routed to a human, never auto-merged.
 - **Never close a human's issue** — the issue autopilot can only auto-close
 bot/automation-authored noise (and only when `ISSUE_AUTOCLOSE_ENABLED`); the deterministic engine downgrades any human-authored "close" match to `needs-human`.
-- **Agent hard rules** — every agent is content-only and never merges; the
-  honesty rule forbids invented commands/output/links.
+- **Agent hard rules** — every agent is content-only and never merges; the honesty rule forbids invented commands/output/links.
 - **Meta audit** — `agent-audit` keeps the agents/skills accurate to the repo.
-- **Kill switches** — every AI workflow gates on its `*_ENABLED` variable + auth,
-  so the fleet is off until you opt in and stops the instant you unset a variable.
+- **Kill switches** — every AI workflow gates on its `*_ENABLED` variable + auth, so the fleet is off until you opt in and stops the instant you unset a variable.
 - **Policy as data** — the fleet roster (`_data/agents/registry.yml`: lane, kill
 switch, status, review date per agent) and the autonomy matrix (`_data/agents/autonomy-matrix.yml`: recurring action → L0–L4 level + the guardrails that justify it) are the machine-readable contract the weekly audit checks reality against; the forbidden-actions Warden Pact lives in `AGENTS.md`.
 - **Drift guard** — `scripts/ai/drift-guard.sh` snapshots watched files at plan

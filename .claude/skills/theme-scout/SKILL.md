@@ -9,8 +9,7 @@ it-journey.dev runs the `bamr87/zer0-mistakes` theme via `remote_theme`, so it i
 
 ## 0. Read the policy
 
-- `.frontend/config.yml` — routes, viewports, the theme-vs-content classification
-  rules, the upstream repo, and the per-run cap.
+- `.frontend/config.yml` — routes, viewports, the theme-vs-content classification rules, the upstream repo, and the per-run cap.
 - `.frontend/README.md` — the contract and how to run it.
 
 ## 1. Test the frontend (deterministic)
@@ -35,8 +34,7 @@ The **theme-scout** agent reads the candidates, makes the final theme-vs-content
 
 ## 4. Safety rules (every pass)
 
-- **Only theme issues go upstream.** Content/site-specific findings stay in
-  it-journey (report them; don't file upstream). When unsure, don't file.
+- **Only theme issues go upstream.** Content/site-specific findings stay in it-journey (report them; don't file upstream). When unsure, don't file.
 - **Dedup before every create** — never reopen a known open/closed upstream issue.
 - **Respect the cap** (`dedup.max_new_issues_per_run`).
 - **Honesty** — every issue claim comes from the crawler's real evidence.

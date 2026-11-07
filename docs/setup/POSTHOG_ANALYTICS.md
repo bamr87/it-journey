@@ -48,8 +48,7 @@ All events are captured with the `distinct_id` `it-journey-ci`.
 The integration was verified end-to-end by pointing `POSTHOG_HOST` at a local mock ingestion server and running each script:
 
 - All five events fire with correct, well-typed properties.
-- With `POSTHOG_PROJECT_TOKEN` unset, no events are sent, no network call is
-  attempted, and exit codes are unchanged.
+- With `POSTHOG_PROJECT_TOKEN` unset, no events are sent, no network call is attempted, and exit codes are unchanged.
 - The event capture is placed **before** each script's `exit`, so events are not
 lost when a script exits non-zero (e.g. content-freshness exiting `1` on critical content).
 
