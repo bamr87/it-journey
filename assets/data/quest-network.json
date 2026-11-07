@@ -1,17 +1,17 @@
 {
   "stats": {
-    "total": 218,
+    "total": 227,
     "by_level": {
       "0000": 30,
       "0001": 26,
-      "0010": 17,
-      "0011": 5,
-      "0100": 8,
-      "0101": 15,
-      "0110": 9,
-      "0111": 11,
-      "1000": 10,
-      "1001": 9,
+      "0010": 18,
+      "0011": 6,
+      "0100": 9,
+      "0101": 16,
+      "0110": 10,
+      "0111": 12,
+      "1000": 11,
+      "1001": 11,
       "1010": 16,
       "1011": 12,
       "1100": 17,
@@ -20,8 +20,8 @@
       "1111": 10
     },
     "by_type": {
-      "epic_quest": 5,
-      "main_quest": 187,
+      "epic_quest": 6,
+      "main_quest": 195,
       "side_quest": 26
     }
   },
@@ -585,6 +585,15 @@
       "file": "pages/_quests/0010/testing-quests-with-recursive-questing.md"
     },
     {
+      "id": "/quests/0010/twin-rigs-01-the-war-chest/",
+      "title": "The War Chest: Plan Two Rigs Before You Spend a Coin",
+      "level": "0010",
+      "type": "main_quest",
+      "difficulty": "🟢 Easy",
+      "technology": "hardware",
+      "file": "pages/_quests/0010/twin-rigs-01-the-war-chest.md"
+    },
+    {
       "id": "/quests/0011/github-pages-hidden-gem/",
       "title": "Hidden Gem Quest: Publish AI Chats on GitHub Pages",
       "level": "0011",
@@ -628,6 +637,15 @@
       "difficulty": "🟢 Easy",
       "technology": "cobol",
       "file": "pages/_quests/0011/relic-raisers-01-the-dig-site.md"
+    },
+    {
+      "id": "/quests/0011/twin-rigs-02-the-rewind-cabinet/",
+      "title": "The Rewind Cabinet: Raise a Healthy Raspberry Pi",
+      "level": "0011",
+      "type": "main_quest",
+      "difficulty": "🟡 Medium",
+      "technology": "raspberry-pi",
+      "file": "pages/_quests/0011/twin-rigs-02-the-rewind-cabinet.md"
     },
     {
       "id": "/quests/0100/container-fundamentals/",
@@ -700,6 +718,15 @@
       "difficulty": "🟡 Medium",
       "technology": "git",
       "file": "pages/_quests/0100/sourcery-code-methods.md"
+    },
+    {
+      "id": "/quests/0100/twin-rigs-03-waking-the-arcade/",
+      "title": "Waking the Arcade: Bring Rewind Arcade to Life on the Pi",
+      "level": "0100",
+      "type": "main_quest",
+      "difficulty": "🟡 Medium",
+      "technology": "emulation",
+      "file": "pages/_quests/0100/twin-rigs-03-waking-the-arcade.md"
     },
     {
       "id": "/quests/0101/artifact-management/",
@@ -828,6 +855,15 @@
       "file": "pages/_quests/0101/the-lazytex-of-building-a-curriculum-vitae.md"
     },
     {
+      "id": "/quests/0101/twin-rigs-04-the-caravan-road/",
+      "title": "The Caravan Road: Turn the Pi into a Console",
+      "level": "0101",
+      "type": "main_quest",
+      "difficulty": "🟡 Medium",
+      "technology": "emulation",
+      "file": "pages/_quests/0101/twin-rigs-04-the-caravan-road.md"
+    },
+    {
       "id": "/quests/0101/workflow-optimization/",
       "title": "Workflow Optimization: Caching and Parallel CI/CD",
       "level": "0101",
@@ -916,6 +952,15 @@
       "difficulty": "🔴 Hard",
       "technology": "sql",
       "file": "pages/_quests/0110/sql-mastery.md"
+    },
+    {
+      "id": "/quests/0110/twin-rigs-05-the-great-forge/",
+      "title": "The Great Forge: Assemble a Desktop from Bare Parts",
+      "level": "0110",
+      "type": "main_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "hardware",
+      "file": "pages/_quests/0110/twin-rigs-05-the-great-forge.md"
     },
     {
       "id": "/quests/0111/agentic-codex-01-agents-in-the-sdlc/",
@@ -1017,6 +1062,15 @@
       "file": "pages/_quests/0111/rest-principles.md"
     },
     {
+      "id": "/quests/0111/twin-rigs-06-the-steam-rite/",
+      "title": "The Steam Rite: Install SteamOS on the Great Rig",
+      "level": "0111",
+      "type": "main_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "steamos",
+      "file": "pages/_quests/0111/twin-rigs-06-the-steam-rite.md"
+    },
+    {
       "id": "/quests/1000/agentic-codex-02-tool-use-and-environment/",
       "title": "Forging the Arsenal: Tool Use & Environment",
       "level": "1000",
@@ -1107,6 +1161,15 @@
       "file": "pages/_quests/1000/self-operating-website-03-the-war-machine.md"
     },
     {
+      "id": "/quests/1000/twin-rigs-07-the-free-stalls/",
+      "title": "The Free Stalls: Stock SteamOS with Open Source Games",
+      "level": "1000",
+      "type": "main_quest",
+      "difficulty": "🟡 Medium",
+      "technology": "flatpak",
+      "file": "pages/_quests/1000/twin-rigs-07-the-free-stalls.md"
+    },
+    {
       "id": "/quests/1001/agentic-codex-03-memory-state-and-execution/",
       "title": "Vaults of Recollection: Memory & State",
       "level": "1001",
@@ -1186,6 +1249,15 @@
       "difficulty": "🔴 Hard",
       "technology": "oauth",
       "file": "pages/_quests/1001/self-operating-website-04-the-sigils-of-trust.md"
+    },
+    {
+      "id": "/quests/1001/twin-rigs-08-the-throttle-wraith/",
+      "title": "The Throttle Wraith: Prove Both Rigs Under Sustained Load",
+      "level": "1001",
+      "type": "main_quest",
+      "difficulty": "⚔️ Epic",
+      "technology": "steamos",
+      "file": "pages/_quests/1001/twin-rigs-08-the-throttle-wraith.md"
     },
     {
       "id": "/quests/1010/agentic-codex-04-evaluation-and-tuning/",
@@ -1897,6 +1969,15 @@
       "difficulty": "⚔️ Epic",
       "technology": "github-actions",
       "file": "pages/_quests/codex/self-operating-website.md"
+    },
+    {
+      "id": "/quests/codex/twin-rigs/",
+      "title": "Epic Quest: The Twin Rigs",
+      "level": "1001",
+      "type": "epic_quest",
+      "difficulty": "⚔️ Epic",
+      "technology": "raspberry-pi",
+      "file": "pages/_quests/codex/twin-rigs.md"
     },
     {
       "id": "/quests/codex/world-map/",
@@ -2731,6 +2812,16 @@
       "kind": "required"
     },
     {
+      "source": "/quests/0010/twin-rigs-01-the-war-chest/",
+      "target": "/quests/codex/twin-rigs/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/0010/twin-rigs-01-the-war-chest/",
+      "target": "/quests/0011/twin-rigs-02-the-rewind-cabinet/",
+      "kind": "unlocks"
+    },
+    {
       "source": "/quests/0011/github-pages-hidden-gem/",
       "target": "/quests/0000/hello-noob/",
       "kind": "required"
@@ -2786,6 +2877,16 @@
       "kind": "unlocks"
     },
     {
+      "source": "/quests/0011/twin-rigs-02-the-rewind-cabinet/",
+      "target": "/quests/0010/twin-rigs-01-the-war-chest/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/0011/twin-rigs-02-the-rewind-cabinet/",
+      "target": "/quests/0100/twin-rigs-03-waking-the-arcade/",
+      "kind": "unlocks"
+    },
+    {
       "source": "/quests/0100/container-fundamentals/",
       "target": "/quests/0100/docker-compose-orchestration/",
       "kind": "unlocks"
@@ -2824,6 +2925,16 @@
       "source": "/quests/0100/profile-themes/",
       "target": "/quests/0010/contribution-calendar/",
       "kind": "recommended"
+    },
+    {
+      "source": "/quests/0100/twin-rigs-03-waking-the-arcade/",
+      "target": "/quests/0011/twin-rigs-02-the-rewind-cabinet/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/0100/twin-rigs-03-waking-the-arcade/",
+      "target": "/quests/0101/twin-rigs-04-the-caravan-road/",
+      "kind": "unlocks"
     },
     {
       "source": "/quests/0101/artifact-management/",
@@ -3006,6 +3117,16 @@
       "kind": "unlocks"
     },
     {
+      "source": "/quests/0101/twin-rigs-04-the-caravan-road/",
+      "target": "/quests/0100/twin-rigs-03-waking-the-arcade/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/0101/twin-rigs-04-the-caravan-road/",
+      "target": "/quests/0110/twin-rigs-05-the-great-forge/",
+      "kind": "unlocks"
+    },
+    {
       "source": "/quests/0101/workflow-optimization/",
       "target": "/quests/0101/cicd-fundamentals/",
       "kind": "required"
@@ -3166,6 +3287,16 @@
       "kind": "unlocks"
     },
     {
+      "source": "/quests/0110/twin-rigs-05-the-great-forge/",
+      "target": "/quests/0101/twin-rigs-04-the-caravan-road/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/0110/twin-rigs-05-the-great-forge/",
+      "target": "/quests/0111/twin-rigs-06-the-steam-rite/",
+      "kind": "unlocks"
+    },
+    {
       "source": "/quests/0111/agentic-codex-01-agents-in-the-sdlc/",
       "target": "/quests/codex/agentic-codex/",
       "kind": "recommended"
@@ -3316,6 +3447,16 @@
       "kind": "unlocks"
     },
     {
+      "source": "/quests/0111/twin-rigs-06-the-steam-rite/",
+      "target": "/quests/0110/twin-rigs-05-the-great-forge/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/0111/twin-rigs-06-the-steam-rite/",
+      "target": "/quests/1000/twin-rigs-07-the-free-stalls/",
+      "kind": "unlocks"
+    },
+    {
       "source": "/quests/1000/agentic-codex-02-tool-use-and-environment/",
       "target": "/quests/0111/agentic-codex-01-agents-in-the-sdlc/",
       "kind": "recommended"
@@ -3446,6 +3587,16 @@
       "kind": "unlocks"
     },
     {
+      "source": "/quests/1000/twin-rigs-07-the-free-stalls/",
+      "target": "/quests/0111/twin-rigs-06-the-steam-rite/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/1000/twin-rigs-07-the-free-stalls/",
+      "target": "/quests/1001/twin-rigs-08-the-throttle-wraith/",
+      "kind": "unlocks"
+    },
+    {
       "source": "/quests/1001/agentic-codex-03-memory-state-and-execution/",
       "target": "/quests/1000/agentic-codex-02-tool-use-and-environment/",
       "kind": "recommended"
@@ -3569,6 +3720,16 @@
       "source": "/quests/1001/self-operating-website-04-the-sigils-of-trust/",
       "target": "/quests/1010/self-operating-website-05-the-content-forge/",
       "kind": "unlocks"
+    },
+    {
+      "source": "/quests/1001/twin-rigs-08-the-throttle-wraith/",
+      "target": "/quests/0101/twin-rigs-04-the-caravan-road/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/1001/twin-rigs-08-the-throttle-wraith/",
+      "target": "/quests/1000/twin-rigs-07-the-free-stalls/",
+      "kind": "recommended"
     },
     {
       "source": "/quests/1010/agentic-codex-04-evaluation-and-tuning/",
@@ -4733,6 +4894,61 @@
     {
       "source": "/quests/codex/self-operating-website/",
       "target": "/quests/1100/self-operating-website-10-the-bard-forge/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/twin-rigs/",
+      "target": "/quests/0000/terminal-fundamentals/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/codex/twin-rigs/",
+      "target": "/quests/0000/linux-fundamentals/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/codex/twin-rigs/",
+      "target": "/quests/0000/git-basics/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/codex/twin-rigs/",
+      "target": "/quests/0010/twin-rigs-01-the-war-chest/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/twin-rigs/",
+      "target": "/quests/0011/twin-rigs-02-the-rewind-cabinet/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/twin-rigs/",
+      "target": "/quests/0100/twin-rigs-03-waking-the-arcade/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/twin-rigs/",
+      "target": "/quests/0101/twin-rigs-04-the-caravan-road/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/twin-rigs/",
+      "target": "/quests/0110/twin-rigs-05-the-great-forge/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/twin-rigs/",
+      "target": "/quests/0111/twin-rigs-06-the-steam-rite/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/twin-rigs/",
+      "target": "/quests/1000/twin-rigs-07-the-free-stalls/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/twin-rigs/",
+      "target": "/quests/1001/twin-rigs-08-the-throttle-wraith/",
       "kind": "unlocks"
     },
     {
