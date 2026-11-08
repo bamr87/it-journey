@@ -306,6 +306,8 @@
     url: /quests/1000/agentic-codex-02-tool-use-and-environment/
   - title: 'Infrastructure as Code: Terraform Fundamentals and State'
     url: /quests/1000/infrastructure-as-code/
+  - title: 'Summon Machines From the Wire: Build a PXE Boot Server'
+    url: /quests/1000/pxe-boot-server/
   - title: 'The All-Seeing Eye: Observability for AI Agents'
     url: /quests/1000/agentic-observability-and-control/
   - title: 'The Free Stalls: Stock SteamOS with Open Source Games'
