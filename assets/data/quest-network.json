@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total": 227,
+    "total": 228,
     "by_level": {
       "0000": 30,
       "0001": 26,
@@ -10,7 +10,7 @@
       "0101": 16,
       "0110": 10,
       "0111": 12,
-      "1000": 11,
+      "1000": 12,
       "1001": 11,
       "1010": 16,
       "1011": 12,
@@ -21,7 +21,7 @@
     },
     "by_type": {
       "epic_quest": 6,
-      "main_quest": 195,
+      "main_quest": 196,
       "side_quest": 26
     }
   },
@@ -1150,6 +1150,15 @@
       "difficulty": "🔴 Hard",
       "technology": "terraform",
       "file": "pages/_quests/1000/infrastructure-as-code.md"
+    },
+    {
+      "id": "/quests/1000/pxe-boot-server/",
+      "title": "Summon Machines From the Wire: Build a PXE Boot Server",
+      "level": "1000",
+      "type": "main_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "ipxe",
+      "file": "pages/_quests/1000/pxe-boot-server.md"
     },
     {
       "id": "/quests/1000/self-operating-website-03-the-war-machine/",
@@ -3574,6 +3583,31 @@
     {
       "source": "/quests/1000/infrastructure-as-code/",
       "target": "/quests/1001/kubernetes-fundamentals/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/1000/pxe-boot-server/",
+      "target": "/quests/0000/linux-fundamentals/",
+      "kind": "required"
+    },
+    {
+      "source": "/quests/1000/pxe-boot-server/",
+      "target": "/quests/0010/bash-scripting/",
+      "kind": "required"
+    },
+    {
+      "source": "/quests/1000/pxe-boot-server/",
+      "target": "/quests/1000/forge-your-own-dev-server/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/1000/pxe-boot-server/",
+      "target": "/quests/0101/second-shift-server-resurrection/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/1000/pxe-boot-server/",
+      "target": "/quests/1000/infrastructure-as-code/",
       "kind": "unlocks"
     },
     {
