@@ -253,10 +253,10 @@ nodes:
   type: main_quest
   difficulty: 🟢 Easy
 - id: /quests/0001/seo-optimization/
-  title: 'SEO Optimization: Meta Tags, Sitemaps & Structured Data'
+  title: 'SEO & AI-Citability: Meta Tags, Structured Data & E-E-A-T'
   level: '0001'
   type: main_quest
-  difficulty: 🟢 Easy
+  difficulty: 🟡 Medium
 - id: /quests/0001/avatar-forge/
   title: 'Avatar Forge: Crafting Your Digital Portrait'
   level: '0001'
