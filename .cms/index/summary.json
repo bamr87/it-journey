@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-09T22:14:59.505185+00:00",
+  "generated_at": "2026-11-10T22:16:37.242048+00:00",
   "total_files": 435,
   "scored_files": 435,
   "actionable_files": 390,
   "avg_health": 93.8,
-  "avg_health_actionable": 93.1,
+  "avg_health_actionable": 93.0,
   "total_mechanical_issues": 0,
-  "total_substantive_issues": 86,
+  "total_substantive_issues": 87,
   "total_errors": 11,
   "read_only_files": 0,
   "by_collection": {
@@ -38,7 +38,7 @@
       "count": 252,
       "scored": 252,
       "mechanical": 0,
-      "substantive": 54,
+      "substantive": 55,
       "errors": 5,
       "avg_health": 93.4
     }
