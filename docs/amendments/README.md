@@ -10,3 +10,4 @@ The append-only log of changes to [the constitution](../constitution.md). Proces
 | # | Title | Status | Affects |
 | --- | --- | --- | --- |
 | [0001](0001-ratify-constitution.md) | Ratify the constitution | ratified on merge | whole constitution |
+| [NEW](proposed/editorial-charter.md) | Editorial charter for quests | proposed | constitution § 9 (new); FR-ITJ-016, FR-ITJ-017 |
