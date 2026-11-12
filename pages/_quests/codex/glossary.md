@@ -3,7 +3,7 @@ title: 'Codex Glossary: Fantasy Terms to IT Reality'
 description: The canonical lexicon of the IT-Journey realm — every fantasy term decoded into the technology behind it, from spells and scripts to golems and pipelines.
 excerpt: The realm's shared dictionary — fantasy on one side, real technology on the other.
 date: '2023-11-25T14:12:43.000Z'
-lastmod: '2026-09-14T00:00:00.000Z'
+lastmod: '2026-11-06T00:00:00.000Z'
 draft: false
 permalink: /quests/codex/glossary/
 author: IT-Journey Team
@@ -202,6 +202,7 @@ Chosen — and re-chosen — in the [Character Selection quest](/quests/0000/cha
 | **Familiars** | AI coding assistants | A summoned companion that drafts, explains, and fetches. Yours to command — and yours to double-check. |
 | **The Oracle** | An AI chat (a large language model) | Answers the question you asked, not the one you meant. Phrase with care; verify with your own eyes. Prophecy is not proof. |
 | **The Plausible Ghost** | A confident, wrong reading of a legacy system — from an Oracle, a familiar, or a colleague | A guess with good grammar. It haunts every port until the Rosetta Ledger ties out. |
+| **The Throttle Wraith** | Thermal or power throttling under sustained load | Invisible in a five-minute test. It steals speed only once the heat soaks in, and only a long log can catch it. Banished in [The Twin Rigs](/quests/codex/twin-rigs/). |
 | **Dragons** | Production incidents | *Here be dragons* marks unmapped territory on old charts and legacy systems alike. The prepared carry runbooks. |
 | **Mimics** | Phishing | Shaped exactly like treasure — an invoice, a password-reset scroll — and bites when touched. Check the sender's true address before opening any chest. |
 | **Trolls** | Trolls | The word crossed over unchanged. Do not feed. |
@@ -248,6 +249,7 @@ Chosen — and re-chosen — in the [Character Selection quest](/quests/0000/cha
 | **Archaeology** | Legacy-system analysis — recovering what a system does and why from its code, data, and history | The Labyrinth's craft. Bring thread, read the Chronicle, find the Elders, and never trust a guess with good grammar. |
 | **The Rosetta Ledger** | A reconciliation between an old system and its replacement | The same decree in two scripts — a trial balance that ties out on both sides. Until it does, you have copied the relic, not read it. |
 | **The Strangler Fig** | The strangler-fig migration pattern — a new system grows around the old until the old can be cut away | Nothing goes dark on cutover day; the gate routes one request at a time, and rollback is a flag. |
+| **Rig-forging** | Building and proving your own gaming hardware | Plan on paper, assemble with care, then test under load until the evidence holds. Taught in [The Twin Rigs](/quests/codex/twin-rigs/). |
 | **Relic-raising** | Legacy modernization | Reviving a relic without losing what it knows: read it, pin it, translate it, then replace its housing one gate at a time. Taught in [The Relic Raisers](/quests/codex/relic-raisers/). |
 | **Alchemy** | Data engineering | Distilling rivers of raw data into gold. Pipelines are the stills; [Level 1100](/quests/1100/) is the school. |
 | **Prophecy** | Machine learning | Foretelling from patterns of the past. Honest prophets state their confidence — every prophecy carries error bars. Studied at [Level 1101](/quests/1101/). |
