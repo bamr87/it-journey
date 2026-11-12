@@ -98,7 +98,7 @@
     url: /quests/0001/kaizen-continuous-improvement/
   - title: 'Liquid Templating: Dynamic Content for Jekyll Sites'
     url: /quests/0001/liquid-templating/
-  - title: 'SEO Optimization: Meta Tags, Sitemaps & Structured Data'
+  - title: 'SEO & AI-Citability: Meta Tags, Structured Data & E-E-A-T'
     url: /quests/0001/seo-optimization/
   - title: 'Stack Attack: AI-Built Django + React Enterprise ERP'
     url: /quests/0001/stack-attack/
@@ -148,6 +148,8 @@
     url: /quests/0010/oh-my-zsh-mastery/
   - title: 'The Diagrammatic Enchantment: Jekyll-Mermaid Integration'
     url: /quests/0010/jekyll-mermaid-integration/
+  - title: 'The War Chest: Plan Two Rigs Before You Spend a Coin'
+    url: /quests/0010/twin-rigs-01-the-war-chest/
   - title: Understanding Action Triggers in Depth
     url: /quests/0010/action-triggers/
   - title: '⚔️ Contribution Calendar: Mapping Your Journey Through Time'
@@ -174,6 +176,8 @@
     url: /quests/0011/relic-raisers-01-the-dig-site/
   - title: 'The PRD Codex: Master Product Reality Distillation'
     url: /quests/0011/prd-codex-mastery/
+  - title: 'The Rewind Cabinet: Raise a Healthy Raspberry Pi'
+    url: /quests/0011/twin-rigs-02-the-rewind-cabinet/
 - title: Level 0100 - Frontend & Containers
   icon: bi-box-seam
   url: /quests/0100/
@@ -190,6 +194,8 @@
     url: /quests/0100/source-control-sorcery/
   - title: 'The Proving Grounds: The Repo''s First CI Gate'
     url: /quests/0100/self-operating-website-02-the-proving-grounds/
+  - title: 'Waking the Arcade: Bring Rewind Arcade to Life on the Pi'
+    url: /quests/0100/twin-rigs-03-waking-the-arcade/
   - title: '⚔️ Profile Themes: Unleashing the Style Sorcerer'
     url: /quests/0100/profile-themes/
   - title: '⚔️ The Artisan''s Forge: Refactoring Jekyll Theme Components'
@@ -216,6 +222,8 @@
     url: /quests/0101/secrets-management/
   - title: 'Testing Integration: Tiered CI/CD Test Gates'
     url: /quests/0101/testing-integration/
+  - title: 'The Caravan Road: Turn the Pi into a Console'
+    url: /quests/0101/twin-rigs-04-the-caravan-road/
   - title: 'The Cartographer: File Platform Bugs Upstream'
     url: /quests/0101/self-operating-website-08-the-cartographer/
   - title: 'The Gauntlet of Trials: Pin the Relic Before You Touch It'
@@ -248,6 +256,8 @@
     url: /quests/0110/query-optimization/
   - title: 'SQL Mastery: Query Language Proficiency'
     url: /quests/0110/sql-mastery/
+  - title: 'The Great Forge: Assemble a Desktop from Bare Parts'
+    url: /quests/0110/twin-rigs-05-the-great-forge/
   - title: 'The Strata: Read the Copybook, Then Let the Data Testify'
     url: /quests/0110/relic-raisers-02-the-strata/
 - title: Level 0111 - API Development
@@ -272,6 +282,8 @@
     url: /quests/0111/rate-limiting/
   - title: 'REST Principles: Resources, Statelessness, and Maturity'
     url: /quests/0111/rest-principles/
+  - title: 'The Steam Rite: Install SteamOS on the Great Rig'
+    url: /quests/0111/twin-rigs-06-the-steam-rite/
   - title: 'The Strangler Fig: Put a Modern Gate in Front of the Relic'
     url: /quests/0111/relic-raisers-06-the-strangler-fig/
   - title: 'The Three Sigils: Plan, Reason, Act'
@@ -294,8 +306,12 @@
     url: /quests/1000/agentic-codex-02-tool-use-and-environment/
   - title: 'Infrastructure as Code: Terraform Fundamentals and State'
     url: /quests/1000/infrastructure-as-code/
+  - title: 'Summon Machines From the Wire: Build a PXE Boot Server'
+    url: /quests/1000/pxe-boot-server/
   - title: 'The All-Seeing Eye: Observability for AI Agents'
     url: /quests/1000/agentic-observability-and-control/
+  - title: 'The Free Stalls: Stock SteamOS with Open Source Games'
+    url: /quests/1000/twin-rigs-07-the-free-stalls/
   - title: 'The MCP Conclave: Mastering Model Context Protocol Servers'
     url: /quests/1000/agentic-mcp-server-mastery/
   - title: 'The War Machine: Dispatch, Leasing, and a Fifty-Case Simulation'
@@ -318,10 +334,14 @@
     url: /quests/1001/agentic-safe-execution-and-error-handling/
   - title: 'The Sigils of Trust: Auth, Secrets, and the Kill Switch'
     url: /quests/1001/self-operating-website-04-the-sigils-of-trust/
+  - title: 'The Throttle Wraith: Prove Both Rigs Under Sustained Load'
+    url: /quests/1001/twin-rigs-08-the-throttle-wraith/
   - title: 'Vaults of Recollection: Agent Memory Strategies'
     url: /quests/1001/agentic-memory-strategies/
   - title: 'Vaults of Recollection: Memory & State'
     url: /quests/1001/agentic-codex-03-memory-state-and-execution/
+  - title: 'Epic Quest: The Twin Rigs'
+    url: /quests/codex/twin-rigs/
 - title: Level 1010 - Monitoring & Observability
   icon: bi-graph-up
   url: /quests/1010/
