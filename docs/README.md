@@ -83,6 +83,7 @@ Start with the root [README](../README.md) for what IT-Journey is, then [AGENTS.
 
 | Document | What it covers |
 | --- | --- |
+| [`docs/setup/AUTO_PR_TOKEN.md`](setup/AUTO_PR_TOKEN.md) | What the `AUTO_PR_GITHUB_TOKEN` repository secret is for, the fine-grained permissions the Issue Autopilot and the other PR lanes need from it, and how the owner re-issues it without the value reaching a terminal, a file or a log. |
 | [`docs/setup/DEVELOPMENT_ENVIRONMENT.md`](setup/DEVELOPMENT_ENVIRONMENT.md) | Step-by-step local setup — prerequisites, Ruby or Docker, IDE and environment variables — with common development tasks and troubleshooting (last revised 2025-10). |
 | [`docs/setup/POSTHOG_ANALYTICS.md`](setup/POSTHOG_ANALYTICS.md) | How the Ruby SEO and content scripts emit optional PostHog run events, which events they send, and how to enable and verify them. |
 
