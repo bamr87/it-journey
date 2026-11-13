@@ -187,7 +187,7 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 
 | ID | Feature | Status | Where | Requirements |
 | --- | --- | --- | --- | --- |
-| [FR-ITJ-001](features/features.yml) | Jekyll site generation | shipped | [``](.) | §1, §3 |
+| [FR-ITJ-001](features/features.yml) | Jekyll site generation | shipped | route `/` | §1, §3 |
 | [FR-ITJ-002](features/features.yml) | Algolia Search indexing | shipped | route `/search/` | §3 |
 | [FR-ITJ-003](features/features.yml) | Auto features index generation | shipped | route `/about/features/` | §3 |
 | [FR-ITJ-004](features/features.yml) | Quest collection | shipped | route `/quests/` · [`pages/_quests`](pages/_quests) | §1, §3 |
