@@ -105,10 +105,8 @@ Turn them on in order: walkthrough → perfection (read + ledger) → fix (write
 
 - **M1 (anti-self-grading)** — the fixer keeps an edit only when a
 **deterministic** signal improves: the tier-1 structural score (`quest_validator.py`) rises or holds AND `brand_lint` stays clean AND no sandbox command regresses passed→failed. Never on the model's own "overall".
-- **M2 (freshness)** — after any quest edit the fix workflow runs `make
-  quest-data` and FAILS on a non-empty uncommitted `git diff _data/quests`.
-- **M3 (vendored read-only)** — a deterministic step fails if any changed
-  `pages/_quests/**/*.md` carries `source_repo:` / `source_url:` frontmatter.
+- **M2 (freshness)** — after any quest edit the fix workflow runs `make quest-data` and FAILS on a non-empty uncommitted `git diff _data/quests`.
+- **M3 (vendored read-only)** — a deterministic step fails if any changed `pages/_quests/**/*.md` carries `source_repo:` / `source_url:` frontmatter.
 - **M4 (.quests never in a content PR)** — see PR boundaries above.
 - **M5 (PAT hard-fail)** — the fix workflow hard-fails without a PAT
   (`AUTO_PR_GITHUB_TOKEN || PAT_TOKEN`); it never falls back to `github.token`,
@@ -120,9 +118,7 @@ non-truncated, fully-scored run; review-mode or truncated runs can never certify
 
 ## Editing the policy
 
-- `config.yml` — the certification **bar** (`perfect.*`), `selection` strategy,
-  `history.cap`, and the `fix.max_fix_rounds` circuit breaker.
-- `budget.yml` — the per-run **backpressure** caps and the backlog-heavy vs
-  normal behavior split.
+- `config.yml` — the certification **bar** (`perfect.*`), `selection` strategy, `history.cap`, and the `fix.max_fix_rounds` circuit breaker.
+- `budget.yml` — the per-run **backpressure** caps and the backlog-heavy vs normal behavior split.
 
 Both are hand-edited; the ledger and dashboard are generated. Never hand-edit `ledger.json` or `DASHBOARD.md`.

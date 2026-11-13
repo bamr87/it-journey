@@ -95,8 +95,7 @@ The Agentic Codex is not a thought experiment — **this repository runs on the 
 1. Read a chapter, then its artifact above — the pattern is identical, at scale.
 2. Run the reference pipeline in your fork: create the `agent-approval`
 Environment with yourself as required reviewer, set `AGENT_DEMO_ENABLED=true`, dispatch **🜂 Agent Plan-then-Act**, and watch the execute job wait for your seal.
-3. Face the [Grand Capstone](/quests/1100/agentic-codex-capstone-exam-trial/) —
-   this repository is a worked answer key, but the trial wants *your* build.
+3. Face the [Grand Capstone](/quests/1100/agentic-codex-capstone-exam-trial/) — this repository is a worked answer key, but the trial wants *your* build.
 
 ## Related
 

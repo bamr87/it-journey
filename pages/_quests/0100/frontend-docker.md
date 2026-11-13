@@ -84,8 +84,7 @@ Journey through the Frontend Forests to use Docker on a macOS system for buildin
 
 We'll create a Docker container for Jekyll and use it to create a new Jekyll site.
 
-1. **Create a Dockerfile:**
-   In your project directory, create a `Dockerfile`:
+1. **Create a Dockerfile:** In your project directory, create a `Dockerfile`:
    ```Dockerfile
    FROM jekyll/jekyll:latest
    WORKDIR /srv/jekyll
@@ -93,8 +92,7 @@ We'll create a Docker container for Jekyll and use it to create a new Jekyll sit
    EXPOSE 4000
    ```
 
-2. **Create a Docker Compose file:**
-   Create a `docker-compose.yml` file in the same directory:
+2. **Create a Docker Compose file:** Create a `docker-compose.yml` file in the same directory:
    ```yaml
    version: '3'
    services:
@@ -107,8 +105,7 @@ We'll create a Docker container for Jekyll and use it to create a new Jekyll sit
          - .:/srv/jekyll
    ```
 
-3. **Create a New Jekyll Site:**
-   Open a terminal, navigate to your project directory, and run:
+3. **Create a New Jekyll Site:** Open a terminal, navigate to your project directory, and run:
    ```sh
    docker-compose run jekyll jekyll new .
    ```
@@ -120,8 +117,7 @@ We'll create a Docker container for Jekyll and use it to create a new Jekyll sit
    cd my-jekyll-site
    ```
 
-2. **Include Bootstrap:**
-   Open `_includes/head.html` (create this file if it doesn’t exist) and add the following lines to include Bootstrap 5:
+2. **Include Bootstrap:** Open `_includes/head.html` (create this file if it doesn’t exist) and add the following lines to include Bootstrap 5:
    ```html
    <!-- Bootstrap CSS -->
    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-xxx" crossorigin="anonymous">
@@ -136,8 +132,7 @@ Replace the `xxx` with the appropriate integrity values from the Bootstrap CDN s
 
 ### Step 4: Customize Your Site with Bootstrap Components
 
-1. **Homepage Layout:**
-   Open `index.md` or `index.html` and add some Bootstrap components:
+1. **Homepage Layout:** Open `index.md` or `index.html` and add some Bootstrap components:
    ```html
    <!DOCTYPE html>
    <html>
@@ -187,8 +182,7 @@ Replace the `xxx` with the appropriate integrity values from the Bootstrap CDN s
    </html>
    ```
 
-2. **Styling Your Site:**
-   You can customize Bootstrap's look and feel by overriding CSS in your main stylesheet (`assets/css/style.scss` or similar).
+2. **Styling Your Site:** You can customize Bootstrap's look and feel by overriding CSS in your main stylesheet (`assets/css/style.scss` or similar).
 
 ### Step 5: Deploy Your Jekyll Site
 

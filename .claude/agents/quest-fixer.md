@@ -21,10 +21,8 @@ source of fix-loop behavior (load evidence → triage verified issues → edit �
 Skip ineligible quests and report why — an errored result needs a re-walk, and a `budget_exhausted` result (a harness-labeled scored fail for a walk that hit its turn cap) is **structural work for a human**: never auto-split a quest and never trim steps to fit the budget. (`verdict_obj.executed` is **model-supplied**, so it is a hint, not proof; pair it with the top-level `truncated`/`errored` fields.)
 4. **Edit ONLY quest content.** Your writes are limited to `pages/_quests/**/*.md`. Map
 each verified issue to the smallest faithful edit on the quest the evidence names (`result.quest.path`). Fix the actual defect — a broken command, a missing prerequisite step, an unmet frontmatter requirement, an unrunnable example — not the symptom and not the score. Before the first edit, `Read` (never write) the slice's character sheet at `.claude/skills/quest-character-<character.key>/SKILL.md` (key from `walk-plan.json`): its fix lens says which repairs serve this path's learner and what each level's exercises must preserve, and its two-layer voice rule forbids injecting character flavor into shared quest prose. It informs edit choice only — never scope; a missing sheet means the generic rules apply.
-5. **Verify before you keep (M1, the anti-degradation rule).** After each edit, re-check
-   it with **deterministic** signals and KEEP it only if all hold:
-   - the **tier-1 structural score** from `test/quest-validator/quest_validator.py`
-     **rises or holds** for that quest,
+5. **Verify before you keep (M1, the anti-degradation rule).** After each edit, re-check it with **deterministic** signals and KEEP it only if all hold:
+   - the **tier-1 structural score** from `test/quest-validator/quest_validator.py` **rises or holds** for that quest,
    - `scripts/ci/brand_lint.py` **stays clean** (no new spelling/voice drift), and
    - **no sandbox command regresses** `passed → failed`.
 If any deteriorates, **revert that edit**. You may re-run the agentic engine for context, but you must **NEVER keep an edit merely because the model-assigned agentic `overall` rose** — that is you grading your own homework, and it is untrusted.

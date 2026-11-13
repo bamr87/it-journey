@@ -45,12 +45,10 @@ Decide the file set **before** writing. The hub is the campaign's `epic_quest` l
 
 ## 4. Wire the dependency graph (warning-free)
 
-- **Hub** → `unlocks_quests`: every chapter codex permalink. `recommended_quests`:
-  the prequel epic if one exists.
+- **Hub** → `unlocks_quests`: every chapter codex permalink. `recommended_quests`: the prequel epic if one exists.
 - **Chapters** → chain with `recommended_quests` (previous chapter) +
 `unlocks_quests` (next chapter). Keep `required_quests` empty or same-/lower-level only: the network validator warns when a `required` prerequisite sits at a *higher* level than the quest, and the campaign's narrative order is not level-ascending.
-- Every referenced permalink must exist by end of the PR (you are creating them) or
-  carry a `# planned quest` suffix (side-quests still living in lifehacker.dev).
+- Every referenced permalink must exist by end of the PR (you are creating them) or carry a `# planned quest` suffix (side-quests still living in lifehacker.dev).
 
 ## 5. Author each file (the real work)
 
@@ -62,8 +60,7 @@ Per quest, in order (quest.instructions §4):
 4. **Chapters** with annotated code, knowledge checks, and a **"🔁 Reproduce it"**
 block linking the manifest's PRs/commits (`bamr87/lifehacker.dev#42`, `bamr87/lifehacker.dev@5853ef43b`) as the canonical reference build.
 5. A Mermaid **network** diagram (prereq → this → unlocks).
-6. `## 🎁 Rewards & Progression` aligned with frontmatter `rewards`
-   (`progression_points` = chapter XP; `badges` from the manifest).
+6. `## 🎁 Rewards & Progression` aligned with frontmatter `rewards` (`progression_points` = chapter XP; `badges` from the manifest).
 7. `## 🔮 Next Adventures` using canonical permalinks; `## 📚 Resource Codex`.
 8. `## 🕸️ Knowledge Graph` footer with `[[wiki links]]` to the hub and neighbors.
 

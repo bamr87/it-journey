@@ -392,8 +392,7 @@ git push origin main
    > your new Jekyll content (only a "Conflict: shared destination" warning, easy to
    > miss). Delete or rename the Chapter 1 `index.html` now: `rm index.html`.
 
-3. **Configure for GitHub Pages**
-   Create `Gemfile`:
+3. **Configure for GitHub Pages** Create `Gemfile`:
    ```ruby
    source 'https://rubygems.org'
    
@@ -421,8 +420,7 @@ git push origin main
      - jekyll-seo-tag
    ```
 
-5. **Create Content**
-   Update `index.markdown` (the file `jekyll new` generates — not `index.md`):
+5. **Create Content** Update `index.markdown` (the file `jekyll new` generates — not `index.md`):
    ```markdown
    ---
    layout: default

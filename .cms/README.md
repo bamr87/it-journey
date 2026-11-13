@@ -72,8 +72,7 @@ Every detected issue is tagged with a **lane**:
 
 - **Mechanical** — deterministic, fixed in one pass by
 `make content-normalize-apply` (string→list coercion, ISO dates, draft booleans, quest keyword shape, etc.). Safe to **auto-merge** after green CI.
-- **Substantive** — needs authoring/judgment (missing description, thin content,
-  SEO rewrites, broken-link repair, new content). Goes to a **reviewed PR**.
+- **Substantive** — needs authoring/judgment (missing description, thin content, SEO rewrites, broken-link repair, new content). Goes to a **reviewed PR**.
 
 This split is what lets the daily loop fast-track safe fixes while keeping content changes under human review. See `config.yml › loop`.
 
@@ -83,18 +82,15 @@ This split is what lets the daily loop fast-track safe fixes while keeping conte
 
 - `read_only` — vendored upstream content (any upstream content carrying
 `source_repo`/`source_url` frontmatter). Indexed for visibility, **never rewritten**.
-- `read_only.structural_globs` — READMEs, quest templates/tools/codex. Indexed
-  but exempt from deep field checks (matches the CI validator's skip list).
-- `generated` — registry-derived data (`_data/quests/*.yml`, navigation,
-  statistics). **Never hand-edited**; regenerated with `make quest-data`.
+- `read_only.structural_globs` — READMEs, quest templates/tools/codex. Indexed but exempt from deep field checks (matches the CI validator's skip list).
+- `generated` — registry-derived data (`_data/quests/*.yml`, navigation, statistics). **Never hand-edited**; regenerated with `make quest-data`.
 
 ## Editing the policy
 
 `config.yml` is the only file you hand-edit. Common knobs:
 
 - `collections.*.recommended` / `required_extra` — per-collection field contract.
-- `constraints` — SEO length limits and word counts (kept in sync with
-  `.github/content-review-config.yml`).
+- `constraints` — SEO length limits and word counts (kept in sync with `.github/content-review-config.yml`).
 - `loop.batch_size` / `mechanical_batch_size` — how much each daily run proposes.
 - `loop.collection_priority` — which collections the loop prioritizes.
 - `read_only` / `generated` globs — the safety boundaries above.

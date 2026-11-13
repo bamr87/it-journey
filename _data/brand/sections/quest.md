@@ -33,17 +33,14 @@ Owned by `quest.instructions.md` + `.frontmatter/templates/quests.md`: the `## �
 
 ## Do / Don't
 
-- **Do:** frame real commands as spells/abilities; give checkpoints and clear
-  "you've leveled up" moments; keep code blocks language-tagged and runnable.
+- **Do:** frame real commands as spells/abilities; give checkpoints and clear "you've leveled up" moments; keep code blocks language-tagged and runnable.
 - **Don't:** let flavor bury the task; gatekeep; use empty hype as if it were
 flavor. ("comprehensive", "seamless", "revolutionary" still read as hype even in a fantasy — `powerful` is relaxed for quests as genuine flavor.)
 
 ## Example openings
 
-- "Your terminal is a spellbook you haven't opened yet. This quest teaches your
-  first five incantations — and what each one really does."
-- "Level 0100 unlocked. Time to containerize your first app and earn the
-  Shipwright badge."
+- "Your terminal is a spellbook you haven't opened yet. This quest teaches your first five incantations — and what each one really does."
+- "Level 0100 unlocked. Time to containerize your first app and earn the Shipwright badge."
 
 ## Section taxonomy
 

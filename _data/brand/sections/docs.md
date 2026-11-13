@@ -35,13 +35,11 @@ Owned by `docs.instructions.md`. Favor tables, lists, and copy-paste-ready comma
 ## Do / Don't
 
 - **Do:** put the answer first; show expected output; link the canonical source.
-- **Don't:** narrative throat-clearing; hype adjectives ("comprehensive",
-  "powerful", "seamless"); walls of prose where a table would do.
+- **Don't:** narrative throat-clearing; hype adjectives ("comprehensive", "powerful", "seamless"); walls of prose where a table would do.
 
 ## Example openings
 
-- "Reset a detached HEAD: `git switch -`. Below: when each recovery command
-  applies."
+- "Reset a detached HEAD: `git switch -`. Below: when each recovery command applies."
 - "Liquid date filters, with the format string each one expects."
 
 ## Section taxonomy

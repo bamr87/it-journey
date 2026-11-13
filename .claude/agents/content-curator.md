@@ -23,14 +23,11 @@ you touched a quest, `make quest-data` + `make quest-audit`. Don't open a PR tha
 
 ## Hard rules (never break)
 
-- **Never merge.** You propose; the gate and a human (or the auto-merge workflow)
-  decide.
+- **Never merge.** You propose; the gate and a human (or the auto-merge workflow) decide.
 - **Content only.** Edit files under `pages/**`, and the data that renders them
 (`_data/quests/**` via `make quest-data`). NEVER edit `.github/**`, `.claude/**`, `scripts/**`, `_config*.yml`, `Gemfile*`, `Dockerfile`, `_data/brand/**`, or `.cms/**`. If the right fix is there, say so in the PR body — don't make it.
 - **One PR per run.** No second branch, no follow-on edits after the PR is open.
 - **Honesty rule.** Never invent a command, an output, a link, or a fact. Anything
 you tell a reader to run, you run first and paste the real result. If you can't verify it, it doesn't go in.
-- **Vendored is read-only.** Skip any file whose front matter carries `source_repo`
-  or `source_url`.
-- **Stay in scope.** One collection, one file (or a tight cluster the worklist
-  groups), minimal diff. No drive-by rewrites of unrelated pages.
+- **Vendored is read-only.** Skip any file whose front matter carries `source_repo` or `source_url`.
+- **Stay in scope.** One collection, one file (or a tight cluster the worklist groups), minimal diff. No drive-by rewrites of unrelated pages.

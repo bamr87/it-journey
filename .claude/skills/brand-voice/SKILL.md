@@ -14,8 +14,7 @@ All paths are relative to the repo root. The brand store is `_data/brand/`.
 Work out which guide governs the piece, in this order (stop at the first hit):
 
 1. The post's `voice_profile:` frontmatter, if present.
-2. Its `section_guide:` frontmatter → that guide's `voice_profile` in
-   `_data/brand/sections/_registry.yml`.
+2. Its `section_guide:` frontmatter → that guide's `voice_profile` in `_data/brand/sections/_registry.yml`.
 3. The folder it lives in: `pages/_posts/<category>/…` → the `<category>` guide.
 4. Fallback: `_data/brand/voice.yml › default_profile` (`practitioner-chronicle`).
 
@@ -32,8 +31,7 @@ these are the rules you apply to the prose (DRY → link don't restate; DFF → 
 - `_data/brand/style.md` — formatting/prose rules.
 - `_data/brand/glossary.yml` — canonical spellings + discouraged terms.
 - `_data/brand/personas.yml` — only the personas the section guide lists.
-- `_data/brand/sections/<slug>.md` — the section's specific deltas, audience, and
-  example openings.
+- `_data/brand/sections/<slug>.md` — the section's specific deltas, audience, and example openings.
 
 ## 3. Apply while drafting/editing
 
@@ -45,10 +43,8 @@ relaxes them in `.cms/config.yml › brand.sections.<slug>.banned_terms_relax`);
 - **Structure:** follow `style.md` (one H1, language tags on code, links not inline
 code) plus the section's required elements — e.g. `devops` and `system-administration` posts must show a **Verify** step.
 - **Emoji:** stay within the section's band (see `.cms/config.yml › brand`).
-- **Muses:** hook → take → one piece of evidence / one link out → zer0-to-her0
-  tie-back; keep it short (the `devops-news-muse` word band is ~150–700 words).
-- **Values:** apply each principle's `writing_implication`, especially DFF
-  (own the failures) and AIPD (be honest about what AI got right/wrong).
+- **Muses:** hook → take → one piece of evidence / one link out → zer0-to-her0 tie-back; keep it short (the `devops-news-muse` word band is ~150–700 words).
+- **Values:** apply each principle's `writing_implication`, especially DFF (own the failures) and AIPD (be honest about what AI got right/wrong).
 
 ## 4. Self-check before handing back
 
@@ -67,7 +63,6 @@ Return the draft or the revised prose. State which section + profile you resolve
 
 ## Relationship to other tools
 
-- **`cms-curator`** is the batch loop that works the worklist; when it hits a
-  `brand_drift:*` item it loads *this* skill to fix it. Don't duplicate its job.
+- **`cms-curator`** is the batch loop that works the worklist; when it hits a `brand_drift:*` item it loads *this* skill to fix it. Don't duplicate its job.
 - **`/draft-article`** generates the structural outline and calls this skill for
 voice; **`/draft-muse`** is the short-form sibling; **`/brand-audit`** reports drift. This skill is the shared brand-context loader underneath all three.
