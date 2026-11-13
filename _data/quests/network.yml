@@ -1,5 +1,5 @@
 stats:
-  total: 228
+  total: 234
   by_level:
     '0000': 30
     '0001': 26
@@ -8,18 +8,18 @@ stats:
     '0100': 9
     '0101': 16
     '0110': 10
-    '0111': 12
-    '1000': 12
-    '1001': 11
-    '1010': 16
+    '0111': 13
+    '1000': 13
+    '1001': 12
+    '1010': 19
     '1011': 12
     '1100': 17
     '1101': 10
     '1110': 13
     '1111': 10
   by_type:
-    epic_quest: 6
-    main_quest: 196
+    epic_quest: 7
+    main_quest: 201
     side_quest: 26
 nodes:
 - id: /quests/0000/bash-run/
@@ -597,6 +597,11 @@ nodes:
   level: '0111'
   type: main_quest
   difficulty: 🟡 Medium
+- id: /quests/0111/silent-network-01-the-wrong-throne/
+  title: 'The Wrong Throne: Prove Which System Booted'
+  level: '0111'
+  type: main_quest
+  difficulty: 🟡 Medium
 - id: /quests/0111/twin-rigs-06-the-steam-rite/
   title: 'The Steam Rite: Install SteamOS on the Great Rig'
   level: '0111'
@@ -657,6 +662,11 @@ nodes:
   level: '1000'
   type: main_quest
   difficulty: ⚔️ Epic
+- id: /quests/1000/silent-network-02-the-deaf-gatekeeper/
+  title: 'The Deaf Gatekeeper: When Your Own Server Stops Listening'
+  level: '1000'
+  type: main_quest
+  difficulty: 🟡 Medium
 - id: /quests/1000/twin-rigs-07-the-free-stalls/
   title: 'The Free Stalls: Stock SteamOS with Open Source Games'
   level: '1000'
@@ -704,6 +714,11 @@ nodes:
   difficulty: 🔴 Hard
 - id: /quests/1001/self-operating-website-04-the-sigils-of-trust/
   title: 'The Sigils of Trust: Auth, Secrets, and the Kill Switch'
+  level: '1001'
+  type: main_quest
+  difficulty: 🔴 Hard
+- id: /quests/1001/silent-network-03-the-rescue-lantern/
+  title: 'The Rescue Lantern: Read the Logs of a System That Won''t Talk'
   level: '1001'
   type: main_quest
   difficulty: 🔴 Hard
@@ -789,6 +804,16 @@ nodes:
   difficulty: 🟡 Medium
 - id: /quests/1010/self-operating-website-05-the-content-forge/
   title: 'The Content Forge: Autonomous Generation That Refuses to Lie'
+  level: '1010'
+  type: main_quest
+  difficulty: 🔴 Hard
+- id: /quests/1010/silent-network-04-the-silencing-script/
+  title: 'The Silencing Script: Find What Stops the Network'
+  level: '1010'
+  type: main_quest
+  difficulty: 🔴 Hard
+- id: /quests/1010/silent-network-05-the-molten-core/
+  title: 'The Molten Core: Match Drivers to Kernels'
   level: '1010'
   type: main_quest
   difficulty: 🔴 Hard
@@ -1105,6 +1130,11 @@ nodes:
 - id: /quests/codex/self-operating-website/
   title: 'Epic Quest: The Self-Operating Website'
   level: '1111'
+  type: epic_quest
+  difficulty: ⚔️ Epic
+- id: /quests/codex/silent-network/
+  title: 'Epic Quest: The Silent Network'
+  level: '1010'
   type: epic_quest
   difficulty: ⚔️ Epic
 - id: /quests/codex/twin-rigs/
@@ -1988,6 +2018,15 @@ edges:
 - source: /quests/0111/rest-principles/
   target: /quests/0111/api-documentation/
   kind: unlocks
+- source: /quests/0111/silent-network-01-the-wrong-throne/
+  target: /quests/codex/silent-network/
+  kind: recommended
+- source: /quests/0111/silent-network-01-the-wrong-throne/
+  target: /quests/0111/twin-rigs-06-the-steam-rite/
+  kind: recommended
+- source: /quests/0111/silent-network-01-the-wrong-throne/
+  target: /quests/1000/silent-network-02-the-deaf-gatekeeper/
+  kind: unlocks
 - source: /quests/0111/twin-rigs-06-the-steam-rite/
   target: /quests/0110/twin-rigs-05-the-great-forge/
   kind: recommended
@@ -2087,6 +2126,15 @@ edges:
 - source: /quests/1000/self-operating-website-03-the-war-machine/
   target: /quests/1001/self-operating-website-04-the-sigils-of-trust/
   kind: unlocks
+- source: /quests/1000/silent-network-02-the-deaf-gatekeeper/
+  target: /quests/0111/silent-network-01-the-wrong-throne/
+  kind: recommended
+- source: /quests/1000/silent-network-02-the-deaf-gatekeeper/
+  target: /quests/1000/pxe-boot-server/
+  kind: recommended
+- source: /quests/1000/silent-network-02-the-deaf-gatekeeper/
+  target: /quests/1001/silent-network-03-the-rescue-lantern/
+  kind: unlocks
 - source: /quests/1000/twin-rigs-07-the-free-stalls/
   target: /quests/0111/twin-rigs-06-the-steam-rite/
   kind: recommended
@@ -2167,6 +2215,15 @@ edges:
   kind: recommended
 - source: /quests/1001/self-operating-website-04-the-sigils-of-trust/
   target: /quests/1010/self-operating-website-05-the-content-forge/
+  kind: unlocks
+- source: /quests/1001/silent-network-03-the-rescue-lantern/
+  target: /quests/1000/silent-network-02-the-deaf-gatekeeper/
+  kind: recommended
+- source: /quests/1001/silent-network-03-the-rescue-lantern/
+  target: /quests/0000/linux-fundamentals/
+  kind: recommended
+- source: /quests/1001/silent-network-03-the-rescue-lantern/
+  target: /quests/1010/silent-network-04-the-silencing-script/
   kind: unlocks
 - source: /quests/1001/twin-rigs-08-the-throttle-wraith/
   target: /quests/0101/twin-rigs-04-the-caravan-road/
@@ -2270,6 +2327,15 @@ edges:
 - source: /quests/1010/self-operating-website-05-the-content-forge/
   target: /quests/1100/self-operating-website-06-the-editors-eye/
   kind: unlocks
+- source: /quests/1010/silent-network-04-the-silencing-script/
+  target: /quests/1001/silent-network-03-the-rescue-lantern/
+  kind: recommended
+- source: /quests/1010/silent-network-04-the-silencing-script/
+  target: /quests/1010/silent-network-05-the-molten-core/
+  kind: unlocks
+- source: /quests/1010/silent-network-05-the-molten-core/
+  target: /quests/1010/silent-network-04-the-silencing-script/
+  kind: recommended
 - source: /quests/1011/agentic-behavior-tuning/
   target: /quests/1010/agentic-failure-root-cause-analysis/
   kind: required
@@ -2872,6 +2938,30 @@ edges:
   kind: unlocks
 - source: /quests/codex/self-operating-website/
   target: /quests/1100/self-operating-website-10-the-bard-forge/
+  kind: unlocks
+- source: /quests/codex/silent-network/
+  target: /quests/0000/linux-fundamentals/
+  kind: recommended
+- source: /quests/codex/silent-network/
+  target: /quests/0111/twin-rigs-06-the-steam-rite/
+  kind: recommended
+- source: /quests/codex/silent-network/
+  target: /quests/1000/pxe-boot-server/
+  kind: recommended
+- source: /quests/codex/silent-network/
+  target: /quests/0111/silent-network-01-the-wrong-throne/
+  kind: unlocks
+- source: /quests/codex/silent-network/
+  target: /quests/1000/silent-network-02-the-deaf-gatekeeper/
+  kind: unlocks
+- source: /quests/codex/silent-network/
+  target: /quests/1001/silent-network-03-the-rescue-lantern/
+  kind: unlocks
+- source: /quests/codex/silent-network/
+  target: /quests/1010/silent-network-04-the-silencing-script/
+  kind: unlocks
+- source: /quests/codex/silent-network/
+  target: /quests/1010/silent-network-05-the-molten-core/
   kind: unlocks
 - source: /quests/codex/twin-rigs/
   target: /quests/0000/terminal-fundamentals/
