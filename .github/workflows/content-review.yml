@@ -59,6 +59,11 @@ jobs:
     needs: gate
     if: ${{ needs.gate.outputs.go == 'true' }}
     runs-on: ubuntu-latest
+    # Bound the review: a stuck agent must not run toward the 6h job ceiling.
+    # This job has not run in the retained history (the lane is off), so 30
+    # minutes is the fleet lane's default (bamr87/bamr87 ai-lane.yml), not a
+    # measured figure.
+    timeout-minutes: 30
     env:
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -106,3 +111,7 @@ jobs:
             only — never edit .github, .claude, scripts, _config, _data/brand, .cms.
           tools: "Bash,Read,Write,Edit,Grep,Glob"
           system: "You are the IT-Journey content reviewer. One editorial pass: improve on-brand (zer0 -> her0), push small fixes, comment the big ideas. Never merge. Content only."
+          # Turn cap, sized BY RULE (no metered run of this lane exists): the
+          # action's $10 dollar cap / $0.15 per turn, rounded down to 60. Raise
+          # it together with max-budget-usd if a real review runs out of turns.
+          max-turns: "60"

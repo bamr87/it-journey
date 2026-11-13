@@ -59,6 +59,12 @@ jobs:
     needs: gate
     if: ${{ needs.gate.outputs.go == 'true' }}
     runs-on: ubuntu-latest
+    # Bound each collection's leg: a stuck agent must not run toward the 6h job
+    # ceiling. This job has not run in the retained history (the lane is off),
+    # so 45 minutes is the value the repo's measured lane uses
+    # (quest-perfection's slice leg), for a job that also sets up Ruby and runs
+    # the content gates.
+    timeout-minutes: 45
     strategy:
       fail-fast: false
       # Serialize: the per-agent "check open auto:content PRs, then open one" dedup
@@ -128,6 +134,10 @@ jobs:
             never edit .github, .claude, scripts, _config, _data/brand, .cms, or deps.
           tools: "Bash,Read,Write,Edit,Grep,Glob"
           system: "You are the IT-Journey content factory. Improve one page on-brand (zer0 -> her0) and open one PR. Never merge. Content only."
+          # Turn cap, sized BY RULE (no metered run of this lane exists): the
+          # action's $10 dollar cap / $0.15 per turn, rounded down to 60. Raise
+          # it together with max-budget-usd if a real pass runs out of turns.
+          max-turns: "60"
 
       - name: Confirm a PR was opened (fail visibly if the agent didn't)
         if: ${{ steps.scope.outputs.run == 'true' }}

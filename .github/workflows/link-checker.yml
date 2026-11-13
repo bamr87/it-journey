@@ -9,9 +9,10 @@ on:
       - '**.html'
       - '**.htm'
 
-  # Scheduled full scan with AI analysis
+  # Scheduled full scan. It makes NO model call: --ai-provider is `none` unless
+  # a person picks one on a manual dispatch (see the analysis step).
   schedule:
-    - cron: '0 6 * * 1'  # Every Monday at 6 AM UTC
+    - cron: '23 6 * * 1'  # Every Monday at 06:23 UTC (off the hour; was 0 6 * * 1)
 
   # Manual trigger with options
   workflow_dispatch:
@@ -116,9 +117,14 @@ jobs:
           jobSummary: true
 
   # ── Scheduled / manual: full scan with analysis ─────────────────────
+  # KILL SWITCH: repo variable LINK_CHECKER_ENABLED == 'false' stops the
+  # scheduled scan; unset (the default) changes nothing. A manual dispatch
+  # bypasses it, and the PR check above is not gated.
   full-link-check:
     name: 🔍 Full Link Health Assessment
-    if: github.event_name != 'pull_request'
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'schedule' && vars.LINK_CHECKER_ENABLED != 'false')
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
@@ -214,7 +220,9 @@ jobs:
     name: 📊 Workflow Summary
     runs-on: ubuntu-latest
     needs: full-link-check
-    if: always() && github.event_name != 'pull_request'
+    # Only when the full scan ran: skipped on a PR, and on a scheduled run the
+    # kill switch stopped.
+    if: always() && needs.full-link-check.result != 'skipped'
 
     steps:
       - name: 📊 Display summary
