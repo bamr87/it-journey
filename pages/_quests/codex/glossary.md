@@ -3,7 +3,7 @@ title: 'Codex Glossary: Fantasy Terms to IT Reality'
 description: The canonical lexicon of the IT-Journey realm — every fantasy term decoded into the technology behind it, from spells and scripts to golems and pipelines.
 excerpt: The realm's shared dictionary — fantasy on one side, real technology on the other.
 date: '2023-11-25T14:12:43.000Z'
-lastmod: '2026-11-06T00:00:00.000Z'
+lastmod: '2026-11-13T00:00:00.000Z'
 draft: false
 permalink: /quests/codex/glossary/
 author: IT-Journey Team
@@ -203,6 +203,8 @@ Chosen — and re-chosen — in the [Character Selection quest](/quests/0000/cha
 | **The Oracle** | An AI chat (a large language model) | Answers the question you asked, not the one you meant. Phrase with care; verify with your own eyes. Prophecy is not proof. |
 | **The Plausible Ghost** | A confident, wrong reading of a legacy system — from an Oracle, a familiar, or a colleague | A guess with good grammar. It haunts every port until the Rosetta Ledger ties out. |
 | **The Throttle Wraith** | Thermal or power throttling under sustained load | Invisible in a five-minute test. It steals speed only once the heat soaks in, and only a long log can catch it. Banished in [The Twin Rigs](/quests/codex/twin-rigs/). |
+| **The Deaf Gatekeeper** | A service that is running but no longer listening — a dead thread, a closed socket | Its lantern is lit and its status page says *running*, but nobody's knocks are heard. Check the sockets, not the banner. Met in [The Silent Network](/quests/codex/silent-network/). |
+| **The Silencing Script** | A helper that stops a service, fails halfway, and never restarts it | Usually a careful spell written for other machines, ended early by `set -e`. Find it in the seconds around *Stopping…* in the Ship's Log. Broken in [The Silent Network](/quests/codex/silent-network/). |
 | **Dragons** | Production incidents | *Here be dragons* marks unmapped territory on old charts and legacy systems alike. The prepared carry runbooks. |
 | **Mimics** | Phishing | Shaped exactly like treasure — an invoice, a password-reset scroll — and bites when touched. Check the sender's true address before opening any chest. |
 | **Trolls** | Trolls | The word crossed over unchanged. Do not feed. |
@@ -229,6 +231,8 @@ Chosen — and re-chosen — in the [Character Selection quest](/quests/0000/cha
 | **The Elder Tomes** | man pages and official manuals | Terse, ancient, correct. `man grep` before you ask the Tavern. |
 | **Sigils** | Status badges | Small marks of standing on a repository's banner: trials passing, version, coverage. |
 | **Maps** | Architecture diagrams | A system you can't draw is a system you don't yet understand. Mermaid is this realm's cartographer's ink. |
+| **The Twin Thrones** | A/B system slots — two copies of the OS, one running, one receiving the next update | Only one throne is occupied at a time. Decrees sent to the empty one (or to a recovery stick with a single throne) vanish. *The Wrong Throne* is debugging a different system than the one you think is running. |
+| **The Rescue Lantern** | A rescue or live system you can reach over SSH, used to read a broken system's disk | Light it beside a system that cannot speak, and read its journal without waking it. Mount read-only; change nothing you came to read. |
 
 ## 🏭 The Great Works — Building, Shipping, Running
 

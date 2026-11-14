@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total": 228,
+    "total": 234,
     "by_level": {
       "0000": 30,
       "0001": 26,
@@ -9,10 +9,10 @@
       "0100": 9,
       "0101": 16,
       "0110": 10,
-      "0111": 12,
-      "1000": 12,
-      "1001": 11,
-      "1010": 16,
+      "0111": 13,
+      "1000": 13,
+      "1001": 12,
+      "1010": 19,
       "1011": 12,
       "1100": 17,
       "1101": 10,
@@ -20,8 +20,8 @@
       "1111": 10
     },
     "by_type": {
-      "epic_quest": 6,
-      "main_quest": 196,
+      "epic_quest": 7,
+      "main_quest": 201,
       "side_quest": 26
     }
   },
@@ -1062,6 +1062,15 @@
       "file": "pages/_quests/0111/rest-principles.md"
     },
     {
+      "id": "/quests/0111/silent-network-01-the-wrong-throne/",
+      "title": "The Wrong Throne: Prove Which System Booted",
+      "level": "0111",
+      "type": "main_quest",
+      "difficulty": "🟡 Medium",
+      "technology": "steamos",
+      "file": "pages/_quests/0111/silent-network-01-the-wrong-throne.md"
+    },
+    {
       "id": "/quests/0111/twin-rigs-06-the-steam-rite/",
       "title": "The Steam Rite: Install SteamOS on the Great Rig",
       "level": "0111",
@@ -1170,6 +1179,15 @@
       "file": "pages/_quests/1000/self-operating-website-03-the-war-machine.md"
     },
     {
+      "id": "/quests/1000/silent-network-02-the-deaf-gatekeeper/",
+      "title": "The Deaf Gatekeeper: When Your Own Server Stops Listening",
+      "level": "1000",
+      "type": "main_quest",
+      "difficulty": "🟡 Medium",
+      "technology": "python",
+      "file": "pages/_quests/1000/silent-network-02-the-deaf-gatekeeper.md"
+    },
+    {
       "id": "/quests/1000/twin-rigs-07-the-free-stalls/",
       "title": "The Free Stalls: Stock SteamOS with Open Source Games",
       "level": "1000",
@@ -1258,6 +1276,15 @@
       "difficulty": "🔴 Hard",
       "technology": "oauth",
       "file": "pages/_quests/1001/self-operating-website-04-the-sigils-of-trust.md"
+    },
+    {
+      "id": "/quests/1001/silent-network-03-the-rescue-lantern/",
+      "title": "The Rescue Lantern: Read the Logs of a System That Won't Talk",
+      "level": "1001",
+      "type": "main_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "linux",
+      "file": "pages/_quests/1001/silent-network-03-the-rescue-lantern.md"
     },
     {
       "id": "/quests/1001/twin-rigs-08-the-throttle-wraith/",
@@ -1411,6 +1438,24 @@
       "difficulty": "🔴 Hard",
       "technology": "claude-code",
       "file": "pages/_quests/1010/self-operating-website-05-the-content-forge.md"
+    },
+    {
+      "id": "/quests/1010/silent-network-04-the-silencing-script/",
+      "title": "The Silencing Script: Find What Stops the Network",
+      "level": "1010",
+      "type": "main_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "systemd",
+      "file": "pages/_quests/1010/silent-network-04-the-silencing-script.md"
+    },
+    {
+      "id": "/quests/1010/silent-network-05-the-molten-core/",
+      "title": "The Molten Core: Match Drivers to Kernels",
+      "level": "1010",
+      "type": "main_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "linux",
+      "file": "pages/_quests/1010/silent-network-05-the-molten-core.md"
     },
     {
       "id": "/quests/1011/agentic-behavior-tuning/",
@@ -1978,6 +2023,15 @@
       "difficulty": "⚔️ Epic",
       "technology": "github-actions",
       "file": "pages/_quests/codex/self-operating-website.md"
+    },
+    {
+      "id": "/quests/codex/silent-network/",
+      "title": "Epic Quest: The Silent Network",
+      "level": "1010",
+      "type": "epic_quest",
+      "difficulty": "⚔️ Epic",
+      "technology": "steamos",
+      "file": "pages/_quests/codex/silent-network.md"
     },
     {
       "id": "/quests/codex/twin-rigs/",
@@ -3456,6 +3510,21 @@
       "kind": "unlocks"
     },
     {
+      "source": "/quests/0111/silent-network-01-the-wrong-throne/",
+      "target": "/quests/codex/silent-network/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/0111/silent-network-01-the-wrong-throne/",
+      "target": "/quests/0111/twin-rigs-06-the-steam-rite/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/0111/silent-network-01-the-wrong-throne/",
+      "target": "/quests/1000/silent-network-02-the-deaf-gatekeeper/",
+      "kind": "unlocks"
+    },
+    {
       "source": "/quests/0111/twin-rigs-06-the-steam-rite/",
       "target": "/quests/0110/twin-rigs-05-the-great-forge/",
       "kind": "recommended"
@@ -3621,6 +3690,21 @@
       "kind": "unlocks"
     },
     {
+      "source": "/quests/1000/silent-network-02-the-deaf-gatekeeper/",
+      "target": "/quests/0111/silent-network-01-the-wrong-throne/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/1000/silent-network-02-the-deaf-gatekeeper/",
+      "target": "/quests/1000/pxe-boot-server/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/1000/silent-network-02-the-deaf-gatekeeper/",
+      "target": "/quests/1001/silent-network-03-the-rescue-lantern/",
+      "kind": "unlocks"
+    },
+    {
       "source": "/quests/1000/twin-rigs-07-the-free-stalls/",
       "target": "/quests/0111/twin-rigs-06-the-steam-rite/",
       "kind": "recommended"
@@ -3753,6 +3837,21 @@
     {
       "source": "/quests/1001/self-operating-website-04-the-sigils-of-trust/",
       "target": "/quests/1010/self-operating-website-05-the-content-forge/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/1001/silent-network-03-the-rescue-lantern/",
+      "target": "/quests/1000/silent-network-02-the-deaf-gatekeeper/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/1001/silent-network-03-the-rescue-lantern/",
+      "target": "/quests/0000/linux-fundamentals/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/1001/silent-network-03-the-rescue-lantern/",
+      "target": "/quests/1010/silent-network-04-the-silencing-script/",
       "kind": "unlocks"
     },
     {
@@ -3924,6 +4023,21 @@
       "source": "/quests/1010/self-operating-website-05-the-content-forge/",
       "target": "/quests/1100/self-operating-website-06-the-editors-eye/",
       "kind": "unlocks"
+    },
+    {
+      "source": "/quests/1010/silent-network-04-the-silencing-script/",
+      "target": "/quests/1001/silent-network-03-the-rescue-lantern/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/1010/silent-network-04-the-silencing-script/",
+      "target": "/quests/1010/silent-network-05-the-molten-core/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/1010/silent-network-05-the-molten-core/",
+      "target": "/quests/1010/silent-network-04-the-silencing-script/",
+      "kind": "recommended"
     },
     {
       "source": "/quests/1011/agentic-behavior-tuning/",
@@ -4928,6 +5042,46 @@
     {
       "source": "/quests/codex/self-operating-website/",
       "target": "/quests/1100/self-operating-website-10-the-bard-forge/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/silent-network/",
+      "target": "/quests/0000/linux-fundamentals/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/codex/silent-network/",
+      "target": "/quests/0111/twin-rigs-06-the-steam-rite/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/codex/silent-network/",
+      "target": "/quests/1000/pxe-boot-server/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/codex/silent-network/",
+      "target": "/quests/0111/silent-network-01-the-wrong-throne/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/silent-network/",
+      "target": "/quests/1000/silent-network-02-the-deaf-gatekeeper/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/silent-network/",
+      "target": "/quests/1001/silent-network-03-the-rescue-lantern/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/silent-network/",
+      "target": "/quests/1010/silent-network-04-the-silencing-script/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/silent-network/",
+      "target": "/quests/1010/silent-network-05-the-molten-core/",
       "kind": "unlocks"
     },
     {
