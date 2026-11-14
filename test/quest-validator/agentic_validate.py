@@ -9,6 +9,9 @@ plus prioritized recommendations. This complements the structural validator
 
 Auth: the ``claude`` CLI handles it. Locally it uses your logged-in session;
 in CI export ``CLAUDE_CODE_OAUTH_TOKEN`` (generate with ``claude setup-token``).
+OAuth is preferred: with both it and ``ANTHROPIC_API_KEY`` set, each call gets
+one credential at a time, OAuth first, falling back to the key only when OAuth
+is refused (order override: ``QUEST_QA_AUTH_ORDER`` / ``AI_AUTH_ORDER``).
 
 Exit codes (the contract the perfection-loop workflows route on):
   0 — evidence gathered: full coverage, or partial with >=1 quest scored.
@@ -56,13 +59,28 @@ _PREFLIGHT_EXIT = {"ok": 0, "unknown": 1, "throttled": 2, "auth": 4}
 def _collect_quests(args):
     from agentic import loader  # lazy: pulls pyyaml, unneeded for --preflight
     if args.quest_files:
-        out = []
+        out, not_quests = [], []
         for f in args.quest_files:
             q = loader.load_quest(f)
             if q is None:
                 print(f"⚠️  Skipping (not a parseable quest): {f}", file=sys.stderr)
                 continue
+            # Same is-quest rule as discovery (quest_registry.is_quest): a changed
+            # glossary or doc page under pages/_quests/ is not a playable quest, so
+            # don't spend a review on it.
+            if not loader.reg.is_quest(q.fm):
+                kind = q.fm.get("fmContentType") or "none"
+                print(f"ℹ️  Skipping (fmContentType: {kind}, not a playable quest): {f}",
+                      file=sys.stderr)
+                not_quests.append(f)
+                continue
             out.append(q)
+        if not out and not_quests:
+            # Nothing playable changed — not an error. No report is written, so a
+            # PR job has nothing to post.
+            print("ℹ️  No playable quests among the given files — nothing to review.",
+                  file=sys.stderr)
+            sys.exit(0)
         if not out:
             print("❌ None of the given files are parseable quests.", file=sys.stderr)
             sys.exit(2)
@@ -181,6 +199,7 @@ def main():
     # credentials; caller escalates to a human). Written into the evidence as
     # `truncation_reason` so the report job can route a zero-scored run correctly.
     truncation_reason = None
+    truncation_detail = ""   # one secret-scrubbed line: what each credential said
     for i, q in enumerate(quests, 1):
         if args.max_cost_usd and spent >= args.max_cost_usd:
             print(f"\n💰 Cost ceiling reached (${spent:.4f} ≥ ${args.max_cost_usd}); "
@@ -202,6 +221,7 @@ def main():
             # A run that got ZERO quests still exits non-zero (2/4) at the end.
             truncation_reason = ("rate-limit" if isinstance(e, runner.ThrottleError)
                                  else "auth")
+            truncation_detail = getattr(e, "reason", "") or ""
             print(f"\n⚠️  {e}", file=sys.stderr)
             print(f"⚠️  Batch stopped ({truncation_reason}) after {len(results)}/{len(quests)} "
                   f"quest(s) — writing PARTIAL evidence.", file=sys.stderr)
@@ -212,6 +232,9 @@ def main():
                             "verdict_obj": None})
 
     agg = report.aggregate(results)
+    # Which credential actually served the batch (oauth / api_key / ambient), so
+    # a report shows at a glance whether the preferred OAuth path is in use.
+    agg["auth_method"] = r.auth_method
     if truncation_reason:
         # Record partial coverage so a truncated batch is never mistaken for full,
         # clean coverage (by a human, the ledger, or the gate below).
@@ -219,6 +242,8 @@ def main():
         agg["evaluated"] = len(results)
         agg["requested"] = len(quests)
         agg["truncation_reason"] = truncation_reason
+        if truncation_detail:
+            agg["truncation_detail"] = truncation_detail
         if truncation_reason == "auth":
             agg["auth_truncated"] = True   # kept for older evidence consumers
     print("\n" + report.render_console(agg, verbose=args.verbose))
@@ -227,6 +252,14 @@ def main():
                  "cost": "the cost ceiling"}[truncation_reason]
         print(f"\n⚠️  BATCH TRUNCATED by {cause} — evaluated {len(results)}/{len(quests)} quest(s). "
               f"The score gate covers only the evaluated subset.", file=sys.stderr)
+        if truncation_reason in ("auth", "rate-limit"):
+            # Callers often run this step continue-on-error (advisory lanes), which
+            # hid weeks of dead-credential runs behind a green check. Annotate the run.
+            runner._annotate(
+                "error" if truncation_reason == "auth" else "warning",
+                "Agentic quest review incomplete",
+                f"Stopped by {cause}: evaluated {len(results)}/{len(quests)} quest(s). "
+                + (truncation_detail or ""))
 
     if args.report:
         Path(args.report).write_text(report.render_json(agg), encoding="utf-8")
