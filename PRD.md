@@ -124,6 +124,12 @@ python3 scripts/validation/link-checker.py --scope website
 | `prd-sync.yml` | Schedule/Push | Update PRD.md |
 | `frontmatter-validation.yml` | Push | Validate content metadata |
 
+### AI Orchestration Components
+
+| Component | Location | Purpose | Status |
+|-----------|----------|---------|--------|
+| **JEV** | Planned (sits alongside `scripts/ai/`, `.github/instructions/`, `claude-run` action, agent workflows) | Harness-level AI orchestration engine: reasons over concepts, quests + docs to drive consistency harnesses, answer cross-cutting questions, validate quest logic. See [Roadmap](#7-road-roadmap) | 📋 Planned (not built) |
+
 ## 4. NFR (Non-Functional Realities)
 
 | Category | Requirement | Metric | Current |
@@ -246,6 +252,7 @@ The platform focuses on:
 | **Community** | Contributor growth + content expansion | 2026 Q1 | 📋 Planned |
 | **Certification** | Skill tracking + progress metrics | 2026 Q2 | 📋 Planned |
 | **AI Tutor** | Personalized learning recommendations | 2026 Q4 | 🔮 Vision |
+| **JEV** | AI agent logic engine: reasons over concepts, quests + docs, validates quest logic, drives consistency harnesses | 2027 Q1 | 📋 Planned |
 
 ### Upcoming Features
 
