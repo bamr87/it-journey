@@ -141,7 +141,7 @@ jobs:
     env:
       GH_TOKEN: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      # Claude auth: OAuth only (CLAUDE_CODE_OAUTH_TOKEN). ANTHROPIC_API_KEY disabled for now (2026-11-15); to restore, re-add the secrets.ANTHROPIC_API_KEY reference.
       # MODEL POLICY — one pinned model for the whole quest loop (probe, engine
       # walks, walker/fixer agents), Sonnet-class by default: the loop's work is
       # high-volume sandboxed tool use, which is Sonnet's sweet spot, and on
@@ -160,10 +160,10 @@ jobs:
         run: |
           set -euo pipefail
           armed=false
-          if [ "$ENABLED" = "true" ] && { [ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}" ] || [ -n "${ANTHROPIC_API_KEY:-}" ]; }; then
+          if [ "$ENABLED" = "true" ] && [ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then
             armed=true
           else
-            echo "quest-perfection idle (enabled=$ENABLED, auth=$([ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}${ANTHROPIC_API_KEY:-}" ] && echo yes || echo no))."
+            echo "quest-perfection idle (enabled=$ENABLED, auth=$([ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}" ] && echo yes || echo no))."
           fi
           echo "armed=$armed" >> "$GITHUB_OUTPUT"
 
@@ -525,7 +525,7 @@ jobs:
       cancel-in-progress: false
     env:
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      # Claude auth: OAuth only (CLAUDE_CODE_OAUTH_TOKEN). ANTHROPIC_API_KEY disabled for now (2026-11-15); to restore, re-add the secrets.ANTHROPIC_API_KEY reference.
       # Engine model pin (see the gate's MODEL POLICY comment) — the engine reads
       # $QUEST_AI_MODEL itself; AI_MODEL routes the SAME model into the
       # walker agent step (the fleet's claude-run action honors it).

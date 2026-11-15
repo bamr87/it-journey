@@ -29,7 +29,8 @@
 # refiner's marker comment instead of stacking new ones.
 #
 # OFF by default: gates on the QUEST_IDEA_ENABLED repo variable AND Claude
-# auth (CLAUDE_CODE_OAUTH_TOKEN, or ANTHROPIC_API_KEY for the API fallback).
+# auth (CLAUDE_CODE_OAUTH_TOKEN only; the ANTHROPIC_API_KEY API fallback is
+# disabled for now, 2026-11-15).
 # ONE-TIME SETUP: issue forms only apply labels that already exist — create
 # the trigger label before flipping the variable (see scripts/ai/README.md):
 #   gh label create quest-idea --color F9D0C4 \
@@ -69,7 +70,7 @@ jobs:
         env:
           ENABLED: ${{ vars.QUEST_IDEA_ENABLED }}
           OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Claude auth: OAuth only (CLAUDE_CODE_OAUTH_TOKEN). ANTHROPIC_API_KEY disabled for now (2026-11-15); to restore, re-add the secrets.ANTHROPIC_API_KEY reference.
           EVENT: ${{ github.event_name }}
           LABEL: ${{ github.event.label.name }}
           HAS_LABEL: ${{ contains(github.event.issue.labels.*.name, 'quest-idea') }}
@@ -115,10 +116,10 @@ jobs:
 
           # 2) AI is opt-in: needs the kill switch AND auth.
           if [ "$trigger" = "true" ] && [ "$ENABLED" = "true" ] \
-             && { [ -n "$OAUTH" ] || [ -n "$KEY" ]; } && [ -n "$issue" ]; then
+             && [ -n "$OAUTH" ] && [ -n "$issue" ]; then
             go=true
           else
-            echo "quest-idea-intake idle (trigger=$trigger, enabled=$ENABLED, auth=$([ -n "$OAUTH$KEY" ] && echo yes || echo no), issue=${issue:-none})."
+            echo "quest-idea-intake idle (trigger=$trigger, enabled=$ENABLED, auth=$([ -n "$OAUTH" ] && echo yes || echo no), issue=${issue:-none})."
           fi
           echo "go=$go" >> "$GITHUB_OUTPUT"
           echo "issue=$issue" >> "$GITHUB_OUTPUT"
@@ -180,7 +181,7 @@ jobs:
         uses: bamr87/bamr87/.github/actions/claude-run@main
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Claude auth: OAuth only (CLAUDE_CODE_OAUTH_TOKEN). ANTHROPIC_API_KEY disabled for now (2026-11-15); to restore, re-add the secrets.ANTHROPIC_API_KEY reference.
         with:
           agent: idea-refiner
           tools: "Read,Grep,Glob,Bash(gh issue view:*),Bash(gh issue list:*),Bash(gh issue edit:*),Bash(gh issue comment:*),Bash(gh api:*),Bash(gh label list:*),Bash(python3 scripts/quest/idea_intake.py:*)"

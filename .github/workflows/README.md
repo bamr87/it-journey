@@ -12,7 +12,7 @@ This directory holds every CI/CD and automation workflow for IT-Journey. This RE
 cancel in-progress runs; mutating/long jobs (auto-merge, CMS loop, contributor refresh) use `cancel-in-progress: false`.
 - **Untrusted input.** `github.event.*` values are passed through `env:`, never interpolated directly into `run:`.
 - **AI is opt-in.** Every Claude-powered workflow gates on a `*_ENABLED` repo
-variable **and** the `CLAUDE_CODE_OAUTH_TOKEN`/`ANTHROPIC_API_KEY` secret, so nothing AI runs until both are present (see `scripts/ai/README.md`).
+variable **and** the `CLAUDE_CODE_OAUTH_TOKEN` secret (Claude auth is OAuth only; `ANTHROPIC_API_KEY` is disabled for now, 2026-11-15), so nothing AI runs until both are present (see `scripts/ai/README.md`).
 - **One AI step.** Model calls go through `uses: bamr87/bamr87/.github/actions/claude-run@main`, the fleet's shared `ai-runner` kit consumed by reference from the hub (nothing vendored here; fix it upstream in bamr87/bamr87 and every lane picks it up on its next run). An attempted-and-failed call fails the step with the reason (`::error::`), a run with no credentials is a clean no-op. Per-step model routing uses the `AI_MODEL` env (the quest lanes set it from `vars.QUEST_AI_MODEL`) or the action's `model` input.
 
 ## Inventory

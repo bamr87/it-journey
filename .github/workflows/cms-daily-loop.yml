@@ -215,9 +215,9 @@ jobs:
         id: auth
         env:
           OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          APIKEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Claude auth: OAuth only (CLAUDE_CODE_OAUTH_TOKEN). ANTHROPIC_API_KEY disabled for now (2026-11-15); to restore, re-add the secrets.ANTHROPIC_API_KEY reference.
         run: |
-          if [ -z "$OAUTH" ] && [ -z "$APIKEY" ]; then
+          if [ -z "$OAUTH" ]; then
             echo "::warning::No Claude credential; skipping substantive lane."
             echo "ok=false" >> "$GITHUB_OUTPUT"
           else
@@ -258,9 +258,18 @@ jobs:
         if: steps.auth.outputs.ok == 'true'
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Claude auth: OAuth only (CLAUDE_CODE_OAUTH_TOKEN). ANTHROPIC_API_KEY disabled for now (2026-11-15); to restore, re-add the secrets.ANTHROPIC_API_KEY reference.
         run: |
           set -o pipefail
+          # OAuth only (carries the #938 manual patch, superseded): with both set
+          # the CLI picks ANTHROPIC_API_KEY over the OAuth token, so a dead key
+          # would shadow a healthy token (PR #933). The key is never passed now;
+          # unset it anyway so a stray runner/env value can't win.
+          unset ANTHROPIC_API_KEY
+          if [ -z "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then
+            echo "::error::CLAUDE_CODE_OAUTH_TOKEN is empty — Claude auth is OAuth only (ANTHROPIC_API_KEY disabled for now)."
+            exit 1
+          fi
           claude -p "Use the cms-curator skill to run ONE substantive (Lane B) pass over today's .cms worklist. Apply edits and validate locally, but do NOT create a branch, commit, push, or open a PR — this workflow handles git. Respect the batch cap and all safety rules in the skill." \
             --permission-mode acceptEdits \
             --allowedTools "Bash,Read,Edit,Write,Glob,Grep" \
