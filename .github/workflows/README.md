@@ -6,14 +6,11 @@ This directory holds every CI/CD and automation workflow for IT-Journey. This RE
 
 ## Conventions (all workflows)
 
-- **Least privilege.** Default `permissions: contents: read`; write is granted
-  only on the job that needs it.
-- **Pinned actions.** Third-party actions are pinned to a full commit SHA;
-  [Dependabot](../dependabot.yml) keeps them current.
+- **Least privilege.** Default `permissions: contents: read`; write is granted only on the job that needs it.
+- **Pinned actions.** Third-party actions are pinned to a full commit SHA; [Dependabot](../dependabot.yml) keeps them current.
 - **Concurrency.** Each workflow declares a `concurrency:` group. Fast PR checks
 cancel in-progress runs; mutating/long jobs (auto-merge, CMS loop, contributor refresh) use `cancel-in-progress: false`.
-- **Untrusted input.** `github.event.*` values are passed through `env:`, never
-  interpolated directly into `run:`.
+- **Untrusted input.** `github.event.*` values are passed through `env:`, never interpolated directly into `run:`.
 - **AI is opt-in.** Every Claude-powered workflow gates on a `*_ENABLED` repo
 variable **and** the `CLAUDE_CODE_OAUTH_TOKEN`/`ANTHROPIC_API_KEY` secret, so nothing AI runs until both are present (see `scripts/ai/README.md`).
 - **One AI step.** Model calls go through `uses: bamr87/bamr87/.github/actions/claude-run@main`, the fleet's shared `ai-runner` kit consumed by reference from the hub (nothing vendored here; fix it upstream in bamr87/bamr87 and every lane picks it up on its next run). An attempted-and-failed call fails the step with the reason (`::error::`), a run with no credentials is a clean no-op. Per-step model routing uses the `AI_MODEL` env (the quest lanes set it from `vars.QUEST_AI_MODEL`) or the action's `model` input.
@@ -103,21 +100,17 @@ The production site (`it-journey.dev`) is served by **GitHub Pages** in legacy *
 
 Guarantees behind "only the Pages build runs on a `gh-pages` update":
 
-1. Every push-triggered workflow is scoped to `main`/`master` (this is why
-   `validate-solutions.yml` — previously branchless — is now branch-guarded).
+1. Every push-triggered workflow is scoped to `main`/`master` (this is why `validate-solutions.yml` — previously branchless — is now branch-guarded).
 2. The merge is performed with `GITHUB_TOKEN`, whose pushes do not start new
 Actions runs; the legacy Pages build is a Pages-service job, not an Actions workflow, so it still fires on the branch update.
 
 Operational notes:
 
-- Scheduled/dispatch runs resolve this file **from `main`**, so it only takes
-  effect once merged to `main`.
-- Trigger it on demand from the Actions tab (`workflow_dispatch`) to publish
-  immediately instead of waiting for the next scheduled tick (02:20/14:20 UTC).
+- Scheduled/dispatch runs resolve this file **from `main`**, so it only takes effect once merged to `main`.
+- Trigger it on demand from the Actions tab (`workflow_dispatch`) to publish immediately instead of waiting for the next scheduled tick (02:20/14:20 UTC).
 - **Prefer the default `GITHUB_TOKEN`** (used automatically): its pushes create
 no Actions runs at all, so the `gh-pages` update stays Pages-build-only. An optional `GH_PAGES_DEPLOY_TOKEN` secret (a PAT with `contents:write`) is used if present — only set it if the legacy Pages build ever fails to fire from a `GITHUB_TOKEN` push. A PAT push, unlike `GITHUB_TOKEN`, makes GitHub re-evaluate the workflow files now mirrored on `gh-pages`, which can log a harmless startup-failure for reusable-workflow files (e.g. `quest-perfection`); branch-scoping still keeps the real CI workflows from running.
-- If you migrate to "Deploy from GitHub Actions", replace this workflow with an
-  `actions/deploy-pages` workflow and update this section.
+- If you migrate to "Deploy from GitHub Actions", replace this workflow with an `actions/deploy-pages` workflow and update this section.
 
 ## Contributing
 

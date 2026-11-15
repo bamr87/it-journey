@@ -109,8 +109,7 @@ diff/approve card in the webview; nothing writes to disk without the user's clic
 - Reuse the **`cms-curator` skill** verbatim so editor behavior == CI behavior.
 - Use **structured output** (`outputFormat: { type: 'json_schema' }`) for
 proposals (`{ file, action, rationale, frontmatter_changes }`) so the panel can show a clean review list and validate against `content-schema.json` first.
-- Stream `SDKMessage`s to the webview via `postMessage`; wire a Stop button to
-  `query.interrupt()` / an `AbortController`.
+- Stream `SDKMessage`s to the webview via `postMessage`; wire a Stop button to `query.interrupt()` / an `AbortController`.
 - Pin a recent `@anthropic-ai/claude-agent-sdk` (one new enough to expose
 `outputFormat: { type: 'json_schema' }` and the canonical `query()` API; verify against the current npm release before locking a version). Do **not** use the deprecated unstable V2 session API (`unstable_v2_*`); use `query()` with `options.resume` for multi-turn.
 
@@ -145,8 +144,7 @@ proposals (`{ file, action, rationale, frontmatter_changes }`) so the panel can 
 ### Views (`contributes.views` under a custom `itjCms` container)
 
 - `itjCms.content` — TreeDataProvider: collection → file → issues (cheap, native).
-- `itjCms.dashboard` — Webview (`retainContextWhenHidden: true`) for grid +
-  agent transcript.
+- `itjCms.dashboard` — Webview (`retainContextWhenHidden: true`) for grid + agent transcript.
 
 ---
 
@@ -155,8 +153,7 @@ proposals (`{ file, action, rationale, frontmatter_changes }`) so the panel can 
 The extension **complements**, not replaces, `eliostruyf.vscode-front-matter`:
 
 - It reads `frontmatter.json` as the field-schema source (single source of truth).
-- It does not touch Front Matter's git posture (`git.enabled: false`) — commits/
-  PRs go through git/`gh` + the existing CI gates, same as the loop.
+- It does not touch Front Matter's git posture (`git.enabled: false`) — commits/ PRs go through git/`gh` + the existing CI gates, same as the loop.
 - Users keep Front Matter for manual authoring; the new extension adds the health
 view, the worklist, and the agent. (Long-term, a fork that grafts Claude Code into Front Matter's panels via its extensibility SDK — `registerPanelView`/`registerCustomField` — is an option, but the standalone reader above ships faster and carries no upstream maintenance burden.)
 
@@ -166,14 +163,10 @@ view, the worklist, and the agent. (Long-term, a fork that grafts Claude Code in
 
 1. **MVP — read-only viewer.** Activity-bar container, TreeView + Contents grid
 from `content-index.json`, status bar health, `refreshIndex` (shell out to `cms.py`). No AI yet. Proves the contract.
-2. **Worklist + mechanical.** Worklist panel; `runMechanicalLane` (shell to
-   `make content-normalize-apply`) with a diff preview. Still no model calls.
-3. **Agent panel.** Embed `query()`, `canUseTool` approve/deny, run `cms-curator`
-   on a file/selection, structured proposals validated against the schema.
-4. **Dashboards.** Taxonomy + Media views; SEO scorecard; "generate from
-   template" actions.
-5. **Polish.** Multi-turn resume, budget/turn telemetry, settings, packaging to
-   the marketplace.
+2. **Worklist + mechanical.** Worklist panel; `runMechanicalLane` (shell to `make content-normalize-apply`) with a diff preview. Still no model calls.
+3. **Agent panel.** Embed `query()`, `canUseTool` approve/deny, run `cms-curator` on a file/selection, structured proposals validated against the schema.
+4. **Dashboards.** Taxonomy + Media views; SEO scorecard; "generate from template" actions.
+5. **Polish.** Multi-turn resume, budget/turn telemetry, settings, packaging to the marketplace.
 
 ### Suggested repo scaffold
 

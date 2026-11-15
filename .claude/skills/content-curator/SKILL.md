@@ -11,10 +11,8 @@ It ends in **exactly one pull request** (or a clean no-op with a reason), never 
 
 ## 0. Inputs
 
-- **`COLLECTION`** — one of `quests · docs · notes · quickstart · about` (the loose
-  `pages/` root counts as `root`). You improve only this collection this run.
-- Auth + model come from the runner (the fleet's `claude-run` action + `_data/ai.yml`); you
-  don't manage them.
+- **`COLLECTION`** — one of `quests · docs · notes · quickstart · about` (the loose `pages/` root counts as `root`). You improve only this collection this run.
+- Auth + model come from the runner (the fleet's `claude-run` action + `_data/ai.yml`); you don't manage them.
 
 ## 1. Orient (delegate to cms-curator §1)
 
@@ -31,8 +29,7 @@ Run the **`brand-voice`** skill for `COLLECTION` so the section's profile, value
 
 ## 3. Pick exactly one target
 
-- Dedup first: `gh pr list --state open --label auto:content --json title,headRefName`.
-  If your best candidate already has an open PR, take the next.
+- Dedup first: `gh pr list --state open --label auto:content --json title,headRefName`. If your best candidate already has an open PR, take the next.
 - Prefer the **lowest health / most drift** Lane B item for the collection. If Lane
 B is dry, pick the weakest existing page in the collection (lowest cms health) and improve that — **never silently no-op**.
 
@@ -43,8 +40,7 @@ Apply cms-curator §"Lane B" judgment plus the brand-voice bar:
 - Tighten prose; fix structure; add a concrete "you'll know it worked when…".
 - Normalize frontmatter to CI constraints (title 30–60, description 120–160,
 ISO-8601 dates, YAML-list tags/categories). Reuse `make content-normalize-apply` for mechanical bits — don't hand-fix what a fixer handles.
-- Kill drift: `python3 scripts/ci/brand_lint.py <file>` must come back clean
-  (fix `preferred` spellings and replace `discouraged` hype with specifics).
+- Kill drift: `python3 scripts/ci/brand_lint.py <file>` must come back clean (fix `preferred` spellings and replace `discouraged` hype with specifics).
 - Honesty rule: every command/output/link is real and verified.
 
 ## 5. Verify (delegate to cms-curator §validate)
