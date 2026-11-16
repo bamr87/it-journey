@@ -32,7 +32,7 @@ Start with the root [README](../README.md) for what IT-Journey is, then [AGENTS.
 | [`docs/ROADMAP.md`](ROADMAP.md) | The 2024–2026 master roadmap: the four learning realms (QuickStart, Journey, Library, Notebook — three since retired), beginner-to-expert paths and the Q1 2026 priorities; kept for history, not maintained. |
 | [`docs/adr/`](adr/README.md) | How this repository records hard-to-reverse decisions as numbered ADRs — the format, required sections and status values — and the index of every ADR. |
 | [`docs/agents/`](agents/README.md) | How this repository grades its agents with machine-verifiable gates, runs a root-cause analysis before any re-run, and logs every instruction change (GH-600 Domain 4). |
-| [`docs/amendments/`](amendments/README.md) | The append-only log of changes to [the constitution](constitution.md). |
+| [`docs/amendments/`](amendments/README.md) | The append-only log of changes to [the constitution](constitution.md). Process: constitution § 8. |
 | [`docs/git-archaeology/`](git-archaeology/README.md) | Bounded retrospectives of this repository's own Git history — one evidence index per commit range, with the published reading at /digs/. |
 
 ### `docs/architecture/`
