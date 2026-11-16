@@ -131,7 +131,7 @@ That openness is Design for Failure pointed inward. We would rather show a worki
 
 ## Where we're headed
 
-The plan is as open as the code. The [feature list]({{ '/about/features/' | relative_url }}) shows what you can use today. The [product requirements document (PRD)](https://github.com/bamr87/it-journey/blob/main/PRD.md) says what the platform must do and why, and its [roadmap](https://github.com/bamr87/it-journey/blob/main/PRD.md#7-road-roadmap) lists the milestones still ahead; they are plans, not live features, until they reach the feature list.
+The plan is as open as the code. The [feature list]({{ '/about/features/' | relative_url }}) shows what you can use today. The [product requirements document (PRD)](https://github.com/bamr87/it-journey/blob/main/PRD.md) says what the platform must do and why, and its [roadmap](https://github.com/bamr87/it-journey/blob/main/PRD.md#7-road-roadmap) lists the milestones still ahead; they are plans, not live features, until they reach the feature list. Every release is recorded in the [changelog](https://github.com/bamr87/it-journey/blob/main/CHANGELOG.md), and [how we version releases]({{ '/about/versioning/' | relative_url }}) explains what the numbers mean.
 
 ## Join the journey
 

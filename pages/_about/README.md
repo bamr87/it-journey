@@ -17,7 +17,7 @@ This README is a map of the folder for contributors. It sets `published: false`,
 _about/
 ├── about.md                    # Main about page - Mission, vision, principles
 ├── purpose.md                  # Educational mission statement
-├── versioning.md               # Content versioning information
+├── versioning.md               # Versioning and the release process
 ├── contribute/                 # Community and contribution
 │   ├── contributing.md         # How to contribute
 │   └── contributors/           # Contributor profiles
@@ -71,6 +71,7 @@ Visit the **[Zer0-Mistakes Theme Documentation](https://github.com/bamr87/zer0-m
 - **[Learning Features](features/index.md)** (`/about/features/`) - Platform capabilities
 - **[Contributing](contribute/contributing.md)** (`/about/contributing/`) - How to get involved
 - **[Purpose](purpose.md)** (`/about/purpose/`) - Educational mission statement
+- **[Versioning](versioning.md)** (`/about/versioning/`) - How releases are numbered and recorded
 
 ## Complementary Relationship
 
