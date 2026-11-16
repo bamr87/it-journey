@@ -139,21 +139,16 @@ There are two good ways in. If you want to learn, [open the quest map](/quests/)
 
 {% if site.founder %}
 This platform was founded by **{{ site.founder }}** — an IT nerd trying to be an IT hero — and is kept alive by a community of contributors.
-{% else %}
-This platform was founded by **Amr Abdel-Motaleb** — an IT nerd trying to be an IT hero — and is kept alive by a community of contributors.
 {% endif %}
 
 {% if site.maintainers and site.maintainers.size > 0 %}
 **Maintainers:** {% for maintainer in site.maintainers %}[{{ maintainer.name }}]({{ maintainer.profile }}){% unless forloop.last %} · {% endunless %}{% endfor %}
 {% endif %}
 
-**Built with open tools:**
 {% if site.powered_by and site.powered_by.size > 0 %}
-{% for tech in site.powered_by %}[{{ tech.name }}]({{ tech.url }}){% unless forloop.last %} · {% endunless %}{% endfor %}.
-{% else %}
-[Jekyll](https://jekyllrb.com/), [GitHub Pages](https://pages.github.com/), [Bootstrap](https://getbootstrap.com/), and [Ruby](https://www.ruby-lang.org/).
+**Built with open tools:** {% for tech in site.powered_by %}[{{ tech.name }}]({{ tech.url }}){% unless forloop.last %} · {% endunless %}{% endfor %}.
 {% endif %}
 
-**Get in touch:** {% if site.email %}[email](mailto:{{ site.email }}){% else %}[email](mailto:contact@it-journey.dev){% endif %} · [GitHub Issues](https://github.com/bamr87/it-journey/issues) · [Discussions](https://github.com/bamr87/it-journey/discussions)
+**Get in touch:** {% if site.email %}[email](mailto:{{ site.email }}) · {% endif %}[GitHub Issues](https://github.com/bamr87/it-journey/issues) · [Discussions](https://github.com/bamr87/it-journey/discussions)
 
 > The information age made knowledge abundant. We are here to make it learnable. Pick a quest, run the first command, and go from zer0 to her0.
