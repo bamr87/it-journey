@@ -1,20 +1,21 @@
 ---
 title: IT-Journey About Section
 description: Organization of the IT-Journey about pages and content structure
-permalink: /about/readme/
-lastmod: '2025-01-13T00:00:00.000Z'
+published: false
+lastmod: '2026-11-15T00:00:00.000Z'
 date: '2025-10-12T20:17:00.000Z'
 ---
 # IT-Journey About Section
 
 This directory contains user-facing information about the IT-Journey learning platform, including mission, principles, community guidelines, and educational features.
 
+This README is a map of the folder for contributors. It sets `published: false`, so it is not built into the site.
+
 ## Directory Structure
 
 ```
 _about/
 ├── about.md                    # Main about page - Mission, vision, principles
-├── automation.md               # Platform configuration automation
 ├── purpose.md                  # Educational mission statement
 ├── versioning.md               # Content versioning information
 ├── contribute/                 # Community and contribution
@@ -45,16 +46,13 @@ The IT-Journey about section focuses on:
 
 ### ✨ User-Facing Features
 - The gamified quest learning path (zer0 to her0)
-- Quickstart guides and curated reference notes
+- Curated reference notes
 - Community discussions
 - Content organization
 - Navigation and discovery
 
 ### ⚙️ Platform Information
-- Configuration management
-- Site structure documentation
-- Navigation maps
-- Automation workflows
+- Versioning and the release process
 
 ## Related Documentation
 
@@ -69,10 +67,10 @@ Visit the **[Zer0-Mistakes Theme Documentation](https://github.com/bamr87/zer0-m
 
 ### Key Pages
 
-- **[About IT-Journey](/about/)** - Mission, vision, and core principles
-- **[Learning Features](/about/features/)** - Platform capabilities
-- **[Contributing](/about/contributing/)** - How to get involved
-- **[Purpose](/about/purpose/)** - Educational mission statement
+- **[About IT-Journey](about.md)** (`/about/`) - Mission, vision, and core principles
+- **[Learning Features](features/index.md)** (`/about/features/`) - Platform capabilities
+- **[Contributing](contribute/contributing.md)** (`/about/contributing/`) - How to get involved
+- **[Purpose](purpose.md)** (`/about/purpose/`) - Educational mission statement
 
 ## Complementary Relationship
 
@@ -99,5 +97,5 @@ All content follows IT-Journey's core principles:
 
 ---
 
-**Last Updated:** 2025-01-13 **Maintained by:** IT-Journey Community **Repository:** [github.com/bamr87/it-journey](https://github.com/bamr87/it-journey)
+**Last Updated:** 2026-11-15 **Maintained by:** IT-Journey Community **Repository:** [github.com/bamr87/it-journey](https://github.com/bamr87/it-journey)
 
