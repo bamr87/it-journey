@@ -14,7 +14,7 @@
 name: "⚔️ Quest idea"
 description: "Propose a new IT-Journey quest. Best filed from the Quest Idea Forge, which helps you shape it first."
 title: "Quest idea: "
-labels: ["quest-idea"]
+labels: ["feature", "quest-idea"]
 body:
   - type: markdown
     attributes:
