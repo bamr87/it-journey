@@ -15,7 +15,7 @@ date: 2020-07-30T10:19:45.000Z
 ---
 # IT-Journey
 
-> Gamified, open-source platform for learning IT and software development through hands-on quests, zer0 to her0.
+> IT-Journey's direction is to become the ultimate open home for all things IT learning: data, tools, resources and transparency, with gamified quests from zer0 to her0, practical tutorials, and AI-enhanced learning for everyone ([constitution](docs/constitution.md) §1).
 
 [![CI](https://github.com/bamr87/it-journey/actions/workflows/ci.yml/badge.svg)](https://github.com/bamr87/it-journey/actions/workflows/ci.yml) [![License](https://img.shields.io/github/license/bamr87/it-journey)](LICENSE) [![Live site](https://img.shields.io/badge/live-it--journey.dev-2ea44f)](https://it-journey.dev/)
 
