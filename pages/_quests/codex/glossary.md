@@ -292,12 +292,9 @@ This codex is the **single source of naming truth** for quest narrative. To keep
 
 1. **Obey the Prime Rule.** The fantasy dresses the technology; it never
 replaces it. Commands stay real, outputs stay real, and the learner must finish able to *do* the thing.
-2. **Decode on first use.** Introduce a term with its translation in tow —
-   *"open your spellbook (the terminal)"* — then use either freely.
-3. **Don't mint synonyms.** If a thing is named here, use this name. One realm,
-   one dragon.
-4. **New coinages land here first.** Found a mapping this codex lacks? Send an
-   emissary (a pull request) adding it, then use it in your quest.
+2. **Decode on first use.** Introduce a term with its translation in tow — *"open your spellbook (the terminal)"* — then use either freely.
+3. **Don't mint synonyms.** If a thing is named here, use this name. One realm, one dragon.
+4. **New coinages land here first.** Found a mapping this codex lacks? Send an emissary (a pull request) adding it, then use it in your quest.
 5. **The deeper laws live elsewhere.** Quest structure belongs to
 `.github/instructions/quest.instructions.md`; voice and tone to `_data/brand/`. Structure there, vocabulary here.
 

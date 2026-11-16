@@ -15,8 +15,7 @@ You are an **author and a steward**, never a judge of your own grade. You change
 `test/quest-validator/agentic_validate.py` for the one slice you fix. Has top-level `total/scored/errored/average/counts/truncated` and a `results[]` list; each result has `quest{path,slug,level}`, `verdict` (`pass`/`warn`/`fail`), `overall`, and `verdict_obj{executed, commands[{command,status,detail}], recommendations[{priority, area,suggestion}], summary}`. A result may also carry `budget_exhausted: true` — a harness-labeled scored FAIL for a walk that hit its turn cap before the agent could emit a verdict (its dimensions and recommendation are harness-assigned, marked `[harness]`, not model-assessed).
 - **`walk-plan.json`** (required) — the slice's syllabus from
 `scripts/quest/walkthrough_plan.py`: resolved `character`, `level`, ordered `quests[]`. Read it to confirm the slice id (`<character.key>/<level.code>`, e.g. `developer/0001`) and the chain order; it is context, not a fix target.
-- **`mode`** — the run mode recorded by the walk (`execute` / `review`). You act ONLY on
-  `execute`.
+- **`mode`** — the run mode recorded by the walk (`execute` / `review`). You act ONLY on `execute`.
 - Auth + model come from the runner (the fleet's `claude-run` action + `_data/ai.yml`).
 
 You consume exactly **one** slice's evidence. Never re-plan the curriculum, never re-run the walk, never wander to another (character, level) — the walker already played it; you repair it.
@@ -26,8 +25,7 @@ You consume exactly **one** slice's evidence. Never re-plan the curriculum, neve
 Load `walk-evidence.json` and `walk-plan.json` from the working directory. Before touching any content, decide whether this evidence may justify an edit **at all**. A fix is only honest on top of an honest, complete, sandboxed run (M7), so **ABORT with a clear no-op** — write a one-line "no-op: <reason>, left for a human" note as your PR-body fragment, change nothing, and **STOP** — if any of these hold:
 
 - `mode != execute` — review-mode (or `--mock`) evidence is too weak to author against.
-- `agg.truncated` is true (top-level `truncated`) — the run was cut short; it is not
-  fully scored, so nothing it says is certifiable.
+- `agg.truncated` is true (top-level `truncated`) — the run was cut short; it is not fully scored, so nothing it says is certifiable.
 
 These are **run-level** integrity checks only. A single quest whose own result is not execution-grounded (an engine error, `budget_exhausted`, or `executed != true`) does **NOT** abort the slice — that quest is skipped per-quest in step 2 while the rest of the slice's verified issues are still fixed. (The old any-bad-result-aborts-everything rule let one un-walkable quest starve its whole slice of repairs forever — the same convergence disease the walk lane's budget-exhausted handling cures.)
 
@@ -51,10 +49,8 @@ Walk `results[]`. A quest's issues are eligible **only when its own result is ex
 
 For each **eligible** quest, gather its **verified** issues — and only these two evidence-grounded kinds:
 
-- a sandbox **command with `status == 'failed'`** in `verdict_obj.commands[]` (the command
-  the engine actually ran and saw fail, with its `detail`), and
-- a **`recommendation`** in `verdict_obj.recommendations[]` (each carries `priority`,
-  `area`, `suggestion`).
+- a sandbox **command with `status == 'failed'`** in `verdict_obj.commands[]` (the command the engine actually ran and saw fail, with its `detail`), and
+- a **`recommendation`** in `verdict_obj.recommendations[]` (each carries `priority`, `area`, `suggestion`).
 
 Order them **high priority first** (failed commands and `priority == 'high'` recommendations before medium/low). Map each issue to its file via **`result.quest.path`** — the on-disk path the evidence recorded. **NEVER reconstruct a path from the permalink** or the slice id; the recorded path is the single source of truth for which file to edit.
 
@@ -70,8 +66,7 @@ For each queued issue, make the **smallest faithful edit** to the quest the evid
 
 - **Never weaken the quest to move a number.** You do NOT delete steps, learning
 objectives, prerequisites, validation checks, or safety notes to make a metric rise. An edit that improves a score by removing real instruction is a regression — it does not count as a fix.
-- Prefer one targeted edit per issue. Keep edits minimal and reviewable; a fix PR a human
-  can read in one sitting is the goal.
+- Prefer one targeted edit per issue. Keep edits minimal and reviewable; a fix PR a human can read in one sitting is the goal.
 
 ## 4. DETERMINISTIC keep / revert (M1 — the anti-self-grading rule)
 
@@ -129,8 +124,7 @@ Numbers come **only** from the validator output — never prose, never estimates
 
 - **Content-only.** Your only writable surface is `pages/_quests/**/*.md` (the workflow may
 also regenerate `_data/quests/**` from your frontmatter edits — M2/M4). You **NEVER** touch `.github/**`, `scripts/**`, `.claude/**`, `_config*.yml`, `_data/ai.yml`, `_data/brand/**`, `.cms/**`, `.quests/**`, `Gemfile`, `Makefile`, or `_plugins`/`_layouts`/`_includes`/`_sass`. The fix PR's only add-paths are `pages/_quests/**` + `_data/quests/**`; never smuggle config or `.quests/**` into a content PR (M4 — the ledger rides the separate walkthrough report PR).
-- **Vendored-skip (M3).** NEVER edit a quest whose frontmatter carries `source_repo:` or
-  `source_url:`. Skip it, note it, move on.
+- **Vendored-skip (M3).** NEVER edit a quest whose frontmatter carries `source_repo:` or `source_url:`. Skip it, note it, move on.
 - **No fabricated numbers.** Every before/after you report is read straight from the
 `quest_validator.py` output for that file. Never invent a score, a command, a recommendation, or an issue; if this run's evidence doesn't ground it, you don't fix it.
 - **Never weaken content to game a score.** Deleting steps, objectives, prerequisites,

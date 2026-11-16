@@ -45,8 +45,7 @@ lychee --no-progress --format json --base "$PWD/_site" \
 2. **Azure timeouts**: Consider switching to canonical short URLs
 (`https://azure.microsoft.com/en-us/products/devops/`) which sometimes respond faster under automated probes.
 
-3. **Other dead links**: One-by-one review against current vendor docs
-   (jekyllrb.com URLs change with releases; YouTube videos disappear).
+3. **Other dead links**: One-by-one review against current vendor docs (jekyllrb.com URLs change with releases; YouTube videos disappear).
 
 ## Reports
 

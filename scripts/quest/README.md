@@ -55,8 +55,7 @@ A harness should therefore do two things: call `get_campaign` before the run and
 there is **no** "Legend" tier — level 1111 is Master), the 16 binary levels (`0000`–`1111`), their themes, XP ranges, and Bootstrap icons.
 - **Controlled vocabularies** — `QUEST_TYPES` (`main_quest`, `side_quest`,
 `epic_quest`, `bonus_quest`), `FM_CONTENT_TYPES` (`quest`, `documentation`, `template`, `codex`), `DIFFICULTIES` (🟢 Easy / 🟡 Medium / 🔴 Hard / ⚔️ Epic), `SKILL_FOCUS`, `LEARNING_STYLE`.
-- **Frontmatter schema** — `REQUIRED_FIELDS`, `OPTIONAL_FIELDS`, and the nested
-  contracts for `prerequisites`, `rewards`, `quest_dependencies`.
+- **Frontmatter schema** — `REQUIRED_FIELDS`, `OPTIONAL_FIELDS`, and the nested contracts for `prerequisites`, `rewards`, `quest_dependencies`.
 - **Collection rules** — `SKIP_SUBDIRS`, `SKIP_STEMS`, `is_quest()`, `is_draft()`.
 - **Routing** — canonical permalink helpers + slug rules + regexes.
 
@@ -159,10 +158,8 @@ python3 test/quest-validator/quest_validator.py pages/_quests/0110/sql-sorcery.m
 
 `.github/workflows/quest-validation.yml` enforces, on every quest PR:
 
-- **content quality** — `quest_validator.py` on changed files (`--fail-threshold 70`);
-  placeholders fail unless `draft: true`.
+- **content quality** — `quest_validator.py` on changed files (`--fail-threshold 70`); placeholders fail unless `draft: true`.
 - **graph integrity** — `validate-quest-network.py` (errors fail the job).
-- **non-stale data** — regenerates all derived data and fails if the committed
-  copies differ (so a registry change must ship with regenerated data).
+- **non-stale data** — regenerates all derived data and fails if the committed copies differ (so a registry change must ship with regenerated data).
 
 These should be marked **required** in branch protection (see [`.github/workflows/README.md`](../../.github/workflows/README.md)).

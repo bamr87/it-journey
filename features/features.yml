@@ -118,6 +118,14 @@ features:
     docs: "_includes/feed/quests-atom.xml"
     tags: [feed, atom, quests]
     date: 2026-10-30
+  - id: FR-ITJ-015
+    title: "Quest page feedback"
+    description: "zer0-mistakes page_feedback enabled on quest pages, opening page-feedback issues (issue #871; UPS-FB-01, UPS-FE-13)."
+    implemented: false
+    status: planned
+    prd: ["§3"]
+    surface: ui
+    link: "/quests/"
   - id: FR-ITJ-016
     title: "Quest editorial charter"
     description: "Editorial rules for quests: brief-based authorization with minor/substantive/structural tiers, quality standards, a five-stage review pipeline, reviewer independence and corrections (constitution § 9, proposed amendment docs/amendments/proposed/editorial-charter.md)."

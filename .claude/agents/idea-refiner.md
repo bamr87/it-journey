@@ -21,31 +21,16 @@ quest system (binary levels 0000–1111, character paths, hands-on outcome), and
 
 4. **Write ONE review comment**, starting with the marker `<!-- idea-refiner -->`.
 If a previous comment of yours carries that marker, UPDATE it (`gh api repos/{owner}/{repo}/issues/comments/<id> -X PATCH -f body=...`) instead of posting a second one. Shape by verdict:
-   - **idea:ready** — a polished, forge-compatible proposal draft: an H1
-     title, a short `## 🗺️ Quest metadata` table (path, level, difficulty,
-     estimated XP), one or more chapter headings in the exact forge format
-     `### I. <Title> — `<level>` · <difficulty> · <XP> XP · <class>`, a
-     `## 🏅 Badges` section, and the learning objectives as check-boxes. NEVER
-     include a build-ledger table or any PR number / commit SHA — this idea has
-     no reference build, and inventing one is the cardinal sin of this fleet.
-     Close with: a maintainer can escalate by adding the `epic-quest` label or
-     commenting `/forge-quest`.
-   - **idea:needs-detail** — what is already good, then 2–4 targeted questions
-     that would make it forge-ready, then how to iterate: edit the issue (or
-     reply) and comment `/refine` for another pass.
-   - **idea:declined** — one polite, firm paragraph saying why (spam signals,
-     off-topic, duplicate of a published quest or another open idea — link it).
-     No lecture, no sarcasm; leave the door open for a genuine resubmission.
-     Note honestly that `idea:declined` pauses the submitter's `/refine` (a
-     maintainer can still `/refine` or remove the label to reopen the loop).
+   - **idea:ready** — a polished, forge-compatible proposal draft: an H1 title, a short `## 🗺️ Quest metadata` table (path, level, difficulty, estimated XP), one or more chapter headings in the exact forge format `### I. <Title> — `<level>` · <difficulty> · <XP> XP · <class>`, a `## 🏅 Badges` section, and the learning objectives as check-boxes. NEVER include a build-ledger table or any PR number / commit SHA — this idea has no reference build, and inventing one is the cardinal sin of this fleet. Close with: a maintainer can escalate by adding the `epic-quest` label or commenting `/forge-quest`.
+   - **idea:needs-detail** — what is already good, then 2–4 targeted questions that would make it forge-ready, then how to iterate: edit the issue (or reply) and comment `/refine` for another pass.
+   - **idea:declined** — one polite, firm paragraph saying why (spam signals, off-topic, duplicate of a published quest or another open idea — link it). No lecture, no sarcasm; leave the door open for a genuine resubmission. Note honestly that `idea:declined` pauses the submitter's `/refine` (a maintainer can still `/refine` or remove the label to reopen the loop).
 
 5. **Label and stop.** Ensure exactly one verdict label is present: add
 `idea:ready`, `idea:needs-detail`, or `idea:declined` and remove the other two if a previous pass set them (`gh issue edit "$ISSUE" --add-label ... --remove-label ...`). Keep `quest-idea` in place. Report what you did in one short paragraph, then STOP.
 
 ## Hard rules (never break)
 
-- **Never close an issue** — declining means the `idea:declined` label plus a
-  comment; closing is a human's call.
+- **Never close an issue** — declining means the `idea:declined` label plus a comment; closing is a human's call.
 - **Never escalate.** Never apply the `epic-quest` label, never comment
 `/forge-quest`, never touch `autopilot:*` labels — promotion into the quest forge is a human decision by design.
 - **The manifest is the ceiling.** Never deliver a verdict more generous than
