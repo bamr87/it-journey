@@ -261,6 +261,34 @@ giscus:
   # AA, both of which fail the site-quality color-contrast gate.
   data-theme: "dark_high_contrast"
 
+## Page feedback ("Improve this page") ##########################################
+# The zer0-mistakes theme renders a floating "Improve this page" button and an
+# "Improve" link in each page's action bar (_includes/components/page-feedback.html,
+# _includes/content/intro.html). Both open a dialog that turns the reader's note
+# into a prefilled GitHub issue form carrying the page context and, when the
+# reader leaves it checked, the console errors it captured. remote_theme cannot ship _config.yml, so the widget
+# stays off until the site enables it here (hub specs/FEEDBACK.md UPS-FB-01 and
+# UPS-FB-31, specs/FRONTEND.md UPS-FE-13; FR-ITJ-015, issue #871).
+#   mode 'url': opens github.com/<repository>/issues/new in a new tab. No token,
+#               no cookie, and no request until the reader submits.
+#   No _data/feedback_types.yml: the theme's built-in request types apply, and
+#   their labels (bug, docs, feature, question) and the page-feedback marker all
+#   exist in this repo (GitHub drops unknown labels from a prefilled URL).
+#   ai: off. The "Analyze with AI" step needs the chat proxy, which GitHub Pages
+#   cannot host.
+
+page_feedback:
+  enabled: true
+  fab: true
+  fab_label: "Improve this page"
+  mode: "url"
+  default_labels: ["page-feedback"]
+  assignee: "" # '' = never auto-assign
+  capture_logs: true # console/error lines, shown to the reader before submit
+  log_limit: 40
+  ai:
+    enabled: false
+
 ## Mermaid Diagram Configuration #################################################
 # Mermaid diagrams support both native markdown code blocks and div syntax
 # Usage:
