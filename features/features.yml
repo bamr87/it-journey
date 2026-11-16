@@ -37,25 +37,25 @@ features:
     docs: "pages/_quests"
   - id: FR-ITJ-005
     title: "Blog posts"
-    description: "Tutorials, case studies and guides at /posts/ (PRD §3)."
+    description: "Retired. The posts collection was removed from this site in June 2026: blog tutorials, case studies and guides now live at lifehacker.dev, /posts/ returns 404, and AGENTS.md forbids recreating pages/_posts/ (PRD §3)."
     implemented: false
-    status: tbd
+    status: deprecated
     prd: ["§3"]
     surface: content
     link: "/posts/"
   - id: FR-ITJ-006
     title: "Documentation section"
-    description: "Reference materials and guides at /docs/ (PRD §3)."
+    description: "Retired as a site section. The _docs collection and the Library menu were removed in June 2026 and /docs/ now redirects to /notes/; the repo's docs/ folder holds contributor documentation, excluded from the Jekyll build and indexed in docs/README.md (PRD §3)."
     implemented: false
-    status: tbd
+    status: deprecated
     prd: ["§3"]
     surface: docs
     link: "/docs/"
   - id: FR-ITJ-007
     title: "Jupyter notebooks"
-    description: "Interactive code examples at /notebooks/ (PRD §3)."
+    description: "Retired. The notebooks collection was removed in June 2026 and its menu slot became Notes (/notes/); /notebooks/ returns 404 and AGENTS.md forbids recreating pages/_notebooks/ (PRD §3)."
     implemented: false
-    status: tbd
+    status: deprecated
     prd: ["§3"]
     surface: content
     link: "/notebooks/"
@@ -101,7 +101,7 @@ features:
     link: "scripts/validation/link-checker.py"
   - id: FR-ITJ-013
     title: "PRD synchronization (prd-machine)"
-    description: "scripts/prd-machine regenerates PRD.md (PRD §3; the prd-sync.yml workflow named there is not in .github/workflows)."
+    description: "scripts/prd-machine regenerates PRD.md when run by hand (./scripts/prd-machine/prd-machine sync, or docker compose run prd-machine with the same command); its prd-sync.yml workflow was removed as defunct in PR #404, so nothing runs it on a schedule. A sync rewrites the whole file without the generated Feature catalog block, which the hub's governance_lint.py prd-sync regenerates separately (PRD §3)."
     implemented: true
     status: partial
     prd: ["§3"]
