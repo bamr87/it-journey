@@ -129,6 +129,10 @@ That openness is Design for Failure pointed inward. We would rather show a worki
 | **Builder with AI** | Real patterns for building with AI, with the human-review loop kept intact. |
 | **Educator** | Accurate, open, well-structured material you can build a lesson on — and reuse freely. |
 
+## Where we're headed
+
+The plan is as open as the code. The [feature list]({{ '/about/features/' | relative_url }}) shows what you can use today. The [product requirements document (PRD)](https://github.com/bamr87/it-journey/blob/main/PRD.md) says what the platform must do and why, and its [roadmap](https://github.com/bamr87/it-journey/blob/main/PRD.md#7-road-roadmap) lists the milestones still ahead; they are plans, not live features, until they reach the feature list.
+
 ## Join the journey
 
 There are two good ways in. If you want to learn, [open the quest map](/quests/) and start the level that matches where you are. If you want to build the platform itself, the project is open source and the door is unlocked — [report an issue](https://github.com/bamr87/it-journey/issues), [open a discussion](https://github.com/bamr87/it-journey/discussions), or send a pull request. New to contributing? [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/) is a kind place to begin.
