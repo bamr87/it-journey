@@ -3,7 +3,7 @@ title: About IT-Journey — From zer0 to her0
 excerpt: IT-Journey is an open-source platform that turns curiosity into capability — a free, gamified path from your first command to systems you design yourself.
 permalink: /about/
 date: '2021-09-29T15:48:23.000Z'
-lastmod: '2026-06-26T00:00:00.000Z'
+lastmod: '2026-11-15T00:00:00.000Z'
 author: IT-Journey Team
 slug: about
 description: An open-source platform that takes you from zer0 to her0 in IT — gamified quests, hands-on practice, and seven principles that shape how we build and learn.
@@ -83,9 +83,11 @@ You will see this principle in how the site itself is written: guides link to th
 
 ### Keep It Simple — KIS
 
-The [KISS principle](https://en.wikipedia.org/wiki/KISS_principle) is a bias toward the boring, readable solution over the clever one. Simple systems are easier to understand, change, and debug — and easier to teach. Clarity over cleverness is also a writing rule here: plain words over jargon, short sentences over impressive ones. If a paragraph needs a second read to parse, it failed.
+Keep It Simple is a bias toward the boring, readable solution over the clever one. Simple systems are easier to understand, change, and debug — and easier to teach. Clarity over cleverness is also a writing rule here: plain words over jargon, short sentences over impressive ones. If a paragraph needs a second read to parse, it failed.
 
 Simplicity is not the absence of depth. It is the discipline of finding the most direct route to a real goal and refusing to add weight that does not earn its place.
+
+The two codes are deliberate: KIS is this pillar, and KISS — the classic [keep it stupid simple](https://en.wikipedia.org/wiki/KISS_principle) maxim — is its everyday heuristic, listed with the working approaches below.
 
 ### Release Early and Often — REnO
 
