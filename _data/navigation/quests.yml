@@ -288,6 +288,8 @@
     url: /quests/0111/relic-raisers-06-the-strangler-fig/
   - title: 'The Three Sigils: Plan, Reason, Act'
     url: /quests/0111/agentic-plan-vs-action-boundaries/
+  - title: 'The Wrong Throne: Prove Which System Booted'
+    url: /quests/0111/silent-network-01-the-wrong-throne/
 - title: Level 1000 - Cloud Computing
   icon: bi-cloud
   url: /quests/1000/
@@ -310,6 +312,8 @@
     url: /quests/1000/pxe-boot-server/
   - title: 'The All-Seeing Eye: Observability for AI Agents'
     url: /quests/1000/agentic-observability-and-control/
+  - title: 'The Deaf Gatekeeper: When Your Own Server Stops Listening'
+    url: /quests/1000/silent-network-02-the-deaf-gatekeeper/
   - title: 'The Free Stalls: Stock SteamOS with Open Source Games'
     url: /quests/1000/twin-rigs-07-the-free-stalls/
   - title: 'The MCP Conclave: Mastering Model Context Protocol Servers'
@@ -330,6 +334,8 @@
     url: /quests/1001/k8s-pods-workloads/
   - title: 'Kubernetes Services and Networking: Ingress and DNS'
     url: /quests/1001/k8s-services-networking/
+  - title: 'The Rescue Lantern: Read the Logs of a System That Won''t Talk'
+    url: /quests/1001/silent-network-03-the-rescue-lantern/
   - title: 'The Shield of Retries: Safe Execution and Error Handling'
     url: /quests/1001/agentic-safe-execution-and-error-handling/
   - title: 'The Sigils of Trust: Auth, Secrets, and the Kill Switch'
@@ -372,12 +378,18 @@
     url: /quests/1010/self-operating-website-05-the-content-forge/
   - title: 'The Mana Ledger: Budgets, Windows, and Coverage'
     url: /quests/1010/ouroboros-loop-05-the-mana-ledger/
+  - title: 'The Molten Core: Match Drivers to Kernels'
+    url: /quests/1010/silent-network-05-the-molten-core/
   - title: 'The Necromancer''s Inquest: Agent Failure Root Cause Analysis'
     url: /quests/1010/agentic-failure-root-cause-analysis/
   - title: 'The Oracle Rubric: Evaluation & Tuning'
     url: /quests/1010/agentic-codex-04-evaluation-and-tuning/
   - title: 'The Oracle''s Rubric: Agent Success Signals'
     url: /quests/1010/agentic-success-criteria-and-signals/
+  - title: 'The Silencing Script: Find What Stops the Network'
+    url: /quests/1010/silent-network-04-the-silencing-script/
+  - title: 'Epic Quest: The Silent Network'
+    url: /quests/codex/silent-network/
 - title: Level 1011 - Security & Compliance
   icon: bi-shield-lock
   url: /quests/1011/
