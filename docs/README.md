@@ -35,7 +35,7 @@ Start with the root [README](../README.md) for what IT-Journey is, then [AGENTS.
 | [`docs/technical-concepts-library.md`](technical-concepts-library.md) | A reference library of engineering concepts (design patterns, programming principles, systems management, DevOps, ITSM, AI-assisted development) mapped to the IT-Journey pillars, with examples from this repository. Line references are as… |
 | [`docs/adr/`](adr/README.md) | How this repository records hard-to-reverse decisions as numbered ADRs — the format, required sections and status values — and the index of every ADR. |
 | [`docs/agents/`](agents/README.md) | How this repository grades its agents with machine-verifiable gates, runs a root-cause analysis before any re-run, and logs every instruction change (GH-600 Domain 4). |
-| [`docs/amendments/`](amendments/README.md) | The append-only log of changes to [the constitution](constitution.md). |
+| [`docs/amendments/`](amendments/README.md) | The append-only log of changes to [the constitution](constitution.md). Process: constitution § 8. |
 | [`docs/git-archaeology/`](git-archaeology/README.md) | Bounded retrospectives of this repository's own Git history — one evidence index per commit range, with the published reading at /digs/. |
 
 ### `docs/architecture/`
