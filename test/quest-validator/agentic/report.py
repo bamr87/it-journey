@@ -80,18 +80,48 @@ def render_console(agg: dict, verbose: bool = False) -> str:
 
 # ---- markdown (CI artifact / PR comment / job summary) -----------------
 
+_TRUNCATION_CAUSE = {
+    "auth": ("🔑", "Claude's credentials were refused, so the run stopped early. "
+                  "This is a CI credential problem, not a verdict on the quests: "
+                  "a maintainer needs to fix the repo secret."),
+    "rate-limit": ("⏳", "Claude stayed rate-limited or overloaded through every retry. "
+                        "This is usually temporary; the next push retries."),
+    "cost": ("💰", "The run hit its cost ceiling before reviewing every quest."),
+}
+
+
+def _truncation_banner(agg: dict) -> list:
+    """A blockquote saying the review is INCOMPLETE and why. Without it a dead
+    credential rendered as an innocent-looking '0 quests evaluated' table."""
+    if not agg.get("truncated"):
+        return []
+    icon, cause = _TRUNCATION_CAUSE.get(agg.get("truncation_reason"),
+                                        ("⚠️", "The run stopped early."))
+    lines = [f"> {icon} **Incomplete review — evaluated {agg.get('evaluated', agg['scored'])}"
+             f"/{agg.get('requested', '?')} quest(s).** {cause}"]
+    detail = (agg.get("truncation_detail") or "").replace("`", "'")
+    if detail:
+        lines.append(">")
+        lines.append(f"> Reason: `{detail[:500]}`")
+    return lines + [""]
+
+
 def render_markdown(agg: dict, title: str = "Agentic Quest Review") -> str:
     c = agg["counts"]
     out = [f"## 🤖 {title}", ""]
+    out += _truncation_banner(agg)
+    method = agg.get("auth_method")
     out.append(f"**{agg['scored']}** quests evaluated · "
                f"{schema.VERDICT_EMOJI['pass']} {c.get('pass',0)} pass · "
                f"{schema.VERDICT_EMOJI['warn']} {c.get('warn',0)} warn · "
                f"{schema.VERDICT_EMOJI['fail']} {c.get('fail',0)} fail · "
                f"avg **{agg['average']}%**"
-               + (f" · ~${agg['cost_usd']}" if agg["cost_usd"] else ""))
+               + (f" · ~${agg['cost_usd']}" if agg["cost_usd"] else "")
+               + (f" · auth: `{method}`" if method and method != "ambient" else ""))
     out.append("")
-    out.append("| | Score | Quest | Level | Snippets run | Summary |")
-    out.append("|---|--:|---|---|:-:|---|")
+    if agg["results"]:
+        out.append("| | Score | Quest | Level | Snippets run | Summary |")
+        out.append("|---|--:|---|---|:-:|---|")
     for r in agg["results"]:
         m = r["quest"]
         emoji = schema.VERDICT_EMOJI.get(r.get("verdict"), "❓")

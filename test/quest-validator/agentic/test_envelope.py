@@ -336,6 +336,189 @@ def test_preflight():
         runner.time.sleep = orig_sleep
 
 
+class _Env:
+    """Temporarily set (or, with None, unset) environment variables."""
+    def __init__(self, **kv):
+        self.kv, self.saved = kv, {}
+
+    def __enter__(self):
+        import os
+        for k, v in self.kv.items():
+            self.saved[k] = os.environ.get(k)
+            if v is None:
+                os.environ.pop(k, None)
+            else:
+                os.environ[k] = v
+
+    def __exit__(self, *_exc):
+        import os
+        for k, v in self.saved.items():
+            if v is None:
+                os.environ.pop(k, None)
+            else:
+                os.environ[k] = v
+
+
+def test_auth_order_and_fallback():
+    print("\nauth — OAuth preferred, one credential per call, a refused one hands over:")
+    from agentic.runner import AuthError, ThrottleError
+    import shutil as _sh
+    import tempfile as _tf
+
+    O, K = "CLAUDE_CODE_OAUTH_TOKEN", "ANTHROPIC_API_KEY"
+    both = {O: "oauth-test-value", K: "apikey-test-value"}
+
+    check("both present → oauth, then api_key",
+          runner.auth_order(both) == ["oauth", "api_key"])
+    check("blank secrets (unset GitHub secrets) count as absent",
+          runner.auth_order({O: "", K: "  "}) == [])
+    check("only the key → api_key", runner.auth_order({K: "k"}) == ["api_key"])
+    check("AI_AUTH_ORDER can flip the order",
+          runner.auth_order({**both, "AI_AUTH_ORDER": "api_key,oauth"}) == ["api_key", "oauth"])
+    check("QUEST_QA_AUTH_ORDER wins over AI_AUTH_ORDER",
+          runner.auth_order({**both, "AI_AUTH_ORDER": "api_key",
+                             "QUEST_QA_AUTH_ORDER": "oauth"}) == ["oauth"])
+    e_o = runner.child_env("oauth", both)
+    e_k = runner.child_env("api_key", both)
+    e_a = runner.child_env("ambient", both)
+    check("an oauth call never sees the API key", O in e_o and K not in e_o)
+    check("an api_key call never sees the OAuth token", K in e_k and O not in e_k)
+    check("an ambient call sees neither", O not in e_a and K not in e_a)
+    check("a blank OAuth secret is stripped",
+          O not in runner.child_env("api_key", {O: "", K: "k"}))
+
+    orig_run, orig_sleep = runner.subprocess.run, runner.time.sleep
+    runner.time.sleep = lambda *_a, **_k: None
+    seen = []
+
+    def _script(by_method):
+        """Answer each call by the credential its env carries, and record it."""
+        def fake_run(*_a, env=None, **_k):
+            m = "oauth" if O in env else ("api_key" if K in env else "ambient")
+            seen.append(m)
+            return by_method[m]
+        seen.clear()
+        runner.subprocess.run = fake_run
+
+    def _runner():
+        r = AgenticRunner(mode="review", max_attempts=2,
+                          retry_base_s=0.001, retry_max_s=0.001)
+        r.available = lambda: True
+        return r
+
+    def _invoke(r):
+        sandbox = Path(_tf.mkdtemp(prefix="auth-test-"))
+        try:
+            return r._invoke(_StubQuest("auth-probe", "x" * 200), ["claude", "-p", "x"], sandbox)
+        finally:
+            _sh.rmtree(sandbox, ignore_errors=True)
+
+    def _raises(r):
+        try:
+            _invoke(r)
+        except AuthError as e:
+            return e
+        return None
+
+    ok = _FakeProc(returncode=0, stdout=_valid_envelope())
+    probe_ok = _FakeProc(returncode=0, stdout='{"result":"ok"}')
+    secret = "sk-" + "ant-" + "api03-" + "Z" * 16   # built at runtime: no literal key in the repo
+    dead_key = _FakeProc(returncode=1, stdout=json.dumps({
+        "is_error": True, "subtype": "error",
+        "result": f"Credit balance is too low ({secret})"}))
+    dead_oauth = _FakeProc(returncode=1, stderr="OAuth token has expired · Please run /login")
+    clear_order = {"AI_AUTH_ORDER": None, "QUEST_QA_AUTH_ORDER": None}
+
+    try:
+        with _Env(**both, **clear_order):
+            _script({"oauth": ok, "api_key": dead_key})
+            res = _invoke(_runner())
+            check("healthy OAuth + dead key → OAuth alone serves it (the PR #933 failure)",
+                  isinstance(res, dict) and seen == ["oauth"] and res["meta"]["auth"] == "oauth")
+
+            _script({"oauth": dead_oauth, "api_key": ok})
+            r = _runner()
+            res = _invoke(r)
+            check("refused OAuth falls back to the key",
+                  isinstance(res, dict) and res["meta"]["auth"] == "api_key")
+            check("…only after OAuth's own retries (oauth ×2, then the key)",
+                  seen == ["oauth", "oauth", "api_key"])
+            seen.clear()
+            _invoke(r)
+            check("…and the refused OAuth is skipped for the rest of the batch",
+                  seen == ["api_key"])
+
+            _script({"oauth": dead_oauth, "api_key": dead_key})
+            e = _raises(_runner())
+            check("both refused → AuthError, not ThrottleError",
+                  e is not None and not isinstance(e, ThrottleError))
+            check("…naming both credentials",
+                  e is not None and [m for m, _, _ in e.failures] == ["oauth", "api_key"])
+            check("…with the CLI's own words in the reason",
+                  e is not None and "Credit balance is too low" in e.reason
+                  and "expired" in e.reason)
+            check("…and never the secret itself",
+                  e is not None and secret not in str(e) and secret not in e.reason)
+
+            _script({"oauth": _FakeProc(returncode=1,
+                                        stderr="Claude AI usage limit reached · resets 3am"),
+                     "api_key": dead_key})
+            e = _raises(_runner())
+            check("OAuth window spent + dead key → ThrottleError (the window refills)",
+                  isinstance(e, ThrottleError) and seen[-1] == "api_key")
+
+            _script({"oauth": _FakeProc(returncode=1, stderr="API Error: 529 overloaded_error"),
+                     "api_key": ok})
+            e = _raises(_runner())
+            check("a backend overload does NOT switch credential",
+                  isinstance(e, ThrottleError) and "api_key" not in seen)
+
+            _script({"oauth": dead_oauth, "api_key": probe_ok})
+            status, detail = _runner().preflight()
+            check("preflight: refused OAuth + working key → ok via api_key, refusal named",
+                  status == "ok" and "via api_key" in detail and "oauth" in detail)
+
+            _script({"oauth": probe_ok, "api_key": dead_key})
+            status, detail = _runner().preflight()
+            check("preflight: healthy OAuth → ok via oauth, the key is never touched",
+                  status == "ok" and "via oauth" in detail and seen == ["oauth"])
+
+            _script({"oauth": dead_oauth, "api_key": dead_key})
+            status, detail = _runner().preflight()
+            check("preflight: both refused → auth, with both reasons",
+                  status == "auth" and "oauth:" in detail and "api_key:" in detail
+                  and secret not in detail)
+
+        with _Env(**{O: None, K: None}, **clear_order):
+            _script({"ambient": ok})
+            res = _invoke(_runner())
+            check("no credential in the env → one ambient call (the local login)",
+                  isinstance(res, dict) and seen == ["ambient"])
+    finally:
+        runner.subprocess.run, runner.time.sleep = orig_run, orig_sleep
+
+
+def test_truncation_banner():
+    print("\nreport — an incomplete run says so instead of rendering an empty table:")
+    from agentic import report as _report
+
+    agg = _report.aggregate([])
+    agg.update(truncated=True, evaluated=0, requested=7, truncation_reason="auth",
+               truncation_detail="oauth: token expired; api_key: error: Credit balance is too low",
+               auth_method=None)
+    md = _report.render_markdown(agg)
+    check("banner says the review is incomplete (0/7)", "Incomplete review — evaluated 0/7" in md)
+    check("banner blames the credential, not the quests", "credential problem" in md)
+    check("banner carries the CLI's reason", "Credit balance is too low" in md)
+    check("no empty results table", "| Score |" not in md)
+
+    full = _report.aggregate([])
+    full["auth_method"] = "oauth"
+    md2 = _report.render_markdown(full)
+    check("a complete run has no banner", "Incomplete review" not in md2)
+    check("the headline names the credential that served it", "auth: `oauth`" in md2)
+
+
 def test_turn_budget_and_exhaustion():
     print("\nturn budgets — adaptive sizing + budget-exhausted becomes a SCORED fail:")
     import types
@@ -414,6 +597,8 @@ def main():
     test_mock_determinism()
     test_retry_policy()
     test_preflight()
+    test_auth_order_and_fallback()
+    test_truncation_banner()
     test_turn_budget_and_exhaustion()
     print("\n" + "=" * 64)
     if _failures:
