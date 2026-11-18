@@ -204,7 +204,7 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 | [FR-ITJ-012](features/features.yml) | Link health check | shipped | [`scripts/validation/link-checker.py`](scripts/validation/link-checker.py) | §3 |
 | [FR-ITJ-013](features/features.yml) | PRD synchronization (prd-machine) | partial | [`scripts/prd-machine`](scripts/prd-machine) | §3 |
 | [FR-ITJ-014](features/features.yml) | Quest Atom feed | shipped | route `/quests/feed.xml` · [`_includes/feed/quests-atom.xml`](_includes/feed/quests-atom.xml) | §3 |
-| [FR-ITJ-015](features/features.yml) | Quest page feedback | planned | route `/quests/` | §3 |
+| [FR-ITJ-015](features/features.yml) | Quest page feedback | shipped | route `/quests/` · [`_config.yml`](_config.yml) | §3 |
 | [FR-ITJ-016](features/features.yml) | Quest editorial charter | planned | [`docs/amendments/proposed/editorial-charter.md`](docs/amendments/proposed/editorial-charter.md) | §4, §9 |
 | [FR-ITJ-017](features/features.yml) | Editorial charter CI checks | planned | [`docs/amendments/proposed/editorial-charter.md`](docs/amendments/proposed/editorial-charter.md) | §4, §9 |
 
