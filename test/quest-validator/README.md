@@ -35,7 +35,7 @@ claude login          # or: claude setup-token
 export CLAUDE_CODE_OAUTH_TOKEN="$(claude setup-token)"
 ```
 
-The CLI also honors `ANTHROPIC_API_KEY` (API billing) as a fallback. Inside a managed/sandboxed agent session, host auth is **not** passed to child `claude` processes — run from a normal shell or a CI runner with the token set.
+**OAuth is preferred.** Left to itself, the CLI picks `ANTHROPIC_API_KEY` over `CLAUDE_CODE_OAUTH_TOKEN` when both are set, so a dead key silently shadows a healthy token (every PR review from late October to mid-November 2026 scored 0 quests that way). The runner therefore gives each `claude` call **one** credential: the OAuth token first, and the API key only when OAuth is refused (expired/revoked token, or its usage window is spent). A refused credential is skipped for the rest of the batch. An overloaded backend does not trigger a switch. `QUEST_QA_AUTH_ORDER` (or the fleet-wide `AI_AUTH_ORDER`, e.g. `api_key,oauth`) changes the order. When every credential is refused, the run exits 4 and its report names what each credential said (secrets scrubbed). The Markdown report then opens with an **Incomplete review** banner, and in GitHub Actions the run gets an `::error` annotation. Inside a managed/sandboxed agent session, host auth is **not** passed to child `claude` processes — run from a normal shell or a CI runner with the token set.
 
 ### Modes
 
@@ -58,7 +58,7 @@ python3 test/quest-validator/agentic_validate.py pages/_quests/0101/secrets-mana
 make quest-validate-agentic SAMPLE=5 MODE=execute \
   EXTRA="--md review.md --report review.json --fail-threshold 70"
 
-# Offline self-test of the whole harness (8 checks, no auth):
+# Offline self-test of the whole harness (no auth, no cost):
 make quest-validate-agentic-selftest
 ```
 
@@ -66,7 +66,7 @@ Key flags: `--mode {review,execute}`, `--sample N`, `--mock`, `--dry-run`, `--md
 
 ### In CI
 
-The opt-in workflow `.github/workflows/agentic-quest-review.yml` runs tier 2 **only** when you ask — via the Actions tab (workflow_dispatch) or by adding the **`agentic-review`** label to a PR (which reviews that PR's changed quests in `execute` mode). It needs the `CLAUDE_CODE_OAUTH_TOKEN` (or `ANTHROPIC_API_KEY`) secret, posts a scored table to the job summary, uploads `review.json`, and comments on the PR. It never runs on ordinary PRs, so it can't block merges or spend quota unexpectedly.
+`.github/workflows/agentic-quest-review.yml` runs tier 2 in two ways. On every PR that changes quests, it does an **advisory read-only `review`** of the changed files and keeps one sticky PR comment up to date. That comment also carries a convergence ledger: quests that already scored ≥ 85 are skipped, and a PR gets at most 3 automatic passes. Adding the **`agentic-review`** label, or a manual dispatch from the Actions tab, runs `execute` mode and bypasses those caps. Explicitly passed files that are not playable quests are skipped, using the same `fmContentType: quest` rule as discovery, so a glossary change costs nothing. The workflow needs the `CLAUDE_CODE_OAUTH_TOKEN` secret (`ANTHROPIC_API_KEY` is only the fallback). It never blocks a merge: the review step is `continue-on-error`, which is why a credential failure shows up as the report banner and a run annotation rather than a red check.
 
 ## Features
 

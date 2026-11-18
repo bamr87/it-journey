@@ -13,7 +13,7 @@ What each lane does and how the lanes fit together is explained in [`.github/wor
 | [`build-validation.yml`](../../.github/workflows/build-validation.yml) | 🏗️ Build Validation & Cross-Platform Testing | `push` · `pull_request` · `workflow_dispatch` | — | — | — |
 | [`ci.yml`](../../.github/workflows/ci.yml) | CI | `pull_request` · `push` | — | — | — |
 | [`claude.yml`](../../.github/workflows/claude.yml) | Claude | `issue_comment` (created) · `pull_request_review_comment` (created) · `pull_request_review` (submitted) · `issues` (opened, assigned) | — | `claude-code-action` | — |
-| [`cms-daily-loop.yml`](../../.github/workflows/cms-daily-loop.yml) | 🧭 CMS Daily Content Loop | `schedule` (cron `10 22 * * *`) · `workflow_dispatch` | `CMS_LOOP_SUBSTANTIVE`, `CMS_MECHANICAL_AUTOMERGE` | `claude -p` | — |
+| [`cms-daily-loop.yml`](../../.github/workflows/cms-daily-loop.yml) | 🧭 CMS Daily Content Loop | `schedule` (cron `10 22 * * *`) · `workflow_dispatch` | `CMS_DAILY_LOOP_ENABLED`, `CMS_LOOP_SUBSTANTIVE`, `CMS_MECHANICAL_AUTOMERGE` | `claude-run` | — |
 | [`codeql-analysis.yml`](../../.github/workflows/codeql-analysis.yml) | CodeQL | `push` · `pull_request` · `schedule` (cron `31 14 * * 4`) | — | — | — |
 | [`conformance.yml`](../../.github/workflows/conformance.yml) | Conformance | `pull_request` · `push` | — | — | — |
 | [`content-auto-merge.yml`](../../.github/workflows/content-auto-merge.yml) | 🤝 Content Auto-Merge | `pull_request_target` (labeled, opened, reopened, synchronize, ready_for_review, unlabeled) · `workflow_dispatch` | `CONTENT_AUTOMERGE_ENABLED`, `ISSUE_AUTOMERGE_ENABLED`, `QUEST_REPORT_AUTOMERGE_ENABLED` | — | hands-off merge of green, in-scope automated PRs |
@@ -24,7 +24,7 @@ What each lane does and how the lanes fit together is explained in [`.github/wor
 | [`dependency-checker.yml`](../../.github/workflows/dependency-checker.yml) | 🔍 Dependency Security Checker | `push` · `schedule` (cron `0 7 * * 1`) · `workflow_dispatch` | — | — | — |
 | [`frontmatter-validation.yml`](../../.github/workflows/frontmatter-validation.yml) | Frontmatter Validation | `pull_request` (opened, synchronize, reopened) · `workflow_dispatch` | — | — | — |
 | [`issue-autopilot.yml`](../../.github/workflows/issue-autopilot.yml) | 🧭 Issue Autopilot | `schedule` (cron `10 18 * * *`) · `workflow_dispatch` · `issues` (labeled) | `ISSUE_AUTOCLOSE_ENABLED`, `ISSUE_AUTOPILOT_ENABLED`, `ISSUE_RESOLVE_ENABLED` | `claude-run` | analyze open issues, triage them, resolve them in batches |
-| [`link-checker.yml`](../../.github/workflows/link-checker.yml) | 🔗 Link Health Guardian | `pull_request` · `schedule` (cron `0 6 * * 1`) · `workflow_dispatch` | — | — | — |
+| [`link-checker.yml`](../../.github/workflows/link-checker.yml) | 🔗 Link Health Guardian | `pull_request` · `schedule` (cron `23 6 * * 1`) · `workflow_dispatch` | `LINK_CHECKER_ENABLED` | — | — |
 | [`lint-workflows.yml`](../../.github/workflows/lint-workflows.yml) | 🧹 Lint workflows | `pull_request` | — | — | keep GitHub Actions workflow files valid at PR time |
 | [`markdown-oneline.yml`](../../.github/workflows/markdown-oneline.yml) | markdown-oneline | `pull_request` · `push` | — | — | — |
 | [`pr-freshness.yml`](../../.github/workflows/pr-freshness.yml) | 🔄 Automated PR Freshness | `push` · `workflow_dispatch` | `PR_FRESHNESS_ENABLED` | — | keep the loops' open PRs mergeable, and re-drive the merge lane |

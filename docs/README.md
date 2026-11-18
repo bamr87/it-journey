@@ -14,7 +14,7 @@ Start with the root [README](../README.md) for what IT-Journey is, then [AGENTS.
 
 | Document | What it covers |
 | --- | --- |
-| [`AGENTS.md`](../AGENTS.md) | How to work in it-journey, the GitHub Pages Jekyll site behind it-journey.dev: commands, layout, quest and frontmatter rules, and the Warden Pact every agent obeys. |
+| [`AGENTS.md`](../AGENTS.md) | IT-Journey's direction is to become the ultimate open home for all things IT learning: data, tools, resources and transparency, with gamified quests from zer0 to her0, practical tutorials, and AI-enhanced learning for everyone… |
 | [`CONTRIBUTING.md`](../CONTRIBUTING.md) | How to contribute to IT-Journey — the five-minute first pull request, the branch-commit-PR workflow, the local gates to run first, and where the detailed standards live. |
 | [`CHANGELOG.md`](../CHANGELOG.md) | Release history: the notable changes in each version, newest first. |
 | [`SECURITY.md`](../SECURITY.md) | Supported versions and how to report a vulnerability privately. |
@@ -27,12 +27,14 @@ Start with the root [README](../README.md) for what IT-Journey is, then [AGENTS.
 | --- | --- |
 | [`docs/constitution.md`](constitution.md) | The rules every change to this repo must satisfy, whoever makes it — a human or an AI agent. Agents read this before [AGENTS.md](../AGENTS.md) conventions, the [PRD](../PRD.md), or the [feature catalog](../features/features.yml). Ratified… |
 | [`docs/CONTRIBUTING_DEVELOPER.md`](CONTRIBUTING_DEVELOPER.md) | The full contribution workflow for developers and AI agents — fork and sync, branch naming, commit format, code and markdown standards, testing requirements and the pull-request checklist (last revised 2025-10). |
+| [`docs/kis-kiss-fix.md`](kis-kiss-fix.md) | A proposal, not yet applied: make KIS (Keep It Simple) the one simplicity pillar and drop KISS from the working approaches, with every occurrence found and the patch for the About page. Line references are as of 2026-10-29. |
+| [`docs/pillars-in-practice.md`](pillars-in-practice.md) | What each IT-Journey pillar and working approach means in day-to-day work, with the files that show it and the gaps where nothing does yet. Line references are as of 2026-10-29. |
 | [`docs/prose-oneline-universal.md`](prose-oneline-universal.md) | How the oneline prose rule is enforced everywhere — CI backstop, hub auto-fix, the shared AI runner, a Claude Code hook, and a pre-commit hook. |
-| [`docs/purpose-page-rewrite.md`](purpose-page-rewrite.md) | Why IT-Journey exists, how we teach, the principles we build by, and where the platform is headed next. |
 | [`docs/ROADMAP.md`](ROADMAP.md) | The 2024–2026 master roadmap: the four learning realms (QuickStart, Journey, Library, Notebook — three since retired), beginner-to-expert paths and the Q1 2026 priorities; kept for history, not maintained. |
+| [`docs/technical-concepts-library.md`](technical-concepts-library.md) | A reference library of engineering concepts (design patterns, programming principles, systems management, DevOps, ITSM, AI-assisted development) mapped to the IT-Journey pillars, with examples from this repository. Line references are as… |
 | [`docs/adr/`](adr/README.md) | How this repository records hard-to-reverse decisions as numbered ADRs — the format, required sections and status values — and the index of every ADR. |
 | [`docs/agents/`](agents/README.md) | How this repository grades its agents with machine-verifiable gates, runs a root-cause analysis before any re-run, and logs every instruction change (GH-600 Domain 4). |
-| [`docs/amendments/`](amendments/README.md) | The append-only log of changes to [the constitution](constitution.md). |
+| [`docs/amendments/`](amendments/README.md) | The append-only log of changes to [the constitution](constitution.md). Process: constitution § 8. |
 | [`docs/git-archaeology/`](git-archaeology/README.md) | Bounded retrospectives of this repository's own Git history — one evidence index per commit range, with the published reading at /digs/. |
 
 ### `docs/architecture/`

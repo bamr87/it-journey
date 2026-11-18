@@ -546,9 +546,9 @@ improvement through hands-on projects in their portfolio.
         feature_count = len(self.signals.get("features", []))
         md_count = len(self.signals.get("markdown_files", []))
         
-        # Count quests and posts from markdown files
+        # Count quests from markdown files (the posts collection is retired:
+        # blog content lives at lifehacker.dev, feature FR-ITJ-005)
         quest_count = sum(1 for f in self.signals.get("markdown_files", []) if "_quests" in f.get("path", ""))
-        post_count = sum(1 for f in self.signals.get("markdown_files", []) if "_posts" in f.get("path", ""))
         
         return f"""## 1. MVP (Minimum Viable Promise)
 
@@ -568,7 +568,6 @@ As a **learner / contributor / educator**, I want:
 | Source | Count | Status |
 |--------|-------|--------|
 | Learning Quests | {quest_count} | ✅ Published |
-| Educational Posts | {post_count} | ✅ Published |
 | Total Markdown Files | {md_count} | ✅ Indexed |
 | Implemented Features | {feature_count} | ✅ Tracked |
 | Recent Commits | {len(self.signals.get('git_commits', []))} | ✅ Analyzed |
@@ -624,10 +623,9 @@ graph TD
 |-------|---------|---------|
 | `/` | Home | Landing page with learning paths |
 | `/quests/` | Quest Collection | Browse gamified learning experiences |
-| `/posts/` | Blog Posts | Tutorials, case studies, guides |
-| `/docs/` | Documentation | Reference materials and guides |
-| `/notebooks/` | Jupyter Notebooks | Interactive code examples |
 | `/about/features/` | Features Index | Platform capabilities |
+
+Blog content lives at [lifehacker.dev](https://lifehacker.dev/). The retired `/posts/`, `/docs/` and `/notebooks/` routes stay in the feature catalog as deprecated (FR-ITJ-005 to FR-ITJ-007); `/docs/` redirects to `/notes/`.
 
 ### CLI Tools
 
@@ -657,8 +655,13 @@ python3 scripts/validation/link-checker.py --scope website
 |----------|---------|---------|
 | `build-validation.yml` | Push/PR | Validate Jekyll build |
 | `link-checker.yml` | Schedule/Manual | Check link health |
-| `prd-sync.yml` | Schedule/Push | Update PRD.md |
 | `frontmatter-validation.yml` | Push | Validate content metadata |
+
+### AI Orchestration Components
+
+| Component | Location | Purpose | Status |
+|-----------|----------|---------|--------|
+| **JEV** | Planned (sits alongside `scripts/ai/`, `.github/instructions/`, `claude-run` action, agent workflows) | Harness-level AI orchestration engine: reasons over concepts, quests + docs to drive consistency harnesses, answer cross-cutting questions, validate quest logic. See [Roadmap](#7-road-roadmap) | 📋 Planned (not built) |
 
 """
     
@@ -772,7 +775,7 @@ python3 scripts/validation/link-checker.py --scope website
 - **Binary files**: Images/media should go in `assets/` only
 - **Frontmatter**: All content files require valid YAML frontmatter
 - **Workflow tokens**: All GitHub Actions workflows use `secrets.GITHUB_TOKEN` (the built-in token); no custom PAT secrets (`GITHUB_PAT`, `PAT_TOKEN`) are needed or supported
-- **Workflow permissions**: Each workflow must include a minimal `permissions:` block; `prd-sync.yml` requires `issues: write` to open conflict-detection tickets
+- **Workflow permissions**: Each workflow must include a minimal `permissions:` block
 - **Validator field checks**: The quest validator skips *required*-field checks for fields that have site-level defaults in `_config.yml`, preventing false positives on optional fields that are always populated by Jekyll
 {ai_block}{conflict_text}
 """
@@ -815,6 +818,7 @@ The platform focuses on:
 | **Community** | Contributor growth + content expansion | 2026 Q1 | 📋 Planned |
 | **Certification** | Skill tracking + progress metrics | 2026 Q2 | 📋 Planned |
 | **AI Tutor** | Personalized learning recommendations | 2026 Q4 | 🔮 Vision |
+| **JEV** | AI agent logic engine: reasons over concepts, quests + docs, validates quest logic, drives consistency harnesses | 2027 Q1 | 📋 Planned |
 
 ### Upcoming Features
 

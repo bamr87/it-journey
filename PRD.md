@@ -24,6 +24,17 @@ Build **IT-Journey** — an open-source educational platform that democratizes I
 
 ## 1. MVP (Minimum Viable Promise)
 
+### 1.1 Missions
+
+IT-Journey's direction is to become the ultimate open home for all things IT learning — data, tools, resources and transparency, gathered in one place that anyone can inspect and reuse.
+
+1. **Provide data, tools, resources and transparency for all stakeholders, IT educators and professionals, and the general public.** Learners from zer0 to her0, mentors, contributors, educators, and the general public are first-class audiences. The aim is a shared, open commons: the same quests, the same tools, and the same trail of evidence for everyone.
+2. **Make a complete, trusted path from complete beginner to skilled professional, taught through gamified quests, practical tutorials and AI-enhanced learning.** Hands-on adventures, a binary level path, and real commands that stay correct are the system of record; a wrong lesson is a defect, not a draft. Optional AI helps authors and learners without replacing the quest as the source of truth.
+3. **Put that path in every learner's, teacher's and builder's hands.** Serve it through the open site, the quest collection, the CLI and the contributor lanes, so anyone can learn, teach, and add a quest — an open toolkit for working with all things IT learning.
+
+These missions set the course; they do not claim the work is finished. They serve the PRD purpose in §0 and the MVP in §1: an open educational platform that democratizes IT education. The earlier mission — building IT-Journey as a gamified path from complete beginner to skilled IT professional — is absorbed into these three. Every feature must trace to them.
+
+
 As a **learner / contributor / educator**, I want:
 
 - ✅ Gamified learning quests with progressive difficulty (Level 0000 → advanced)
@@ -40,7 +51,6 @@ As a **learner / contributor / educator**, I want:
 | Source | Count | Status |
 |--------|-------|--------|
 | Learning Quests | 6 | ✅ Published |
-| Educational Posts | 15 | ✅ Published |
 | Total Markdown Files | 45 | ✅ Indexed |
 | Implemented Features | 1 | ✅ Tracked |
 | Recent Commits | 2 | ✅ Analyzed |
@@ -88,10 +98,9 @@ graph TD
 |-------|---------|---------|
 | `/` | Home | Landing page with learning paths |
 | `/quests/` | Quest Collection | Browse gamified learning experiences |
-| `/posts/` | Blog Posts | Tutorials, case studies, guides |
-| `/docs/` | Documentation | Reference materials and guides |
-| `/notebooks/` | Jupyter Notebooks | Interactive code examples |
 | `/about/features/` | Features Index | Platform capabilities |
+
+Blog content lives at [lifehacker.dev](https://lifehacker.dev/). The retired `/posts/`, `/docs/` and `/notebooks/` routes stay in the feature catalog as deprecated (FR-ITJ-005 to FR-ITJ-007); `/docs/` redirects to `/notes/`.
 
 ### CLI Tools
 
@@ -121,8 +130,13 @@ python3 scripts/validation/link-checker.py --scope website
 |----------|---------|---------|
 | `build-validation.yml` | Push/PR | Validate Jekyll build |
 | `link-checker.yml` | Schedule/Manual | Check link health |
-| `prd-sync.yml` | Schedule/Push | Update PRD.md |
 | `frontmatter-validation.yml` | Push | Validate content metadata |
+
+### AI Orchestration Components
+
+| Component | Location | Purpose | Status |
+|-----------|----------|---------|--------|
+| **JEV** | Planned (sits alongside `scripts/ai/`, `.github/instructions/`, `claude-run` action, agent workflows) | Harness-level AI orchestration engine: reasons over concepts, quests + docs to drive consistency harnesses, answer cross-cutting questions, validate quest logic. See [Roadmap](#7-road-roadmap) | 📋 Planned (not built) |
 
 ## 4. NFR (Non-Functional Realities)
 
@@ -167,7 +181,7 @@ python3 scripts/validation/link-checker.py --scope website
 - **Binary files**: Images/media should go in `assets/` only
 - **Frontmatter**: All content files require valid YAML frontmatter
 - **Workflow tokens**: All GitHub Actions workflows use `secrets.GITHUB_TOKEN` (the built-in token); no custom PAT secrets (`GITHUB_PAT`, `PAT_TOKEN`) are needed or supported
-- **Workflow permissions**: Each workflow must include a minimal `permissions:` block; `prd-sync.yml` requires `issues: write` to open conflict-detection tickets
+- **Workflow permissions**: Each workflow must include a minimal `permissions:` block
 - **Validator field checks**: The quest validator skips *required*-field checks for fields that have site-level defaults in `_config.yml`, preventing false positives on optional fields that are always populated by Jekyll
 
 ### AI Alignment Review
@@ -187,13 +201,13 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 
 | ID | Feature | Status | Where | Requirements |
 | --- | --- | --- | --- | --- |
-| [FR-ITJ-001](features/features.yml) | Jekyll site generation | shipped | [``](.) | §1, §3 |
+| [FR-ITJ-001](features/features.yml) | Jekyll site generation | shipped | route `/` | §1, §3 |
 | [FR-ITJ-002](features/features.yml) | Algolia Search indexing | shipped | route `/search/` | §3 |
 | [FR-ITJ-003](features/features.yml) | Auto features index generation | shipped | route `/about/features/` | §3 |
 | [FR-ITJ-004](features/features.yml) | Quest collection | shipped | route `/quests/` · [`pages/_quests`](pages/_quests) | §1, §3 |
-| [FR-ITJ-005](features/features.yml) | Blog posts | tbd | route `/posts/` | §3 |
-| [FR-ITJ-006](features/features.yml) | Documentation section | tbd | [`docs/`](docs) | §3 |
-| [FR-ITJ-007](features/features.yml) | Jupyter notebooks | tbd | route `/notebooks/` | §3 |
+| [FR-ITJ-005](features/features.yml) | Blog posts | deprecated | route `/posts/` | §3 |
+| [FR-ITJ-006](features/features.yml) | Documentation section | deprecated | [`docs/`](docs) | §3 |
+| [FR-ITJ-007](features/features.yml) | Jupyter notebooks | deprecated | route `/notebooks/` | §3 |
 | [FR-ITJ-008](features/features.yml) | Interactive terminal interface | shipped | [`journey.sh`](journey.sh) | §3 |
 | [FR-ITJ-009](features/features.yml) | Docker development and quest validation | shipped | [`docker-compose.yml`](docker-compose.yml) | §3 |
 | [FR-ITJ-010](features/features.yml) | Quest validation workflow | shipped | [`.github/workflows/quest-validation.yml`](.github/workflows/quest-validation.yml) | §3 |
@@ -201,9 +215,10 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 | [FR-ITJ-012](features/features.yml) | Link health check | shipped | [`scripts/validation/link-checker.py`](scripts/validation/link-checker.py) | §3 |
 | [FR-ITJ-013](features/features.yml) | PRD synchronization (prd-machine) | partial | [`scripts/prd-machine`](scripts/prd-machine) | §3 |
 | [FR-ITJ-014](features/features.yml) | Quest Atom feed | shipped | route `/quests/feed.xml` · [`_includes/feed/quests-atom.xml`](_includes/feed/quests-atom.xml) | §3 |
-| [FR-ITJ-015](features/features.yml) | Quest page feedback | planned | route `/quests/` | §3 |
+| [FR-ITJ-015](features/features.yml) | Quest page feedback | shipped | route `/quests/` · [`_config.yml`](_config.yml) | §3 |
 | [FR-ITJ-016](features/features.yml) | Quest editorial charter | planned | [`docs/amendments/proposed/editorial-charter.md`](docs/amendments/proposed/editorial-charter.md) | §4, §9 |
 | [FR-ITJ-017](features/features.yml) | Editorial charter CI checks | planned | [`docs/amendments/proposed/editorial-charter.md`](docs/amendments/proposed/editorial-charter.md) | §4, §9 |
+| [FR-ITJ-018](features/features.yml) | Missions in constitution §1 | planned | [`docs/constitution.md`](docs/constitution.md) | §1.1 |
 
 **Requirement → feature trace**
 
@@ -213,6 +228,7 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 | §3 | FR-ITJ-001, FR-ITJ-002, FR-ITJ-003, FR-ITJ-004, FR-ITJ-005, FR-ITJ-006, FR-ITJ-007, FR-ITJ-008, FR-ITJ-009, FR-ITJ-010, FR-ITJ-011, FR-ITJ-012, FR-ITJ-013, FR-ITJ-014, FR-ITJ-015 |
 | §4 | FR-ITJ-016, FR-ITJ-017 |
 | §9 | FR-ITJ-016, FR-ITJ-017 |
+| §1.1 | FR-ITJ-018 |
 <!-- features:end -->
 
 ## 6. OOS (Out Of Scope)
@@ -247,6 +263,7 @@ The platform focuses on:
 | **Community** | Contributor growth + content expansion | 2026 Q1 | 📋 Planned |
 | **Certification** | Skill tracking + progress metrics | 2026 Q2 | 📋 Planned |
 | **AI Tutor** | Personalized learning recommendations | 2026 Q4 | 🔮 Vision |
+| **JEV** | AI agent logic engine: reasons over concepts, quests + docs, validates quest logic, drives consistency harnesses | 2027 Q1 | 📋 Planned |
 
 ### Upcoming Features
 

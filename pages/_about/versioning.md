@@ -1,92 +1,73 @@
 ---
 title: "IT-Journey Versioning: Semver and Release Strategy"
 author: bamr87
-excerpt: How IT-Journey versions its releases — semantic versioning conventions, changelog format, and the relationship between the site content and the zer0-mistakes theme.
-description: Release strategy and versioning conventions for IT-Journey — semantic versioning, changelog format, and the relationship to the zer0-mistakes theme.
+excerpt: How IT-Journey numbers its releases — semantic versioning driven by Conventional Commits, a changelog that release-please writes, and a theme versioned on its own.
+description: How IT-Journey numbers its releases — semantic versioning from Conventional Commits, a changelog release-please writes, and a theme versioned on its own.
 snippet: null
 categories:
-- posts
+- about
 tags:
-- article
 - versioning
 - semver
+- changelog
+- release-please
 meta: null
 keywords:
   - semantic versioning
   - semver
   - changelog
+  - release-please
+  - conventional commits
   - release strategy
-  - jekyll versioning
+permalink: /about/versioning/
+redirect_from:
+  - /about/posts/versioning/
 draft: false
-lastmod: '2026-06-13T00:00:00.000Z'
+lastmod: '2026-11-15T00:00:00.000Z'
 date: '2022-01-10T17:00:49.000Z'
 ---
 
-## Why Version a Content Site
+## Why version a learning site
 
-A blog does not ship binaries, but it does accumulate breaking changes: layout overhauls, frontmatter schema migrations, permalink restructures, dependency upgrades. Without version markers it is impossible to answer "what changed between two deploys?" or "which content was affected by that theme update?"
+IT-Journey ships no binaries, but the site still changes in ways worth tracking: new quests and levels, layout and navigation changes, frontmatter schema migrations, moved permalinks, and tooling upgrades. A version number and a changelog answer "what changed between these two releases?" without digging through the commit history.
 
-IT-Journey treats the site as a product and versions it accordingly.
+## How a release happens
 
-## Convention: Semantic Versioning
+1. Every change reaches `main` through a pull request whose commit messages follow [Conventional Commits](https://www.conventionalcommits.org/): `feat:`, `fix:`, `docs:` and so on.
+2. On each push to `main`, the `release.yml` workflow runs [release-please](https://github.com/googleapis/release-please). It reads the new commits and keeps one release pull request open with the next version number and the changelog entry it will add.
+3. Merging that release pull request puts the new version and its changelog entry on `main`. release-please then tags the release (`vMAJOR.MINOR.PATCH`) and publishes it on the [releases page](https://github.com/bamr87/it-journey/releases).
 
-Releases follow [semver](https://semver.org/) — `MAJOR.MINOR.PATCH`:
+No one picks a version number or pushes a tag by hand. The live site is published from `main` once its checks pass, on its own schedule, so a release records what changed; it does not deploy anything.
 
-| Segment | Increment when... |
-|---|---|
-| `MAJOR` | A breaking change hits the live site — permalink restructure, schema migration, removed content type |
-| `MINOR` | New feature shipped — new layout, new content category, new tooling integration |
-| `PATCH` | Bug fix, copy edit, typo, frontmatter correction |
+## Which number moves
 
-Pre-release builds get a suffix: `1.3.0-beta.1` for a layout overhaul in staging, `2.0.0-rc.1` for a permalink migration under review.
+Releases follow [semantic versioning](https://semver.org/), `MAJOR.MINOR.PATCH`, and the commit types decide which number moves:
 
-## Theme vs. Content
+| Segment | Moved by | For example |
+|---|---|---|
+| `MAJOR` | A breaking change: `!` after the type (`feat!:`) or a `BREAKING CHANGE:` footer | A new permalink scheme that breaks old links |
+| `MINOR` | `feat:` | A new quest level or a new kind of page |
+| `PATCH` | `fix:`, `docs:`, `perf:`, `refactor:`, `deps:` and `revert:` | A broken link fixed, a guide corrected |
 
-The site has two versioned components that move independently:
+While the major version is 0, a breaking change moves `MINOR` instead of `MAJOR`. Commits typed `chore:`, `ci:`, `test:`, `style:` or `build:` stay out of the changelog, so on their own they never cause a release. The [release-please configuration](https://github.com/bamr87/it-journey/blob/main/release-please-config.json) is the source of truth for these rules.
 
-- **zer0-mistakes theme** — the Jekyll theme that controls layout, CSS, and includes. Versioned in its own repository.
-- **IT-Journey content** — the `_quests`, `_pages`, `_docs`, and `_notes` that make up the actual site. Versioned here.
+## The changelog
 
-A theme update that does not break content is a `MINOR` bump on the theme and a `PATCH` on the content. A theme update that forces frontmatter changes is a `MAJOR` bump on both.
+[CHANGELOG.md](https://github.com/bamr87/it-journey/blob/main/CHANGELOG.md) follows [Keep a Changelog](https://keepachangelog.com/) and is generated: release-please writes each entry from the commit messages, under Added, Fixed, Changed, Removed and Documentation. Never edit it, or a version number, by hand. The entries are the commit messages, so write each one for the person who will read the changelog.
 
-## Changelog Format
+## The theme versions on its own
 
-Changelog entries follow [Keep a Changelog](https://keepachangelog.com/) conventions under four sections:
+The site has two parts, and each releases on its own schedule:
 
-```markdown
-## [1.2.0] - 2024-07-01
+- **IT-Journey**: the quests, notes, digs, about pages, data and tooling in [this repository](https://github.com/bamr87/it-journey). Its releases are the ones described above.
+- **zer0-mistakes**: the Jekyll theme that supplies the layouts, styles and includes. It is versioned and released in [its own repository](https://github.com/bamr87/zer0-mistakes/releases).
 
-### Added
-- New Level 1010 quest with index page
-
-### Changed
-- Frontmatter `categories` normalized from string to list across all quests
-
-### Deprecated
-- `snippet` frontmatter field (use `excerpt` instead)
-
-### Fixed
-- Broken permalink on `/quests/1010/link-to-the-future/`
-```
-
-The changelog lives at `/CHANGELOG.md` in the repository root. CI fails if a PR bumps the version tag without a matching changelog entry.
-
-## Tagging a Release
-
-```bash
-# patch release
-git tag -a v1.2.1 -m "fix: correct broken permalink on retropie post"
-git push origin v1.2.1
-
-# minor release
-git tag -a v1.3.0 -m "feat: add data-analytics category and index"
-git push origin v1.3.0
-```
-
-GitHub Actions picks up the tag, builds the site, and deploys to GitHub Pages. The tag also creates a GitHub Release entry automatically via the `release.yml` workflow.
+The site loads the theme as an unpinned `remote_theme`, so every build uses the theme's latest `main`, and a theme change reaches the site at its next build without an IT-Journey release. The theme files this site deliberately overrides are listed in [`.theme-overrides.yml`](https://github.com/bamr87/it-journey/blob/main/.theme-overrides.yml); theme bugs are fixed upstream.
 
 ## Related
 
-- [semver.org](https://semver.org/)
-- [Keep a Changelog](https://keepachangelog.com/)
-- [About: Contributing](/about/contributing/)
+- [CHANGELOG.md](https://github.com/bamr87/it-journey/blob/main/CHANGELOG.md): every release and what it changed
+- [Releases](https://github.com/bamr87/it-journey/releases): the tagged releases on GitHub
+- [Conventional Commits](https://www.conventionalcommits.org/) and [semver.org](https://semver.org/): the two specifications behind the numbers
+- [Keep a Changelog](https://keepachangelog.com/): the changelog format
+- [About: Contributing](/about/contributing/): how to get a change into the next release

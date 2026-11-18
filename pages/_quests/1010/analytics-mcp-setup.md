@@ -16,7 +16,6 @@ quest_line: The Observability Path
 quest_arc: Analytics, SEO & Site Health
 sub_title: 'Level 1010 (10) Quest: Main Quest - Model Context Protocol'
 excerpt: Wire Google Analytics into your AI agent over MCP and run your first live report — securely.
-snippet: Give your agent eyes on the traffic.
 author: Quest Master IT-Journey
 tags:
 - '1010'
@@ -64,23 +63,6 @@ quest_dependencies:
   recommended_quests: []
   unlocks_quests:
   - /quests/1010/query-traffic-with-mcp/
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests:
-  - /quests/1010/query-traffic-with-mcp/
-learning_paths:
-  primary_paths:
-  - DevOps Automation
-  - Web Analytics
-  character_classes:
-  - 💻 Software Developer
-  - 📊 Data Analyst
-  - 🛠️ DevOps Engineer
-  skill_trees:
-  - MCP & AI Tooling
-  - Web Analytics
 rewards:
   badges:
   - 🏆 MCP Connector
@@ -103,11 +85,6 @@ validation_criteria:
   knowledge_checks:
   - Which Google API must be enabled for the Data API to work?
   - Where should the service-account key file live?
-quest_mapping:
-  coordinates: '[10, 0]'
-  region: Warrior
-  realm: Observability
-  biome: Terminal
 draft: false
 layout: quest
 ---

@@ -94,6 +94,16 @@ assert s["available_runnable"] is not None and s["available_runnable"]>=1, s
 assert s["recorded"]>=1 and "ran" in s, s
 PY
 
+echo "── 10. explicit non-quest pages are skipped (same is_quest rule as discovery) ──"
+n=$("$PY" "$CLI" pages/_quests/codex/glossary.md pages/_quests/0101/docker-mastery-example.md --list 2>/dev/null \
+  | grep -c '^[01]\{4\}  ')
+[ "$n" = "1" ] && ok "glossary (fmContentType: codex) skipped, quest kept" || bad "expected 1 listed, got $n"
+rm -f /tmp/_nonquest_selftest.md
+"$PY" "$CLI" pages/_quests/codex/glossary.md --mock --md /tmp/_nonquest_selftest.md >/dev/null 2>&1
+rc=$?
+[ "$rc" -eq 0 ] && [ ! -f /tmp/_nonquest_selftest.md ] \
+  && ok "only non-quests → exit 0, no report to post" || bad "non-quest-only run: rc=$rc or a report was written"
+
 echo ""
 echo "════════════════════════════════════════"
 echo "agentic self-test: $pass passed, $fail failed"

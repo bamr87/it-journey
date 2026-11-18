@@ -11,6 +11,12 @@ Per quest the runner:
 
 Auth is delegated to the ``claude`` CLI itself: locally it uses your logged-in
 OAuth session; in CI set ``CLAUDE_CODE_OAUTH_TOKEN`` (from ``claude setup-token``).
+When the job env carries BOTH ``CLAUDE_CODE_OAUTH_TOKEN`` and ``ANTHROPIC_API_KEY``,
+the CLI on its own would pick the API key (it outranks the OAuth token), so the
+runner hands each credential to the CLI alone, OAuth first: a refused OAuth token
+falls back to the API key, never the other way round unless
+``QUEST_QA_AUTH_ORDER`` / ``AI_AUTH_ORDER`` says so (the fleet ``claude-run``
+contract — see ``auth_order``).
 
 ``mock=True`` returns a deterministic synthetic verdict (no CLI, no cost) so the
 whole pipeline can be exercised offline. ``dry_run=True`` returns the exact
@@ -62,6 +68,90 @@ THROTTLE_HINT = (
 )
 
 
+# Credential methods, the env var each one lives in, and what a human does when
+# that credential is refused. Same names as the fleet's claude-run runner.
+_CRED_VARS = {"oauth": "CLAUDE_CODE_OAUTH_TOKEN", "api_key": "ANTHROPIC_API_KEY"}
+_DEFAULT_AUTH_ORDER = "oauth,api_key"
+_FIX_HINT = {
+    ("oauth", "auth"): "mint a fresh token with `claude setup-token` and update the "
+                       "CLAUDE_CODE_OAUTH_TOKEN repo secret",
+    ("oauth", "quota"): "the subscription's usage window is spent — it refills on its own",
+    ("api_key", "auth"): "the ANTHROPIC_API_KEY was rejected (revoked key or empty credit "
+                         "balance) — fix it in the Anthropic console or delete the secret",
+    ("api_key", "quota"): "the API key hit its rate or spend limit — raise it in the "
+                          "Anthropic console",
+}
+_SECRET_RE = re.compile(r"sk-ant-[A-Za-z0-9_-]{8,}")
+
+
+def auth_order(environ=None) -> List[str]:
+    """The credential methods to try, in order, keeping only those whose secret is
+    actually present. ``QUEST_QA_AUTH_ORDER`` (or the fleet-wide ``AI_AUTH_ORDER``)
+    overrides the default ``oauth,api_key``. An unset GitHub secret renders as an
+    empty string, so blank values count as absent. ``[]`` means no credential is
+    in the environment: the CLI's own stored login is used (a human running
+    locally)."""
+    env = os.environ if environ is None else environ
+    raw = (env.get("QUEST_QA_AUTH_ORDER") or env.get("AI_AUTH_ORDER")
+           or _DEFAULT_AUTH_ORDER)
+    out: List[str] = []
+    for method in re.split(r"[,\s]+", raw.strip()):
+        var = _CRED_VARS.get(method)
+        if var and (env.get(var) or "").strip() and method not in out:
+            out.append(method)
+    return out
+
+
+def child_env(method: str, environ=None) -> dict:
+    """The environment for ONE ``claude`` call that may use only ``method``'s
+    credential. The other credential is removed, not just de-prioritised: with
+    both present the CLI prefers ANTHROPIC_API_KEY, which is how a dead API key
+    silently shadowed a healthy OAuth token here for weeks. ``ambient`` strips
+    both, leaving the CLI's stored login."""
+    env = dict(os.environ if environ is None else environ)
+    env.setdefault("CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC", "1")
+    for m, var in _CRED_VARS.items():
+        if m != method or not (env.get(var) or "").strip():
+            env.pop(var, None)
+    return env
+
+
+def _one_line(text: str, limit: int = 400, tail: bool = False) -> str:
+    """Secret-scrubbed, whitespace-collapsed, length-bounded — safe for a log
+    line, an annotation, or a public PR comment."""
+    t = re.sub(r"\s+", " ", _SECRET_RE.sub("sk-ant-***", text or "")).strip()
+    if len(t) > limit:
+        t = ("…" + t[-limit:]) if tail else (t[:limit] + "…")
+    return t
+
+
+def failure_reason(proc) -> str:
+    """Why a ``claude -p --output-format json`` call failed, as one line. The CLI
+    writes its refusal to STDOUT as a result payload (``subtype`` + ``result``),
+    so read that first and fall back to the stderr/stdout tail."""
+    out = (proc.stdout or "").strip()
+    if out:
+        try:
+            env = json.loads(out.splitlines()[-1])
+        except (json.JSONDecodeError, IndexError):
+            env = None
+        if isinstance(env, dict):
+            parts = [str(p) for p in (env.get("subtype"),
+                                      env.get("result") or env.get("error")) if p]
+            if parts:
+                return _one_line(": ".join(parts))
+    return _one_line(proc.stderr or out, tail=True)
+
+
+def _annotate(level: str, title: str, message: str) -> None:
+    """Emit a GitHub Actions annotation (no-op elsewhere), so a credential problem
+    is visible on the run even when the calling step is continue-on-error."""
+    if os.environ.get("GITHUB_ACTIONS") != "true":
+        return
+    msg = message.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+    print(f"::{level} title={title}::{msg}", file=sys.stderr, flush=True)
+
+
 class RunnerError(RuntimeError):
     pass
 
@@ -79,8 +169,16 @@ class AuthError(RunnerError):
                        identically, so a HUMAN must rotate it. Permanent until acted on.
       ThrottleError  — a *sustained* rate-limit/overload that outlived every retry:
                        the shared token's window refills, so the loop should soft-skip
-                       and simply retry on its next run. Transient by nature."""
-    pass
+                       and simply retry on its next run. Transient by nature.
+
+    ``failures`` lists ``(method, outcome, reason)`` for every credential that was
+    tried; ``reason`` is the one-line, secret-scrubbed summary of them, safe to
+    put in a PR comment."""
+
+    def __init__(self, message: str = "", failures=None):
+        super().__init__(message)
+        self.failures = list(failures or [])
+        self.reason = "; ".join(f"{m}: {r or o}" for m, o, r in self.failures)
 
 
 class ThrottleError(AuthError):
@@ -125,6 +223,16 @@ def _looks_like_transient(text: str) -> bool:
     return any(n in t for n in needles)
 
 
+def _looks_like_quota(text: str) -> bool:
+    """The CREDENTIAL-specific slice of `_looks_like_transient`: a rate or usage
+    limit belongs to one credential, so the next credential may still be served.
+    An overload/5xx/network blip is the backend's, and switching credential won't
+    help it."""
+    t = (text or "").lower()
+    return any(n in t for n in ("usage limit", "rate limit", "rate_limit", "rate-limit",
+                                "429", "too many requests"))
+
+
 class AgenticRunner:
     def __init__(self, mode: str = "review", model: Optional[str] = None,
                  timeout: int = 600, claude_bin: str = "claude",
@@ -159,6 +267,79 @@ class AgenticRunner:
         self.max_attempts = max_attempts or int(os.environ.get("QUEST_QA_MAX_ATTEMPTS", "4") or 4)
         self.retry_base_s = retry_base_s or float(os.environ.get("QUEST_QA_RETRY_BASE_S", "3") or 3)
         self.retry_max_s = retry_max_s or float(os.environ.get("QUEST_QA_RETRY_MAX_S", "45") or 45)
+        # Credentials refused earlier in this process (see _auth_plan): skipped on
+        # later quests so a dead OAuth token costs its retries once per batch, not
+        # once per quest. `auth_method` is the method that last authenticated.
+        self._refused: set = set()
+        self.auth_method: Optional[str] = None
+
+    # ---- auth -----------------------------------------------------------
+
+    def _auth_plan(self) -> List[str]:
+        """Credential methods to try for the next call, in order (``ambient`` = no
+        credential in the env; use the CLI's stored login)."""
+        order = auth_order()
+        if not order:
+            return ["ambient"]
+        return [m for m in order if m not in self._refused] or order
+
+    def _attempt(self, cmd: List[str], cwd: Path, method: str):
+        """Run ``cmd`` with ONE credential, retrying the recoverable classes with
+        backoff. Returns ``(outcome, proc, duration_s)``; outcome is ``ok``,
+        ``auth`` / ``quota`` (this credential was refused), ``transient`` (the
+        backend stayed overloaded) or ``error`` (anything else). Only a NON-clean
+        exit is classified: a clean run is a real result even if its transcript
+        happens to mention "503"/"rate limit" as quest content. Lets
+        ``subprocess.TimeoutExpired`` propagate (each caller handles it its way)."""
+        env = child_env(method)
+        attempts = max(1, self.max_attempts)
+        for attempt in range(1, attempts + 1):
+            t0 = time.time()
+            proc = subprocess.run(cmd, cwd=str(cwd), env=env, capture_output=True,
+                                  text=True, timeout=self.timeout)
+            dur = round(time.time() - t0, 1)
+            if proc.returncode == 0:
+                return "ok", proc, dur
+            combined = (proc.stdout or "") + "\n" + (proc.stderr or "")
+            auth = _looks_like_auth_failure(combined)
+            transient = _looks_like_transient(combined)
+            if (auth or transient) and attempt < attempts:
+                self._backoff(attempt, "auth-endpoint" if auth and not transient
+                              else "rate-limit/overload", method)
+                continue
+            if auth:
+                return "auth", proc, dur
+            if transient:
+                return ("quota" if _looks_like_quota(combined) else "transient"), proc, dur
+            return "error", proc, dur
+        return "error", proc, dur  # unreachable: the last attempt always returns
+
+    def _refuse(self, method: str, outcome: str, reason: str, nxt: Optional[str]) -> None:
+        """Record that ``method`` was refused and, if another credential is left,
+        say loudly that we are falling back to it."""
+        self._refused.add(method)
+        if not nxt:
+            return
+        msg = f"{method} was refused ({outcome}) — falling back to {nxt}"
+        print(f"⚠️  {msg}: {reason or 'no error text'}", file=sys.stderr, flush=True)
+        _annotate("warning", "Claude auth fallback", f"{msg}. {reason}")
+
+    @staticmethod
+    def _auth_error(failures) -> AuthError:
+        """The batch-stopping error once every credential was refused. A quota
+        refusal anywhere means something refills on its own (ThrottleError, retry
+        next run); otherwise a human has to fix a secret (AuthError)."""
+        lines = []
+        for method, outcome, reason in failures:
+            var = _CRED_VARS.get(method, "the CLI's stored login")
+            lines.append(f"  • {method} ({var}) → {outcome}: {reason or 'no error text'}")
+            hint = _FIX_HINT.get((method, outcome))
+            if hint:
+                lines.append(f"    fix: {hint}")
+        detail = "\n".join(lines)
+        if any(o == "quota" for _, o, _ in failures):
+            return ThrottleError(f"{THROTTLE_HINT}\n{detail}", failures)
+        return AuthError(f"{AUTH_HINT}\nWhat each credential said:\n{detail}", failures)
 
     # ---- public ---------------------------------------------------------
 
@@ -194,35 +375,37 @@ class AgenticRunner:
             cmd += ["--model", self.model]
         if self.dry_run:
             return "ok", "dry-run — would send: " + " ".join(cmd[:6]) + " …"
-        env = dict(os.environ)
-        env.setdefault("CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC", "1")
         sandbox = Path(tempfile.mkdtemp(prefix="quest-preflight-"))
         try:
-            attempts = max(1, self.max_attempts)
-            last = ""
-            for attempt in range(1, attempts + 1):
+            plan = self._auth_plan()
+            failures = []
+            for i, method in enumerate(plan):
                 try:
-                    proc = subprocess.run(cmd, cwd=str(sandbox), env=env,
-                                          capture_output=True, text=True,
-                                          timeout=self.timeout)
+                    outcome, proc, _ = self._attempt(cmd, sandbox, method)
                 except subprocess.TimeoutExpired:
                     return "unknown", f"probe timed out after {self.timeout}s"
-                if proc.returncode == 0:
-                    return "ok", "authenticated end-to-end"
-                combined = (proc.stdout or "") + "\n" + (proc.stderr or "")
-                last = (proc.stderr or proc.stdout or "").strip()[-400:]
-                auth = _looks_like_auth_failure(combined)
-                transient = _looks_like_transient(combined)
-                if (auth or transient) and attempt < attempts:
-                    self._backoff(attempt, "auth-endpoint" if auth and not transient
-                                  else "rate-limit/overload")
-                    continue
-                if auth:
-                    return "auth", last
-                if transient:
-                    return "throttled", last
-                return "unknown", last
-            return "unknown", last
+                if outcome == "ok":
+                    self.auth_method = method
+                    detail = "authenticated end-to-end"
+                    if method != "ambient":
+                        detail += f" via {method}"
+                    if failures:
+                        detail += " (refused first: " + "; ".join(
+                            f"{m}: {r or o}" for m, o, r in failures) + ")"
+                    return "ok", detail
+                reason = failure_reason(proc)
+                if outcome in ("auth", "quota"):
+                    failures.append((method, outcome, reason))
+                    nxt = plan[i + 1] if i + 1 < len(plan) else None
+                    self._refuse(method, outcome, reason, nxt)
+                    if nxt:
+                        continue
+                    err = self._auth_error(failures)
+                    return ("throttled" if isinstance(err, ThrottleError) else "auth"), err.reason
+                if outcome == "transient":
+                    return "throttled", f"{method}: {reason}"
+                return "unknown", f"{method}: {reason}"
+            return "unknown", "no credential method was tried"
         finally:
             shutil.rmtree(sandbox, ignore_errors=True)
 
@@ -307,12 +490,13 @@ class AgenticRunner:
 
     # ---- invocation + parsing ------------------------------------------
 
-    def _backoff(self, attempt: int, reason: str) -> None:
+    def _backoff(self, attempt: int, reason: str, method: str = "") -> None:
         """Sleep exponentially (base × 2^(attempt-1), capped) with jitter before the
         next retry, narrating to stderr so CI logs show why the pause happened."""
         delay = min(self.retry_base_s * (2 ** (attempt - 1)), self.retry_max_s)
         delay += random.uniform(0, self.retry_base_s)  # jitter, avoid thundering herd
-        print(f"⏳ transient failure ({reason}) — retry {attempt}/{self.max_attempts - 1} "
+        via = f" [{method}]" if method and method != "ambient" else ""
+        print(f"⏳ transient failure ({reason}){via} — retry {attempt}/{self.max_attempts - 1} "
               f"in {delay:.1f}s …", file=sys.stderr, flush=True)
         time.sleep(delay)
 
@@ -321,52 +505,42 @@ class AgenticRunner:
             raise RunnerError(
                 f"`{self.claude_bin}` not found on PATH. Install Claude Code, or run with --mock."
             )
-        env = dict(os.environ)
-        env.setdefault("CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC", "1")
-
-        # Retry the recoverable failure classes before surfacing a hard error: a
-        # single overload/rate-limit/5xx/network blip (or an ambiguous auth-endpoint
-        # hiccup) on ANY quest — especially the first — otherwise aborts the whole
-        # batch and throws away the slice. Only a NON-clean exit (returncode != 0)
-        # is eligible: a clean run is a real result even if its transcript happens
-        # to mention "503"/"rate limit" as quest content. A genuine timeout or a
-        # non-transient error still fails fast (retrying won't help). Once retries
-        # are exhausted, auth/throttle raise AuthError (stop the batch, write partial
-        # evidence); any other non-zero exit is a per-quest RunnerError (batch
-        # continues to the next quest).
-        attempts = max(1, self.max_attempts)
-        for attempt in range(1, attempts + 1):
-            t0 = time.time()
+        # Each credential is tried on its own, OAuth first (see _auth_plan), and
+        # _attempt retries the recoverable failure classes before giving up on it:
+        # a single overload/rate-limit/5xx/network blip (or an ambiguous
+        # auth-endpoint hiccup) on ANY quest — especially the first — otherwise
+        # aborts the whole batch and throws away the slice. A credential that is
+        # still REFUSED after its retries (auth / quota) hands over to the next
+        # one; once none is left, AuthError/ThrottleError stops the batch (partial
+        # evidence is written). A sustained overload stops it too — switching
+        # credential won't help the backend. A genuine timeout or any other
+        # non-zero exit is a per-quest RunnerError (the batch moves on).
+        plan = self._auth_plan()
+        failures = []
+        for i, method in enumerate(plan):
             try:
-                proc = subprocess.run(
-                    cmd, cwd=str(sandbox), env=env, capture_output=True, text=True,
-                    timeout=self.timeout,
-                )
+                outcome, proc, dur = self._attempt(cmd, sandbox, method)
             except subprocess.TimeoutExpired:
                 # A timeout is expensive (up to self.timeout burned) and often a
                 # runaway quest rather than a transport blip, so don't multiply it —
                 # record it as this quest's error and let the batch move on.
                 raise RunnerError(f"claude timed out after {self.timeout}s")
-            dur = round(time.time() - t0, 1)
-
-            combined = (proc.stdout or "") + "\n" + (proc.stderr or "")
-            clean = proc.returncode == 0
-            auth = (not clean) and _looks_like_auth_failure(combined)
-            transient = (not clean) and _looks_like_transient(combined)
-
-            if (auth or transient) and attempt < attempts:
-                self._backoff(attempt, "auth-endpoint" if auth and not transient
-                              else "rate-limit/overload")
-                continue
-            if auth:
-                raise AuthError(AUTH_HINT)
-            if transient:
-                tail = (proc.stderr or proc.stdout or "").strip()[-400:]
-                raise ThrottleError(f"{THROTTLE_HINT}\nLast output: {tail}")
-            if not clean:
-                tail = (proc.stderr or proc.stdout or "").strip()[-800:]
-                raise RunnerError(f"claude exited {proc.returncode}: {tail}")
-            break  # clean run — fall through to envelope parsing below
+            if outcome == "ok":
+                self.auth_method = method
+                break  # clean run — fall through to envelope parsing below
+            reason = failure_reason(proc)
+            if outcome in ("auth", "quota"):
+                failures.append((method, outcome, reason))
+                nxt = plan[i + 1] if i + 1 < len(plan) else None
+                self._refuse(method, outcome, reason, nxt)
+                if nxt:
+                    continue
+                raise self._auth_error(failures)
+            if outcome == "transient":
+                raise ThrottleError(f"{THROTTLE_HINT}\nLast output [{method}]: {reason}",
+                                    failures + [(method, outcome, reason)])
+            tail = _one_line(proc.stderr or proc.stdout, limit=800, tail=True)
+            raise RunnerError(f"claude exited {proc.returncode}: {tail}")
 
         envelope = self._parse_envelope(proc.stdout)
         # The CLI signals failures (incl. the --max-turns cap) with is_error=true
@@ -377,7 +551,8 @@ class AgenticRunner:
         if err:
             meta = {"mock": False, "cost_usd": envelope.get("total_cost_usd"),
                     "turns": envelope.get("num_turns"),
-                    "session_id": envelope.get("session_id"), "duration_s": dur}
+                    "session_id": envelope.get("session_id"), "duration_s": dur,
+                    "auth": self.auth_method}
             # error_max_turns is a VERDICT about the quest, not an engine fault:
             # the walk happened and ran out of budget — in learner terms the
             # session ended unfinished, which is a FAIL, not a void. Recording it
@@ -401,6 +576,7 @@ class AgenticRunner:
             "turns": envelope.get("num_turns"),
             "session_id": envelope.get("session_id"),
             "duration_s": dur,
+            "auth": self.auth_method,
         }
         if verdict is None:
             return self._finalize(quest, None, meta=meta,

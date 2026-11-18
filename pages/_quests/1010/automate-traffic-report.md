@@ -16,7 +16,6 @@ quest_line: The Observability Path
 quest_arc: Analytics, SEO & Site Health
 sub_title: 'Level 1010 (10) Quest: Main Quest - Scheduled Automation'
 excerpt: Turn an on-demand query into a hands-off weekly digest that shows up where you work.
-snippet: A report you have to remember to run is a report you never run.
 author: Quest Master IT-Journey
 tags:
 - '1010'
@@ -64,22 +63,6 @@ quest_dependencies:
   recommended_quests:
   - /quests/1010/query-traffic-with-mcp/
   unlocks_quests: []
-quest_relationships:
-  parent_quest:
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - DevOps Automation
-  - Web Analytics
-  character_classes:
-  - 🛠️ DevOps Engineer
-  - 💻 Software Developer
-  - 📊 Data Analyst
-  skill_trees:
-  - Automation & Scheduling
-  - Web Analytics
 rewards:
   badges:
   - 🏆 Automation Architect
@@ -102,11 +85,6 @@ validation_criteria:
   knowledge_checks:
   - Why use absolute paths in a launchd/cron job?
   - Where does the service-account key live, and why not in the repo?
-quest_mapping:
-  coordinates: '[10, 3]'
-  region: Warrior
-  realm: Observability
-  biome: Terminal
 draft: false
 layout: quest
 environment:
