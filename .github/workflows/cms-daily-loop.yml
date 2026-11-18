@@ -120,7 +120,12 @@ jobs:
           make cms-all
           # Regenerate quest-derived data if any quest frontmatter changed.
           if ! git diff --quiet -- 'pages/_quests'; then make quest-data || true; fi
-          if git diff --quiet; then
+          # Scope the gate to the paths this lane commits, minus .cms/**: `make
+          # cms-all` above writes a new dated report and worklist every day, and
+          # a repo-wide diff also sees build artifacts (e.g. .bundle/config), so
+          # either one made every run build. The reports still ride along in the
+          # PR (add-paths below) whenever real content changed.
+          if git diff --quiet -- pages _data assets/data; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -307,7 +312,9 @@ jobs:
         id: gate
         run: |
           set -euo pipefail
-          if git diff --quiet && git diff --cached --quiet; then
+          # Scoped to the paths this lane commits (see the mechanical lane): a
+          # repo-wide diff is dirtied by build artifacts such as .bundle/config.
+          if git diff --quiet -- pages _data assets/data && git diff --cached --quiet -- pages _data assets/data; then
             echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0
           fi
           echo "changed=true" >> "$GITHUB_OUTPUT"
