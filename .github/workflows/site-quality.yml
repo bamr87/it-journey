@@ -85,8 +85,6 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-          cache-dependency-path: ${{ env.QA_DIR }}/package-lock.json
 
       # Browsers: the runner's preinstalled Google Chrome is used by Lighthouse,
       # Playwright (channel: chrome) and pa11y, so skip the bundled downloads.
@@ -95,7 +93,7 @@ jobs:
         env:
           PUPPETEER_SKIP_DOWNLOAD: 'true'
           PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
-        run: npm ci --no-audit --no-fund
+        run: npm install --no-audit --no-fund --no-package-lock
 
       - name: 🌐 Serve _site on 127.0.0.1:4000
         run: |
