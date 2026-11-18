@@ -14,6 +14,8 @@ _algolia_api_key
 
 # NOTE: Many Ruby projects DO commit this, but this repo currently does not.
 Gemfile.lock
+# The fleet never commits lockfiles (UPS-REPO-07): site-quality installs with `npm install`.
+package-lock.json
 
 ##############################
 # Environment / Secrets

@@ -27,7 +27,7 @@ When a fix lands, delete its `known` entry or its `warn` override, or add `max: 
 
 ```bash
 bundle exec jekyll build --config _config.yml,_config_dev.yml,_config_ci.yml
-cd .github/site-quality && PUPPETEER_SKIP_DOWNLOAD=1 PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm ci
+cd .github/site-quality && PUPPETEER_SKIP_DOWNLOAD=1 PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm install --no-package-lock
 node serve-site.mjs ../../_site 4000 &
 npx lhci autorun --config=lighthouserc.cjs   # Lighthouse collect + assert
 node a11y-check.mjs && node contrast-check.mjs
