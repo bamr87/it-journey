@@ -40,7 +40,6 @@ As a **learner / contributor / educator**, I want:
 | Source | Count | Status |
 |--------|-------|--------|
 | Learning Quests | 6 | ✅ Published |
-| Educational Posts | 15 | ✅ Published |
 | Total Markdown Files | 45 | ✅ Indexed |
 | Implemented Features | 1 | ✅ Tracked |
 | Recent Commits | 2 | ✅ Analyzed |
@@ -88,10 +87,9 @@ graph TD
 |-------|---------|---------|
 | `/` | Home | Landing page with learning paths |
 | `/quests/` | Quest Collection | Browse gamified learning experiences |
-| `/posts/` | Blog Posts | Tutorials, case studies, guides |
-| `/docs/` | Documentation | Reference materials and guides |
-| `/notebooks/` | Jupyter Notebooks | Interactive code examples |
 | `/about/features/` | Features Index | Platform capabilities |
+
+Blog content lives at [lifehacker.dev](https://lifehacker.dev/). The retired `/posts/`, `/docs/` and `/notebooks/` routes stay in the feature catalog as deprecated (FR-ITJ-005 to FR-ITJ-007); `/docs/` redirects to `/notes/`.
 
 ### CLI Tools
 
@@ -121,7 +119,6 @@ python3 scripts/validation/link-checker.py --scope website
 |----------|---------|---------|
 | `build-validation.yml` | Push/PR | Validate Jekyll build |
 | `link-checker.yml` | Schedule/Manual | Check link health |
-| `prd-sync.yml` | Schedule/Push | Update PRD.md |
 | `frontmatter-validation.yml` | Push | Validate content metadata |
 
 ### AI Orchestration Components
@@ -173,7 +170,7 @@ python3 scripts/validation/link-checker.py --scope website
 - **Binary files**: Images/media should go in `assets/` only
 - **Frontmatter**: All content files require valid YAML frontmatter
 - **Workflow tokens**: All GitHub Actions workflows use `secrets.GITHUB_TOKEN` (the built-in token); no custom PAT secrets (`GITHUB_PAT`, `PAT_TOKEN`) are needed or supported
-- **Workflow permissions**: Each workflow must include a minimal `permissions:` block; `prd-sync.yml` requires `issues: write` to open conflict-detection tickets
+- **Workflow permissions**: Each workflow must include a minimal `permissions:` block
 - **Validator field checks**: The quest validator skips *required*-field checks for fields that have site-level defaults in `_config.yml`, preventing false positives on optional fields that are always populated by Jekyll
 
 ### AI Alignment Review
@@ -197,9 +194,9 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 | [FR-ITJ-002](features/features.yml) | Algolia Search indexing | shipped | route `/search/` | §3 |
 | [FR-ITJ-003](features/features.yml) | Auto features index generation | shipped | route `/about/features/` | §3 |
 | [FR-ITJ-004](features/features.yml) | Quest collection | shipped | route `/quests/` · [`pages/_quests`](pages/_quests) | §1, §3 |
-| [FR-ITJ-005](features/features.yml) | Blog posts | tbd | route `/posts/` | §3 |
-| [FR-ITJ-006](features/features.yml) | Documentation section | tbd | [`docs/`](docs) | §3 |
-| [FR-ITJ-007](features/features.yml) | Jupyter notebooks | tbd | route `/notebooks/` | §3 |
+| [FR-ITJ-005](features/features.yml) | Blog posts | deprecated | route `/posts/` | §3 |
+| [FR-ITJ-006](features/features.yml) | Documentation section | deprecated | [`docs/`](docs) | §3 |
+| [FR-ITJ-007](features/features.yml) | Jupyter notebooks | deprecated | route `/notebooks/` | §3 |
 | [FR-ITJ-008](features/features.yml) | Interactive terminal interface | shipped | [`journey.sh`](journey.sh) | §3 |
 | [FR-ITJ-009](features/features.yml) | Docker development and quest validation | shipped | [`docker-compose.yml`](docker-compose.yml) | §3 |
 | [FR-ITJ-010](features/features.yml) | Quest validation workflow | shipped | [`.github/workflows/quest-validation.yml`](.github/workflows/quest-validation.yml) | §3 |
