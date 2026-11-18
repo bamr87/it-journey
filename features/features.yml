@@ -149,3 +149,11 @@ features:
     docs: "docs/amendments/proposed/editorial-charter.md"
     tags: [governance, ci, quests]
     date: 2026-10-30
+  - id: FR-ITJ-018
+    title: "Missions in constitution §1"
+    description: "Three product missions under one direction statement, ratified through amendment 0004."
+    implemented: false
+    status: planned
+    prd: ["§1.1"]
+    surface: docs
+    docs: "docs/constitution.md"

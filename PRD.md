@@ -24,6 +24,17 @@ Build **IT-Journey** — an open-source educational platform that democratizes I
 
 ## 1. MVP (Minimum Viable Promise)
 
+### 1.1 Missions
+
+IT-Journey's direction is to become the ultimate open home for all things IT learning — data, tools, resources and transparency, gathered in one place that anyone can inspect and reuse.
+
+1. **Provide data, tools, resources and transparency for all stakeholders, IT educators and professionals, and the general public.** Learners from zer0 to her0, mentors, contributors, educators, and the general public are first-class audiences. The aim is a shared, open commons: the same quests, the same tools, and the same trail of evidence for everyone.
+2. **Make a complete, trusted path from complete beginner to skilled professional, taught through gamified quests, practical tutorials and AI-enhanced learning.** Hands-on adventures, a binary level path, and real commands that stay correct are the system of record; a wrong lesson is a defect, not a draft. Optional AI helps authors and learners without replacing the quest as the source of truth.
+3. **Put that path in every learner's, teacher's and builder's hands.** Serve it through the open site, the quest collection, the CLI and the contributor lanes, so anyone can learn, teach, and add a quest — an open toolkit for working with all things IT learning.
+
+These missions set the course; they do not claim the work is finished. They serve the PRD purpose in §0 and the MVP in §1: an open educational platform that democratizes IT education. The earlier mission — building IT-Journey as a gamified path from complete beginner to skilled IT professional — is absorbed into these three. Every feature must trace to them.
+
+
 As a **learner / contributor / educator**, I want:
 
 - ✅ Gamified learning quests with progressive difficulty (Level 0000 → advanced)
@@ -207,6 +218,7 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 | [FR-ITJ-015](features/features.yml) | Quest page feedback | shipped | route `/quests/` · [`_config.yml`](_config.yml) | §3 |
 | [FR-ITJ-016](features/features.yml) | Quest editorial charter | planned | [`docs/amendments/proposed/editorial-charter.md`](docs/amendments/proposed/editorial-charter.md) | §4, §9 |
 | [FR-ITJ-017](features/features.yml) | Editorial charter CI checks | planned | [`docs/amendments/proposed/editorial-charter.md`](docs/amendments/proposed/editorial-charter.md) | §4, §9 |
+| [FR-ITJ-018](features/features.yml) | Missions in constitution §1 | planned | [`docs/constitution.md`](docs/constitution.md) | §1.1 |
 
 **Requirement → feature trace**
 
@@ -216,6 +228,7 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 | §3 | FR-ITJ-001, FR-ITJ-002, FR-ITJ-003, FR-ITJ-004, FR-ITJ-005, FR-ITJ-006, FR-ITJ-007, FR-ITJ-008, FR-ITJ-009, FR-ITJ-010, FR-ITJ-011, FR-ITJ-012, FR-ITJ-013, FR-ITJ-014, FR-ITJ-015 |
 | §4 | FR-ITJ-016, FR-ITJ-017 |
 | §9 | FR-ITJ-016, FR-ITJ-017 |
+| §1.1 | FR-ITJ-018 |
 <!-- features:end -->
 
 ## 6. OOS (Out Of Scope)

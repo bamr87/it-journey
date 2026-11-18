@@ -2,6 +2,8 @@
 
 # it-journey
 
+> IT-Journey's direction is to become the ultimate open home for all things IT learning: data, tools, resources and transparency, with gamified quests from zer0 to her0, practical tutorials, and AI-enhanced learning for everyone ([constitution](docs/constitution.md) §1).
+
 > How to work in it-journey, the GitHub Pages Jekyll site behind it-journey.dev: commands, layout, quest and frontmatter rules, and the Warden Pact every agent obeys.
 
 ## What this repo is
