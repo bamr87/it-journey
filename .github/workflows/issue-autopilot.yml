@@ -16,7 +16,7 @@
 # Mirrors the house conventions exactly: the gate-job + *_ENABLED var + OAuth/API
 # auth double-lock, the AUTO_PR_GITHUB_TOKEN||PAT_TOKEN||github.token fallback so
 # agent PRs re-trigger CI, the fleet's uniform `claude-run` AI step (consumed by
-# reference from bamr87/bamr87/.github/actions/claude-run@main), and
+# reference from bamr87/bamr87/.github/actions/claude-run@v2), and
 # the "never merge / content only / honesty" hard rules in every prompt.
 #
 # OFF by default. Needs ISSUE_AUTOPILOT_ENABLED=true (repo var) + a Claude
@@ -136,7 +136,7 @@ jobs:
       # event goes straight to a focused single-issue resolve.
       - name: Triage open issues (comment, label, route)
         if: ${{ github.event_name != 'issues' }}
-        uses: bamr87/bamr87/.github/actions/claude-run@main
+        uses: bamr87/bamr87/.github/actions/claude-run@v2
         with:
           agent: issue-triager
           prompt: >-
@@ -281,7 +281,7 @@ jobs:
 
       # NOT continue-on-error: a crashed resolve must show RED, not silent green.
       - name: Resolve batch ${{ matrix.batch_id }} and open one PR
-        uses: bamr87/bamr87/.github/actions/claude-run@main
+        uses: bamr87/bamr87/.github/actions/claude-run@v2
         env:
           BATCH_ID: ${{ matrix.batch_id }}
           BATCH_AREA: ${{ matrix.area }}

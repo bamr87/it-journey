@@ -2,7 +2,7 @@
 # ai.yml — the ONE place AI is configured for the whole repo
 # -----------------------------------------------------------------------------
 # Everything that calls a model — every workflow agent step — goes through the
-# fleet's claude-run action (bamr87/bamr87/.github/actions/claude-run@main,
+# fleet's claude-run action (bamr87/bamr87/.github/actions/claude-run@v2,
 # consumed by reference; its run.sh reads this file from the consumer tree).
 # Primary path is Claude Code (the `claude` CLI / agent, authenticated by
 # CLAUDE_CODE_OAUTH_TOKEN); if it is unavailable or fails, the runner falls back

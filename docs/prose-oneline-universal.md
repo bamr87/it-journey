@@ -17,10 +17,10 @@ There is no single switch that covers every markdown-producing path across every
 
 The `bamr87/bamr87` hub distributes standards two ways:
 
-1. **Reusable workflows** — `.github/workflows/ci.yml` is a thin caller: `uses: bamr87/bamr87/.github/workflows/standard-ci.yml@main`. Edit the hub once and every repo runs the new logic on its next PR.
+1. **Reusable workflows** — `.github/workflows/ci.yml` is a thin caller: `uses: bamr87/bamr87/.github/workflows/standard-ci.yml@v2`. Edit the hub once and every repo runs the new logic on its next PR.
 2. **Fanout/seed** — `standardize-fanout.yml` + `tools/fanout.sh --kit prose` copies `markdown-oneline.yml` + `unwrap-prose.py` into each repo. Edit the hub kit, re-fanout, and every repo gets the new committed copy.
 
-Plus a shared AI chokepoint: the fleet's `claude-run` action (`bamr87/bamr87/.github/actions/claude-run@main`, consumed by reference) — *every* AI call flows through it, in this repo and the sibling sites alike.
+Plus a shared AI chokepoint: the fleet's `claude-run` action (`bamr87/bamr87/.github/actions/claude-run@v2`, consumed by reference) — *every* AI call flows through it, in this repo and the sibling sites alike.
 
 ## The layers
 
@@ -99,7 +99,7 @@ Tradeoff: auto-committing edits the contributor's PR and can race other automati
 
 ## Layer 2 — the shared AI runner sweep (shipped here)
 
-The kit's runner (`run.sh` beside `bamr87/bamr87/.github/actions/claude-run@main`) normalizes any markdown the agent changed after a successful Claude Code run (`normalize_changed_markdown`). It is best-effort, skips the gate-excluded files, and is idempotent with `quest-fix.yml`'s M8 step. The sweep was upstreamed into the shared `ai-runner` kit (the hub is the source of truth; this repo consumes it by reference — see `scripts/ai/README.md`), so the kit's `run.sh` no longer hard-codes this repo's excludes: it always skips `SCHEMA.md`/`CHANGELOG.md` and reads the rest, one extended regex per line, from the repo-root `.prose-excludes`.
+The kit's runner (`run.sh` beside `bamr87/bamr87/.github/actions/claude-run@v2`) normalizes any markdown the agent changed after a successful Claude Code run (`normalize_changed_markdown`). It is best-effort, skips the gate-excluded files, and is idempotent with `quest-fix.yml`'s M8 step. The sweep was upstreamed into the shared `ai-runner` kit (the hub is the source of truth; this repo consumes it by reference — see `scripts/ai/README.md`), so the kit's `run.sh` no longer hard-codes this repo's excludes: it always skips `SCHEMA.md`/`CHANGELOG.md` and reads the rest, one extended regex per line, from the repo-root `.prose-excludes`.
 
 This sweep catches *uncommitted* edits (the workflow-opens-PR flows). Agents that commit inside their own run — `content-factory`, `quest-forge`, the issue resolver — are covered by Layer 3, which fires per-edit *during* the run, before the agent commits.
 

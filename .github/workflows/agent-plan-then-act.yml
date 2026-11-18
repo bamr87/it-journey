@@ -138,7 +138,7 @@ jobs:
       - name: Verify the world has not drifted while we waited (D3 — abort before acting)
         run: DRIFT_SNAPSHOT=.agent/snapshot.sha256 scripts/ai/drift-guard.sh verify
 
-      - name: Act on the approved plan (stub — swap for bamr87/bamr87/.github/actions/claude-run@main to go live)
+      - name: Act on the approved plan (stub — swap for bamr87/bamr87/.github/actions/claude-run@v2 to go live)
         run: |
           task="$(python3 -c 'import json;print(json.load(open(".agent/plan.json"))["task"])')"
           echo "Executing approved plan for task: $task"

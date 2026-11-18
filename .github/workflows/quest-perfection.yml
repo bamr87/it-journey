@@ -683,7 +683,7 @@ jobs:
       # in full on the next run.
       - name: Walk the slice and write a session report
         if: steps.plan.outputs.empty != 'true' && steps.evidence.outputs.auth_skipped != 'true'
-        uses: bamr87/bamr87/.github/actions/claude-run@main
+        uses: bamr87/bamr87/.github/actions/claude-run@v2
         with:
           agent: quest-walker
           prompt: >-

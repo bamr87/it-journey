@@ -363,7 +363,7 @@ jobs:
       # ----- The fix itself: the quest-fixer agent runs the quest-fix skill ----
       - name: Fix the slice (quest-fix skill)
         if: steps.breaker.outputs.skip != 'true'
-        uses: bamr87/bamr87/.github/actions/claude-run@main
+        uses: bamr87/bamr87/.github/actions/claude-run@v2
         with:
           agent: quest-fixer
           prompt: >-
