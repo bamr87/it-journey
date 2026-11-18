@@ -116,7 +116,7 @@ jobs:
       # The matrix is fail-fast:false, so one collection failing never kills others.
       - name: Improve one ${{ matrix.collection }} and open a PR
         if: ${{ steps.scope.outputs.run == 'true' }}
-        uses: bamr87/bamr87/.github/actions/claude-run@main
+        uses: bamr87/bamr87/.github/actions/claude-run@v2
         with:
           agent: content-curator
           prompt: >-
