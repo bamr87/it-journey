@@ -16,7 +16,6 @@ quest_line: The Observability Path
 quest_arc: Analytics, SEO & Site Health
 sub_title: 'Level 1010 (10) Quest: Main Quest - Analytics Data API'
 excerpt: Learn the five MCP tools and the dimensions and metrics that turn raw analytics into answers.
-snippet: Stop staring at dashboards. Ask questions.
 author: Quest Master IT-Journey
 tags:
 - '1010'
@@ -62,23 +61,6 @@ quest_dependencies:
   recommended_quests: []
   unlocks_quests:
   - /quests/1010/automate-traffic-report/
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests:
-  - /quests/1010/automate-traffic-report/
-learning_paths:
-  primary_paths:
-  - Web Analytics
-  - DevOps Automation
-  character_classes:
-  - 📊 Data Analyst
-  - 💻 Software Developer
-  - 🛠️ DevOps Engineer
-  skill_trees:
-  - Web Analytics
-  - MCP & AI Tooling
 rewards:
   badges:
   - 🏆 Report Runner
@@ -101,11 +83,6 @@ validation_criteria:
   knowledge_checks:
   - What does sessionDefaultChannelGroup tell you?
   - How do you compare two date ranges in one report?
-quest_mapping:
-  coordinates: '[10, 1]'
-  region: Warrior
-  realm: Observability
-  biome: Terminal
 draft: false
 layout: quest
 ---
