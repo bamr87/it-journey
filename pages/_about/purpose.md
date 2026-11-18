@@ -1,55 +1,70 @@
 ---
-title: Purpose
-lastmod: '2024-05-11T22:54:10.000Z'
+title: Purpose — Free, Open IT Education for Everyone
+description: "Why IT-Journey exists: free, open IT education built with open source and AI, taught through quests from zer0 to her0 and guided by seven principles."
+permalink: /about/purpose/
 date: '2021-12-29T10:19:09.000Z'
-description: The comprehension of our universe is constantly morphed by the information available and what is considered to be true. That truth is the core of…
+lastmod: '2026-11-15T00:00:00.000Z'
+author: IT-Journey Team
+categories:
+- about
+tags:
+- about
+- purpose
+- mission
+- principles
+- open-source
+keywords:
+- it-journey purpose
+- free it education
+- open source learning
+- zer0 to her0
 ---
-## Statement of Purpose
 
-The comprehension of our universe is constantly morphed by the information available and what is considered to be true. That truth is the core of humanity’s internal struggle and desire to find, whether it be in the form of religion or science. Regardless of how the content in question is true or false, it is ultimately the individual who determines it. As we all know in today’s information age, truth has become easily accessible through the advent of the internet but becoming harder and harder to find through the vastness of information. Our society was not equipped to navigate through this sea of information and data, and the forces controlling this wealth are motivated by the capitalistic framework that drives our economy forward. Big businesses and government institutions have failed to harness this information revolution for the greater good as we can see by the growing wealth gap, and diminishing educational standards. I have been witnessing this trend towards greater economic disparity as information technology grows ever more important to the wellbeing of our society, which is why I am passionate to advance the knowledge of Information Science in the area of info tech education to enable public empowerment.
+## Why we exist
 
-## Goals
+The internet made information abundant, but it did not make it learnable. The skills that shape the future — software, systems, data, and now AI — still sit behind paywalls, jargon, and credential gates. IT-Journey exists to close that gap.
 
-Personal Knowledge Management
+Our purpose is simple: **free, open IT education, built with open source and AI, so that anyone with curiosity and dedication can learn.** Everything lives in a public [GitHub repository](https://github.com/bamr87/it-journey) you can read, fork, and improve. Any money the project receives goes only to upkeep — keeping the platform running for everyone, owned by no one.
 
-Technological Literacy
+For the full story, read [About IT-Journey](/about/).
 
-Information Truth
+## How we teach: from zer0 to her0
 
-## Approaches
+**zer0** is wherever you are today. **her0** is the practitioner who can build what they imagine and fix it when it breaks. We get you there by doing, not by watching. Each **quest** is a self-contained mission with a clear objective, a real artifact to produce, and a way to check your work. Quests climb in levels, so the challenge grows with your confidence.
 
-Path of least resistance (PoLR)
+## The principles we build by
 
-Open Source As Possible (OSAP)
+Seven pillars guide both the software and the lessons:
 
-Keeping it stupid simple (KISS)
+- **DFF — Design for Failure:** failures are inevitable; build and learn to handle them gracefully.
+- **DRY — Don't Repeat Yourself:** one authoritative source for every piece of knowledge.
+- **KIS — Keep It Simple:** clarity over cleverness, every time.
+- **REnO — Release Early and Often:** ship increments, gather feedback, improve.
+- **MVP — Minimum Viable Product:** build the smallest thing that delivers real value.
+- **COLAB — Collaboration:** collective intelligence beats lone effort.
+- **AIPD — AI-Powered Development:** AI accelerates the work; it does not replace your judgment.
 
-## Projects
+Three working approaches settle the everyday calls:
 
-Bootstrap Docs with co-pilot
+- **PoLR — Path of least resistance:** recommend the simplest route that works first.
+- **OSAP — Open source as possible:** prefer open tools and free tiers, and say clearly when something is paid.
+- **KISS — Keep it stupid simple:** default to the boring, reliable option that meets the need.
 
-Open Edgar Fundamentals with Python
+## Built in the open
 
-Parady News with LLM
+IT-Journey practices what it teaches. Much of the work is drafted and maintained by AI agents. Every change arrives as a public pull request and runs through automated checks against project standards; routine content changes can merge once every check passes, and everything else waits for a person to review it. The whole process is public, including the parts that break.
 
-# Mission
-Equalize the imbalance between the have and havenots by educating and empowering the public with tools that are designed with grassroot potential. This can only be achieved with open sourced
+## Where we're headed
 
-All/any financial procedes are to be deposited to into the not for profit collective, and only critical maintenance costs. The master production environment should be designed to operate in perpetuity, and decentralized. 
+The [product requirements document (PRD)](https://github.com/bamr87/it-journey/blob/main/PRD.md) tracks the roadmap, and the [feature list](/about/features/) shows what has shipped. The latest arrival is the [quest feed](/quests/feed.xml), an Atom feed of the newest quests that you can follow in any feed reader.
 
+These items are **planned or in progress — not yet live**:
 
-minimum 
+- **Certification:** skill tracking and progress metrics so you can see how far you've come. This is about measuring growth, not selling credentials; IT-Journey does not plan to offer paid certifications.
+- **AI tutor:** personalized learning recommendations that suggest your next step. This is a longer-term vision.
+- **Community discussions:** deeper integration of community discussion into the learning experience.
+- **Page feedback:** a "was this helpful / report a problem" control on each quest that opens a pre-filled issue, so every learner can help improve the content.
 
-Hooded Robin
+## Join us
 
-SEC Financial Data Analyzer
-
-**https://www.sec.gov/os/accessing-edgar-data** **[EDGAR Data API](https://www.sec.gov/os/accessing-edgar-data)**
-
-Data Source
-
-zer0 her0
-
-Jekyll CMS
-
-The day of combination is here to stay, individualism is gone and never to return - John D Rockefeller.
+Start learning on the [quest map](/quests/), or help build the platform through [issues](https://github.com/bamr87/it-journey/issues), [discussions](https://github.com/bamr87/it-journey/discussions), and pull requests. Pick a quest, run the first command, and go from zer0 to her0.
