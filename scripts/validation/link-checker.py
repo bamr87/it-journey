@@ -109,7 +109,8 @@ class LinkHealthGuardian:
     # -- Engine: Lychee ----------------------------------------------------
     def run_lychee(self, files):
         output_file = os.path.join(self.output_dir, "lychee_results.json")
-        cmd = ["lychee", "--output", output_file]
+        # --format json is required: lychee defaults to Markdown, which parse_results cannot read.
+        cmd = ["lychee", "--format", "json", "--output", output_file]
 
         if self.config.get("include_site"):
             cmd.extend(["--include-path", "_site/"])
@@ -544,9 +545,11 @@ class LinkHealthGuardian:
         # 3. Parse results
         self._start("parse")
         if not self.parse_results():
-            self.log("WARNING", "Parse failed -- creating minimal results")
-            self.results = {"total_links": 0, "successful_links": 0, "broken_links": 0,
-                            "success_rate": 100.0, "fail_map": {}, "raw_data": {}}
+            # Never substitute an all-clear: a gate that cannot read its input
+            # must fail, not vouch for the site (it-journey fleet issue #71).
+            self.log("ERROR", "Could not parse lychee results -- failing instead of reporting a clean scan")
+            self._stop("parse")
+            return False
         self._stop("parse")
 
         # 4. Generate markdown summary (no 2nd lychee run)
