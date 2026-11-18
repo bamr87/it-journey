@@ -204,9 +204,13 @@ jobs:
             echo "broken-links=${BROKEN_COUNT:-0}" >> $GITHUB_OUTPUT
             echo "success-rate=${SUCCESS_RATE:-0}" >> $GITHUB_OUTPUT
           else
-            echo "total-links=0" >> $GITHUB_OUTPUT
-            echo "broken-links=0" >> $GITHUB_OUTPUT
-            echo "success-rate=0" >> $GITHUB_OUTPUT
+            # No statistics.env means the analysis could not read lychee's
+            # results. Fail loudly: zeros here would read as a clean scan.
+            echo "::error::link-checker produced no statistics.env; the scan result is unknown"
+            echo "total-links=unknown" >> $GITHUB_OUTPUT
+            echo "broken-links=unknown" >> $GITHUB_OUTPUT
+            echo "success-rate=unknown" >> $GITHUB_OUTPUT
+            exit 1
           fi
 
       - name: 📦 Upload artifacts
@@ -246,8 +250,11 @@ jobs:
 
       - name: 🚨 Set status
         run: |
-          broken_count=${{ needs.full-link-check.outputs.broken-links }}
-          if [[ "$broken_count" -eq 0 ]]; then
+          broken_count="${{ needs.full-link-check.outputs.broken-links }}"
+          if ! [[ "$broken_count" =~ ^[0-9]+$ ]]; then
+            echo "🚨 Broken-link count is missing or unknown ('$broken_count'); the scan did not report a result"
+            exit 1
+          elif [[ "$broken_count" -eq 0 ]]; then
             echo "✅ No broken links found"
           elif [[ "$broken_count" -le 5 ]]; then
             echo "⚠️ $broken_count broken links (minor)"
