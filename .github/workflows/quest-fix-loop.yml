@@ -100,7 +100,7 @@ jobs:
       # MODEL POLICY — probe the same pinned model the lane's engine/agents use
       # (see quest-perfection's gate comment).
       QUEST_AI_MODEL: ${{ vars.QUEST_AI_MODEL || 'claude-sonnet-5-5' }}
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      # Claude auth: OAuth only (CLAUDE_CODE_OAUTH_TOKEN). ANTHROPIC_API_KEY disabled for now (2026-11-15); to restore, re-add the secrets.ANTHROPIC_API_KEY reference.
     outputs:
       go: ${{ steps.verdict.outputs.go }}
     steps:
@@ -110,10 +110,10 @@ jobs:
         run: |
           set -euo pipefail
           armed=false
-          if [ "$ENABLED" = "true" ] && { [ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}" ] || [ -n "${ANTHROPIC_API_KEY:-}" ]; }; then
+          if [ "$ENABLED" = "true" ] && [ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then
             armed=true
           else
-            echo "quest-fix-loop idle (enabled=$ENABLED, auth=$([ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}${ANTHROPIC_API_KEY:-}" ] && echo yes || echo no))."
+            echo "quest-fix-loop idle (enabled=$ENABLED, auth=$([ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}" ] && echo yes || echo no))."
           fi
           echo "armed=$armed" >> "$GITHUB_OUTPUT"
 

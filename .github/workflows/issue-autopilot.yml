@@ -61,7 +61,7 @@ jobs:
         env:
           ENABLED: ${{ vars.ISSUE_AUTOPILOT_ENABLED }}
           OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Claude auth: OAuth only (CLAUDE_CODE_OAUTH_TOKEN). ANTHROPIC_API_KEY disabled for now (2026-11-15); to restore, re-add the secrets.ANTHROPIC_API_KEY reference.
           # The label event is meaningless unless it's our opt-in label.
           IS_LABEL_EVENT: ${{ github.event_name == 'issues' }}
           LABEL: ${{ github.event.label.name }}
@@ -91,10 +91,10 @@ jobs:
                 echo "go=false" >> "$GITHUB_OUTPUT"; exit 0 ;;
             esac
           fi
-          if [ "$ENABLED" = "true" ] && { [ -n "$OAUTH" ] || [ -n "$KEY" ]; }; then
+          if [ "$ENABLED" = "true" ] && [ -n "$OAUTH" ]; then
             echo "go=true" >> "$GITHUB_OUTPUT"
           else
-            echo "issue autopilot is off (ISSUE_AUTOPILOT_ENABLED != true, or no CLAUDE_CODE_OAUTH_TOKEN / ANTHROPIC_API_KEY) — idle."
+            echo "issue autopilot is off (ISSUE_AUTOPILOT_ENABLED != true, or no CLAUDE_CODE_OAUTH_TOKEN; OAuth only) — idle."
             echo "go=false" >> "$GITHUB_OUTPUT"
           fi
 
@@ -115,7 +115,7 @@ jobs:
       has_resolve: ${{ steps.plan.outputs.has_resolve }}
     env:
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      # Claude auth: OAuth only (CLAUDE_CODE_OAUTH_TOKEN). ANTHROPIC_API_KEY disabled for now (2026-11-15); to restore, re-add the secrets.ANTHROPIC_API_KEY reference.
       # Triage only comments/labels/closes via the API — no PRs — so github.token
       # is enough (and an unprivileged token keeps blast radius small).
       GH_TOKEN: ${{ github.token }}
@@ -257,7 +257,7 @@ jobs:
       matrix: ${{ fromJSON(needs.triage.outputs.matrix) }}
     env:
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      # Claude auth: OAuth only (CLAUDE_CODE_OAUTH_TOKEN). ANTHROPIC_API_KEY disabled for now (2026-11-15); to restore, re-add the secrets.ANTHROPIC_API_KEY reference.
       # A PAT so the resolver's PR ALSO triggers CI (github.token-authored PRs
       # don't), giving the content auto-merge gate checks to wait on.
       GH_TOKEN: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}

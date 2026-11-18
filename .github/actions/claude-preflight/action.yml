@@ -19,7 +19,10 @@
 #
 # Requires: a checkout (runs the repo's validator), python3 on PATH (stdlib only
 # — the --preflight path deliberately needs no pyyaml), and Claude auth in the
-# JOB env (CLAUDE_CODE_OAUTH_TOKEN or ANTHROPIC_API_KEY).
+# JOB env (CLAUDE_CODE_OAUTH_TOKEN).
+# Claude auth: OAuth only (CLAUDE_CODE_OAUTH_TOKEN). ANTHROPIC_API_KEY disabled
+# for now (2026-11-15): the probe unsets it so a stray key can't shadow the
+# token; to restore, drop the unset and re-add the key to the check below.
 # =============================================================================
 name: claude-preflight
 description: Classify the Claude credential's current state (ok/throttled/auth/unknown) with one tiny probe.
@@ -37,10 +40,13 @@ runs:
       shell: bash
       run: |
         set -euo pipefail
-        if [ -z "${CLAUDE_CODE_OAUTH_TOKEN:-}" ] && [ -z "${ANTHROPIC_API_KEY:-}" ]; then
+        # OAuth only: with both set the CLI picks ANTHROPIC_API_KEY, so a dead
+        # key would shadow a healthy token. The key is disabled for now.
+        unset ANTHROPIC_API_KEY
+        if [ -z "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then
           echo "status=unknown" >> "$GITHUB_OUTPUT"
-          echo "detail=no Claude auth in the job env — nothing to probe" >> "$GITHUB_OUTPUT"
-          echo "::warning::claude-preflight: no Claude auth in the job env — the caller's own secret check should have gated this."
+          echo "detail=no CLAUDE_CODE_OAUTH_TOKEN in the job env (OAuth only; ANTHROPIC_API_KEY disabled) — nothing to probe" >> "$GITHUB_OUTPUT"
+          echo "::warning::claude-preflight: no CLAUDE_CODE_OAUTH_TOKEN in the job env (Claude auth is OAuth only; ANTHROPIC_API_KEY disabled for now) — the caller's own secret check should have gated this."
           exit 0
         fi
         # Install failure → unknown (fail open), NOT an error: the probe must

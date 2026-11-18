@@ -181,7 +181,10 @@ jobs:
         continue-on-error: true
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Claude auth: OAuth only (CLAUDE_CODE_OAUTH_TOKEN). ANTHROPIC_API_KEY disabled for now (2026-11-15); to restore, re-add the secrets.ANTHROPIC_API_KEY reference.
+          # Needs the API key: `ai_provider: anthropic` calls the Anthropic API directly
+          # (not Claude Code), so it can't use the OAuth token and is unavailable until
+          # the key is restored. The default `none` and `openai` are unaffected.
         run: |
           # Run the Python analysis/delta/AI script on lychee's JSON output
           python3 scripts/validation/link-checker.py \

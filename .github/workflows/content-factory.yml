@@ -46,12 +46,12 @@ jobs:
         env:
           ENABLED: ${{ vars.CONTENT_FACTORY_ENABLED }}
           OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Claude auth: OAuth only (CLAUDE_CODE_OAUTH_TOKEN). ANTHROPIC_API_KEY disabled for now (2026-11-15); to restore, re-add the secrets.ANTHROPIC_API_KEY reference.
         run: |
-          if [ "$ENABLED" = "true" ] && { [ -n "$OAUTH" ] || [ -n "$KEY" ]; }; then
+          if [ "$ENABLED" = "true" ] && [ -n "$OAUTH" ]; then
             echo "go=true" >> "$GITHUB_OUTPUT"
           else
-            echo "content factory is off (CONTENT_FACTORY_ENABLED != true, or no CLAUDE_CODE_OAUTH_TOKEN / ANTHROPIC_API_KEY) — idle."
+            echo "content factory is off (CONTENT_FACTORY_ENABLED != true, or no CLAUDE_CODE_OAUTH_TOKEN; OAuth only) — idle."
             echo "go=false" >> "$GITHUB_OUTPUT"
           fi
 
@@ -76,7 +76,7 @@ jobs:
         collection: [quests, docs, notes, quickstart, about]
     env:
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      # Claude auth: OAuth only (CLAUDE_CODE_OAUTH_TOKEN). ANTHROPIC_API_KEY disabled for now (2026-11-15); to restore, re-add the secrets.ANTHROPIC_API_KEY reference.
       # A PAT (contents+PRs, NO admin) so the agent can open PRs that ALSO trigger
       # CI — GITHUB_TOKEN-authored PRs don't trigger workflows, so auto-merge would
       # have no checks to wait on. Falls back to github.token (degrades to no-PR).

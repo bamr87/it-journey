@@ -54,7 +54,7 @@ jobs:
         env:
           ENABLED: ${{ vars.QUEST_FORGE_ENABLED }}
           OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Claude auth: OAuth only (CLAUDE_CODE_OAUTH_TOKEN). ANTHROPIC_API_KEY disabled for now (2026-11-15); to restore, re-add the secrets.ANTHROPIC_API_KEY reference.
           EVENT: ${{ github.event_name }}
           LABEL: ${{ github.event.label.name }}
           COMMENT_BODY: ${{ github.event.comment.body }}
@@ -83,10 +83,10 @@ jobs:
 
           # 2) AI is opt-in: needs the kill switch AND auth.
           if [ "$trigger" = "true" ] && [ "$ENABLED" = "true" ] \
-             && { [ -n "$OAUTH" ] || [ -n "$KEY" ]; } && [ -n "$issue" ]; then
+             && [ -n "$OAUTH" ] && [ -n "$issue" ]; then
             go=true
           else
-            echo "quest-forge idle (trigger=$trigger, enabled=$ENABLED, auth=$([ -n "$OAUTH$KEY" ] && echo yes || echo no), issue=${issue:-none})."
+            echo "quest-forge idle (trigger=$trigger, enabled=$ENABLED, auth=$([ -n "$OAUTH" ] && echo yes || echo no), issue=${issue:-none})."
           fi
           echo "go=$go" >> "$GITHUB_OUTPUT"
           echo "issue=$issue" >> "$GITHUB_OUTPUT"
@@ -106,7 +106,7 @@ jobs:
       issues: write
     env:
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      # Claude auth: OAuth only (CLAUDE_CODE_OAUTH_TOKEN). ANTHROPIC_API_KEY disabled for now (2026-11-15); to restore, re-add the secrets.ANTHROPIC_API_KEY reference.
       # A PAT (contents+PRs, NO admin) so the agent's PR ALSO triggers CI — a
       # GITHUB_TOKEN-authored PR doesn't fire workflows, so the gates wouldn't run.
       GH_TOKEN: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
