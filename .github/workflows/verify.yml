@@ -45,14 +45,13 @@ concurrency:
 
 jobs:
   verify:
-    uses: bamr87/bamr87/.github/workflows/fleet-verify.yml@v2
+    uses: bamr87/bamr87/.github/workflows/fleet-verify.yml@main
     permissions:
       contents: read
       pull-requests: write
       id-token: write
     with:
       gate: false
-      hub-ref: v2
       agent: ${{ github.event_name == 'workflow_dispatch' && inputs.agent || contains(github.event.pull_request.labels.*.name, 'verify') }}
       only: ${{ github.event_name == 'workflow_dispatch' && inputs.only || '' }}
     secrets: inherit
