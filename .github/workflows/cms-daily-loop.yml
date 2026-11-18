@@ -14,12 +14,13 @@ name: 🧭 CMS Daily Content Loop
 #     it is OPT-IN: it only runs when repo variable CMS_LOOP_SUBSTANTIVE == 'true'
 #     (or via manual dispatch with enable_substantive=true) AND a credential
 #     secret is present. The mechanical job is free and runs on schedule.
-#   * Per repo policy we use only secrets.GITHUB_TOKEN (no PATs). A consequence:
-#     PRs opened here do NOT auto-trigger the required check workflows, so GitHub
-#     `--auto` merge cannot gate on them. We therefore run the SAME gates
-#     (build-ci, content/quest validation) INSIDE this job before opening any PR
-#     — that in-job run IS the gate, plus a guard that vendored/read-only content
-#     was not touched.
+#   * A PR that must run CI is opened with the FLEET_TOKEN secret, never
+#     GITHUB_TOKEN (GitHub fires no workflow events for refs pushed with
+#     GITHUB_TOKEN, so CodeQL / Verify / Conformance never ran and reported
+#     startup failures: bamr87/bamr87#420). Each lane probes the token with
+#     `gh api user`; when it is empty or invalid the lane falls back to
+#     GITHUB_TOKEN, opens the PR left OPEN for human merge, and never merges it.
+#     The in-job gates (build-ci, content/quest validation) still run before any PR.
 #   * KILL SWITCH: repo variable CMS_DAILY_LOOP_ENABLED == 'false' stops BOTH
 #     scheduled lanes; unset (the default) changes nothing. A manual dispatch
 #     bypasses it. CMS_LOOP_SUBSTANTIVE stays the agentic lane's opt-in on top.
@@ -28,10 +29,9 @@ name: 🧭 CMS Daily Content Loop
 #     capped in turns (60) and dollars ($10), the credential follows the repo's
 #     CLAUDE_AUTH_ORDER, and the call is metered (scripts/ai/usage.rb).
 #   * The mechanical PR is left OPEN for one-click human merge by default. To let
-#     it merge hands-off after the in-job gate, set repo variable
-#     CMS_MECHANICAL_AUTOMERGE == 'true' (the merge then trusts the in-job gate,
-#     since required checks won't run on a GITHUB_TOKEN PR). The substantive PR
-#     is ALWAYS human-reviewed.
+#     it merge hands-off, set repo variable CMS_MECHANICAL_AUTOMERGE == 'true':
+#     the merge happens only when the PR was opened with FLEET_TOKEN and only
+#     after its checks pass. The substantive PR is ALWAYS human-reviewed.
 
 on:
   schedule:
@@ -153,12 +153,27 @@ jobs:
           make build-ci
           make content-validate
 
+      - name: Resolve PR token (FLEET_TOKEN if valid, else GITHUB_TOKEN)
+        id: pat
+        if: steps.norm.outputs.changed == 'true'
+        env:
+          FLEET_TOKEN: ${{ secrets.FLEET_TOKEN }}
+        run: |
+          # Probe with `gh api user`, not a presence check: an expired token is
+          # non-empty. Output is a flag only; the secret itself is never echoed.
+          if [ -n "$FLEET_TOKEN" ] && GH_TOKEN="$FLEET_TOKEN" gh api user --silent 2>/dev/null; then
+            echo "use-fleet=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "use-fleet=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::FLEET_TOKEN is empty or invalid; opening the PR with GITHUB_TOKEN. Its CI will not run, so it will not be auto-merged."
+          fi
+
       - name: Open mechanical PR
         if: steps.norm.outputs.changed == 'true'
         id: pr
         uses: peter-evans/create-pull-request@v8
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ steps.pat.outputs.use-fleet == 'true' && secrets.FLEET_TOKEN || secrets.GITHUB_TOKEN }}
           commit-message: "chore(content): normalize frontmatter [cms-mechanical]"
           branch: automated/cms-mechanical
           delete-branch: true
@@ -187,17 +202,33 @@ jobs:
             cms-mechanical
 
       # Opt-in hands-off merge. Off by default -> PR is left open for one-click
-      # merge. When CMS_MECHANICAL_AUTOMERGE=='true', merge directly: the in-job
-      # gate + vendored guard above are the validation (a GITHUB_TOKEN PR does not
-      # trigger the required-check workflows, so `--auto` cannot gate on them).
-      - name: Merge mechanical PR (opt-in)
-        if: steps.pr.outputs.pull-request-number != '' && vars.CMS_MECHANICAL_AUTOMERGE == 'true'
+      # merge. When CMS_MECHANICAL_AUTOMERGE=='true' AND the PR was opened with
+      # FLEET_TOKEN (so its checks really run), wait for those checks and merge
+      # only if they pass. With the GITHUB_TOKEN fallback nothing would run, so
+      # the PR is left open.
+      - name: Merge mechanical PR after its checks pass (opt-in)
+        if: steps.pr.outputs.pull-request-number != '' && vars.CMS_MECHANICAL_AUTOMERGE == 'true' && steps.pat.outputs.use-fleet == 'true'
+        timeout-minutes: 40
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.FLEET_TOKEN }}
           PR: ${{ steps.pr.outputs.pull-request-number }}
         run: |
-          gh pr merge "$PR" --squash --delete-branch \
-            || echo "::notice::Could not merge PR #$PR automatically; left open for manual merge."
+          # Checks register a little after the PR opens; wait for the first one.
+          seen=""
+          for _ in $(seq 1 12); do
+            if [ -n "$(gh pr checks "$PR" 2>/dev/null)" ]; then seen=1; break; fi
+            sleep 20
+          done
+          if [ -z "$seen" ]; then
+            echo "::notice::No checks reported on PR #$PR; left open for manual merge."
+            exit 0
+          fi
+          if gh pr checks "$PR" --watch --interval 30 >/dev/null; then
+            gh pr merge "$PR" --squash --delete-branch \
+              || echo "::notice::Could not merge PR #$PR automatically; left open for manual merge."
+          else
+            echo "::warning::Checks failed on PR #$PR; left open for review."
+          fi
 
   # ---------------------------------------------------------------------------
   # Lane B — substantive (agentic Claude Code pass, opt-in, human-reviewed PR)
@@ -333,11 +364,26 @@ jobs:
           make content-validate
           if ! git diff --quiet -- 'pages/_quests'; then make quest-audit; fi
 
+      - name: Resolve PR token (FLEET_TOKEN if valid, else GITHUB_TOKEN)
+        id: pat
+        if: steps.auth.outputs.ok == 'true' && steps.gate.outputs.changed == 'true'
+        env:
+          FLEET_TOKEN: ${{ secrets.FLEET_TOKEN }}
+        run: |
+          # Probe with `gh api user`, not a presence check: an expired token is
+          # non-empty. Output is a flag only; the secret itself is never echoed.
+          if [ -n "$FLEET_TOKEN" ] && GH_TOKEN="$FLEET_TOKEN" gh api user --silent 2>/dev/null; then
+            echo "use-fleet=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "use-fleet=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::FLEET_TOKEN is empty or invalid; opening the PR with GITHUB_TOKEN. Its CI will not run, so it will not be auto-merged."
+          fi
+
       - name: Open substantive PR (human review)
         if: steps.auth.outputs.ok == 'true' && steps.gate.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v8
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ steps.pat.outputs.use-fleet == 'true' && secrets.FLEET_TOKEN || secrets.GITHUB_TOKEN }}
           commit-message: "content: daily curated improvements [cms]"
           branch: automated/cms-substantive
           delete-branch: true
