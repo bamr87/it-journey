@@ -20,6 +20,13 @@ name: 🧭 CMS Daily Content Loop
 #     (build-ci, content/quest validation) INSIDE this job before opening any PR
 #     — that in-job run IS the gate, plus a guard that vendored/read-only content
 #     was not touched.
+#   * KILL SWITCH: repo variable CMS_DAILY_LOOP_ENABLED == 'false' stops BOTH
+#     scheduled lanes; unset (the default) changes nothing. A manual dispatch
+#     bypasses it. CMS_LOOP_SUBSTANTIVE stays the agentic lane's opt-in on top.
+#   * The agentic step is the fleet's claude-run action (bamr87/bamr87, consumed
+#     by reference like every other lane here): the model is pinned, the run is
+#     capped in turns (60) and dollars ($10), the credential follows the repo's
+#     CLAUDE_AUTH_ORDER, and the call is metered (scripts/ai/usage.rb).
 #   * The mechanical PR is left OPEN for one-click human merge by default. To let
 #     it merge hands-off after the in-job gate, set repo variable
 #     CMS_MECHANICAL_AUTOMERGE == 'true' (the merge then trusts the in-job gate,
@@ -55,7 +62,7 @@ jobs:
     name: Mechanical normalization
     runs-on: ubuntu-latest
     if: >-
-      github.event_name == 'schedule' ||
+      (github.event_name == 'schedule' && vars.CMS_DAILY_LOOP_ENABLED != 'false') ||
       (github.event_name == 'workflow_dispatch' && inputs.mechanical)
     permissions:
       contents: write
@@ -193,8 +200,13 @@ jobs:
   substantive:
     name: Substantive content pass
     runs-on: ubuntu-latest
+    # Bound the pass: a stuck agent must not run toward the 6h job ceiling. This
+    # lane has never run on a schedule (it is opt-in and off), so 45 minutes is
+    # the value the repo's measured lane uses (quest-perfection's slice leg), for
+    # a job that also builds the site and runs the content gates.
+    timeout-minutes: 45
     if: >-
-      (github.event_name == 'schedule' && vars.CMS_LOOP_SUBSTANTIVE == 'true') ||
+      (github.event_name == 'schedule' && vars.CMS_DAILY_LOOP_ENABLED != 'false' && vars.CMS_LOOP_SUBSTANTIVE == 'true') ||
       (github.event_name == 'workflow_dispatch' && inputs.enable_substantive)
     permissions:
       contents: write
@@ -243,31 +255,52 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install deps + Claude Code CLI
+      # The Claude Code CLI is installed by the claude-run step below (Node,
+      # set up above, is what it needs).
+      - name: Install deps
         if: steps.auth.outputs.ok == 'true'
-        run: |
-          pip install pyyaml
-          npm install -g @anthropic-ai/claude-code
-          claude --version
+        run: pip install pyyaml
 
       - name: Build today's worklist
         if: steps.auth.outputs.ok == 'true'
         run: make cms-all
 
+      # The workflow owns git: the agent edits files, and never branches, commits,
+      # pushes or calls gh. The bare CLI call carried this as --disallowedTools;
+      # the claude-run action has no such input, so the same two rules ride in
+      # the runner's user settings, where a deny rule holds over --allowedTools
+      # in every permission mode. Outside the workspace, so nothing lands in the
+      # tree the PR is cut from.
+      - name: Block git and gh for the agent (the workflow owns git)
+        if: steps.auth.outputs.ok == 'true'
+        run: |
+          mkdir -p "$HOME/.claude"
+          printf '%s\n' '{"permissions":{"deny":["Bash(git:*)","Bash(gh:*)"]}}' > "$HOME/.claude/settings.json"
+
+      # The fleet's one AI step. Same prompt, tools, model and turn cap as the
+      # bare CLI call this replaces; the action adds the dollar cap, the
+      # credential order and the metering. The result text goes to
+      # curator-run.log (uploaded below), as before.
       - name: Run the cms-curator skill (Lane B only)
         if: steps.auth.outputs.ok == 'true'
+        uses: bamr87/bamr87/.github/actions/claude-run@main
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          set -o pipefail
-          claude -p "Use the cms-curator skill to run ONE substantive (Lane B) pass over today's .cms worklist. Apply edits and validate locally, but do NOT create a branch, commit, push, or open a PR — this workflow handles git. Respect the batch cap and all safety rules in the skill." \
-            --permission-mode acceptEdits \
-            --allowedTools "Bash,Read,Edit,Write,Glob,Grep" \
-            --disallowedTools "Bash(git:*),Bash(gh:*)" \
-            --max-turns 60 \
-            --model claude-opus-5-5 \
-            --output-format text | tee curator-run.log
+          # The order to try them in: this repo's CLAUDE_AUTH_ORDER (ai_auth: in
+          # bamr87/bamr87 _data/fleet.yml). Unset = oauth, then api_key.
+          AI_AUTH_ORDER: ${{ vars.CLAUDE_AUTH_ORDER }}
+        with:
+          prompt: "Use the cms-curator skill to run ONE substantive (Lane B) pass over today's .cms worklist. Apply edits and validate locally, but do NOT create a branch, commit, push, or open a PR — this workflow handles git. Respect the batch cap and all safety rules in the skill."
+          tools: "Bash,Read,Edit,Write,Glob,Grep"
+          model: claude-opus-5-5
+          # The two circuit breakers, sized together: the turn cap is the one
+          # this lane always had, and the dollar cap clears 0.15 x that
+          # (bamr87/bamr87 _data/fleet.yml budget.usd_per_turn), so a run stops
+          # at a turn boundary before it stops mid-task. Change both together.
+          max-turns: "60"
+          max-budget-usd: "10"
+          out: curator-run.log
 
       - name: Validate in-job (this IS the gate)
         if: steps.auth.outputs.ok == 'true'

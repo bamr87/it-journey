@@ -121,6 +121,12 @@ jobs:
     needs: gate
     if: ${{ needs.gate.outputs.go == 'true' }}
     runs-on: ubuntu-latest
+    # Bound the fix: a stuck fixer or engine must not run toward the 6h job
+    # ceiling. The longest of the 43 fix jobs in the retained run history (all
+    # called from quest-fix-loop.yml) took 19.9 minutes with REUSED evidence; a
+    # bare dispatch also re-derives the evidence in this job (the engine: 13-30
+    # minutes observed, see quest-perfection.yml), so 60 covers both.
+    timeout-minutes: 60
     permissions:
       contents: write
       pull-requests: write

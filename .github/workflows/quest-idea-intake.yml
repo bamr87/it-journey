@@ -202,6 +202,11 @@ jobs:
             ideas. Comments and idea:* labels only. The deterministic manifest is
             a ceiling: never rate an idea higher than it allows. Escalation to the
             quest forge is a human decision, never yours.
+          # Turn cap, sized BY RULE (no metered intake run exists): the action's
+          # $10 dollar cap / $0.15 per turn, rounded down to 60. One comment and
+          # one label should need far fewer; the job's 20-minute timeout binds
+          # first on a runaway.
+          max-turns: "60"
 
       # Deterministic ceiling — the guardrail the autonomy matrix promises.
       # Whatever the model was talked into, a verdict label more generous than
