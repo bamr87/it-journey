@@ -5,6 +5,51 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.0](https://github.com/bamr87/it-journey/compare/v0.3.1...v0.4.0) (2026-11-18)
+
+
+### Added
+
+* **config:** enable zer0 page feedback on every page (FR-ITJ-015) ([bfc05c7](https://github.com/bamr87/it-journey/commit/bfc05c782660f5d7289e9a87e092383f63bdb3d6))
+* **config:** enable zer0 page feedback on every page (FR-ITJ-015) ([df4b287](https://github.com/bamr87/it-journey/commit/df4b287076917bdedfc9b723747746dba596c9d3))
+
+
+### Fixed
+
+* **about:** publish /about/versioning/ and tidy the about pages ([e3c81e9](https://github.com/bamr87/it-journey/commit/e3c81e95e473ce696c39c3d58398c7146d8e789c))
+* **about:** publish the versioning page at /about/versioning/ ([a4e1e2c](https://github.com/bamr87/it-journey/commit/a4e1e2cfdb7241e220643589718d415d043c8976)), closes [#881](https://github.com/bamr87/it-journey/issues/881)
+* **about:** render the founder, tools and email only from site config ([4499468](https://github.com/bamr87/it-journey/commit/4499468c81ac7db5ef6c4c4b8cfe37614faed6c8)), closes [#879](https://github.com/bamr87/it-journey/issues/879)
+* **ci:** open cms-daily-loop PRs with FLEET_TOKEN and merge only after checks ([5d9c847](https://github.com/bamr87/it-journey/commit/5d9c847787300c6f850a6b046ba05e686cf69067))
+* **ci:** open cms-daily-loop PRs with FLEET_TOKEN and merge only after checks ([81e56a9](https://github.com/bamr87/it-journey/commit/81e56a9da1aa2e0ec69a0852928cbb358ac91f55))
+* **ci:** scope cms-daily-loop change gates to content paths ([5e8c0e2](https://github.com/bamr87/it-journey/commit/5e8c0e20ba47bd3212d4f165b96fbdb26ee2e678))
+* **ci:** scope cms-daily-loop change gates to content paths ([c0eaf4b](https://github.com/bamr87/it-journey/commit/c0eaf4bf5be669fb75381b4c7bfa139c8e28f4dc))
+* **link-checker:** request lychee JSON output and fail on parse errors ([e0aa097](https://github.com/bamr87/it-journey/commit/e0aa0977599ff4181564ddbf61b6d53d33a51333))
+* **link-checker:** request lychee JSON output and fail on parse errors ([410197a](https://github.com/bamr87/it-journey/commit/410197af65cf128dd7d6568b3ee96bbc2360fac0))
+* **quest-validator:** prefer OAuth over the API key in the agentic runner ([4110b78](https://github.com/bamr87/it-journey/commit/4110b78d477fe67bea315dba7a3aa1e9b47b0ec3))
+* **quest-validator:** prefer OAuth over the API key in the agentic runner ([1241b90](https://github.com/bamr87/it-journey/commit/1241b9097f2ab1db314de07dac38d068526b5ede))
+
+
+### Documentation
+
+* **about:** keep the about folder README out of the site build ([52c5114](https://github.com/bamr87/it-journey/commit/52c5114bdbe6ba5dbdbd7966bfd540ef049721b1)), closes [#880](https://github.com/bamr87/it-journey/issues/880)
+* **about:** link the feature list, PRD and roadmap from /about/ ([ca1916b](https://github.com/bamr87/it-journey/commit/ca1916b52830874f553f98394a3eebdec5cab7b4)), closes [#878](https://github.com/bamr87/it-journey/issues/878)
+* **about:** name KIS the pillar and KISS its everyday heuristic ([c41f9a2](https://github.com/bamr87/it-journey/commit/c41f9a23db5da68c0e3938c78de8aea043783948)), closes [#877](https://github.com/bamr87/it-journey/issues/877)
+* **about:** swap in the rewritten /about/purpose/ page ([cf595e7](https://github.com/bamr87/it-journey/commit/cf595e74495bf7e81cacf2753acf2db9c9a0d9aa))
+* **about:** swap in the rewritten /about/purpose/ page ([b2b43d0](https://github.com/bamr87/it-journey/commit/b2b43d008f7be3a7eae9cbaf4d42c202dd2340f6)), closes [#876](https://github.com/bamr87/it-journey/issues/876)
+* **constitution:** state the missions in §1 (amendment 0004) ([5e93a84](https://github.com/bamr87/it-journey/commit/5e93a84c71ea454a674264986cb103f4b1df5980))
+* **constitution:** state the missions in §1 (amendment 0004) ([2b2adb9](https://github.com/bamr87/it-journey/commit/2b2adb93389688cc7363c2b463c4af88179a21ed))
+* **features:** give FR-ITJ-017 the infra surface (UPS-QA-50) ([b5528c9](https://github.com/bamr87/it-journey/commit/b5528c9413e5591ac6811ed848a3ebaa0f2639c0)), closes [#868](https://github.com/bamr87/it-journey/issues/868)
+* **features:** retire FR-ITJ-005/006/007 and fix FR-ITJ-013 ([dd32691](https://github.com/bamr87/it-journey/commit/dd326910742df32394fec7a6c01a3d0f7b3c0eba))
+* **features:** retire FR-ITJ-005/006/007 and fix FR-ITJ-013 ([cc48a66](https://github.com/bamr87/it-journey/commit/cc48a6670e2a22f34383780d80ae35ac2d2f8710)), closes [#868](https://github.com/bamr87/it-journey/issues/868)
+* pillars in practice, a technical concepts library and the KIS/KISS proposal ([a29bebf](https://github.com/bamr87/it-journey/commit/a29bebfc015c9069a466e570a7be15ca544150cc))
+* pillars in practice, a technical concepts library and the KIS/KISS proposal ([f0b1d5d](https://github.com/bamr87/it-journey/commit/f0b1d5dffdeb9924a2066902bfd09f2f85b5fb8e))
+* **prd:** list JEV as a planned AI orchestration component ([f8b7fd1](https://github.com/bamr87/it-journey/commit/f8b7fd1688077287c6f57f6e95d23beb029b1847))
+* **prd:** list JEV as a planned AI orchestration component ([6da48ff](https://github.com/bamr87/it-journey/commit/6da48ff1fe94538163eded3bc14f1d3e6a860463))
+* **prd:** regenerate the feature catalog block ([be6649b](https://github.com/bamr87/it-journey/commit/be6649bb7765020602f0fa428db680e89f48b8e0))
+* refresh [#875](https://github.com/bamr87/it-journey/issues/875) against main (resolve PRD.md and features.yml conflicts) ([6108799](https://github.com/bamr87/it-journey/commit/6108799c7440a02e2c598070be28c71302baf8b1))
+* regenerate the docs index (UPS-DOC-03) ([db47989](https://github.com/bamr87/it-journey/commit/db47989e9799c194f5491933e2ea5ecece140a13)), closes [#924](https://github.com/bamr87/it-journey/issues/924)
+* **screenshots:** before/after evidence for page feedback ([7b07f9a](https://github.com/bamr87/it-journey/commit/7b07f9acceba976a689585daf75caf4aa3644abf))
+
 ## [0.3.1](https://github.com/bamr87/it-journey/compare/v0.3.0...v0.3.1) (2026-11-12)
 
 
