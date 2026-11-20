@@ -295,7 +295,9 @@ export function translate(source: string, ctx: TranslateContext): TranslateResul
           return label;
         }
         stats.wikilinksResolved += 1;
-        return `[${label.replace(/([[\]])/g, '\\$1')}](${href})`;
+        // The label is literal text. Escape the backslash too, or a label ending in one would
+        // escape the closing bracket and break the link.
+        return `[${label.replace(/[\\[\]]/g, '\\$&')}](${href})`;
       });
 
       out = out.replace(MD_LINK_RE, (all, open: string, lt: string, href: string, hash = '', gt: string, title = '', close: string) => {

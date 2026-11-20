@@ -90,6 +90,12 @@ test('wikilinks resolve by title or basename; bash tests and code are left alone
   assert.deepEqual(issues, [{ kind: 'wikilink-unresolved', detail: '[[Nowhere]]' }]);
 });
 
+test('a backslash in a wikilink label stays literal and cannot break the link', () => {
+  const { body, stats } = run('Open [[forge-your-character|C:\\]] first.');
+  assert.ok(body.includes('[C:\\\\](/quests/0001/forge-your-character/)'));
+  assert.equal(stats.wikilinksResolved, 1);
+});
+
 test('relative .md links become permalinks and keep their fragment', () => {
   const { body, issues, stats } = run('[portal](github-pages-portal.md#deploy), [level](./README.md), [gone](missing.md), [ext](https://x.dev/a.md)');
   assert.ok(body.includes('[portal](/quests/0001/github-pages-portal/#deploy)'));
