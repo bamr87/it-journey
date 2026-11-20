@@ -1,0 +1,31 @@
+---
+/** DocPage — any other page in the collection (codex, tools, templates): title and prose. */
+import { render } from 'astro:content';
+
+import Unported from '../components/Unported.astro';
+import Base from '../layouts/Base.astro';
+import type { Quest } from '../lib/quests.ts';
+
+interface Props {
+  entry: Quest;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Base title={entry.data.title} description={entry.data.description}>
+  <header class="page-head">
+    <nav aria-label="Breadcrumb">
+      <ol class="crumbs">
+        <li><a href="/quests/">Quests</a></li>
+      </ol>
+    </nav>
+    <h1>{entry.data.title}</h1>
+    {entry.data.description && <p class="lede">{entry.data.description}</p>}
+  </header>
+  <Unported issues={entry.data.compat.issues} />
+  <div class="prose">
+    <Content />
+  </div>
+</Base>

@@ -1,0 +1,27 @@
+---
+/**
+ * Spike-only notice: Liquid on this page that has no Astro counterpart yet.
+ * Each one is a widget to rebuild as a component.
+ */
+interface Props {
+  issues: Array<{ kind: string; detail: string }>;
+}
+
+const liquid = Astro.props.issues.filter((issue) => issue.kind === 'liquid-tag' || issue.kind === 'liquid-output');
+const includes = [...new Set(liquid.filter((issue) => issue.detail.startsWith('include ')).map((issue) => issue.detail.split(' ')[1]))];
+---
+
+{
+  liquid.length > 0 && (
+    <p class="notice">
+      Spike note: {liquid.length} Liquid {liquid.length === 1 ? 'fragment' : 'fragments'} on this page {liquid.length === 1 ? 'is' : 'are'} not ported yet
+      {includes.length > 0 && (
+        <>
+          {' '}
+          (<code>{includes.join(', ')}</code>)
+        </>
+      )}
+      . The Jekyll site renders a widget here.
+    </p>
+  )
+}

@@ -520,6 +520,7 @@ exclude:
   - features/
   
   # Build and dependency directories
+  - astro/        # Astro spike: its own toolchain and build (astro/README.md); never part of the Jekyll site
   - node_modules/
   - .venv/
   - _site/

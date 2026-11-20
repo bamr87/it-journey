@@ -1,0 +1,485 @@
+/* Components — quest page, level page, quest hub. */
+
+.tier--apprentice {
+  --tier: var(--ij-tier-apprentice);
+}
+.tier--adventurer {
+  --tier: var(--ij-tier-adventurer);
+}
+.tier--warrior {
+  --tier: var(--ij-tier-warrior);
+}
+.tier--master {
+  --tier: var(--ij-tier-master);
+}
+
+.display {
+  font-family: var(--ij-font-display);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.page-head {
+  display: grid;
+  gap: var(--ij-space-3);
+  margin-bottom: var(--ij-space-6);
+}
+.page-head h1 {
+  font-size: clamp(1.75rem, 1.2rem + 2.4vw, 2.6rem);
+  letter-spacing: -0.02em;
+}
+.lede {
+  max-width: var(--ij-measure);
+  color: var(--ij-ink-muted);
+  font-size: 1.1rem;
+}
+
+.card {
+  padding: var(--ij-space-4);
+  border: 1px solid var(--ij-border);
+  border-radius: var(--ij-radius);
+  background: var(--ij-surface);
+}
+.card + .card {
+  margin-top: var(--ij-space-4);
+}
+.card__title {
+  margin-bottom: var(--ij-space-3);
+  font-family: var(--ij-font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ij-ink-muted);
+}
+.card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.card li + li {
+  margin-top: var(--ij-space-2);
+}
+.card__sub {
+  margin: var(--ij-space-4) 0 var(--ij-space-2);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.card__sub:first-child {
+  margin-top: 0;
+}
+.plain-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9375rem;
+}
+.plain-list li + li {
+  margin-top: var(--ij-space-2);
+}
+.card__note {
+  color: var(--ij-ink-muted);
+  font-size: 0.875rem;
+}
+
+/* ---- Quest page ---------------------------------------------------------- */
+
+.quest-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--ij-space-5);
+}
+.quest-rail {
+  display: none;
+}
+.quest-inline {
+  display: grid;
+  gap: var(--ij-space-2);
+  margin-bottom: var(--ij-space-5);
+}
+.quest-inline > details {
+  border: 1px solid var(--ij-border);
+  border-radius: var(--ij-radius-sm);
+  background: var(--ij-surface);
+}
+.quest-inline summary {
+  padding: var(--ij-space-3) var(--ij-space-4);
+  font-weight: 600;
+  cursor: pointer;
+}
+.quest-inline details > div {
+  padding: 0 var(--ij-space-4) var(--ij-space-4);
+}
+
+@media (min-width: 64rem) {
+  .quest-grid {
+    grid-template-columns: minmax(0, var(--ij-measure)) var(--ij-rail);
+    justify-content: space-between;
+    gap: var(--ij-space-7);
+  }
+  .quest-rail {
+    display: block;
+    position: sticky;
+    top: var(--ij-space-5);
+    align-self: start;
+    max-height: calc(100dvh - 2 * var(--ij-space-5));
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+  .quest-inline {
+    display: none;
+  }
+}
+
+.progress__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--ij-space-3);
+  margin-bottom: var(--ij-space-2);
+  font-weight: 600;
+}
+.progress__actions {
+  display: flex;
+  gap: var(--ij-space-2);
+  margin-top: var(--ij-space-3);
+}
+.progress__actions .button--primary,
+.progress__actions .button[aria-pressed] {
+  flex: 1;
+}
+
+.check-link {
+  display: flex;
+  gap: var(--ij-space-2);
+  align-items: baseline;
+}
+.check-link::before {
+  content: '○';
+  flex: none;
+  color: var(--ij-ink-muted);
+}
+.check-link.is-complete::before {
+  content: '✓';
+  color: var(--ij-success);
+}
+
+.toc a {
+  display: block;
+  padding-block: 0.15rem;
+  color: var(--ij-ink-muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.toc a:hover {
+  color: var(--ij-ink);
+}
+.toc .depth-3 {
+  padding-left: var(--ij-space-4);
+}
+.card .toc li + li {
+  margin-top: 0;
+}
+
+.quest-foot {
+  max-width: var(--ij-measure);
+  margin-top: var(--ij-space-7);
+  display: grid;
+  gap: var(--ij-space-5);
+}
+.rewards .chip {
+  white-space: normal;
+  border-radius: var(--ij-radius-sm);
+}
+.rewards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ij-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pager {
+  display: grid;
+  gap: var(--ij-space-3);
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+}
+.pager a {
+  display: grid;
+  gap: var(--ij-space-1);
+  padding: var(--ij-space-4);
+  border: 1px solid var(--ij-border);
+  border-radius: var(--ij-radius);
+  background: var(--ij-surface);
+  color: var(--ij-ink);
+  text-decoration: none;
+}
+.pager a:hover {
+  border-color: var(--ij-primary);
+}
+.pager [rel='next'] {
+  text-align: right;
+}
+.pager small {
+  color: var(--ij-ink-muted);
+  font-size: 0.8125rem;
+}
+.pager strong {
+  font-weight: 600;
+}
+.quest-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ij-space-2) var(--ij-space-5);
+  color: var(--ij-ink-muted);
+  font-size: 0.875rem;
+}
+
+/* One fixed layer on small screens: progress, complete, next. */
+.quest-bar {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: var(--ij-space-3);
+  padding: var(--ij-space-2) var(--ij-gutter) calc(var(--ij-space-2) + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--ij-border);
+  background: var(--ij-surface);
+}
+.quest-bar__status {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  gap: var(--ij-space-1);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+.quest-bar .button {
+  flex: none;
+}
+.has-quest-bar main {
+  padding-bottom: calc(var(--ij-space-8) + 4.5rem);
+}
+@media (min-width: 64rem) {
+  .quest-bar {
+    display: none;
+  }
+  .has-quest-bar main {
+    padding-bottom: var(--ij-space-8);
+  }
+}
+
+/* ---- Level page ---------------------------------------------------------- */
+
+.level-head {
+  display: grid;
+  gap: var(--ij-space-4);
+  margin-bottom: var(--ij-space-6);
+}
+.level-head__title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--ij-space-2) var(--ij-space-4);
+}
+.level-code {
+  font-family: var(--ij-font-mono);
+  font-size: clamp(2.25rem, 1.6rem + 3.5vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: var(--tier, var(--ij-primary));
+}
+.level-head h1 {
+  font-size: clamp(1.5rem, 1.1rem + 2vw, 2.25rem);
+}
+.level-progress {
+  max-width: 28rem;
+  display: grid;
+  gap: var(--ij-space-2);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.section-title {
+  margin: var(--ij-space-6) 0 var(--ij-space-3);
+  font-size: 1.1rem;
+}
+.section-title span {
+  color: var(--ij-ink-muted);
+  font-weight: 500;
+}
+
+.quest-list {
+  display: grid;
+  gap: var(--ij-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: quest;
+}
+.quest-row {
+  counter-increment: quest;
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: var(--ij-space-1) var(--ij-space-3);
+  padding: var(--ij-space-3) var(--ij-space-4);
+  border: 1px solid var(--ij-border);
+  border-radius: var(--ij-radius);
+  background: var(--ij-surface);
+  color: var(--ij-ink);
+  text-decoration: none;
+}
+.quest-row:hover {
+  border-color: var(--ij-primary);
+  color: var(--ij-ink);
+}
+.quest-row::before {
+  content: counter(quest);
+  grid-row: span 3;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--ij-border);
+  border-radius: 50%;
+  color: var(--ij-ink-muted);
+  font-family: var(--ij-font-mono);
+  font-size: 0.8125rem;
+}
+.quest-row.is-complete::before {
+  content: '✓';
+  border-color: var(--ij-success);
+  color: var(--ij-success);
+}
+.quest-row__title {
+  font-weight: 600;
+  line-height: 1.35;
+}
+.quest-row__summary {
+  color: var(--ij-ink-muted);
+  font-size: 0.9rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.quest-row .chips {
+  margin-top: var(--ij-space-1);
+}
+
+.about {
+  margin-top: var(--ij-space-7);
+  border: 1px solid var(--ij-border);
+  border-radius: var(--ij-radius);
+  background: var(--ij-surface);
+}
+.about > summary {
+  padding: var(--ij-space-4);
+  font-weight: 600;
+  cursor: pointer;
+}
+.about > .prose {
+  padding: 0 var(--ij-space-4) var(--ij-space-5);
+}
+
+/* ---- Hub ----------------------------------------------------------------- */
+
+.resume {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ij-space-3);
+}
+.resume[hidden] {
+  display: none;
+}
+
+.tier {
+  margin-top: var(--ij-space-7);
+}
+.tier__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--ij-space-2) var(--ij-space-3);
+  margin-bottom: var(--ij-space-4);
+}
+.tier__head h2 {
+  font-size: 1.35rem;
+  color: var(--tier);
+}
+.tier__head p {
+  color: var(--ij-ink-muted);
+  font-size: 0.9rem;
+}
+
+.level-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: var(--ij-space-4);
+}
+.level-card {
+  display: grid;
+  gap: var(--ij-space-2);
+  align-content: start;
+  padding: var(--ij-space-4);
+  border: 1px solid var(--ij-border);
+  border-top: 3px solid var(--tier);
+  border-radius: var(--ij-radius);
+  background: var(--ij-surface);
+  color: var(--ij-ink);
+  text-decoration: none;
+}
+.level-card:hover {
+  border-color: var(--tier);
+  color: var(--ij-ink);
+}
+.level-card__code {
+  font-family: var(--ij-font-mono);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--tier);
+}
+.level-card__theme {
+  font-weight: 600;
+  line-height: 1.3;
+}
+.level-card__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--ij-space-3);
+  color: var(--ij-ink-muted);
+  font-size: 0.8125rem;
+}
+
+/* ---- Spike status page --------------------------------------------------- */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: var(--ij-space-3);
+  margin: var(--ij-space-5) 0;
+  padding: 0;
+  list-style: none;
+}
+.stats li {
+  padding: var(--ij-space-4);
+  border: 1px solid var(--ij-border);
+  border-radius: var(--ij-radius);
+  background: var(--ij-surface);
+}
+.stats strong {
+  display: block;
+  font-family: var(--ij-font-mono);
+  font-size: 1.75rem;
+  line-height: 1.1;
+}
+.stats span {
+  color: var(--ij-ink-muted);
+  font-size: 0.875rem;
+}

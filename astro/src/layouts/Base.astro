@@ -1,0 +1,83 @@
+---
+/**
+ * Base — the whole page shell: head, one header row, main, footer.
+ * There is no docs sidebar and nothing floats over the content.
+ */
+import '@fontsource-variable/space-grotesk';
+import '@fontsource/cinzel/700.css';
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/prose.css';
+import '../styles/components.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** site-absolute image path for social cards */
+  image?: string;
+  bodyClass?: string;
+}
+
+const { title, description, image, bodyClass } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const inQuests = Astro.url.pathname.startsWith('/quests/');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>{title} | IT-Journey</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={canonical} />
+    <meta property="og:site_name" content="IT-Journey" />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:url" content={canonical} />
+    {image && <meta property="og:image" content={new URL(image, Astro.site)} />}
+    <script is:inline>
+      // Apply a pinned theme before first paint; otherwise follow the system.
+      try {
+        var theme = localStorage.getItem('it-journey-theme');
+        if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+      } catch (error) {}
+    </script>
+  </head>
+  <body class={bodyClass}>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="wordmark" href="/">IT-Journey</a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="/quests/" aria-current={inQuests ? 'page' : undefined}>Quests</a>
+        </nav>
+        <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Switch between light and dark theme">
+          <svg class="when-light" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+          <svg class="when-dark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <span>IT-Journey: free, open-source quests from zer0 to her0.</span>
+        <span>Astro spike. Not the production site.</span>
+      </div>
+    </footer>
+
+    <script>
+      import '../scripts/site.ts';
+    </script>
+  </body>
+</html>

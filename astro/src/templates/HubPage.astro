@@ -1,0 +1,89 @@
+---
+/**
+ * HubPage — the whole path on one screen: four tiers, sixteen levels, with the
+ * learner's own progress on each card and a way back to the quest they left.
+ */
+import { render } from 'astro:content';
+
+import Unported from '../components/Unported.astro';
+import Base from '../layouts/Base.astro';
+import { tierSlug, world, type Level, type Quest } from '../lib/quests.ts';
+
+interface Props {
+  entry: Quest;
+}
+
+const { entry } = Astro.props;
+const w = await world();
+const { Content } = await render(entry);
+
+const permalinks = (level: Level) => (w.byLevel.get(level.id) ?? []).map((quest) => quest.data.permalink);
+const everyQuest = w.levels.flatMap(permalinks);
+
+// Tiers in path order, each with its levels.
+const tiers: Array<{ name: string; emoji: string; levels: Level[] }> = [];
+for (const level of w.levels) {
+  const last = tiers[tiers.length - 1];
+  if (last?.name === level.data.tier) last.levels.push(level);
+  else tiers.push({ name: level.data.tier, emoji: level.data.tier_emoji, levels: [level] });
+}
+---
+
+<Base title={entry.data.title} description={entry.data.description}>
+  <header class="page-head">
+    <p class="eyebrow">{w.levels.length} levels · {everyQuest.length} quests</p>
+    <h1 class="display">{entry.data.title}</h1>
+    {entry.data.description && <p class="lede">{entry.data.description}</p>}
+    <div class="level-progress" data-quest-group={JSON.stringify(everyQuest)}>
+      <span data-group-label>0 of {everyQuest.length} complete</span>
+      <span class="meter"><span class="meter__fill" data-group-fill></span></span>
+    </div>
+    <p class="resume" data-resume hidden>
+      <a class="button button--primary" href="/quests/">
+        Continue: <span data-resume-title></span>
+      </a>
+    </p>
+  </header>
+
+  <Unported issues={entry.data.compat.issues} />
+
+  {
+    tiers.map((tier) => (
+      <section class={`tier tier--${tierSlug(tier.name)}`} aria-labelledby={`tier-${tierSlug(tier.name)}`}>
+        <div class="tier__head">
+          <h2 id={`tier-${tierSlug(tier.name)}`}>
+            {tier.emoji} {tier.name}
+          </h2>
+          <p>
+            Levels {tier.levels[0]!.id} → {tier.levels[tier.levels.length - 1]!.id}
+          </p>
+        </div>
+        <div class="level-grid">
+          {tier.levels.map((level) => {
+            const quests = permalinks(level);
+            return (
+              <a class="level-card" href={level.data.permalink} data-quest-group={JSON.stringify(quests)}>
+                <span class="level-card__code">{level.id}</span>
+                <span class="level-card__theme">{level.data.theme}</span>
+                <span class="meter">
+                  <span class="meter__fill" data-group-fill />
+                </span>
+                <span class="level-card__meta">
+                  <span data-group-label>0 of {quests.length} complete</span>
+                  <span>{level.data.xp_range} XP</span>
+                </span>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    ))
+  }
+
+  <details class="about">
+    <summary>About the quest system</summary>
+    <div class="prose">
+      <Content />
+    </div>
+  </details>
+</Base>

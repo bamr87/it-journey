@@ -1,0 +1,72 @@
+/*
+ * Design tokens — the one place colour, type and spacing are decided.
+ *
+ * Every colour is a light-dark() pair, so a single declaration serves both
+ * themes and nothing below this file names a hex value. When the fleet
+ * publishes its token package, map it onto these names here; no other file
+ * should need to change.
+ *
+ * The dark column is the palette it-journey.dev ships today.
+ */
+:root {
+  color-scheme: light dark;
+
+  --ij-bg: light-dark(#faf9ff, #0b0a1e);
+  --ij-surface: light-dark(#ffffff, #131129);
+  --ij-surface-2: light-dark(#f1eefb, #1a1836);
+  --ij-border: light-dark(#dcd8ee, #2c2952);
+  --ij-ink: light-dark(#17142e, #e7e9ff);
+  --ij-ink-muted: light-dark(#575978, #9aa2c8);
+
+  --ij-primary: light-dark(#7c3aed, #a855f7);
+  --ij-on-primary: light-dark(#ffffff, #0b0a1e);
+  --ij-accent: light-dark(#0e7490, #22d3ee);
+  --ij-link: light-dark(#6d28d9, #38d6f0);
+  --ij-link-hover: light-dark(#4c1d95, #c084fc);
+
+  --ij-success: light-dark(#047857, #34d399);
+  --ij-warning: light-dark(#b45309, #fbbf24);
+  --ij-danger: light-dark(#be123c, #fb7185);
+
+  --ij-code-bg: light-dark(#f3f1fb, #100e26);
+  --ij-code-ink: light-dark(#2b2850, #d4d8f5);
+  --ij-shadow: light-dark(rgb(23 20 46 / 0.1), rgb(0 0 0 / 0.5));
+
+  --ij-tier-apprentice: light-dark(#047857, #34d399);
+  --ij-tier-adventurer: light-dark(#c2410c, #fb923c);
+  --ij-tier-warrior: light-dark(#be123c, #fb7185);
+  --ij-tier-master: light-dark(#7c3aed, #c084fc);
+
+  --ij-gradient: linear-gradient(135deg, var(--ij-accent), var(--ij-primary));
+
+  --ij-font-sans: 'Space Grotesk Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ij-font-display: 'Cinzel', Georgia, 'Times New Roman', serif;
+  --ij-font-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+
+  --ij-space-1: 0.25rem;
+  --ij-space-2: 0.5rem;
+  --ij-space-3: 0.75rem;
+  --ij-space-4: 1rem;
+  --ij-space-5: 1.5rem;
+  --ij-space-6: 2rem;
+  --ij-space-7: 3rem;
+  --ij-space-8: 4rem;
+
+  --ij-radius: 12px;
+  --ij-radius-sm: 8px;
+
+  /* Layout: reading column, quest rail, page. */
+  --ij-measure: 46rem;
+  --ij-rail: 18rem;
+  --ij-page: 72rem;
+  --ij-gutter: clamp(1rem, 4vw, 2rem);
+  --ij-header: 3.5rem;
+}
+
+/* The toggle pins a theme; without it the page follows the system. */
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}

@@ -1,0 +1,29 @@
+---
+/**
+ * Redirect — a static stand-in for jekyll-redirect-from: GitHub Pages cannot
+ * send a 301, so the old URL serves a page that forwards to the new one.
+ */
+interface Props {
+  to: string;
+}
+
+const { to } = Astro.props;
+const target = new URL(to, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+    <link rel="canonical" href={target} />
+    <meta http-equiv="refresh" content={`0; url=${to}`} />
+    <meta name="robots" content="noindex" />
+  </head>
+  <body>
+    <p>This page has moved to <a href={to}>{to}</a>.</p>
+    <script is:inline define:vars={{ to }}>
+      location.replace(to + location.search + location.hash);
+    </script>
+  </body>
+</html>
