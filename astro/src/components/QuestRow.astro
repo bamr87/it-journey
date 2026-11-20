@@ -1,0 +1,27 @@
+---
+/** One quest in a level's list. The tick is filled in from saved progress. */
+import { typeLabel, xp, type Quest } from '../lib/quests.ts';
+
+interface Props {
+  quest: Quest;
+}
+
+const { quest } = Astro.props;
+const { data } = quest;
+const summary = data.excerpt ?? data.description;
+const points = xp(quest);
+---
+
+<li>
+  <a class="quest-row" href={data.permalink} data-quest-link={data.permalink}>
+    <span class="quest-row__title">{data.title}</span>
+    {summary && <span class="quest-row__summary">{summary}</span>}
+    <span class="chips">
+      {data.quest_type !== 'main_quest' && <span class="chip chip--strong">{typeLabel(quest)}</span>}
+      {data.difficulty && <span class="chip">{data.difficulty}</span>}
+      {data.estimated_time && <span class="chip">⏱ {data.estimated_time}</span>}
+      {points ? <span class="chip chip--xp">+{points} XP</span> : null}
+      {data.draft && <span class="chip chip--draft">Draft</span>}
+    </span>
+  </a>
+</li>

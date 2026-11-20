@@ -1,0 +1,8 @@
+# Astro spike — build output, caches and generated reports stay out of git.
+node_modules/
+dist/
+.astro/
+reports/
+# The repo never commits lockfiles (see AGENTS.md); the root .gitignore covers
+# package-lock.json too, this line just keeps the rule visible here.
+package-lock.json

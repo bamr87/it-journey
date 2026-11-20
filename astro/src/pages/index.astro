@@ -1,0 +1,79 @@
+---
+/**
+ * Spike status page. The real home page is not part of the spike; this shows
+ * what the loader carried over and links to pages worth looking at.
+ */
+import { getCollection } from 'astro:content';
+
+import Base from '../layouts/Base.astro';
+import { isQuest } from '../lib/quests.ts';
+
+const entries = await getCollection('quests');
+const quests = entries.filter(isQuest);
+const total = (key: string) => entries.reduce((sum, entry) => sum + Number(entry.data.compat.stats[key] ?? 0), 0);
+const count = (kind: string) => entries.reduce((sum, entry) => sum + entry.data.compat.issues.filter((issue) => issue.kind === kind).length, 0);
+const needPort = entries.filter((entry) => entry.data.compat.issues.some((issue) => issue.kind === 'liquid-tag' || issue.kind === 'liquid-output'));
+const redirects = entries.reduce((sum, entry) => sum + entry.data.redirect_from.length, 0);
+
+const stats = [
+  [entries.length, 'pages read from pages/_quests'],
+  [quests.length, 'quests'],
+  [total('rawBlocks'), 'raw blocks unwrapped'],
+  [total('detailsFixed'), 'details blocks fixed'],
+  [total('wikilinksResolved'), 'wikilinks resolved'],
+  [count('wikilink-unresolved'), 'wikilinks unresolved'],
+  [total('relativeLinksResolved'), 'relative .md links resolved'],
+  [total('mermaidFences'), 'Mermaid diagrams'],
+  [redirects, 'redirect_from entries'],
+  [needPort.length, 'pages with Liquid to port'],
+];
+---
+
+<Base title="Astro spike" description="IT-Journey quests rendered by Astro from the Jekyll content, untouched.">
+  <header class="page-head">
+    <p class="eyebrow">Astro spike</p>
+    <h1 class="display">Same quests, new shell</h1>
+    <p class="lede">
+      Every page here is built from the Markdown in <code>pages/_quests</code> exactly as Jekyll reads it. Nothing in that folder was edited.
+    </p>
+    <p>
+      <a class="button button--primary" href="/quests/">Open the quest map</a>
+    </p>
+  </header>
+
+  <ul class="stats">
+    {
+      stats.map(([value, label]) => (
+        <li>
+          <strong>{value}</strong>
+          <span>{label}</span>
+        </li>
+      ))
+    }
+  </ul>
+
+  <div class="prose">
+    <h2>Pages worth opening</h2>
+    <ul>
+      <li><a href="/quests/0001/avatar-forge/">A short quest</a> (the page measured on the live site)</li>
+      <li><a href="/quests/0001/">A level</a> with its quest list generated from the collection</li>
+      <li><a href="/quests/0010/jekyll-mermaid-integration/">A quest that teaches Liquid</a>, with its samples shown literally</li>
+      <li><a href="/quests/0101/jekyll-quest-tracking/">A quest with Mermaid diagrams</a></li>
+      <li><a href="/quests/0000/entrance/">A page that still needs a widget ported</a></li>
+    </ul>
+    {
+      needPort.length > 0 && (
+        <>
+          <h2>Pages with Liquid to port</h2>
+          <ul>
+            {needPort.map((entry) => (
+              <li>
+                <a href={entry.data.permalink}>{entry.data.title}</a> <code>{entry.data.source}</code>
+              </li>
+            ))}
+          </ul>
+        </>
+      )
+    }
+  </div>
+</Base>

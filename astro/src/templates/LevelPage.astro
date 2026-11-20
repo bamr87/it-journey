@@ -1,0 +1,117 @@
+---
+/**
+ * LevelPage — a level is its quest list.
+ *
+ * The list is generated from the quest collection in play order, so it cannot go
+ * stale the way a hand-kept table in the level README does. The README body is
+ * still here, folded under "About this level".
+ */
+import { render } from 'astro:content';
+
+import QuestRow from '../components/QuestRow.astro';
+import Unported from '../components/Unported.astro';
+import Base from '../layouts/Base.astro';
+import { tierSlug, world, type Level, type Quest } from '../lib/quests.ts';
+
+interface Props {
+  entry: Quest;
+  level: Level;
+}
+
+const { entry, level } = Astro.props;
+const w = await world();
+const { Content } = await render(entry);
+
+const quests = w.byLevel.get(level.id) ?? [];
+const isSide = (quest: Quest) => quest.data.quest_type === 'side_quest' || quest.data.quest_type === 'bonus_quest';
+const main = quests.filter((quest) => !isSide(quest));
+const side = quests.filter(isSide);
+
+const position = w.levels.findIndex((candidate) => candidate.id === level.id);
+const previous = w.levels[position - 1];
+const following = w.levels[position + 1];
+const title = `Level ${level.id}: ${level.data.theme}`;
+---
+
+<Base title={title} description={entry.data.description}>
+  <header class={`level-head tier--${tierSlug(level.data.tier)}`}>
+    <nav aria-label="Breadcrumb">
+      <ol class="crumbs">
+        <li><a href="/quests/">Quests</a></li>
+        <li>{level.data.tier_emoji} {level.data.tier} tier</li>
+      </ol>
+    </nav>
+    <div class="level-head__title">
+      <span class="level-code" aria-hidden="true">{level.id}</span>
+      <h1><span class="visually-hidden">Level {level.id}: </span>{level.data.theme}</h1>
+    </div>
+    {entry.data.description && <p class="lede">{entry.data.description}</p>}
+    <ul class="chips" aria-label="Level details">
+      <li class="chip chip--strong">Level {level.data.decimal + 1} of {w.levels.length}</li>
+      <li class="chip chip--xp">{level.data.xp_range} XP</li>
+      <li class="chip">{quests.length} {quests.length === 1 ? 'quest' : 'quests'}</li>
+    </ul>
+    <div class="level-progress" data-quest-group={JSON.stringify(quests.map((quest) => quest.data.permalink))}>
+      <span data-group-label>0 of {quests.length} complete</span>
+      <span class="meter"><span class="meter__fill" data-group-fill></span></span>
+    </div>
+  </header>
+
+  <Unported issues={entry.data.compat.issues} />
+
+  {
+    main.length > 0 && (
+      <section aria-labelledby="main-quests">
+        <h2 id="main-quests" class="section-title">
+          Main quests <span>· {main.length}</span>
+        </h2>
+        <ol class="quest-list">
+          {main.map((quest) => (
+            <QuestRow quest={quest} />
+          ))}
+        </ol>
+      </section>
+    )
+  }
+  {
+    side.length > 0 && (
+      <section aria-labelledby="side-quests">
+        <h2 id="side-quests" class="section-title">
+          Side quests <span>· {side.length}</span>
+        </h2>
+        <ol class="quest-list">
+          {side.map((quest) => (
+            <QuestRow quest={quest} />
+          ))}
+        </ol>
+      </section>
+    )
+  }
+  {quests.length === 0 && <p class="lede">No quests in this level yet.</p>}
+
+  <details class="about">
+    <summary>About this level</summary>
+    <div class="prose">
+      <Content />
+    </div>
+  </details>
+
+  <nav class="pager" aria-label="Previous and next level" style="margin-top: var(--ij-space-6)">
+    {
+      previous && (
+        <a rel="prev" href={previous.data.permalink}>
+          <small>← Level {previous.id}</small>
+          <strong>{previous.data.theme}</strong>
+        </a>
+      )
+    }
+    {
+      following && (
+        <a rel="next" href={following.data.permalink}>
+          <small>Level {following.id} →</small>
+          <strong>{following.data.theme}</strong>
+        </a>
+      )
+    }
+  </nav>
+</Base>

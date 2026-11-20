@@ -1,0 +1,57 @@
+---
+/** What a learner needs before starting: required quests, knowledge, tools. */
+import type { QuestLink } from '../lib/quests.ts';
+
+interface Props {
+  required: QuestLink[];
+  knowledge: string[];
+  system: string[];
+}
+
+const { required } = Astro.props;
+// Front matter strings sometimes carry a Markdown link; show its text only.
+const plain = (value: string) => value.replace(/\[([^\]]+)\]\([^)]*\)/g, '$1');
+const knowledge = Astro.props.knowledge.map(plain);
+const system = Astro.props.system.map(plain);
+---
+
+{
+  required.length > 0 && (
+    <>
+      <h3 class="card__sub">Required quests</h3>
+      <ul class="plain-list">
+        {required.map((quest) => (
+          <li>
+            <a class="check-link" href={quest.href} data-quest-link={quest.href}>
+              {quest.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </>
+  )
+}
+{
+  knowledge.length > 0 && (
+    <>
+      <h3 class="card__sub">You should know</h3>
+      <ul class="plain-list">
+        {knowledge.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </>
+  )
+}
+{
+  system.length > 0 && (
+    <>
+      <h3 class="card__sub">You will need</h3>
+      <ul class="plain-list">
+        {system.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </>
+  )
+}

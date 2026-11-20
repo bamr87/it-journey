@@ -1,0 +1,18 @@
+---
+/** In-page outline from the rendered Markdown headings (h2 and h3). */
+interface Props {
+  headings: Array<{ depth: number; slug: string; text: string }>;
+}
+
+const { headings } = Astro.props;
+---
+
+<ul class="plain-list toc">
+  {
+    headings.map((heading) => (
+      <li class={`depth-${heading.depth}`}>
+        <a href={`#${heading.slug}`}>{heading.text}</a>
+      </li>
+    ))
+  }
+</ul>

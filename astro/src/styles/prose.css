@@ -1,0 +1,206 @@
+/* Prose — rendered Markdown. Everything a quest author can write lands here. */
+.prose {
+  max-width: var(--ij-measure);
+  overflow-wrap: break-word;
+}
+.prose > * + * {
+  margin-top: var(--ij-space-4);
+}
+
+.prose h2 {
+  margin-top: var(--ij-space-6);
+  padding-top: var(--ij-space-5);
+  border-top: 1px solid var(--ij-border);
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+}
+.prose > h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+.prose h3 {
+  margin-top: var(--ij-space-6);
+  font-size: 1.2rem;
+}
+.prose h4 {
+  margin-top: var(--ij-space-5);
+  font-size: 1.05rem;
+}
+.prose :is(h2, h3, h4) + * {
+  margin-top: var(--ij-space-3);
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.4rem;
+}
+.prose li + li {
+  margin-top: var(--ij-space-1);
+}
+.prose li > ul,
+.prose li > ol {
+  margin-top: var(--ij-space-1);
+}
+
+/* Task lists: the objectives. Big hit target, no bullet. */
+.prose li:has(> input[type='checkbox']) {
+  list-style: none;
+  margin-left: -1.4rem;
+  display: flex;
+  gap: var(--ij-space-3);
+  align-items: flex-start;
+  padding-block: var(--ij-space-1);
+}
+.prose input[type='checkbox'] {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0.2rem 0 0;
+  accent-color: var(--ij-primary);
+}
+.prose input[type='checkbox']:not(:disabled) {
+  cursor: pointer;
+}
+
+.prose blockquote {
+  margin-inline: 0;
+  padding: var(--ij-space-3) var(--ij-space-4);
+  border-left: 3px solid var(--ij-primary);
+  border-radius: 0 var(--ij-radius-sm) var(--ij-radius-sm) 0;
+  background: var(--ij-surface);
+  color: var(--ij-ink-muted);
+}
+.prose blockquote > * + * {
+  margin-top: var(--ij-space-2);
+}
+
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--ij-border);
+  margin-block: var(--ij-space-6);
+}
+
+.prose img {
+  border-radius: var(--ij-radius-sm);
+}
+
+/* ---- Code ---------------------------------------------------------------- */
+
+.prose code {
+  font-family: var(--ij-font-mono);
+  font-size: 0.875em;
+}
+.prose :not(pre) > code {
+  padding: 0.1em 0.35em;
+  border-radius: 5px;
+  background: var(--ij-code-bg);
+  color: var(--ij-code-ink);
+}
+.prose pre {
+  position: relative;
+  margin-inline: 0;
+  padding: var(--ij-space-4);
+  border: 1px solid var(--ij-border);
+  border-radius: var(--ij-radius-sm);
+  background: var(--ij-code-bg) !important;
+  color: var(--ij-code-ink);
+  overflow-x: auto;
+  line-height: 1.55;
+  tab-size: 2;
+}
+/* Shiki emits both palettes as variables; pick by theme. */
+.prose pre span[style] {
+  color: light-dark(var(--shiki-light, inherit), var(--shiki-dark, inherit));
+}
+
+.code-block {
+  position: relative;
+}
+.code-block > pre {
+  margin: 0;
+}
+.code-copy {
+  position: absolute;
+  top: var(--ij-space-2);
+  right: var(--ij-space-2);
+  padding: 0.15rem 0.6rem;
+  border: 1px solid var(--ij-border);
+  border-radius: 6px;
+  background: var(--ij-surface);
+  color: var(--ij-ink-muted);
+  font: inherit;
+  font-size: 0.75rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+.code-block:hover .code-copy,
+.code-copy:focus-visible {
+  opacity: 1;
+}
+@media (hover: none) {
+  .code-copy {
+    opacity: 1;
+  }
+}
+
+.diagram {
+  margin-inline: 0;
+  padding: var(--ij-space-4);
+  border: 1px solid var(--ij-border);
+  border-radius: var(--ij-radius-sm);
+  background: var(--ij-surface);
+  overflow-x: auto;
+  text-align: center;
+}
+.diagram svg {
+  max-width: none;
+}
+
+/* ---- Tables: scroll inside their own box -------------------------------- */
+
+.prose table {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+.prose th,
+.prose td {
+  padding: var(--ij-space-2) var(--ij-space-3);
+  border: 1px solid var(--ij-border);
+  text-align: left;
+  vertical-align: top;
+}
+.prose th {
+  background: var(--ij-surface-2);
+  font-weight: 600;
+}
+
+/* ---- Disclosures (hints, solutions) ------------------------------------- */
+
+.prose details {
+  border: 1px solid var(--ij-border);
+  border-radius: var(--ij-radius-sm);
+  background: var(--ij-surface);
+}
+.prose details > summary {
+  padding: var(--ij-space-3) var(--ij-space-4);
+  font-weight: 600;
+  cursor: pointer;
+}
+.prose details[open] > summary {
+  border-bottom: 1px solid var(--ij-border);
+}
+.prose details > :not(summary) {
+  margin-inline: var(--ij-space-4);
+}
+.prose details > :not(summary):first-of-type {
+  margin-top: var(--ij-space-3);
+}
+.prose details > :last-child:not(summary) {
+  margin-bottom: var(--ij-space-4);
+}

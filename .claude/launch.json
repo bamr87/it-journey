@@ -1,0 +1,27 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "astro-spike",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "astro",
+        "run",
+        "preview"
+      ],
+      "port": 4321
+    },
+    {
+      "name": "astro-spike-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "astro",
+        "run",
+        "dev"
+      ],
+      "port": 4321
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "it-journey-astro-spike",
+  "private": true,
+  "type": "module",
+  "version": "0.0.0",
+  "description": "Spike: IT-Journey quests rendered by Astro from the Jekyll content in ../pages, untouched.",
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev --port 4321",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview --port 4321",
+    "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
+    "test": "node --test test/",
+    "check:urls": "node scripts/url-parity.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/space-grotesk": "^5.2.0",
+    "@fontsource/cinzel": "^5.2.0",
+    "astro": "^7.4.13",
+    "mermaid": "^11.0.0",
+    "yaml": "^2.8.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@types/node": "^26.6.6",
+    "typescript": "^6.0.3"
+  }
+}

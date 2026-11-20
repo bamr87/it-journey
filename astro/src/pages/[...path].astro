@@ -1,0 +1,57 @@
+---
+/**
+ * One route for the whole collection. The URL is the page's own `permalink`
+ * front matter, so every address Jekyll serves today is served here unchanged;
+ * `redirect_from` entries become forwarding pages.
+ */
+import type { GetStaticPaths } from 'astro';
+import { getCollection } from 'astro:content';
+
+import { levelFor, world, type Quest } from '../lib/quests.ts';
+import DocPage from '../templates/DocPage.astro';
+import HubPage from '../templates/HubPage.astro';
+import LevelPage from '../templates/LevelPage.astro';
+import QuestPage from '../templates/QuestPage.astro';
+import Redirect from '../templates/Redirect.astro';
+
+type Props = { kind: 'page'; entry: Quest } | { kind: 'redirect'; to: string };
+
+export const getStaticPaths = (async () => {
+  const entries = await getCollection('quests');
+  // `/quests/0001/foo/` → `quests/0001/foo`
+  const toParam = (url: string) => url.replace(/^\/+|\/+$/g, '').replace(/(?:\/index)?\.html$/, '');
+
+  const routes = new Map<string, { params: { path: string }; props: Props }>();
+  for (const entry of entries) {
+    const path = toParam(entry.data.permalink);
+    if (path) routes.set(path, { params: { path }, props: { kind: 'page', entry } });
+  }
+  for (const entry of entries) {
+    for (const from of entry.data.redirect_from) {
+      const path = toParam(from);
+      // A real page always wins over a redirect to it.
+      if (path && !routes.has(path)) routes.set(path, { params: { path }, props: { kind: 'redirect', to: entry.data.permalink } });
+    }
+  }
+  return [...routes.values()];
+}) satisfies GetStaticPaths;
+
+const props = Astro.props as Props;
+const entry = props.kind === 'page' ? props.entry : undefined;
+const layout = entry?.data.layout;
+const level = entry && layout === 'quest-collection' ? levelFor(entry.data.level, await world()) : undefined;
+---
+
+{
+  props.kind === 'redirect' ? (
+    <Redirect to={props.to} />
+  ) : layout === 'quest' ? (
+    <QuestPage entry={entry!} />
+  ) : level ? (
+    <LevelPage entry={entry!} level={level} />
+  ) : layout === 'quest-hub' ? (
+    <HubPage entry={entry!} />
+  ) : (
+    <DocPage entry={entry!} />
+  )
+}

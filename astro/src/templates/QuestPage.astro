@@ -1,0 +1,203 @@
+---
+/**
+ * QuestPage — one quest, laid out for doing the quest.
+ *
+ * Order on every screen: where you are, the title once, what it costs you, then
+ * the objectives. Progress sits in a rail on wide screens and in one bottom bar
+ * on small ones; prerequisites and the outline collapse on small screens so the
+ * first objective stays near the top.
+ */
+import { render } from 'astro:content';
+
+import Prereqs from '../components/Prereqs.astro';
+import Toc from '../components/Toc.astro';
+import Unported from '../components/Unported.astro';
+import Base from '../layouts/Base.astro';
+import { REPO_URL, levelFor, neighbours, requiredQuests, typeLabel, world, xp, type Quest } from '../lib/quests.ts';
+
+interface Props {
+  entry: Quest;
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const w = await world();
+const { Content, headings } = await render(entry);
+
+const level = levelFor(data.level, w);
+const { prev, next } = neighbours(entry, w);
+const required = requiredQuests(entry, w);
+const knowledge = data.prerequisites?.knowledge_requirements ?? [];
+const system = data.prerequisites?.system_requirements ?? [];
+const hasPrereqs = required.length + knowledge.length + system.length > 0;
+const outline = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
+const badges = data.rewards?.badges ?? [];
+const points = xp(entry);
+const summary = data.excerpt ?? data.description;
+const updated = (data.lastmod ?? data.date)?.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
+---
+
+<Base title={data.title} description={data.description} bodyClass="has-quest-bar">
+  <article data-quest-root data-quest-permalink={data.permalink} data-quest-title={data.title}>
+    <header class="page-head">
+      <nav aria-label="Breadcrumb">
+        <ol class="crumbs">
+          <li><a href="/quests/">Quests</a></li>
+          {
+            level && (
+              <li>
+                <a href={level.data.permalink}>
+                  Level {level.id} · {level.data.theme}
+                </a>
+              </li>
+            )
+          }
+        </ol>
+      </nav>
+      <h1>{data.title}</h1>
+      {summary && <p class="lede">{summary}</p>}
+      <ul class="chips" aria-label="Quest details">
+        <li class="chip chip--strong">{typeLabel(entry)}</li>
+        {data.difficulty && <li class="chip">{data.difficulty}</li>}
+        {data.estimated_time && <li class="chip">⏱ {data.estimated_time}</li>}
+        {points ? <li class="chip chip--xp">+{points} XP</li> : null}
+        {data.primary_technology && <li class="chip">{data.primary_technology}</li>}
+        {data.draft && <li class="chip chip--draft">Draft</li>}
+      </ul>
+    </header>
+
+    <div class="quest-grid">
+      <div>
+        {
+          (hasPrereqs || outline.length > 0) && (
+            <div class="quest-inline">
+              {hasPrereqs && (
+                <details>
+                  <summary>Before you start</summary>
+                  <div>
+                    <Prereqs required={required} knowledge={knowledge} system={system} />
+                  </div>
+                </details>
+              )}
+              {outline.length > 0 && (
+                <details>
+                  <summary>On this page</summary>
+                  <div>
+                    <Toc headings={outline} />
+                  </div>
+                </details>
+              )}
+            </div>
+          )
+        }
+
+        <Unported issues={data.compat.issues} />
+
+        <div id="quest-content" class="prose">
+          <Content />
+        </div>
+
+        <footer class="quest-foot">
+          {
+            badges.length > 0 && (
+              <section aria-labelledby="rewards-title">
+                <h2 id="rewards-title" class="card__title">
+                  Rewards
+                </h2>
+                <ul class="rewards">
+                  {badges.map((badge) => (
+                    <li class="chip">{badge}</li>
+                  ))}
+                </ul>
+              </section>
+            )
+          }
+          <nav class="pager" aria-label="Previous and next quest">
+            {
+              prev && (
+                <a rel="prev" href={prev.href}>
+                  <small>← Previous</small>
+                  <strong>{prev.title}</strong>
+                </a>
+              )
+            }
+            {
+              next ? (
+                <a rel="next" href={next.href}>
+                  <small>Next →</small>
+                  <strong>{next.title}</strong>
+                </a>
+              ) : (
+                level && (
+                  <a rel="next" href={level.data.permalink}>
+                    <small>Level complete? ↑</small>
+                    <strong>Back to Level {level.id}</strong>
+                  </a>
+                )
+              )
+            }
+          </nav>
+          <p class="quest-meta">
+            {updated && <span>Updated {updated}</span>}
+            <a href={`${REPO_URL}/edit/main/${data.source}`}>Edit this quest on GitHub</a>
+          </p>
+        </footer>
+      </div>
+
+      <aside class="quest-rail" aria-label="Progress and outline">
+        <section class="card" aria-labelledby="progress-title">
+          <h2 id="progress-title" class="card__title">Your progress</h2>
+          <div class="progress__row">
+            <span data-progress-label>Not started</span>
+          </div>
+          <div class="meter"><span class="meter__fill" data-progress-fill></span></div>
+          <div class="progress__actions">
+            <button class="button button--primary" type="button" data-progress-toggle aria-pressed="false">Mark complete</button>
+            <button class="button button--quiet" type="button" data-progress-reset>Reset</button>
+          </div>
+          <p class="card__note" style="margin-top: var(--ij-space-3)">Saved in this browser only.</p>
+        </section>
+        {
+          hasPrereqs && (
+            <section class="card" aria-labelledby="prereq-title">
+              <h2 id="prereq-title" class="card__title">
+                Before you start
+              </h2>
+              <Prereqs required={required} knowledge={knowledge} system={system} />
+            </section>
+          )
+        }
+        {
+          outline.length > 0 && (
+            <nav class="card" aria-labelledby="outline-title">
+              <h2 id="outline-title" class="card__title">
+                On this page
+              </h2>
+              <Toc headings={outline} />
+            </nav>
+          )
+        }
+      </aside>
+    </div>
+
+    <div class="quest-bar">
+      <div class="quest-bar__status">
+        <span data-progress-label>Not started</span>
+        <span class="meter"><span class="meter__fill" data-progress-fill></span></span>
+      </div>
+      <button class="button button--primary" type="button" data-progress-toggle aria-pressed="false">Mark complete</button>
+      {
+        next && (
+          <a class="button" href={next.href} rel="next" aria-label={`Next quest: ${next.title}`}>
+            Next →
+          </a>
+        )
+      }
+    </div>
+  </article>
+</Base>
