@@ -162,6 +162,7 @@ def assemble(ledger: Ledger, frames_root: Path) -> dict:
         "milestones": milestones,
         "commits": commit_rows,
         "pages": pages,
+        "library": library_block(ledger, commits, head, tl),
         "provenance": {
             "tool": f"chronicle {TOOL_VERSION}", "ledger": f"docs/git-archaeology/chronicle/{ledger.slug}/",
             "annotations": dict(models), "erasSource": eras_doc.get("source"),
@@ -169,6 +170,75 @@ def assemble(ledger: Ledger, frames_root: Path) -> dict:
             "eraPrompt": eras_doc.get("pv"), "costUsdEstimate": man.get("ai", {}).get("costUsdEstimate", 0),
             "renderer": frames_doc.get("renderer"), "generated": now_iso(),
         },
+    }
+
+
+QTYPES = ("main", "side", "epic", "bonus", "other")
+
+
+def library_block(ledger: Ledger, commits: dict, head: str, tl: dict) -> dict | None:
+    """Every article's lifeline, topic and quest level, on the file-system film's weekly frames."""
+    from content import articles
+    versions = ledger.versions()
+    if not versions:
+        return None
+    arts = articles(commits, versions, head)
+    if not arts:
+        return None
+    tax = ledger.read_doc("content/taxonomy.json") or {"topics": [{"key": "other", "name": "Other"}], "source": None}
+    readings = ledger.article_topics()
+    frame_of = {fr["week"]: i for i, fr in enumerate(tl["frames"])}
+    last = len(tl["frames"]) - 1
+
+    def frame(ct):
+        return frame_of.get(_week(ct), last)
+
+    # collections keep one color for the whole film, ranked by peak live count
+    live_by_frame: dict[str, list[int]] = defaultdict(lambda: [0] * (last + 2))
+    for a in arts:
+        b, d = frame(a["born"]), frame(a["died"]) if a["died"] else last + 1
+        live_by_frame[a["col"]][b] += 1
+        live_by_frame[a["col"]][d] -= 1
+    peaks = {}
+    for col, deltas in live_by_frame.items():
+        run, peak = 0, 0
+        for x in deltas:
+            run += x
+            peak = max(peak, run)
+        peaks[col] = peak
+    cols = sorted(peaks, key=lambda c: (-peaks[c], c))
+    col_index = {c: i for i, c in enumerate(cols)}
+    topic_keys = [t["key"] for t in tax["topics"]]
+    topic_index = {k: i for i, k in enumerate(topic_keys)}
+
+    def qtype(a):
+        q = str(a.get("qt") or "").lower()
+        for t in QTYPES[:-1]:
+            if q.startswith(t):
+                return QTYPES.index(t)
+        return len(QTYPES) - 1
+
+    rows = []
+    for a in arts:
+        topic = readings.get(a["aid"], {}).get("topic", "other")
+        rows.append([
+            a.get("t") or a["path"].rsplit("/", 1)[-1], col_index[a["col"]], topic_index.get(topic, len(topic_keys) - 1),
+            frame(a["born"]), frame(a["died"]) if a["died"] else -1, a.get("lvl", ""),
+            qtype(a) if a.get("lvl") else -1, a["revs"], a["path"], a["born"][:10],
+            a["died"][:10] if a["died"] else "", a.get("w", 0), 1 if a.get("draft") else 0, a["moves"],
+        ])
+    models = Counter(r.get("model", "?") for r in readings.values())
+    return {
+        "collections": [{"key": c, "label": c.rstrip("/") + (" (folder)" if c.endswith("/") else ""),
+                         "slot": i + 1 if i < 7 else 0, "peak": peaks[c]} for i, c in enumerate(cols)],
+        "topics": [{"key": t["key"], "name": t["name"], "description": t.get("description", "")}
+                   for t in tax["topics"]],
+        "qtypes": list(QTYPES),
+        "levels": [f"{i:04b}" for i in range(16)] if any(a.get("lvl") for a in arts) else [],
+        "paths": (ledger.read_doc("content/paths.json") or {}).get("paths", []),
+        "tiers": (ledger.read_doc("content/paths.json") or {}).get("tiers", []),
+        "articles": rows,
+        "source": {"taxonomy": tax.get("source"), "topics": dict(models), "versions": len(versions)},
     }
 
 
@@ -211,7 +281,7 @@ def build(ledger: Ledger, cache: Path, out: Path) -> Path:
 
 
 def export_video(presentation: Path, log=print) -> list[Path]:
-    """Two MP4 time-lapses beside the deck: the file-system film and the page flipbook."""
+    """MP4 time-lapses beside the deck: the file-system film, the page flipbook and the library film."""
     import subprocess
     import tempfile
     out = presentation.parent / "video"
@@ -222,11 +292,11 @@ def export_video(presentation: Path, log=print) -> list[Path]:
         if res.returncode != 0:
             raise RuntimeError(f"frame capture failed: {res.stderr[-600:]}")
         counts = json.loads(res.stdout.strip().splitlines()[-1])
-        for name, rate, n in (("filesystem", 12, counts["fs"]), ("frontend", 1.25, counts["fe"])):
+        for name, sub, rate in (("filesystem", "fs", 12), ("frontend", "fe", 1.25), ("library", "lib", 12)):
+            n = counts.get(sub, 0)
             if not n:
                 continue
             target = out / f"{name}.mp4"
-            sub = "fs" if name == "filesystem" else "fe"
             cmd = ["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(rate), "-i", f"{tmp}/{sub}/%05d.png",
                    "-vf", "scale=trunc(iw/2)*2:trunc(ih/2)*2,fps=24", "-c:v", "libx264", "-pix_fmt", "yuv420p",
                    "-crf", "24", "-movflags", "+faststart", str(target)]

@@ -27,8 +27,9 @@ from facts import area_of
 
 COMMIT_PV = "commit-annotation/v1"
 ERA_PV = "era-reading/v1"
-DEFAULT_MODELS = {"commits": "claude-haiku-5-5", "eras": "claude-opus-5-5"}
-DEFAULT_BUDGET = {"commits": 0.40, "eras": 3.00}
+DEFAULT_MODELS = {"commits": "claude-haiku-5-5", "eras": "claude-opus-5-5",
+                  "taxonomy": "claude-opus-5-5", "topics": "claude-haiku-5-5"}
+DEFAULT_BUDGET = {"commits": 0.40, "eras": 3.00, "taxonomy": 2.00, "topics": 0.40}
 KINDS = ("feature", "fix", "content", "docs", "refactor", "style", "test", "build", "ci", "deps",
          "config", "chore", "release", "revert", "merge", "automation", "security", "perf")
 KIND_ALIASES = {"feat": "feature", "docs": "docs", "doc": "docs", "chore": "chore", "ci": "ci",
@@ -91,7 +92,8 @@ def extract_json(text: str):
     fence = re.search(r"```(?:json)?\s*(.+?)```", text, re.S)
     if fence:
         text = fence.group(1).strip()
-    for opener, closer in (("[", "]"), ("{", "}")):
+    pairs = sorted((("[", "]"), ("{", "}")), key=lambda oc: (text.find(oc[0]) < 0, text.find(oc[0])))
+    for opener, closer in pairs:  # the bracket that opens first is the answer
         start = text.find(opener)
         end = text.rfind(closer)
         if start != -1 and end > start:

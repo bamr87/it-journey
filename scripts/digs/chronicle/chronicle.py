@@ -59,6 +59,23 @@ def cmd_eras(args) -> int:
     return 0
 
 
+def cmd_content(args) -> int:
+    from ai import provider_from_args
+    from content import read_versions, articles, taxonomy, classify
+    repo, ledger, ref = _context(args)
+    res = read_versions(repo, ledger)
+    arts = articles(ledger.commits(), ledger.versions(), ledger.manifest()["head"])
+    tax = taxonomy(ledger, arts, provider_from_args(args, "taxonomy"), force=args.force)
+    res.update(classify(ledger, arts, tax, provider_from_args(args, "topics")))
+    from content import read_paths
+    paths = read_paths(repo, ledger.manifest()["head"])
+    if paths and paths != ledger.read_doc("content/paths.json"):
+        ledger.write_doc("content/paths.json", paths)
+    res.update({"articles": len(arts), "live": sum(1 for a in arts if not a["died"]), "topics": len(tax["topics"])})
+    print(json.dumps(res))
+    return 0
+
+
 def cmd_frames(args) -> int:
     from frames import render_frames
     repo, ledger, ref = _context(args)
@@ -89,7 +106,7 @@ def cmd_video(args) -> int:
 
 
 def cmd_run(args) -> int:
-    steps = [cmd_ingest, cmd_annotate, cmd_eras, cmd_frames, cmd_build]
+    steps = [cmd_ingest, cmd_annotate, cmd_eras, cmd_content, cmd_frames, cmd_build]
     if args.video:
         steps.append(cmd_video)
     for step in steps:
@@ -152,7 +169,8 @@ def main(argv=None) -> int:
         p.add_argument("--budget", type=float, default=None, help="max USD per model call")
         p.add_argument("--batch", type=int, default=40, help="commits per annotation call")
         p.add_argument("--limit", type=int, default=0, help="annotate at most N commits this run (0 = all)")
-        p.add_argument("--force", action="store_true", help="re-read eras even if inputs are unchanged")
+        p.add_argument("--force", action="store_true",
+                       help="re-read eras (or redesign the topic taxonomy) even if inputs are unchanged")
 
     def frame_opts(p):
         p.add_argument("--pages", type=int, default=4, help="pages in the front-end time-lapse")
@@ -161,6 +179,7 @@ def main(argv=None) -> int:
 
     for name, fn, extra in (
         ("ingest", cmd_ingest, ()), ("annotate", cmd_annotate, (ai_opts,)), ("eras", cmd_eras, (ai_opts,)),
+        ("content", cmd_content, (ai_opts,)),
         ("frames", cmd_frames, (frame_opts,)), ("build", cmd_build, ()), ("video", cmd_video, ()),
         ("run", cmd_run, (ai_opts, frame_opts)), ("status", cmd_status, ()),
     ):

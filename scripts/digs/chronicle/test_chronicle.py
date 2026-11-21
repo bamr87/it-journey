@@ -18,6 +18,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 import ai  # noqa: E402
+import content  # noqa: E402
 import frames  # noqa: E402
 import present  # noqa: E402
 from core import Ledger  # noqa: E402
@@ -257,10 +258,59 @@ class ChronicleTests(unittest.TestCase):
             self.assertIn("⟨include x.html⟩", out)
             self.assertIn("⟨y⟩", out)
 
+    def test_collections_and_front_matter(self):
+        cases = {"pages/_quests/0001/x.md": "quests", "_posts/2020-01-01-a.md": "posts", "index.md": "pages",
+                 "docs/guide.md": "docs/", "pages/search.md": "pages", "_includes/head.html": None,
+                 ".github/instructions/a.md": None, "CHANGELOG.md": None, "scripts/README.md": None,
+                 "assets/a.html": None, "pages/_quests/img.png": None}
+        for path, want in cases.items():
+            self.assertEqual(content.collection_of(path), want, path)
+        v = content.parse_version('---\ntitle: "Rocket \\ud83d\\ude80 launch"\ntags: git, bash\n'
+                                  "level: '0101'\nquest_type: main_quest\ndraft: true\n---\nSome words here.\n")
+        self.assertEqual(v["t"], "Rocket \U0001F680 launch")
+        self.assertEqual(v["tags"], ["git", "bash"])
+        self.assertEqual((v["lvl"], v["qt"], v["draft"], v["w"]), ("0101", "main_quest", True, 3))
+        self.assertEqual(content.parse_version("# Plain heading\nbody")["t"], "Plain heading")
+
+    def test_articles_keep_identity_and_file_topics_once(self):
+        led = self.fresh_with_commits("content")
+        res = content.read_versions(self.repo, led, log=QUIET)
+        self.assertEqual(res["versions"], 7)
+        self.assertEqual(content.read_versions(self.repo, led, log=QUIET)["added"], 0)
+        arts = content.articles(led.commits(), led.versions(), led.manifest()["head"])
+        by_path = {a["path"]: a for a in arts}
+        self.assertEqual(sorted(by_path), ["README.md", "index.html", "pages/guide.md"])
+        self.assertTrue(all(a["died"] is None for a in arts))
+        self.assertEqual(by_path["pages/guide.md"]["first"], "docs/guide.md", "a detected rename keeps identity")
+        self.assertEqual(by_path["index.html"]["first"], "index.md", "a delete and add with one title is a move")
+        self.assertEqual(by_path["index.html"]["t"], "Home")
+
+        tax_answer = {"topics": [{"key": k, "name": k.title(), "description": "d"}
+                                 for k in ("guides", "home", "meta", "code")]}
+        tax = content.taxonomy(led, arts, FakeProvider(lambda p: json.dumps(tax_answer)), log=QUIET)
+        self.assertEqual([t["key"] for t in tax["topics"]], ["guides", "home", "meta", "code", "other"])
+
+        def answer(prompt):
+            ids = [line[4:] for line in prompt.splitlines() if line.startswith("id: ")]
+            return json.dumps([{"id": i, "topic": "guides" if n == 0 else "nonsense"} for n, i in enumerate(ids)])
+        fake = FakeProvider(answer)
+        content.classify(led, arts, tax, fake, workers=1, log=QUIET)
+        got = led.article_topics()
+        self.assertEqual(len(got), 3)
+        self.assertEqual(sorted(r["model"] for r in got.values()), ["fake-model", "heuristic", "heuristic"])
+        again = FakeProvider(answer)
+        content.classify(led, arts, tax, again, workers=1, log=QUIET)
+        self.assertEqual(again.calls, 1, "only the two heuristic readings are asked again")
+        self.assertEqual(content.taxonomy(led, arts, FakeProvider(lambda p: "{}"), log=QUIET)["hash"], tax["hash"],
+                         "a filed taxonomy is kept")
+
     def test_presentation_assembles(self):
         led = self.fresh_with_commits("present")
         ai.annotate_commits(led, ai.Provider(), log=QUIET)
         ai.read_eras(led, ai.Provider(), log=QUIET)
+        content.read_versions(self.repo, led, log=QUIET)
+        arts = content.articles(led.commits(), led.versions(), led.manifest()["head"])
+        content.classify(led, arts, content.taxonomy(led, arts, ai.Provider(), log=QUIET), ai.Provider(), log=QUIET)
         with tempfile.TemporaryDirectory() as tmp:
             cache = Path(tmp)
             frames.render_frames(self.repo, led, cache, pages=2, per_page=3, shoot=False, log=QUIET)
@@ -274,6 +324,10 @@ class ChronicleTests(unittest.TestCase):
         self.assertIn("Jekyll site config", [m["label"] for m in data["milestones"]])
         self.assertEqual(len(data["cadence"]), 14)
         self.assertEqual(len(data["pages"]), 2)
+        lib = data["library"]
+        self.assertEqual(len(lib["articles"]), 3)
+        self.assertEqual(lib["source"]["taxonomy"], "heuristic")
+        self.assertTrue(all(row[4] == -1 for row in lib["articles"]), "every article is still live")
 
 
 if __name__ == "__main__":

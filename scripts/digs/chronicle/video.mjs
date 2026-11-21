@@ -19,7 +19,7 @@ await page.waitForFunction(() => window.chronicle);
 await page.addStyleTag({ content: '.bar{display:none!important} *{transition:none!important}' });
 
 mkdirSync(`${out}/fs`, { recursive: true });
-const film = page.locator('.film');
+const film = page.locator('#filesystem .film');
 await film.scrollIntoViewIfNeeded();
 const frames = await page.evaluate(() => window.chronicle.frames);
 for (let i = 0; i < frames; i += 1) {
@@ -42,5 +42,22 @@ for (let p = 0; p < pages; p += 1) {
     n += 1;
   }
 }
+let lb = 0;
+if (await page.evaluate(() => !!window.chronicle.lib)) {
+  mkdirSync(`${out}/lib`, { recursive: true });
+  // the shelves and, when the repository has quest levels, the path grid below them
+  const clip = await page.evaluate(() => {
+    const top = document.querySelector('#library .film').getBoundingClientRect();
+    const paths = document.querySelector('#lib-paths');
+    const bottom = paths && !paths.hidden ? paths.getBoundingClientRect() : top;
+    return { x: top.left, y: top.top + window.scrollY, width: top.width, height: bottom.bottom - top.top };
+  });
+  const total = await page.evaluate(() => window.chronicle.lib.frames);
+  for (let i = 0; i < total; i += 1) {
+    await page.evaluate((k) => window.chronicle.lib.go(k), i);
+    await page.screenshot({ path: `${out}/lib/${pad(i)}.png`, clip, fullPage: true });
+    lb += 1;
+  }
+}
 await browser.close();
-console.log(JSON.stringify({ fs: frames, fe: n }));
+console.log(JSON.stringify({ fs: frames, fe: n, lib: lb }));

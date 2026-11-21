@@ -105,28 +105,34 @@ class Ledger:
     def _shards(self, base: Path) -> list[Path]:
         return sorted(base.glob("*.jsonl")) if base.is_dir() else []
 
-    def _load(self, base: Path) -> dict[str, dict]:
+    @staticmethod
+    def _sha_key(row: dict) -> str:
+        return row["sha"]
+
+    def _load(self, base: Path, key=None) -> dict[str, dict]:
+        key = key or self._sha_key
         out: dict[str, dict] = {}
         for shard in self._shards(base):
             for row in self._read_jsonl(shard):
-                out[row["sha"]] = row
+                out[key(row)] = row
         return out
 
-    def _merge(self, base: Path, rows: list[dict], key_time: str) -> int:
-        """File ``rows`` into month shards; existing shas are never overwritten."""
+    def _merge(self, base: Path, rows: list[dict], key_time: str, key=None) -> int:
+        """File ``rows`` into month shards; an existing key is never overwritten."""
+        key = key or self._sha_key
         by_month: dict[str, list[dict]] = {}
         for row in rows:
             by_month.setdefault(month_of(row[key_time]), []).append(row)
         added = 0
         for month, new in by_month.items():
             path = base / f"{month}.jsonl"
-            existing = {r["sha"]: r for r in self._read_jsonl(path)}
-            fresh = [r for r in new if r["sha"] not in existing]
+            existing = {key(r): r for r in self._read_jsonl(path)}
+            fresh = [r for r in new if key(r) not in existing]
             if not fresh:
                 continue
             added += len(fresh)
             merged = list(existing.values()) + fresh
-            merged.sort(key=lambda r: (r.get(key_time, ""), r["sha"]))
+            merged.sort(key=lambda r: (r.get(key_time, ""), key(r)))
             self._write_jsonl(path, merged)
         return added
 
@@ -143,6 +149,29 @@ class Ledger:
 
     def add_annotations(self, rows: list[dict]) -> int:
         return self._merge(self.ann_dir, rows, "ct")
+
+    # ----------------------------------------------------------- content
+    # One record per (commit, path) for every article version on the mainline,
+    # and one topic reading per article id.
+    @staticmethod
+    def version_key(row: dict) -> str:
+        return row["sha"] + ":" + row["p"]
+
+    @staticmethod
+    def article_key(row: dict) -> str:
+        return row["aid"]
+
+    def versions(self) -> dict[str, dict]:
+        return self._load(self.dir / "content" / "versions", self.version_key)
+
+    def add_versions(self, rows: list[dict]) -> int:
+        return self._merge(self.dir / "content" / "versions", rows, "ct", self.version_key)
+
+    def article_topics(self) -> dict[str, dict]:
+        return self._load(self.dir / "content" / "topics", self.article_key)
+
+    def add_article_topics(self, rows: list[dict]) -> int:
+        return self._merge(self.dir / "content" / "topics", rows, "born", self.article_key)
 
     # --------------------------------------------------------- documents
     def read_doc(self, name: str) -> dict | None:
