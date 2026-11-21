@@ -43,5 +43,5 @@ What each lane does and how the lanes fit together is explained in [`.github/wor
 | [`theme-scout.yml`](../../.github/workflows/theme-scout.yml) | 🔭 Theme Scout | `schedule` (cron `40 15 * * 2`) · `workflow_dispatch` | `THEME_SCOUT_ENABLED` | `claude-run` | frontend canary: test it-journey.dev, file theme bugs upstream |
 | [`update-contributor-profiles.yml`](../../.github/workflows/update-contributor-profiles.yml) | Update Contributor Profiles | `schedule` (cron `0 5 * * 1`) · `workflow_dispatch` | — | — | — |
 | [`validate-solutions.yml`](../../.github/workflows/validate-solutions.yml) | Validate Quest Solutions | `push` · `pull_request` · `workflow_dispatch` | — | — | — |
-| [`verify.yml`](../../.github/workflows/verify.yml) | Verify | `pull_request` (opened, synchronize, reopened, labeled) · `push` · `workflow_dispatch` | — | — | — |
+| [`verify.yml`](../../.github/workflows/verify.yml) | Verify | `pull_request` (opened, synchronize, reopened, labeled) · `workflow_dispatch` | — | — | — |
 | [`zer0-doctor.yml`](../../.github/workflows/zer0-doctor.yml) | 🩺 zer0 doctor | `schedule` (cron `47 5 * * 4`) · `workflow_dispatch` | — | — | the zer0 stack consumer contract check (report-only) |
