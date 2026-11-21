@@ -15,3 +15,7 @@ Retrospective records of this repository's own Git history. Each installment is 
 | 002-two-branches | 2020-08-23 through 2020-08-25 | [evidence index](002-two-branches/evidence.json) |
 
 Later history is out of scope until a later installment says which commits it examined. The history also contains a second parentless commit, `6000738f5de332fa9a7989d0eaf3df20073806f9` (`Create README.md`, 2021-03-13). It is not the initial commit.
+
+## Chronicle
+
+The [chronicle](chronicle/README.md) is the whole-history companion to these installments: every commit of a repository read once by [`scripts/digs/chronicle/`](../../scripts/digs/chronicle/README.md), filed in a ledger under `chronicle/<owner>/<repo>/`, and presented as a time-lapse of the file system, the front end, the stack and the eras. Ledgers exist for `bamr87/it-journey` and `bamr87/zer0-mistakes`. A dig still reads one bounded range by hand; the chronicle tells it where the turning points are.

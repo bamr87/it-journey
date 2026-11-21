@@ -1,0 +1,421 @@
+{
+ "headline": "From dotfile scripts to an AI-tended, gamified IT learning quest site",
+ "summary": "it-journey began in 2020 as a handful of Homebrew and machine-setup scripts plus a bashcrawl teaching game. In September 2021 it became a Jekyll site on the author's zer0 mistakes theme. Over the next four years it went through repeated rebuilds: collections were invented and then deleted, the theme was rewritten in place and later moved to a remote theme, and content arrived in bursts between long quiet gaps. From mid-2025 the repository changed character. AI workflows, validators and link checkers arrived, and 'quests' grew into a structured, tiered curriculum. By 2026 it had become a high-volume, agent-assisted publishing system with walkthrough-verification loops, shared runner kits and epic quest chains, with bots and AI-assisted commits making up a large share of the activity.",
+ "eras": [
+  {
+   "title": "Setup Scripts and Bashcrawl",
+   "start": "2020-07",
+   "end": "2021-08",
+   "summary": "The repository started as a toolbox of macOS Homebrew installers, GCP startup scripts and environment guides, first in init_apps and then in init_world. Level folders (lvl_0000, lvl_0001) brought in a bashcrawl game, an early sign of the leveled-learning idea. A brief mkdocs site was also tried.",
+   "frontend": "Apart from a short-lived mkdocs index page, there was no real site; visitors saw a README and setup guides.",
+   "backend": "Bash and PowerShell install scripts were moved between init_apps and init_world, and Windows setup scripts and a PowerShell profile were added.",
+   "transitions": [
+    "from personal install scripts at the root to an organized init_world folder of per-platform guides",
+    "from loose scripts to a leveled bashcrawl learning concept"
+   ],
+   "learnings": [
+    {
+     "lesson": "Gitignore IDE state from the first commit; Visual Studio .vs files were committed and later had to be removed.",
+     "evidence": [
+      "55d490eb4d4f"
+     ]
+    },
+    {
+     "lesson": "Settle on one remote and branch flow early; this era is full of merges of 'remote master' that only shuffled small guide edits.",
+     "evidence": [
+      "e854d02f0453",
+      "83b26989f57d",
+      "be8408f28522"
+     ]
+    }
+   ],
+   "key_commits": [
+    "ab523954f523",
+    "ff6981adbf3e",
+    "a947e6b98f9f",
+    "8b06e79c4feb",
+    "00732b1c9740",
+    "9e827ef9e7d3"
+   ]
+  },
+  {
+   "title": "Jekyll Site on zer0 Mistakes",
+   "start": "2021-09",
+   "end": "2022-02",
+   "summary": "In September 2021 the project became a Jekyll site on the zer0 mistakes theme, after tens of thousands of lines of churn. Content collections multiplied: quests, notes, cheats, quickstart, about and hobbies. The site also gained code-copy, a sitemap, Algolia search and CodeQL scanning.",
+   "frontend": "Visitors got a themed blog-like site with a sidebar, quickstart guides, notes, copy-to-clipboard code blocks, a sitemap and Algolia search.",
+   "backend": "Sass partials and includes were vendored and reorganized repeatedly, the old init_world and lvl folders were removed, and CodeQL and Google Tag Manager were added.",
+   "transitions": [
+    "from a script repository to a Jekyll content site",
+    "from flat folders to many Jekyll collections (_notes, _quickstart, _hobbies, _quest)"
+   ],
+   "learnings": [
+    {
+     "lesson": "Pick a theme strategy (vendored or remote) before customizing; vendoring here caused 30k-line deletions and repeated Sass reshuffles.",
+     "evidence": [
+      "e2991d7ec7a7",
+      "cc2312cf615c",
+      "3c4b3317bca1"
+     ]
+    },
+    {
+     "lesson": "Design the collection taxonomy before creating many folders; _cheats was added and removed within a month, and posts were moved more than once.",
+     "evidence": [
+      "d1fa78d0b13b",
+      "b5e5dc7343f9"
+     ]
+    }
+   ],
+   "key_commits": [
+    "e2991d7ec7a7",
+    "cf3fb8a00c51",
+    "2f8a03c60334",
+    "c6f1c624d006",
+    "8ad0ff6f5bc4",
+    "2adbf77415db",
+    "92e8b9d4e448"
+   ]
+  },
+  {
+   "title": "Polish, Domain, and Dark Mode",
+   "start": "2022-03",
+   "end": "2023-01",
+   "summary": "Activity slowed into intermittent fixes and features. Header, search bar and branding were fixed, the custom domain was set and then removed again, and dark mode and a particle.js background arrived. A Dockerfile and build script appeared at the end of the era.",
+   "frontend": "Visitors saw a rebranded header, dark mode, Jekyll documentation pages and an animated particle background.",
+   "backend": "Work went through PR-based merges, Gemfile.lock was removed, Algolia build errors were fixed, and Docker build tooling was cleaned up.",
+   "transitions": [
+    "from rapid structural churn to incremental UI polish",
+    "from direct pushes to pull-request merges"
+   ],
+   "learnings": [
+    {
+     "lesson": "Keep the lockfile. Deleting Gemfile.lock was followed by Gemfile compatibility and Algolia build fixes.",
+     "evidence": [
+      "3e2f290f9e86",
+      "128127f15994",
+      "9278a501d0e1"
+     ]
+    },
+    {
+     "lesson": "Decide on the domain before committing CNAME; it was created and deleted in the same month.",
+     "evidence": [
+      "dd1f594dd277",
+      "5ee0376d4af5"
+     ]
+    }
+   ],
+   "key_commits": [
+    "44a3417c09f9",
+    "7d1c86bb5f45",
+    "ce02b141d390",
+    "464e01b7f56f",
+    "d12712c1435d",
+    "1d8dc067c276"
+   ]
+  },
+  {
+   "title": "Major Cleanup and Beta Rebuild",
+   "start": "2023-02",
+   "end": "2024-04",
+   "summary": "A 'Major Clean up' removed about 21k lines. In March 2023 the many collections were folded into a single pages directory under beta 0.2 and 0.3 releases. A quests section with a world map and glossary appeared in late 2023, followed by notes, SEO posts, a Docker setup and a UI overhaul with per-section navigation files.",
+   "frontend": "The site was relaunched as a beta with Penrose logos, a new search bar, breadcrumbs, back-to-top and dark color mode, followed by a quests world map, SEO articles and an auto-hiding navbar.",
+   "backend": "Collections were consolidated into pages/, a devcontainer and Dockerfile were added, navigation was split into per-section data files, and Front Matter CMS sync was introduced.",
+   "transitions": [
+    "from many top-level collections to a consolidated pages/ tree",
+    "from a blog of notes to a quests-centered learning map"
+   ],
+   "learnings": [
+    {
+     "lesson": "Fix the back-to-top feature once with a test; it was repaired in both 2023-11 and 2024-03.",
+     "evidence": [
+      "fc18abcfd96f",
+      "623931386074"
+     ]
+    },
+    {
+     "lesson": "Keep unrelated projects out of the site repo; bookstore inventory scripts and CSVs were added here and later had to be merged into worktrees.",
+     "evidence": [
+      "ca8f510218c0",
+      "09200715f597"
+     ]
+    }
+   ],
+   "key_commits": [
+    "8d66c2774851",
+    "baa5f084b764",
+    "bc5ff7da9ade",
+    "abfdae1c60b7",
+    "1177982faf13",
+    "5dda1b529daa",
+    "92dbfbee8c24"
+   ]
+  },
+  {
+   "title": "Remote Theme and Quiet Trickle",
+   "start": "2024-05",
+   "end": "2025-06",
+   "summary": "May 2024 brought a 71-commit cleanup burst. In June 2024 about 8,363 lines of local styling were deleted in favor of a remote theme, and Jupyter notebooks, zer0 shell tooling and Giscus comments were added. Then activity dropped to roughly one content commit a month for a year.",
+   "frontend": "Visitors saw Giscus comments, notebook-derived pages, and occasional new articles on Django, Excel, AI automation and ERP.",
+   "backend": "Layouts, includes and Sass were removed in favor of remote_theme, submodules were added, markdown-to-shell converters were built, and CodeQL was retargeted to main.",
+   "transitions": [
+    "from a vendored theme to a remote zer0-mistakes theme",
+    "from active development to sporadic content drops"
+   ],
+   "learnings": [
+    {
+     "lesson": "Moving to remote_theme earlier would have avoided years of in-repo Sass and layout fixes that this one commit discarded.",
+     "evidence": [
+      "7b01447c85c3",
+      "2b10c1e283ef"
+     ]
+    },
+    {
+     "lesson": "Use descriptive commit subjects; content additions shipped under subjects like 'test'.",
+     "evidence": [
+      "6944874832e5"
+     ]
+    }
+   ],
+   "key_commits": [
+    "2b10c1e283ef",
+    "d13d5fa36a73",
+    "7b01447c85c3",
+    "1ce6068d84ac",
+    "63b801abfd58",
+    "2e5986acfbb0"
+   ]
+  },
+  {
+   "title": "Automation and Quest Scaling",
+   "start": "2025-07",
+   "end": "2026-01",
+   "summary": "From July 2025 bots and AI-assisted commits appeared. AI content review, frontmatter validation, link checking and post organization became workflows. Quests became structured, with frontmatter, a validator, 72 generated placeholders and 32 Master Tier quests, and an Azure Static Web Apps deployment and an SEO project followed.",
+   "frontend": "Visitors saw gamified quests grouped by tier in filterable cards, SEO-tuned titles, and a regenerated quest home table.",
+   "backend": "Scripts were reorganized into core and development folders, and the repository gained an AI Evolution Engine, Link Health Guardian, a quest validator, a preview-generator plugin, a date-prefix renamer and a migration to the zer0-mistakes v0.17 navigation schema.",
+   "transitions": [
+    "from hand-maintained pages to workflow-driven content validation",
+    "from ad-hoc quests to a tiered, schema-backed quest catalog"
+   ],
+   "learnings": [
+    {
+     "lesson": "Don't commit generated reports; link-check result dumps and logs were added and removed again.",
+     "evidence": [
+      "4e1b4d3be903",
+      "759a20d9d778"
+     ]
+    },
+    {
+     "lesson": "Enforce the frontmatter schema at creation time; bulk placeholder generation led to 318 validation errors that needed an automated fixer.",
+     "evidence": [
+      "654affe692d6",
+      "3b3281569a45"
+     ]
+    }
+   ],
+   "key_commits": [
+    "b0915204cf47",
+    "c857f781a7bf",
+    "39606ea569a9",
+    "c4fdbc77b641",
+    "6be2a2e0e4d8",
+    "654affe692d6",
+    "3b3281569a45",
+    "962baf733bcf"
+   ]
+  },
+  {
+   "title": "Quest Framework Hardening and Pruning",
+   "start": "2026-02",
+   "end": "2026-06",
+   "summary": "Automation commits grew to dominate. A quest solutions framework, a v2 validator, link checker v3.0 with lychee, and a vendor-agnostic AI client were added. The site was then cut back: the posts and notebooks collections and 220 vendored wargame pages moved to other repos.",
+   "frontend": "Visitors gained contributor RPG character sheets, a split quickstart hub, a Bashcrawl learning path, level-prefixed quest URLs with redirects, and rebuilt top navigation with no 404s.",
+   "backend": "The repository gained a shared validator and scoring CLI, a single-source quest schema, a frontmatter normalization pass over 641 files, condensed agent prompts, and .claude/.cms/.quests directories.",
+   "transitions": [
+    "from accumulating content to pruning it and moving it to sibling repos",
+    "from per-script link tools to one consolidated link-checker"
+   ],
+   "learnings": [
+    {
+     "lesson": "Avoid vendoring third-party docs; the 220 OverTheWire pages added in April were extracted to a standalone repo two months later.",
+     "evidence": [
+      "b07e562f89c3",
+      "aad65eee4eec"
+     ]
+    },
+    {
+     "lesson": "Pick one token name across workflows; tokens were renamed from GITHUB_TOKEN to PAT_TOKEN to GITHUB_PAT, and seven CI workflows later needed fixes.",
+     "evidence": [
+      "74b52d57b518",
+      "7b8478094b58",
+      "59b5012dab4f"
+     ]
+    },
+    {
+     "lesson": "Add a Liquid lint to CI; nested raw blocks broke the production Pages build.",
+     "evidence": [
+      "158e1d7a4993"
+     ]
+    }
+   ],
+   "key_commits": [
+    "28c6afcb84c4",
+    "7c49119def3d",
+    "3ad676f1e65e",
+    "c5e1ecf64497",
+    "10cf44ac3131",
+    "933c4ba8ee86",
+    "289b8559b665",
+    "a72fc819c078"
+   ]
+  },
+  {
+   "title": "Agentic Fleet and Epic Quests",
+   "start": "2026-07",
+   "end": "2026-11",
+   "summary": "This was the busiest era, at 100 to 150 commits a month and mostly automation. Quest walkthroughs are now verified by agent loops and recorded to video. Workflows adopted the shared fleet runner kit and the claude-run action, and an MCP server exposes quests to agents. New content arrives as multi-chapter epics on home servers, PXE boot and legacy COBOL, and an Astro spike tests a possible move off Jekyll.",
+   "frontend": "Visitors see epic quest hubs, walkthrough videos and ledgers, an interactive notes workbench, a Quest Idea Forge and a digs history collection.",
+   "backend": "The repository gained per-character Claude skills and agents, an agent autonomy matrix and drift guard, shared runner and claude-run references replacing vendored copies, Lighthouse CI, PostHog capture, a canonical AGENTS.md and an Astro spike.",
+   "transitions": [
+    "from in-repo AI tooling to shared fleet kits referenced by version",
+    "from single quests to multi-chapter epic chains with verified walkthroughs"
+   ],
+   "learnings": [
+    {
+     "lesson": "Reference shared actions and gems rather than vendoring copies; several vendored generators and runners had to be retired.",
+     "evidence": [
+      "812c22a5457e",
+      "7fd3cc59730f",
+      "b351842dede7"
+     ]
+    },
+    {
+     "lesson": "Build retry handling into autonomous loops from the start; the quest-perfection loop needed hardening against transient failures.",
+     "evidence": [
+      "1ee23dec2791"
+     ]
+    }
+   ],
+   "key_commits": [
+    "d35cfc084595",
+    "3bb07b6c9b33",
+    "3e17aae556d9",
+    "23b2157ed505",
+    "e7a393933909",
+    "1a4ffa2f51b8",
+    "14d87780fcab",
+    "1576cbbf3f65"
+   ]
+  }
+ ],
+ "learnings": [
+  {
+   "lesson": "Choose remote theme vs vendored theme up front; years of Sass and layout churn ended in a single 8k-line deletion.",
+   "evidence": [
+    "e2991d7ec7a7",
+    "8d66c2774851",
+    "7b01447c85c3"
+   ]
+  },
+  {
+   "lesson": "Settle the content taxonomy and URLs once; collections were created, consolidated and deleted repeatedly, and quest permalinks eventually needed redirects.",
+   "evidence": [
+    "b5e5dc7343f9",
+    "bc5ff7da9ade",
+    "933c4ba8ee86",
+    "a72fc819c078"
+   ]
+  },
+  {
+   "lesson": "Validate frontmatter in CI before generating content in bulk; it would have avoided the 318-error and 641-file cleanup passes.",
+   "evidence": [
+    "654affe692d6",
+    "3b3281569a45",
+    "10cf44ac3131"
+   ]
+  },
+  {
+   "lesson": "Never commit generated artifacts such as link-check dumps and logs; they repeatedly bloated the history and were then removed.",
+   "evidence": [
+    "4e1b4d3be903",
+    "759a20d9d778"
+   ]
+  },
+  {
+   "lesson": "Keep external material in its own repos from the start; vendored wargame docs, the posts collection and bookstore scripts all had to be moved out.",
+   "evidence": [
+    "aad65eee4eec",
+    "a72fc819c078",
+    "ca8f510218c0"
+   ]
+  },
+  {
+   "lesson": "Standardize secrets and shared CI pieces once; token renames and vendored runner copies caused repeated workflow repairs.",
+   "evidence": [
+    "74b52d57b518",
+    "59b5012dab4f",
+    "7fd3cc59730f"
+   ]
+  }
+ ],
+ "transitions": [
+  {
+   "when": "2021-09",
+   "from": "setup-script repository",
+   "to": "Jekyll site on the zer0 mistakes theme",
+   "evidence": [
+    "e2991d7ec7a7"
+   ]
+  },
+  {
+   "when": "2023-03",
+   "from": "many Jekyll collections",
+   "to": "a consolidated pages/ tree under beta releases",
+   "evidence": [
+    "baa5f084b764",
+    "bc5ff7da9ade"
+   ]
+  },
+  {
+   "when": "2024-06",
+   "from": "vendored layouts and Sass",
+   "to": "remote theme",
+   "evidence": [
+    "7b01447c85c3"
+   ]
+  },
+  {
+   "when": "2025-07",
+   "from": "manual maintenance",
+   "to": "AI and bot workflow automation",
+   "evidence": [
+    "c857f781a7bf",
+    "8431e6ec7466"
+   ]
+  },
+  {
+   "when": "2026-06",
+   "from": "a broad blog, notebooks and wargames hub",
+   "to": "a focused quest platform",
+   "evidence": [
+    "289b8559b665",
+    "a72fc819c078",
+    "aad65eee4eec"
+   ]
+  },
+  {
+   "when": "2026-09",
+   "from": "locally vendored AI runners",
+   "to": "a shared fleet runner kit and claude-run action",
+   "evidence": [
+    "23b2157ed505",
+    "7fd3cc59730f"
+   ]
+  }
+ ],
+ "schema": "chronicle-eras/v1",
+ "pv": "era-reading/v1",
+ "source": "claude-opus-5-5",
+ "inputHash": "4032cb8386aeac0b",
+ "at": "2026-11-21T18:34:13+00:00",
+ "costUsd": 0.2969
+}

@@ -1,0 +1,1 @@
+{"sha":"1b07427aa8f2e541768e95d00121c73df466d1a6","ct":"2022-10-01T13:56:09-06:00","pv":"commit-annotation/v1","model":"claude-haiku-5-5","kind":"feature","area":"sidebar and breadcrumbs","summary":"Reworked sidebar and breadcrumbs, and updated the Jekyll setup docs.","significance":1,"themes":["navigation","docs"],"at":"2026-11-21T18:26:33+00:00"}

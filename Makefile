@@ -2,6 +2,7 @@
 # Provides convenient commands for managing content statistics and quest validation
 
 .PHONY: help stats stats-update stats-show stats-clean stats-config test \
+        chronicle chronicle-status chronicle-test \
         serve build build-prod build-ci clean \
         quest-validate quest-network quest-network-strict quest-build-network \
         quest-audit quest-audit-strict quest-audit-report quest-levels-data quest-nav quest-data quest-normalize \
@@ -536,6 +537,21 @@ docs:
 docs-check:
 	@python3 tools/gen_reference.py --check
 	@python3 tools/docs_index.py --check
+
+# Repository chronicle (scripts/digs/chronicle/): read every commit of a repo once
+# into docs/git-archaeology/chronicle/<owner>/<repo>/ and build its time-lapse
+# presentation under .cache/chronicle/. CHRONICLE_REPO is a checkout path.
+CHRONICLE_REPO ?= .
+chronicle:
+	@python3 scripts/digs/chronicle/chronicle.py run --repo $(CHRONICLE_REPO)
+
+# Show what the chronicle ledger has filed for CHRONICLE_REPO
+chronicle-status:
+	@python3 scripts/digs/chronicle/chronicle.py status --repo $(CHRONICLE_REPO)
+
+# Test the chronicle against a synthetic repository (no network, no model)
+chronicle-test:
+	@python3 scripts/digs/chronicle/test_chronicle.py
 
 # AI-augmented CMS engine (scripts/cms/cms.py -> .cms/)
 cms-index:

@@ -1,0 +1,357 @@
+{
+ "headline": "A Jekyll theme grows into an AI-maintained site-building platform",
+ "summary": "zer0-mistakes began in June 2024 as an imported Jekyll theme, then sat mostly idle for a year apart from small content edits and version bumps. From July 2025 it gained an installer, CI and a test suite, and through late 2025 and early 2026 it added analytics, Mermaid, Jupyter rendering, a feature registry and a large documentation set. Version 1.0.0 in April 2026 rewrote the installer and added admin dashboards and Obsidian support. From June 2026 most commits were AI-assisted or bot-made, working from a machine-readable backlog under a single-trunk release model. The project then expanded into translations, an embedded Claude/Grok Site Builder and a Rails studio app, and ended with a run of accessibility, performance and consent fixes.",
+ "eras": [
+  {
+   "title": "Theme Import and Long Dormancy",
+   "start": "2024-06",
+   "end": "2025-03",
+   "summary": "A burst of 33 commits in June 2024 imported the zer0 Jekyll theme with layouts, includes, assets, a sidebar and a long README. The following months saw only a handful of commits: blog edits, a README test commit, version bumps to 0.1.7 and 0.1.8, and a 404 page with a Docker compose file in March 2025.",
+   "frontend": "Visitors saw a Jekyll blog and landing page with a left sidebar, feature documentation pages and, from March 2025, a 404 page.",
+   "backend": "The work was mostly config and build changes around Gemfile, frontmatter.json and package.json, plus a first Docker compose file.",
+   "transitions": [
+    "from an empty repository to a working Jekyll theme",
+    "from active setup to occasional maintenance edits"
+   ],
+   "learnings": [
+    {
+     "lesson": "Commit Gemfile.lock and dependency choices deliberately at import time; removing hundreds of lock lines immediately afterwards suggests the dependency baseline was not settled.",
+     "evidence": [
+      "e98d098dff9e",
+      "a8426a57665c"
+     ]
+    }
+   ],
+   "key_commits": [
+    "a8426a57665c",
+    "5313241607ee",
+    "7f8bff514348",
+    "4ff71bca8910",
+    "5c16c279681f"
+   ]
+  },
+  {
+   "title": "Installer, CI and Test Foundations",
+   "start": "2025-07",
+   "end": "2025-10",
+   "summary": "Development resumed with an install script, gem release workflows and Docker-first development, followed by remote installation and Azure Static Web Apps support. In September, 57 commits added test suites, performance and quality runners and a gem publish script. October brought a statistics dashboard (v0.4.0), a sitemap layout, Mermaid v2 and Copilot instruction files.",
+   "frontend": "Visitors began to see a Bootstrap statistics dashboard, a unified sitemap with search, and Mermaid diagrams.",
+   "backend": "The repository gained .github workflows, scripts/, test/ and lib/ directories, semantic-version publishing and AI-agent instruction files.",
+   "transitions": [
+    "from a static theme to an installable gem with CI",
+    "from manual releases to scripted changelog and version bumps"
+   ],
+   "learnings": [
+    {
+     "lesson": "Design CI workflows to be few and consolidated from the start; the September enhanced-CI workflow was deleted within the same month.",
+     "evidence": [
+      "6813f677b9d8",
+      "e527464e07a6"
+     ]
+    },
+    {
+     "lesson": "Agree on a test-suite taxonomy (core, deployment, quality) before adding runner scripts so that CI does not need rewiring later.",
+     "evidence": [
+      "4123a810b9b5",
+      "e527464e07a6"
+     ]
+    }
+   ],
+   "key_commits": [
+    "1ba69943de51",
+    "b2029b3e54a9",
+    "9f56b7b39061",
+    "e527464e07a6",
+    "048b1fa38167",
+    "8986a02eb6c9",
+    "1a6184b07a12"
+   ]
+  },
+  {
+   "title": "Modular Scripts and Feature Sprawl",
+   "start": "2025-11",
+   "end": "2026-03",
+   "summary": "Large release and build scripts were split into modular shell libraries and then reorganised again into subdirectories, while five workflows became three. The site gained a blog redesign, Jupyter rendering, AI preview images, ES6 navigation and a features registry that grew from 3 to 43 entries. Documentation was split into user and developer sections, and in March 2026 frontend libraries were vendored for GitHub Pages.",
+   "frontend": "Visitors saw a redesigned blog with category and tag archives, notebook pages, hover-dropdown navigation, a feature showcase, a personalization page and, later, JSON-LD-backed FAQ and glossary pages.",
+   "backend": "Scripts were restructured twice (bin, utils, features and test, then thin wrappers), .devcontainer and templates were added, and Docker Hub publishing moved to GitHub variables.",
+   "transitions": [
+    "from monolithic shell scripts to modular libraries",
+    "from scattered root docs to separated user and developer documentation",
+    "from CDN-loaded frontend libraries to vendored assets"
+   ],
+   "learnings": [
+    {
+     "lesson": "Settle the scripts directory layout in one pass; restructuring in November and again in December required backward-compatibility wrappers.",
+     "evidence": [
+      "fabad892ee68",
+      "c083c9216568"
+     ]
+    },
+    {
+     "lesson": "Keep one feature registry from the beginning; expanding features.yml twice and later deleting a duplicate copy shows the cost of letting it drift.",
+     "evidence": [
+      "2a0057e7076d",
+      "ef075fa5e80b",
+      "397834bb0892"
+     ]
+    }
+   ],
+   "key_commits": [
+    "32755cd5cee7",
+    "0b3c2c242cb5",
+    "8bf80ad32143",
+    "be920dbdc10d",
+    "9427d3a14b69",
+    "3c96620c3602"
+   ]
+  },
+  {
+   "title": "Road to 1.0 and Platform Features",
+   "start": "2026-04",
+   "end": "2026-05",
+   "summary": "The monolithic install.sh was replaced by a modular CLI with deploy targets and a test matrix, and version 1.0.0 shipped. Admin configuration dashboards, Obsidian vault support and frontmatter validation followed. In May, the team introduced design tokens, a second modular installer with an AI wizard, a leaner build without jQuery, and agent prompts compressed by about 70 percent.",
+   "frontend": "Visitors saw admin dashboards, Obsidian-style wiki links and backlinks, a sidebar rail, design-token styling and rewritten quickstart guides with a decision flowchart.",
+   "backend": "Bots began producing most commits; the installer became a plugin-based CLI, frontmatter got a schema linter, and MathJax loaded only when needed.",
+   "transitions": [
+    "from a monolithic installer to a modular CLI with deploy plugins",
+    "from human-led commits to bot-heavy automation",
+    "from jQuery to a lighter build"
+   ],
+   "learnings": [
+    {
+     "lesson": "Keep agent instruction files short from the start; compressing them by 70 percent later suggests the verbose versions were adding cost without value.",
+     "evidence": [
+      "4b45cc7e15f6",
+      "311469940e08"
+     ]
+    },
+    {
+     "lesson": "Add a test matrix before rewriting the installer, since the installer was rewritten twice in two months.",
+     "evidence": [
+      "36cd015445b4",
+      "8a2bd8448aaf"
+     ]
+    }
+   ],
+   "key_commits": [
+    "36cd015445b4",
+    "d5553fb30a3b",
+    "27550dac3294",
+    "31e042cd6802",
+    "10ba722cf249",
+    "f62849fd3abd",
+    "580f2b47ec37"
+   ]
+  },
+  {
+   "title": "AI-Driven Trunk and Governance",
+   "start": "2026-06",
+   "end": "2026-07",
+   "summary": "June 2026 had the busiest month on record, with 139 commits, 78 of them AI-assisted. A Year of AI content-hub pivot was reverted, the site briefly went offline before its domain was restored, and a single-trunk release model with CODEOWNERS and a machine-readable agent backlog was adopted. July consolidated preview-image engines, introduced AI-generated translations, reorganised the Playwright tests and replaced the feedback dropdown with a runtime issue widget.",
+   "frontend": "Visitors saw the theme landing page restored, a language toggle, better mobile overlays and a feedback widget that files GitHub issues.",
+   "backend": "The repository gained a backlog in .issues and .claude, a CSS diff harness for SCSS refactors, docs freshness checks and CI enforcement of one-paragraph-per-line prose.",
+   "transitions": [
+    "from ad-hoc commits to a backlog-driven AI agent workflow",
+    "from hand-maintained translations to a build-time AI pipeline",
+    "from multiple release branches to a single trunk"
+   ],
+   "learnings": [
+    {
+     "lesson": "Protect the CNAME and site identity with CI checks; a content pivot took zer0-mistakes.com offline and both changes had to be reverted.",
+     "evidence": [
+      "3960f65b1af4",
+      "9ef8ff8335e0"
+     ]
+    },
+    {
+     "lesson": "Gate refactors with a visual or CSS diff harness, as was done for the SCSS restructure, so that large AI-made changes can be checked mechanically.",
+     "evidence": [
+      "b37cbfeddfdc"
+     ]
+    }
+   ],
+   "key_commits": [
+    "3960f65b1af4",
+    "8a5ba7e21b6a",
+    "ea819d6c3139",
+    "9ef8ff8335e0",
+    "72b2ab698074",
+    "acac2051ec79",
+    "f7fb20df74c2"
+   ]
+  },
+  {
+   "title": "Showcases and the Site Builder",
+   "start": "2026-08",
+   "end": "2026-09",
+   "summary": "The theme added demonstration content: a French locale, an examples directory, a cookbook collection, and design tokens aligned with the Claude Design system. September expanded the setup wizard into a nine-step Site Builder with embedded Claude and Grok sessions, made Mermaid diagrams accessible, and added a CI lane that produces visual evidence.",
+   "frontend": "Visitors could browse French pages, a cookbook with recipe scaling, an Obsidian-style graph view, view counts, and zoomable Mermaid figures, and could build a site through a chat-driven wizard.",
+   "backend": "New fr, examples and _design-system directories appeared, and three issue-URL builders were unified behind one shared feedback core.",
+   "transitions": [
+    "from theme internals to showcase content and examples",
+    "from a static setup wizard to an LLM-backed Site Builder"
+   ],
+   "learnings": [
+    {
+     "lesson": "Build shared cores before duplicating helpers; three separate issue-URL builders had to be merged after the feedback widget shipped.",
+     "evidence": [
+      "24d4e2c63805",
+      "f7fb20df74c2"
+     ]
+    },
+    {
+     "lesson": "Check that developer-only banners are excluded from rendered output before shipping docs, since they reached visitors.",
+     "evidence": [
+      "89b10f1ff361"
+     ]
+    }
+   ],
+   "key_commits": [
+    "aca0b53b8806",
+    "bb8eefa2beea",
+    "7fc2fe02683d",
+    "8fe640b9ae53",
+    "e1c57531fc23",
+    "96776fa48bbe",
+    "a377fae6ea31"
+   ]
+  },
+  {
+   "title": "Studio App and Quality Hardening",
+   "start": "2026-10",
+   "end": "2026-11",
+   "summary": "A Rails 8.1 studio app was added for designing the theme in a browser. Most remaining work was fixes: performance (lazy sitemap rows, LCP image), consent-gated analytics, WCAG AA contrast, mobile admin layouts, and making newsletter and giscus integrations configurable for theme consumers.",
+   "frontend": "Visitors saw a simpler two-tier navbar, faster pages, no analytics before consent, higher-contrast skins and larger touch targets.",
+   "backend": "A studio/ Rails app was added, features.yml became a single registry, and a consumer audit script now detects stale vendored data.",
+   "transitions": [
+    "from feature expansion to performance, privacy and accessibility fixes",
+    "from hard-coded integrations to consumer-configurable options"
+   ],
+   "learnings": [
+    {
+     "lesson": "Load analytics only after consent from day one; PostHog and GA had been loading before consent until October 2026.",
+     "evidence": [
+      "caa349b43019"
+     ]
+    },
+    {
+     "lesson": "Make third-party integrations configurable when they are introduced; giscus and the newsletter form had to be retrofitted for consumers.",
+     "evidence": [
+      "9d50a02098fc",
+      "646e0bac1b40"
+     ]
+    }
+   ],
+   "key_commits": [
+    "8817fbe84e7d",
+    "397834bb0892",
+    "9e42fcbd9421",
+    "caa349b43019",
+    "3ca34159560d",
+    "e128dfab42ed"
+   ]
+  }
+ ],
+ "learnings": [
+  {
+   "lesson": "Fix the directory layout for scripts and installers once, with tests first; the installer and scripts were each restructured two or three times.",
+   "evidence": [
+    "fabad892ee68",
+    "c083c9216568",
+    "36cd015445b4",
+    "8a2bd8448aaf"
+   ]
+  },
+  {
+   "lesson": "Keep a single source of truth for registries and config; duplicate features.yml files and hard-coded repo and Docker names both needed cleanup.",
+   "evidence": [
+    "397834bb0892",
+    "969ce9438391"
+   ]
+  },
+  {
+   "lesson": "When AI agents produce most commits, add mechanical guards such as CODEOWNERS, CSS diff checks and visual baselines before expanding scope.",
+   "evidence": [
+    "ea819d6c3139",
+    "b37cbfeddfdc",
+    "a377fae6ea31"
+   ]
+  },
+  {
+   "lesson": "Guard the site identity and domain in CI; the content pivot that took the site offline cost a revert and a restore.",
+   "evidence": [
+    "3960f65b1af4",
+    "9ef8ff8335e0"
+   ]
+  },
+  {
+   "lesson": "Treat privacy and accessibility as defaults rather than late fixes; consent-gated analytics and WCAG AA contrast arrived only after more than two years of development.",
+   "evidence": [
+    "caa349b43019",
+    "3ca34159560d"
+   ]
+  }
+ ],
+ "transitions": [
+  {
+   "when": "2025-07",
+   "from": "a dormant Jekyll theme",
+   "to": "an installable gem with CI and release workflows",
+   "evidence": [
+    "1ba69943de51"
+   ]
+  },
+  {
+   "when": "2025-11",
+   "from": "monolithic release and build scripts",
+   "to": "modular shell libraries and consolidated workflows",
+   "evidence": [
+    "32755cd5cee7",
+    "0b3c2c242cb5"
+   ]
+  },
+  {
+   "when": "2026-04",
+   "from": "0.x releases with a monolithic installer",
+   "to": "version 1.0.0 with a modular CLI installer",
+   "evidence": [
+    "36cd015445b4",
+    "d5553fb30a3b"
+   ]
+  },
+  {
+   "when": "2026-06",
+   "from": "human-led development",
+   "to": "a backlog-driven, mostly AI-assisted single-trunk workflow",
+   "evidence": [
+    "8a5ba7e21b6a",
+    "ea819d6c3139"
+   ]
+  },
+  {
+   "when": "2026-09",
+   "from": "a static setup wizard",
+   "to": "an LLM-backed Site Builder",
+   "evidence": [
+    "8fe640b9ae53",
+    "e1c57531fc23"
+   ]
+  },
+  {
+   "when": "2026-10",
+   "from": "feature expansion",
+   "to": "a Rails studio app plus performance, privacy and accessibility hardening",
+   "evidence": [
+    "8817fbe84e7d",
+    "caa349b43019",
+    "3ca34159560d"
+   ]
+  }
+ ],
+ "schema": "chronicle-eras/v1",
+ "pv": "era-reading/v1",
+ "source": "claude-opus-5-5",
+ "inputHash": "17a06cf04b70e2ef",
+ "at": "2026-11-21T18:34:00+00:00",
+ "costUsd": 0.185
+}

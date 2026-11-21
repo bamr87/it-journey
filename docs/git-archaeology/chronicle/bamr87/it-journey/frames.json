@@ -1,0 +1,472 @@
+{
+ "schema": "chronicle-frames/v1",
+ "renderer": "source-render/v1",
+ "head": "36b87ed5147374119dae294ef1941e11425f4962",
+ "pages": [
+  {
+   "key": "index-html",
+   "path": "index.html",
+   "role": "home page (served by README.md → index.md → index.html)",
+   "versions": 90,
+   "frames": [
+    {
+     "sha": "ab523954f523ddaf7402682c79630b36958fad79",
+     "date": "2020-07-30",
+     "path": "README.md",
+     "image": "index-html/2020-07-30-ab523954f5.webp"
+    },
+    {
+     "sha": "6771018ec7d695f93ec32ebe970bf49e66c4d4d5",
+     "date": "2021-09-03",
+     "path": "README.md",
+     "image": "index-html/2021-09-03-6771018ec7.webp"
+    },
+    {
+     "sha": "c94697441d2776d5e7a8d5ed30bda404666d2106",
+     "date": "2021-09-03",
+     "path": "README.md",
+     "image": "index-html/2021-09-03-c94697441d.webp"
+    },
+    {
+     "sha": "c636b894392366991a7f9efd87adac14b694c6b8",
+     "date": "2021-09-03",
+     "path": "README.md",
+     "image": "index-html/2021-09-03-c636b89439.webp"
+    },
+    {
+     "sha": "7dbceba8bf6cf862313b5820b884a96a92898002",
+     "date": "2021-09-07",
+     "path": "README.md",
+     "image": "index-html/2021-09-07-7dbceba8bf.webp"
+    },
+    {
+     "sha": "2f8a03c6033469000142e5c367e5991f0f11f22b",
+     "date": "2021-10-26",
+     "path": "README.md",
+     "image": "index-html/2021-10-26-2f8a03c603.webp"
+    },
+    {
+     "sha": "4c1394c7f0d80604ba4a4f3445bed261e4984e97",
+     "date": "2021-11-08",
+     "path": "README.md",
+     "image": "index-html/2021-11-08-4c1394c7f0.webp"
+    },
+    {
+     "sha": "156c6859e40383bfb714bb92b1cfe1be17a72f8e",
+     "date": "2022-01-07",
+     "path": "index.md",
+     "image": "index-html/2022-01-07-156c6859e4.webp"
+    },
+    {
+     "sha": "fd619491a824500f18080e1a4d438071dfe6e8a7",
+     "date": "2022-01-28",
+     "path": "index.md",
+     "image": "index-html/2022-01-28-fd619491a8.webp"
+    },
+    {
+     "sha": "4a5c80d27af2202cbe2611162941a42cf31ae304",
+     "date": "2022-06-05",
+     "path": "index.md",
+     "image": "index-html/2022-06-05-4a5c80d27a.webp"
+    },
+    {
+     "sha": "857d818b523ccebabb5435aaf67f57d6787e5050",
+     "date": "2022-12-05",
+     "path": "index.md",
+     "image": "index-html/2022-12-05-857d818b52.webp"
+    },
+    {
+     "sha": "0b5c03929d35d2d8baaeb8ea8159b966aa0ace78",
+     "date": "2023-03-01",
+     "path": "index.md",
+     "image": "index-html/2023-03-01-0b5c03929d.webp"
+    },
+    {
+     "sha": "ce4fea9173a7ff8f3bb18321936a7e41794caf89",
+     "date": "2023-03-12",
+     "path": "index.md",
+     "image": "index-html/2023-03-12-ce4fea9173.webp"
+    },
+    {
+     "sha": "fd490cc6a7805cf74c716cadc3516db0bd8ca2db",
+     "date": "2023-04-02",
+     "path": "index.md",
+     "image": "index-html/2023-04-02-fd490cc6a7.webp"
+    },
+    {
+     "sha": "5d2e27c1f22bda221500520223d93938b764008e",
+     "date": "2024-05-01",
+     "path": "index.md",
+     "image": "index-html/2024-05-01-5d2e27c1f2.webp"
+    },
+    {
+     "sha": "78e71d05df223fe17e39f9b1f7a2d843d2c5d3e9",
+     "date": "2024-05-26",
+     "path": "index.md",
+     "image": "index-html/2024-05-26-78e71d05df.webp"
+    },
+    {
+     "sha": "66e998937281be7f0f7b48a28a47c884dfe248b4",
+     "date": "2026-06-26",
+     "path": "index.html",
+     "image": "index-html/2026-06-26-66e9989372.webp"
+    },
+    {
+     "sha": "45ea46baf76a8c10b005158b42aa4f03f90a9230",
+     "date": "2026-11-09",
+     "path": "index.html",
+     "image": "index-html/2026-11-09-45ea46baf7.webp"
+    }
+   ]
+  },
+  {
+   "key": "readme-md",
+   "path": "README.md",
+   "role": "repository front door",
+   "versions": 36,
+   "frames": [
+    {
+     "sha": "656c1055b5ac9142a42cdf1b0efb9be3706f936b",
+     "date": "2022-05-07",
+     "path": "README.md",
+     "image": "readme-md/2022-05-07-656c1055b5.webp"
+    },
+    {
+     "sha": "3614a0ef2bbfdf4ed36f66e9bda2f2b31fbe9b5d",
+     "date": "2022-08-27",
+     "path": "README.md",
+     "image": "readme-md/2022-08-27-3614a0ef2b.webp"
+    },
+    {
+     "sha": "179c71af569d69497541fc50c2d761e3cfa57a7f",
+     "date": "2022-12-06",
+     "path": "README.md",
+     "image": "readme-md/2022-12-06-179c71af56.webp"
+    },
+    {
+     "sha": "baa5f084b76464c7ced4126e960d0693fa8497e3",
+     "date": "2023-03-12",
+     "path": "README.md",
+     "image": "readme-md/2023-03-12-baa5f084b7.webp"
+    },
+    {
+     "sha": "d70e976866750efa49c22d235f866f8b7efa703b",
+     "date": "2024-02-19",
+     "path": "README.md",
+     "image": "readme-md/2024-02-19-d70e976866.webp"
+    },
+    {
+     "sha": "92dbfbee8c248a9d858186962c7b960185dfcb90",
+     "date": "2024-04-04",
+     "path": "README.md",
+     "image": "readme-md/2024-04-04-92dbfbee8c.webp"
+    },
+    {
+     "sha": "209344a4192c40a9905566f845a1e713970522ef",
+     "date": "2024-04-27",
+     "path": "README.md",
+     "image": "readme-md/2024-04-27-209344a419.webp"
+    },
+    {
+     "sha": "79721a64bad7d712de879cde0ee8e6e53afc924b",
+     "date": "2024-05-07",
+     "path": "README.md",
+     "image": "readme-md/2024-05-07-79721a64ba.webp"
+    },
+    {
+     "sha": "c3f8af71ab9a81d5418ef8d735db52539a5428e3",
+     "date": "2024-06-03",
+     "path": "README.md",
+     "image": "readme-md/2024-06-03-c3f8af71ab.webp"
+    },
+    {
+     "sha": "bac14cbd39ab725143a445a58f11f7c4e28fdfd5",
+     "date": "2025-07-21",
+     "path": "README.md",
+     "image": "readme-md/2025-07-21-bac14cbd39.webp"
+    },
+    {
+     "sha": "63d97537fdee5d345614b26ba55e649de6e9cc48",
+     "date": "2025-10-12",
+     "path": "README.md",
+     "image": "readme-md/2025-10-12-63d97537fd.webp"
+    },
+    {
+     "sha": "6271b99fcbf71fb41b0a4d8b2ad32a30e615ee3e",
+     "date": "2025-12-28",
+     "path": "README.md",
+     "image": "readme-md/2025-12-28-6271b99fcb.webp"
+    },
+    {
+     "sha": "7efe9a1a73f1ab1014b11c2136490f3464bea1b2",
+     "date": "2026-03-20",
+     "path": "README.md",
+     "image": "readme-md/2026-03-20-7efe9a1a73.webp"
+    },
+    {
+     "sha": "700b0001fc4640311759e3712699d23d1da6bb89",
+     "date": "2026-05-22",
+     "path": "README.md",
+     "image": "readme-md/2026-05-22-700b0001fc.webp"
+    },
+    {
+     "sha": "c062d8bae8c72cb6febbcc176838ebadb977a7c4",
+     "date": "2026-06-26",
+     "path": "README.md",
+     "image": "readme-md/2026-06-26-c062d8bae8.webp"
+    },
+    {
+     "sha": "ff6afe91d28a4cc80d7ae03101aa337cd5a23db0",
+     "date": "2026-09-27",
+     "path": "README.md",
+     "image": "readme-md/2026-09-27-ff6afe91d2.webp"
+    },
+    {
+     "sha": "e347ef7c022c20a80f6d9e364e8a65fc5dd7f847",
+     "date": "2026-10-24",
+     "path": "README.md",
+     "image": "readme-md/2026-10-24-e347ef7c02.webp"
+    },
+    {
+     "sha": "5e93a84c71ea454a674264986cb103f4b1df5980",
+     "date": "2026-11-18",
+     "path": "README.md",
+     "image": "readme-md/2026-11-18-5e93a84c71.webp"
+    }
+   ]
+  },
+  {
+   "key": "pages-quest-reports-index-md",
+   "path": "pages/_quest-reports/index.md",
+   "role": "most-revised page (34 mainline changes)",
+   "versions": 34,
+   "frames": [
+    {
+     "sha": "1ee23dec27910b48e3e7bfe47a46e773687cb186",
+     "date": "2026-07-12",
+     "path": "pages/_quest-reports/index.md",
+     "image": "pages-quest-reports-index-md/2026-07-12-1ee23dec27.webp"
+    },
+    {
+     "sha": "bb1c1805af63252799b9e0d712b4fd148340d160",
+     "date": "2026-07-14",
+     "path": "pages/_quest-reports/index.md",
+     "image": "pages-quest-reports-index-md/2026-07-14-bb1c1805af.webp"
+    },
+    {
+     "sha": "d2d8b45417070647a54679c6da98e4edcb4eafa9",
+     "date": "2026-07-16",
+     "path": "pages/_quest-reports/index.md",
+     "image": "pages-quest-reports-index-md/2026-07-16-d2d8b45417.webp"
+    },
+    {
+     "sha": "a67b99b5da7be52e86a080b4fc79b6b589dd4036",
+     "date": "2026-07-18",
+     "path": "pages/_quest-reports/index.md",
+     "image": "pages-quest-reports-index-md/2026-07-18-a67b99b5da.webp"
+    },
+    {
+     "sha": "9dfa3bbac7c097dc3a8171fbe5aa4b0e6f479260",
+     "date": "2026-07-21",
+     "path": "pages/_quest-reports/index.md",
+     "image": "pages-quest-reports-index-md/2026-07-21-9dfa3bbac7.webp"
+    },
+    {
+     "sha": "0d01b4e9bdeeef3b6755b18d4d751d20a6e5fa12",
+     "date": "2026-07-23",
+     "path": "pages/_quest-reports/index.md",
+     "image": "pages-quest-reports-index-md/2026-07-23-0d01b4e9bd.webp"
+    },
+    {
+     "sha": "1c03c284cbcd246803b81cd38f6c5f8f77fd19ee",
+     "date": "2026-07-28",
+     "path": "pages/_quest-reports/index.md",
+     "image": "pages-quest-reports-index-md/2026-07-28-1c03c284cb.webp"
+    },
+    {
+     "sha": "f97475ceb9452fbc3190e94fe6dd002a0df83cab",
+     "date": "2026-08-10",
+     "path": "pages/_quest-reports/index.md",
+     "image": "pages-quest-reports-index-md/2026-08-10-f97475ceb9.webp"
+    },
+    {
+     "sha": "4f156a4528f1392215a46b6f491234c037ca0931",
+     "date": "2026-08-12",
+     "path": "pages/_quest-reports/index.md",
+     "image": "pages-quest-reports-index-md/2026-08-12-4f156a4528.webp"
+    },
+    {
+     "sha": "a5cc2fff5653b8cae1d8fafdbcdd9086ae547bdd",
+     "date": "2026-08-14",
+     "path": "pages/_quest-reports/index.md",
+     "image": "pages-quest-reports-index-md/2026-08-14-a5cc2fff56.webp"
+    },
+    {
+     "sha": "dfd6c58043e98cba949f68046aed4b12154640c9",
+     "date": "2026-08-16",
+     "path": "pages/_quest-reports/index.md",
+     "image": "pages-quest-reports-index-md/2026-08-16-dfd6c58043.webp"
+    },
+    {
+     "sha": "7e16cf51b944ee86dc39c6e62ddcd0ce8faa6cec",
+     "date": "2026-08-26",
+     "path": "pages/_quest-reports/index.md",
+     "image": "pages-quest-reports-index-md/2026-08-26-7e16cf51b9.webp"
+    },
+    {
+     "sha": "71f84118bc256187bc9fe1b199810f8a425d8b58",
+     "date": "2026-08-28",
+     "path": "pages/_quest-reports/index.md",
+     "image": "pages-quest-reports-index-md/2026-08-28-71f84118bc.webp"
+    },
+    {
+     "sha": "90e2bd0c2d3a0146a2580455ce49e95094fac6cb",
+     "date": "2026-08-31",
+     "path": "pages/_quest-reports/index.md",
+     "image": "pages-quest-reports-index-md/2026-08-31-90e2bd0c2d.webp"
+    },
+    {
+     "sha": "8f866969abc8dbfed5a992a8b320c997d9b4b52e",
+     "date": "2026-09-02",
+     "path": "pages/_quest-reports/index.md",
+     "image": "pages-quest-reports-index-md/2026-09-02-8f866969ab.webp"
+    },
+    {
+     "sha": "a13bcb8b4fc8ae64e7284e7631ec3ff28e1e2dbc",
+     "date": "2026-09-04",
+     "path": "pages/_quest-reports/index.md",
+     "image": "pages-quest-reports-index-md/2026-09-04-a13bcb8b4f.webp"
+    },
+    {
+     "sha": "f9abe6cac23005133ea91fff47099b28bf8a08fe",
+     "date": "2026-09-07",
+     "path": "pages/_quest-reports/index.md",
+     "image": "pages-quest-reports-index-md/2026-09-07-f9abe6cac2.webp"
+    },
+    {
+     "sha": "a9c140ee86dd12ed89126f207f200e0752dfac97",
+     "date": "2026-09-09",
+     "path": "pages/_quest-reports/index.md",
+     "image": "pages-quest-reports-index-md/2026-09-09-a9c140ee86.webp"
+    }
+   ]
+  },
+  {
+   "key": "pages-quests-readme-md",
+   "path": "pages/_quests/README.md",
+   "role": "most-revised page (26 mainline changes)",
+   "versions": 39,
+   "frames": [
+    {
+     "sha": "4304ba962ea09e180c0249eed686587cd547d2a3",
+     "date": "2020-08-25",
+     "path": "gpc-app.md",
+     "image": "pages-quests-readme-md/2020-08-25-4304ba962e.webp"
+    },
+    {
+     "sha": "cfc196e8c7f331f82d2b0c876e7061a08c2c00cf",
+     "date": "2021-08-15",
+     "path": "init_world/README.md",
+     "image": "pages-quests-readme-md/2021-08-15-cfc196e8c7.webp"
+    },
+    {
+     "sha": "1696159e7b33357fd81ccce70990328db514adcb",
+     "date": "2021-09-03",
+     "path": "init_world/README.md",
+     "image": "pages-quests-readme-md/2021-09-03-1696159e7b.webp"
+    },
+    {
+     "sha": "e2991d7ec7a7272a35731e6e4973db30837621e7",
+     "date": "2021-09-21",
+     "path": "init_world/README.md",
+     "image": "pages-quests-readme-md/2021-09-21-e2991d7ec7.webp"
+    },
+    {
+     "sha": "453e46c1fd2cbd2b08c3c73de8ceffb923414bcf",
+     "date": "2022-02-12",
+     "path": "_quest/init_world/README.md",
+     "image": "pages-quests-readme-md/2022-02-12-453e46c1fd.webp"
+    },
+    {
+     "sha": "2407051cbfbb8708204cef9fba090736278dd435",
+     "date": "2022-08-07",
+     "path": "_quest/README.md",
+     "image": "pages-quests-readme-md/2022-08-07-2407051cbf.webp"
+    },
+    {
+     "sha": "bc5ff7da9ade764f806327fce4fe83ae76403e55",
+     "date": "2023-03-13",
+     "path": "pages/_quests/README.md",
+     "image": "pages-quests-readme-md/2023-03-13-bc5ff7da9a.webp"
+    },
+    {
+     "sha": "7570f2cc78b1f8b6ee6e8865ff337efcd2faeceb",
+     "date": "2024-03-12",
+     "path": "pages/_quests/README.md",
+     "image": "pages-quests-readme-md/2024-03-12-7570f2cc78.webp"
+    },
+    {
+     "sha": "bac14cbd39ab725143a445a58f11f7c4e28fdfd5",
+     "date": "2025-07-21",
+     "path": "pages/_quests/README.md",
+     "image": "pages-quests-readme-md/2025-07-21-bac14cbd39.webp"
+    },
+    {
+     "sha": "986e402b85f8bc5a72076403f4b99cf51a717df7",
+     "date": "2025-11-19",
+     "path": "pages/_quests/README.md",
+     "image": "pages-quests-readme-md/2025-11-19-986e402b85.webp"
+    },
+    {
+     "sha": "c593e316065b1b4dc5924f5a9c8ccb3272984113",
+     "date": "2025-11-29",
+     "path": "pages/_quests/README.md",
+     "image": "pages-quests-readme-md/2025-11-29-c593e31606.webp"
+    },
+    {
+     "sha": "d30d78b5779382c17aee1e0b145654d3cbfa0216",
+     "date": "2025-11-30",
+     "path": "pages/_quests/README.md",
+     "image": "pages-quests-readme-md/2025-11-30-d30d78b577.webp"
+    },
+    {
+     "sha": "8668473a1483490ffb1a69ece07722d8ae6d3687",
+     "date": "2025-12-18",
+     "path": "pages/_quests/README.md",
+     "image": "pages-quests-readme-md/2025-12-18-8668473a14.webp"
+    },
+    {
+     "sha": "0fb14fa3d3cc4834a3d74708b31de49bd6119324",
+     "date": "2026-02-27",
+     "path": "pages/_quests/README.md",
+     "image": "pages-quests-readme-md/2026-02-27-0fb14fa3d3.webp"
+    },
+    {
+     "sha": "cab1a49c6c2a703a577850ea406fc9683cecc37b",
+     "date": "2026-03-21",
+     "path": "pages/_quests/README.md",
+     "image": "pages-quests-readme-md/2026-03-21-cab1a49c6c.webp"
+    },
+    {
+     "sha": "700b0001fc4640311759e3712699d23d1da6bb89",
+     "date": "2026-05-22",
+     "path": "pages/_quests/README.md",
+     "image": "pages-quests-readme-md/2026-05-22-700b0001fc.webp"
+    },
+    {
+     "sha": "0dfc7dc24c77d8f383be5b3f081a75a1990d43f4",
+     "date": "2026-05-24",
+     "path": "pages/_quests/README.md",
+     "image": "pages-quests-readme-md/2026-05-24-0dfc7dc24c.webp"
+    },
+    {
+     "sha": "e9a8f0baf0171d99bafcc5f54fb1209900cd99ce",
+     "date": "2026-08-09",
+     "path": "pages/_quests/README.md",
+     "image": "pages-quests-readme-md/2026-08-09-e9a8f0baf0.webp"
+    }
+   ]
+  }
+ ],
+ "at": "2026-11-21T18:27:26+00:00"
+}
