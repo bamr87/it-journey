@@ -1,0 +1,18 @@
+{"sha":"9af6c50be7f9b6d5d79b980d20cac5efe4d61b37","p":"pages/_quickstart/win-setup.md","ct":"2023-11-19T18:18:23-08:00","t":"Windows Setup","cats":["win"],"w":1091}
+{"sha":"abfdae1c60b75bcd5cd8604947155d2897734fb4","p":"pages/_quests/2020-02-02-home.md","ct":"2023-11-25T14:12:43-07:00","t":"Overworld","cats":["home"],"w":323}
+{"sha":"abfdae1c60b75bcd5cd8604947155d2897734fb4","p":"pages/_quests/2023-11-23-begin-your-it-journey.md","ct":"2023-11-25T14:12:43-07:00","t":"Begin your IT Journey","draft":true,"w":833}
+{"sha":"abfdae1c60b75bcd5cd8604947155d2897734fb4","p":"pages/_quests/2023-11-24-glossary.md","ct":"2023-11-25T14:12:43-07:00","t":"Glossary","tags":["notes"],"cats":["notes"],"draft":true,"w":38}
+{"sha":"abfdae1c60b75bcd5cd8604947155d2897734fb4","p":"pages/_quests/README.md","ct":"2023-11-25T14:12:43-07:00","t":"Init World","d":"This is the init world.","w":158}
+{"sha":"abfdae1c60b75bcd5cd8604947155d2897734fb4","p":"pages/_quests/init_world/2023-11-23-character-building.md","ct":"2023-11-25T14:12:43-07:00","t":"Character Building","dif":"['noob', 'easy', 'medium', 'hard', 'epic","draft":true,"w":433}
+{"sha":"abfdae1c60b75bcd5cd8604947155d2897734fb4","p":"pages/_quests/init_world/2023-11-23-it-fundamentals.md","ct":"2023-11-25T14:12:43-07:00","t":"IT Fundamentals","draft":true,"w":443}
+{"sha":"abfdae1c60b75bcd5cd8604947155d2897734fb4","p":"pages/_quests/init_world/2023-11-24-character-selection.md","ct":"2023-11-25T14:12:43-07:00","t":"Character Selection","draft":true,"w":444}
+{"sha":"abfdae1c60b75bcd5cd8604947155d2897734fb4","p":"pages/_quests/init_world/2023-11-24-os-selection.md","ct":"2023-11-25T14:12:43-07:00","t":"OS Selection","draft":true,"w":515}
+{"sha":"abfdae1c60b75bcd5cd8604947155d2897734fb4","p":"pages/_quests/world_map.md","ct":"2023-11-25T14:12:43-07:00","t":"","w":0}
+{"sha":"abfdae1c60b75bcd5cd8604947155d2897734fb4","p":"pages/_quickstart/jekyll-setup.md","ct":"2023-11-25T14:12:43-07:00","t":"Jekyll Setup","cats":["quickstart"],"w":249}
+{"sha":"e82596c3f445f287317ca01e715d06ba560fc97c","p":"pages/2023-11-04-latex-your-cv.md","ct":"2023-11-27T04:08:17-07:00","t":"LaTex your CV","w":603}
+{"sha":"9474c4c0a0df348ca4b1ae73ccee564d8ffe4a38","p":"pages/_quickstart/mac-setup.md","ct":"2023-11-28T13:00:42-07:00","t":"Mac Setup","cats":["mac"],"w":1235}
+{"sha":"5e9244e11db71b3fc0976df168266412cf65f513","p":"pages/_docs/jekyll/jekyll-diagram-with-mermaid.md","ct":"2023-11-28T20:46:23-07:00","t":"Jekyll - Diagram with Mermaid","tags":["Mermaid","Diagram"],"w":838}
+{"sha":"5e9244e11db71b3fc0976df168266412cf65f513","p":"pages/_posts/2000-01-01-articles.md","ct":"2023-11-28T20:46:23-07:00","t":"articles","draft":true,"w":6}
+{"sha":"5e9244e11db71b3fc0976df168266412cf65f513","p":"pages/_posts/2023-11-04-latex-your-cv.md","ct":"2023-11-28T20:46:23-07:00","t":"LaTex your CV","w":603}
+{"sha":"5e9244e11db71b3fc0976df168266412cf65f513","p":"pages/_quests/README.md","ct":"2023-11-28T20:46:23-07:00","t":"Init World","d":"This is the init world.","w":169}
+{"sha":"5e9244e11db71b3fc0976df168266412cf65f513","p":"pages/_quickstart/mac-setup.md","ct":"2023-11-28T20:46:23-07:00","t":"Mac Setup","cats":["mac"],"w":1260}

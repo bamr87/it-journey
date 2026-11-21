@@ -1,0 +1,89 @@
+{"sha":"ebd52c1be150e7540779750297c6901903eab8d3","p":"home.md","ct":"2022-01-01T11:04:11-07:00","t":"it-journey.home (~)","w":1470}
+{"sha":"6067fdb94753cf94022d2dee3b79d9b20ebef1f2","p":"_posts/2021-12-05-index.md","ct":"2022-01-01T11:05:08-07:00","t":"posts","draft":true,"w":59}
+{"sha":"6067fdb94753cf94022d2dee3b79d9b20ebef1f2","p":"index.md","ct":"2022-01-01T11:05:08-07:00","t":"Hello World","w":36}
+{"sha":"3fbc3a977a40327ccb5bd4ba703f00c6c75bcfab","p":"_posts/2021-12-05-index.md","ct":"2022-01-01T11:54:37-07:00","t":"posts","draft":true,"w":73}
+{"sha":"c35c1bb2706e3b1504738c0b776c0c3d643260da","p":"_quickstart/mac-setup.md","ct":"2022-01-01T11:55:01-07:00","t":"Mac Setup","cats":["quickstart","machine-setup"],"w":763}
+{"sha":"08b7e6bfb4c0dc12797525b888c81edb5bc29619","p":"_quickstart/mac-setup.md","ct":"2022-01-01T11:55:12-07:00","t":"Mac Setup","cats":["quickstart","machine-setup"],"w":763}
+{"sha":"e80420e630d17b8785f87100742f837f19950a0c","p":"_notes/programming.md","ct":"2022-01-01T20:39:39-07:00","t":"Programming","d":"Collection of programming languages notes","w":372}
+{"sha":"e80420e630d17b8785f87100742f837f19950a0c","p":"_posts/2021-12-05-index.md","ct":"2022-01-01T20:39:39-07:00","t":"posts","draft":true,"w":109}
+{"sha":"ddb2edd051739fdafa02eeed1287c935c9e2d145","p":"_notes/command-line.md","ct":"2022-01-04T18:02:01-07:00","t":"Command Line","d":"Command Line Notes","w":128}
+{"sha":"ddb2edd051739fdafa02eeed1287c935c9e2d145","p":"_notes/jekyll.md","ct":"2022-01-04T18:02:01-07:00","t":"Jeykll","w":922}
+{"sha":"ddb2edd051739fdafa02eeed1287c935c9e2d145","p":"_posts/2021-12-05-index.md","ct":"2022-01-04T18:02:01-07:00","t":"posts","draft":true,"w":149}
+{"sha":"ddb2edd051739fdafa02eeed1287c935c9e2d145","p":"_quickstart/machine-setup.md","ct":"2022-01-04T18:02:01-07:00","t":"Machine Setup","cats":["quickstart"],"w":673}
+{"sha":"ddb2edd051739fdafa02eeed1287c935c9e2d145","p":"_quickstart/win-setup.md","ct":"2022-01-04T18:02:01-07:00","t":"Windows Setup","cats":["quickstart","machine-setup"],"w":673}
+{"sha":"ddb2edd051739fdafa02eeed1287c935c9e2d145","p":"home.md","ct":"2022-01-04T18:02:01-07:00","t":"it-journey.home (~)","w":1285}
+{"sha":"7487bb8f764422aa2f8e6d3d2257885deb5e4a61","p":"_posts/2021-12-05-index.md","ct":"2022-01-05T13:46:28-07:00","t":"posts","draft":true,"w":155}
+{"sha":"093b46e119330a5c6727ba6f08c5055915f07f0f","p":"home.md","ct":"2022-01-05T15:16:27-07:00","t":"it-journey.home (~)","w":1285}
+{"sha":"8caece711b45123624ef34bdde3f19f695edb536","p":"_posts/2022-01-05-angolia-jekyll-setup-with-github-pages.md","ct":"2022-01-05T15:16:46-07:00","t":"Angolia-Jekyll Setup With Github Pages","cats":["Posts"],"draft":true,"w":24}
+{"sha":"2adbf77415db5505edcb5c4dae505bbf60e062c5","p":"_posts/2021-12-05-index.md","ct":"2022-01-06T11:51:03-07:00","t":"posts","draft":true,"w":188}
+{"sha":"c5fd71ecb0360c912a5917dc563a47c5b214f20d","p":"_posts/2022-01-05-angolia-jekyll-setup-with-github-pages.md","ct":"2022-01-06T17:37:49-07:00","t":"Angolia-Jekyll Setup With Github Pages","cats":["Posts"],"draft":true,"w":43}
+{"sha":"c5fd71ecb0360c912a5917dc563a47c5b214f20d","p":"home.md","ct":"2022-01-06T17:37:49-07:00","t":"it-journey.home (~)","w":1286}
+{"sha":"c5fd71ecb0360c912a5917dc563a47c5b214f20d","p":"index.md","ct":"2022-01-06T17:37:49-07:00","t":"Hello World","w":124}
+{"sha":"eb5ff2eb678d33b0531676b8151efe803b0bbbba","p":"_posts/2022-01-05-angolia-jekyll-setup-with-github-pages.md","ct":"2022-01-06T18:35:31-07:00","t":"Angolia-Jekyll Setup With Github Pages","cats":["Posts"],"draft":true,"w":44}
+{"sha":"d9c75f2bec6f6817b46f67d555f9b70676b0a97c","p":"_posts/2022-01-05-angolia-jekyll-setup-with-github-pages.md","ct":"2022-01-06T18:52:55-07:00","t":"Angolia-Jekyll Setup With Github Pages","cats":["Posts"],"draft":true,"w":45}
+{"sha":"d435a98ae099adb8a56bbc43a36c32661941e9f4","p":"_posts/2022-01-05-angolia-jekyll-setup-with-github-pages.md","ct":"2022-01-06T19:24:05-07:00","t":"Angolia-Jekyll Setup With Github Pages","cats":["Posts"],"draft":true,"w":47}
+{"sha":"9b8dec0f31f6bfd02ec94b815b7e4f9d14c0aabb","p":"_posts/2022-01-05-angolia-jekyll-setup-with-github-pages.md","ct":"2022-01-06T22:22:20-07:00","t":"Angolia-Jekyll Setup With Github Pages","cats":["Posts"],"draft":true,"w":47}
+{"sha":"bb9455bb068a7233aa642d7cf731d7d30f64171f","p":"_posts/2022-01-05-angolia-jekyll-setup-with-github-pages.md","ct":"2022-01-06T22:42:50-07:00","t":"Angolia-Jekyll Setup With Github Pages","cats":["Posts"],"draft":true,"w":49}
+{"sha":"156c6859e40383bfb714bb92b1cfe1be17a72f8e","p":"index.md","ct":"2022-01-07T16:01:18-07:00","t":"Hello World","w":124}
+{"sha":"0ac27aaf4c0e8510a9c4b6f0b756915727951928","p":"_about/approach.md","ct":"2022-01-08T21:33:58-07:00","t":"Approach","w":154}
+{"sha":"0ac27aaf4c0e8510a9c4b6f0b756915727951928","p":"_hobbies/music.md","ct":"2022-01-08T21:33:58-07:00","t":"","cats":["hobbies"],"w":3843}
+{"sha":"0ac27aaf4c0e8510a9c4b6f0b756915727951928","p":"_notes/index.md","ct":"2022-01-08T21:33:58-07:00","t":"Notes Index","d":"Notes Index","w":409}
+{"sha":"0ac27aaf4c0e8510a9c4b6f0b756915727951928","p":"_notes/web-dev.md","ct":"2022-01-08T21:33:58-07:00","t":"Web Development","d":"Collection of Web Development notes","w":19}
+{"sha":"0ac27aaf4c0e8510a9c4b6f0b756915727951928","p":"_posts/2021-12-05-index.md","ct":"2022-01-08T21:33:58-07:00","t":"posts","draft":true,"w":188}
+{"sha":"0ac27aaf4c0e8510a9c4b6f0b756915727951928","p":"_posts/2022-01-05-angolia-jekyll-setup-with-github-pages.md","ct":"2022-01-08T21:33:58-07:00","t":"Angolia-Jekyll Setup With Github Pages","cats":["Posts"],"draft":true,"w":73}
+{"sha":"0ac27aaf4c0e8510a9c4b6f0b756915727951928","p":"_posts/recipies/2022-01-07-fish-flavored-egg-plant.md","ct":"2022-01-08T21:33:58-07:00","t":"Fish Flavored Egg plant","cats":["Posts"],"draft":true,"w":324}
+{"sha":"0ac27aaf4c0e8510a9c4b6f0b756915727951928","p":"_posts/reflections/2021-10-27-build-die-repeat.md","ct":"2022-01-08T21:33:58-07:00","t":"Build-Destroy-Repeat","cats":["Posts"],"w":37}
+{"sha":"0ac27aaf4c0e8510a9c4b6f0b756915727951928","p":"home.md","ct":"2022-01-08T21:33:58-07:00","t":"it-journey.home (~)","w":1172}
+{"sha":"0ac27aaf4c0e8510a9c4b6f0b756915727951928","p":"index.md","ct":"2022-01-08T21:33:58-07:00","t":"Hello World","w":132}
+{"sha":"ca93c4d78c0c8a701c786bba06763c4024ec0797","p":"_notes/index.md","ct":"2022-01-09T19:56:34-07:00","t":"Notes Index","d":"Notes Index","w":499}
+{"sha":"bed6e129af1b663c8ea9860b0a8d4066db212695","p":"_quickstart/win-setup.md","ct":"2022-01-09T19:57:03-07:00","t":"Windows Setup","cats":["quickstart","machine-setup"],"w":672}
+{"sha":"bed6e129af1b663c8ea9860b0a8d4066db212695","p":"home.md","ct":"2022-01-09T19:57:03-07:00","t":"it-journey.home (~)","w":1174}
+{"sha":"bed6e129af1b663c8ea9860b0a8d4066db212695","p":"index.md","ct":"2022-01-09T19:57:03-07:00","t":"Hello World","w":139}
+{"sha":"3519878e0e5be62ca4645fa3c892574dd2bd45dc","p":"sitemap.md","ct":"2022-01-09T22:10:37-07:00","t":"","w":593}
+{"sha":"8c2d3110331fe05eadd5e9ebfd4c9d346e384f00","p":"_posts/2022-01-09-sonic-pi.md","ct":"2022-01-09T22:11:05-07:00","t":"Sonic Pi","tags":["article"],"cats":["posts"],"draft":true,"w":434}
+{"sha":"86bd546978b2b91d60b59493ff15a9d86319a74a","p":"_notes/cloud.md","ct":"2022-01-10T17:00:49-07:00","t":"cloud","tags":["notes"],"cats":["notes"],"draft":true,"w":5031}
+{"sha":"86bd546978b2b91d60b59493ff15a9d86319a74a","p":"_notes/index.md","ct":"2022-01-10T17:00:49-07:00","t":"Notes Index","d":"Notes Index","w":497}
+{"sha":"86bd546978b2b91d60b59493ff15a9d86319a74a","p":"sitemap.md","ct":"2022-01-10T17:00:49-07:00","t":"","w":593}
+{"sha":"801ab7c4beef22e854071571b16798918610dfea","p":"home.md","ct":"2022-01-10T17:39:02-07:00","t":"it-journey.home (~)","w":1175}
+{"sha":"80baa072106ff0a041ad753b2b2ce9e7673b67e6","p":"home.md","ct":"2022-01-10T17:40:05-07:00","t":"it-journey.home (~)","w":1176}
+{"sha":"df92b1c665ce8775464c356aa79b2091ff1476ef","p":"_quickstart/github-setup.md","ct":"2022-01-10T18:47:51-07:00","t":"Github Setup","cats":["quickstart","github"],"w":207}
+{"sha":"c76a17ae20dcc44c6893c26af2f1a828ea0a2a60","p":"_notes/bash.md","ct":"2022-01-11T20:45:11-07:00","t":"Bash cheatsheet","tags":["shell","script","linux","bash"],"d":"BASH cheatsheet","w":1710}
+{"sha":"c76a17ae20dcc44c6893c26af2f1a828ea0a2a60","p":"_notes/cloud.md","ct":"2022-01-11T20:45:11-07:00","t":"AWS Practice Question Set","tags":["notes"],"cats":["notes"],"draft":true,"w":19246}
+{"sha":"c76a17ae20dcc44c6893c26af2f1a828ea0a2a60","p":"_notes/index.md","ct":"2022-01-11T20:45:11-07:00","t":"Notes Index","d":"Notes Index","w":454}
+{"sha":"c76a17ae20dcc44c6893c26af2f1a828ea0a2a60","p":"_notes/jekyll.md","ct":"2022-01-11T20:45:11-07:00","t":"Jeykll","w":922}
+{"sha":"c76a17ae20dcc44c6893c26af2f1a828ea0a2a60","p":"_posts/2021-12-05-index.md","ct":"2022-01-11T20:45:11-07:00","t":"posts","draft":true,"w":188}
+{"sha":"c76a17ae20dcc44c6893c26af2f1a828ea0a2a60","p":"index.md","ct":"2022-01-11T20:45:11-07:00","t":"Hello World","w":154}
+{"sha":"edb0509bf23f77f7241370fbd3d27206af58705b","p":"_posts/2021-09-26-welcome-to-jekyll.markdown","ct":"2022-01-12T11:02:28-07:00","t":"Welcome to Jekyll!","cats":["jekyll update"],"w":218}
+{"sha":"edb0509bf23f77f7241370fbd3d27206af58705b","p":"_quickstart/github-setup.md","ct":"2022-01-12T11:02:28-07:00","t":"Github Setup","cats":["quickstart"],"w":261}
+{"sha":"edb0509bf23f77f7241370fbd3d27206af58705b","p":"_quickstart/index.md","ct":"2022-01-12T11:02:28-07:00","t":"Quick Start Index","w":12}
+{"sha":"edb0509bf23f77f7241370fbd3d27206af58705b","p":"_quickstart/machine-setup.md","ct":"2022-01-12T11:02:28-07:00","t":"Machine Setup","cats":["quickstart"],"w":958}
+{"sha":"edb0509bf23f77f7241370fbd3d27206af58705b","p":"index.md","ct":"2022-01-12T11:02:28-07:00","t":"Hello World","w":358}
+{"sha":"e219719a6cf03473198283fe4ae1a715352138ee","p":"_about/about.md","ct":"2022-01-13T10:32:07-07:00","t":"About","w":404}
+{"sha":"e219719a6cf03473198283fe4ae1a715352138ee","p":"_posts/2022-01-07-jekyll-and-travis.md","ct":"2022-01-13T10:32:07-07:00","t":"Jekyll and Travis","tags":["article","jekyll","travis ci"],"cats":["posts","guides"],"d":"Deploying Jekyll using Travis CI and Github","w":622}
+{"sha":"e219719a6cf03473198283fe4ae1a715352138ee","p":"_quickstart/github-setup.md","ct":"2022-01-13T10:32:07-07:00","t":"Github Setup","cats":["quickstart"],"w":261}
+{"sha":"e219719a6cf03473198283fe4ae1a715352138ee","p":"_quickstart/machine-setup.md","ct":"2022-01-13T10:32:07-07:00","t":"Machine Setup","cats":["quickstart"],"w":958}
+{"sha":"e219719a6cf03473198283fe4ae1a715352138ee","p":"home.md","ct":"2022-01-13T10:32:07-07:00","t":"it-journey.home (~)","w":1019}
+{"sha":"8ad0ff6f5bc415f3404bacfbe48bd4ec5c50045e","p":"_about/tree.md","ct":"2022-01-27T20:32:38-07:00","t":"Tree","w":108}
+{"sha":"8ad0ff6f5bc415f3404bacfbe48bd4ec5c50045e","p":"sitemap.md","ct":"2022-01-27T20:32:38-07:00","t":"sitemap","w":62}
+{"sha":"c192f9349762f13514b498fab670ecd4e3df60a1","p":"_notes/index.md","ct":"2022-01-27T20:34:54-07:00","t":"Notes Index","d":"Notes Index","w":447}
+{"sha":"c192f9349762f13514b498fab670ecd4e3df60a1","p":"_posts/2022-01-09-sonic-pi.md","ct":"2022-01-27T20:34:54-07:00","t":"Sonic Pi","tags":["article"],"cats":["posts"],"draft":true,"w":434}
+{"sha":"c192f9349762f13514b498fab670ecd4e3df60a1","p":"_posts/2022-01-23-winget-your-apps.md","ct":"2022-01-27T20:34:54-07:00","t":"Winget your apps","tags":["article","winget"],"cats":["posts"],"draft":true,"w":5}
+{"sha":"c192f9349762f13514b498fab670ecd4e3df60a1","p":"_quickstart/github-setup.md","ct":"2022-01-27T20:34:54-07:00","t":"Github Setup","cats":["quickstart"],"w":301}
+{"sha":"c192f9349762f13514b498fab670ecd4e3df60a1","p":"_quickstart/index.md","ct":"2022-01-27T20:34:54-07:00","t":"Quick Start Index","w":18}
+{"sha":"c192f9349762f13514b498fab670ecd4e3df60a1","p":"_quickstart/linux-setup.md","ct":"2022-01-27T20:34:54-07:00","t":"Linux Setup","cats":["quickstart","machine-setup"],"w":703}
+{"sha":"c192f9349762f13514b498fab670ecd4e3df60a1","p":"_quickstart/machine-setup.md","ct":"2022-01-27T20:34:54-07:00","t":"Machine Setup","cats":["quickstart"],"w":1103}
+{"sha":"c192f9349762f13514b498fab670ecd4e3df60a1","p":"_quickstart/win-setup.md","ct":"2022-01-27T20:34:54-07:00","t":"Windows Setup","cats":["quickstart","machine-setup"],"w":877}
+{"sha":"c192f9349762f13514b498fab670ecd4e3df60a1","p":"home.md","ct":"2022-01-27T20:34:54-07:00","t":"it-journey.home (~)","w":762}
+{"sha":"c192f9349762f13514b498fab670ecd4e3df60a1","p":"quests/home.md","ct":"2022-01-27T20:34:54-07:00","t":"Overworld","cats":["home"],"w":263}
+{"sha":"fd619491a824500f18080e1a4d438071dfe6e8a7","p":"_quickstart/init_world/README.md","ct":"2022-01-28T19:22:29-07:00","t":"init_world","w":102}
+{"sha":"fd619491a824500f18080e1a4d438071dfe6e8a7","p":"_quickstart/init_world/hello-linux/linux-fun.md","ct":"2022-01-28T19:22:29-07:00","t":"Linux fundamentals","w":8}
+{"sha":"fd619491a824500f18080e1a4d438071dfe6e8a7","p":"_quickstart/init_world/hello-win/hello-win.md","ct":"2022-01-28T19:22:29-07:00","t":"Powershell","w":205}
+{"sha":"fd619491a824500f18080e1a4d438071dfe6e8a7","p":"_quickstart/init_world/tools/tools.md","ct":"2022-01-28T19:22:29-07:00","t":"Tools","w":0}
+{"sha":"fd619491a824500f18080e1a4d438071dfe6e8a7","p":"_quickstart/jekyll-setup.md","ct":"2022-01-28T19:22:29-07:00","t":"Jekyll Setup","cats":["quickstart"],"w":232}
+{"sha":"fd619491a824500f18080e1a4d438071dfe6e8a7","p":"_quickstart/mac-setup.md","ct":"2022-01-28T19:22:29-07:00","t":"Mac Setup","cats":["quickstart","machine-setup"],"w":806}
+{"sha":"fd619491a824500f18080e1a4d438071dfe6e8a7","p":"index.md","ct":"2022-01-28T19:22:29-07:00","t":"Hello World","w":361}
+{"sha":"fd619491a824500f18080e1a4d438071dfe6e8a7","p":"quests/home.md","ct":"2022-01-28T19:22:29-07:00","t":"Overworld","cats":["home"],"w":269}
+{"sha":"29c86bd09eb031d7c0a814bb0e3f1968bf0582d5","p":"_docs/it-journey-docs/docs/index.md","ct":"2022-01-29T14:25:09-07:00","t":"Welcome to MkDocs","w":63}
+{"sha":"29c86bd09eb031d7c0a814bb0e3f1968bf0582d5","p":"_posts/quests/2020-02-02-home.md","ct":"2022-01-29T14:25:09-07:00","t":"Overworld","cats":["home"],"w":279}
+{"sha":"29c86bd09eb031d7c0a814bb0e3f1968bf0582d5","p":"_posts/quests/lvl_0000/README.md","ct":"2022-01-29T14:25:09-07:00","t":"Level-0000","w":2}
+{"sha":"29c86bd09eb031d7c0a814bb0e3f1968bf0582d5","p":"_posts/quests/lvl_0001/language/examples.md","ct":"2022-01-29T14:25:09-07:00","t":"Code Examples","w":147}

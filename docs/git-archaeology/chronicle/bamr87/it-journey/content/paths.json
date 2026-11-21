@@ -1,0 +1,105 @@
+{
+ "paths": [
+  {
+   "key": "developer",
+   "name": "Software Developer",
+   "levels": [
+    "0000",
+    "0001",
+    "0100",
+    "0111",
+    "0110",
+    "1110"
+   ]
+  },
+  {
+   "key": "system-engineer",
+   "name": "System Engineer",
+   "levels": [
+    "0010",
+    "0101",
+    "1000",
+    "1001",
+    "1010"
+   ]
+  },
+  {
+   "key": "security-specialist",
+   "name": "Security Specialist",
+   "levels": [
+    "0010",
+    "1000",
+    "1011",
+    "1110"
+   ]
+  },
+  {
+   "key": "data-scientist",
+   "name": "Data Scientist",
+   "levels": [
+    "0011",
+    "0110",
+    "1100",
+    "1101"
+   ]
+  },
+  {
+   "key": "digital-artist",
+   "name": "Digital Artist (UI/UX)",
+   "levels": [
+    "0001",
+    "0100",
+    "0111",
+    "1110"
+   ]
+  },
+  {
+   "key": "game-developer",
+   "name": "Game Developer",
+   "levels": [
+    "0001",
+    "0100",
+    "0111",
+    "1101"
+   ]
+  }
+ ],
+ "tiers": [
+  {
+   "name": "Apprentice",
+   "levels": [
+    "0000",
+    "0001",
+    "0010",
+    "0011"
+   ]
+  },
+  {
+   "name": "Adventurer",
+   "levels": [
+    "0100",
+    "0101",
+    "0110",
+    "0111"
+   ]
+  },
+  {
+   "name": "Warrior",
+   "levels": [
+    "1000",
+    "1001",
+    "1010",
+    "1011"
+   ]
+  },
+  {
+   "name": "Master",
+   "levels": [
+    "1100",
+    "1101",
+    "1110",
+    "1111"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+{
+ "topics": [
+  {
+   "key": "security-wargames",
+   "name": "Security Wargames",
+   "description": "CTF and wargame walkthroughs (Bandit, Natas, Vortex, Leviathan, etc.) and other cybersecurity hands-on content."
+  },
+  {
+   "key": "jekyll-site-building",
+   "name": "Jekyll & Static Sites",
+   "description": "Building, configuring, theming and deploying Jekyll and GitHub Pages sites, including Liquid, layouts, frontmatter, search, SEO and site maintenance."
+  },
+  {
+   "key": "linux-terminal",
+   "name": "Linux & Terminal",
+   "description": "Command-line, shell scripting, Bash, Linux fundamentals and terminal tooling such as bashcrawl and iTerm."
+  },
+  {
+   "key": "dev-environment-setup",
+   "name": "Dev Environment Setup",
+   "description": "Setting up machines and tools such as macOS, Windows, WSL, VS Code, Homebrew, Docker locally and SteamOS or Raspberry Pi hardware."
+  },
+  {
+   "key": "devops-automation",
+   "name": "DevOps & Automation",
+   "description": "CI/CD, GitHub Actions, git and version control, containers, Kubernetes, cloud platforms, observability and deployment automation."
+  },
+  {
+   "key": "agentic-ai",
+   "name": "AI & Agents",
+   "description": "AI-assisted development, LLMs, Copilot, Claude Code, MCP, multi-agent systems and the GH-600 agentic AI certification material."
+  },
+  {
+   "key": "data-engineering",
+   "name": "Data & Databases",
+   "description": "Data engineering, data science, ETL pipelines, SQL, databases, analytics and notebooks."
+  },
+  {
+   "key": "software-development",
+   "name": "Software Development",
+   "description": "Programming languages, frontend and backend web development, APIs, architecture patterns, testing and frameworks like Django and Bootstrap."
+  },
+  {
+   "key": "quest-progress-reports",
+   "name": "Quest Reports",
+   "description": "Auto-generated or journal-style quest progress reports per character class and level, and gamified learning-path overviews."
+  },
+  {
+   "key": "creative-hobbies",
+   "name": "Creative & Hobbies",
+   "description": "Digital art, illustration, music, cooking, gaming and other personal side projects like optical illusions."
+  },
+  {
+   "key": "philosophy-career",
+   "name": "Learning & Career",
+   "description": "Essays on learning philosophy, IT careers, community, project manifestos, versioning policy and about/profile pages."
+  },
+  {
+   "key": "other",
+   "name": "Other",
+   "description": "Articles no topic fits"
+  }
+ ],
+ "schema": "chronicle-taxonomy/v1",
+ "pv": "topic-taxonomy/v1",
+ "source": "claude-opus-5-5",
+ "hash": "478de717efb22da7",
+ "at": "2026-11-21T22:39:31+00:00",
+ "costUsd": 0.0251
+}

@@ -1,0 +1,202 @@
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/about/about.md","ct":"2023-03-01T21:23:26-07:00","t":"About","w":478}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/about/approach.md","ct":"2023-03-01T21:23:26-07:00","t":"Approach","w":154}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/about/config.md","ct":"2023-03-01T21:23:26-07:00","t":"config","w":53}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/about/purpose.md","ct":"2023-03-01T21:23:26-07:00","t":"Purpose","w":228}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/about/sitemap.md","ct":"2023-03-01T21:23:26-07:00","t":"sitemap","w":72}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/about/tree.md","ct":"2023-03-01T21:23:26-07:00","t":"Tree","w":108}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/doc-index.md","ct":"2023-03-01T21:23:26-07:00","t":"Docs Index (~)","draft":true,"w":4}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/2022-06-11-jekyll-frontmatter-cms.md","ct":"2023-03-01T21:23:26-07:00","t":"Jekyll Frontmatter CMS","w":16}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/cannot-start-jekyll-at-specific-port.md","ct":"2023-03-01T21:23:26-07:00","t":"Cannot Start Jekyll at Specific Port","tags":["Jekyll","Port"],"w":346}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/continuously-deploy-jekyll-website-to-gitHub-pages-with-travis-ci.md","ct":"2023-03-01T21:23:26-07:00","t":"Continuously Deploy Jekyll Website to GitHub Pages with Travis-CI","tags":["Jekyll","Github Pages","Travis CI"],"w":786}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/deploying-jekyll-website-to-netlify.md","ct":"2023-03-01T21:23:26-07:00","t":"Deploying Jekyll Website to Netlify","tags":["Jekyll","Netlify"],"w":505}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/deploying-personal-website-with-custom-domain.md","ct":"2023-03-01T21:23:26-07:00","t":"Deploying Personal Website with Custom Domain","tags":["Custom Domain"],"w":358}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/generating-diagrams-and-flowcharts-with-mermaid.md","ct":"2023-03-01T21:23:26-07:00","t":"Generating Diagrams and Flowcharts with Mermaid","tags":["Mermaid","Flowchart","Gantt"],"w":344}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/index.md","ct":"2023-03-01T21:23:26-07:00","t":"Jekyll","w":270}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/jekyll-comments-with-disqus.md","ct":"2023-03-01T21:23:26-07:00","t":"Jekyll - Comments with Disqus","tags":["Disqus"],"w":486}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/jekyll-diagram-with-mermaid.md","ct":"2023-03-01T21:23:26-07:00","t":"Jekyll - Diagram with Mermaid","tags":["Mermaid","Diagram"],"w":523}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/jekyll-google-analytics.md","ct":"2023-03-01T21:23:26-07:00","t":"Jekyll - Google Analytics - Draft","tags":["Google Analytics"],"draft":true,"w":16}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/jekyll-highlighting.md","ct":"2023-03-01T21:23:26-07:00","t":"Jekyll - Highlighting","tags":["Highlighting","highlight.js"],"w":582}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/jekyll-liquid.md","ct":"2023-03-01T21:23:26-07:00","t":"Jekyll - Liquid","tags":["Jekyll","Liquid"],"w":347}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/jekyll-math-symbols-with-mathjax.md","ct":"2023-03-01T21:23:26-07:00","t":"Jekyll - Math Symbols with MathJax","tags":["MathJax","Mathematic"],"w":683}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/jekyll-pagination.md","ct":"2023-03-01T21:23:26-07:00","t":"Jekyll - Pagination","tags":["Pagination"],"w":398}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/jekyll-performance-optimization.md","ct":"2023-03-01T21:23:26-07:00","t":"Jekyll - Performance Optimization","tags":["Performance"],"w":336}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/jekyll-progress-bar.md","ct":"2023-03-01T21:23:26-07:00","t":"Jekyll - Progress Bar","tags":["Nanobar","Progress Bar"],"w":257}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/jekyll-search-function-for-static-website.md","ct":"2023-03-01T21:23:26-07:00","t":"Jekyll - Search Function for Static Website - draft","tags":["Search","Lunr.js"],"draft":true,"w":79}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/jekyll-security.md","ct":"2023-03-01T21:23:26-07:00","t":"Jekyll - Security","tags":["Security"],"w":483}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/jekyll-seo.md","ct":"2023-03-01T21:23:26-07:00","t":"Jekyll - SEO","tags":["SEO","CDN","DNS"],"w":538}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/jekyll-social-share-buttons-with-sharethis.md","ct":"2023-03-01T21:23:26-07:00","t":"Jekyll - Social Share Buttons with ShareThis","tags":["ShareThis"],"w":433}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/jekyll-social-share-buttons.md","ct":"2023-03-01T21:23:26-07:00","t":"Jekyll - Social Share Buttons","tags":["Social Share"],"w":288}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/jekyll-usage-and-customization.md","ct":"2023-03-01T21:23:26-07:00","t":"Jekyll - Usage and Customization","tags":["Jekyll"],"w":1571}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/personal-site.md","ct":"2023-03-01T21:23:26-07:00","t":"Personal Site","tags":["Personal Site"],"w":220}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/setting-up-jekyll-on-ubuntu-and-macos.md","ct":"2023-03-01T21:23:26-07:00","t":"Setting up Jekyll on Ubuntu and macOS","tags":["GitHub Pages","Jekyll","Ruby","macOS"],"w":1625}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/setting-up-jekyll-on-windows10.md","ct":"2023-03-01T21:23:26-07:00","t":"Setting up Jekyll on Windows 10","tags":["Jekyll","Windows10"],"w":933}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/setting-up-personal-website-on-github-pages.md","ct":"2023-03-01T21:23:26-07:00","t":"Setting up Personal Website on GitHub Pages(Draft)","tags":["GitLab Pages"],"draft":true,"w":100}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/docs/jekyll/setting-up-personal-website-on-gitlab-pages.md","ct":"2023-03-01T21:23:26-07:00","t":"Setting up Personal Website on GitLab Pages","tags":["GitLab Pages"],"w":982}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/hobbies/2022-02-26-psx.md","ct":"2023-03-01T21:23:26-07:00","t":"PSX","tags":["article"],"cats":["posts"],"draft":true,"w":47}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/hobbies/home.md","ct":"2023-03-01T21:23:26-07:00","t":"hobbies","draft":true,"w":1}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/hobbies/music.md","ct":"2023-03-01T21:23:26-07:00","t":"","cats":["hobbies"],"w":3843}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/notes/2022-10-07-powershell.md","ct":"2023-03-01T21:23:26-07:00","t":"Windows Powershell Cheatsheet","tags":["note","powershell"],"cats":["notes","cheetsheet"],"draft":true,"w":17916}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/notes/bash.md","ct":"2023-03-01T21:23:26-07:00","t":"Bash cheatsheet","tags":["shell","script","linux","bash"],"d":"BASH cheatsheet","w":1738}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/notes/bootstrap-examples.md","ct":"2023-03-01T21:23:26-07:00","t":"Cheatsheet","w":2092}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/notes/cloud.md","ct":"2023-03-01T21:23:26-07:00","t":"AWS Practice Question Set","tags":["notes"],"cats":["notes"],"draft":true,"w":19246}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/notes/command-line.md","ct":"2023-03-01T21:23:26-07:00","t":"Command Line","d":"Command Line Notes","w":128}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/notes/excel.md","ct":"2023-03-01T21:23:26-07:00","t":"","w":20}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/notes/index.md","ct":"2023-03-01T21:23:26-07:00","t":"Notes Index","d":"Notes Index","w":510}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/notes/jekyll.md","ct":"2023-03-01T21:23:26-07:00","t":"Jeykll","w":922}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/notes/markdown.md","ct":"2023-03-01T21:23:26-07:00","t":"Markdown","cats":["Posts"],"draft":true,"w":402}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/notes/programming.md","ct":"2023-03-01T21:23:26-07:00","t":"Programming","d":"Collection of programming languages notes","w":372}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/notes/quotes.md","ct":"2023-03-01T21:23:26-07:00","t":"","w":18}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/notes/web-dev.md","ct":"2023-03-01T21:23:26-07:00","t":"Web Development","d":"Collection of Web Development notes","w":19}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/quest/README.md","ct":"2023-03-01T21:23:26-07:00","t":"Init World","d":"This is the init world.","w":154}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/quest/hello-noob.md","ct":"2023-03-01T21:23:26-07:00","t":"hello-n00b","tags":["article"],"cats":["quest","n00b"],"draft":true,"w":41}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/quest/init_world/hello-linux/linux-fun.md","ct":"2023-03-01T21:23:26-07:00","t":"Linux fundamentals","w":8}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/quest/init_world/hello-win/hello-win.md","ct":"2023-03-01T21:23:26-07:00","t":"Powershell","w":205}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/quest/init_world/tools/tools.md","ct":"2023-03-01T21:23:26-07:00","t":"Tools","w":0}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/quest/map.md","ct":"2023-03-01T21:23:26-07:00","t":"","w":0}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/quickstart/2022-05-21-foundations---000.md","ct":"2023-03-01T21:23:26-07:00","t":"Foundations - 000","tags":["000","001"],"cats":["Nany","quests"],"d":"This is to build the foundation","draft":true,"w":22}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/quickstart/2022-07-01-angular-tour-of-heros.md","ct":"2023-03-01T21:23:26-07:00","t":"Angular Tour of Heros","tags":["article"],"cats":["posts"],"draft":true,"w":29}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/quickstart/github-setup.md","ct":"2023-03-01T21:23:26-07:00","t":"Github Setup","cats":["github"],"w":303}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/quickstart/homebrew/homebrew.md","ct":"2023-03-01T21:23:26-07:00","t":"Homebrew","cats":["notes"],"w":324}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/quickstart/index.md","ct":"2023-03-01T21:23:26-07:00","t":"Quick Start Index (~)","w":61}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/quickstart/jekyll-setup.md","ct":"2023-03-01T21:23:26-07:00","t":"Jekyll Setup","cats":["quickstart"],"w":232}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/quickstart/linux-setup.md","ct":"2023-03-01T21:23:26-07:00","t":"Linux Setup","cats":["quickstart","machine-setup"],"w":703}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/quickstart/mac-setup.md","ct":"2023-03-01T21:23:26-07:00","t":"Mac Setup","cats":["machine-setup"],"w":923}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/quickstart/machine-setup.md","ct":"2023-03-01T21:23:26-07:00","t":"Master Setup","cats":["machine-setup"],"w":970}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"_pages/quickstart/win-setup.md","ct":"2023-03-01T21:23:26-07:00","t":"Windows Setup","cats":["machine-setup"],"w":1082}
+{"sha":"0b5c03929d35d2d8baaeb8ea8159b966aa0ace78","p":"index.md","ct":"2023-03-01T21:23:26-07:00","t":"Hello World","w":542}
+{"sha":"ff55d9580aab0da86345604ec4e7ad51037e5f28","p":"_pages/notes/index.md","ct":"2023-03-06T19:11:58-06:00","t":"Notes Index","d":"Notes Index","w":552}
+{"sha":"ff55d9580aab0da86345604ec4e7ad51037e5f28","p":"_pages/notes/markdown.md","ct":"2023-03-06T19:11:58-06:00","t":"Markdown","cats":["Posts"],"draft":true,"w":410}
+{"sha":"ff55d9580aab0da86345604ec4e7ad51037e5f28","p":"index.md","ct":"2023-03-06T19:11:58-06:00","t":"Hello World","w":564}
+{"sha":"48133533c4cd3a727ccfa3223924cd0a32aa410e","p":"index.md","ct":"2023-03-06T20:17:50-06:00","t":"Hello World","w":564}
+{"sha":"07e5f2971f7a496450efe4b6d3976aa0feafe3cd","p":"_pages/notes/add-floating-back-to-top-button.md","ct":"2023-03-08T21:14:25-06:00","t":"Add Floating Back-to-Top button","w":279}
+{"sha":"4e5fd6b41d9221f37ff596e08b2c769facc5e970","p":"_pages/docs/doc-index.md","ct":"2023-03-11T13:54:22-07:00","t":"Docs Index (~)","draft":true,"w":4}
+{"sha":"4e5fd6b41d9221f37ff596e08b2c769facc5e970","p":"_pages/notes/add-floating-back-to-top-button.md","ct":"2023-03-11T13:54:22-07:00","t":"Add Floating Back-to-Top button","tags":["Bootstrap"],"cats":["How-To"],"d":"How to Add a floating button that will scroll to the top of a page?","w":268}
+{"sha":"4e5fd6b41d9221f37ff596e08b2c769facc5e970","p":"_pages/notes/index.md","ct":"2023-03-11T13:54:22-07:00","t":"Notes Index","d":"Notes Index","w":560}
+{"sha":"4e5fd6b41d9221f37ff596e08b2c769facc5e970","p":"_pages/notes/jupyter-notebook-integration-with-jekyll.md","ct":"2023-03-11T13:54:22-07:00","t":"Jupyter Notebook integration with Jekyll","w":6}
+{"sha":"4e5fd6b41d9221f37ff596e08b2c769facc5e970","p":"_pages/notes/notes-from-frontmatter.md","ct":"2023-03-11T13:54:22-07:00","t":"notes from frontmatter","w":0}
+{"sha":"4e5fd6b41d9221f37ff596e08b2c769facc5e970","p":"_pages/search.md","ct":"2023-03-11T13:54:22-07:00","t":"search","cats":["search"],"w":30}
+{"sha":"4e5fd6b41d9221f37ff596e08b2c769facc5e970","p":"_posts/2022-01-05-angolia-jekyll-setup-with-github-pages.md","ct":"2023-03-11T13:54:22-07:00","t":"Angolia-Jekyll Setup With Github Pages","cats":["Posts"],"draft":true,"w":86}
+{"sha":"4e5fd6b41d9221f37ff596e08b2c769facc5e970","p":"index.md","ct":"2023-03-11T13:54:22-07:00","t":"Hello World","w":574}
+{"sha":"119694be3c2f1187d9b2bfa5524cdbeadc6c961a","p":"_posts/penrose-triangle.md","ct":"2023-03-11T13:54:54-07:00","t":"penrose triangle","w":15}
+{"sha":"119694be3c2f1187d9b2bfa5524cdbeadc6c961a","p":"_posts/rainmeter.md","ct":"2023-03-11T13:54:54-07:00","t":"rainmeter","w":17}
+{"sha":"baa5f084b76464c7ced4126e960d0693fa8497e3","p":"README.md","ct":"2023-03-12T19:26:25-06:00","t":"README","w":106}
+{"sha":"baa5f084b76464c7ced4126e960d0693fa8497e3","p":"_pages/about/about.md","ct":"2023-03-12T19:26:25-06:00","t":"About","w":520}
+{"sha":"baa5f084b76464c7ced4126e960d0693fa8497e3","p":"_pages/about/purpose.md","ct":"2023-03-12T19:26:25-06:00","t":"Purpose","w":228}
+{"sha":"baa5f084b76464c7ced4126e960d0693fa8497e3","p":"_pages/about/sitemap.md","ct":"2023-03-12T19:26:25-06:00","t":"sitemap","w":72}
+{"sha":"baa5f084b76464c7ced4126e960d0693fa8497e3","p":"_pages/about/style.md","ct":"2023-03-12T19:26:25-06:00","t":"style","w":5}
+{"sha":"baa5f084b76464c7ced4126e960d0693fa8497e3","p":"_pages/about/test.md","ct":"2023-03-12T19:26:25-06:00","t":"test","cats":["quickstart","None"],"w":1}
+{"sha":"baa5f084b76464c7ced4126e960d0693fa8497e3","p":"_pages/about/tree.md","ct":"2023-03-12T19:26:25-06:00","t":"Tree","w":108}
+{"sha":"baa5f084b76464c7ced4126e960d0693fa8497e3","p":"_pages/notes/cheatsheet/cheatsheet-bootstrap.md","ct":"2023-03-12T19:26:25-06:00","t":"bootstrap cheat sheet","tags":["notes"],"cats":["notes"],"draft":true,"w":4}
+{"sha":"baa5f084b76464c7ced4126e960d0693fa8497e3","p":"_pages/notes/cheatsheet/index.html","ct":"2023-03-12T19:26:25-06:00","t":"Cheatsheet","w":2149}
+{"sha":"baa5f084b76464c7ced4126e960d0693fa8497e3","p":"home.md","ct":"2023-03-12T19:26:25-06:00","t":"","w":799}
+{"sha":"baa5f084b76464c7ced4126e960d0693fa8497e3","p":"index.md","ct":"2023-03-12T19:26:25-06:00","t":"Hello World","tags":["index"],"cats":["hello world"],"d":"This is the index.md file for the whole site and root","w":500}
+{"sha":"ce4fea9173a7ff8f3bb18321936a7e41794caf89","p":"index.md","ct":"2023-03-12T19:32:06-06:00","t":"Hello World","tags":["index"],"cats":["hello world"],"d":"This is the index.md file for the whole site and root","w":499}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"index.md","ct":"2023-03-13T22:19:01-06:00","t":"Hello World","tags":["index"],"cats":["hello world"],"d":"This is the index.md file for the whole site and root","w":499}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_about/about.md","ct":"2023-03-13T22:19:01-06:00","t":"About","w":520}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_about/approach.md","ct":"2023-03-13T22:19:01-06:00","t":"","w":154}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_about/config.md","ct":"2023-03-13T22:19:01-06:00","t":"config","w":53}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_about/purpose.md","ct":"2023-03-13T22:19:01-06:00","t":"Purpose","w":228}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_about/sitemap.md","ct":"2023-03-13T22:19:01-06:00","t":"sitemaps","w":72}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_about/style.md","ct":"2023-03-13T22:19:01-06:00","t":"style","w":5}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_about/test.md","ct":"2023-03-13T22:19:01-06:00","t":"test","cats":["quickstart","None"],"w":1}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_about/tree.md","ct":"2023-03-13T22:19:01-06:00","t":"Tree","w":108}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/doc-index.md","ct":"2023-03-13T22:19:01-06:00","t":"Docs Index (~)","draft":true,"w":4}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/2022-06-11-jekyll-frontmatter-cms.md","ct":"2023-03-13T22:19:01-06:00","t":"Jekyll Frontmatter CMS","w":16}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/cannot-start-jekyll-at-specific-port.md","ct":"2023-03-13T22:19:01-06:00","t":"Cannot Start Jekyll at Specific Port","tags":["Jekyll","Port"],"w":346}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/continuously-deploy-jekyll-website-to-gitHub-pages-with-travis-ci.md","ct":"2023-03-13T22:19:01-06:00","t":"Continuously Deploy Jekyll Website to GitHub Pages with Travis-CI","tags":["Jekyll","Github Pages","Travis CI"],"w":744}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/deploying-jekyll-website-to-netlify.md","ct":"2023-03-13T22:19:01-06:00","t":"Deploying Jekyll Website to Netlify","tags":["Jekyll","Netlify"],"w":505}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/deploying-personal-website-with-custom-domain.md","ct":"2023-03-13T22:19:01-06:00","t":"Deploying Personal Website with Custom Domain","tags":["Custom Domain"],"w":358}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/generating-diagrams-and-flowcharts-with-mermaid.md","ct":"2023-03-13T22:19:01-06:00","t":"Generating Diagrams and Flowcharts with Mermaid","tags":["Mermaid","Flowchart","Gantt"],"w":344}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/index.md","ct":"2023-03-13T22:19:01-06:00","t":"Jekyll","w":270}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/jekyll-comments-with-disqus.md","ct":"2023-03-13T22:19:01-06:00","t":"Jekyll - Comments with Disqus","tags":["Disqus"],"w":486}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/jekyll-diagram-with-mermaid.md","ct":"2023-03-13T22:19:01-06:00","t":"Jekyll - Diagram with Mermaid","tags":["Mermaid","Diagram"],"w":495}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/jekyll-google-analytics.md","ct":"2023-03-13T22:19:01-06:00","t":"Jekyll - Google Analytics - Draft","tags":["Google Analytics"],"draft":true,"w":16}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/jekyll-highlighting.md","ct":"2023-03-13T22:19:01-06:00","t":"Jekyll - Highlighting","tags":["Highlighting","highlight.js"],"w":582}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/jekyll-liquid.md","ct":"2023-03-13T22:19:01-06:00","t":"Jekyll - Liquid","tags":["Jekyll","Liquid"],"w":347}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/jekyll-math-symbols-with-mathjax.md","ct":"2023-03-13T22:19:01-06:00","t":"Jekyll - Math Symbols with MathJax","tags":["MathJax","Mathematic"],"w":683}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/jekyll-pagination.md","ct":"2023-03-13T22:19:01-06:00","t":"Jekyll - Pagination","tags":["Pagination"],"w":398}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/jekyll-performance-optimization.md","ct":"2023-03-13T22:19:01-06:00","t":"Jekyll - Performance Optimization","tags":["Performance"],"w":336}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/jekyll-progress-bar.md","ct":"2023-03-13T22:19:01-06:00","t":"Jekyll - Progress Bar","tags":["Nanobar","Progress Bar"],"w":257}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/jekyll-search-function-for-static-website.md","ct":"2023-03-13T22:19:01-06:00","t":"Jekyll - Search Function for Static Website - draft","tags":["Search","Lunr.js"],"draft":true,"w":79}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/jekyll-security.md","ct":"2023-03-13T22:19:01-06:00","t":"Jekyll - Security","tags":["Security"],"w":483}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/jekyll-seo.md","ct":"2023-03-13T22:19:01-06:00","t":"Jekyll - SEO","tags":["SEO","CDN","DNS"],"w":538}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/jekyll-social-share-buttons-with-sharethis.md","ct":"2023-03-13T22:19:01-06:00","t":"Jekyll - Social Share Buttons with ShareThis","tags":["ShareThis"],"w":433}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/jekyll-social-share-buttons.md","ct":"2023-03-13T22:19:01-06:00","t":"Jekyll - Social Share Buttons","tags":["Social Share"],"w":288}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/jekyll-usage-and-customization.md","ct":"2023-03-13T22:19:01-06:00","t":"Jekyll - Usage and Customization","tags":["Jekyll"],"w":1571}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/personal-site.md","ct":"2023-03-13T22:19:01-06:00","t":"Personal Site","tags":["Personal Site"],"w":220}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/setting-up-jekyll-on-ubuntu-and-macos.md","ct":"2023-03-13T22:19:01-06:00","t":"Setting up Jekyll on Ubuntu and macOS","tags":["GitHub Pages","Jekyll","Ruby","macOS"],"w":1625}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/setting-up-jekyll-on-windows10.md","ct":"2023-03-13T22:19:01-06:00","t":"Setting up Jekyll on Windows 10","tags":["Jekyll","Windows10"],"w":902}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/setting-up-personal-website-on-github-pages.md","ct":"2023-03-13T22:19:01-06:00","t":"Setting up Personal Website on GitHub Pages(Draft)","tags":["GitLab Pages"],"draft":true,"w":100}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_docs/jekyll/setting-up-personal-website-on-gitlab-pages.md","ct":"2023-03-13T22:19:01-06:00","t":"Setting up Personal Website on GitLab Pages","tags":["GitLab Pages"],"w":982}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_hobbies/2022-02-26-psx.md","ct":"2023-03-13T22:19:01-06:00","t":"PSX","tags":["article"],"cats":["posts"],"draft":true,"w":47}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_hobbies/home.md","ct":"2023-03-13T22:19:01-06:00","t":"hobbies","draft":true,"w":1}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_hobbies/music.md","ct":"2023-03-13T22:19:01-06:00","t":"","cats":["hobbies"],"w":3843}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_notes/2022-10-07-powershell.md","ct":"2023-03-13T22:19:01-06:00","t":"Windows Powershell Cheatsheet","tags":["note","powershell"],"cats":["notes","cheetsheet"],"draft":true,"w":17916}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_notes/add-floating-back-to-top-button.md","ct":"2023-03-13T22:19:01-06:00","t":"Add Floating Back-to-Top button","tags":["Bootstrap"],"cats":["How-To"],"d":"How to Add a floating button that will scroll to the top of a page?","w":268}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_notes/bash.md","ct":"2023-03-13T22:19:01-06:00","t":"Bash cheatsheet","tags":["shell","script","linux","bash"],"d":"BASH cheatsheet","w":1738}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_notes/cheatsheet/cheatsheet-bootstrap.md","ct":"2023-03-13T22:19:01-06:00","t":"bootstrap cheat sheet","tags":["notes"],"cats":["notes"],"draft":true,"w":4}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_notes/cheatsheet/index.html","ct":"2023-03-13T22:19:01-06:00","t":"Cheatsheet","w":2149}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_notes/cloud.md","ct":"2023-03-13T22:19:01-06:00","t":"AWS Practice Question Set","tags":["notes"],"cats":["notes"],"draft":true,"w":19246}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_notes/command-line.md","ct":"2023-03-13T22:19:01-06:00","t":"Shell and the CLI","d":"Command Line Interface Notes","w":128}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_notes/excel.md","ct":"2023-03-13T22:19:01-06:00","t":"","w":20}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_notes/index.md","ct":"2023-03-13T22:19:01-06:00","t":"Notes Index","d":"Notes Index","w":560}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_notes/jekyll.md","ct":"2023-03-13T22:19:01-06:00","t":"Jeykll","w":922}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_notes/jupyter-notebook-integration-with-jekyll.md","ct":"2023-03-13T22:19:01-06:00","t":"Jupyter Notebook integration with Jekyll","w":6}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_notes/markdown.md","ct":"2023-03-13T22:19:01-06:00","t":"Markdown","cats":["Posts"],"draft":true,"w":410}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_notes/notes-from-frontmatter.md","ct":"2023-03-13T22:19:01-06:00","t":"notes from frontmatter","w":0}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_notes/programming.md","ct":"2023-03-13T22:19:01-06:00","t":"Programming","d":"Collection of programming languages notes","w":372}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_notes/quotes.md","ct":"2023-03-13T22:19:01-06:00","t":"","w":18}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_notes/web-dev.md","ct":"2023-03-13T22:19:01-06:00","t":"Web Development","d":"Collection of Web Development notes","w":19}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/2000-01-01-index.md","ct":"2023-03-13T22:19:01-06:00","t":"posts","draft":true,"w":188}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/2021-09-26-welcome-to-jekyll.markdown","ct":"2023-03-13T22:19:01-06:00","t":"Welcome to Jekyll!","cats":["jekyll update"],"w":218}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/2022-01-05-angolia-jekyll-setup-with-github-pages.md","ct":"2023-03-13T22:19:01-06:00","t":"Angolia-Jekyll Setup With Github Pages","cats":["Posts"],"draft":true,"w":86}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/2022-01-07-jekyll-and-travis.md","ct":"2023-03-13T22:19:01-06:00","t":"Jekyll and Travis","tags":["article","jekyll","travis ci"],"cats":["posts","guides"],"d":"Deploying Jekyll using Travis CI and Github","w":622}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/2022-01-09-sonic-pi.md","ct":"2023-03-13T22:19:01-06:00","t":"Sonic Pi","tags":["article"],"cats":["posts"],"draft":true,"w":434}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/2022-01-23-winget-your-apps.md","ct":"2023-03-13T22:19:01-06:00","t":"Winget your apps","tags":["article","winget"],"cats":["posts"],"draft":true,"w":5}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/2022-02-26-android-app.md","ct":"2023-03-13T22:19:01-06:00","t":"android app","tags":["article"],"cats":["posts"],"draft":true,"w":10}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/2022-02-27-dual-boot-win-linux.md","ct":"2023-03-13T22:19:01-06:00","t":"dual boot win linux","tags":["article"],"cats":["posts"],"draft":true,"w":90}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/2022-05-09-javascript-testing.md","ct":"2023-03-13T22:19:01-06:00","t":"test","cats":["Posts"],"draft":true,"w":0}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/2022-05-21-fdsa.md","ct":"2023-03-13T22:19:01-06:00","t":"fdsa","tags":["article"],"cats":["posts"],"draft":true,"w":0}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/2022-06-04-add-library-category.md","ct":"2023-03-13T22:19:01-06:00","t":"Add-Library-Category","tags":["article"],"cats":["posts"],"draft":true,"w":0}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/2022-06-10-desktop-widgets-windows.md","ct":"2023-03-13T22:19:01-06:00","t":"Desktop Widgets - Windows","tags":["article"],"cats":["posts"],"draft":true,"w":19}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/2022-06-16-github-pages-custom-domain.md","ct":"2023-03-13T22:19:01-06:00","t":"GIthub Pages Custom Domain","tags":["article"],"cats":["posts"],"draft":true,"w":23}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/2022-06-19-webflow-to-github-pages-migration.md","ct":"2023-03-13T22:19:01-06:00","t":"Webflow to Github Pages - Migration","tags":["article","webflow","migration","github pages"],"cats":["posts","github"],"d":"How-to article on how to migrate from Webflow to Github Pages using a custom domain","w":3}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/2022-07-16-zer0-mistakes.md","ct":"2023-03-13T22:19:01-06:00","t":"zer0-mistakes with github-pages and jekyll","tags":["bash","github","how-to","jekyll"],"cats":["posts"],"d":"Introductory post to begin your quest on becoming an IT ninja/wizard by building statically generated websites using modern day, open source","draft":true,"w":553}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/2022-07-24-zer0-mistakes-bootstrap.md","ct":"2023-03-13T22:19:01-06:00","t":"zer0-mistakes-bootstrap","tags":["article"],"cats":["posts"],"draft":true,"w":0}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/2022-12-05-sharex.md","ct":"2023-03-13T22:19:01-06:00","t":"sharex","tags":["article","sharex"],"cats":["posts"],"draft":true,"w":21}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/2022-12-14-enabling-docker-on-azure-via-vscode.md","ct":"2023-03-13T22:19:01-06:00","t":"Enabling docker on azure via VSCode","w":9}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/2022-12-29-linux-ftp-server.md","ct":"2023-03-13T22:19:01-06:00","t":"linux ftp server","w":0}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/cloud/2021-12-29-getting-started-with-cloud-computing.md","ct":"2023-03-13T22:19:01-06:00","t":"Getting Started with Cloud Computing","cats":["Posts"],"draft":true,"w":352}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/penrose-triangle.md","ct":"2023-03-13T22:19:01-06:00","t":"penrose triangle","w":15}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/rainmeter.md","ct":"2023-03-13T22:19:01-06:00","t":"rainmeter","w":17}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/recipies/2022-01-07-fish-flavored-egg-plant.md","ct":"2023-03-13T22:19:01-06:00","t":"Fish Flavored Egg plant","cats":["Posts"],"draft":true,"w":328}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/reflections/2021-10-27-build-die-repeat.md","ct":"2023-03-13T22:19:01-06:00","t":"Build-Destroy-Repeat","cats":["Posts"],"w":37}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/reflections/2021-11-08-it-purpose.md","ct":"2023-03-13T22:19:01-06:00","t":"IT Purpose","cats":["Posts"],"draft":true,"w":238}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_posts/reports/100 questions about arab americans.md","ct":"2023-03-13T22:19:01-06:00","t":"100 QUESTIONS & ANSWERS ABOUT ARAB-AMERICANS","w":6809}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_quests/2020-02-02-home.md","ct":"2023-03-13T22:19:01-06:00","t":"Overworld","cats":["home"],"w":292}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_quests/README.md","ct":"2023-03-13T22:19:01-06:00","t":"Init World","d":"This is the init world.","w":154}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_quests/hello-noob.md","ct":"2023-03-13T22:19:01-06:00","t":"hello-n00b","tags":["article"],"cats":["quest","n00b"],"draft":true,"w":41}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_quests/init_world/hello-linux/linux-fun.md","ct":"2023-03-13T22:19:01-06:00","t":"Linux fundamentals","w":8}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_quests/init_world/hello-win/hello-win.md","ct":"2023-03-13T22:19:01-06:00","t":"Powershell","w":205}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_quests/init_world/tools/tools.md","ct":"2023-03-13T22:19:01-06:00","t":"Tools","w":0}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_quests/lvl_0000/README.md","ct":"2023-03-13T22:19:01-06:00","t":"Level-0000","w":2}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_quests/lvl_0001/language/examples.md","ct":"2023-03-13T22:19:01-06:00","t":"Code Examples","w":147}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_quickstart/2022-05-21-foundations---000.md","ct":"2023-03-13T22:19:01-06:00","t":"Foundations - 000","tags":["000","001"],"cats":["Nany","quests"],"d":"This is to build the foundation","draft":true,"w":22}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_quickstart/2022-07-01-angular-tour-of-heros.md","ct":"2023-03-13T22:19:01-06:00","t":"Angular Tour of Heros","tags":["article"],"cats":["posts"],"draft":true,"w":29}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_quickstart/github-setup.md","ct":"2023-03-13T22:19:01-06:00","t":"Github Setup","cats":["github"],"w":303}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_quickstart/homebrew/homebrew.md","ct":"2023-03-13T22:19:01-06:00","t":"Homebrew","cats":["notes"],"w":324}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_quickstart/index.md","ct":"2023-03-13T22:19:01-06:00","t":"Quick Start Index (~)","w":61}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_quickstart/jekyll-setup.md","ct":"2023-03-13T22:19:01-06:00","t":"Jekyll Setup","cats":["quickstart"],"w":232}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_quickstart/linux-setup.md","ct":"2023-03-13T22:19:01-06:00","t":"Linux Setup","cats":["quickstart","machine-setup"],"w":703}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_quickstart/mac-setup.md","ct":"2023-03-13T22:19:01-06:00","t":"Mac Setup","cats":["machine-setup"],"w":923}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_quickstart/machine-setup.md","ct":"2023-03-13T22:19:01-06:00","t":"Master Setup","cats":["machine-setup"],"w":970}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/_quickstart/win-setup.md","ct":"2023-03-13T22:19:01-06:00","t":"Windows Setup","cats":["machine-setup"],"w":1082}
+{"sha":"bc5ff7da9ade764f806327fce4fe83ae76403e55","p":"pages/search.md","ct":"2023-03-13T22:19:01-06:00","t":"search","cats":["search"],"w":30}
+{"sha":"ca0857d45bb8c7bb2cbb708ce84cd4b862d49024","p":"index.md","ct":"2023-03-14T23:04:48-06:00","t":"Hello World","tags":["index"],"cats":["hello world"],"d":"This is the index.md file for the whole site and root","w":495}
+{"sha":"ca0857d45bb8c7bb2cbb708ce84cd4b862d49024","p":"pages/_about/style.md","ct":"2023-03-14T23:04:48-06:00","t":"style","w":5}
+{"sha":"406e51db38c4b48c3e567b4f626d90f56fd1f6e0","p":"pages/_posts/bash-scripting.md","ct":"2023-03-16T23:24:45-06:00","t":"Bash Scripting","tags":["article"],"cats":["posts"],"draft":true,"w":376}
+{"sha":"e8671ea6007115cc4edab1e4da5ff09d36c175eb","p":"pages/_posts/2023-03-17-penrose-triangle.md","ct":"2023-03-19T11:36:51-06:00","t":"penrose triangle","w":70}
+{"sha":"be5f563456866bd1aeacfe28e7b2a0e6fe847ed6","p":"index.md","ct":"2023-03-19T15:01:29-06:00","t":"Hello World","tags":["index"],"cats":["hello world"],"d":"This is the index.md file for the whole site and root","w":491}
+{"sha":"17bdb288baf517b76f266446e325fe430e8a8e3d","p":"pages/_posts/2023-03-26-chat-gpt-vs-the-impossible-triangle.md","ct":"2023-03-26T11:50:26-06:00","t":"Chat GPT vs The Impossible Triangle","tags":["article"],"cats":["posts"],"d":"Practical and impractical uses of Chat GPT in programming and graphic design through demonstration of its limitation to comprehend impossibl","draft":true,"w":1267}
+{"sha":"c1543df4ed3b1fa4f42e0c011b437ddb66b065a0","p":"pages/_notes/index.md","ct":"2023-03-26T11:50:42-06:00","t":"Notes Index","d":"Notes Index","w":565}
+{"sha":"1ad569825f7b5f7855a4eab10166bcba765f09fc","p":"pages/_posts/2023-03-26-chat-gpt-vs-the-impossible-triangle.md","ct":"2023-03-28T21:30:59-06:00","t":"Chat GPT vs The Impossible Triangle","tags":["article"],"cats":["posts"],"d":"Practical and impractical uses of Chat GPT in programming and graphic design through demonstration of its limitation to comprehend impossibl","draft":true,"w":1411}

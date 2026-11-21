@@ -20,6 +20,24 @@
    "step": "eras",
    "model": "claude-opus-5-5",
    "costUsd": 0.2969
+  },
+  {
+   "at": "2026-11-21T22:39:07+00:00",
+   "step": "taxonomy",
+   "model": "heuristic",
+   "costUsd": 0.1038
+  },
+  {
+   "at": "2026-11-21T22:39:31+00:00",
+   "step": "taxonomy",
+   "model": "claude-opus-5-5",
+   "costUsd": 0.0251
+  },
+  {
+   "at": "2026-11-21T22:40:38+00:00",
+   "step": "topics",
+   "model": "claude-haiku-5-5",
+   "costUsd": 0.0653
   }
  ],
  "ref": "origin/main",
@@ -29,7 +47,7 @@
  "tags": {},
  "toolVersion": "1.0.0",
  "ai": {
-  "costUsdEstimate": 0.5743,
+  "costUsdEstimate": 0.7685,
   "commitPromptVersion": "commit-annotation/v1",
   "eraPromptVersion": "era-reading/v1"
  }

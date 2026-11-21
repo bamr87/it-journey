@@ -1,0 +1,70 @@
+{"sha":"b9afabd38f92772e5a4542d1cc8947aa849b487b","p":"_notes/jekyll.md","ct":"2021-12-01T05:12:39-07:00","t":"Jeykll Cheatsheet","w":833}
+{"sha":"b9afabd38f92772e5a4542d1cc8947aa849b487b","p":"home.md","ct":"2021-12-01T05:12:39-07:00","t":"it-journey.home","w":1132}
+{"sha":"b9afabd38f92772e5a4542d1cc8947aa849b487b","p":"quests/home.md","ct":"2021-12-01T05:12:39-07:00","t":"Overworld","cats":["home"],"w":0}
+{"sha":"f52cc7b89073a0d2684142696dc02c1de55c77c3","p":"_docs/doc-index.md","ct":"2021-12-03T09:05:06-07:00","t":"Index of Docs","draft":true,"w":4}
+{"sha":"f52cc7b89073a0d2684142696dc02c1de55c77c3","p":"about.markdown","ct":"2021-12-03T09:05:06-07:00","t":"About","w":182}
+{"sha":"f52cc7b89073a0d2684142696dc02c1de55c77c3","p":"home.md","ct":"2021-12-03T09:05:06-07:00","t":"it-journey.home","w":1138}
+{"sha":"c6f1c624d006c020e951d820669ab7480e318631","p":"_docs/doc-index.md","ct":"2021-12-05T18:52:20-07:00","t":"Index of Docs","draft":true,"w":4}
+{"sha":"c6f1c624d006c020e951d820669ab7480e318631","p":"_docs/jekyll/index.md","ct":"2021-12-05T18:52:20-07:00","t":"Jekyll","w":270}
+{"sha":"c6f1c624d006c020e951d820669ab7480e318631","p":"_notes/jekyll.md","ct":"2021-12-05T18:52:20-07:00","t":"Jeykll Cheatsheet","w":884}
+{"sha":"c6f1c624d006c020e951d820669ab7480e318631","p":"_posts/2021-12-05-index.md","ct":"2021-12-05T18:52:20-07:00","t":"posts","draft":true,"w":6}
+{"sha":"c6f1c624d006c020e951d820669ab7480e318631","p":"_posts/quests/2021-09-26-welcome-to-jekyll.markdown","ct":"2021-12-05T18:52:20-07:00","t":"Welcome to Jekyll!","cats":["jekyll update"],"w":218}
+{"sha":"c6f1c624d006c020e951d820669ab7480e318631","p":"_posts/quests/2021-11-21-qs-vscode.md","ct":"2021-12-05T18:52:20-07:00","t":"Quick Start - VS Code","draft":true,"w":23}
+{"sha":"c6f1c624d006c020e951d820669ab7480e318631","p":"_posts/quests/2021-12-05-mac-setup.md","ct":"2021-12-05T18:52:20-07:00","t":"mac-setup","cats":["quick-start"],"draft":true,"w":1}
+{"sha":"c6f1c624d006c020e951d820669ab7480e318631","p":"_quickstart/index.md","ct":"2021-12-05T18:52:20-07:00","t":"Quick Start Index","w":13}
+{"sha":"c6f1c624d006c020e951d820669ab7480e318631","p":"_quickstart/mac-setup.md","ct":"2021-12-05T18:52:20-07:00","t":"mac","cats":["quickstart"],"w":6}
+{"sha":"c6f1c624d006c020e951d820669ab7480e318631","p":"home.md","ct":"2021-12-05T18:52:20-07:00","t":"it-journey.home","w":1138}
+{"sha":"c6f1c624d006c020e951d820669ab7480e318631","p":"index.md","ct":"2021-12-05T18:52:20-07:00","t":"Hello World","w":17}
+{"sha":"c6f1c624d006c020e951d820669ab7480e318631","p":"init_world/hello-win/hello-win.md","ct":"2021-12-05T18:52:20-07:00","t":"Powershell","w":205}
+{"sha":"c6f1c624d006c020e951d820669ab7480e318631","p":"quests/lvl_0000/README.md","ct":"2021-12-05T18:52:20-07:00","t":"Level-0000","w":2}
+{"sha":"c6f1c624d006c020e951d820669ab7480e318631","p":"quests/lvl_0001/language/examples.md","ct":"2021-12-05T18:52:20-07:00","t":"Code Examples","w":147}
+{"sha":"ebbc14ad85b278b17a2b532a6e3c5494ba6fac6f","p":"_notes/index.md","ct":"2021-12-08T11:08:34-07:00","t":"Notes Index","d":"Notes Index","w":361}
+{"sha":"ebbc14ad85b278b17a2b532a6e3c5494ba6fac6f","p":"_quickstart/mac-setup.md","ct":"2021-12-08T11:08:34-07:00","t":"mac","cats":["quickstart"],"w":122}
+{"sha":"dfd60978e6e8b99b1a12652632dbb365f777edf2","p":"_quickstart/mac-setup.md","ct":"2021-12-10T15:07:22-07:00","t":"mac","cats":["quickstart"],"w":166}
+{"sha":"f24e51c040f4bdeba17b0e18b903c1f41f589174","p":"_posts/quests/2021-09-26-welcome-to-jekyll.markdown","ct":"2021-12-12T11:05:30-07:00","t":"Welcome to Jekyll!","cats":["jekyll update"],"w":218}
+{"sha":"f24e51c040f4bdeba17b0e18b903c1f41f589174","p":"_quickstart/index.md","ct":"2021-12-12T11:05:30-07:00","t":"Quick Start Index","w":13}
+{"sha":"f24e51c040f4bdeba17b0e18b903c1f41f589174","p":"home.md","ct":"2021-12-12T11:05:30-07:00","t":"it-journey.home","w":1138}
+{"sha":"53d4910321b8d2910f290b9d311bd0c493838755","p":"home.md","ct":"2021-12-12T12:07:06-07:00","t":"it-journey.home","w":1138}
+{"sha":"a42ced6ffb404a88faffe770d8a3f8c4e1bbba9c","p":"_quickstart/mac-setup.md","ct":"2021-12-13T10:10:53-07:00","t":"mac","cats":["quickstart"],"w":349}
+{"sha":"13316b83f9a7eafe9afb2e62bd48ab5e07f6f978","p":"_quickstart/mac-setup.md","ct":"2021-12-13T11:21:09-07:00","t":"mac","cats":["quickstart"],"w":730}
+{"sha":"48ee1e80122833ba7b00222d54e9c497edb6f10f","p":"_notes/2021-12-17-markdown-cheatsheet.md","ct":"2021-12-19T17:12:12-07:00","t":"Markdown Cheatsheet","cats":["Posts"],"draft":true,"w":402}
+{"sha":"48ee1e80122833ba7b00222d54e9c497edb6f10f","p":"_quickstart/index.md","ct":"2021-12-19T17:12:12-07:00","t":"Quick Start Index","w":13}
+{"sha":"48ee1e80122833ba7b00222d54e9c497edb6f10f","p":"_quickstart/mac-setup.md","ct":"2021-12-19T17:12:12-07:00","t":"Mac Setup","cats":["quickstart","machine-setup"],"w":732}
+{"sha":"48ee1e80122833ba7b00222d54e9c497edb6f10f","p":"_quickstart/machine-setup.md","ct":"2021-12-19T17:12:12-07:00","t":"Machine Setup","cats":["quickstart"],"w":716}
+{"sha":"48ee1e80122833ba7b00222d54e9c497edb6f10f","p":"_quickstart/win-setup.md","ct":"2021-12-19T17:12:12-07:00","t":"Windows Setup","cats":["quickstart","machine-setup"],"w":730}
+{"sha":"48ee1e80122833ba7b00222d54e9c497edb6f10f","p":"home.md","ct":"2021-12-19T17:12:12-07:00","t":"it-journey.home","w":1172}
+{"sha":"48ee1e80122833ba7b00222d54e9c497edb6f10f","p":"init_world/hello-win/hello-win.md","ct":"2021-12-19T17:12:12-07:00","t":"Powershell","w":205}
+{"sha":"708c84ff05178115fced05b64ff9af279035f6e0","p":"_notes/jekyll.md","ct":"2021-12-19T17:13:40-07:00","t":"Jeykll Cheatsheet","w":898}
+{"sha":"708c84ff05178115fced05b64ff9af279035f6e0","p":"_posts/reflections/2021-10-27-build-die-repeat.md","ct":"2021-12-19T17:13:40-07:00","t":"Build-Destroy-Repeat","cats":["Posts"],"w":37}
+{"sha":"c38f1572ac15b1e9d38a1c83654f91cf8f67bd87","p":"_quickstart/mac-setup.md","ct":"2021-12-20T19:54:28-07:00","t":"Mac Setup","cats":["quickstart","machine-setup"],"w":732}
+{"sha":"c38f1572ac15b1e9d38a1c83654f91cf8f67bd87","p":"_quickstart/win-setup.md","ct":"2021-12-20T19:54:28-07:00","t":"Windows Setup","cats":["quickstart","machine-setup"],"w":612}
+{"sha":"c38f1572ac15b1e9d38a1c83654f91cf8f67bd87","p":"home.md","ct":"2021-12-20T19:54:28-07:00","t":"it-journey.home","w":1172}
+{"sha":"2d9fee89d365a9a032b6121f339cf7d4b19250fd","p":"_about/stack.md","ct":"2021-12-28T13:35:40-07:00","t":"","w":0}
+{"sha":"2d9fee89d365a9a032b6121f339cf7d4b19250fd","p":"_notes/bash.md","ct":"2021-12-28T13:35:40-07:00","t":"Bash","tags":["shell","sh","echo","script","linux"],"cats":["Programming"],"w":1747}
+{"sha":"2d9fee89d365a9a032b6121f339cf7d4b19250fd","p":"_notes/excel.md","ct":"2021-12-28T13:35:40-07:00","t":"","w":20}
+{"sha":"2d9fee89d365a9a032b6121f339cf7d4b19250fd","p":"_notes/index.md","ct":"2021-12-28T13:35:40-07:00","t":"Notes Index","d":"Notes Index","w":387}
+{"sha":"2d9fee89d365a9a032b6121f339cf7d4b19250fd","p":"_notes/jekyll.md","ct":"2021-12-28T13:35:40-07:00","t":"Jeykll","w":898}
+{"sha":"2d9fee89d365a9a032b6121f339cf7d4b19250fd","p":"_notes/markdown.md","ct":"2021-12-28T13:35:40-07:00","t":"Markdown","cats":["Posts"],"draft":true,"w":402}
+{"sha":"2d9fee89d365a9a032b6121f339cf7d4b19250fd","p":"_notes/programming.md","ct":"2021-12-28T13:35:40-07:00","t":"Programming","d":"Collection of programming languages notes","w":340}
+{"sha":"2d9fee89d365a9a032b6121f339cf7d4b19250fd","p":"_notes/quotes.md","ct":"2021-12-28T13:35:40-07:00","t":"","w":18}
+{"sha":"2d9fee89d365a9a032b6121f339cf7d4b19250fd","p":"_notes/web-dev.md","ct":"2021-12-28T13:35:40-07:00","t":"Web Development","d":"Collection of Web Development notes","w":17}
+{"sha":"2d9fee89d365a9a032b6121f339cf7d4b19250fd","p":"_posts/2021-12-05-index.md","ct":"2021-12-28T13:35:40-07:00","t":"posts","draft":true,"w":48}
+{"sha":"2d9fee89d365a9a032b6121f339cf7d4b19250fd","p":"_posts/reflections/2021-10-27-build-die-repeat.md","ct":"2021-12-28T13:35:40-07:00","t":"Build-Destroy-Repeat","cats":["Posts"],"w":37}
+{"sha":"2d9fee89d365a9a032b6121f339cf7d4b19250fd","p":"_quickstart/machine-setup.md","ct":"2021-12-28T13:35:40-07:00","t":"Machine Setup","cats":["quickstart"],"w":716}
+{"sha":"2d9fee89d365a9a032b6121f339cf7d4b19250fd","p":"_quickstart/win-setup.md","ct":"2021-12-28T13:35:40-07:00","t":"Windows Setup","cats":["quickstart","machine-setup"],"w":622}
+{"sha":"2d9fee89d365a9a032b6121f339cf7d4b19250fd","p":"about.markdown","ct":"2021-12-28T13:35:40-07:00","t":"About","w":189}
+{"sha":"2d9fee89d365a9a032b6121f339cf7d4b19250fd","p":"home.md","ct":"2021-12-28T13:35:40-07:00","t":"it-journey.home","w":1180}
+{"sha":"67c5491f8fb2d71561166f7c62b14a5efbae914d","p":"_about/about.md","ct":"2021-12-29T10:19:09-07:00","t":"About","w":189}
+{"sha":"67c5491f8fb2d71561166f7c62b14a5efbae914d","p":"_about/purpose.md","ct":"2021-12-29T10:19:09-07:00","t":"Purpose","w":228}
+{"sha":"67c5491f8fb2d71561166f7c62b14a5efbae914d","p":"_posts/2021-12-05-index.md","ct":"2021-12-29T10:19:09-07:00","t":"posts","draft":true,"w":50}
+{"sha":"67c5491f8fb2d71561166f7c62b14a5efbae914d","p":"_posts/reports/100 questions about arab americans.md","ct":"2021-12-29T10:19:09-07:00","t":"100 QUESTIONS & ANSWERS ABOUT ARAB-AMERICANS","w":6809}
+{"sha":"f2259f04469276a36376ab3eb3cb6d71c6471989","p":"_posts/2021-12-05-index.md","ct":"2021-12-29T17:26:36-07:00","t":"posts","draft":true,"w":50}
+{"sha":"f2259f04469276a36376ab3eb3cb6d71c6471989","p":"_posts/cloud/2021-12-29-getting-started-with-cloud-computing.md","ct":"2021-12-29T17:26:36-07:00","t":"Getting Started with Cloud Computing","cats":["Posts"],"draft":true,"w":352}
+{"sha":"f2259f04469276a36376ab3eb3cb6d71c6471989","p":"_quickstart/mac-setup.md","ct":"2021-12-29T17:26:36-07:00","t":"Mac Setup","cats":["quickstart","machine-setup"],"w":742}
+{"sha":"f2259f04469276a36376ab3eb3cb6d71c6471989","p":"_quickstart/machine-setup.md","ct":"2021-12-29T17:26:36-07:00","t":"Machine Setup","cats":["quickstart"],"w":663}
+{"sha":"f2259f04469276a36376ab3eb3cb6d71c6471989","p":"_quickstart/win-setup.md","ct":"2021-12-29T17:26:36-07:00","t":"Windows Setup","cats":["quickstart","machine-setup"],"w":647}
+{"sha":"283db4fcabd65df4f7f6d2b6e86ba2f83a12fea9","p":"home.md","ct":"2021-12-29T17:44:31-07:00","t":"it-journey.home","w":1180}
+{"sha":"23eb02022fc226b29fbf9e9aa5ad35c8e64bdb5f","p":"home.md","ct":"2021-12-29T17:53:32-07:00","t":"it-journey.home","w":1180}
+{"sha":"7a98ed223699cd75e3745a36faac3cbe5a2cadb0","p":"home.md","ct":"2021-12-29T18:22:20-07:00","t":"it-journey.home","w":1180}
+{"sha":"93fa91e3c1d82fbd4669b097d51ec2299d053b4a","p":"home.md","ct":"2021-12-29T18:43:20-07:00","t":"it-journey.home","w":1180}
+{"sha":"8491057d72b1b0cb23c5b0a2613ee1ae6a529aea","p":"home.md","ct":"2021-12-30T11:51:41-07:00","t":"it-journey.home","w":1212}

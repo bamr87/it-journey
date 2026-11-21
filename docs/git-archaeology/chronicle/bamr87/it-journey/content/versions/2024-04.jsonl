@@ -1,0 +1,28 @@
+{"sha":"92dbfbee8c248a9d858186962c7b960185dfcb90","p":"README.md","ct":"2024-04-04T15:57:37-06:00","t":"it-journey","tags":["it-journey"],"d":"it-journey","w":548}
+{"sha":"92dbfbee8c248a9d858186962c7b960185dfcb90","p":"pages/_notes/jekyll.md","ct":"2024-04-04T15:57:37-06:00","t":"Jeykll","w":4196}
+{"sha":"92dbfbee8c248a9d858186962c7b960185dfcb90","p":"pages/_posts/2024-04-02-dockering-your-it-journey.md","ct":"2024-04-04T15:57:37-06:00","t":"Dockering Your IT Journey","tags":["Docker","Jekyll","Ruby"],"cats":["Development"],"d":"How to use Docker to run Jekyll with Ruby 2.7","draft":true,"w":2160}
+{"sha":"d4b43fbd5a0338cec39020a2c092b55654484d94","p":"pages/_posts/2024-04-13-sec's-edgar-database.md","ct":"2024-04-16T22:40:14-06:00","t":"SEC's Edgar Database","d":"The SEC's Edgar database provides insights into the financial health and operational performance of publicly-traded companies in the U.S.","draft":true,"w":1608}
+{"sha":"1df1d8966722c63a0d313be5b1d6a3292c047a0e","p":"README.md","ct":"2024-04-25T10:40:43-06:00","t":"it-journey","tags":["it-journey"],"d":"it-journey","w":552}
+{"sha":"1df1d8966722c63a0d313be5b1d6a3292c047a0e","p":"home.md","ct":"2024-04-25T10:40:43-06:00","t":"Hello World","d":"This is an overall outline of this site, and a place to start or come back to when lost.","w":887}
+{"sha":"1df1d8966722c63a0d313be5b1d6a3292c047a0e","p":"pages/_about/about.md","ct":"2024-04-25T10:40:43-06:00","t":"About","w":3527}
+{"sha":"1df1d8966722c63a0d313be5b1d6a3292c047a0e","p":"pages/_docs/2023-04-14-wsl-dev-setup.md","ct":"2024-04-25T10:40:43-06:00","t":"Set up a WSL development environment","tags":["notes"],"cats":["notes"],"d":"Set up a WSL development environment using best practices.","draft":true,"w":2169}
+{"sha":"1df1d8966722c63a0d313be5b1d6a3292c047a0e","p":"pages/_posts/2024-04-25-notes-test.md","ct":"2024-04-25T10:40:43-06:00","t":"{{name}}","tags":["notes"],"cats":["notes"],"draft":true,"w":0}
+{"sha":"1df1d8966722c63a0d313be5b1d6a3292c047a0e","p":"pages/_posts/2024-04-25-test-title.md","ct":"2024-04-25T10:40:43-06:00","t":"{{title}}","tags":["[]"],"cats":["[]"],"d":"null","draft":true,"w":0}
+{"sha":"1df1d8966722c63a0d313be5b1d6a3292c047a0e","p":"pages/_quests/2024-04-25-placeholders.md","ct":"2024-04-25T10:40:43-06:00","t":"placeholders","w":0}
+{"sha":"1df1d8966722c63a0d313be5b1d6a3292c047a0e","p":"quickstart/winget.md","ct":"2024-04-25T10:40:43-06:00","t":"","w":1}
+{"sha":"1df1d8966722c63a0d313be5b1d6a3292c047a0e","p":"roadmap.md","ct":"2024-04-25T10:40:43-06:00","t":"My Roadmap","w":98}
+{"sha":"1df1d8966722c63a0d313be5b1d6a3292c047a0e","p":"windows/dev-environment.md","ct":"2024-04-25T10:40:43-06:00","t":"","w":0}
+{"sha":"1df1d8966722c63a0d313be5b1d6a3292c047a0e","p":"windows/terminal.md","ct":"2024-04-25T10:40:43-06:00","t":"","w":0}
+{"sha":"1df1d8966722c63a0d313be5b1d6a3292c047a0e","p":"windows/terminal/customize-settings/appearance.md","ct":"2024-04-25T10:40:43-06:00","t":"","w":0}
+{"sha":"201476b101e2fd4de79d16eb9e8c7a320c18bb8d","p":"home.md","ct":"2024-04-25T11:09:06-06:00","t":"Home","d":"This is an overall outline of this site, and a place to start or come back to when lost.","w":887}
+{"sha":"201476b101e2fd4de79d16eb9e8c7a320c18bb8d","p":"index.md","ct":"2024-04-25T11:09:06-06:00","t":"Hello World","tags":["index"],"cats":["hello world"],"d":"This is the index.md file for the whole site and root","w":884}
+{"sha":"201476b101e2fd4de79d16eb9e8c7a320c18bb8d","p":"roadmap.md","ct":"2024-04-25T11:09:06-06:00","t":"My Roadmap","w":98}
+{"sha":"209344a4192c40a9905566f845a1e713970522ef","p":"README.md","ct":"2024-04-27T14:01:45-06:00","t":"it-journey","tags":["- it-journey"],"d":"it-journey","w":551}
+{"sha":"5dda1b529daac99baa4b5096a3b15108fd2a8223","p":"README.md","ct":"2024-04-27T17:06:14-06:00","t":"it-journey","tags":["it-journey"],"d":"it-journey","w":582}
+{"sha":"5dda1b529daac99baa4b5096a3b15108fd2a8223","p":"pages/_docs/bootstrap/cheatsheet/cheatsheet-bootstrap.md","ct":"2024-04-27T17:06:14-06:00","t":"bootstrap cheat sheet","tags":["cheatsheet"],"cats":["bootstrap"],"draft":true,"w":4}
+{"sha":"5dda1b529daac99baa4b5096a3b15108fd2a8223","p":"pages/_docs/index.md","ct":"2024-04-27T17:06:14-06:00","t":"Docs Index (~)","d":"Index of all doc pages and instructions on how to add new doc sections","draft":true,"w":183}
+{"sha":"5dda1b529daac99baa4b5096a3b15108fd2a8223","p":"pages/_docs/jekyll/jekyll-seo.md","ct":"2024-04-27T17:06:14-06:00","t":"Jekyll - SEO","tags":["SEO","CDN","DNS"],"cats":["jekyll"],"d":"This is a tutorial about how to optimize the website to improve the rankings.","draft":true,"w":912}
+{"sha":"5dda1b529daac99baa4b5096a3b15108fd2a8223","p":"pages/_posts/2023-04-14-wsl-dev-setup.md","ct":"2024-04-27T17:06:14-06:00","t":"Set up a WSL development environment","tags":["notes"],"cats":["notes"],"d":"Set up a WSL development environment using best practices.","draft":true,"w":2169}
+{"sha":"5dda1b529daac99baa4b5096a3b15108fd2a8223","p":"pages/_posts/2023-04-15-wsl-setup-with-vscode.md","ct":"2024-04-27T17:06:14-06:00","t":"Get started using VS Code with WSL","tags":["article"],"cats":["posts"],"d":"Learn how to set up VS Code to author and debug code using the Windows Subsystem for Linux.","draft":true,"w":1271}
+{"sha":"5dda1b529daac99baa4b5096a3b15108fd2a8223","p":"pages/_posts/2024-03-27-bootable-mac-os.md","ct":"2024-04-27T17:06:14-06:00","t":"Bootable mac os","draft":true,"w":1066}
+{"sha":"5dda1b529daac99baa4b5096a3b15108fd2a8223","p":"pages/_quests/2024-04-25-placeholders.md","ct":"2024-04-27T17:06:14-06:00","t":"placeholders","w":78}

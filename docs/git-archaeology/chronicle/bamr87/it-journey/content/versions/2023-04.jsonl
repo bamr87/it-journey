@@ -1,0 +1,38 @@
+{"sha":"d91d9dddff83c6b59201452cdd43174f9f731865","p":"pages/_about/seo.md","ct":"2023-04-02T12:39:27-06:00","t":"SEO Performance","tags":["article"],"cats":["posts"],"draft":true,"w":52}
+{"sha":"d91d9dddff83c6b59201452cdd43174f9f731865","p":"pages/_about/style.md","ct":"2023-04-02T12:39:27-06:00","t":"style","w":5}
+{"sha":"dd5e9795041948ebe7b8046859282935152c76b3","p":"index.md","ct":"2023-04-02T13:10:04-06:00","t":"Hello World","tags":["index"],"cats":["hello world"],"d":"This is the index.md file for the whole site and root","w":488}
+{"sha":"dd5e9795041948ebe7b8046859282935152c76b3","p":"pages/_about/versioning.md","ct":"2023-04-02T13:10:04-06:00","t":"versioning","tags":["article"],"cats":["posts"],"draft":true,"w":0}
+{"sha":"fd490cc6a7805cf74c716cadc3516db0bd8ca2db","p":"index.md","ct":"2023-04-02T21:30:53-06:00","t":"Hello World","tags":["index"],"cats":["hello world"],"d":"This is the index.md file for the whole site and root","w":485}
+{"sha":"f53b6e931ce58cba89b2e3b461b21ac37fc26b3b","p":"pages/_notes/cheatsheet/cheetsheet.html","ct":"2023-04-02T21:48:41-06:00","t":"Cheatsheet","w":2149}
+{"sha":"ac766054c8934d30be49818611dcba179f7b4306","p":"pages/_notes/cheatsheet/cheatsheet-bootstrap.md","ct":"2023-04-02T21:50:42-06:00","t":"bootstrap cheat sheet","tags":["notes"],"cats":["notes"],"draft":true,"w":4}
+{"sha":"750648d748820d9f5c577323afcb00eb0103ba87","p":"pages/_quickstart/mac-setup.md","ct":"2023-04-05T19:29:02-06:00","t":"Mac Setup","cats":["machine-setup"],"w":919}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"home.md","ct":"2023-04-20T23:25:49-04:00","t":"Hello World","d":"This is an overall outline of this site, and a place to start or come back to when lost.","w":808}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"index.md","ct":"2023-04-20T23:25:49-04:00","t":"Hello World","tags":["index"],"cats":["hello world"],"d":"This is the index.md file for the whole site and root","w":485}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_about/config.md","ct":"2023-04-20T23:25:49-04:00","t":"config","w":51}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_about/theme.md","ct":"2023-04-20T23:25:49-04:00","t":"Theme","w":5}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_about/versioning.md","ct":"2023-04-20T23:25:49-04:00","t":"versioning","tags":["article"],"cats":["posts"],"draft":true,"w":3}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_docs/2023-04-14-wsl-dev-setup.md","ct":"2023-04-20T23:25:49-04:00","t":"Set up a WSL development environment","tags":["notes"],"cats":["notes"],"d":"Set up a WSL development environment using best practices from this set-by-step guide. Learn how to run Ubuntu, Visual Studio Code or Visual","draft":true,"w":2175}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_docs/2023-04-15-wsl-setup-with-vscode.md","ct":"2023-04-20T23:25:49-04:00","t":"Get started using VS Code with WSL","tags":["article"],"cats":["posts"],"d":"Learn how to set up VS Code to author and debug code using the Windows Subsystem for Linux.","draft":true,"w":1282}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_docs/bootstrap/cheatsheet/cheatsheet-bootstrap.md","ct":"2023-04-20T23:25:49-04:00","t":"bootstrap cheat sheet","tags":["cheatsheet"],"cats":["bootstrap"],"draft":true,"w":4}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_docs/bootstrap/cheatsheet/cheetsheet.html","ct":"2023-04-20T23:25:49-04:00","t":"Cheatsheet","w":2149}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_docs/doc-index.md","ct":"2023-04-20T23:25:49-04:00","t":"Docs Index (~)","draft":true,"w":9}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_docs/liquid/basics/introduction.md","ct":"2023-04-20T23:25:49-04:00","t":"","w":277}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_docs/liquid/basics/operators.md","ct":"2023-04-20T23:25:49-04:00","t":"","w":265}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_docs/liquid/basics/types.md","ct":"2023-04-20T23:25:49-04:00","t":"","w":494}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_docs/liquid/tags/variables.md","ct":"2023-04-20T23:25:49-04:00","t":"","w":312}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_hobbies/2023-04-03-gimp-testing.md","ct":"2023-04-20T23:25:49-04:00","t":"Gimp Testing","tags":["notes"],"cats":["notes"],"draft":true,"w":8}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_hobbies/home-art.md","ct":"2023-04-20T23:25:49-04:00","t":"Home Art","tags":["hobbies"],"cats":["hobbies","art"],"draft":true,"w":3}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_hobbies/home.md","ct":"2023-04-20T23:25:49-04:00","t":"hobbies","draft":true,"w":4}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_notes/index.md","ct":"2023-04-20T23:25:49-04:00","t":"Notes Index","d":"Notes Index","w":565}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_posts/2000-01-01-articles.md","ct":"2023-04-20T23:25:49-04:00","t":"articles","draft":true,"w":6}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_posts/2022-01-05-angolia-jekyll-setup-with-github-pages.md","ct":"2023-04-20T23:25:49-04:00","t":"Angolia-Jekyll Setup With Github Pages","cats":["Posts"],"draft":true,"w":92}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_posts/2023-03-26-chat-gpt-vs-the-impossible-triangle.md","ct":"2023-04-20T23:25:49-04:00","t":"Chat GPT vs The Impossible Triangle","tags":["article"],"cats":["posts"],"d":"Practical and impractical uses of Chat GPT in programming and graphic design through demonstration of its limitation to comprehend impossibl","draft":true,"w":1411}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_posts/2023-04-07-krita-tips-and-tricks.md","ct":"2023-04-20T23:25:49-04:00","t":"Krita Tips and Tricks","tags":["article"],"cats":["posts"],"draft":true,"w":35}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_posts/2023-04-14-frontmatter-generator.md","ct":"2023-04-20T23:25:49-04:00","t":"frontmatter generator","tags":["article"],"cats":["posts"],"draft":true,"w":1}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_posts/2023-04-14-windows-sub-linux-setu.md","ct":"2023-04-20T23:25:49-04:00","t":"Windows Sub-linux Setup","tags":["article"],"cats":["posts"],"draft":true,"w":26}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_posts/reports/2023-04-20-arab americans.md","ct":"2023-04-20T23:25:49-04:00","t":"100 QUESTIONS & ANSWERS ABOUT ARAB-AMERICANS","w":6809}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_quickstart/index.md","ct":"2023-04-20T23:25:49-04:00","t":"Quick Start Index (~)","w":63}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_quickstart/mac-setup.md","ct":"2023-04-20T23:25:49-04:00","t":"Mac Setup","cats":["mac"],"w":919}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_quickstart/machine-setup.md","ct":"2023-04-20T23:25:49-04:00","t":"Machine Setup","cats":["machine setup","home"],"draft":true,"w":1062}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/_quickstart/win-setup.md","ct":"2023-04-20T23:25:49-04:00","t":"Windows Setup","cats":["machine-setup"],"w":1093}
+{"sha":"107cfe64db064df139c61d475440e56da065d325","p":"pages/search.md","ct":"2023-04-20T23:25:49-04:00","t":"search","cats":["search"],"w":30}
