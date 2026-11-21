@@ -2,7 +2,7 @@
 title: Replaying a repository's whole history
 description: "How a once-per-commit ledger, a model used only for judgement, and two time-lapses turned six years of Git history into a presentation."
 date: '2026-11-21T19:00:00.000Z'
-lastmod: '2026-11-21T19:00:00.000Z'
+lastmod: '2026-11-21T20:30:00.000Z'
 author: bamr87
 categories:
 - notes
@@ -61,6 +61,14 @@ The page time-lapse does not try to rebuild a 2021 Jekyll site with 2021 gems an
 
 The home page needed one more idea. IT-Journey's home page today is `index.html`, born in 2026, so following that file back gives six versions. The tool asks instead which file served `/` just before the current one was born, and follows that one back too. The chain it found is `README.md` (2020) → `index.md` (2022) → `index.html` (2026): 90 versions, from a two-line README to the dark quest hero.
 
+## The library, article by article
+
+The file-system film shows directories. It does not show what a learning site cares about: the articles, what they are about, and the paths through them. So a second pass reads every mainline version of every article once (7,497 versions of 1,120 articles in IT-Journey's case) through one `git cat-file --batch` call, and keeps the front matter: title, tags, categories, quest level and quest type. Replaying those versions gives each article a lifeline: born, revised, moved, retired. The replay reproduces the 487 article files at HEAD exactly, and follows 633 moves, including the 2023 consolidation of the collections into `pages/`.
+
+Tags are not topics. IT-Journey's tags were written by many hands over six years, so a model reads the tag counts and a sample of titles once and designs 11 topics for the site, from Security Wargames to AI & Agents. Haiku then files each article under one, once. That cost about $0.07, and a re-run files nothing.
+
+The deck's Library section plays it back: every live article as a dot in its topic, colored by collection, with that week's new and retired articles beside it. Below that, the zer0-to-her0 level grid and the six character paths fill in as quests appear. Some of the history is easy to see in it: 219 wargame walkthroughs arriving in May 2026 and leaving for their own repository a month later, the last 92 posts retiring in June 2026, and 105 quest reports arriving in July 2026 once the walkthrough loop started.
+
 ## What the two histories showed
 
 The model's headlines, which the computed numbers bear out:
@@ -81,6 +89,8 @@ Two of the lessons it drew, each tied to commits in the presentation:
 - **Strip the session down for batch calls.** `claude -p` with a replaced system prompt, `--tools ""`, an empty working directory and `--max-budget-usd` cut each call's overhead to about 1,400 tokens.
 - **Validate model output like user input.** Check the enum, drop citations to commits that do not exist, and fall back to something deterministic rather than failing the run.
 - **Prove the replay against the source of truth.** Comparing the rebuilt tree to `git ls-tree` turned "should be right" into "is right" before anything was drawn on top of it.
+- **Ask the model for the vocabulary once, then for the filing.** A taxonomy designed from the whole library, kept until you choose to redesign it, makes 1,120 small classification calls consistent with each other.
+- **Read the model's JSON carefully.** An extractor that tried `[` before `{` parsed `{"topics": [...]}` as its inner array and fell back silently; a test now pins which bracket wins.
 - **Label the simulation.** Saying plainly that a frame is the source rendered in a neutral shell keeps the presentation honest about what it shows.
 
 ## Try it
