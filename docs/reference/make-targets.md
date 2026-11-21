@@ -139,4 +139,7 @@ Descriptions come from the `help` rule's text. A target `make help` does not lis
 | `make mermaid-check` | Checking Mermaid front-matter flags across pages/ |
 | `make mermaid-fix` | Adding missing 'mermaid: true' flags across pages/ |
 | `make liquid-check` | Checking Liquid raw-guards across pages/ (nested raw / unguarded ${{ }}) |
+| `make chronicle` | — |
+| `make chronicle-status` | Show what the chronicle ledger has filed for CHRONICLE_REPO |
+| `make chronicle-test` | Test the chronicle against a synthetic repository (no network, no model) |
 | `make watch` | Watch for changes and auto-update (requires fswatch on macOS) |

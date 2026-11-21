@@ -100,3 +100,6 @@ landing-full.png
 
 # Node deps (installed --no-save for the walkthrough screenshot script + frontend crawler)
 /node_modules/
+
+# Repository chronicle: rendered frames, presentations and videos (rebuilt from the ledger)
+.cache/

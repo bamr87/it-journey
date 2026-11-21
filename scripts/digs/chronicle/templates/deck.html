@@ -1,0 +1,738 @@
+<title>{{TITLE}}</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap">
+<style>
+/* Layout: a scrolling chronicle of strata, one section per reading, a sticky
+   control bar that can run the whole thing as a presentation. Charts sit on a
+   plain chart surface; eras alternate two stratum tints, never hues. */
+:root {
+  --bg: #f4f5f7; --surface: #fcfcfb; --surface-2: #eceef2; --rule: #dde0e6;
+  --ink: #101216; --ink-2: #4b5160; --ink-3: #757b8a;
+  --stratum-a: #eef0f3; --stratum-b: #e4e7ec;
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100;
+  --s5: #e87ba4; --s6: #008300; --s7: #6250d6; --s8: #e34948; --s0: #a3a8b3;
+  --on-dark: #ffffff; --on-light: #0b0b0b;
+  --display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111214; --surface: #1a1a19; --surface-2: #232528; --rule: #303236;
+    --ink: #f0efec; --ink-2: #c3c2b7; --ink-3: #8f8e86;
+    --stratum-a: #17181a; --stratum-b: #1f2023;
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500;
+    --s5: #d55181; --s6: #0ca30c; --s7: #9085e9; --s8: #e66767; --s0: #6b6e75;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111214; --surface: #1a1a19; --surface-2: #232528; --rule: #303236;
+  --ink: #f0efec; --ink-2: #c3c2b7; --ink-3: #8f8e86;
+  --stratum-a: #17181a; --stratum-b: #1f2023;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500;
+  --s5: #d55181; --s6: #0ca30c; --s7: #9085e9; --s8: #e66767; --s0: #6b6e75;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 400 16px/1.55 var(--body); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+a { color: inherit; text-underline-offset: 2px; text-decoration-color: var(--ink-3); }
+a:hover { text-decoration-color: var(--ink); }
+button, select, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.num { font-variant-numeric: tabular-nums; }
+
+/* control bar */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: var(--surface); border-bottom: 1px solid var(--rule); }
+.bar .wrap { display: flex; align-items: center; gap: 16px; padding-block: 10px; }
+.bar .slug { font: 600 14px/1 var(--mono); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.bar nav { display: flex; gap: 14px; font-size: 13px; color: var(--ink-2); overflow-x: auto; flex: 1; min-width: 0; scrollbar-width: none; }
+.bar nav a { text-decoration: none; white-space: nowrap; }
+.bar nav a.on { color: var(--ink); font-weight: 600; }
+.btn { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--ink); background: var(--ink); color: var(--bg); border-radius: 999px; padding: 7px 16px; font-size: 14px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--rule); }
+.btn.ghost:hover { border-color: var(--ink-3); }
+.btn svg { width: 12px; height: 12px; fill: currentColor; }
+.progress { height: 3px; background: transparent; }
+.progress i { display: block; height: 100%; width: 0; background: var(--ink); transition: width .3s linear; }
+
+/* sections */
+section { padding-block: 56px 24px; scroll-margin-top: 64px; }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 12px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(44px, 8vw, 88px); line-height: .95; font-weight: 700; letter-spacing: -.02em; }
+h2 { font-size: clamp(26px, 3.4vw, 36px); line-height: 1.1; font-weight: 700; }
+h3 { font-size: 20px; line-height: 1.25; font-weight: 700; }
+.lede { font-size: 18px; color: var(--ink-2); max-width: 68ch; margin: 12px 0 0; }
+.inference { display: inline-block; font: 500 11px/1 var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--ink-3); border: 1px solid var(--rule); border-radius: 4px; padding: 3px 5px; vertical-align: middle; margin-left: 6px; }
+.sec-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 12px 24px; margin-bottom: 20px; }
+.sec-head p { margin: 8px 0 0; color: var(--ink-2); max-width: 70ch; }
+.panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; }
+
+/* hero */
+.hero { padding-top: 48px; }
+.hero .headline { font: 500 clamp(20px, 2.4vw, 28px)/1.3 var(--display); margin: 22px 0 0; max-width: 34ch; text-wrap: balance; }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; margin-top: 32px; }
+.stat { background: var(--surface); padding: 16px 18px; }
+.stat b { display: block; font: 700 28px/1.1 var(--display); font-variant-numeric: tabular-nums; }
+.stat span { font-size: 13px; color: var(--ink-2); }
+.actors { margin-top: 20px; }
+.stackbar { display: flex; height: 14px; border-radius: 4px; overflow: hidden; gap: 2px; background: var(--surface); }
+.stackbar i { display: block; height: 100%; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--ink-2); margin-top: 10px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+/* charts */
+.chart { position: relative; padding: 14px 14px 8px; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.axis text { fill: var(--ink-3); font: 11px var(--mono); }
+.axis line, .grid line { stroke: var(--rule); }
+.tip { position: fixed; z-index: 20; pointer-events: none; background: var(--surface); color: var(--ink); border: 1px solid var(--rule); border-radius: 8px; padding: 8px 10px; font-size: 13px; line-height: 1.4; box-shadow: 0 6px 24px rgb(0 0 0 / .14); max-width: 320px; }
+.tip .t { font: 500 12px var(--mono); color: var(--ink-3); }
+
+/* film (file system) */
+.film { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 16px; }
+.controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 12px 14px; border-bottom: 1px solid var(--rule); }
+.controls input[type=range] { flex: 1; min-width: 160px; accent-color: var(--ink); }
+.controls .when { font: 500 14px var(--mono); min-width: 9ch; }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; overflow: hidden; }
+.seg button { border: 0; background: transparent; padding: 5px 12px; font-size: 13px; cursor: pointer; color: var(--ink-2); }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.canvas-box { position: relative; padding: 10px; }
+canvas { display: block; width: 100%; border-radius: 6px; }
+.side { padding: 16px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.side .era-now { font: 700 18px/1.25 var(--display); }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 14px; }
+.kv dt { color: var(--ink-3); }
+.kv dd { margin: 0; font-variant-numeric: tabular-nums; text-align: right; }
+.delta-up { color: var(--ink); }
+.ticker { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 13px; max-height: 300px; overflow: auto; }
+.ticker li { display: grid; grid-template-columns: auto 1fr; gap: 2px 8px; }
+.chip { font: 500 10px/1.6 var(--mono); text-transform: uppercase; letter-spacing: .04em; border: 1px solid var(--rule); border-radius: 4px; padding: 0 5px; color: var(--ink-2); align-self: start; white-space: nowrap; }
+.chip.sig3 { border-color: var(--ink); color: var(--ink); }
+.ticker .meta { grid-column: 2; font: 11px var(--mono); color: var(--ink-3); }
+.spark { padding: 0 10px 10px; }
+
+/* milestones */
+.ms { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0 28px; margin: 0; padding: 0; list-style: none; }
+.ms li { display: grid; grid-template-columns: 11ch 1fr; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--rule); font-size: 14px; }
+.ms .d { font: 12px/1.9 var(--mono); color: var(--ink-3); }
+.ms small { display: block; color: var(--ink-3); font: 11px var(--mono); overflow-wrap: anywhere; }
+
+/* flipbook */
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.tabs button { border: 1px solid var(--rule); background: var(--surface); border-radius: 8px; padding: 8px 12px; text-align: left; cursor: pointer; max-width: 100%; }
+.tabs button[aria-selected="true"] { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.tabs b { display: block; font: 500 13px var(--mono); overflow-wrap: anywhere; }
+.tabs span { font-size: 12px; color: var(--ink-3); }
+.flip figure { margin: 0; padding: 12px; }
+.flip .frame { position: relative; aspect-ratio: 1280 / 860; max-width: 100%; background: var(--surface-2); border-radius: 6px; overflow: hidden; }
+.flip .frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.flip figcaption { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; padding: 12px 2px 0; font-size: 14px; }
+.flip figcaption .path { font: 12px var(--mono); color: var(--ink-3); overflow-wrap: anywhere; }
+.dots { display: flex; gap: 3px; flex-wrap: wrap; padding: 0 14px 12px; }
+.dots button { width: 18px; height: 6px; border: 0; border-radius: 3px; background: var(--surface-2); cursor: pointer; padding: 0; }
+.dots button.on { background: var(--ink); }
+
+/* eras */
+.strata { display: flex; flex-direction: column; border-radius: 10px; overflow: hidden; border: 1px solid var(--rule); }
+.era { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 24px; padding: 24px; background: var(--stratum-a); }
+.era:nth-child(even) { background: var(--stratum-b); }
+.era .when { font: 500 13px/1.5 var(--mono); color: var(--ink-2); }
+.era .when b { display: block; font: 700 18px/1.2 var(--display); white-space: nowrap; color: var(--ink); margin-bottom: 6px; }
+.era p { margin: 8px 0 0; max-width: 72ch; }
+.era .lane { display: grid; grid-template-columns: 9.5em minmax(0, 1fr); gap: 4px 12px; margin-top: 12px; font-size: 14px; }
+.era .lane dt { color: var(--ink-3); font: 500 11px/1.9 var(--mono); text-transform: uppercase; letter-spacing: .05em; }
+.era .lane dd { margin: 0; }
+.era ul { margin: 6px 0 0; padding-left: 18px; }
+.era li { margin: 3px 0; }
+.cite { font: 12px var(--mono); color: var(--ink-3); margin-left: 4px; }
+.cite a { color: var(--ink-3); }
+.keyc { font-size: 13px; color: var(--ink-2); }
+.keyc li { list-style: none; margin-left: -18px; }
+.era .jump { margin-top: 14px; }
+
+/* lessons + method */
+.two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; }
+.lessons { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.lessons li { padding: 14px 16px; border-left: 3px solid var(--ink); background: var(--surface); border-radius: 0 8px 8px 0; }
+.shifts { margin: 0; padding: 0; list-style: none; }
+.shifts li { display: grid; grid-template-columns: 8ch minmax(0, 1fr); gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 15px; }
+.shifts .d { font: 12px/1.9 var(--mono); color: var(--ink-3); }
+.method { font-size: 14px; }
+.method table { border-collapse: collapse; width: 100%; }
+.method td { padding: 8px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.method td:first-child { color: var(--ink-3); width: 34%; padding-right: 16px; }
+.method code { font: 12px var(--mono); overflow-wrap: anywhere; }
+footer { padding-block: 40px 60px; color: var(--ink-3); font-size: 13px; }
+
+@media (max-width: 900px) {
+  .film { grid-template-columns: minmax(0, 1fr); }
+  .era { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .two { grid-template-columns: minmax(0, 1fr); }
+  .bar nav { display: none; }
+}
+@media (max-width: 640px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
+</style>
+
+<div class="bar">
+  <div class="wrap">
+    <span class="slug" id="slug">chronicle</span>
+    <nav id="nav">
+      <a href="#pulse">Pulse</a><a href="#filesystem">File system</a><a href="#stack">Stack</a>
+      <a href="#frontend">Front end</a><a href="#eras">Eras</a><a href="#lessons">Lessons</a><a href="#method">Method</a>
+    </nav>
+    <button class="btn" id="present" type="button" aria-pressed="false"><svg viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg><span>Present</span></button>
+  </div>
+  <div class="progress"><i id="progress"></i></div>
+</div>
+
+<main>
+  <section class="hero wrap" id="top">
+    <p class="eyebrow" id="hero-span">Repository chronicle</p>
+    <h1 id="hero-name">Loading…</h1>
+    <p class="headline" id="hero-headline"></p>
+    <p class="lede" id="hero-summary"></p>
+    <div class="stats" id="hero-stats"></div>
+    <div class="actors">
+      <p class="eyebrow" style="margin-top:22px">Who wrote the commits</p>
+      <div class="stackbar" id="actor-bar"></div>
+      <div class="legend" id="actor-legend"></div>
+    </div>
+  </section>
+
+  <section class="wrap" id="pulse">
+    <div class="sec-head"><div><p class="eyebrow">Commits per week</p><h2>The pulse</h2>
+      <p>Every commit on the branch, by week. The bands behind the bars are the eras read from the history; click a week to open the file system at that moment.</p></div></div>
+    <div class="panel chart" id="pulse-chart"></div>
+  </section>
+
+  <section class="wrap" id="filesystem">
+    <div class="sec-head"><div><p class="eyebrow">Mainline tree, week by week</p><h2>The file system, growing</h2>
+      <p>Each rectangle is a directory, sized by what it holds and colored by its top-level area. The tree is rebuilt from the recorded diffs of every first-parent commit, so each frame is the repository exactly as it stood that week.</p></div></div>
+    <div class="film">
+      <div class="panel">
+        <div class="controls">
+          <button class="btn" id="fs-play" type="button" aria-pressed="false"><svg viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg><span>Play</span></button>
+          <input type="range" id="fs-range" min="0" max="0" value="0" aria-label="Week">
+          <span class="when" id="fs-when"></span>
+          <div class="seg" role="group" aria-label="Size by">
+            <button type="button" data-metric="lines" aria-pressed="true">Lines</button>
+            <button type="button" data-metric="bytes" aria-pressed="false">Bytes</button>
+            <button type="button" data-metric="files" aria-pressed="false">Files</button>
+          </div>
+        </div>
+        <div class="canvas-box"><canvas id="fs-canvas" height="480" aria-label="Treemap of the repository's directories"></canvas></div>
+        <div class="spark" id="fs-spark"></div>
+      </div>
+      <aside class="panel side">
+        <div><p class="eyebrow">Era</p><div class="era-now" id="fs-era"></div></div>
+        <dl class="kv" id="fs-kv"></dl>
+        <div><p class="eyebrow">That week's commits</p><ul class="ticker" id="fs-ticker"></ul></div>
+        <div><p class="eyebrow">Areas</p><div class="legend" id="fs-legend"></div></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="wrap" id="stack">
+    <div class="sec-head"><div><p class="eyebrow">What the repository is made of</p><h2>The stack, layer by layer</h2>
+      <p>Content, markup, style, code, configuration, data and assets over time, from the same mainline replay. Below it, the week each piece of tooling first appeared.</p></div>
+      <div class="seg" role="group" aria-label="Stack measure">
+        <button type="button" data-stack="lines" aria-pressed="true">Lines</button>
+        <button type="button" data-stack="bytes" aria-pressed="false">Bytes</button>
+      </div></div>
+    <div class="panel chart" id="stack-chart"></div>
+    <div class="legend" id="stack-legend" style="margin:12px 0 28px"></div>
+    <h3 style="margin-bottom:8px">Tooling milestones</h3>
+    <ul class="ms" id="milestones"></ul>
+  </section>
+
+  <section class="wrap" id="frontend">
+    <div class="sec-head"><div><p class="eyebrow">The pages, version by version</p><h2>The front end, as it was</h2>
+      <p>Key pages chosen from the history: the home page (followed across the files that served it), the README, and the most-revised pages. Each frame is that commit's own source, rendered in a neutral shell with the site's title, navigation, styles and images from the same commit. It is a simulation of the page, not a replay of the historical build.</p></div></div>
+    <div class="tabs" id="fe-tabs" role="tablist"></div>
+    <div class="panel flip">
+      <div class="controls">
+        <button class="btn" id="fe-play" type="button" aria-pressed="false"><svg viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg><span>Play</span></button>
+        <button class="btn ghost" id="fe-prev" type="button" aria-label="Previous version">‹</button>
+        <button class="btn ghost" id="fe-next" type="button" aria-label="Next version">›</button>
+        <input type="range" id="fe-range" min="0" max="0" value="0" aria-label="Version">
+        <span class="when" id="fe-when"></span>
+      </div>
+      <figure>
+        <div class="frame"><img id="fe-img" alt=""></div>
+        <figcaption><div><div id="fe-summary"></div><div class="path" id="fe-path"></div></div><div class="mono" id="fe-count"></div></figcaption>
+      </figure>
+      <div class="dots" id="fe-dots"></div>
+    </div>
+  </section>
+
+  <section class="wrap" id="eras">
+    <div class="sec-head"><div><p class="eyebrow">Read from the history<span class="inference">AI reading</span></p><h2>Eras and transitions</h2>
+      <p>The history divided into eras by a model reading the month-by-month record. The dates and counts beside each era are computed; the titles, summaries and lessons are the model's reading of them, with the commits each lesson rests on.</p></div></div>
+    <div class="strata" id="strata"></div>
+  </section>
+
+  <section class="wrap" id="lessons">
+    <div class="sec-head"><div><p class="eyebrow">Hindsight<span class="inference">AI reading</span></p><h2>Lessons and turning points</h2>
+      <p>Advice written from now, tied to the commits it rests on. It describes what would have saved time, not what the authors intended.</p></div></div>
+    <div class="two">
+      <ol class="lessons" id="lesson-list"></ol>
+      <div><h3 style="margin-bottom:6px">Turning points</h3><ul class="shifts" id="shift-list"></ul></div>
+    </div>
+  </section>
+
+  <section class="wrap method" id="method">
+    <div class="sec-head"><div><p class="eyebrow">Provenance</p><h2>How this was made</h2>
+      <p>Facts come from Git objects: every commit was read once and filed in a ledger, and the charts, the tree and the page frames are computed from that ledger. Anything marked <span class="inference" style="margin:0">AI reading</span> is a model's interpretation of those facts.</p></div></div>
+    <div class="panel" style="padding:4px 18px"><table><tbody id="method-table"></tbody></table></div>
+  </section>
+  <footer class="wrap" id="foot"></footer>
+</main>
+<div class="tip" id="tip" hidden></div>
+<!--DATA-SCRIPT-->
+<script>
+(async function () {
+  const D = window.CHRONICLE_DATA || await fetch('data.json').then(r => r.json());
+  const $ = s => document.querySelector(s);
+  const el = (tag, attrs = {}, ...kids) => {
+    const n = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) {
+      if (k === 'class') n.className = v; else if (k === 'text') n.textContent = v;
+      else if (k.startsWith('on')) n.addEventListener(k.slice(2), v); else n.setAttribute(k, v);
+    }
+    for (const k of kids) if (k != null) n.append(k);
+    return n;
+  };
+  const svgEl = (tag, attrs = {}) => {
+    const n = document.createElementNS('http://www.w3.org/2000/svg', tag);
+    for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
+    return n;
+  };
+  const nf = new Intl.NumberFormat('en-US');
+  const cf = new Intl.NumberFormat('en-US', { notation: 'compact', maximumFractionDigits: 1 });
+  const bytes = b => b >= 1e9 ? (b / 1e9).toFixed(1) + ' GB' : b >= 1e6 ? (b / 1e6).toFixed(1) + ' MB' : b >= 1e3 ? (b / 1e3).toFixed(0) + ' KB' : b + ' B';
+  const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+  const slotVar = s => s ? `--s${s}` : '--s0';
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const commitUrl = sha => D.repo.url ? `${D.repo.url}/commit/${sha}` : null;
+  const shaLink = sha => { const u = commitUrl(sha); return u ? el('a', { href: u, target: '_blank', rel: 'noopener', text: sha.slice(0, 7) }) : document.createTextNode(sha.slice(0, 7)); };
+  const ACTORS = ['Human', 'Human + AI co-author', 'AI agent', 'Bot'];
+  const LAYER_NAMES = { content: 'Content', markup: 'Markup', style: 'Style', code: 'Code', config: 'Config', data: 'Data', assets: 'Assets', other: 'Other' };
+  const T = D.timeline, F = T.frames;
+  const commitsBy = new Map(D.commits.map(c => [c[0], c]));
+  const tip = $('#tip');
+  const showTip = (x, y, html) => {
+    tip.replaceChildren(...html); tip.hidden = false;
+    const r = tip.getBoundingClientRect();
+    tip.style.left = Math.min(innerWidth - r.width - 12, x + 14) + 'px';
+    tip.style.top = Math.max(8, y - r.height - 12) + 'px';
+  };
+  const hideTip = () => { tip.hidden = true; };
+  const monthOf = d => d.slice(0, 7);
+  const eraAt = d => D.eras.find(e => monthOf(d) >= e.start && monthOf(d) <= e.end);
+  const name = D.repo.slug.split('/').pop();
+
+  /* ---------- hero ---------- */
+  $('#slug').textContent = D.repo.slug;
+  $('#hero-name').textContent = name;
+  $('#hero-span').textContent = `Repository chronicle · ${D.repo.first} → ${D.repo.last}`;
+  if (D.story.headline) { $('#hero-headline').append(D.story.headline, el('span', { class: 'inference', text: 'AI reading' })); }
+  $('#hero-summary').textContent = D.story.summary || '';
+  const S = D.stats;
+  const years = ((new Date(D.repo.last) - new Date(D.repo.first)) / 3.15576e10).toFixed(1);
+  for (const [v, l] of [[nf.format(S.commits), 'commits'], [years, 'years'], [nf.format(S.activeWeeks), `active weeks of ${nf.format(S.weeks)}`],
+    [nf.format(S.authors), 'human author identities'], [nf.format(S.filesNow), 'files today'], [cf.format(S.linesNow), 'lines today'],
+    ['+' + cf.format(S.added), 'lines added'], ['−' + cf.format(S.deleted), 'lines deleted']]) {
+    $('#hero-stats').append(el('div', { class: 'stat' }, el('b', { text: v }), el('span', { text: l })));
+  }
+  S.actors.forEach((n, i) => {
+    if (!n) return;
+    $('#actor-bar').append(el('i', { style: `flex:${n};background:var(--s${i + 1})`, title: `${ACTORS[i]}: ${n}` }));
+    $('#actor-legend').append(el('span', {}, el('i', { style: `background:var(--s${i + 1})` }), `${ACTORS[i]} ${nf.format(n)} (${Math.round(100 * n / S.commits)}%)`));
+  });
+
+  /* ---------- pulse ---------- */
+  function drawPulse() {
+    const box = $('#pulse-chart'); box.replaceChildren();
+    const W = Math.max(320, box.clientWidth - 28), H = 210, L = 34, B = 26, TOP = 22;
+    const C = D.cadence, n = C.length, bw = (W - L) / n;
+    const max = Math.max(1, ...C.map(c => c.c));
+    const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Commits per week' });
+    const x = i => L + i * bw, y = v => TOP + (H - B - TOP) * (1 - v / max);
+    const idx = w => { const i = C.findIndex(c => c.w >= w); return i < 0 ? n - 1 : i; };
+    D.eras.forEach((e, k) => {
+      const i0 = idx(e.start + '-01'), i1 = idx(nextMonth(e.end) + '-01');
+      const x0 = x(i0), x1 = e === D.eras.at(-1) ? x(n) : x(i1);
+      svg.append(svgEl('rect', { x: x0, y: 0, width: Math.max(0, x1 - x0), height: H - B, fill: k % 2 ? 'var(--stratum-b)' : 'var(--stratum-a)' }));
+      if (x1 - x0 > 70) { const t = svgEl('text', { x: x0 + 6, y: 13, fill: 'var(--ink-2)', 'font-size': 11, 'font-family': 'var(--body)' }); t.textContent = clip(e.title, Math.floor((x1 - x0 - 10) / 6)); svg.append(t); }
+    });
+    const g = svgEl('g', { class: 'grid' });
+    for (const v of ticks(max, 3)) {
+      g.append(svgEl('line', { x1: L, x2: W, y1: y(v), y2: y(v) }));
+      const t = svgEl('text', { x: L - 6, y: y(v) + 4, 'text-anchor': 'end', class: 'axis', fill: 'var(--ink-3)', 'font-size': 11, 'font-family': 'var(--mono)' }); t.textContent = v; g.append(t);
+    }
+    svg.append(g);
+    const bars = svgEl('g', { fill: 'var(--s1)' });
+    C.forEach((c, i) => { if (c.c) bars.append(svgEl('rect', { x: x(i) + (bw > 3 ? .5 : 0), y: y(c.c), width: Math.max(1, bw - (bw > 3 ? 1 : 0)), height: Math.max(1, y(0) - y(c.c)), rx: bw > 6 ? 2 : 0 })); });
+    svg.append(bars);
+    const ax = svgEl('g', { class: 'axis' });
+    let lastYear = '', lastX = -99;
+    C.forEach((c, i) => { const yr = c.w.slice(0, 4); if (yr !== lastYear && (lastYear = yr) && x(i) - lastX > 36) { lastX = x(i); ax.append(svgEl('line', { x1: x(i), x2: x(i), y1: H - B, y2: H - B + 5 })); const t = svgEl('text', { x: x(i) + 3, y: H - 8, fill: 'var(--ink-3)', 'font-size': 11, 'font-family': 'var(--mono)' }); t.textContent = yr; ax.append(t); } });
+    ax.append(svgEl('line', { x1: L, x2: W, y1: H - B, y2: H - B }));
+    svg.append(ax);
+    const hl = svgEl('rect', { y: TOP - 4, height: H - B - TOP + 4, width: Math.max(2, bw), fill: 'var(--ink)', opacity: 0, 'pointer-events': 'none' });
+    svg.append(hl);
+    const hit = svgEl('rect', { x: L, y: 0, width: W - L, height: H, fill: 'transparent', style: 'cursor:pointer' });
+    const at = ev => { const r = svg.getBoundingClientRect(); const px = (ev.clientX - r.left) * W / r.width; return Math.max(0, Math.min(n - 1, Math.floor((px - L) / bw))); };
+    hit.addEventListener('pointermove', ev => {
+      const i = at(ev), c = C[i]; hl.setAttribute('x', x(i)); hl.setAttribute('opacity', .12);
+      const era = eraAt(c.w);
+      showTip(ev.clientX, ev.clientY, [el('div', { class: 't', text: `Week of ${c.w}` }), el('div', { text: `${c.c} commit${c.c === 1 ? '' : 's'} · +${nf.format(c.a)} −${nf.format(c.d)}` }),
+        el('div', { class: 't', text: c.act.map((v, k) => v ? `${ACTORS[k]} ${v}` : '').filter(Boolean).join(' · ') }), era ? el('div', { class: 't', text: era.title }) : null]);
+    });
+    hit.addEventListener('pointerleave', () => { hl.setAttribute('opacity', 0); hideTip(); });
+    hit.addEventListener('click', ev => { const w = C[at(ev)].w; film.seekDate(w); document.getElementById('filesystem').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' }); });
+    svg.append(hit);
+    box.append(svg);
+  }
+  function nextMonth(m) { let [y, mo] = m.split('-').map(Number); mo++; if (mo > 12) { mo = 1; y++; } return `${y}-${String(mo).padStart(2, '0')}`; }
+  function clip(s, n) { return s.length > n ? s.slice(0, Math.max(1, n - 1)) + '…' : s; }
+  function ticks(max, k) { const step = niceStep(max / k); const out = []; for (let v = step; v <= max; v += step) out.push(v); return out; }
+  function niceStep(v) { const p = Math.pow(10, Math.floor(Math.log10(Math.max(v, 1e-9)))); const m = v / p; return (m <= 1 ? 1 : m <= 2 ? 2 : m <= 5 ? 5 : 10) * p; }
+
+  /* ---------- file-system film ---------- */
+  const areaOf = path => path === '/' ? '/' : path.split('/')[0];
+  const areaSlot = new Map(D.areas.map(a => [a.name, a.slot]));
+  const areaOrder = new Map(D.areas.map((a, i) => [a.name, i]));
+  const nodeOrder = new Map(); // global node order by peak size: stable positions across frames
+  {
+    const peak = new Map();
+    F.forEach(fr => fr.n.forEach(([i, n, ln, sz]) => peak.set(i, Math.max(peak.get(i) || 0, ln + sz / 40))));
+    [...peak.keys()].sort((a, b) => peak.get(b) - peak.get(a)).forEach((k, r) => nodeOrder.set(k, r));
+  }
+  D.areas.filter(a => a.slot).forEach(a => $('#fs-legend').append(el('span', {}, el('i', { style: `background:var(${slotVar(a.slot)})` }), a.name === '/' ? 'root files' : a.name)));
+  if (D.areas.some(a => !a.slot)) $('#fs-legend').append(el('span', {}, el('i', { style: 'background:var(--s0)' }), 'other areas'));
+
+  function squarify(items, x, y, w, h) {
+    const out = [], total = items.reduce((s, i) => s + i.v, 0);
+    if (!total || w <= 0 || h <= 0) return out;
+    const scale = (w * h) / total;
+    const rest = items.map(i => ({ ...i, a: i.v * scale }));
+    let row = [];
+    const worst = (r, s) => { const sum = r.reduce((t, i) => t + i.a, 0); let mx = 0, mn = Infinity; for (const i of r) { mx = Math.max(mx, i.a); mn = Math.min(mn, i.a); } return Math.max(s * s * mx / (sum * sum), (sum * sum) / (s * s * mn)); };
+    const lay = r => {
+      const sum = r.reduce((t, i) => t + i.a, 0);
+      if (w >= h) { const rw = sum / h; let yy = y; for (const i of r) { const ih = i.a / rw; out.push({ ...i, x, y: yy, w: rw, h: ih }); yy += ih; } x += rw; w -= rw; }
+      else { const rh = sum / w; let xx = x; for (const i of r) { const iw = i.a / rh; out.push({ ...i, x: xx, y, w: iw, h: rh }); xx += iw; } y += rh; h -= rh; }
+    };
+    while (rest.length) {
+      const s = Math.min(w, h), it = rest[0];
+      if (!row.length || worst([...row, it], s) <= worst(row, s)) { row.push(it); rest.shift(); }
+      else { lay(row); row = []; }
+    }
+    if (row.length) lay(row);
+    return out;
+  }
+  const metricOf = { lines: (n, ln, sz) => ln, bytes: (n, ln, sz) => sz, files: (n) => n };
+  function layoutFrame(k, W, H, metric) {
+    const groups = new Map();
+    for (const [i, n, ln, sz] of F[k].n) {
+      const v = metricOf[metric](n, ln, sz); if (v <= 0) continue;
+      const path = T.nodes[i], a = areaOf(path);
+      if (!groups.has(a)) groups.set(a, []);
+      groups.get(a).push({ key: i, path, v, n, ln, sz, area: a });
+    }
+    const areas = [...groups.entries()].map(([a, items]) => ({ key: a, v: items.reduce((s, i) => s + i.v, 0), items }))
+      .sort((p, q) => (areaOrder.get(p.key) ?? 999) - (areaOrder.get(q.key) ?? 999));
+    const rects = new Map(), heads = [];
+    for (const A of squarify(areas, 0, 0, W, H)) {
+      heads.push(A);
+      const items = A.items.sort((p, q) => (nodeOrder.get(p.key) ?? 1e9) - (nodeOrder.get(q.key) ?? 1e9));
+      for (const r of squarify(items, A.x, A.y, A.w, A.h)) rects.set(r.key, r);
+    }
+    return { rects, heads };
+  }
+  const film = (() => {
+    const cv = $('#fs-canvas'), ctx = cv.getContext('2d'), range = $('#fs-range'), playBtn = $('#fs-play');
+    let k = F.length - 1, metric = 'lines', from = null, to = null, t0 = 0, playing = false, timer = null, hover = null, doneCb = null;
+    range.max = F.length - 1; range.value = k;
+    const dur = () => Math.max(60, Math.min(420, 22000 / F.length));
+    function size() { const r = cv.getBoundingClientRect(); const dpr = devicePixelRatio || 1; const h = innerWidth < 600 ? 340 : 480; cv.style.height = h + 'px'; cv.width = Math.round(r.width * dpr); cv.height = Math.round(h * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0); return [r.width, h]; }
+    let dims = [0, 0];
+    function target() { return layoutFrame(k, dims[0], dims[1], metric); }
+    const lum = hex => { const m = hex.match(/#(..)(..)(..)/); if (!m) return 1; const [r, g, b] = m.slice(1).map(h => parseInt(h, 16) / 255); return .2126 * r + .7152 * g + .0722 * b; };
+    function draw(p) {
+      const [W, H] = dims; ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = css('--surface'); ctx.fillRect(0, 0, W, H);
+      const keys = new Set([...(from ? from.rects.keys() : []), ...to.rects.keys()]);
+      const shown = [];
+      for (const key of keys) {
+        const a = from && from.rects.get(key), b = to.rects.get(key);
+        const ra = a || (b && { ...b, x: b.x + b.w / 2, y: b.y + b.h / 2, w: 0, h: 0 });
+        const rb = b || (a && { ...a, x: a.x + a.w / 2, y: a.y + a.h / 2, w: 0, h: 0 });
+        const e = p >= 1 || !from ? 1 : p * p * (3 - 2 * p);
+        const r = { x: ra.x + (rb.x - ra.x) * e, y: ra.y + (rb.y - ra.y) * e, w: ra.w + (rb.w - ra.w) * e, h: ra.h + (rb.h - ra.h) * e, node: b || a };
+        if (r.w < .5 || r.h < .5) continue;
+        const col = css(slotVar(areaSlot.get(r.node.area)));
+        ctx.fillStyle = col; ctx.globalAlpha = key === hover ? 1 : .88;
+        ctx.fillRect(r.x + 1, r.y + 1, Math.max(0, r.w - 2), Math.max(0, r.h - 2));
+        ctx.globalAlpha = 1;
+        shown.push({ ...r, col });
+      }
+      ctx.textBaseline = 'top';
+      for (const r of shown) {
+        if (r.w > 64 && r.h > 20) {
+          const label = r.node.path === '/' ? 'root files' : r.node.path.split('/').slice(1).join('/') || r.node.path;
+          ctx.fillStyle = lum(r.col) > .45 ? css('--on-light') : css('--on-dark');
+          ctx.font = '500 11px ' + css('--mono');
+          ctx.fillText(clip(label, Math.floor((r.w - 10) / 6.7)), r.x + 6, r.y + 6);
+          if (r.h > 38) { ctx.globalAlpha = .8; ctx.fillText(metric === 'bytes' ? bytes(r.node.sz) : metric === 'files' ? nf.format(r.node.n) + ' files' : cf.format(r.node.ln) + ' lines', r.x + 6, r.y + 20); ctx.globalAlpha = 1; }
+        }
+      }
+      for (const A of to.heads) {
+        if (A.w > 90 && A.h > 50) {
+          ctx.font = '700 13px ' + css('--display');
+          const tw = ctx.measureText(A.key).width + 10;
+          ctx.fillStyle = css('--surface'); ctx.globalAlpha = .92; ctx.fillRect(A.x + 2, A.y + A.h - 22, Math.min(tw, A.w - 4), 20); ctx.globalAlpha = 1;
+          ctx.fillStyle = css('--ink'); ctx.fillText(clip(A.key === '/' ? 'root' : A.key, Math.floor((A.w - 14) / 7.5)), A.x + 7, A.y + A.h - 19);
+        }
+      }
+      film.shown = shown;
+    }
+    function animate(now) {
+      const p = Math.min(1, (now - t0) / (dur() * .9));
+      draw(reduced ? 1 : p);
+      if (p < 1 && !reduced) requestAnimationFrame(animate);
+    }
+    function go(next, animateIt = true) {
+      k = Math.max(0, Math.min(F.length - 1, next)); range.value = k;
+      from = animateIt && to ? to : null; to = target(); t0 = performance.now();
+      requestAnimationFrame(animate); side(); spark.mark(k);
+    }
+    function side() {
+      const fr = F[k], prev = F[Math.max(0, k - 1)];
+      $('#fs-when').textContent = fr.week;
+      const era = eraAt(fr.week); $('#fs-era').textContent = era ? era.title : '—';
+      const dl = $('#fs-kv'); dl.replaceChildren();
+      const d = (a, b) => { const x = a - b; return x ? (x > 0 ? ' (+' : ' (−') + nf.format(Math.abs(x)) + ')' : ''; };
+      for (const [l, v] of [['Files', nf.format(fr.files) + d(fr.files, prev.files)], ['Lines', nf.format(fr.lines) + d(fr.lines, prev.lines)], ['Size', bytes(fr.bytes)], ['Commit', fr.sha.slice(0, 7)]]) dl.append(el('dt', { text: l }), el('dd', { class: 'mono', text: v }));
+      const start = k > 0 ? F[k - 1].week : '0000', end = fr.week;
+      const nextWeek = new Date(new Date(end).getTime() + 7 * 864e5).toISOString().slice(0, 10);
+      const items = D.commits.filter(c => c[1] >= (k > 0 ? addDays(start, 7) : '0000') && c[1] < nextWeek).sort((a, b) => b[4] - a[4] || (b[7] + b[8]) - (a[7] + a[8])).slice(0, 8);
+      const ul = $('#fs-ticker'); ul.replaceChildren();
+      if (!items.length) ul.append(el('li', { text: 'No commits this week.' }));
+      for (const c of items) ul.append(el('li', {}, el('span', { class: 'chip' + (c[4] >= 3 ? ' sig3' : ''), text: c[3] || 'commit' }), el('span', { text: c[5] }), el('span', { class: 'meta' }, c[1].slice(0, 10) + ' · ', shaLink(c[0]))));
+    }
+    function addDays(d, n) { return new Date(new Date(d).getTime() + n * 864e5).toISOString().slice(0, 10); }
+    function play(onDone) {
+      if (playing) return; playing = true; doneCb = onDone || null; playBtn.setAttribute('aria-pressed', 'true'); playBtn.querySelector('span').textContent = 'Pause';
+      if (k >= F.length - 1) go(0, false);
+      const step = () => { if (!playing) return; if (k >= F.length - 1) { stop(); doneCb && doneCb(); return; } go(k + 1); timer = setTimeout(step, dur()); };
+      timer = setTimeout(step, dur());
+    }
+    function stop() { playing = false; clearTimeout(timer); playBtn.setAttribute('aria-pressed', 'false'); playBtn.querySelector('span').textContent = 'Play'; }
+    playBtn.addEventListener('click', () => playing ? stop() : play());
+    range.addEventListener('input', () => { stop(); go(+range.value, false); });
+    document.querySelectorAll('[data-metric]').forEach(b => b.addEventListener('click', () => {
+      metric = b.dataset.metric; document.querySelectorAll('[data-metric]').forEach(x => x.setAttribute('aria-pressed', x === b)); go(k);
+    }));
+    cv.addEventListener('pointermove', ev => {
+      const r = cv.getBoundingClientRect(), px = ev.clientX - r.left, py = ev.clientY - r.top;
+      const hit = (film.shown || []).find(s => px >= s.x && px <= s.x + s.w && py >= s.y && py <= s.y + s.h);
+      if (!hit) { hideTip(); return; }
+      const nd = hit.node;
+      showTip(ev.clientX, ev.clientY, [el('div', { class: 't', text: F[k].week }), el('div', { text: nd.path === '/' ? 'Root files' : nd.path + '/' }),
+        el('div', { class: 't', text: `${nf.format(nd.n)} files · ${nf.format(nd.ln)} lines · ${bytes(nd.sz)}` })]);
+    });
+    cv.addEventListener('pointerleave', hideTip);
+    function resize() { dims = size(); from = null; to = target(); draw(1); }
+    return { resize, play, stop, go, get playing() { return playing; }, seekDate(w) { stop(); let i = F.findIndex(f => f.week >= w); go(i < 0 ? F.length - 1 : i, false); }, shown: [] };
+  })();
+
+  const spark = (() => {
+    const box = $('#fs-spark'); let line = null, W = 0, xs = [];
+    function draw() {
+      box.replaceChildren(); W = Math.max(300, box.clientWidth - 20); const H = 56, max = Math.max(...F.map(f => f.lines), 1);
+      const t0 = new Date(F[0].week).getTime(), t1 = Math.max(t0 + 1, new Date(F.at(-1).week).getTime());
+      xs = F.map(f => 4 + (W - 8) * (new Date(f.week).getTime() - t0) / (t1 - t0));
+      const y = v => H - 6 - (H - 16) * v / max;
+      const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Total lines over time' });
+      const pts = F.map((f, i) => `${xs[i].toFixed(1)},${y(f.lines).toFixed(1)}`);
+      svg.append(svgEl('path', { d: `M${xs[0]},${H - 6}L${pts.join('L')}L${xs.at(-1)},${H - 6}Z`, fill: 'var(--s1)', opacity: .16 }));
+      svg.append(svgEl('path', { d: 'M' + pts.join('L'), fill: 'none', stroke: 'var(--s1)', 'stroke-width': 2 }));
+      const lbl = svgEl('text', { x: 4, y: 10, fill: 'var(--ink-3)', 'font-size': 11, 'font-family': 'var(--mono)' }); lbl.textContent = `Total lines · peak ${cf.format(max)}`; svg.append(lbl);
+      line = svgEl('line', { y1: 12, y2: H - 4, stroke: 'var(--ink)', 'stroke-width': 1.5 }); svg.append(line);
+      const hit = svgEl('rect', { x: 0, y: 0, width: W, height: H, fill: 'transparent', style: 'cursor:pointer' });
+      hit.addEventListener('click', ev => { const r = svg.getBoundingClientRect(); const px = (ev.clientX - r.left) * W / r.width; let best = 0; xs.forEach((x, i) => { if (Math.abs(x - px) < Math.abs(xs[best] - px)) best = i; }); film.stop(); film.go(best, false); });
+      svg.append(hit); box.append(svg);
+    }
+    return { draw, mark(k) { if (line) { line.setAttribute('x1', xs[k]); line.setAttribute('x2', xs[k]); } } };
+  })();
+
+  /* ---------- stack ---------- */
+  let stackMeasure = 'lines';
+  function drawStack() {
+    const box = $('#stack-chart'); box.replaceChildren();
+    const W = Math.max(320, box.clientWidth - 28), H = 260, L = 46, B = 24, TOP = 10, R = 8;
+    const vals = F.map(f => stackMeasure === 'lines' ? f.layers : f.layersB);
+    const tot = vals.map(v => v.reduce((a, b) => a + b, 0)), max = Math.max(1, ...tot);
+    const t0 = new Date(F[0].week).getTime(), t1 = Math.max(t0 + 1, new Date(F.at(-1).week).getTime());
+    const x = i => L + (W - L - R) * (new Date(F[i].week).getTime() - t0) / (t1 - t0), y = v => TOP + (H - B - TOP) * (1 - v / max);
+    const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Repository composition over time' });
+    const g = svgEl('g', { class: 'grid' });
+    for (const v of ticks(max, 4)) { g.append(svgEl('line', { x1: L, x2: W - R, y1: y(v), y2: y(v) })); const t = svgEl('text', { x: L - 6, y: y(v) + 4, 'text-anchor': 'end', fill: 'var(--ink-3)', 'font-size': 11, 'font-family': 'var(--mono)' }); t.textContent = stackMeasure === 'lines' ? cf.format(v) : bytes(v); g.append(t); }
+    svg.append(g);
+    const base = F.map(() => 0);
+    T.layers.forEach((layer, li) => {
+      const top = base.map((b, i) => b + vals[i][li]);
+      if (Math.max(...top.map((t, i) => t - base[i])) <= 0) { return; }
+      const d = 'M' + F.map((_, i) => `${x(i).toFixed(1)},${y(top[i]).toFixed(1)}`).join('L') + 'L' + F.map((_, i) => `${x(F.length - 1 - i).toFixed(1)},${y(base[F.length - 1 - i]).toFixed(1)}`).join('L') + 'Z';
+      svg.append(svgEl('path', { d, fill: `var(${li < 7 ? '--s' + (li + 1) : '--s0'})`, stroke: 'var(--surface)', 'stroke-width': 1 }));
+      top.forEach((t, i) => base[i] = t);
+    });
+    const ax = svgEl('g'); let ly = '', lx = -99;
+    F.forEach((f, i) => { const yr = f.week.slice(0, 4); if (yr !== ly && (ly = yr) && x(i) - lx > 36) { lx = x(i); const t = svgEl('text', { x: x(i) + 2, y: H - 6, fill: 'var(--ink-3)', 'font-size': 11, 'font-family': 'var(--mono)' }); t.textContent = yr; ax.append(t); ax.append(svgEl('line', { x1: x(i), x2: x(i), y1: H - B, y2: H - B + 5, stroke: 'var(--rule)' })); } });
+    ax.append(svgEl('line', { x1: L, x2: W - R, y1: H - B, y2: H - B, stroke: 'var(--rule)' }));
+    svg.append(ax);
+    const cross = svgEl('line', { y1: TOP, y2: H - B, stroke: 'var(--ink)', 'stroke-width': 1, opacity: 0 }); svg.append(cross);
+    const hit = svgEl('rect', { x: L, y: 0, width: W - L, height: H, fill: 'transparent' });
+    hit.addEventListener('pointermove', ev => {
+      const r = svg.getBoundingClientRect(); const px = (ev.clientX - r.left) * W / r.width;
+      let best = 0; for (let i = 0; i < F.length; i++) if (Math.abs(x(i) - px) < Math.abs(x(best) - px)) best = i;
+      cross.setAttribute('x1', x(best)); cross.setAttribute('x2', x(best)); cross.setAttribute('opacity', .6);
+      const rows = T.layers.map((l, li) => [l, vals[best][li], li]).filter(r => r[1] > 0).sort((a, b) => b[1] - a[1]);
+      showTip(ev.clientX, ev.clientY, [el('div', { class: 't', text: F[best].week }), ...rows.map(([l, v, li]) => el('div', {}, el('span', { style: `display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px;background:var(${li < 7 ? '--s' + (li + 1) : '--s0'})` }), `${LAYER_NAMES[l]} ${stackMeasure === 'lines' ? nf.format(v) : bytes(v)}`))]);
+    });
+    hit.addEventListener('pointerleave', () => { cross.setAttribute('opacity', 0); hideTip(); });
+    svg.append(hit); box.append(svg);
+    const leg = $('#stack-legend'); leg.replaceChildren();
+    T.layers.forEach((l, li) => { const now = vals.at(-1)[li]; if (Math.max(...vals.map(v => v[li])) > 0) leg.append(el('span', {}, el('i', { style: `background:var(${li < 7 ? '--s' + (li + 1) : '--s0'})` }), `${LAYER_NAMES[l]} ${stackMeasure === 'lines' ? cf.format(now) : bytes(now)}`)); });
+  }
+  document.querySelectorAll('[data-stack]').forEach(b => b.addEventListener('click', () => { stackMeasure = b.dataset.stack; document.querySelectorAll('[data-stack]').forEach(x => x.setAttribute('aria-pressed', x === b)); drawStack(); }));
+  for (const m of D.milestones) $('#milestones').append(el('li', {}, el('span', { class: 'd', text: m.date }), el('span', {}, m.label, el('small', {}, m.path + ' · ', shaLink(m.sha)))));
+
+  /* ---------- front-end flipbook ---------- */
+  const flip = (() => {
+    let p = 0, k = 0, playing = false, timer = null;
+    const img = $('#fe-img'), range = $('#fe-range'), btn = $('#fe-play');
+    const pages = D.pages;
+    pages.forEach((pg, i) => {
+      $('#fe-tabs').append(el('button', { type: 'button', role: 'tab', 'aria-selected': i === 0, onclick: () => { stop(); select(i); } }, el('b', { text: pg.path }), el('span', { text: `${pg.role} · ${pg.versions} versions` })));
+    });
+    function select(i) {
+      p = i; document.querySelectorAll('#fe-tabs button').forEach((b, j) => b.setAttribute('aria-selected', j === i));
+      const fr = pages[p].frames; range.max = fr.length - 1;
+      const dots = $('#fe-dots'); dots.replaceChildren(...fr.map((f, j) => el('button', { type: 'button', 'aria-label': f.date, title: f.date, onclick: () => { stop(); show(j); } })));
+      fr.forEach(f => { const im = new Image(); im.src = f.image; });
+      show(fr.length - 1);
+    }
+    function show(j) {
+      const fr = pages[p].frames; k = Math.max(0, Math.min(fr.length - 1, j)); const f = fr[k];
+      img.src = f.image; img.alt = `${pages[p].path} on ${f.date}`; range.value = k;
+      $('#fe-when').textContent = f.date;
+      $('#fe-summary').replaceChildren(f.summary || '');
+      $('#fe-path').replaceChildren(`${f.path} at `, shaLink(f.sha));
+      $('#fe-count').textContent = `${k + 1} / ${fr.length}`;
+      document.querySelectorAll('#fe-dots button').forEach((b, i) => b.classList.toggle('on', i === k));
+    }
+    function play(onDone) {
+      if (playing || !pages.length) return; playing = true; btn.setAttribute('aria-pressed', 'true'); btn.querySelector('span').textContent = 'Pause';
+      if (k >= pages[p].frames.length - 1) show(0);
+      const step = () => { if (!playing) return; if (k >= pages[p].frames.length - 1) { stop(); onDone && onDone(); return; } show(k + 1); timer = setTimeout(step, 900); };
+      timer = setTimeout(step, 900);
+    }
+    function stop() { playing = false; clearTimeout(timer); btn.setAttribute('aria-pressed', 'false'); btn.querySelector('span').textContent = 'Play'; }
+    btn.addEventListener('click', () => playing ? stop() : play());
+    $('#fe-prev').addEventListener('click', () => { stop(); show(k - 1); });
+    $('#fe-next').addEventListener('click', () => { stop(); show(k + 1); });
+    range.addEventListener('input', () => { stop(); show(+range.value); });
+    if (pages.length) select(0); else $('#frontend').hidden = true;
+    return { select, play, stop, count: pages.length };
+  })();
+
+  /* ---------- eras ---------- */
+  const cite = ids => (ids || []).length ? el('span', { class: 'cite' }, '(', ...ids.flatMap((s, i) => i ? [', ', shaLink(s)] : [shaLink(s)]), ')') : null;
+  D.eras.forEach((e, i) => {
+    const s = e.stats;
+    const right = el('div', {}, el('h3', { text: e.title }), el('p', { text: e.summary }));
+    const lane = el('dl', { class: 'lane' });
+    if (e.frontend) lane.append(el('dt', { text: 'Visitors saw' }), el('dd', { text: e.frontend }));
+    if (e.backend) lane.append(el('dt', { text: 'Under the hood' }), el('dd', { text: e.backend }));
+    if (e.transitions && e.transitions.length) lane.append(el('dt', { text: 'Shifted' }), el('dd', {}, el('ul', {}, ...e.transitions.map(t => el('li', { text: t })))));
+    if (e.learnings && e.learnings.length) lane.append(el('dt', { text: 'Hindsight' }), el('dd', {}, el('ul', {}, ...e.learnings.map(l => el('li', {}, l.lesson, cite(l.evidence))))));
+    if (e.key_commits && e.key_commits.length) lane.append(el('dt', { text: 'Key commits' }), el('dd', {}, el('ul', { class: 'keyc' }, ...e.key_commits.map(sha => { const c = commitsBy.get(sha); return el('li', {}, el('span', { class: 'mono', text: (c ? c[1].slice(0, 10) : '') + ' ' }), shaLink(sha), ' ', c ? c[5] : ''); }))));
+    right.append(lane, el('button', { class: 'btn ghost jump', type: 'button', text: 'Watch this era in the file system', onclick: () => { film.seekDate(e.start + '-01'); document.getElementById('filesystem').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' }); setTimeout(() => film.play(), 500); } }));
+    const left = el('div', { class: 'when' }, el('b', { text: `${e.start} → ${e.end}` }),
+      `${nf.format(s.commits)} commits`, el('br'), `+${cf.format(s.add)} −${cf.format(s.del)} lines`, el('br'),
+      s.areas.length ? `Busiest: ${s.areas.join(', ')}` : '');
+    $('#strata').append(el('article', { class: 'era', id: `era-${i}` }, left, right));
+  });
+  if (!D.eras.length) $('#eras').hidden = true;
+
+  /* ---------- lessons ---------- */
+  for (const l of D.story.learnings || []) $('#lesson-list').append(el('li', {}, l.lesson, cite(l.evidence)));
+  for (const t of D.story.transitions || []) $('#shift-list').append(el('li', {}, el('span', { class: 'd', text: t.when }), el('span', {}, `${t.from} → ${t.to}`, cite(t.evidence))));
+  if (!(D.story.learnings || []).length && !(D.story.transitions || []).length) $('#lessons').hidden = true;
+
+  /* ---------- method ---------- */
+  const P = D.provenance;
+  const rows = [
+    ['Repository', D.repo.url ? el('a', { href: D.repo.url, target: '_blank', rel: 'noopener', text: D.repo.slug }) : D.repo.slug],
+    ['Read', `${nf.format(S.commits)} commits reachable from ${D.repo.ref} at ${D.repo.head.slice(0, 7)}, ${nf.format(S.mainline)} of them on the first-parent mainline`],
+    ['Ledger', el('code', { text: P.ledger })],
+    ['Commit annotations', Object.entries(P.annotations).map(([m, n]) => `${nf.format(n)} by ${m}`).join(', ') + (P.commitPrompt ? ` · prompt ${P.commitPrompt}` : '')],
+    ['Era reading', `${P.erasSource || 'none'}${P.eraPrompt ? ' · prompt ' + P.eraPrompt : ''}`],
+    ['Model cost', `$${(P.costUsdEstimate || 0).toFixed(2)} API-equivalent (estimate), all runs`],
+    ['Page frames', `${P.renderer || '—'}: each version rendered from its own commit, screenshot with the network blocked`],
+    ['Built', `${P.generated} by ${P.tool}`],
+    ['Re-run', el('code', { text: `python3 scripts/digs/chronicle/chronicle.py run --repo <checkout>` })],
+  ];
+  for (const [k, v] of rows) $('#method-table').append(el('tr', {}, el('td', { text: k }), el('td', {}, v)));
+  $('#foot').textContent = `${D.repo.slug} · ${D.repo.first} to ${D.repo.last} · a re-run reads only commits the ledger has not filed.`;
+
+  /* ---------- presenter ---------- */
+  const presentBtn = $('#present'), bar = $('#progress');
+  let presenting = false, cancel = null;
+  const sleep = ms => new Promise((res, rej) => { const t = setTimeout(res, ms); cancel = () => { clearTimeout(t); rej(new Error('stopped')); }; });
+  const goTo = id => document.getElementById(id).scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+  const waitFor = starter => new Promise((res, rej) => { cancel = () => { film.stop(); flip.stop(); rej(new Error('stopped')); }; starter(res); });
+  async function present() {
+    presenting = true; presentBtn.setAttribute('aria-pressed', 'true'); presentBtn.querySelector('span').textContent = 'Stop';
+    const steps = 6 + D.eras.length; let done = 0; const tick = () => { done++; bar.style.width = (100 * done / steps) + '%'; };
+    try {
+      goTo('top'); await sleep(4500); tick();
+      goTo('pulse'); await sleep(5000); tick();
+      goTo('filesystem'); await sleep(900); film.go(0, false); await sleep(600); await waitFor(res => film.play(res)); await sleep(1500); tick();
+      goTo('stack'); await sleep(6000); tick();
+      if (flip.count) { goTo('frontend'); for (let i = 0; i < flip.count; i++) { flip.select(i); await sleep(900); await waitFor(res => flip.play(res)); await sleep(1200); } }
+      tick();
+      for (let i = 0; i < D.eras.length; i++) { document.getElementById(`era-${i}`).scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'center' }); await sleep(7000); tick(); }
+      goTo('lessons'); await sleep(9000); tick();
+    } catch (e) { /* stopped by the viewer */ }
+    presenting = false; presentBtn.setAttribute('aria-pressed', 'false'); presentBtn.querySelector('span').textContent = 'Present';
+    setTimeout(() => { bar.style.width = '0'; }, 800);
+  }
+  presentBtn.addEventListener('click', () => { if (presenting) { cancel && cancel(); } else present(); });
+
+  /* ---------- nav highlight, sizing, theme ---------- */
+  const navLinks = [...document.querySelectorAll('#nav a')];
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) navLinks.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id)); }), { rootMargin: '-40% 0px -55% 0px' });
+  document.querySelectorAll('main section[id]').forEach(s => io.observe(s));
+  function redraw() { drawPulse(); film.resize(); spark.draw(); spark.mark(+$('#fs-range').value); drawStack(); }
+  let rt = null; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(redraw, 150); });
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', redraw);
+  new MutationObserver(redraw).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  redraw();
+  film.go(F.length - 1, false);
+  window.chronicle = { film, flip, frames: F.length };
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => film.resize());
+})();
+</script>
