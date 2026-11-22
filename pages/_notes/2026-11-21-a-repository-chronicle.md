@@ -2,7 +2,7 @@
 title: Replaying a repository's whole history
 description: "How a once-per-commit ledger, a model used only for judgement, and two time-lapses turned six years of Git history into a presentation."
 date: '2026-11-21T19:00:00.000Z'
-lastmod: '2026-11-21T20:30:00.000Z'
+lastmod: '2026-11-22T15:30:00.000Z'
 author: bamr87
 categories:
 - notes
@@ -80,6 +80,14 @@ Two of the lessons it drew, each tied to commits in the presentation:
 
 - Choose a remote theme or a vendored theme up front. In it-journey, years of Sass and layout churn ended in a single deletion of about 8,000 lines when the site moved to the remote theme.
 - Fix the layout of scripts and installers once, with tests first. In zer0-mistakes, the installer and scripts were each restructured two or three times.
+
+## The same idea on a blog: a timeline for /posts/
+
+The profile site's `/posts/` page was an outline of planned topics with no list of the posts themselves. It now has a timeline of every post by year and month, a posts-per-month strip whose bars jump to their month, and three views of the same list: Timeline, Cards and List, with a category filter and a title search. Three things from building it are worth keeping:
+
+- **Render the list first, then enhance it.** Liquid writes the whole timeline, so the page is complete without JavaScript. The script only adds controls, and the three views are CSS over one list rather than three lists, so links, images and headings never move.
+- **Prefix every class in a page that lives inside someone else's theme.** The strip's bars rendered with no visible height. The theme styles a `.bar` class, and in SVG 2 CSS can set a rect's `height`. Renaming the class to `ptl-col` fixed it.
+- **Check the view against an independent source.** The verification scenario compares the timeline with the site's Atom feed. That check found 51 entries but only 50 distinct links: two source files build the same post to one URL. The timeline now lists each URL once, and the duplicate file is flagged for a person to remove.
 
 ## Working with AI on this
 
