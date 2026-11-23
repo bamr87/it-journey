@@ -1,0 +1,1 @@
+{"sha":"1d8dc067c276e31683f85eb87462d8a51e84478f","ct":"2023-01-02T13:57:54-07:00","pv":"commit-annotation/v1","model":"claude-haiku-5-5","kind":"chore","area":"docker, travis, script cleanup","summary":"Cleaned up the Dockerfile, build script, README, and particles script.","significance":1,"themes":["cleanup","build"],"at":"2026-11-21T18:26:38+00:00"}

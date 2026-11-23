@@ -1,0 +1,22 @@
+{"sha":"857d818b523ccebabb5435aaf67f57d6787e5050","p":"_quickstart/win-setup.md","ct":"2022-12-05T16:20:40+05:30","t":"Windows Setup","cats":["machine-setup"],"w":1024}
+{"sha":"857d818b523ccebabb5435aaf67f57d6787e5050","p":"home.md","ct":"2022-12-05T16:20:40+05:30","t":"","w":796}
+{"sha":"857d818b523ccebabb5435aaf67f57d6787e5050","p":"index.md","ct":"2022-12-05T16:20:40+05:30","t":"Hello World","w":462}
+{"sha":"a872a1dddd7faf7eb7fbfd97dbf048c41322826d","p":"_quickstart/win-setup.md","ct":"2022-12-05T16:33:07+05:30","t":"Windows Setup","cats":["machine-setup"],"w":1051}
+{"sha":"aca519756b235c3c17bb1f7661dc71eb6f4e0373","p":"_posts/2022-12-05-sharex.md","ct":"2022-12-05T19:50:09+05:30","t":"sharex","tags":["article","sharex"],"cats":["posts"],"draft":true,"w":21}
+{"sha":"aca519756b235c3c17bb1f7661dc71eb6f4e0373","p":"_quickstart/win-setup.md","ct":"2022-12-05T19:50:09+05:30","t":"Windows Setup","cats":["machine-setup"],"w":1079}
+{"sha":"179c71af569d69497541fc50c2d761e3cfa57a7f","p":"README.md","ct":"2022-12-06T18:27:36+01:00","t":"it-journey","w":94}
+{"sha":"c0e36ac6c19083b6cce7c258952733f7a7ac6c5c","p":"_docs/jekyll/setting-up-jekyll-on-ubuntu-and-macos.md","ct":"2022-12-06T20:19:08+01:00","t":"Setting up Jekyll on Ubuntu and macOS","tags":["GitHub Pages","Jekyll","Ruby","macOS"],"w":1625}
+{"sha":"c0e36ac6c19083b6cce7c258952733f7a7ac6c5c","p":"_posts/2022-07-16-zer0-mistakes.md","ct":"2022-12-06T20:19:08+01:00","t":"zer0-mistakes","tags":["bash","github","how-to","jekyll"],"cats":["posts"],"d":"Introduction page to build a statically generated website on Github using Jekyll and Ruby","draft":true,"w":553}
+{"sha":"c0e36ac6c19083b6cce7c258952733f7a7ac6c5c","p":"_posts/2022-12-05-sharex.md","ct":"2022-12-06T20:19:08+01:00","t":"sharex","tags":["article","sharex"],"cats":["posts"],"draft":true,"w":21}
+{"sha":"c0e36ac6c19083b6cce7c258952733f7a7ac6c5c","p":"_quickstart/github-setup.md","ct":"2022-12-06T20:19:08+01:00","t":"Github Setup","cats":["github"],"w":303}
+{"sha":"c0e36ac6c19083b6cce7c258952733f7a7ac6c5c","p":"_quickstart/index.md","ct":"2022-12-06T20:19:08+01:00","t":"Quick Start Index (~)","w":61}
+{"sha":"c0e36ac6c19083b6cce7c258952733f7a7ac6c5c","p":"_quickstart/machine-setup.md","ct":"2022-12-06T20:19:08+01:00","t":"Master Setup","cats":["machine-setup"],"w":970}
+{"sha":"c0e36ac6c19083b6cce7c258952733f7a7ac6c5c","p":"home.md","ct":"2022-12-06T20:19:08+01:00","t":"","w":796}
+{"sha":"c0e36ac6c19083b6cce7c258952733f7a7ac6c5c","p":"index.md","ct":"2022-12-06T20:19:08+01:00","t":"Hello World","w":482}
+{"sha":"5b1ce85f16cdc6f0e4fc0ca0afd2eab82745579d","p":"_posts/2022-07-16-zer0-mistakes.md","ct":"2022-12-06T20:21:12+01:00","t":"zer0-mistakes with github-pages and jekyll","tags":["bash","github","how-to","jekyll"],"cats":["posts"],"d":"Introductory post to begin your quest on becoming an IT ninja/wizard by building statically generated websites using modern day, open source","draft":true,"w":553}
+{"sha":"59388e609ff6fc09cea3b349a2c7ae647c12fb99","p":"_notes/2022-10-07-powershell.md","ct":"2022-12-21T22:07:25-07:00","t":"Windows Powershell Cheatsheet","tags":["note","powershell"],"cats":["notes","cheetsheet"],"draft":true,"w":17916}
+{"sha":"59388e609ff6fc09cea3b349a2c7ae647c12fb99","p":"_quickstart/win-setup.md","ct":"2022-12-21T22:07:25-07:00","t":"Windows Setup","cats":["machine-setup"],"w":1092}
+{"sha":"59388e609ff6fc09cea3b349a2c7ae647c12fb99","p":"index.md","ct":"2022-12-21T22:07:25-07:00","t":"Hello World","w":482}
+{"sha":"3d5f454144188022dfde4b419ce225ddb94c0a4a","p":"index.md","ct":"2022-12-21T22:07:37-07:00","t":"Hello World","w":484}
+{"sha":"8798ef0647208c3a3c2119b302a4af5ebcc649df","p":"index.md","ct":"2022-12-21T22:11:41-07:00","t":"Hello World","w":484}
+{"sha":"9a2d2eaa88ab7f8c77acec86052f081d96b9c249","p":"index.md","ct":"2022-12-23T09:24:53-07:00","t":"Hello World","w":541}

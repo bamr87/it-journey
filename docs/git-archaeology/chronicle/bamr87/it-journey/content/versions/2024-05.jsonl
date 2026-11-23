@@ -1,0 +1,205 @@
+{"sha":"5d2e27c1f22bda221500520223d93938b764008e","p":"index.md","ct":"2024-05-01T22:44:19-06:00","t":"Hello World","tags":["index"],"cats":["hello world"],"d":"This is the index.md file for the whole site and root","w":886}
+{"sha":"5d2e27c1f22bda221500520223d93938b764008e","p":"pages/_about/about.md","ct":"2024-05-01T22:44:19-06:00","t":"About","w":3543}
+{"sha":"5d2e27c1f22bda221500520223d93938b764008e","p":"pages/_docs/jekyll/jekyll-liquid.md","ct":"2024-05-01T22:44:19-06:00","t":"Jekyll - Liquid","tags":["Jekyll","Liquid"],"w":347}
+{"sha":"5d2e27c1f22bda221500520223d93938b764008e","p":"pages/_notes/2024-04-29-mac-shortcuts.md","ct":"2024-05-01T22:44:19-06:00","t":"Mac keyboard shortcuts","tags":["notes","mac"],"cats":["notes","shortcuts"],"draft":true,"w":3643}
+{"sha":"79721a64bad7d712de879cde0ee8e6e53afc924b","p":"README.md","ct":"2024-05-07T23:07:39-06:00","t":"it-journey","tags":["it-journey"],"d":"it-journey","w":582}
+{"sha":"79721a64bad7d712de879cde0ee8e6e53afc924b","p":"home.md","ct":"2024-05-07T23:07:39-06:00","t":"Home","d":"This is an overall outline of this site, and a place to start or come back to when lost.","w":888}
+{"sha":"79721a64bad7d712de879cde0ee8e6e53afc924b","p":"index.md","ct":"2024-05-07T23:07:39-06:00","t":"Hello World","tags":["index"],"cats":["hello world"],"d":"This is the index.md file for the whole site and root","w":886}
+{"sha":"79721a64bad7d712de879cde0ee8e6e53afc924b","p":"pages/_docs/jekyll/jekyll-config.md","ct":"2024-05-07T23:07:39-06:00","t":"Configuration Options | Jekyll • Simple, blog-aware, static sites","d":"The tables below list the available settings for Jekyll, and the various options (specified in the configuration file) and flags (specified ","w":1263}
+{"sha":"79721a64bad7d712de879cde0ee8e6e53afc924b","p":"pages/_notes/2024-05-02-home-test.md","ct":"2024-05-07T23:07:39-06:00","t":"Home | IT-Journey","d":"This is an overall outline of this site, and a place to start or come back to when lost.","w":1442}
+{"sha":"52a28f05e867f21f46acf614c18ae597d58da1c9","p":"pages/_about/features.md","ct":"2024-05-09T14:36:52-06:00","t":"Features","w":40}
+{"sha":"2b10c1e283ef8927b55fadaeb120168a6640d3d5","p":"pages/_about/profile/bamr87.md","ct":"2024-05-09T22:24:22-06:00","t":"Navigate to your current repository","w":60}
+{"sha":"2b10c1e283ef8927b55fadaeb120168a6640d3d5","p":"pages/_about/theme.md","ct":"2024-05-09T22:24:22-06:00","t":"Bootstrap Theme Examples","w":0}
+{"sha":"2b10c1e283ef8927b55fadaeb120168a6640d3d5","p":"pages/_quests/2024-05-09-bootstrap-your-theme-and-character.md","ct":"2024-05-09T22:24:22-06:00","t":"Bootstrap your theme and character","w":0}
+{"sha":"7a568f0bdf2c300885c79789b4a6a07fb20b0b5f","p":"pages/_about/contributors/bamr87/README.md","ct":"2024-05-09T22:24:45-06:00","t":"Profile","w":410}
+{"sha":"5db144e161d77d6f36f4b3fb342a07430394421f","p":"pages/_about/contributors/bamr87/README.md","ct":"2024-05-09T22:27:43-06:00","t":"Profile","w":410}
+{"sha":"b88b942751fe2257ea915b3aceacb1b21440ac03","p":"pages/_about/contributors/bamr87/README.md","ct":"2024-05-09T22:34:47-06:00","t":"Profile","w":410}
+{"sha":"23e8140532e783c7c7a68eabe7256ebfd580195a","p":"pages/_about/profile/bamr87.md","ct":"2024-05-09T22:44:12-06:00","t":"Navigate to your current repository","w":61}
+{"sha":"a6d7839acea4da57f1c221bd7e034f8299061f36","p":"pages/_about/contributors/bamr87/README.md","ct":"2024-05-09T22:46:25-06:00","t":"Profile","w":452}
+{"sha":"a52bf06483c02039628b129653526720f2bb6389","p":"pages/_about/about.md","ct":"2024-05-11T16:54:12-06:00","t":"About","w":3551}
+{"sha":"a52bf06483c02039628b129653526720f2bb6389","p":"pages/_about/contribute/contributors/bamr87/README.md","ct":"2024-05-11T16:54:12-06:00","t":"Bamr87","w":456}
+{"sha":"a52bf06483c02039628b129653526720f2bb6389","p":"pages/_about/features/add-floating-back-to-top-button.md","ct":"2024-05-11T16:54:12-06:00","t":"Add Floating Back-to-Top button","tags":["Bootstrap"],"cats":["How-To"],"d":"How to Add a floating button that will scroll to the top of a page?","w":279}
+{"sha":"a52bf06483c02039628b129653526720f2bb6389","p":"pages/_about/features/features.md","ct":"2024-05-11T16:54:12-06:00","t":"Features","w":40}
+{"sha":"a52bf06483c02039628b129653526720f2bb6389","p":"pages/_about/features/jekyll.md","ct":"2024-05-11T16:54:12-06:00","t":"Jeykll","w":4196}
+{"sha":"a52bf06483c02039628b129653526720f2bb6389","p":"pages/_about/purpose.md","ct":"2024-05-11T16:54:12-06:00","t":"Purpose","w":357}
+{"sha":"a52bf06483c02039628b129653526720f2bb6389","p":"pages/_about/settings/config.md","ct":"2024-05-11T16:54:12-06:00","t":"config","w":51}
+{"sha":"a52bf06483c02039628b129653526720f2bb6389","p":"pages/_about/settings/tree.md","ct":"2024-05-11T16:54:12-06:00","t":"Tree","w":108}
+{"sha":"a52bf06483c02039628b129653526720f2bb6389","p":"pages/_hobbies/Gaming/Init.md","ct":"2024-05-11T16:54:12-06:00","t":"Init","w":34}
+{"sha":"a52bf06483c02039628b129653526720f2bb6389","p":"pages/_notes/cheetsheets/2022-10-07-powershell.md","ct":"2024-05-11T16:54:12-06:00","t":"Windows Powershell Cheatsheet","tags":["note","powershell"],"cats":["notes","cheetsheet"],"draft":true,"w":17916}
+{"sha":"a52bf06483c02039628b129653526720f2bb6389","p":"pages/_notes/cheetsheets/2024-04-29-mac-shortcuts.md","ct":"2024-05-11T16:54:12-06:00","t":"Mac keyboard shortcuts","tags":["notes","mac"],"cats":["notes","shortcuts"],"draft":true,"w":3643}
+{"sha":"a52bf06483c02039628b129653526720f2bb6389","p":"pages/_notes/cheetsheets/Bash cheatsheet.md","ct":"2024-05-11T16:54:12-06:00","t":"Bash cheatsheet","tags":["bash","linux","script","shell"],"w":1738}
+{"sha":"a52bf06483c02039628b129653526720f2bb6389","p":"pages/_notes/cheetsheets/Shell and the CLI.md","ct":"2024-05-11T16:54:12-06:00","t":"Shell and the CLI","w":128}
+{"sha":"a52bf06483c02039628b129653526720f2bb6389","p":"pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md","ct":"2024-05-11T16:54:12-06:00","t":"Windows Powershell Cheatsheet","tags":["note","powershell"],"w":17916}
+{"sha":"a52bf06483c02039628b129653526720f2bb6389","p":"pages/_notes/cheetsheets/bash.md","ct":"2024-05-11T16:54:12-06:00","t":"Bash cheatsheet","tags":["shell","script","linux","bash"],"d":"BASH cheatsheet","w":1754}
+{"sha":"a52bf06483c02039628b129653526720f2bb6389","p":"pages/_notes/cheetsheets/command-line.md","ct":"2024-05-11T16:54:12-06:00","t":"Shell and the CLI","d":"Command Line Interface Notes","w":128}
+{"sha":"a52bf06483c02039628b129653526720f2bb6389","p":"pages/_notes/cheetsheets/markdown.md","ct":"2024-05-11T16:54:12-06:00","t":"Markdown","cats":["Posts"],"draft":true,"w":410}
+{"sha":"a52bf06483c02039628b129653526720f2bb6389","p":"pages/_notes/cheetsheets/programming.md","ct":"2024-05-11T16:54:12-06:00","t":"Programming","d":"Collection of programming languages notes","w":372}
+{"sha":"a52bf06483c02039628b129653526720f2bb6389","p":"pages/_notes/index.md","ct":"2024-05-11T16:54:12-06:00","t":"Notes Index","d":"Notes Index","w":628}
+{"sha":"a52bf06483c02039628b129653526720f2bb6389","p":"pages/_notes/misc/2024-05-02-home-test.md","ct":"2024-05-11T16:54:12-06:00","t":"Home | IT-Journey","d":"This is an overall outline of this site, and a place to start or come back to when lost.","w":1442}
+{"sha":"a52bf06483c02039628b129653526720f2bb6389","p":"pages/_notes/misc/AWS Practice Question Set.md","ct":"2024-05-11T16:54:12-06:00","t":"AWS Practice Question Set","tags":["notes"],"w":19246}
+{"sha":"a52bf06483c02039628b129653526720f2bb6389","p":"pages/_notes/misc/cloud.md","ct":"2024-05-11T16:54:12-06:00","t":"AWS Practice Question Set","tags":["notes"],"cats":["notes"],"draft":true,"w":19246}
+{"sha":"a52bf06483c02039628b129653526720f2bb6389","p":"pages/_posts/2024-03-10-raspberry-pi-5-case-build.md","ct":"2024-05-11T16:54:12-06:00","t":"{{name}}","tags":["notes"],"cats":["notes"],"draft":true,"w":12}
+{"sha":"e7bc4698cc93398567c8aa89f75a541bc3d556a1","p":"pages/_about/settings/sitemap.md","ct":"2024-05-11T17:00:04-06:00","t":"sitemaps","w":72}
+{"sha":"4243ec8d264d345baf6218b1cefd1a9b37874487","p":"home.md","ct":"2024-05-14T22:06:19-06:00","t":"Home","d":"This is an overall outline of this site, and a place to start or come back to when lost.","w":902}
+{"sha":"4243ec8d264d345baf6218b1cefd1a9b37874487","p":"pages/_about/contribute/contributors/bamr87/README.md","ct":"2024-05-14T22:06:19-06:00","t":"Bamr87","w":466}
+{"sha":"4243ec8d264d345baf6218b1cefd1a9b37874487","p":"pages/_about/settings/sitemap.md","ct":"2024-05-14T22:06:19-06:00","t":"sitemaps","w":152}
+{"sha":"4243ec8d264d345baf6218b1cefd1a9b37874487","p":"pages/_docs/jekyll/jekyll-comments-with-disqus.md","ct":"2024-05-14T22:06:19-06:00","t":"Jekyll - Comments with Disqus","tags":["Disqus","jekyll","comments"],"w":477}
+{"sha":"4243ec8d264d345baf6218b1cefd1a9b37874487","p":"pages/_docs/jekyll/jekyll-liquid.md","ct":"2024-05-14T22:06:19-06:00","t":"Jekyll - Liquid","tags":["Jekyll","Liquid"],"w":347}
+{"sha":"4243ec8d264d345baf6218b1cefd1a9b37874487","p":"pages/_docs/jekyll/jekyll-seo.md","ct":"2024-05-14T22:06:19-06:00","t":"Jekyll - SEO","tags":["SEO","CDN","DNS"],"cats":["jekyll"],"d":"This is a tutorial about how to optimize the website to improve the rankings.","draft":true,"w":912}
+{"sha":"4243ec8d264d345baf6218b1cefd1a9b37874487","p":"pages/_notes/2024-05-14-side-bar-folders.md","ct":"2024-05-14T22:06:19-06:00","t":"side-bar-folders","cats":["sidebar"],"w":94}
+{"sha":"4243ec8d264d345baf6218b1cefd1a9b37874487","p":"pages/_notes/cheetsheets/Bash cheatsheet.md","ct":"2024-05-14T22:06:19-06:00","t":"Bash cheatsheet","tags":["bash","linux","script","shell"],"w":1738}
+{"sha":"4243ec8d264d345baf6218b1cefd1a9b37874487","p":"pages/_notes/cheetsheets/index.md","ct":"2024-05-14T22:06:19-06:00","t":"","w":1}
+{"sha":"4243ec8d264d345baf6218b1cefd1a9b37874487","p":"pages/_notes/cheetsheets/mac-shortcuts.md","ct":"2024-05-14T22:06:19-06:00","t":"Mac keyboard shortcuts","tags":["notes","mac"],"cats":["notes","shortcuts"],"draft":true,"w":3643}
+{"sha":"4243ec8d264d345baf6218b1cefd1a9b37874487","p":"pages/_notes/code-snippets/test.md","ct":"2024-05-14T22:06:19-06:00","t":"test","w":0}
+{"sha":"4243ec8d264d345baf6218b1cefd1a9b37874487","p":"pages/_notes/index.md","ct":"2024-05-14T22:06:19-06:00","t":"Notes Index","d":"Notes Index","w":631}
+{"sha":"4243ec8d264d345baf6218b1cefd1a9b37874487","p":"pages/_posts/2000-01-01-articles.md","ct":"2024-05-14T22:06:19-06:00","t":"articles","d":"Listing of articles","draft":true,"w":8}
+{"sha":"4243ec8d264d345baf6218b1cefd1a9b37874487","p":"pages/_posts/2000-01-01-index.md","ct":"2024-05-14T22:06:19-06:00","t":"posts","draft":true,"w":190}
+{"sha":"4243ec8d264d345baf6218b1cefd1a9b37874487","p":"pages/_posts/2022-01-07-jekyll-and-travis.md","ct":"2024-05-14T22:06:19-06:00","t":"Jekyll and Travis","tags":["jekyll","travis","ci"],"cats":["posts","guides"],"d":"Deploying Jekyll using Travis CI and Github","w":622}
+{"sha":"4243ec8d264d345baf6218b1cefd1a9b37874487","p":"pages/_posts/2022-01-09-sonic-pi.md","ct":"2024-05-14T22:06:19-06:00","t":"Sonic Pi","cats":["posts"],"draft":true,"w":434}
+{"sha":"4243ec8d264d345baf6218b1cefd1a9b37874487","p":"pages/_posts/2022-02-27-dual-boot-win-linux.md","ct":"2024-05-14T22:06:19-06:00","t":"dual boot win linux","tags":["article"],"cats":["posts"],"draft":true,"w":90}
+{"sha":"4243ec8d264d345baf6218b1cefd1a9b37874487","p":"pages/_posts/2023-03-26-chat-gpt-vs-the-impossible-triangle.md","ct":"2024-05-14T22:06:19-06:00","t":"Chat GPT vs The Impossible Triangle","tags":["article"],"cats":["posts"],"d":"Practical and impractical uses of Chat GPT in programming and graphic design through demonstration of its limitation to comprehend impossibl","draft":true,"w":1411}
+{"sha":"4243ec8d264d345baf6218b1cefd1a9b37874487","p":"pages/_posts/2023-12-06-jekyll-seo.md","ct":"2024-05-14T22:06:19-06:00","t":"Jekyll - SEO","tags":["SEO","CDN","DNS"],"cats":["jekyll"],"d":"This is a tutorial about how to optimize the website to improve the rankings.","draft":true,"w":912}
+{"sha":"4243ec8d264d345baf6218b1cefd1a9b37874487","p":"pages/_posts/2024-03-10-raspberry-pi-5-case-build.md","ct":"2024-05-14T22:06:19-06:00","t":"Raspberry Pi","tags":["raspberrypi"],"cats":["notes"],"draft":true,"w":12}
+{"sha":"4243ec8d264d345baf6218b1cefd1a9b37874487","p":"pages/_posts/gpt/2024-05-14-dynamic-sidebar-tree.md","ct":"2024-05-14T22:06:19-06:00","t":"Dynamic Sidebar Tree","tags":["copilot","jekyll","liquid","sidebar","tree","folder"],"d":"Update code to display sub-folders and files in a sidebar tree structure.","w":1660}
+{"sha":"4243ec8d264d345baf6218b1cefd1a9b37874487","p":"pages/_quickstart/2024-05-14-jekyll-sidebar.md","ct":"2024-05-14T22:06:19-06:00","t":"jekyll sidebar","cats":["jekyll"],"w":540}
+{"sha":"4243ec8d264d345baf6218b1cefd1a9b37874487","p":"pages/_quickstart/index.md","ct":"2024-05-14T22:06:19-06:00","t":"Quick Start Index (~)","w":62}
+{"sha":"156defac035341b8115fda864263ccae10457ac8","p":"pages/_docs/jekyll/jekyll-frontmatter-cms.md","ct":"2024-05-14T22:15:51-06:00","t":"Jekyll Frontmatter CMS","w":16}
+{"sha":"156defac035341b8115fda864263ccae10457ac8","p":"pages/_notes/dev/2024-05-14-side-bar-folders.md","ct":"2024-05-14T22:15:51-06:00","t":"side-bar-folders","cats":["sidebar"],"w":94}
+{"sha":"156defac035341b8115fda864263ccae10457ac8","p":"pages/_notes/misc/Favicons.md","ct":"2024-05-14T22:15:51-06:00","t":"Favicons","tags":["notes"],"w":70}
+{"sha":"8a7dfe32a571f73777eab6676ad30e6c22481187","p":"pages/_docs/jekyll/jekyll-security.md","ct":"2024-05-15T10:10:14-06:00","t":"Jekyll - Security","tags":["Security"],"w":475}
+{"sha":"fca390a23f7caf8b87b604d55c85c106889f96c0","p":"pages/_posts/2022-12-05-sharex.md","ct":"2024-05-15T17:03:19-06:00","t":"sharex","tags":["article","sharex"],"cats":["posts"],"draft":true,"w":21}
+{"sha":"1f4173f18b2af1126636be20008cd2161da44992","p":"pages/_about/features/add-floating-back-to-top-button.md","ct":"2024-05-15T20:51:52-06:00","t":"Add Floating Back-to-Top button","tags":["Bootstrap"],"cats":["How-To"],"d":"How to Add a floating button that will scroll to the top of a page?","w":279}
+{"sha":"1f4173f18b2af1126636be20008cd2161da44992","p":"pages/_about/features/features.md","ct":"2024-05-15T20:51:52-06:00","t":"Features","w":40}
+{"sha":"1f4173f18b2af1126636be20008cd2161da44992","p":"pages/_docs/jekyll/jekyll-frontmatter-cms.md","ct":"2024-05-15T20:51:52-06:00","t":"Jekyll Frontmatter CMS","w":16}
+{"sha":"1f4173f18b2af1126636be20008cd2161da44992","p":"pages/_notes/dev/2024-05-14-side-bar-folders.md","ct":"2024-05-15T20:51:52-06:00","t":"side-bar-folders","cats":["sidebar"],"w":94}
+{"sha":"1f4173f18b2af1126636be20008cd2161da44992","p":"pages/_notes/index.md","ct":"2024-05-15T20:51:52-06:00","t":"Notes Index","d":"Notes Index","w":650}
+{"sha":"1f4173f18b2af1126636be20008cd2161da44992","p":"pages/_posts/2023-03-17-penrose-triangle.md","ct":"2024-05-15T20:51:52-06:00","t":"penrose triangle","w":70}
+{"sha":"1f4173f18b2af1126636be20008cd2161da44992","p":"pages/_posts/2023-11-04-latex-your-cv.md","ct":"2024-05-15T20:51:52-06:00","t":"LaTex your CV","w":603}
+{"sha":"1f4173f18b2af1126636be20008cd2161da44992","p":"pages/_posts/2023-12-04-robots-dot-txt.md","ct":"2024-05-15T20:51:52-06:00","t":"robots dot txt","w":162}
+{"sha":"1f4173f18b2af1126636be20008cd2161da44992","p":"pages/_posts/2024-02-10-retropie-imaging.md","ct":"2024-05-15T20:51:52-06:00","t":"RetroPie Imaging","w":795}
+{"sha":"1f4173f18b2af1126636be20008cd2161da44992","p":"pages/_posts/2024-05-15-groking-about-it-journey.dev.md","ct":"2024-05-15T20:51:52-06:00","t":"Groking About IT Journey","tags":["jekyll","bootstrap","it-journey"],"cats":["jekyll","bootstrap","it-journey"],"d":"Groking About IT Journey. A personal blog with a focus on IT and software development.","w":600}
+{"sha":"1f4173f18b2af1126636be20008cd2161da44992","p":"pages/_posts/2024-05-15-testt.md","ct":"2024-05-15T20:51:52-06:00","t":"New Post","w":0}
+{"sha":"1f4173f18b2af1126636be20008cd2161da44992","p":"pages/_posts/gpt/2024-05-14-dynamic-sidebar-tree.md","ct":"2024-05-15T20:51:52-06:00","t":"Dynamic Sidebar Tree","tags":["copilot","jekyll","liquid","sidebar","tree","folder"],"d":"Update code to display sub-folders and files in a sidebar tree structure.","w":1660}
+{"sha":"1f4173f18b2af1126636be20008cd2161da44992","p":"pages/_quests/2024-04-25-placeholders.md","ct":"2024-05-15T20:51:52-06:00","t":"placeholders","w":78}
+{"sha":"1f4173f18b2af1126636be20008cd2161da44992","p":"pages/_quests/2024-05-09-bootstrap-your-theme-and-character.md","ct":"2024-05-15T20:51:52-06:00","t":"Bootstrap your theme and character","w":0}
+{"sha":"1f4173f18b2af1126636be20008cd2161da44992","p":"pages/_quickstart/2024-05-14-jekyll-sidebar.md","ct":"2024-05-15T20:51:52-06:00","t":"jekyll sidebar","cats":["jekyll"],"w":540}
+{"sha":"1f4173f18b2af1126636be20008cd2161da44992","p":"zer0.md","ct":"2024-05-15T20:51:52-06:00","t":"zer0","d":"zer0","w":1105}
+{"sha":"b84cbbcf1a52123faf90ca259e8b6643414ab459","p":"home.md","ct":"2024-05-15T22:33:20-06:00","t":"Home","d":"This is an overall outline of this site, and a place to start or come back to when lost.","w":904}
+{"sha":"b84cbbcf1a52123faf90ca259e8b6643414ab459","p":"index.md","ct":"2024-05-15T22:33:20-06:00","t":"Hello World","tags":["index"],"cats":["hello world"],"d":"This is the index.md file for the whole site and root","w":486}
+{"sha":"b84cbbcf1a52123faf90ca259e8b6643414ab459","p":"pages/_about/features/features.md","ct":"2024-05-15T22:33:20-06:00","t":"Features","w":123}
+{"sha":"b84cbbcf1a52123faf90ca259e8b6643414ab459","p":"pages/_docs/jekyll/jekyll-security.md","ct":"2024-05-15T22:33:20-06:00","t":"Jekyll - Security","tags":["Security"],"w":475}
+{"sha":"b84cbbcf1a52123faf90ca259e8b6643414ab459","p":"pages/_posts/2000-01-01-index.md","ct":"2024-05-15T22:33:20-06:00","t":"posts","draft":true,"w":190}
+{"sha":"b84cbbcf1a52123faf90ca259e8b6643414ab459","p":"pages/_posts/2022-07-01-angular-tour-of-heros.md","ct":"2024-05-15T22:33:20-06:00","t":"Angular Tour of Heros","tags":["article"],"cats":["posts"],"draft":true,"w":2}
+{"sha":"b84cbbcf1a52123faf90ca259e8b6643414ab459","p":"pages/_posts/gpt/2024-05-14-dynamic-sidebar-tree.md","ct":"2024-05-15T22:33:20-06:00","t":"Dynamic Sidebar Tree","tags":["copilot","jekyll","liquid","sidebar","tree","folder"],"d":"Update code to display sub-folders and files in a sidebar tree structure.","w":1660}
+{"sha":"b84cbbcf1a52123faf90ca259e8b6643414ab459","p":"pages/_quickstart/2024-05-14-jekyll-sidebar.md","ct":"2024-05-15T22:33:20-06:00","t":"jekyll sidebar","cats":["jekyll"],"w":540}
+{"sha":"50b34591ce118295264931034268be6c73b250a9","p":"pages/_about/features/index.md","ct":"2024-05-16T14:03:26-06:00","t":"Features (~) Index","w":123}
+{"sha":"50b34591ce118295264931034268be6c73b250a9","p":"pages/_docs/index.md","ct":"2024-05-16T14:03:26-06:00","t":"Docs (~) Index","d":"Index of all doc pages and instructions on how to add new doc sections","draft":true,"w":183}
+{"sha":"50b34591ce118295264931034268be6c73b250a9","p":"pages/_docs/jekyll/jekyll-liquid.md","ct":"2024-05-16T14:03:26-06:00","t":"Jekyll - Liquid","tags":["Jekyll","Liquid"],"w":347}
+{"sha":"50b34591ce118295264931034268be6c73b250a9","p":"pages/_posts/2024-05-16-fight-with-tools.md","ct":"2024-05-16T14:03:26-06:00","t":"fight with tools","draft":true,"w":3}
+{"sha":"50b34591ce118295264931034268be6c73b250a9","p":"pages/_posts/gpt/chat_2023_12_14_22_02_47.md","ct":"2024-05-16T14:03:26-06:00","t":"CMS App with Python and JavaScript","tags":["python","javascript","cms"],"cats":["programming","web-development","python","javascript"],"d":"A step-by-step guide to building a CMS application in Python as the backend and JavaScript for the frontend.","w":518}
+{"sha":"50b34591ce118295264931034268be6c73b250a9","p":"pages/_posts/gpt/dynamic-sidebar-tree.md","ct":"2024-05-16T14:03:26-06:00","t":"Dynamic Sidebar Tree","tags":["copilot","jekyll","liquid","sidebar","tree","folder"],"d":"Update code to display sub-folders and files in a sidebar tree structure.","draft":true,"w":1660}
+{"sha":"50b34591ce118295264931034268be6c73b250a9","p":"pages/_posts/groking-about-it-journey.dev.md","ct":"2024-05-16T14:03:26-06:00","t":"Groking About IT Journey","tags":["jekyll","bootstrap","it-journey"],"cats":["jekyll","bootstrap","it-journey"],"d":"Groking About IT Journey. A personal blog with a focus on IT and software development.","draft":true,"w":600}
+{"sha":"50b34591ce118295264931034268be6c73b250a9","p":"pages/_quests/2024-04-25-placeholders.md","ct":"2024-05-16T14:03:26-06:00","t":"placeholders","w":79}
+{"sha":"50b34591ce118295264931034268be6c73b250a9","p":"pages/_quickstart/2024-05-14-jekyll-sidebar.md","ct":"2024-05-16T14:03:26-06:00","t":"jekyll sidebar","cats":["jekyll"],"draft":true,"w":540}
+{"sha":"677fbf10ef21cd6fb67a4161da7bbcfc4631b80b","p":"README.md","ct":"2024-05-16T20:18:53-06:00","t":"README - it-journey","tags":["it-journey","readme","jekyll"],"d":"it-journey","w":614}
+{"sha":"677fbf10ef21cd6fb67a4161da7bbcfc4631b80b","p":"pages/_notes/cheetsheets/Shell and the CLI.md","ct":"2024-05-16T20:18:53-06:00","t":"Shell and the CLI","w":155}
+{"sha":"677fbf10ef21cd6fb67a4161da7bbcfc4631b80b","p":"submodules/README.md","ct":"2024-05-16T20:18:53-06:00","t":"Submodules","tags":["submodules"],"cats":["submodules"],"d":"Submodules for the IT Journey website.","w":16}
+{"sha":"677fbf10ef21cd6fb67a4161da7bbcfc4631b80b","p":"zer0.md","ct":"2024-05-16T20:18:53-06:00","t":"zer0","tags":["Jekyll"],"cats":["bootstrap","quickstart"],"d":"zer0","w":1105}
+{"sha":"30f4d4fcbe7ca037e4cacb47a71f6e2d077f816b","p":"index.md","ct":"2024-05-17T19:58:52-06:00","t":"Hello World","tags":["index"],"cats":["hello world"],"d":"This is the index.md file for the whole site and root","w":480}
+{"sha":"30f4d4fcbe7ca037e4cacb47a71f6e2d077f816b","p":"pages/_about/features/index.md","ct":"2024-05-17T19:58:52-06:00","t":"Features (~) Index","w":353}
+{"sha":"30f4d4fcbe7ca037e4cacb47a71f6e2d077f816b","p":"pages/_posts/2024-05-14-jekyll-sidebar.md","ct":"2024-05-17T19:58:52-06:00","t":"jekyll sidebar","cats":["jekyll"],"draft":true,"w":540}
+{"sha":"30f4d4fcbe7ca037e4cacb47a71f6e2d077f816b","p":"pages/_quickstart/index.md","ct":"2024-05-17T19:58:52-06:00","t":"Quick Start (~) Index","w":62}
+{"sha":"30f4d4fcbe7ca037e4cacb47a71f6e2d077f816b","p":"pages/_quickstart/machine-setup.md","ct":"2024-05-17T19:58:52-06:00","t":"Machine Setup","draft":true,"w":3242}
+{"sha":"1455292b6bea5d1159eb4581554ad72033d11dac","p":"home.md","ct":"2024-05-17T23:58:00-06:00","t":"Home","d":"This is an overall outline of this site, and a place to start or come back to when lost.","w":904}
+{"sha":"1455292b6bea5d1159eb4581554ad72033d11dac","p":"index.md","ct":"2024-05-17T23:58:00-06:00","t":"Hello World","tags":["index"],"cats":["hello world"],"d":"This is the index.md file for the whole site and root","w":474}
+{"sha":"1455292b6bea5d1159eb4581554ad72033d11dac","p":"pages/_posts/2000-01-01-articles.md","ct":"2024-05-17T23:58:00-06:00","t":"articles","d":"Listing of articles","draft":true,"w":8}
+{"sha":"1455292b6bea5d1159eb4581554ad72033d11dac","p":"pages/_posts/2000-01-01-index.md","ct":"2024-05-17T23:58:00-06:00","t":"Posts (~) Index","draft":true,"w":190}
+{"sha":"1455292b6bea5d1159eb4581554ad72033d11dac","p":"pages/_posts/2022-05-09-javascript-testing.md","ct":"2024-05-17T23:58:00-06:00","t":"test","cats":["Posts"],"draft":true,"w":0}
+{"sha":"1455292b6bea5d1159eb4581554ad72033d11dac","p":"pages/_posts/2024-05-16-fight-with-tools.md","ct":"2024-05-17T23:58:00-06:00","t":"fight with tools","draft":true,"w":3}
+{"sha":"1455292b6bea5d1159eb4581554ad72033d11dac","p":"pages/_posts/reflections/2021-10-27-build-die-repeat.md","ct":"2024-05-17T23:58:00-06:00","t":"Build-Destroy-Repeat","cats":["Posts"],"w":37}
+{"sha":"1455292b6bea5d1159eb4581554ad72033d11dac","p":"pages/_posts/reflections/2021-11-08-it-purpose.md","ct":"2024-05-17T23:58:00-06:00","t":"IT Purpose","cats":["Posts"],"draft":true,"w":238}
+{"sha":"1455292b6bea5d1159eb4581554ad72033d11dac","p":"pages/_quests/README.md","ct":"2024-05-17T23:58:00-06:00","t":"Quests (~) Index","d":"This is an index of quests that are written, or being written.","w":185}
+{"sha":"1455292b6bea5d1159eb4581554ad72033d11dac","p":"pages/index.html","ct":"2024-05-17T23:58:00-06:00","t":"All Posts","w":53}
+{"sha":"1455292b6bea5d1159eb4581554ad72033d11dac","p":"roadmap.md","ct":"2024-05-17T23:58:00-06:00","t":"My Roadmap","w":100}
+{"sha":"3be6d8f86c5703414d07edef236590ec792b1285","p":"home.md","ct":"2024-05-19T10:22:19-06:00","t":"Home","d":"This is an overall outline of this site, and a place to start or come back to when lost.","w":894}
+{"sha":"3be6d8f86c5703414d07edef236590ec792b1285","p":"pages/_posts/2000-01-01-index.md","ct":"2024-05-19T10:22:19-06:00","t":"Posts (~) Index","draft":true,"w":176}
+{"sha":"3be6d8f86c5703414d07edef236590ec792b1285","p":"pages/_posts/2024-05-14-jekyll-sidebar.md","ct":"2024-05-19T10:22:19-06:00","t":"jekyll sidebar","cats":["jekyll"],"d":"test","draft":true,"w":540}
+{"sha":"d77c35c8515bd5fbe986ca8f55a7b741fedfa7e0","p":"pages/_docs/index.md","ct":"2024-05-20T12:02:48-06:00","t":"Docs (~) Index","d":"Index of all doc pages and instructions on how to add new doc sections","draft":true,"w":183}
+{"sha":"d77c35c8515bd5fbe986ca8f55a7b741fedfa7e0","p":"pages/_posts/2022-05-09-javascript-testing.md","ct":"2024-05-20T12:02:48-06:00","t":"test","cats":["Posts"],"draft":true,"w":0}
+{"sha":"d77c35c8515bd5fbe986ca8f55a7b741fedfa7e0","p":"pages/_posts/2022-07-01-angular-tour-of-heros.md","ct":"2024-05-20T12:02:48-06:00","t":"Angular Tour of Heros","tags":["article"],"cats":["posts"],"draft":true,"w":2}
+{"sha":"d77c35c8515bd5fbe986ca8f55a7b741fedfa7e0","p":"pages/_posts/2023-03-17-penrose-triangle.md","ct":"2024-05-20T12:02:48-06:00","t":"penrose triangle","w":64}
+{"sha":"d77c35c8515bd5fbe986ca8f55a7b741fedfa7e0","p":"pages/_posts/2023-04-07-krita-tips-and-tricks.md","ct":"2024-05-20T12:02:48-06:00","t":"Krita Tips and Tricks","tags":["article"],"cats":["posts"],"draft":true,"w":35}
+{"sha":"d77c35c8515bd5fbe986ca8f55a7b741fedfa7e0","p":"pages/_posts/2023-11-04-latex-your-cv.md","ct":"2024-05-20T12:02:48-06:00","t":"LaTex your CV","w":603}
+{"sha":"d77c35c8515bd5fbe986ca8f55a7b741fedfa7e0","p":"pages/_posts/2024-02-10-retropie-imaging.md","ct":"2024-05-20T12:02:48-06:00","t":"RetroPie Imaging","w":795}
+{"sha":"d77c35c8515bd5fbe986ca8f55a7b741fedfa7e0","p":"pages/_posts/reflections/2021-10-27-build-die-repeat.md","ct":"2024-05-20T12:02:48-06:00","t":"Build-Destroy-Repeat","cats":["Posts"],"w":37}
+{"sha":"d77c35c8515bd5fbe986ca8f55a7b741fedfa7e0","p":"pages/_posts/reflections/2021-11-08-it-purpose.md","ct":"2024-05-20T12:02:48-06:00","t":"IT Purpose","cats":["Posts"],"draft":true,"w":238}
+{"sha":"d77c35c8515bd5fbe986ca8f55a7b741fedfa7e0","p":"pages/_quests/2020-02-02-home.md","ct":"2024-05-20T12:02:48-06:00","t":"Overworld","cats":["home"],"w":343}
+{"sha":"d77c35c8515bd5fbe986ca8f55a7b741fedfa7e0","p":"pages/_quickstart/github-setup.md","ct":"2024-05-20T12:02:48-06:00","t":"Github Setup","w":301}
+{"sha":"d77c35c8515bd5fbe986ca8f55a7b741fedfa7e0","p":"pages/_quickstart/index.md","ct":"2024-05-20T12:02:48-06:00","t":"Quick Start (~) Index","w":62}
+{"sha":"48cef6b73e62c20f6ed2fdceae2b9f55af3b2fce","p":"pages/_about/features/index.md","ct":"2024-05-21T12:29:02-06:00","t":"Features (~) Index","w":348}
+{"sha":"d65f9d8ee71136f707af95afaca8523f3a24418e","p":"pages/_docs/index.md","ct":"2024-05-21T12:29:08-06:00","t":"Docs (~) Index","d":"Index of all doc pages and instructions on how to add new doc sections","draft":true,"w":163}
+{"sha":"d65f9d8ee71136f707af95afaca8523f3a24418e","p":"pages/_notes/html_md_doc_scrapper.md","ct":"2024-05-21T12:29:08-06:00","t":"HTML to markdown web scraping","tags":["python","web scraping","html","markdown"],"d":"A simple web scraping project to convert HTML to markdown using Python","w":4433}
+{"sha":"47ac0f38c9f01d48718e5d09066de17082f67d6b","p":"pages/_about/about.md","ct":"2024-05-23T22:35:18-06:00","t":"About","d":"Summary info about the site","w":3551}
+{"sha":"47ac0f38c9f01d48718e5d09066de17082f67d6b","p":"pages/_about/features/index.md","ct":"2024-05-23T22:35:18-06:00","t":"Features (~) Index","w":355}
+{"sha":"47ac0f38c9f01d48718e5d09066de17082f67d6b","p":"pages/_about/features/jekyll.md","ct":"2024-05-23T22:35:18-06:00","t":"Jeykll","w":4196}
+{"sha":"47ac0f38c9f01d48718e5d09066de17082f67d6b","p":"pages/_about/theme.md","ct":"2024-05-23T22:35:18-06:00","t":"Bootstrap Theme Examples","w":20}
+{"sha":"47ac0f38c9f01d48718e5d09066de17082f67d6b","p":"pages/_notes/index.md","ct":"2024-05-23T22:35:18-06:00","t":"Notes (~) Index","d":"Notes Index","w":615}
+{"sha":"47ac0f38c9f01d48718e5d09066de17082f67d6b","p":"pages/_posts/2024-05-23-searchbar-and-sitemaping.md","ct":"2024-05-23T22:35:18-06:00","t":"Searchbar and sitemaping","d":"Chat with GitHub Copilot to add a search bar and sitemap to your Jekyll site","draft":true,"w":2449}
+{"sha":"47ac0f38c9f01d48718e5d09066de17082f67d6b","p":"pages/home.md","ct":"2024-05-23T22:35:18-06:00","t":"Home","d":"This is an overall outline of this site, and a place to start or come back to when lost.","w":898}
+{"sha":"47ac0f38c9f01d48718e5d09066de17082f67d6b","p":"pages/search.md","ct":"2024-05-23T22:35:18-06:00","t":"search","cats":["search"],"d":"Search index for the site","w":7}
+{"sha":"90d1e6551e589cbc6fb891f8558d72f88b20ab1c","p":"pages/_posts/2024-05-22-Threat-of-women.md","ct":"2024-05-23T22:36:32-06:00","t":"Rise of the Matriarchs: Capitalism and Religion Face the Femme Fatale","cats":["parody"],"w":450}
+{"sha":"ef16b7b225a02a71416bdadddc1aaccfb04d5e37","p":"index.md","ct":"2024-05-25T16:54:18-06:00","t":"Hello World","tags":["index"],"cats":["hello world"],"d":"This is the index.md file for the whole site and root","w":438}
+{"sha":"ef16b7b225a02a71416bdadddc1aaccfb04d5e37","p":"pages/_about/about.md","ct":"2024-05-25T16:54:18-06:00","t":"About","d":"Summary info about the site","w":3541}
+{"sha":"ef16b7b225a02a71416bdadddc1aaccfb04d5e37","p":"pages/_about/contribute/contributors/bamr87/README.md","ct":"2024-05-25T16:54:18-06:00","t":"Bamr87","d":"IT Wizard, Software Architect, Tech Enthusiast.","w":466}
+{"sha":"ef16b7b225a02a71416bdadddc1aaccfb04d5e37","p":"pages/_about/profile/bamr87.md","ct":"2024-05-25T16:54:18-06:00","t":"Navigate to your current repository","d":"IT Wizard, Software Architect, Tech Enthusiast.","w":61}
+{"sha":"ef16b7b225a02a71416bdadddc1aaccfb04d5e37","p":"pages/_notebooks/html_md_doc_scrapper.md","ct":"2024-05-25T16:54:18-06:00","t":"HTML to markdown web scraping","tags":["python","web scraping","html","markdown"],"d":"A simple web scraping project to convert HTML to markdown using Python","w":4436}
+{"sha":"ef16b7b225a02a71416bdadddc1aaccfb04d5e37","p":"pages/_notebooks/jupyter-to-markdown.md","ct":"2024-05-25T16:54:18-06:00","t":"Jupyter Notebook to Markdown Converter","d":"Convert Jupyter Notebooks to Markdown","w":1057}
+{"sha":"ef16b7b225a02a71416bdadddc1aaccfb04d5e37","p":"pages/_notebooks/jupyter.md","ct":"2024-05-25T16:54:18-06:00","t":"Jupyter","d":"This is the Jupyter Notebook page","w":10}
+{"sha":"ef16b7b225a02a71416bdadddc1aaccfb04d5e37","p":"pages/_posts/2024-05-25-test.md","ct":"2024-05-25T16:54:18-06:00","t":"","w":0}
+{"sha":"ef16b7b225a02a71416bdadddc1aaccfb04d5e37","p":"posts/2022-01-05-angolia-jekyll-setup-with-github-pages.md","ct":"2024-05-25T16:54:18-06:00","t":"","w":0}
+{"sha":"78e71d05df223fe17e39f9b1f7a2d843d2c5d3e9","p":"index.md","ct":"2024-05-26T16:15:38-06:00","t":"Hello World","tags":["index"],"cats":["hello world"],"d":"This is the index.md file for the whole site and root","w":436}
+{"sha":"7da8c3cdcb2e9a6b2000ba0e04fd3a156d3b1f01","p":"pages/_posts/2000-01-01-index.md","ct":"2024-05-28T15:23:32-06:00","t":"Journey (~) Index","draft":true,"w":202}
+{"sha":"7da8c3cdcb2e9a6b2000ba0e04fd3a156d3b1f01","p":"pages/_posts/2023-03-26-chat-gpt-vs-the-impossible-triangle.md","ct":"2024-05-28T15:23:32-06:00","t":"Chat GPT vs The Impossible Triangle","tags":["article"],"cats":["posts"],"d":"Practical and impractical uses of Chat GPT in programming and graphic design through demonstration of its limitation to comprehend impossibl","draft":true,"w":1411}
+{"sha":"7da8c3cdcb2e9a6b2000ba0e04fd3a156d3b1f01","p":"pages/_posts/2024-04-25-placeholders.md","ct":"2024-05-28T15:23:32-06:00","t":"placeholders","w":79}
+{"sha":"7da8c3cdcb2e9a6b2000ba0e04fd3a156d3b1f01","p":"pages/_posts/2024-05-09-bootstrap-your-theme-and-character.md","ct":"2024-05-28T15:23:32-06:00","t":"Bootstrap your theme and character","w":0}
+{"sha":"7da8c3cdcb2e9a6b2000ba0e04fd3a156d3b1f01","p":"pages/_posts/2024-05-27-test.md","ct":"2024-05-28T15:23:32-06:00","t":"","w":1}
+{"sha":"7da8c3cdcb2e9a6b2000ba0e04fd3a156d3b1f01","p":"pages/_posts/gpt/2024-03-11-cv-analysis.md","ct":"2024-05-28T15:23:32-06:00","t":"GPT - CV Analysis","tags":["IT Consulting","Enterprise Systems","ERP Systems","Data Analytics","Project Management","CV","GPT-4"],"cats":["Finance"],"d":"An analysis of a CV and recommendations for career paths and growth.","draft":true,"w":1489}
+{"sha":"7da8c3cdcb2e9a6b2000ba0e04fd3a156d3b1f01","p":"pages/_quests/codex/glossary.md","ct":"2024-05-28T15:23:32-06:00","t":"Glossary","tags":["notes"],"cats":["notes"],"draft":true,"w":38}
+{"sha":"7da8c3cdcb2e9a6b2000ba0e04fd3a156d3b1f01","p":"pages/_quests/codex/world_map.md","ct":"2024-05-28T15:23:32-06:00","t":"World Map","w":8}
+{"sha":"7da8c3cdcb2e9a6b2000ba0e04fd3a156d3b1f01","p":"pages/_quests/frontend/frontend-docker.md","ct":"2024-05-28T15:23:32-06:00","t":"Dockering Jekyll with Bootstrap 5","d":"Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript in the Frontend Forests. This guide will navigate you thro","draft":true,"w":510}
+{"sha":"7da8c3cdcb2e9a6b2000ba0e04fd3a156d3b1f01","p":"pages/_quests/frontend/frontend-levels.md","ct":"2024-05-28T15:23:32-06:00","t":"Frontend Forests Levels","d":"This guide will navigate you through the enchanted woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create an ench","w":553}
+{"sha":"7da8c3cdcb2e9a6b2000ba0e04fd3a156d3b1f01","p":"pages/_quests/frontend/frontend.md","ct":"2024-05-28T15:23:32-06:00","t":"Frontend Forests: Building a Jekyll Site with Bootstrap","d":"Embark on a quest to build a Jekyll site using Bootstrap for CSS and JavaScript in the Frontend Forests. This guide will navigate you throug","w":491}
+{"sha":"7da8c3cdcb2e9a6b2000ba0e04fd3a156d3b1f01","p":"pages/_quests/frontend/lvl-000-frontend-docker.md","ct":"2024-05-28T15:23:32-06:00","t":"Frontend Docker - level 000","tags":["level-000","frontend","docker","macos","jekyll","bootstrap"],"d":"Verify Docker installation on macOS for building Jekyll sites with Bootstrap 5 in the Frontend Forests.","draft":true,"w":628}
+{"sha":"7da8c3cdcb2e9a6b2000ba0e04fd3a156d3b1f01","p":"pages/_quests/frontend/lvl-001-frontend-docker.md","ct":"2024-05-28T15:23:32-06:00","t":"level-001-frontend-docker","w":776}
+{"sha":"7da8c3cdcb2e9a6b2000ba0e04fd3a156d3b1f01","p":"pages/_quests/frontend/lvl-010-frontend-docker.md","ct":"2024-05-28T15:23:32-06:00","t":"level-010-frontend-docker","w":601}
+{"sha":"7da8c3cdcb2e9a6b2000ba0e04fd3a156d3b1f01","p":"pages/_quests/home.md","ct":"2024-05-28T15:23:32-06:00","t":"Overworld","cats":["home"],"w":350}
+{"sha":"7da8c3cdcb2e9a6b2000ba0e04fd3a156d3b1f01","p":"pages/_quests/init_world/2023-11-23-begin-your-it-journey.md","ct":"2024-05-28T15:23:32-06:00","t":"Begin your IT Journey","draft":true,"w":833}
+{"sha":"7da8c3cdcb2e9a6b2000ba0e04fd3a156d3b1f01","p":"pages/_quests/init_world/hello-noob.md","ct":"2024-05-28T15:23:32-06:00","t":"hello-n00b","tags":["article"],"cats":["quest","n00b"],"draft":true,"w":41}
+{"sha":"7da8c3cdcb2e9a6b2000ba0e04fd3a156d3b1f01","p":"pages/_quests/lvl_001/personal-site.md","ct":"2024-05-28T15:23:32-06:00","t":"Personal Site","tags":["Personal Site"],"w":168}
+{"sha":"7da8c3cdcb2e9a6b2000ba0e04fd3a156d3b1f01","p":"pages/_quickstart/machine-setup.md","ct":"2024-05-28T15:23:32-06:00","t":"Machine Setup","draft":true,"w":3236}
+{"sha":"7da8c3cdcb2e9a6b2000ba0e04fd3a156d3b1f01","p":"pages/home.md","ct":"2024-05-28T15:23:32-06:00","t":"Home","d":"This is an overall outline of this site, and a place to start or come back to when lost.","w":880}
+{"sha":"7da8c3cdcb2e9a6b2000ba0e04fd3a156d3b1f01","p":"pages/index.html","ct":"2024-05-28T15:23:32-06:00","t":"All posts","w":53}
+{"sha":"7da8c3cdcb2e9a6b2000ba0e04fd3a156d3b1f01","p":"roadmap.md","ct":"2024-05-28T15:23:32-06:00","t":"My Roadmap","w":100}
+{"sha":"7da8c3cdcb2e9a6b2000ba0e04fd3a156d3b1f01","p":"zer0.md","ct":"2024-05-28T15:23:32-06:00","t":"zer0","tags":["jekyll"],"cats":["bootstrap","quickstart"],"d":"zer0","w":1446}
+{"sha":"62ca431609761ecd407d38e1514f3af822eb4104","p":"zer0.md","ct":"2024-05-28T15:25:50-06:00","t":"zer0","tags":["jekyll"],"cats":["bootstrap","quickstart"],"d":"zer0","w":1448}
+{"sha":"86382f7836c797ecd3d88be2e8b9111db98be2bc","p":"zer0.md","ct":"2024-05-28T15:26:56-06:00","t":"zer0","tags":["jekyll"],"cats":["bootstrap","quickstart"],"d":"zer0","w":1450}
+{"sha":"aab2f31a45a9479858b487d20192ce53934209c7","p":"zer0.md","ct":"2024-05-28T15:29:34-06:00","t":"zer0","tags":["jekyll"],"cats":["bootstrap","quickstart"],"d":"zer0","w":1450}
+{"sha":"c4878c3d36e08fde27413a585ee5af40f4cc5fce","p":"zer0.md","ct":"2024-05-28T15:33:48-06:00","t":"zer0","tags":["jekyll"],"cats":["bootstrap","quickstart"],"d":"zer0","w":1450}
+{"sha":"9a84ce5128e58af9d061ae5803fd2d19b65c92ed","p":"zer0.md","ct":"2024-05-28T15:34:37-06:00","t":"zer0","tags":["jekyll"],"cats":["bootstrap","quickstart"],"d":"zer0","w":1450}
+{"sha":"971f66b88fa80e3c637846699419e4c007770719","p":"pages/_quests/home.md","ct":"2024-05-28T15:35:00-06:00","t":"Overworld","cats":["home"],"w":351}
+{"sha":"05a93476979f0d8c670e014b54d0f3e0f6164dec","p":"zer0.md","ct":"2024-05-28T21:22:33-06:00","t":"zer0","tags":["jekyll","bootstrap5","javascript","docker"],"cats":["bootstrap","quickstart"],"d":"zer0","w":1450}
+{"sha":"27ef1f134ede49379ca662d746c5635257e85ccf","p":"pages/_about/features/index.md","ct":"2024-05-29T10:39:06-06:00","t":"Features (~) Index","w":390}
+{"sha":"27ef1f134ede49379ca662d746c5635257e85ccf","p":"pages/_posts/2024-05-28-auto-increment-frontmatter-version.md","ct":"2024-05-29T10:39:06-06:00","t":"Auto Increment Frontmatter Version","tags":["git"],"d":"How to automatically increment the version number in the frontmatter of a markdown file after every commit.","draft":true,"w":1854}
+{"sha":"27ef1f134ede49379ca662d746c5635257e85ccf","p":"pages/_quests/lvl_000/2024-05-28-bash-run.md","ct":"2024-05-29T10:39:06-06:00","t":"bashrun and Beyond: Building an Advanced Terminal Game","tags":["bash","terminal","game-development","shell-scripting"],"cats":["bashrun","quests","lvl_000"],"d":"Starting with bashrun as a base and building upon it is a great way to create an advanced terminal-based game. bashrun is typically built us","draft":true,"w":753}
+{"sha":"27ef1f134ede49379ca662d746c5635257e85ccf","p":"zer0.md","ct":"2024-05-29T10:39:06-06:00","t":"zer0","tags":["jekyll","bootstrap5","javascript","docker"],"cats":["bootstrap","quickstart"],"d":"zer0","w":1385}
+{"sha":"5efa5579dd21e1f60ecf7e8c415086611f7ce62a","p":"pages/_about/features/index.md","ct":"2024-05-29T12:39:14-06:00","t":"Features (~) Index","w":418}
+{"sha":"c5d3fa8ab59a1d26bd9771c0959e2438418860f1","p":"pages/_about/features/index.md","ct":"2024-05-29T12:54:22-06:00","t":"Features (~) Index","w":406}
+{"sha":"c0428721fac2720741603cc9e676249cabd47ba1","p":"pages/_about/features/index.md","ct":"2024-05-29T17:33:19+00:00","t":"Features (~) Index","w":412}
+{"sha":"00c80bb5b0e5c2d04dc86400540025a659d6b67e","p":"pages/_about/features/index.md","ct":"2024-05-29T17:43:44+00:00","t":"Features (~) Index","w":499}
+{"sha":"29a5708333395163eac40cd9997c5df1032e4b56","p":"pages/_about/features/index.md","ct":"2024-05-29T17:49:53+00:00","t":"Features (~) Index","w":512}
+{"sha":"be249721c47f035a29a0f55c9eefbaeafd9a8a3f","p":"pages/_about/features/index.md","ct":"2024-05-29T18:31:10+00:00","t":"Features (~) Index","w":527}
+{"sha":"986cf2d765edb97f7a9bc519b24b4e6ceaeb06f3","p":"pages/_about/features/index.md","ct":"2024-05-29T18:52:00+00:00","t":"Features (~) Index","w":434}
+{"sha":"f3eef9ea90b98bffb667becbec4514424c58872c","p":"pages/_about/features/index.md","ct":"2024-05-29T18:55:51+00:00","t":"Features (~) Index","w":422}
+{"sha":"4f5f852f5f9454f8a5224a8480ac20e33218ca3f","p":"pages/_about/features/index.md","ct":"2024-05-29T19:00:47+00:00","t":"Features (~) Index","w":435}
+{"sha":"41be846a9c7f636a71617d763878124f71833747","p":"pages/_about/features/index.md","ct":"2024-05-30T16:42:35-06:00","t":"Features (~) Index","d":"A list of features that are currently implemented and requested for the site.","w":439}
+{"sha":"41be846a9c7f636a71617d763878124f71833747","p":"pages/_quickstart/machine-setup.md","ct":"2024-05-30T16:42:35-06:00","t":"Machine Setup","d":"A guide to setting up your machine for Jekyll development.","draft":true,"w":3236}

@@ -1,0 +1,472 @@
+{
+ "schema": "chronicle-frames/v1",
+ "renderer": "source-render/v1",
+ "head": "c3c52a7c9a59f1a81d5ad5ba0a8a1314e6656b64",
+ "pages": [
+  {
+   "key": "readme-md",
+   "path": "README.md",
+   "role": "home page",
+   "versions": 142,
+   "frames": [
+    {
+     "sha": "7f8bff5143487134aa9d3bdebdeb2014329e67a2",
+     "date": "2024-06-05",
+     "path": "README.md",
+     "image": "readme-md/2024-06-05-7f8bff5143.webp"
+    },
+    {
+     "sha": "4ff71bca8910d5b621094ca719b4bd28124dbe99",
+     "date": "2025-03-06",
+     "path": "README.md",
+     "image": "readme-md/2025-03-06-4ff71bca89.webp"
+    },
+    {
+     "sha": "5fa104df15a3bf4707e0d8970064baae6789fac9",
+     "date": "2025-09-21",
+     "path": "README.md",
+     "image": "readme-md/2025-09-21-5fa104df15.webp"
+    },
+    {
+     "sha": "4491aadd53ecd3b8e19ed11f6110d808907a561e",
+     "date": "2025-11-16",
+     "path": "README.md",
+     "image": "readme-md/2025-11-16-4491aadd53.webp"
+    },
+    {
+     "sha": "004cc8d15aabc33036244155b60e150535442dd6",
+     "date": "2025-11-29",
+     "path": "README.md",
+     "image": "readme-md/2025-11-29-004cc8d15a.webp"
+    },
+    {
+     "sha": "4d1c28cfdd5754b24fe2094e4ab2090566fbb09c",
+     "date": "2026-01-25",
+     "path": "README.md",
+     "image": "readme-md/2026-01-25-4d1c28cfdd.webp"
+    },
+    {
+     "sha": "180e2dc853ae597af359cfccd9906eced53ca346",
+     "date": "2026-04-02",
+     "path": "README.md",
+     "image": "readme-md/2026-04-02-180e2dc853.webp"
+    },
+    {
+     "sha": "b051601ab0eda9106647343b2fee9c21bcbd5aeb",
+     "date": "2026-04-10",
+     "path": "README.md",
+     "image": "readme-md/2026-04-10-b051601ab0.webp"
+    },
+    {
+     "sha": "9bf2b980a37fcfc6286b0c98dc7e5100859ede94",
+     "date": "2026-04-18",
+     "path": "README.md",
+     "image": "readme-md/2026-04-18-9bf2b980a3.webp"
+    },
+    {
+     "sha": "4bd3e36866ac094f5d6a19bd51cd11e453b06ace",
+     "date": "2026-04-21",
+     "path": "README.md",
+     "image": "readme-md/2026-04-21-4bd3e36866.webp"
+    },
+    {
+     "sha": "588428f673ffe593e2343dc2a1425610c2129509",
+     "date": "2026-04-29",
+     "path": "README.md",
+     "image": "readme-md/2026-04-29-588428f673.webp"
+    },
+    {
+     "sha": "d5afc1d5105737199d6110c482a5def664771ba0",
+     "date": "2026-05-24",
+     "path": "README.md",
+     "image": "readme-md/2026-05-24-d5afc1d510.webp"
+    },
+    {
+     "sha": "6e73c5fc13dfe1c8334ddb7cd6967f35e9c42f43",
+     "date": "2026-05-28",
+     "path": "README.md",
+     "image": "readme-md/2026-05-28-6e73c5fc13.webp"
+    },
+    {
+     "sha": "309202f297c2f1777e88cee6ba3768cc79c87d93",
+     "date": "2026-05-31",
+     "path": "README.md",
+     "image": "readme-md/2026-05-31-309202f297.webp"
+    },
+    {
+     "sha": "846bd9ff4ad2b8e05cb9c66d15e73bcddeec16c3",
+     "date": "2026-06-10",
+     "path": "README.md",
+     "image": "readme-md/2026-06-10-846bd9ff4a.webp"
+    },
+    {
+     "sha": "4b598a1a8e82d5d830f96d50e054f9bec04b130a",
+     "date": "2026-06-12",
+     "path": "README.md",
+     "image": "readme-md/2026-06-12-4b598a1a8e.webp"
+    },
+    {
+     "sha": "3960f65b1af4c750216deda0d032a309b0f93b78",
+     "date": "2026-06-16",
+     "path": "README.md",
+     "image": "readme-md/2026-06-16-3960f65b1a.webp"
+    },
+    {
+     "sha": "6903497acd2eb07b0de87a14722d3168a1104dbb",
+     "date": "2026-11-19",
+     "path": "README.md",
+     "image": "readme-md/2026-11-19-6903497acd.webp"
+    }
+   ]
+  },
+  {
+   "key": "docs-architecture-ui-components-md",
+   "path": "docs/architecture/ui-components.md",
+   "role": "most-revised page (26 mainline changes)",
+   "versions": 26,
+   "frames": [
+    {
+     "sha": "b37cbfeddfdcfc950e5de844eb10457c4522fce4",
+     "date": "2026-06-17",
+     "path": "docs/architecture/ui-components.md",
+     "image": "docs-architecture-ui-components-md/2026-06-17-b37cbfeddf.webp"
+    },
+    {
+     "sha": "104285fbed2d27646549c9aa956dea5108d91f77",
+     "date": "2026-07-01",
+     "path": "docs/architecture/ui-components.md",
+     "image": "docs-architecture-ui-components-md/2026-07-01-104285fbed.webp"
+    },
+    {
+     "sha": "485a94f1defbb6208802862d5b2b1be122fc8a17",
+     "date": "2026-07-04",
+     "path": "docs/architecture/ui-components.md",
+     "image": "docs-architecture-ui-components-md/2026-07-04-485a94f1de.webp"
+    },
+    {
+     "sha": "be0862617f328ad992a262c2b240bb5d9deb7771",
+     "date": "2026-07-06",
+     "path": "docs/architecture/ui-components.md",
+     "image": "docs-architecture-ui-components-md/2026-07-06-be0862617f.webp"
+    },
+    {
+     "sha": "fd7a2ce256e32d2f630bd82732227b54ba13d3dd",
+     "date": "2026-07-08",
+     "path": "docs/architecture/ui-components.md",
+     "image": "docs-architecture-ui-components-md/2026-07-08-fd7a2ce256.webp"
+    },
+    {
+     "sha": "b00dd7674c7e2cbf16d8b20c31f8fd9c78a33d12",
+     "date": "2026-07-16",
+     "path": "docs/architecture/ui-components.md",
+     "image": "docs-architecture-ui-components-md/2026-07-16-b00dd7674c.webp"
+    },
+    {
+     "sha": "73bdc5547350c448e1617ec6cf5b9f49b10d65fb",
+     "date": "2026-09-01",
+     "path": "docs/architecture/ui-components.md",
+     "image": "docs-architecture-ui-components-md/2026-09-01-73bdc55473.webp"
+    },
+    {
+     "sha": "f9041b98b8a267be59f560724821fd941090f52d",
+     "date": "2026-09-01",
+     "path": "docs/architecture/ui-components.md",
+     "image": "docs-architecture-ui-components-md/2026-09-01-f9041b98b8.webp"
+    },
+    {
+     "sha": "96776fa48bbe7b63058d1d246962019c745d7b93",
+     "date": "2026-09-05",
+     "path": "docs/architecture/ui-components.md",
+     "image": "docs-architecture-ui-components-md/2026-09-05-96776fa48b.webp"
+    },
+    {
+     "sha": "8fe640b9ae53c8417fdeeb0b893580d9415eaa68",
+     "date": "2026-09-06",
+     "path": "docs/architecture/ui-components.md",
+     "image": "docs-architecture-ui-components-md/2026-09-06-8fe640b9ae.webp"
+    },
+    {
+     "sha": "4fda7ab63a31c3614df30a13d38453568a7d5ff5",
+     "date": "2026-10-12",
+     "path": "docs/architecture/ui-components.md",
+     "image": "docs-architecture-ui-components-md/2026-10-12-4fda7ab63a.webp"
+    },
+    {
+     "sha": "2a60e7328709f9902721fb83f7d2923d0c3f204a",
+     "date": "2026-10-17",
+     "path": "docs/architecture/ui-components.md",
+     "image": "docs-architecture-ui-components-md/2026-10-17-2a60e73287.webp"
+    },
+    {
+     "sha": "35eb01ec4f1571852540c356a7bd71d20336a976",
+     "date": "2026-11-02",
+     "path": "docs/architecture/ui-components.md",
+     "image": "docs-architecture-ui-components-md/2026-11-02-35eb01ec4f.webp"
+    },
+    {
+     "sha": "cb9b313c6f1b096520113e45528a092eba0e3cf2",
+     "date": "2026-11-18",
+     "path": "docs/architecture/ui-components.md",
+     "image": "docs-architecture-ui-components-md/2026-11-18-cb9b313c6f.webp"
+    },
+    {
+     "sha": "9d50a02098fccc80b2439a5c78e5cb66981aa119",
+     "date": "2026-11-18",
+     "path": "docs/architecture/ui-components.md",
+     "image": "docs-architecture-ui-components-md/2026-11-18-9d50a02098.webp"
+    },
+    {
+     "sha": "646e0bac1b400e19180f861323cbe3598908ae39",
+     "date": "2026-11-18",
+     "path": "docs/architecture/ui-components.md",
+     "image": "docs-architecture-ui-components-md/2026-11-18-646e0bac1b.webp"
+    },
+    {
+     "sha": "be36ff8521eb62770f713f22de767024904606c5",
+     "date": "2026-11-18",
+     "path": "docs/architecture/ui-components.md",
+     "image": "docs-architecture-ui-components-md/2026-11-18-be36ff8521.webp"
+    },
+    {
+     "sha": "ad06c2cd41a0d815ce2d26d1e6b45e275bcdb3c4",
+     "date": "2026-11-19",
+     "path": "docs/architecture/ui-components.md",
+     "image": "docs-architecture-ui-components-md/2026-11-19-ad06c2cd41.webp"
+    }
+   ]
+  },
+  {
+   "key": "pages-quickstart-index-md",
+   "path": "pages/_quickstart/index.md",
+   "role": "most-revised page (21 mainline changes)",
+   "versions": 21,
+   "frames": [
+    {
+     "sha": "4ff71bca8910d5b621094ca719b4bd28124dbe99",
+     "date": "2025-03-06",
+     "path": "pages/_quickstart/index.md",
+     "image": "pages-quickstart-index-md/2025-03-06-4ff71bca89.webp"
+    },
+    {
+     "sha": "44ee3fdb5644213eed600beb93569befdbcc7a3a",
+     "date": "2025-09-03",
+     "path": "pages/_quickstart/index.md",
+     "image": "pages-quickstart-index-md/2025-09-03-44ee3fdb56.webp"
+    },
+    {
+     "sha": "5fa104df15a3bf4707e0d8970064baae6789fac9",
+     "date": "2025-09-21",
+     "path": "pages/_quickstart/index.md",
+     "image": "pages-quickstart-index-md/2025-09-21-5fa104df15.webp"
+    },
+    {
+     "sha": "1053ba3c6ef47d88789766e2bd39f6490ab198ab",
+     "date": "2025-11-29",
+     "path": "pages/_quickstart/index.md",
+     "image": "pages-quickstart-index-md/2025-11-29-1053ba3c6e.webp"
+    },
+    {
+     "sha": "e1342ab9be2bccd2814764e72862d6a01684b28a",
+     "date": "2025-12-18",
+     "path": "pages/_quickstart/index.md",
+     "image": "pages-quickstart-index-md/2025-12-18-e1342ab9be.webp"
+    },
+    {
+     "sha": "5d7e2a558471ba6c14108d4887b52807613810f5",
+     "date": "2025-12-19",
+     "path": "pages/_quickstart/index.md",
+     "image": "pages-quickstart-index-md/2025-12-19-5d7e2a5584.webp"
+    },
+    {
+     "sha": "f6060968c794c2b0ce338478b65d596d207546f1",
+     "date": "2025-12-19",
+     "path": "pages/_quickstart/index.md",
+     "image": "pages-quickstart-index-md/2025-12-19-f6060968c7.webp"
+    },
+    {
+     "sha": "36767cde28a785fc0e163249d6a0c166facd4e13",
+     "date": "2025-12-19",
+     "path": "pages/_quickstart/index.md",
+     "image": "pages-quickstart-index-md/2025-12-19-36767cde28.webp"
+    },
+    {
+     "sha": "921c5c5baf9c19f95511383f0c6bae8902dcb804",
+     "date": "2025-12-19",
+     "path": "pages/_quickstart/index.md",
+     "image": "pages-quickstart-index-md/2025-12-19-921c5c5baf.webp"
+    },
+    {
+     "sha": "ac141b473cfef22c9cbb2689294bf86cd7f13898",
+     "date": "2025-12-20",
+     "path": "pages/_quickstart/index.md",
+     "image": "pages-quickstart-index-md/2025-12-20-ac141b473c.webp"
+    },
+    {
+     "sha": "226b0a5eb9b3bb9ec84a76c3cefadee8665fe5be",
+     "date": "2026-01-15",
+     "path": "pages/_quickstart/index.md",
+     "image": "pages-quickstart-index-md/2026-01-15-226b0a5eb9.webp"
+    },
+    {
+     "sha": "3c96620c36025ca1717addd63cc5b7f762de729d",
+     "date": "2026-03-29",
+     "path": "pages/_quickstart/index.md",
+     "image": "pages-quickstart-index-md/2026-03-29-3c96620c36.webp"
+    },
+    {
+     "sha": "10ba722cf2495e2657d864f877422332ee8e8564",
+     "date": "2026-04-18",
+     "path": "pages/_quickstart/index.md",
+     "image": "pages-quickstart-index-md/2026-04-18-10ba722cf2.webp"
+    },
+    {
+     "sha": "02d029549264106901242dfc470cea63a23fc0b3",
+     "date": "2026-04-18",
+     "path": "pages/_quickstart/index.md",
+     "image": "pages-quickstart-index-md/2026-04-18-02d0295492.webp"
+    },
+    {
+     "sha": "8469d97536c448fa745457be86fb128046ff60ba",
+     "date": "2026-05-30",
+     "path": "pages/_quickstart/index.md",
+     "image": "pages-quickstart-index-md/2026-05-30-8469d97536.webp"
+    },
+    {
+     "sha": "c78433f1d2564407ca95171b58bf4d1b0ee2079c",
+     "date": "2026-06-12",
+     "path": "pages/_quickstart/index.md",
+     "image": "pages-quickstart-index-md/2026-06-12-c78433f1d2.webp"
+    },
+    {
+     "sha": "ae7ea22218dade88dccf22da8a7cbbea1c78cd79",
+     "date": "2026-06-15",
+     "path": "pages/_quickstart/index.md",
+     "image": "pages-quickstart-index-md/2026-06-15-ae7ea22218.webp"
+    },
+    {
+     "sha": "8fe640b9ae53c8417fdeeb0b893580d9415eaa68",
+     "date": "2026-09-06",
+     "path": "pages/_quickstart/index.md",
+     "image": "pages-quickstart-index-md/2026-09-06-8fe640b9ae.webp"
+    }
+   ]
+  },
+  {
+   "key": "features-readme-md",
+   "path": "features/README.md",
+   "role": "most-revised page (18 mainline changes)",
+   "versions": 18,
+   "frames": [
+    {
+     "sha": "2a0057e7076d58089b40d09a2912bd5867f7ccb8",
+     "date": "2025-12-20",
+     "path": "features/README.md",
+     "image": "features-readme-md/2025-12-20-2a0057e707.webp"
+    },
+    {
+     "sha": "6651b38a4fa6225103f819c82b05a875980bdc50",
+     "date": "2026-05-18",
+     "path": "features/README.md",
+     "image": "features-readme-md/2026-05-18-6651b38a4f.webp"
+    },
+    {
+     "sha": "a2ec16c4ceb08faaaa4a56d5a06309a8f3af3319",
+     "date": "2026-06-15",
+     "path": "features/README.md",
+     "image": "features-readme-md/2026-06-15-a2ec16c4ce.webp"
+    },
+    {
+     "sha": "3960f65b1af4c750216deda0d032a309b0f93b78",
+     "date": "2026-06-16",
+     "path": "features/README.md",
+     "image": "features-readme-md/2026-06-16-3960f65b1a.webp"
+    },
+    {
+     "sha": "120ea2f23d592487e0c55e4a8eaffc613658430b",
+     "date": "2026-06-30",
+     "path": "features/README.md",
+     "image": "features-readme-md/2026-06-30-120ea2f23d.webp"
+    },
+    {
+     "sha": "6d7fa5e028a540576205462cb37797f6ee11c98a",
+     "date": "2026-07-02",
+     "path": "features/README.md",
+     "image": "features-readme-md/2026-07-02-6d7fa5e028.webp"
+    },
+    {
+     "sha": "72b2ab6980742e26305a22e3aff535f465ade084",
+     "date": "2026-07-17",
+     "path": "features/README.md",
+     "image": "features-readme-md/2026-07-17-72b2ab6980.webp"
+    },
+    {
+     "sha": "fe8aacc234003f9f170fcb3b8b29c60ac18ed94b",
+     "date": "2026-07-22",
+     "path": "features/README.md",
+     "image": "features-readme-md/2026-07-22-fe8aacc234.webp"
+    },
+    {
+     "sha": "e059d1afdc95073c5ce5bf9d1516b362979ad402",
+     "date": "2026-07-22",
+     "path": "features/README.md",
+     "image": "features-readme-md/2026-07-22-e059d1afdc.webp"
+    },
+    {
+     "sha": "3b497417564b4c5e3d71eaa113cb136d2cdaf15c",
+     "date": "2026-08-14",
+     "path": "features/README.md",
+     "image": "features-readme-md/2026-08-14-3b49741756.webp"
+    },
+    {
+     "sha": "6cf73cdf2cca9ec02394b6ae1ba7e39c19969134",
+     "date": "2026-08-14",
+     "path": "features/README.md",
+     "image": "features-readme-md/2026-08-14-6cf73cdf2c.webp"
+    },
+    {
+     "sha": "e488c4c3101da78e98eecbf8299ce7c8705ed281",
+     "date": "2026-08-23",
+     "path": "features/README.md",
+     "image": "features-readme-md/2026-08-23-e488c4c310.webp"
+    },
+    {
+     "sha": "bb8eefa2beea0104fec28d173a1e57f369acada8",
+     "date": "2026-08-23",
+     "path": "features/README.md",
+     "image": "features-readme-md/2026-08-23-bb8eefa2be.webp"
+    },
+    {
+     "sha": "a377fae6ea31a0bb015479dea6d1a7c41e141c3f",
+     "date": "2026-09-05",
+     "path": "features/README.md",
+     "image": "features-readme-md/2026-09-05-a377fae6ea.webp"
+    },
+    {
+     "sha": "8fe640b9ae53c8417fdeeb0b893580d9415eaa68",
+     "date": "2026-09-06",
+     "path": "features/README.md",
+     "image": "features-readme-md/2026-09-06-8fe640b9ae.webp"
+    },
+    {
+     "sha": "e1c57531fc23be8d071757cd1941e1ae15285da7",
+     "date": "2026-09-08",
+     "path": "features/README.md",
+     "image": "features-readme-md/2026-09-08-e1c57531fc.webp"
+    },
+    {
+     "sha": "397834bb08921363ed49662fb7bdc283b21c1d39",
+     "date": "2026-10-16",
+     "path": "features/README.md",
+     "image": "features-readme-md/2026-10-16-397834bb08.webp"
+    },
+    {
+     "sha": "8817fbe84e7d643668a689a941018319e38c549a",
+     "date": "2026-10-24",
+     "path": "features/README.md",
+     "image": "features-readme-md/2026-10-24-8817fbe84e.webp"
+    }
+   ]
+  }
+ ],
+ "at": "2026-11-21T18:25:38+00:00"
+}

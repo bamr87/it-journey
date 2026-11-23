@@ -1,0 +1,17 @@
+{"sha":"0c19d10cae93e7e604e3ecd4e94efd8ba690eceb","p":"_quickstart/mac-setup.md","ct":"2022-07-10T11:31:54-06:00","t":"Mac Setup","cats":["machine-setup"],"w":830}
+{"sha":"452285d83de780bd95140d5c821dee7651177443","p":"_notes/bash.md","ct":"2022-07-24T10:58:51-06:00","t":"Bash cheatsheet","tags":["shell","script","linux","bash"],"d":"BASH cheatsheet","w":1714}
+{"sha":"452285d83de780bd95140d5c821dee7651177443","p":"_notes/index.md","ct":"2022-07-24T10:58:51-06:00","t":"Notes Index","d":"Notes Index","w":510}
+{"sha":"452285d83de780bd95140d5c821dee7651177443","p":"_posts/2022-06-19-webflow-to-github-pages-migration.md","ct":"2022-07-24T10:58:51-06:00","t":"Webflow to Github Pages - Migration","tags":["article","webflow","migration","github pages"],"cats":["posts","github"],"d":"How-to article on how to migrate from Webflow to Github Pages using a custom domain","w":3}
+{"sha":"452285d83de780bd95140d5c821dee7651177443","p":"_posts/2022-07-16-zer0-mistakes.md","ct":"2022-07-24T10:58:51-06:00","t":"zer0-mistakes","tags":["article"],"cats":["posts"],"draft":true,"w":279}
+{"sha":"099af15865d991d97033c83b6bb725dc65d474b2","p":"_posts/2022-07-16-zer0-mistakes.md","ct":"2022-07-24T17:34:00-06:00","t":"zer0-mistakes","tags":["article"],"cats":["posts"],"draft":true,"w":518}
+{"sha":"099af15865d991d97033c83b6bb725dc65d474b2","p":"home.md","ct":"2022-07-24T17:34:00-06:00","t":"it-journey.home (~)","w":799}
+{"sha":"7911013d2aae65fd46bebea038e7f63cb74c8bfc","p":"home.md","ct":"2022-07-24T17:44:10-06:00","t":"it-journey.home (~)","w":799}
+{"sha":"c43582a260ffcacc065f11af38037a1719b38038","p":"home.md","ct":"2022-07-24T18:10:47-06:00","t":"it-journey.home (~)","w":799}
+{"sha":"464e01b7f56f84b125cf501aeca354fd4e4a631e","p":"_notes/bootstrap-examples.md","ct":"2022-07-25T21:51:47-06:00","t":"Cheatsheet","w":2133}
+{"sha":"464e01b7f56f84b125cf501aeca354fd4e4a631e","p":"_posts/2022-07-16-zer0-mistakes.md","ct":"2022-07-25T21:51:47-06:00","t":"zer0-mistakes","tags":["article","how-to","jekyll","github","bash"],"cats":["posts"],"d":"Building a site with zero mistakes","draft":true,"w":554}
+{"sha":"464e01b7f56f84b125cf501aeca354fd4e4a631e","p":"_posts/2022-07-24-zer0-mistakes-bootstrap.md","ct":"2022-07-25T21:51:47-06:00","t":"zer0-mistakes-bootstrap","tags":["article"],"cats":["posts"],"draft":true,"w":0}
+{"sha":"e65e21128d447d81a4575581b30424efcf96aa69","p":"_hobbies/2022-02-26-psx.md","ct":"2022-07-25T23:08:07-06:00","t":"PSX","tags":["article"],"cats":["posts"],"draft":true,"w":47}
+{"sha":"0d44ced405bc4fe297561a381a7aac4cc5a797dc","p":"_hobbies/2022-02-26-psx.md","ct":"2022-07-26T10:57:33-06:00","t":"PSX","tags":["article"],"cats":["posts"],"draft":true,"w":47}
+{"sha":"e9d0d576c9e825836cfc46e302afec5ba4d68848","p":"_hobbies/2022-02-26-psx.md","ct":"2022-07-26T11:03:19-06:00","t":"PSX","tags":["article"],"cats":["posts"],"draft":true,"w":47}
+{"sha":"e9d0d576c9e825836cfc46e302afec5ba4d68848","p":"_posts/2022-07-16-zer0-mistakes.md","ct":"2022-07-26T11:03:19-06:00","t":"zer0-mistakes","tags":["article","how-to","jekyll","github","bash"],"cats":["posts"],"d":"Building a site with zero mistakes","draft":true,"w":553}
+{"sha":"e9d0d576c9e825836cfc46e302afec5ba4d68848","p":"_posts/2022-07-24-zer0-mistakes-bootstrap.md","ct":"2022-07-26T11:03:19-06:00","t":"zer0-mistakes-bootstrap","tags":["article"],"cats":["posts"],"draft":true,"w":0}

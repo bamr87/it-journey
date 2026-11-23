@@ -8,3 +8,9 @@
 python3 scripts/digs/candidates.py ../../_data/projects.yml
 python3 scripts/digs/validate_dig.py pages/_digs/2020-07-30-first-steps.md
 ```
+
+[`chronicle/`](chronicle/README.md) reads a repository's whole history once, files every commit in a ledger under `docs/git-archaeology/chronicle/`, and builds a time-lapse presentation of its growth, eras and lessons.
+
+```bash
+python3 scripts/digs/chronicle/chronicle.py run --repo ../zer0-mistakes
+```
