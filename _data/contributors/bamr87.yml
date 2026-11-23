@@ -4,7 +4,7 @@
 # Fields under `stats`, `achievements`, and `level` are auto-generated
 # by the contributor stats generator and overwritten on each CI run.
 #
-# Generated at: 2026-11-16T05:01:25+0000
+# Generated at: 2026-11-23T05:01:49+0000
 
 ---
 profile:
@@ -28,27 +28,27 @@ profile:
   - centurion
   - quest_forger
 stats:
-  total_commits: 818
-  total_prs_merged: 150
+  total_commits: 851
+  total_prs_merged: 174
   total_quests_authored: 3
   total_posts_authored: 0
-  lines_added: 844472
-  lines_removed: 559031
+  lines_added: 852543
+  lines_removed: 563545
   first_contribution_date: '2021-03-13'
-  latest_contribution_date: '2026-11-11'
-  active_days: 322
+  latest_contribution_date: '2026-11-20'
+  active_days: 328
   streak_days: 0
   top_languages:
   - name: md
-    count: 9298
+    count: 9352
   - name: png
-    count: 833
+    count: 844
   - name: html
     count: 429
   - name: webp
-    count: 352
+    count: 362
   - name: sh
-    count: 222
+    count: 223
   top_categories:
   - name: quests
     count: 1
@@ -61,7 +61,6 @@ stats:
   - name: Medium
     count: 1
   contribution_calendar:
-  - 11
   - 10
   - 6
   - 6
@@ -111,8 +110,9 @@ stats:
   - 12
   - 4
   - 15
-  - 2
   - 3
+  - 24
+  - 11
 achievements:
 - id: first_blood
   name: First Blood
@@ -160,8 +160,8 @@ achievements:
   description: 7-day commit streak
   earned_date: '2026-06-28'
 level:
-  xp: 16280
+  xp: 17810
   current_level: '0111'
   tier: Adventurer
-  xp_to_next_level: 9320
-  progress_percent: 27
+  xp_to_next_level: 7790
+  progress_percent: 39
