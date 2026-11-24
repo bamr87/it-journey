@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.0](https://github.com/bamr87/it-journey/compare/v0.4.0...v0.5.0) (2026-11-23)
+
+
+### Added
+
+* **digs:** add the library time-lapse of articles, topics and paths ([1947b8a](https://github.com/bamr87/it-journey/commit/1947b8ae76e554af992271654debdcaf48cb3d63))
+* **digs:** add the repository chronicle ([46384b4](https://github.com/bamr87/it-journey/commit/46384b413084f714b1d93232180e9f9a44f5ff20))
+* **digs:** add the repository chronicle, a time-lapse of any repo's Git history ([ca65ce1](https://github.com/bamr87/it-journey/commit/ca65ce1d232d24db33552f7b1b42b0c667f2370f))
+
+
+### Documentation
+
+* **archaeology:** file IT-Journey's article versions and topics ([0df851a](https://github.com/bamr87/it-journey/commit/0df851ae36ddb92d4ef9bc4a5569e37710265ea8))
+* **archaeology:** file the chronicle ledgers for it-journey and zer0-mistakes ([a3c7e9e](https://github.com/bamr87/it-journey/commit/a3c7e9e81845dc3adb4c16c6b64e55348e45cb5a))
+* **notes:** add the /posts/ timeline to the chronicle draft ([7a6c07e](https://github.com/bamr87/it-journey/commit/7a6c07e0daf9dd9c24a816a764f8682872da20c0))
+* **notes:** add the library time-lapse to the chronicle draft ([d74af35](https://github.com/bamr87/it-journey/commit/d74af35cb72a2c95973eeb823497bf289903ebdd))
+* **notes:** draft a note on building the repository chronicle ([6437c51](https://github.com/bamr87/it-journey/commit/6437c5140ce0608079d21f43b1a6bbb5aee428c3))
+* **reference:** regenerate the workflow reference ([4341b38](https://github.com/bamr87/it-journey/commit/4341b38e1b253d5b5bc5bf3cf0f35c3ffbcededb))
+
 ## [0.4.0](https://github.com/bamr87/it-journey/compare/v0.3.1...v0.4.0) (2026-11-18)
 
 
