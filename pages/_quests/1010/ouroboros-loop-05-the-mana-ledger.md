@@ -1,6 +1,6 @@
 ---
 title: 'The Mana Ledger: Budgets, Windows, and Coverage'
-description: 'Teach your loop to survive its own appetite: mana budgets sized to real rate limits, date-rotated windows that sweep big sets a few items a day, cross-run coverage that certifies only a complete sweep, and a Watchtower digest to scry it all.'
+description: 'Teach your loop to survive its own appetite: budgets sized to real rate limits, date-rotated windows, coverage that certifies only full sweeps, and a digest'
 date: '2026-07-06T00:00:00.000Z'
 lastmod: '2026-07-06T00:00:00.000Z'
 level: '1010'

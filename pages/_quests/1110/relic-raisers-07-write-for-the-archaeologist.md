@@ -1,6 +1,6 @@
 ---
-title: 'Write for the Archaeologist: Leave the Lore Where the Next One Digs'
-description: 'Close the campaign by making the revived system legible to whoever comes next: a map, a runbook, decision records for every choice you made, a roadmap that says what stays and what changes, and one script that runs every gate.'
+title: 'Write for the Archaeologist: Leave Lore for the Next Dig'
+description: 'Make the revived system legible to whoever comes next: a map, a runbook, decision records, a keep-or-change roadmap, and one script that runs every gate'
 excerpt: The capstone — a map, a runbook, ADRs for your own decisions, a keep-the-idea roadmap, and verify.sh, so the system you revived never becomes an unreadable relic.
 date: '2026-09-14T00:00:00.000Z'
 lastmod: '2026-09-14T00:00:00.000Z'

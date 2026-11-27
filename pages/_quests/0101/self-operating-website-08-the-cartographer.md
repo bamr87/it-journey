@@ -1,6 +1,6 @@
 ---
 title: 'The Cartographer: File Platform Bugs Upstream'
-description: 'Keep the product thin: tell a product bug from a platform bug, and file the platform one upstream as a maintainer-ready issue instead of patching around it in your own repo.'
+description: 'Keep the product thin: tell a product bug from a platform bug, and file the platform one upstream as a maintainer-ready issue instead of patching around it'
 date: '2026-06-28T00:00:00.000Z'
 lastmod: '2026-06-28T00:00:00.000Z'
 level: '0101'

@@ -1,6 +1,6 @@
 ---
-title: 'The Rosetta Ledger: Translate the Relic and Prove It Ties Out'
-description: 'Have a familiar port the COBOL relic to Python, then build the reconciliation that judges it: the first port is fluent and wrong three ways, and only a ledger that ties out line for line — not the prose — breaks the Plausible Ghost.'
+title: 'The Rosetta Ledger: Translate the Relic, Prove It Ties Out'
+description: 'Have a familiar port the COBOL relic to Python, then build the reconciliation that judges it: only a ledger that ties out line by line beats the Plausible Ghost'
 excerpt: The boss chapter. A familiar ports the relic; a reconciliation ledger finds three ghosts in the port; the port is fixed until every line ties out.
 date: '2026-09-14T00:00:00.000Z'
 lastmod: '2026-09-14T00:00:00.000Z'

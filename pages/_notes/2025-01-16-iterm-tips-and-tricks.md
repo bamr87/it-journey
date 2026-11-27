@@ -22,15 +22,18 @@ author: Amr
 keywords:
 - tips
 - iTerm
+- iterm2 keybindings
+- escape sequences
+- macos terminal
 lastmod: '2025-01-17T02:11:14.000Z'
 attachments: ''
-draft: draft
+draft: false
 ---
 **How to Customize iTerm2 for Efficiency: Keybindings to Delete Words and Navigate Text**
 
 **iTerm2**, a scriptable terminal emulator for macOS, lets you remap keys, set escape sequences, and define custom actions that speed up your work in the terminal. In this guide, we'll walk through setting up keybindings to delete words and navigate text efficiently, and explore the benefits of mastering such customizations.
 
-**Why Customize Your Terminal?**
+## Why Customize Your Terminal?
 
 Customizing keybindings in iTerm2 offers several benefits:
 
@@ -42,9 +45,9 @@ Customizing keybindings in iTerm2 offers several benefits:
 
 4. **Cross-Environment Skills**: Customizing iTerm2 mirrors techniques used in Linux and Unix-like systems, enhancing your flexibility across platforms.
 
-**Setting Up Keybindings in iTerm2**
+## Setting Up Keybindings in iTerm2
 
-**1\. Delete the Word Before the Cursor**
+### 1. Delete the Word Before the Cursor
 
 To delete the word before the cursor:
 
@@ -64,7 +67,7 @@ To delete the word before the cursor:
 
 This sends the escape key (0x1B) followed by backspace (0x08), deleting the word before the cursor.
 
-**2\. Delete the Word After the Cursor**
+### 2. Delete the Word After the Cursor
 
 To delete the word after the cursor:
 
@@ -82,7 +85,7 @@ d
 
 This sends the ESC + d sequence, deleting the word after the cursor.
 
-**3\. Scroll Back or Forward by Word**
+### 3. Scroll Back or Forward by Word
 
 Efficiently navigate text in your terminal:
 
@@ -104,7 +107,7 @@ Efficiently navigate text in your terminal:
 
 These mimic common shortcuts in many shells (bash, zsh, fish) for word-by-word navigation.
 
-**Advanced Benefits of Terminal Customization**
+## Advanced Benefits of Terminal Customization
 
 - **Faster Text Manipulation**: Editing long commands or configuration files takes fewer keystrokes with shortcuts for deleting or navigating by word.
 
@@ -114,7 +117,7 @@ These mimic common shortcuts in many shells (bash, zsh, fish) for word-by-word n
 
 - **Personalization**: Tailor iTerm2 to suit your preferences, creating an environment that feels intuitive and productive.
 
-**Skills You'll Develop**
+## Skills You'll Develop
 
 By customizing iTerm2, you'll:
 
@@ -128,6 +131,6 @@ By customizing iTerm2, you'll:
 
 ![iterm](/assets/images/iTerm-shortcuts-2.webp)
 
-**Conclusion**
+## Conclusion
 
 Customizing iTerm2 keybindings is more than a convenience---it's an investment in your efficiency and technical skills. By mastering shortcuts to delete words, navigate text, and tailor your terminal workflow, you'll gain tools that make your work faster, smoother, and more enjoyable. Dive into these customizations today and transform your terminal into a productivity powerhouse!

@@ -1,6 +1,6 @@
 ---
-title: "The Rescue Lantern: Read the Logs of a System That Won't Talk"
-description: 'The broken install has no network, so you cannot reach it. Boot a rescue system with your SSH key, mount the install read-only, and read its journal offline: every boot, every service, every error, without starting it.'
+title: 'The Rescue Lantern: Read Logs of a System That Won''t Talk'
+description: 'The broken install has no network, so boot a rescue system with your SSH key, mount it read-only, and read its journal offline without ever starting it'
 excerpt: 'When a system cannot reach you, go to its disk instead. Mount it read-only and read its journal from a rescue system over SSH.'
 date: '2026-11-13T00:00:00.000Z'
 lastmod: '2026-11-13T00:00:00.000Z'

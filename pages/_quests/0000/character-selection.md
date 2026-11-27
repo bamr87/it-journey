@@ -56,7 +56,10 @@ rewards:
   - Access to Character Building quest
   - Specialization-specific quest recommendations
 permalink: /quests/0000/character-selection/
-categories: []
+categories:
+- Quests
+- Init-World
+- Career-Development
 tags:
 - character-selection
 - career-paths

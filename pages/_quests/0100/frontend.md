@@ -17,8 +17,16 @@ learning_style: hands-on
 permalink: /quests/0100/frontend/
 redirect_from:
 - /quickstart/theme-architecture/
-categories: []
-tags: []
+categories:
+- Quests
+- Frontend
+- Medium
+tags:
+- jekyll
+- bootstrap
+- frontend
+- web-development
+- '0100'
 keywords:
   primary:
   - frontend

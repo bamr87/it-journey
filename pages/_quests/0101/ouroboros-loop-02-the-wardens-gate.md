@@ -1,6 +1,6 @@
 ---
 title: 'The Warden''s Gate: Kill Switches and Stage Gates'
-description: 'Give your loop the discipline of OFF-by-default: a gate job that checks a kill-switch variable and auth before anything runs, least-privilege permissions, and the caller-permissions rule that kills whole workflows at startup.'
+description: 'Give your loop OFF-by-default discipline: a gate job that checks a kill switch and auth first, least-privilege permissions, and the caller-permissions rule'
 date: '2026-07-06T00:00:00.000Z'
 lastmod: '2026-07-06T00:00:00.000Z'
 level: '0101'

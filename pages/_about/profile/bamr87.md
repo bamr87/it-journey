@@ -13,6 +13,13 @@ permalink: /about/bamr87/
 date: '2024-05-09T22:24:22.000Z'
 description: Profile page for the IT-Journey founder and maintainer — IT generalist in Denver, lapsed banker, builder of the zer0-mistakes Jekyll theme.
 title: bamr87
+author: bamr87
+categories:
+- about
+tags:
+- about
+- profile
+- contributors
 ---
 # Navigate to your current repository
 

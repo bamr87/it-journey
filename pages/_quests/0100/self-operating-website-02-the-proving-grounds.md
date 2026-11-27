@@ -1,6 +1,6 @@
 ---
 title: 'The Proving Grounds: The Repo''s First CI Gate'
-description: 'Build the repository''s first CI: a deterministic verification harness with a frozen findings contract, link-checking, and front-matter linting that turns "is it broken?" into one required check.'
+description: 'Build the repo''s first CI: a deterministic verification harness, a frozen findings contract, link-checking, and front-matter linting in one required check'
 date: '2026-06-28T00:00:00.000Z'
 lastmod: '2026-06-28T00:00:00.000Z'
 level: '0100'

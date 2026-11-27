@@ -1,6 +1,6 @@
 ---
 title: 'Summon the Golem: An AI Agent Joins the Loop'
-description: 'Drive Claude Code from GitHub Actions as an oath-bound worker: one composite action for auth and invocation, a named agent role file, a prompt that is a contract, and a report artifact — while git stays in the workflow''s hands.'
+description: 'Drive Claude Code from GitHub Actions as an oath-bound worker: one composite action, a named agent role, a prompt as contract, and a report artifact'
 date: '2026-07-06T00:00:00.000Z'
 lastmod: '2026-07-06T00:00:00.000Z'
 level: '0011'
