@@ -1,6 +1,6 @@
 ---
-title: 'The War Machine: Dispatch, Leasing, and a Fifty-Case Simulation'
-description: 'Stand up the autopilot proper — OODA dispatch, serverless git-ref CAS leasing, RICE triage, tiered pipelines, and a fifty-case end-to-end simulation that proves the fleet before it ever ships.'
+title: 'The War Machine: Dispatch, Leasing, and a 50-Case Simulation'
+description: 'Stand up the autopilot: OODA dispatch, git-ref CAS leasing, RICE triage, tiered pipelines, and a fifty-case simulation that proves the fleet before it ships'
 date: '2026-06-28T00:00:00.000Z'
 lastmod: '2026-06-28T00:00:00.000Z'
 level: '1000'

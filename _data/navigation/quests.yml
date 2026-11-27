@@ -172,7 +172,7 @@
     url: /quests/0011/github-pages-hidden-gem/
   - title: 'Summon the Golem: An AI Agent Joins the Loop'
     url: /quests/0011/ouroboros-loop-03-summon-the-golem/
-  - title: 'The Dig Site: Unearth the Relic and Name What You Do Not Know'
+  - title: 'The Dig Site: Unearth the Relic, Name What You Do Not Know'
     url: /quests/0011/relic-raisers-01-the-dig-site/
   - title: 'The PRD Codex: Master Product Reality Distillation'
     url: /quests/0011/prd-codex-mastery/
@@ -228,7 +228,7 @@
     url: /quests/0101/self-operating-website-08-the-cartographer/
   - title: 'The Gauntlet of Trials: Pin the Relic Before You Touch It'
     url: /quests/0101/relic-raisers-04-the-gauntlet-of-trials/
-  - title: 'The Second Shift: Resurrect an Ancient Tower as Your Home Server'
+  - title: 'The Second Shift: Resurrect an Old Tower as a Home Server'
     url: /quests/0101/second-shift-server-resurrection/
   - title: 'The Warden''s Gate: Kill Switches and Stage Gates'
     url: /quests/0101/ouroboros-loop-02-the-wardens-gate/
@@ -318,7 +318,7 @@
     url: /quests/1000/twin-rigs-07-the-free-stalls/
   - title: 'The MCP Conclave: Mastering Model Context Protocol Servers'
     url: /quests/1000/agentic-mcp-server-mastery/
-  - title: 'The War Machine: Dispatch, Leasing, and a Fifty-Case Simulation'
+  - title: 'The War Machine: Dispatch, Leasing, and a 50-Case Simulation'
     url: /quests/1000/self-operating-website-03-the-war-machine/
 - title: Level 1001 - Kubernetes Orchestration
   icon: bi-grid-3x3-gap
@@ -334,7 +334,7 @@
     url: /quests/1001/k8s-pods-workloads/
   - title: 'Kubernetes Services and Networking: Ingress and DNS'
     url: /quests/1001/k8s-services-networking/
-  - title: 'The Rescue Lantern: Read the Logs of a System That Won''t Talk'
+  - title: 'The Rescue Lantern: Read Logs of a System That Won''t Talk'
     url: /quests/1001/silent-network-03-the-rescue-lantern/
   - title: 'The Shield of Retries: Safe Execution and Error Handling'
     url: /quests/1001/agentic-safe-execution-and-error-handling/
@@ -444,7 +444,7 @@
     url: /quests/1100/self-operating-website-10-the-bard-forge/
   - title: 'The Editor''s Eye: A Reviewer, and the Dragon It Becomes'
     url: /quests/1100/self-operating-website-06-the-editors-eye/
-  - title: 'The Rosetta Ledger: Translate the Relic and Prove It Ties Out'
+  - title: 'The Rosetta Ledger: Translate the Relic, Prove It Ties Out'
     url: /quests/1100/relic-raisers-05-the-rosetta-ledger/
   - title: 'The Temple of Templates: Reusable Abstractions'
     url: /quests/1100/temple-of-templates/
@@ -504,7 +504,7 @@
     url: /quests/1110/self-operating-website-09-the-chronicle/
   - title: 'Weaving the Whole: The Serpent Closes the Circle'
     url: /quests/1110/ouroboros-loop-07-weaving-the-whole/
-  - title: 'Write for the Archaeologist: Leave the Lore Where the Next One Digs'
+  - title: 'Write for the Archaeologist: Leave Lore for the Next Dig'
     url: /quests/1110/relic-raisers-07-write-for-the-archaeologist/
   - title: 'Epic Quest: The Ouroboros Loop'
     url: /quests/codex/ouroboros-loop/

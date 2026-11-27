@@ -1,6 +1,6 @@
 ---
 title: 'The Sigils of Trust: Auth, Secrets, and the Kill Switch'
-description: 'Wire authentication and secrets so the robot can act but never escalate: OAuth versus API keys, a least-privilege bot PAT with no admin scope, and a *_ENABLED kill switch on every automation.'
+description: 'Wire auth and secrets so the robot can act but never escalate: OAuth versus API keys, a least-privilege bot PAT with no admin scope, and a *_ENABLED kill switch'
 date: '2026-06-28T00:00:00.000Z'
 lastmod: '2026-06-28T00:00:00.000Z'
 level: '1001'

@@ -55,7 +55,10 @@ rewards:
   - Access to OS Selection quest
   - Foundation for all technical quests
 permalink: /quests/0000/it-fundamentals/
-categories: []
+categories:
+- Quests
+- Init-World
+- Beginner
 tags:
 - fundamentals
 - it-basics

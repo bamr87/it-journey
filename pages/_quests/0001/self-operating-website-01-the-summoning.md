@@ -1,6 +1,6 @@
 ---
 title: 'The Summoning: Raise the Site and Give It a Voice'
-description: 'Raise a Jekyll site on a remote theme and GitHub Pages, encode a machine-readable brand and voice, and teach it to write a shareable dispatch at the end of every working session.'
+description: 'Raise a Jekyll site on a remote theme and GitHub Pages, encode a machine-readable brand voice, and teach it to write a dispatch after every working session'
 date: '2026-06-28T00:00:00.000Z'
 lastmod: '2026-06-28T00:00:00.000Z'
 level: '0001'

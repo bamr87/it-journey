@@ -1,6 +1,6 @@
 ---
 title: 'The Content Forge: Autonomous Generation That Refuses to Lie'
-description: 'Teach the site to write its own scrolls from a backlog — and to refuse to publish what it cannot verify. The Prime Directive, plus one-writer-per-collection concurrency control.'
+description: 'Teach the site to write its own scrolls from a backlog and refuse to publish what it cannot verify, with one-writer-per-collection concurrency control'
 date: '2026-06-28T00:00:00.000Z'
 lastmod: '2026-06-28T00:00:00.000Z'
 level: '1010'

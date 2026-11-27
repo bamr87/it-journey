@@ -1,6 +1,6 @@
 ---
-title: 'The Dig Site: Unearth the Relic and Name What You Do Not Know'
-description: 'Compile and run a 1997 COBOL aging program on your own machine, ask an AI familiar to read it, and learn the raiser''s first discipline: every reading is a hypothesis until the relic itself testifies.'
+title: 'The Dig Site: Unearth the Relic, Name What You Do Not Know'
+description: 'Compile and run a 1997 COBOL aging program, ask an AI familiar to read it, and learn the first rule: every reading is a hypothesis until the relic testifies'
 excerpt: Raise a real COBOL relic on your laptop, summon a familiar to read it, then make the relic testify — field notes that separate evidence from guesswork.
 date: '2026-09-14T00:00:00.000Z'
 lastmod: '2026-09-14T00:00:00.000Z'

@@ -1,6 +1,6 @@
 ---
 title: 'The First Turn: A Loop That Checks One Scroll a Day'
-description: 'Build your first autonomous loop from scratch: a tiny repo of runnable recipes, a deterministic checker, a date-rotating daily workflow, and a committed ledger — the observe→check→record cycle every larger engine grows from.'
+description: 'Build your first autonomous loop: runnable recipes, a deterministic checker, a date-rotating daily workflow, and a committed ledger that records every turn'
 date: '2026-07-06T00:00:00.000Z'
 lastmod: '2026-07-06T00:00:00.000Z'
 level: '0000'

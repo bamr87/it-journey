@@ -56,7 +56,9 @@ rewards:
   - Access to Character Building quest
   - Access to specialization selection
 permalink: /quests/0000/begin-your-it-journey/
-categories: []
+categories:
+- Quests
+- Init-World
 tags:
 - getting-started
 - beginner

@@ -7,6 +7,13 @@ longitude: -104.9739333
 altitude: 0.0
 date: '2024-02-20T09:39:19.000Z'
 draft: false
+author: bamr87
+categories:
+- Notes
+tags:
+- project-management
+- career-development
+- notes
 description: Working sketch for the IT-Journey Master's Project qualification framework — stack score, feature score, footprint, and karma credit categories.
 ---
 Qualifications
